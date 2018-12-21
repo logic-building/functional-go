@@ -5,7 +5,7 @@
 go get github.com/logic-building/functional-go/list-op/
 ```
 
-### Gopkg.toml entry
+### dep Gopkg.toml entry
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
