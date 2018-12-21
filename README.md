@@ -34,6 +34,7 @@ func squareInt(num int) int {
 	return num * num
 }
 
+```
 ### Example2: filter all the even numbers in the list
 ```
 filteredList := FilterInt(isEven, []int{1, 2, 3, 4})
