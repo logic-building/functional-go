@@ -1,7 +1,6 @@
 package list_op
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -37,15 +36,37 @@ func addInt(num1, num2 int) int {
 	return num1 + num2
 }
 
-func BenchmarkMapInt64(b *testing.B) {
+func BenchmarkMapInt64_PassedMethod_1_Arg(b *testing.B) {
 	b.N = iterations
-	list := make([]int, size)
-	for i := 0; i < size; i++ {
+	list := make([]int64, size)
+	var i int64
+	for i = 0; i < size; i++ {
 		list[i] = i
 	}
 	for i := 0; i < b.N; i++ {
-		MapInt(squareInt, list)
+		MapInt64(multiply2, list)
 	}
+}
+
+func BenchmarkMapInt64_PassedMethod_2_Arg(b *testing.B) {
+	b.N = iterations
+	list := make([]int64, size)
+	var i int64
+	for i = 0; i < size; i++ {
+		list[i] = i
+	}
+	partialMultiplyBy := func(num int64) int64 { return multiplyNumBy(num, 2) }
+	for i := 0; i < b.N; i++ {
+		MapInt64(partialMultiplyBy, list)
+	}
+}
+
+func multiply2(num int64) int64 {
+	return num * 2
+}
+
+func multiplyNumBy(num, multiplyBy int64) int64 {
+	return num * multiplyBy
 }
 
 func TestMapInt64(t *testing.T) {
@@ -240,7 +261,7 @@ func BenchmarkMapStr(b *testing.B) {
 	b.N = iterations
 	list := make([]string, size)
 	for i := 0; i < size; i++ {
-		list[i] = fmt.Sprintf("Nandeshwar: %d", i)
+		list[i] = string(i)
 	}
 
 	partialPrependStr := func(str string) string { return prependStr(str, "Name:") }
