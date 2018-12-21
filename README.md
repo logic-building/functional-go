@@ -5,6 +5,13 @@
 go get github.com/logic-building/functional-go/list-op/
 ```
 
+### Gopkg.toml entry
+```
+[[constraint]]
+name = "github.com/logic-building/functional-go"
+version = "1.1"
+```
+
 ### Contains functions
 ```
 MapInt
