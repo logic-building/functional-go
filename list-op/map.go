@@ -55,3 +55,11 @@ func MapFloat32(f func(float32) float32, list []float32) []float32 {
 	}
 	return newList
 }
+
+func MapStr(f func(string) string, list []string) []string {
+	newList := make([]string, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}

@@ -1,8 +1,13 @@
 package list_op
 
 import (
+	"fmt"
+	"strings"
 	"testing"
 )
+
+const size = 1000
+const iterations = 1000 * 1000
 
 func TestMapInt(t *testing.T) {
 	// Test : square the list
@@ -30,6 +35,17 @@ func squareInt(num int) int {
 
 func addInt(num1, num2 int) int {
 	return num1 + num2
+}
+
+func BenchmarkMapInt64(b *testing.B) {
+	b.N = iterations
+	list := make([]int, size)
+	for i := 0; i < size; i++ {
+		list[i] = i
+	}
+	for i := 0; i < b.N; i++ {
+		MapInt(squareInt, list)
+	}
 }
 
 func TestMapInt64(t *testing.T) {
@@ -198,4 +214,41 @@ func squareFloat32(num float32) float32 {
 
 func addFloat32(num1, num2 float32) float32 {
 	return num1 + num2
+}
+
+func TestMapStr(t *testing.T) {
+	// Test : change string to upper case in the list
+	expectedSquareList := []string{"GOVINDA", "GOPAL", "SHYAM"}
+	strList := MapStr(strings.ToUpper, []string{"govinda", "gopal", "shyam"})
+
+	if strList[0] != expectedSquareList[0] || strList[1] != expectedSquareList[1] || strList[2] != expectedSquareList[2] {
+		t.Errorf("TestMapStr. actual_list=%v, expected_list=%v", strList, expectedSquareList)
+	}
+
+	// Test : prepend each string in the list
+	expectedSquareList = []string{"Name: Govinda", "Name: Gopal", "Name: Shyam"}
+
+	partialPrependStr := func(str string) string { return prependStr(str, "Name:") }
+	strList = MapStr(partialPrependStr, []string{"Govinda", "Gopal", "Shyam"})
+
+	if strList[0] != expectedSquareList[0] || strList[1] != expectedSquareList[1] || strList[2] != expectedSquareList[2] {
+		t.Errorf("TestMapStr failed. actual_list=%v, expected_list=%v", strList, expectedSquareList)
+	}
+}
+
+func BenchmarkMapStr(b *testing.B) {
+	b.N = iterations
+	list := make([]string, size)
+	for i := 0; i < size; i++ {
+		list[i] = fmt.Sprintf("Nandeshwar: %d", i)
+	}
+
+	partialPrependStr := func(str string) string { return prependStr(str, "Name:") }
+	for i := 0; i < b.N; i++ {
+		MapStr(partialPrependStr, list)
+	}
+}
+
+func prependStr(str, sbuString string) string {
+	return sbuString + " " + str
 }
