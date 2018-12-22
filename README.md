@@ -104,6 +104,12 @@ list1 := []int{8, 2, 10, 4}
 EveryInt(isEven, list1) // Returns true
 ```
 
+### Example5 - Some: Test if number presents in the list
+```
+list1 := []int{8, 2, 10, 4}
+SomeInt(8, list1) // returns true
+```
+
 ### BenchMark test:
 ```
   Model Identifier:	MacBookPro11,5
