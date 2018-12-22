@@ -55,7 +55,7 @@ EveryFloat32
 EveryStr
 ```
 
-### Example 1: return the list of the square of each items in the list
+### Example1 - Map : return the list of the square of each items in the list
 ```
 squareList := MapInt(squareInt, []int{1, 2, 3}) // see the map_test.go for detail
 
@@ -70,7 +70,7 @@ output
 
 ```
 
-### Example2: filter all the even numbers in the list
+### Example2 - Filter: filter all the even numbers in the list
 ```
 filteredList := FilterInt(isEven, []int{1, 2, 3, 4})
 
@@ -83,7 +83,7 @@ output:
 
 ```
 
-### Example3: Multiply all positive numbers in the list by 2
+### Example3 - FilterMap: Multiply all positive numbers in the list by 2
 ```
 filteredList := FilterMapInt(isPositive, multiplyBy2, []int{-1, 0, 2, 4})
 
@@ -96,6 +96,12 @@ func multiplyBy2(num int) int {
 
 output:
 [4, 8]
+```
+
+### Exampl4 - Every: Test if every number in the list is even
+```
+list1 := []int{8, 2, 10, 4}
+EveryInt(isEven, list1) // Returns true
 ```
 
 ### BenchMark test:
