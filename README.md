@@ -14,6 +14,7 @@ version = "1.1"
 
 ### Contains functions
 ```
+Return list ---
 MapInt
 MapInt64
 MapInt32
@@ -23,6 +24,7 @@ MapFloat64
 MapFloat32
 MapStr
 
+Return list ---
 FilterInt
 FilterInt64
 FilterInt32
@@ -32,7 +34,8 @@ FilterFloat64
 FilterFloat32
 FilterStr
 
-FilterMap
+Return list ---
+FilterMapInt
 FilterMapInt64
 FilterMapInt32
 FilterMapInt16
@@ -40,6 +43,16 @@ FilterMapInt8
 FilterMapFloat64
 FilterMapFloat32
 FilterMapStr
+
+Return true ---
+EveryInt
+EveryInt64
+EveryInt32
+EveryInt16
+EveryInt8
+EveryFloat64
+EveryFloat32
+EveryStr
 ```
 
 ### Example 1: return the list of the square of each items in the list
