@@ -31,6 +31,15 @@ FilterInt8
 FilterFloat64
 FilterFloat32
 FilterStr
+
+FilterMap
+FilterMapInt64
+FilterMapInt32
+FilterMapInt16
+FilterMapInt8
+FilterMapFloat64
+FilterMapFloat32
+FilterMapStr
 ```
 
 ### Example 1: return the list of the square of each items in the list
@@ -61,6 +70,21 @@ output:
 
 ```
 
+### Example3: Multiply all positive numbers in the list by 2
+```
+filteredList := FilterMapInt(isPositive, multiplyBy2, []int{-1, 0, 2, 4})
+
+func isPositive(num int) bool {
+	return num > 0
+}
+func multiplyBy2(num int) int {
+	return num * 2
+}
+
+output:
+[4, 8]
+```
+
 ### BenchMark test:
 ```
   Model Identifier:	MacBookPro11,5
@@ -74,10 +98,14 @@ output:
 ```
 
 ```
-BenchmarkFilterInt64-8                   	 1000000	      5262 ns/op
-BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3726 ns/op
-BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3710 ns/op
-BenchmarkMapStr-8                        	 1000000	     51892 ns/op
+goos: darwin
+goarch: amd64
+pkg: functional-go/list-op
+BenchmarkFilterInt64-8                   	 1000000	      5284 ns/op
+BenchmarkFilterMapInt64-8                	 1000000	      6007 ns/op
+BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3735 ns/op
+BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3748 ns/op
+BenchmarkMapStr-8                        	 1000000	     51698 ns/op
 PASS
-ok  	functional-go/list-op	64.604s
+ok  	functional-go/list-op	70.486s
 ```
