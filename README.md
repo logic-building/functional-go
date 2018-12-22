@@ -120,11 +120,11 @@ EveryInt(isEven, list1) // Returns true
 goos: darwin
 goarch: amd64
 pkg: functional-go/list-op
-BenchmarkFilterInt64-8                   	 1000000	      5284 ns/op
-BenchmarkFilterMapInt64-8                	 1000000	      6007 ns/op
-BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3735 ns/op
-BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3748 ns/op
-BenchmarkMapStr-8                        	 1000000	     51698 ns/op
+BenchmarkFilterInt64-8                   	 1000000	      5408 ns/op
+BenchmarkFilterMapInt64-8                	 1000000	      6271 ns/op
+BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3767 ns/op
+BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3819 ns/op
+BenchmarkMapStr-8                        	 1000000	     52498 ns/op
 PASS
-ok  	functional-go/list-op	70.486s
+ok  	functional-go/list-op	71.776s
 ```

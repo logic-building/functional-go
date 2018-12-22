@@ -26,6 +26,10 @@ func TestMapInt(t *testing.T) {
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapInt failed")
 	}
+
+	if len(MapInt(nil, nil)) > 0 {
+		t.Errorf("MapInt failed.")
+	}
 }
 
 func squareInt(num int) int {
@@ -87,6 +91,10 @@ func TestMapInt64(t *testing.T) {
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapInt64 failed")
 	}
+
+	if len(MapInt64(nil, nil)) > 0 {
+		t.Errorf("MapInt64 failed.")
+	}
 }
 
 func squareInt64(num int64) int64 {
@@ -114,6 +122,9 @@ func TestMapInt32(t *testing.T) {
 	sumList := MapInt32(partialAddInt32, []int32{1, 2, 3})
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapInt32 failed")
+	}
+	if len(MapInt32(nil, nil)) > 0 {
+		t.Errorf("MapInt32 failed.")
 	}
 }
 
@@ -143,6 +154,9 @@ func TestMapInt16(t *testing.T) {
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapInt16 failed")
 	}
+	if len(MapInt16(nil, nil)) > 0 {
+		t.Errorf("MapInt16 failed.")
+	}
 }
 
 func squareInt16(num int16) int16 {
@@ -170,6 +184,9 @@ func TestMapInt8(t *testing.T) {
 	sumList := MapInt8(partialAddInt8, []int8{1, 2, 3})
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapInt8 failed")
+	}
+	if len(MapInt8(nil, nil)) > 0 {
+		t.Errorf("MapInt8 failed.")
 	}
 }
 
@@ -199,6 +216,9 @@ func TestMapFloat64(t *testing.T) {
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapFloat64 failed")
 	}
+	if len(MapFloat64(nil, nil)) > 0 {
+		t.Errorf("MapFloat64 failed.")
+	}
 }
 
 func squareFloat64(num float64) float64 {
@@ -227,6 +247,9 @@ func TestMapFloat32(t *testing.T) {
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapFloat32 failed")
 	}
+	if len(MapFloat32(nil, nil)) > 0 {
+		t.Errorf("MapFloat32 failed.")
+	}
 }
 
 func squareFloat32(num float32) float32 {
@@ -254,6 +277,9 @@ func TestMapStr(t *testing.T) {
 
 	if strList[0] != expectedSquareList[0] || strList[1] != expectedSquareList[1] || strList[2] != expectedSquareList[2] {
 		t.Errorf("TestMapStr failed. actual_list=%v, expected_list=%v", strList, expectedSquareList)
+	}
+	if len(MapStr(nil, nil)) > 0 {
+		t.Errorf("MapStr failed.")
 	}
 }
 

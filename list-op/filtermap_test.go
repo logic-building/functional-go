@@ -13,6 +13,9 @@ func TestFilterMapInt(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMap failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+	if len(FilterMapInt(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt failed.")
+	}
 }
 
 func isPositive(num int) bool {
@@ -29,6 +32,9 @@ func TestFilterMapInt64(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapInt64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapInt(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt64 failed.")
 	}
 }
 
@@ -59,6 +65,9 @@ func TestFilterMapInt32(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapInt32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+	if len(FilterMapInt32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt32 failed.")
+	}
 }
 
 func isPositiveInt32(num int32) bool {
@@ -75,6 +84,9 @@ func TestFilterMapInt16(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapInt16 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapInt16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt16 failed.")
 	}
 }
 
@@ -93,6 +105,9 @@ func TestFilterMapInt8(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapInt8 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+	if len(FilterMapInt8(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt8 failed.")
+	}
 }
 
 func isPositiveInt8(num int8) bool {
@@ -110,6 +125,9 @@ func TestFilterMapFloat64(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapFloat64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+	if len(FilterMapFloat64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64 failed.")
+	}
 }
 
 func multiplyBy2Float64(num float64) float64 {
@@ -124,6 +142,9 @@ func TestFilterMapFloat32(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapFloat32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+	if len(FilterMapFloat32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32 failed.")
+	}
 }
 
 func multiplyBy2Float32(num float32) float32 {
@@ -137,6 +158,9 @@ func TestFilterMapStr(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapStr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapStr(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapStr failed.")
 	}
 }
 

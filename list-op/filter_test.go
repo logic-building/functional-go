@@ -19,6 +19,10 @@ func TestFilterInt(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+
+	if len(FilterInt(nil, nil)) > 0 {
+		t.Errorf("FilterInt failed.")
+	}
 }
 
 func isEven(num int) bool {
@@ -45,6 +49,9 @@ func TestFilterInt64(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterInt64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterInt64(nil, nil)) > 0 {
+		t.Errorf("FilterInt64 failed.")
 	}
 }
 
@@ -85,6 +92,9 @@ func TestFilterInt32(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterInt32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+	if len(FilterInt32(nil, nil)) > 0 {
+		t.Errorf("FilterInt32 failed.")
+	}
 }
 
 func isEvenInt32(num int32) bool {
@@ -111,6 +121,9 @@ func TestFilterInt16(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterInt16 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterInt16(nil, nil)) > 0 {
+		t.Errorf("FilterInt16 failed.")
 	}
 }
 
@@ -139,6 +152,9 @@ func TestFilterInt8(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterInt8 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
+	if len(FilterInt8(nil, nil)) > 0 {
+		t.Errorf("FilterInt8 failed.")
+	}
 }
 
 func isEvenInt8(num int8) bool {
@@ -156,6 +172,9 @@ func TestFilterFloat64(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterFloat64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterFloat64(nil, nil)) > 0 {
+		t.Errorf("FilterFloat64 failed.")
 	}
 }
 
@@ -184,6 +203,9 @@ func TestFilterStr(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FiltrStr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterStr(nil, nil)) > 0 {
+		t.Errorf("FilterStr failed.")
 	}
 }
 

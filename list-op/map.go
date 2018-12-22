@@ -1,6 +1,9 @@
 package list_op
 
 func MapInt(f func(int) int, list []int) []int {
+	if f == nil {
+		return []int{}
+	}
 	newList := make([]int, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
@@ -9,6 +12,9 @@ func MapInt(f func(int) int, list []int) []int {
 }
 
 func MapInt64(f func(int64) int64, list []int64) []int64 {
+	if f == nil {
+		return []int64{}
+	}
 	newList := make([]int64, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
@@ -17,6 +23,9 @@ func MapInt64(f func(int64) int64, list []int64) []int64 {
 }
 
 func MapInt32(f func(int32) int32, list []int32) []int32 {
+	if f == nil {
+		return []int32{}
+	}
 	newList := make([]int32, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
@@ -25,6 +34,9 @@ func MapInt32(f func(int32) int32, list []int32) []int32 {
 }
 
 func MapInt8(f func(int8) int8, list []int8) []int8 {
+	if f == nil {
+		return []int8{}
+	}
 	newList := make([]int8, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
@@ -33,6 +45,9 @@ func MapInt8(f func(int8) int8, list []int8) []int8 {
 }
 
 func MapInt16(f func(int16) int16, list []int16) []int16 {
+	if f == nil {
+		return []int16{}
+	}
 	newList := make([]int16, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
@@ -41,6 +56,9 @@ func MapInt16(f func(int16) int16, list []int16) []int16 {
 }
 
 func MapFloat64(f func(float64) float64, list []float64) []float64 {
+	if f == nil {
+		return []float64{}
+	}
 	newList := make([]float64, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
@@ -49,6 +67,9 @@ func MapFloat64(f func(float64) float64, list []float64) []float64 {
 }
 
 func MapFloat32(f func(float32) float32, list []float32) []float32 {
+	if f == nil {
+		return []float32{}
+	}
 	newList := make([]float32, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
@@ -57,6 +78,9 @@ func MapFloat32(f func(float32) float32, list []float32) []float32 {
 }
 
 func MapStr(f func(string) string, list []string) []string {
+	if f == nil {
+		return []string{}
+	}
 	newList := make([]string, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
