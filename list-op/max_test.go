@@ -49,10 +49,10 @@ func TestMaxInt8(t *testing.T) {
 
 func TestMaxUint(t *testing.T) {
 	// Test : get max number in the list
-	list := []uint8{8, 2, 10, 4}
-	max := MaxUint8(list)
+	list := []uint{8, 2, 10, 4}
+	max := MaxUint(list)
 	if max != 10 {
-		t.Errorf("MaxUint64 failed. Expected=10, actual=%v", max)
+		t.Errorf("MaxUint failed. Expected=10, actual=%v", max)
 	}
 }
 

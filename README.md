@@ -103,6 +103,18 @@ MaxUint8
 MaxFloat64
 MaxFloat32
 
+Return min number ---
+MinInt
+MinInt64
+MinInt32
+MinInt8
+MinUint
+MinUint64
+MinUint32
+MinUint16
+MinUint8
+MinFloat64
+MinFloat32
 ```
 
 ### Example1 - Map : return the list of the square of each items in the list
@@ -164,6 +176,12 @@ SomeInt(8, list1) // returns true
 ```
 list := []int{8, 2, 10, 4}
 max := MaxInt(list) // returns 10
+```
+
+### Example7 - Min: Get min number in the list
+```
+list := []int{8, 2, 10, 4}
+min := MinInt(list) // returns 2
 ```
 
 ### BenchMark test:
