@@ -160,7 +160,7 @@ list1 := []int{8, 2, 10, 4}
 SomeInt(8, list1) // returns true
 ```
 
-### Example5 - Max: Get max number in the list
+### Example6 - Max: Get max number in the list
 ```
 list := []int{8, 2, 10, 4}
 max := MaxInt(list) // returns 10
