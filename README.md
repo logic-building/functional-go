@@ -14,7 +14,7 @@ version = "1.1"
 
 ### Contains functions
 ```
-Return list ---
+Takes function as argument and apply it on each item in the list and return list
 MapInt
 MapInt64
 MapInt32
@@ -29,7 +29,7 @@ MapFloat64
 MapFloat32
 MapStr
 
-Return list ---
+Takes function as argument and apply it on each item in the list and return filtered list
 FilterInt
 FilterInt64
 FilterInt32
@@ -44,7 +44,7 @@ FilterFloat64
 FilterFloat32
 FilterStr
 
-Return list ---
+Takes two function as argument and apply it on each item in the list and return filtered list
 FilterMapInt
 FilterMapInt64
 FilterMapInt32
@@ -59,7 +59,7 @@ FilterMapFloat64
 FilterMapFloat32
 FilterMapStr
 
-Return true ---
+Takes function as argument and apply it on each item in the list and return true/false
 EveryInt
 EveryInt64
 EveryInt32
@@ -74,7 +74,7 @@ EveryFloat64
 EveryFloat32
 EveryStr
 
-Return true ---
+Takes number and list as argument and returns true/false if it exists
 SomeInt
 SomeInt64
 SomeInt32
@@ -89,7 +89,7 @@ SomeFloat64
 SomeFloat32
 SomeStr
 
-Return max number ---
+Takes list as argument and return max number
 MaxInt
 MaxInt64
 MaxInt32
@@ -103,7 +103,7 @@ MaxUint8
 MaxFloat64
 MaxFloat32
 
-Return min number ---
+Takes list as argument and return min number
 MinInt
 MinInt64
 MinInt32
