@@ -66,6 +66,71 @@ func FilterMapInt8(fFilter func(int8) bool, fMap func(int8) int8, list []int8) [
 	return newList
 }
 
+func FilterMapUint64(fFilter func(uint64) bool, fMap func(uint64) uint64, list []uint64) []uint64 {
+	if fFilter == nil || fMap == nil {
+		return []uint64{}
+	}
+	var newList []uint64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+func FilterMapUint32(fFilter func(uint32) bool, fMap func(uint32) uint32, list []uint32) []uint32 {
+	if fFilter == nil || fMap == nil {
+		return []uint32{}
+	}
+	var newList []uint32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+func FilterMapUint16(fFilter func(uint16) bool, fMap func(uint16) uint16, list []uint16) []uint16 {
+	if fFilter == nil || fMap == nil {
+		return []uint16{}
+	}
+	var newList []uint16
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+func FilterMapUint8(fFilter func(uint8) bool, fMap func(uint8) uint8, list []uint8) []uint8 {
+	if fFilter == nil || fMap == nil {
+		return []uint8{}
+	}
+	var newList []uint8
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+func FilterMapUint(fFilter func(uint) bool, fMap func(uint) uint, list []uint) []uint {
+	if fFilter == nil || fMap == nil {
+		return []uint{}
+	}
+	var newList []uint
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 func FilterMapFloat64(fFilter func(float64) bool, fMap func(float64) float64, list []float64) []float64 {
 	if fFilter == nil || fMap == nil {
 		return []float64{}

@@ -20,6 +20,11 @@ MapInt64
 MapInt32
 MapInt16
 MapInt8
+MapUint
+MapUint64
+MapUint32
+MapUint16
+MapUint8
 MapFloat64
 MapFloat32
 MapStr
@@ -30,6 +35,11 @@ FilterInt64
 FilterInt32
 FilterInt16
 FilterInt8
+FilterUint
+FilterUint64
+FilterUint32
+FilterUint16
+FilterUint8
 FilterFloat64
 FilterFloat32
 FilterStr
@@ -40,6 +50,11 @@ FilterMapInt64
 FilterMapInt32
 FilterMapInt16
 FilterMapInt8
+FilterMapUint
+FilterMapUint64
+FilterMapUint32
+FilterMapUint16
+FilterMapUint8
 FilterMapFloat64
 FilterMapFloat32
 FilterMapStr
@@ -50,9 +65,44 @@ EveryInt64
 EveryInt32
 EveryInt16
 EveryInt8
+EveryUint
+EveryUint64
+EveryUint32
+EveryUint16
+EveryUint8
 EveryFloat64
 EveryFloat32
 EveryStr
+
+Return true ---
+SomeInt
+SomeInt64
+SomeInt32
+SomeInt16
+SomeInt8
+SomeUint
+SomeUint64
+SomeUint32
+SomeUint16
+SomeUint8
+SomeFloat64
+SomeFloat32
+SomeStr
+
+Return max number ---
+MaxInt
+MaxInt64
+MaxInt32
+MaxInt16
+MaxInt8
+MaxUint
+MaxUint64
+MaxUint32
+MaxUint16
+MaxUint8
+MaxFloat64
+MaxFloat32
+
 ```
 
 ### Example1 - Map : return the list of the square of each items in the list
@@ -98,7 +148,7 @@ output:
 [4, 8]
 ```
 
-### Exampl4 - Every: Test if every number in the list is even
+### Example4 - Every: Test if every number in the list is even
 ```
 list1 := []int{8, 2, 10, 4}
 EveryInt(isEven, list1) // Returns true
@@ -108,6 +158,12 @@ EveryInt(isEven, list1) // Returns true
 ```
 list1 := []int{8, 2, 10, 4}
 SomeInt(8, list1) // returns true
+```
+
+### Example5 - Max: Get max number in the list
+```
+list := []int{8, 2, 10, 4}
+max := MaxInt(list) // returns 10
 ```
 
 ### BenchMark test:

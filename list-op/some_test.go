@@ -112,6 +112,116 @@ func TestSomeInt8(t *testing.T) {
 	}
 }
 
+func TestSomeUint64(t *testing.T) {
+	// Test : value exist in the list
+
+	list1 := []uint64{8, 2, 10, 4}
+	if !SomeUint64(8, list1) {
+		t.Errorf("SomeUint64 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint64{8, 2, 10, 5, 4}
+	if SomeUint64(80, list2) {
+		t.Errorf("SomeUint64 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint64(80, nil) {
+		t.Errorf("SomeUint64 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint64(80, []uint64{}) {
+		t.Errorf("SomeUint64 failed. Expected=false, actual=true")
+	}
+}
+
+func TestSomeUint32(t *testing.T) {
+	// Test : value exist in the list
+
+	list1 := []uint32{8, 2, 10, 4}
+	if !SomeUint32(8, list1) {
+		t.Errorf("SomeUint32 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint32{8, 2, 10, 5, 4}
+	if SomeUint32(80, list2) {
+		t.Errorf("SomeUint32 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint32(80, nil) {
+		t.Errorf("SomeUint32 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint32(80, []uint32{}) {
+		t.Errorf("SomeUint32 failed. Expected=false, actual=true")
+	}
+}
+
+func TestSomeUint16(t *testing.T) {
+	// Test : value exist in the list
+
+	list1 := []uint16{8, 2, 10, 4}
+	if !SomeUint16(8, list1) {
+		t.Errorf("SomeUint16 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint16{8, 2, 10, 5, 4}
+	if SomeUint16(80, list2) {
+		t.Errorf("SomeUint16 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint16(80, nil) {
+		t.Errorf("SomeUint16 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint16(80, []uint16{}) {
+		t.Errorf("SomeUint16 failed. Expected=false, actual=true")
+	}
+}
+
+func TestSomeUint8(t *testing.T) {
+	// Test : value exist in the list
+
+	list1 := []uint8{8, 2, 10, 4}
+	if !SomeUint8(8, list1) {
+		t.Errorf("SomeUint8 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint8{8, 2, 10, 5, 4}
+	if SomeUint8(80, list2) {
+		t.Errorf("SomeUint8 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint8(80, nil) {
+		t.Errorf("SomeUint8 failed. Expected=false, actual=true")
+	}
+
+	if SomeUint8(80, []uint8{}) {
+		t.Errorf("SomeUint8 failed. Expected=false, actual=true")
+	}
+}
+
+func TestSomeUint(t *testing.T) {
+	// Test : value exist in the list
+
+	list1 := []uint{8, 2, 10, 4}
+	if !SomeUint(8, list1) {
+		t.Errorf("SomeUint failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint{8, 2, 10, 5, 4}
+	if SomeUint(80, list2) {
+		t.Errorf("SomeUint failed. Expected=false, actual=true")
+	}
+
+	if SomeUint(80, nil) {
+		t.Errorf("SomeUint failed. Expected=false, actual=true")
+	}
+
+	if SomeUint(80, []uint{}) {
+		t.Errorf("SomeUint failed. Expected=false, actual=true")
+	}
+}
+
 func TestSomeFloat64(t *testing.T) {
 	// Test : value exist in the list
 

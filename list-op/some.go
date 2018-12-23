@@ -45,6 +45,51 @@ func SomeInt8(num int8, list []int8) bool {
 	return false
 }
 
+func SomeUint64(num uint64, list []uint64) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}
+
+func SomeUint32(num uint32, list []uint32) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}
+
+func SomeUint16(num uint16, list []uint16) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}
+
+func SomeUint8(num uint8, list []uint8) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}
+
+func SomeUint(num uint, list []uint) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}
+
 func SomeFloat64(num float64, list []float64) bool {
 	for _, v := range list {
 		if v == num {

@@ -198,6 +198,161 @@ func addInt8(num1, num2 int8) int8 {
 	return num1 + num2
 }
 
+func TestMapUint64(t *testing.T) {
+	// Test : square the list
+	expectedSquareList := []uint64{1, 4, 9}
+	squareList := MapUint64(squareUint64, []uint64{1, 2, 3})
+
+	if squareList[0] != expectedSquareList[0] || squareList[1] != expectedSquareList[1] || squareList[2] != expectedSquareList[2] {
+		t.Errorf("MapUint64 failed")
+	}
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []uint64{6, 7, 8}
+	partialAddUint64 := func(num uint64) uint64 {
+		return addUint64(5, num)
+	}
+	sumList := MapUint64(partialAddUint64, []uint64{1, 2, 3})
+	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
+		t.Errorf("MapUInt64 failed")
+	}
+	if len(MapUint64(nil, nil)) > 0 {
+		t.Errorf("MapUint32 failed.")
+	}
+}
+
+func squareUint64(num uint64) uint64 {
+	return num * num
+}
+
+func addUint64(num1, num2 uint64) uint64 {
+	return num1 + num2
+}
+
+func TestMapUint32(t *testing.T) {
+	// Test : square the list
+	expectedSquareList := []uint32{1, 4, 9}
+	squareList := MapUint32(squareUint32, []uint32{1, 2, 3})
+
+	if squareList[0] != expectedSquareList[0] || squareList[1] != expectedSquareList[1] || squareList[2] != expectedSquareList[2] {
+		t.Errorf("MapUint32 failed")
+	}
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []uint32{6, 7, 8}
+	partialAddUint32 := func(num uint32) uint32 {
+		return addUint32(5, num)
+	}
+	sumList := MapUint32(partialAddUint32, []uint32{1, 2, 3})
+	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
+		t.Errorf("MapUInt32 failed")
+	}
+	if len(MapUint32(nil, nil)) > 0 {
+		t.Errorf("MapUint32 failed.")
+	}
+}
+
+func squareUint32(num uint32) uint32 {
+	return num * num
+}
+
+func addUint32(num1, num2 uint32) uint32 {
+	return num1 + num2
+}
+
+func TestMapUint16(t *testing.T) {
+	// Test : square the list
+	expectedSquareList := []uint16{1, 4, 9}
+	squareList := MapUint16(squareUint16, []uint16{1, 2, 3})
+
+	if squareList[0] != expectedSquareList[0] || squareList[1] != expectedSquareList[1] || squareList[2] != expectedSquareList[2] {
+		t.Errorf("MapUint16 failed")
+	}
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []uint16{6, 7, 8}
+	partialAddUint16 := func(num uint16) uint16 {
+		return addUint16(5, num)
+	}
+	sumList := MapUint16(partialAddUint16, []uint16{1, 2, 3})
+	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
+		t.Errorf("MapUInt16 failed")
+	}
+	if len(MapUint16(nil, nil)) > 0 {
+		t.Errorf("MapUint16 failed.")
+	}
+}
+
+func squareUint16(num uint16) uint16 {
+	return num * num
+}
+
+func addUint16(num1, num2 uint16) uint16 {
+	return num1 + num2
+}
+
+func TestMapUint8(t *testing.T) {
+	// Test : square the list
+	expectedSquareList := []uint8{1, 4, 9}
+	squareList := MapUint8(squareUint8, []uint8{1, 2, 3})
+
+	if squareList[0] != expectedSquareList[0] || squareList[1] != expectedSquareList[1] || squareList[2] != expectedSquareList[2] {
+		t.Errorf("MapUint8 failed")
+	}
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []uint8{6, 7, 8}
+	partialAddUint8 := func(num uint8) uint8 {
+		return addUint8(5, num)
+	}
+	sumList := MapUint8(partialAddUint8, []uint8{1, 2, 3})
+	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
+		t.Errorf("MapUInt8 failed")
+	}
+	if len(MapUint8(nil, nil)) > 0 {
+		t.Errorf("MapUint8 failed.")
+	}
+}
+
+func squareUint8(num uint8) uint8 {
+	return num * num
+}
+
+func addUint8(num1, num2 uint8) uint8 {
+	return num1 + num2
+}
+
+func TestMapUint(t *testing.T) {
+	// Test : square the list
+	expectedSquareList := []uint{1, 4, 9}
+	squareList := MapUint(squareUint, []uint{1, 2, 3})
+
+	if squareList[0] != expectedSquareList[0] || squareList[1] != expectedSquareList[1] || squareList[2] != expectedSquareList[2] {
+		t.Errorf("MapUint failed")
+	}
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []uint{6, 7, 8}
+	partialAddUint := func(num uint) uint {
+		return addUint(5, num)
+	}
+	sumList := MapUint(partialAddUint, []uint{1, 2, 3})
+	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
+		t.Errorf("MapUInt failed")
+	}
+	if len(MapUint8(nil, nil)) > 0 {
+		t.Errorf("MapUint failed.")
+	}
+}
+
+func squareUint(num uint) uint {
+	return num * num
+}
+
+func addUint(num1, num2 uint) uint {
+	return num1 + num2
+}
+
 func TestMapFloat64(t *testing.T) {
 	// Test : square the list
 	expectedSquareList := []float64{1.2100000000000002, 4.840000000000001, 10.889999999999999}

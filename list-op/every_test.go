@@ -127,6 +127,131 @@ func TestEveryInt8(t *testing.T) {
 	}
 }
 
+func TestEveryUInt64(t *testing.T) {
+	// Test : every value in the list is even number
+	list1 := []uint64{8, 2, 10, 4}
+	if !EveryUint64(isEvenUint64, list1) {
+		t.Errorf("EveryUInt32 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint64{8, 2, 10, 5, 4}
+	if EveryUint64(isEvenUint64, list2) {
+		t.Errorf("EveryUint64 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint64(isEvenUint64, nil) {
+		t.Errorf("EveryUint64 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint64(isEvenUint64, []uint64{}) {
+		t.Errorf("EveryUint64 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint64(nil, nil) {
+		t.Errorf("EveryUint64 failed. Expected=false, actual=true")
+	}
+}
+
+func TestEveryUInt32(t *testing.T) {
+	// Test : every value in the list is even number
+	list1 := []uint32{8, 2, 10, 4}
+	if !EveryUint32(isEvenUint32, list1) {
+		t.Errorf("EveryUint32 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint32{8, 2, 10, 5, 4}
+	if EveryUint32(isEvenUint32, list2) {
+		t.Errorf("EveryUint32 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint32(isEvenUint32, nil) {
+		t.Errorf("EveryUint32 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint32(isEvenUint32, []uint32{}) {
+		t.Errorf("EveryUint32 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint32(nil, nil) {
+		t.Errorf("EveryUint32 failed. Expected=false, actual=true")
+	}
+}
+
+func TestEveryUInt16(t *testing.T) {
+	// Test : every value in the list is even number
+	list1 := []uint16{8, 2, 10, 4}
+	if !EveryUint16(isEvenUint16, list1) {
+		t.Errorf("EveryUint16 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint16{8, 2, 10, 5, 4}
+	if EveryUint16(isEvenUint16, list2) {
+		t.Errorf("EveryUint16 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint16(isEvenUint16, nil) {
+		t.Errorf("EveryUint16 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint16(isEvenUint16, []uint16{}) {
+		t.Errorf("EveryUint16 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint16(nil, nil) {
+		t.Errorf("EveryUint16 failed. Expected=false, actual=true")
+	}
+}
+
+func TestEveryUInt8(t *testing.T) {
+	// Test : every value in the list is even number
+	list1 := []uint8{8, 2, 10, 4}
+	if !EveryUint8(isEvenUint8, list1) {
+		t.Errorf("EveryUint8 failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint8{8, 2, 10, 5, 4}
+	if EveryUint8(isEvenUint8, list2) {
+		t.Errorf("EveryUint8 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint8(isEvenUint8, nil) {
+		t.Errorf("EveryUint8 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint8(isEvenUint8, []uint8{}) {
+		t.Errorf("EveryUint8 failed. Expected=false, actual=true")
+	}
+
+	if EveryUint8(nil, nil) {
+		t.Errorf("EveryUint8 failed. Expected=false, actual=true")
+	}
+}
+
+func TestEveryUInt(t *testing.T) {
+	// Test : every value in the list is even number
+	list1 := []uint{8, 2, 10, 4}
+	if !EveryUint(isEvenUint, list1) {
+		t.Errorf("EveryUint failed. Expected=true, actual=false")
+	}
+
+	list2 := []uint{8, 2, 10, 5, 4}
+	if EveryUint(isEvenUint, list2) {
+		t.Errorf("EveryUint failed. Expected=false, actual=true")
+	}
+
+	if EveryUint(isEvenUint, nil) {
+		t.Errorf("EveryUint failed. Expected=false, actual=true")
+	}
+
+	if EveryUint(isEvenUint, []uint{}) {
+		t.Errorf("EveryUint failed. Expected=false, actual=true")
+	}
+
+	if EveryUint(nil, nil) {
+		t.Errorf("EveryUint failed. Expected=false, actual=true")
+	}
+}
+
 func TestEveryFloat64(t *testing.T) {
 	// Test : every value in the list is positive number
 	list1 := []float64{8.2, 2.3, 10.4, 4}

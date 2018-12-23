@@ -55,6 +55,61 @@ func MapInt16(f func(int16) int16, list []int16) []int16 {
 	return newList
 }
 
+func MapUint64(f func(uint64) uint64, list []uint64) []uint64 {
+	if f == nil {
+		return []uint64{}
+	}
+	newList := make([]uint64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+func MapUint32(f func(uint32) uint32, list []uint32) []uint32 {
+	if f == nil {
+		return []uint32{}
+	}
+	newList := make([]uint32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+func MapUint16(f func(uint16) uint16, list []uint16) []uint16 {
+	if f == nil {
+		return []uint16{}
+	}
+	newList := make([]uint16, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+func MapUint8(f func(uint8) uint8, list []uint8) []uint8 {
+	if f == nil {
+		return []uint8{}
+	}
+	newList := make([]uint8, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+func MapUint(f func(uint) uint, list []uint) []uint {
+	if f == nil {
+		return []uint{}
+	}
+	newList := make([]uint, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 func MapFloat64(f func(float64) float64, list []float64) []float64 {
 	if f == nil {
 		return []float64{}

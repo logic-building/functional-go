@@ -117,6 +117,91 @@ func multiplyBy2Int8(num int8) int8 {
 	return num * 2
 }
 
+func TestFilterMapUint64(t *testing.T) {
+	// Test : Multiply all even numbers in the list by 2
+	expectedFilteredList := []uint64{4, 8}
+	filteredList := FilterMapUint64(isEvenUint64, multiplyBy2Uint64, []uint64{1, 3, 2, 4})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("FilterMapUint64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapUint64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint64 failed.")
+	}
+}
+
+func multiplyBy2Uint64(num uint64) uint64 {
+	return num * 2
+}
+
+func TestFilterMapUint32(t *testing.T) {
+	// Test : Multiply all even numbers in the list by 2
+	expectedFilteredList := []uint32{4, 8}
+	filteredList := FilterMapUint32(isEvenUint32, multiplyBy2Uint32, []uint32{1, 3, 2, 4})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("FilterMapUint32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapUint64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint32 failed.")
+	}
+}
+
+func multiplyBy2Uint32(num uint32) uint32 {
+	return num * 2
+}
+
+func TestFilterMapUint16(t *testing.T) {
+	// Test : Multiply all even numbers in the list by 2
+	expectedFilteredList := []uint16{4, 8}
+	filteredList := FilterMapUint16(isEvenUint16, multiplyBy2Uint16, []uint16{1, 3, 2, 4})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("FilterMapUint16 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapUint16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint16 failed.")
+	}
+}
+
+func multiplyBy2Uint16(num uint16) uint16 {
+	return num * 2
+}
+
+func TestFilterMapUint8(t *testing.T) {
+	// Test : Multiply all even numbers in the list by 2
+	expectedFilteredList := []uint8{4, 8}
+	filteredList := FilterMapUint8(isEvenUint8, multiplyBy2Uint8, []uint8{1, 3, 2, 4})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("FilterMapUint8 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapUint16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint8 failed.")
+	}
+}
+
+func multiplyBy2Uint8(num uint8) uint8 {
+	return num * 2
+}
+
+func TestFilterMapUint(t *testing.T) {
+	// Test : Multiply all even numbers in the list by 2
+	expectedFilteredList := []uint{4, 8}
+	filteredList := FilterMapUint(isEvenUint, multiplyBy2Uint, []uint{1, 3, 2, 4})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("FilterMapUint failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapUint16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint failed.")
+	}
+}
+
+func multiplyBy2Uint(num uint) uint {
+	return num * 2
+}
+
 func TestFilterMapFloat64(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 	expectedFilteredList := []float64{4, 8}

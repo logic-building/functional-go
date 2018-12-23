@@ -65,6 +65,71 @@ func FilterInt8(f func(int8) bool, list []int8) []int8 {
 	return newList
 }
 
+func FilterUint64(f func(uint64) bool, list []uint64) []uint64 {
+	if f == nil {
+		return []uint64{}
+	}
+	var newList []uint64
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
+func FilterUint32(f func(uint32) bool, list []uint32) []uint32 {
+	if f == nil {
+		return []uint32{}
+	}
+	var newList []uint32
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
+func FilterUint16(f func(uint16) bool, list []uint16) []uint16 {
+	if f == nil {
+		return []uint16{}
+	}
+	var newList []uint16
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
+func FilterUint8(f func(uint8) bool, list []uint8) []uint8 {
+	if f == nil {
+		return []uint8{}
+	}
+	var newList []uint8
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
+func FilterUint(f func(uint) bool, list []uint) []uint {
+	if f == nil {
+		return []uint{}
+	}
+	var newList []uint
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
 func FilterFloat64(f func(float64) bool, list []float64) []float64 {
 	if f == nil {
 		return []float64{}
