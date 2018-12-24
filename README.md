@@ -115,6 +115,36 @@ MinUint16
 MinUint8
 MinFloat64
 MinFloat32
+
+Takes number or string and list as arguments and remove the given item and returns the list
+RemoveInt
+RemoveInts
+RemoveInt64
+RemoveInts64
+RemoveInt32
+RemoveInts32
+RemoveInt16
+RemoveInts16
+RemoveInt8
+RemoveInts8
+RemoveUint
+RemoveUInts
+RemoveUint64
+RemoveUints64
+RemoveUint32
+RemoveUints32
+RemoveUint16
+RemoveUints16
+RemoveUint8
+RemoveUints8
+RemoveFloat64
+RemoveFloats64
+RemoveFloat32
+RemoeFloats32
+RemoveStr
+RemoveStrIgnoreCase
+RemoveStrs
+RemoveStrsIgnoreCase
 ```
 
 ### Example1 - Map : return the list of the square of each items in the list
@@ -182,6 +212,11 @@ max := MaxInt(list) // returns 10
 ```
 list := []int{8, 2, 10, 4}
 min := MinInt(list) // returns 2
+```
+
+### Example8 - Remove: Remove num or string from list
+```
+newList := RemoveInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
 ```
 
 ### BenchMark test:

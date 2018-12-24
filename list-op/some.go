@@ -1,5 +1,7 @@
 package list_op
 
+import "strings"
+
 func SomeInt(num int, list []int) bool {
 	for _, v := range list {
 		if v == num {
@@ -111,6 +113,16 @@ func SomeFloat32(num float32, list []float32) bool {
 func SomeStr(num string, list []string) bool {
 	for _, v := range list {
 		if v == num {
+			return true
+		}
+	}
+	return false
+}
+
+func SomeStrIgnoreCase(str string, list []string) bool {
+	strLowerCase := strings.ToLower(str)
+	for _, v := range list {
+		if strings.ToLower(v) == strLowerCase {
 			return true
 		}
 	}

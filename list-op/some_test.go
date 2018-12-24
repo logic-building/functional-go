@@ -287,3 +287,25 @@ func TestSomeStr(t *testing.T) {
 		t.Errorf("SomeStr failed. Expected=false, actual=true")
 	}
 }
+
+func TestSomeStrIgnoreCase(t *testing.T) {
+	// Test : value exist in the list
+
+	list1 := []string{"shyam", "ram", "Hanuman"}
+	if !SomeStrIgnoreCase("rAm", list1) {
+		t.Errorf("SomeStrIgnoreCase failed. Expected=true, actual=false")
+	}
+
+	list2 := []string{"shyam", "ram", "Hanuman"}
+	if SomeStrIgnoreCase("radha", list2) {
+		t.Errorf("SomeStrIgnoreCase failed. Expected=false, actual=true")
+	}
+
+	if SomeStrIgnoreCase("80", nil) {
+		t.Errorf("SomeStrIgnoreCase failed. Expected=false, actual=true")
+	}
+
+	if SomeStr("80", []string{}) {
+		t.Errorf("SomeStrIgnoreCase failed. Expected=false, actual=true")
+	}
+}
