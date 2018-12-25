@@ -14,6 +14,21 @@ version = "1.1"
 
 ### Contains functions
 ```
+Takes list as argument and returns Distinct list
+DistinctInt
+DistinctInt64
+DistinctInt32
+DistinctInt16
+DistinctInt8
+DistinctUint
+DistinctUint64
+DistinctUint32
+DistinctUint16
+DistinctUint8
+DistinctFloat64
+DistinctFloat32
+DistinctStr
+
 Takes function as argument and apply it on each item in the list and return list
 MapInt
 MapInt64
@@ -217,6 +232,12 @@ min := MinInt(list) // returns 2
 ### Example8 - Remove: Remove num or string from list
 ```
 newList := RemoveInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
+```
+
+### Example9 - Distinct: returns distinct list
+```
+list := []int{8, 2, 8, 0, 2, 0}
+distinct := DistinctInt(list) // returns [8, 2, 0]
 ```
 
 ### BenchMark test:
