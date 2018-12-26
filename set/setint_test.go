@@ -12,7 +12,7 @@ func TestSetIntAdd(t *testing.T) {
 	mySet.Add(40)
 	mySet.Add(40)
 
-	for _, num := range mySet.getList() {
+	for _, num := range mySet.GetList() {
 		if !list_op.SomeInt(num, expected) {
 			t.Errorf("TestSetIntAdd failed")
 		}
@@ -28,7 +28,7 @@ func TestSetIntRemove(t *testing.T) {
 	mySet.Remove(30)
 	mySet.Remove(40)
 
-	for _, num := range mySet.getList() {
+	for _, num := range mySet.GetList() {
 		if !list_op.SomeInt(num, expected) {
 			t.Errorf("TestSetIntRemove failed")
 		}
@@ -44,7 +44,7 @@ func TestSetIntClear(t *testing.T) {
 	mySet.Remove(40)
 	mySet.Clear()
 
-	if len(mySet.getList()) != 0 {
+	if len(mySet.GetList()) != 0 {
 		t.Errorf("TestSetIntClear failed.")
 	}
 }
@@ -82,7 +82,7 @@ func TestSetIntJoin(t *testing.T) {
 
 	mySet3 := mySet1.Union(mySet2)
 
-	for _, num := range mySet3.getList() {
+	for _, num := range mySet3.GetList() {
 		if !list_op.SomeInt(num, expected) {
 			t.Errorf("TestSetIntJoin failed")
 		}
@@ -100,9 +100,9 @@ func TestSetIntIntersection(t *testing.T) {
 
 	mySet3 := mySet1.Intersection(mySet2)
 
-	for _, num := range mySet3.getList() {
+	for _, num := range mySet3.GetList() {
 		if !list_op.SomeInt(num, expected) {
-			t.Errorf("TestSetIntIntersection failed. Expected=%v, Actual=%v", expected, mySet3.getList())
+			t.Errorf("TestSetIntIntersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
 }
@@ -118,9 +118,9 @@ func TestSetIntMinus(t *testing.T) {
 
 	mySet3 := mySet1.Minus(mySet2)
 
-	for _, num := range mySet3.getList() {
+	for _, num := range mySet3.GetList() {
 		if !list_op.SomeInt(num, expected) {
-			t.Errorf("TestSetIntMinus failed. Expected=%v, Actual=%v", expected, mySet3.getList())
+			t.Errorf("TestSetIntMinus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
 }

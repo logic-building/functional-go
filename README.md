@@ -161,9 +161,11 @@ RemoveStrIgnoreCase
 RemoveStrs
 RemoveStrsIgnoreCase
 
-Set operation
+Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
 SetIntSync
+SetInt64
+SetInt64Sync
 ```
 
 ### Example1 - Map : return the list of the square of each items in the list
