@@ -9,7 +9,7 @@ go get github.com/logic-building/functional-go/list-op/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "1.1"
+version = "2.0"
 ```
 
 ### Contains functions
@@ -160,6 +160,10 @@ RemoveStr
 RemoveStrIgnoreCase
 RemoveStrs
 RemoveStrsIgnoreCase
+
+Set operation
+SetInt
+SetIntSync
 ```
 
 ### Example1 - Map : return the list of the square of each items in the list
@@ -238,6 +242,13 @@ newList := RemoveInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
 ```
 list := []int{8, 2, 8, 0, 2, 0}
 distinct := DistinctInt(list) // returns [8, 2, 0]
+```
+
+### Example10 - Set : Create set objects and apply union operation
+```
+	mySet1 := NewSetInt([]int{10, 20, 30, 20})
+	mySet2 := NewSetInt([]int{30, 40, 50})
+	mySet3 := mySet1.Union(mySet2) // Returns  [10, 20, 30, 40, 50]
 ```
 
 ### BenchMark test:
