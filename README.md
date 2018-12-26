@@ -172,6 +172,22 @@ SetInt16
 SetInt16Sync
 SetInt8
 SetInt8Sync
+SetUint
+SetUintSync
+SetUint64
+SetUint64Sync
+SetUint32
+SetUint32Sync
+SetUint16
+SetUint16Sync
+SetUint8
+SetUint8Sync
+SetUintFloat64
+SetUintFloat64Sync
+SetUintFloat32
+SetUintFloat32Sync
+SetStr
+SetStrSync
 ```
 
 ### Example1 - Map : return the list of the square of each items in the list
