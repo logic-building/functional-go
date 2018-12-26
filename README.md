@@ -3,13 +3,15 @@
 ### Install
 ```
 go get github.com/logic-building/functional-go/list-op/
+go get github.com/logic-building/functional-go/set/
+
 ```
 
 ### dep Gopkg.toml entry
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "2.0"
+version = "2.1"
 ```
 
 ### Contains functions
