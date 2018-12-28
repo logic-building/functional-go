@@ -4,7 +4,7 @@ type SetInt16 struct {
 	nodeMap map[int16]bool
 }
 
-func NewSetInt16(nums []int16) *SetInt16 {
+func NewInt16(nums []int16) *SetInt16 {
 	s := &SetInt16{}
 	for _, num := range nums {
 		s.Add(num)

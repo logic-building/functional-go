@@ -9,7 +9,7 @@ import (
 func TestSetFloat64SyncAdd(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
 	expected := []float64{10, 20, 30, 40}
-	mySet := NewSetFloat64Sync(list)
+	mySet := NewFloat64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetFloat64SyncAdd(t *testing.T) {
 func TestSetFloat64SyncRemove(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
 	expected := []float64{10, 20}
-	mySet := NewSetFloat64Sync(list)
+	mySet := NewFloat64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetFloat64SyncRemove(t *testing.T) {
 
 func TestSetFloat64SyncClear(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet := NewSetFloat64Sync(list)
+	mySet := NewFloat64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetFloat64SyncClear(t *testing.T) {
 
 func TestSetFloat64SyncContains(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet := NewSetFloat64Sync(list)
+	mySet := NewFloat64Sync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetFloat64Contains failed.")
@@ -65,7 +65,7 @@ func TestSetFloat64SyncContains(t *testing.T) {
 
 func TestSetFloat64SyncSize(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet := NewSetFloat64Sync(list)
+	mySet := NewFloat64Sync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetFloat64Size failed.")
@@ -74,10 +74,10 @@ func TestSetFloat64SyncSize(t *testing.T) {
 
 func TestSetFloat64SyncJoin(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet1 := NewSetFloat64Sync(list)
+	mySet1 := NewFloat64Sync(list)
 
 	list = []float64{30, 40, 50}
-	mySet2 := NewSetFloat64Sync(list)
+	mySet2 := NewFloat64Sync(list)
 
 	expected := []float64{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetFloat64SyncJoin(t *testing.T) {
 
 func TestSetFloat64SyncIntersection(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet1 := NewSetFloat64Sync(list)
+	mySet1 := NewFloat64Sync(list)
 
 	list = []float64{30, 40, 50}
-	mySet2 := NewSetFloat64Sync(list)
+	mySet2 := NewFloat64Sync(list)
 
 	expected := []float64{30}
 
@@ -110,10 +110,10 @@ func TestSetFloat64SyncIntersection(t *testing.T) {
 
 func TestSetFloat64SyncMinus(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet1 := NewSetFloat64Sync(list)
+	mySet1 := NewFloat64Sync(list)
 
 	list = []float64{30, 40, 50}
-	mySet2 := NewSetFloat64Sync(list)
+	mySet2 := NewFloat64Sync(list)
 
 	expected := []float64{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetFloat64SyncMinus(t *testing.T) {
 
 func TestSetFloat64SyncSubset(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet1 := NewSetFloat64Sync(list)
+	mySet1 := NewFloat64Sync(list)
 
 	list = []float64{10, 20}
-	mySet2 := NewSetFloat64Sync(list)
+	mySet2 := NewFloat64Sync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetFloat64SyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetFloat64SyncSubset(t *testing.T) {
 }
 
 func TestSetFloat64SyncSuperset(t *testing.T) {
-	mySet1 := NewSetFloat64Sync([]float64{10, 20, 30, 20})
-	mySet2 := NewSetFloat64Sync([]float64{10, 20})
+	mySet1 := NewFloat64Sync([]float64{10, 20, 30, 20})
+	mySet2 := NewFloat64Sync([]float64{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetFloat64SyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetFloat64SyncSuperset(t *testing.T) {
 		t.Errorf("TestSetFloat64SyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetFloat64Sync([]float64{10, 20, 30, 20})
-	mySet2 = NewSetFloat64Sync([]float64{10, 20, 30, 20})
+	mySet1 = NewFloat64Sync([]float64{10, 20, 30, 20})
+	mySet2 = NewFloat64Sync([]float64{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetFloat64SyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetFloat64Sync([]float64{10, 20, 30, 20, 40})
-	mySet2 = NewSetFloat64Sync([]float64{10, 20, 30, 20})
+	mySet1 = NewFloat64Sync([]float64{10, 20, 30, 20, 40})
+	mySet2 = NewFloat64Sync([]float64{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetFloat64SyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetFloat64SyncSuperset(t *testing.T) {
 }
 
 func TestSetFloat64SyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetFloat64Sync([]float64{1000})
+	mySet := NewFloat64Sync([]float64{1000})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

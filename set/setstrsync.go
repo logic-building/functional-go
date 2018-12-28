@@ -7,7 +7,7 @@ type SetStrSync struct {
 	sync.RWMutex
 }
 
-func NewSetStrSync(strList []string) *SetStrSync {
+func NewStrSync(strList []string) *SetStrSync {
 	s := &SetStrSync{}
 	for _, str := range strList {
 		s.Add(str)

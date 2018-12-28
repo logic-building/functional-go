@@ -9,7 +9,7 @@ import (
 func TestSetIntSyncAdd(t *testing.T) {
 	list := []int{10, 20, 30, 20}
 	expected := []int{10, 20, 30, 40}
-	mySet := NewSetIntSync(list)
+	mySet := NewIntSync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetIntSyncAdd(t *testing.T) {
 func TestSetIntSyncRemove(t *testing.T) {
 	list := []int{10, 20, 30, 20}
 	expected := []int{10, 20}
-	mySet := NewSetIntSync(list)
+	mySet := NewIntSync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetIntSyncRemove(t *testing.T) {
 
 func TestSetIntSyncClear(t *testing.T) {
 	list := []int{10, 20, 30, 20}
-	mySet := NewSetIntSync(list)
+	mySet := NewIntSync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetIntSyncClear(t *testing.T) {
 
 func TestSetIntSyncContains(t *testing.T) {
 	list := []int{10, 20, 30, 20}
-	mySet := NewSetIntSync(list)
+	mySet := NewIntSync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetIntContains failed.")
@@ -65,7 +65,7 @@ func TestSetIntSyncContains(t *testing.T) {
 
 func TestSetIntSyncSize(t *testing.T) {
 	list := []int{10, 20, 30, 20}
-	mySet := NewSetIntSync(list)
+	mySet := NewIntSync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetIntSize failed.")
@@ -74,10 +74,10 @@ func TestSetIntSyncSize(t *testing.T) {
 
 func TestSetIntSyncJoin(t *testing.T) {
 	list := []int{10, 20, 30, 20}
-	mySet1 := NewSetIntSync(list)
+	mySet1 := NewIntSync(list)
 
 	list = []int{30, 40, 50}
-	mySet2 := NewSetIntSync(list)
+	mySet2 := NewIntSync(list)
 
 	expected := []int{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetIntSyncJoin(t *testing.T) {
 
 func TestSetIntSyncIntersection(t *testing.T) {
 	list := []int{10, 20, 30, 20}
-	mySet1 := NewSetIntSync(list)
+	mySet1 := NewIntSync(list)
 
 	list = []int{30, 40, 50}
-	mySet2 := NewSetIntSync(list)
+	mySet2 := NewIntSync(list)
 
 	expected := []int{30}
 
@@ -110,10 +110,10 @@ func TestSetIntSyncIntersection(t *testing.T) {
 
 func TestSetIntSyncMinus(t *testing.T) {
 	list := []int{10, 20, 30, 20}
-	mySet1 := NewSetIntSync(list)
+	mySet1 := NewIntSync(list)
 
 	list = []int{30, 40, 50}
-	mySet2 := NewSetIntSync(list)
+	mySet2 := NewIntSync(list)
 
 	expected := []int{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetIntSyncMinus(t *testing.T) {
 
 func TestSetIntSyncSubset(t *testing.T) {
 	list := []int{10, 20, 30, 20}
-	mySet1 := NewSetIntSync(list)
+	mySet1 := NewIntSync(list)
 
 	list = []int{10, 20}
-	mySet2 := NewSetIntSync(list)
+	mySet2 := NewIntSync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetIntSyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetIntSyncSubset(t *testing.T) {
 }
 
 func TestSetIntSyncSuperset(t *testing.T) {
-	mySet1 := NewSetIntSync([]int{10, 20, 30, 20})
-	mySet2 := NewSetIntSync([]int{10, 20})
+	mySet1 := NewIntSync([]int{10, 20, 30, 20})
+	mySet2 := NewIntSync([]int{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetIntSyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetIntSyncSuperset(t *testing.T) {
 		t.Errorf("TestSetIntSyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetIntSync([]int{10, 20, 30, 20})
-	mySet2 = NewSetIntSync([]int{10, 20, 30, 20})
+	mySet1 = NewIntSync([]int{10, 20, 30, 20})
+	mySet2 = NewIntSync([]int{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetIntSyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetIntSync([]int{10, 20, 30, 20, 40})
-	mySet2 = NewSetIntSync([]int{10, 20, 30, 20})
+	mySet1 = NewIntSync([]int{10, 20, 30, 20, 40})
+	mySet2 = NewIntSync([]int{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetIntSyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetIntSyncSuperset(t *testing.T) {
 }
 
 func TestSetIntSyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetIntSync([]int{1000})
+	mySet := NewIntSync([]int{1000})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

@@ -7,7 +7,7 @@ type SetUint8Sync struct {
 	sync.RWMutex
 }
 
-func NewSetUint8Sync(nums []uint8) *SetUint8Sync {
+func NewUint8Sync(nums []uint8) *SetUint8Sync {
 	s := &SetUint8Sync{}
 	for _, num := range nums {
 		s.Add(num)

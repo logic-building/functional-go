@@ -9,7 +9,7 @@ import (
 func TestSetInt16SyncAdd(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
 	expected := []int16{10, 20, 30, 40}
-	mySet := NewSetInt16Sync(list)
+	mySet := NewInt16Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetInt16SyncAdd(t *testing.T) {
 func TestSetInt16SyncRemove(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
 	expected := []int16{10, 20}
-	mySet := NewSetInt16Sync(list)
+	mySet := NewInt16Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetInt16SyncRemove(t *testing.T) {
 
 func TestSetInt16SyncClear(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
-	mySet := NewSetInt16Sync(list)
+	mySet := NewInt16Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetInt16SyncClear(t *testing.T) {
 
 func TestSetInt16SyncContains(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
-	mySet := NewSetInt16Sync(list)
+	mySet := NewInt16Sync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetInt16Contains failed.")
@@ -65,7 +65,7 @@ func TestSetInt16SyncContains(t *testing.T) {
 
 func TestSetInt16SyncSize(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
-	mySet := NewSetInt16Sync(list)
+	mySet := NewInt16Sync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetInt16Size failed.")
@@ -74,10 +74,10 @@ func TestSetInt16SyncSize(t *testing.T) {
 
 func TestSetInt16SyncJoin(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
-	mySet1 := NewSetInt16Sync(list)
+	mySet1 := NewInt16Sync(list)
 
 	list = []int16{30, 40, 50}
-	mySet2 := NewSetInt16Sync(list)
+	mySet2 := NewInt16Sync(list)
 
 	expected := []int16{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetInt16SyncJoin(t *testing.T) {
 
 func TestSetInt16SyncIntersection(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
-	mySet1 := NewSetInt16Sync(list)
+	mySet1 := NewInt16Sync(list)
 
 	list = []int16{30, 40, 50}
-	mySet2 := NewSetInt16Sync(list)
+	mySet2 := NewInt16Sync(list)
 
 	expected := []int16{30}
 
@@ -110,10 +110,10 @@ func TestSetInt16SyncIntersection(t *testing.T) {
 
 func TestSetInt16SyncMinus(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
-	mySet1 := NewSetInt16Sync(list)
+	mySet1 := NewInt16Sync(list)
 
 	list = []int16{30, 40, 50}
-	mySet2 := NewSetInt16Sync(list)
+	mySet2 := NewInt16Sync(list)
 
 	expected := []int16{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetInt16SyncMinus(t *testing.T) {
 
 func TestSetInt16SyncSubset(t *testing.T) {
 	list := []int16{10, 20, 30, 20}
-	mySet1 := NewSetInt16Sync(list)
+	mySet1 := NewInt16Sync(list)
 
 	list = []int16{10, 20}
-	mySet2 := NewSetInt16Sync(list)
+	mySet2 := NewInt16Sync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetInt16SyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetInt16SyncSubset(t *testing.T) {
 }
 
 func TestSetInt16SyncSuperset(t *testing.T) {
-	mySet1 := NewSetInt16Sync([]int16{10, 20, 30, 20})
-	mySet2 := NewSetInt16Sync([]int16{10, 20})
+	mySet1 := NewInt16Sync([]int16{10, 20, 30, 20})
+	mySet2 := NewInt16Sync([]int16{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetInt16SyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetInt16SyncSuperset(t *testing.T) {
 		t.Errorf("TestSetInt16SyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetInt16Sync([]int16{10, 20, 30, 20})
-	mySet2 = NewSetInt16Sync([]int16{10, 20, 30, 20})
+	mySet1 = NewInt16Sync([]int16{10, 20, 30, 20})
+	mySet2 = NewInt16Sync([]int16{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetInt16SyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetInt16Sync([]int16{10, 20, 30, 20, 40})
-	mySet2 = NewSetInt16Sync([]int16{10, 20, 30, 20})
+	mySet1 = NewInt16Sync([]int16{10, 20, 30, 20, 40})
+	mySet2 = NewInt16Sync([]int16{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetInt16SyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetInt16SyncSuperset(t *testing.T) {
 }
 
 func TestSetInt16SyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetInt16Sync([]int16{1000})
+	mySet := NewInt16Sync([]int16{1000})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

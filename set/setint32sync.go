@@ -7,7 +7,7 @@ type SetInt32Sync struct {
 	sync.RWMutex
 }
 
-func NewSetInt32Sync(nums []int32) *SetInt32Sync {
+func NewInt32Sync(nums []int32) *SetInt32Sync {
 	s := &SetInt32Sync{}
 	for _, num := range nums {
 		s.Add(num)

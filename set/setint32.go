@@ -4,7 +4,7 @@ type SetInt32 struct {
 	nodeMap map[int32]bool
 }
 
-func NewSetInt32(nums []int32) *SetInt32 {
+func NewInt32(nums []int32) *SetInt32 {
 	s := &SetInt32{}
 	for _, num := range nums {
 		s.Add(num)

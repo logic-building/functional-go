@@ -8,7 +8,7 @@ import (
 func TestSetUint32Add(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
 	expected := []uint32{10, 20, 30, 40}
-	mySet := NewSetUint32(list)
+	mySet := NewUint32(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -22,7 +22,7 @@ func TestSetUint32Add(t *testing.T) {
 func TestSetUint32Remove(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
 	expected := []uint32{10, 20}
-	mySet := NewSetUint32(list)
+	mySet := NewUint32(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -37,7 +37,7 @@ func TestSetUint32Remove(t *testing.T) {
 
 func TestSetUint32Clear(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
-	mySet := NewSetUint32(list)
+	mySet := NewUint32(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -51,7 +51,7 @@ func TestSetUint32Clear(t *testing.T) {
 
 func TestSetUint32Contains(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
-	mySet := NewSetUint32(list)
+	mySet := NewUint32(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetUint32Contains failed.")
@@ -64,7 +64,7 @@ func TestSetUint32Contains(t *testing.T) {
 
 func TestSetUint32Size(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
-	mySet := NewSetUint32(list)
+	mySet := NewUint32(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetUint32Size failed.")
@@ -73,10 +73,10 @@ func TestSetUint32Size(t *testing.T) {
 
 func TestSetUint32Join(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
-	mySet1 := NewSetUint32(list)
+	mySet1 := NewUint32(list)
 
 	list = []uint32{30, 40, 50}
-	mySet2 := NewSetUint32(list)
+	mySet2 := NewUint32(list)
 
 	expected := []uint32{10, 20, 30, 40, 50}
 
@@ -91,10 +91,10 @@ func TestSetUint32Join(t *testing.T) {
 
 func TestSetUint32Intersection(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
-	mySet1 := NewSetUint32(list)
+	mySet1 := NewUint32(list)
 
 	list = []uint32{30, 40, 50}
-	mySet2 := NewSetUint32(list)
+	mySet2 := NewUint32(list)
 
 	expected := []uint32{30}
 
@@ -109,10 +109,10 @@ func TestSetUint32Intersection(t *testing.T) {
 
 func TestSetUint32Minus(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
-	mySet1 := NewSetUint32(list)
+	mySet1 := NewUint32(list)
 
 	list = []uint32{30, 40, 50}
-	mySet2 := NewSetUint32(list)
+	mySet2 := NewUint32(list)
 
 	expected := []uint32{10, 20}
 
@@ -127,10 +127,10 @@ func TestSetUint32Minus(t *testing.T) {
 
 func TestSetUint32Subset(t *testing.T) {
 	list := []uint32{10, 20, 30, 20}
-	mySet1 := NewSetUint32(list)
+	mySet1 := NewUint32(list)
 
 	list = []uint32{10, 20}
-	mySet2 := NewSetUint32(list)
+	mySet2 := NewUint32(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetUint32Subset failed. Expected=true, Actual=false")
@@ -142,8 +142,8 @@ func TestSetUint32Subset(t *testing.T) {
 }
 
 func TestSetUint32Superset(t *testing.T) {
-	mySet1 := NewSetUint32([]uint32{10, 20, 30, 20})
-	mySet2 := NewSetUint32([]uint32{10, 20})
+	mySet1 := NewUint32([]uint32{10, 20, 30, 20})
+	mySet2 := NewUint32([]uint32{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetUint32Subset failed. Expected=true, Actual=false")
@@ -153,15 +153,15 @@ func TestSetUint32Superset(t *testing.T) {
 		t.Errorf("TestSetUint32Subset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetUint32([]uint32{10, 20, 30, 20})
-	mySet2 = NewSetUint32([]uint32{10, 20, 30, 20})
+	mySet1 = NewUint32([]uint32{10, 20, 30, 20})
+	mySet2 = NewUint32([]uint32{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint32Subset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetUint32([]uint32{10, 20, 30, 20, 40})
-	mySet2 = NewSetUint32([]uint32{10, 20, 30, 20})
+	mySet1 = NewUint32([]uint32{10, 20, 30, 20, 40})
+	mySet2 = NewUint32([]uint32{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint32Subset failed. Expected=false, Actual=true")

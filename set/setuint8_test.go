@@ -8,7 +8,7 @@ import (
 func TestSetUint8Add(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
 	expected := []uint8{10, 20, 30, 40}
-	mySet := NewSetUint8(list)
+	mySet := NewUint8(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -22,7 +22,7 @@ func TestSetUint8Add(t *testing.T) {
 func TestSetUint8Remove(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
 	expected := []uint8{10, 20}
-	mySet := NewSetUint8(list)
+	mySet := NewUint8(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -37,7 +37,7 @@ func TestSetUint8Remove(t *testing.T) {
 
 func TestSetUint8Clear(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet := NewSetUint8(list)
+	mySet := NewUint8(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -51,7 +51,7 @@ func TestSetUint8Clear(t *testing.T) {
 
 func TestSetUint8Contains(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet := NewSetUint8(list)
+	mySet := NewUint8(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetUint8Contains failed.")
@@ -64,7 +64,7 @@ func TestSetUint8Contains(t *testing.T) {
 
 func TestSetUint8Size(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet := NewSetUint8(list)
+	mySet := NewUint8(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetUint8Size failed.")
@@ -73,10 +73,10 @@ func TestSetUint8Size(t *testing.T) {
 
 func TestSetUint8Join(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8(list)
+	mySet1 := NewUint8(list)
 
 	list = []uint8{30, 40, 50}
-	mySet2 := NewSetUint8(list)
+	mySet2 := NewUint8(list)
 
 	expected := []uint8{10, 20, 30, 40, 50}
 
@@ -91,10 +91,10 @@ func TestSetUint8Join(t *testing.T) {
 
 func TestSetUint8Intersection(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8(list)
+	mySet1 := NewUint8(list)
 
 	list = []uint8{30, 40, 50}
-	mySet2 := NewSetUint8(list)
+	mySet2 := NewUint8(list)
 
 	expected := []uint8{30}
 
@@ -109,10 +109,10 @@ func TestSetUint8Intersection(t *testing.T) {
 
 func TestSetUint8Minus(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8(list)
+	mySet1 := NewUint8(list)
 
 	list = []uint8{30, 40, 50}
-	mySet2 := NewSetUint8(list)
+	mySet2 := NewUint8(list)
 
 	expected := []uint8{10, 20}
 
@@ -127,10 +127,10 @@ func TestSetUint8Minus(t *testing.T) {
 
 func TestSetUint8Subset(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8(list)
+	mySet1 := NewUint8(list)
 
 	list = []uint8{10, 20}
-	mySet2 := NewSetUint8(list)
+	mySet2 := NewUint8(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetUint8Subset failed. Expected=true, Actual=false")
@@ -142,8 +142,8 @@ func TestSetUint8Subset(t *testing.T) {
 }
 
 func TestSetUint8Superset(t *testing.T) {
-	mySet1 := NewSetUint8([]uint8{10, 20, 30, 20})
-	mySet2 := NewSetUint8([]uint8{10, 20})
+	mySet1 := NewUint8([]uint8{10, 20, 30, 20})
+	mySet2 := NewUint8([]uint8{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetUint8Subset failed. Expected=true, Actual=false")
@@ -153,15 +153,15 @@ func TestSetUint8Superset(t *testing.T) {
 		t.Errorf("TestSetUint8Subset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetUint8([]uint8{10, 20, 30, 20})
-	mySet2 = NewSetUint8([]uint8{10, 20, 30, 20})
+	mySet1 = NewUint8([]uint8{10, 20, 30, 20})
+	mySet2 = NewUint8([]uint8{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint8Subset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetUint8([]uint8{10, 20, 30, 20, 40})
-	mySet2 = NewSetUint8([]uint8{10, 20, 30, 20})
+	mySet1 = NewUint8([]uint8{10, 20, 30, 20, 40})
+	mySet2 = NewUint8([]uint8{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint8Subset failed. Expected=false, Actual=true")

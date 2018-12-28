@@ -9,7 +9,7 @@ import (
 func TestSetStrSyncAdd(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
 	expected := []string{"10", "20", "30", "40"}
-	mySet := NewSetStrSync(list)
+	mySet := NewStrSync(list)
 	mySet.Add("40")
 	mySet.Add("40")
 
@@ -23,7 +23,7 @@ func TestSetStrSyncAdd(t *testing.T) {
 func TestSetStrSyncRemove(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
 	expected := []string{"10", "20"}
-	mySet := NewSetStrSync(list)
+	mySet := NewStrSync(list)
 	mySet.Add("40")
 	mySet.Add("40")
 	mySet.Remove("30")
@@ -38,7 +38,7 @@ func TestSetStrSyncRemove(t *testing.T) {
 
 func TestSetStrSyncClear(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet := NewSetStrSync(list)
+	mySet := NewStrSync(list)
 	mySet.Add("40")
 	mySet.Add("40")
 	mySet.Remove("30")
@@ -52,7 +52,7 @@ func TestSetStrSyncClear(t *testing.T) {
 
 func TestSetStrSyncContains(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet := NewSetStrSync(list)
+	mySet := NewStrSync(list)
 
 	if !mySet.Contains("20") {
 		t.Errorf("TestSetStrContains failed.")
@@ -65,7 +65,7 @@ func TestSetStrSyncContains(t *testing.T) {
 
 func TestSetStrSyncSize(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet := NewSetStrSync(list)
+	mySet := NewStrSync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetStrSize failed.")
@@ -74,10 +74,10 @@ func TestSetStrSyncSize(t *testing.T) {
 
 func TestSetStrSyncJoin(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet1 := NewSetStrSync(list)
+	mySet1 := NewStrSync(list)
 
 	list = []string{"30", "40", "50"}
-	mySet2 := NewSetStrSync(list)
+	mySet2 := NewStrSync(list)
 
 	expected := []string{"10", "20", "30", "40", "50"}
 
@@ -92,10 +92,10 @@ func TestSetStrSyncJoin(t *testing.T) {
 
 func TestSetStrSyncIntersection(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet1 := NewSetStrSync(list)
+	mySet1 := NewStrSync(list)
 
 	list = []string{"30", "40", "50"}
-	mySet2 := NewSetStrSync(list)
+	mySet2 := NewStrSync(list)
 
 	expected := []string{"30"}
 
@@ -110,10 +110,10 @@ func TestSetStrSyncIntersection(t *testing.T) {
 
 func TestSetStrSyncMinus(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet1 := NewSetStrSync(list)
+	mySet1 := NewStrSync(list)
 
 	list = []string{"30", "40", "50"}
-	mySet2 := NewSetStrSync(list)
+	mySet2 := NewStrSync(list)
 
 	expected := []string{"10", "20"}
 
@@ -128,10 +128,10 @@ func TestSetStrSyncMinus(t *testing.T) {
 
 func TestSetStrSyncSubset(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet1 := NewSetStrSync(list)
+	mySet1 := NewStrSync(list)
 
 	list = []string{"10", "20"}
-	mySet2 := NewSetStrSync(list)
+	mySet2 := NewStrSync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetStrSyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetStrSyncSubset(t *testing.T) {
 }
 
 func TestSetStrSyncSuperset(t *testing.T) {
-	mySet1 := NewSetStrSync([]string{"10", "20", "30", "20"})
-	mySet2 := NewSetStrSync([]string{"10", "20"})
+	mySet1 := NewStrSync([]string{"10", "20", "30", "20"})
+	mySet2 := NewStrSync([]string{"10", "20"})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetStrSyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetStrSyncSuperset(t *testing.T) {
 		t.Errorf("TestSetStrSyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetStrSync([]string{"10", "20", "30", "20"})
-	mySet2 = NewSetStrSync([]string{"10", "20", "30", "20"})
+	mySet1 = NewStrSync([]string{"10", "20", "30", "20"})
+	mySet2 = NewStrSync([]string{"10", "20", "30", "20"})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetStrSyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetStrSync([]string{"10", "20", "30", "20", "40"})
-	mySet2 = NewSetStrSync([]string{"10", "20", "30", "20"})
+	mySet1 = NewStrSync([]string{"10", "20", "30", "20", "40"})
+	mySet2 = NewStrSync([]string{"10", "20", "30", "20"})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetStrSyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetStrSyncSuperset(t *testing.T) {
 }
 
 func TestSetStrSyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetStrSync([]string{"10"})
+	mySet := NewStrSync([]string{"10"})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

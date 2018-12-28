@@ -8,7 +8,7 @@ import (
 func TestSetFloat64Add(t *testing.T) {
 	list := []float64{10.2, 20, 30, 20}
 	expected := []float64{10.2, 20, 30, 40}
-	mySet := NewSetFloat64(list)
+	mySet := NewFloat64(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -22,7 +22,7 @@ func TestSetFloat64Add(t *testing.T) {
 func TestSetFloat64Remove(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
 	expected := []float64{10, 20}
-	mySet := NewSetFloat64(list)
+	mySet := NewFloat64(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -37,7 +37,7 @@ func TestSetFloat64Remove(t *testing.T) {
 
 func TestSetFloat64Clear(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet := NewSetFloat64(list)
+	mySet := NewFloat64(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -51,7 +51,7 @@ func TestSetFloat64Clear(t *testing.T) {
 
 func TestSetFloat64Contains(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet := NewSetFloat64(list)
+	mySet := NewFloat64(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetFloat64Contains failed.")
@@ -64,7 +64,7 @@ func TestSetFloat64Contains(t *testing.T) {
 
 func TestSetFloat64Size(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet := NewSetFloat64(list)
+	mySet := NewFloat64(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetFloat64Size failed.")
@@ -73,10 +73,10 @@ func TestSetFloat64Size(t *testing.T) {
 
 func TestSetFloat64Join(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet1 := NewSetFloat64(list)
+	mySet1 := NewFloat64(list)
 
 	list = []float64{30, 40, 50}
-	mySet2 := NewSetFloat64(list)
+	mySet2 := NewFloat64(list)
 
 	expected := []float64{10, 20, 30, 40, 50}
 
@@ -91,10 +91,10 @@ func TestSetFloat64Join(t *testing.T) {
 
 func TestSetFloat64Intersection(t *testing.T) {
 	list := []float64{10, 20, 30.3, 20}
-	mySet1 := NewSetFloat64(list)
+	mySet1 := NewFloat64(list)
 
 	list = []float64{30.3, 40, 50}
-	mySet2 := NewSetFloat64(list)
+	mySet2 := NewFloat64(list)
 
 	expected := []float64{30.3}
 
@@ -109,10 +109,10 @@ func TestSetFloat64Intersection(t *testing.T) {
 
 func TestSetFloat64Minus(t *testing.T) {
 	list := []float64{10, 20, 30, 20}
-	mySet1 := NewSetFloat64(list)
+	mySet1 := NewFloat64(list)
 
 	list = []float64{30, 40, 50}
-	mySet2 := NewSetFloat64(list)
+	mySet2 := NewFloat64(list)
 
 	expected := []float64{10, 20}
 
@@ -127,10 +127,10 @@ func TestSetFloat64Minus(t *testing.T) {
 
 func TestSetFloat64Subset(t *testing.T) {
 	list := []float64{10.2, 20, 30, 20}
-	mySet1 := NewSetFloat64(list)
+	mySet1 := NewFloat64(list)
 
 	list = []float64{10.2, 20}
-	mySet2 := NewSetFloat64(list)
+	mySet2 := NewFloat64(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetFloat64Subset failed. Expected=true, Actual=false")
@@ -142,8 +142,8 @@ func TestSetFloat64Subset(t *testing.T) {
 }
 
 func TestSetFloat64Superset(t *testing.T) {
-	mySet1 := NewSetFloat64([]float64{10, 20, 30, 20})
-	mySet2 := NewSetFloat64([]float64{10, 20})
+	mySet1 := NewFloat64([]float64{10, 20, 30, 20})
+	mySet2 := NewFloat64([]float64{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetFloat64Subset failed. Expected=true, Actual=false")
@@ -153,15 +153,15 @@ func TestSetFloat64Superset(t *testing.T) {
 		t.Errorf("TestSetFloat64Subset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetFloat64([]float64{10, 20, 30, 20})
-	mySet2 = NewSetFloat64([]float64{10, 20, 30, 20})
+	mySet1 = NewFloat64([]float64{10, 20, 30, 20})
+	mySet2 = NewFloat64([]float64{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetFloat64Subset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetFloat64([]float64{10, 20, 30, 20, 40})
-	mySet2 = NewSetFloat64([]float64{10, 20, 30, 20})
+	mySet1 = NewFloat64([]float64{10, 20, 30, 20, 40})
+	mySet2 = NewFloat64([]float64{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetFloat64Subset failed. Expected=false, Actual=true")

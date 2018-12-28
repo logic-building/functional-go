@@ -4,7 +4,7 @@ type SetFloat64 struct {
 	nodeMap map[float64]bool
 }
 
-func NewSetFloat64(nums []float64) *SetFloat64 {
+func NewFloat64(nums []float64) *SetFloat64 {
 	s := &SetFloat64{}
 	for _, num := range nums {
 		s.Add(num)

@@ -4,7 +4,7 @@ type SetUint64 struct {
 	nodeMap map[uint64]bool
 }
 
-func NewSetUint64(nums []uint64) *SetUint64 {
+func NewUint64(nums []uint64) *SetUint64 {
 	s := &SetUint64{}
 	for _, num := range nums {
 		s.Add(num)

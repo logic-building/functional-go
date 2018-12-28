@@ -9,7 +9,7 @@ import (
 func TestSetUintSyncAdd(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
 	expected := []uint{10, 20, 30, 40}
-	mySet := NewSetUintSync(list)
+	mySet := NewUintSync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetUintSyncAdd(t *testing.T) {
 func TestSetUintSyncRemove(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
 	expected := []uint{10, 20}
-	mySet := NewSetUintSync(list)
+	mySet := NewUintSync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetUintSyncRemove(t *testing.T) {
 
 func TestSetUintSyncClear(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
-	mySet := NewSetUintSync(list)
+	mySet := NewUintSync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetUintSyncClear(t *testing.T) {
 
 func TestSetUintSyncContains(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
-	mySet := NewSetUintSync(list)
+	mySet := NewUintSync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetUintContains failed.")
@@ -65,7 +65,7 @@ func TestSetUintSyncContains(t *testing.T) {
 
 func TestSetUintSyncSize(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
-	mySet := NewSetUintSync(list)
+	mySet := NewUintSync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetUintSize failed.")
@@ -74,10 +74,10 @@ func TestSetUintSyncSize(t *testing.T) {
 
 func TestSetUintSyncJoin(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
-	mySet1 := NewSetUintSync(list)
+	mySet1 := NewUintSync(list)
 
 	list = []uint{30, 40, 50}
-	mySet2 := NewSetUintSync(list)
+	mySet2 := NewUintSync(list)
 
 	expected := []uint{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetUintSyncJoin(t *testing.T) {
 
 func TestSetUintSyncIntersection(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
-	mySet1 := NewSetUintSync(list)
+	mySet1 := NewUintSync(list)
 
 	list = []uint{30, 40, 50}
-	mySet2 := NewSetUintSync(list)
+	mySet2 := NewUintSync(list)
 
 	expected := []uint{30}
 
@@ -110,10 +110,10 @@ func TestSetUintSyncIntersection(t *testing.T) {
 
 func TestSetUintSyncMinus(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
-	mySet1 := NewSetUintSync(list)
+	mySet1 := NewUintSync(list)
 
 	list = []uint{30, 40, 50}
-	mySet2 := NewSetUintSync(list)
+	mySet2 := NewUintSync(list)
 
 	expected := []uint{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetUintSyncMinus(t *testing.T) {
 
 func TestSetUintSyncSubset(t *testing.T) {
 	list := []uint{10, 20, 30, 20}
-	mySet1 := NewSetUintSync(list)
+	mySet1 := NewUintSync(list)
 
 	list = []uint{10, 20}
-	mySet2 := NewSetUintSync(list)
+	mySet2 := NewUintSync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetUintSyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetUintSyncSubset(t *testing.T) {
 }
 
 func TestSetUintSyncSuperset(t *testing.T) {
-	mySet1 := NewSetUintSync([]uint{10, 20, 30, 20})
-	mySet2 := NewSetUintSync([]uint{10, 20})
+	mySet1 := NewUintSync([]uint{10, 20, 30, 20})
+	mySet2 := NewUintSync([]uint{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetUintSyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetUintSyncSuperset(t *testing.T) {
 		t.Errorf("TestSetUintSyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetUintSync([]uint{10, 20, 30, 20})
-	mySet2 = NewSetUintSync([]uint{10, 20, 30, 20})
+	mySet1 = NewUintSync([]uint{10, 20, 30, 20})
+	mySet2 = NewUintSync([]uint{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUintSyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetUintSync([]uint{10, 20, 30, 20, 40})
-	mySet2 = NewSetUintSync([]uint{10, 20, 30, 20})
+	mySet1 = NewUintSync([]uint{10, 20, 30, 20, 40})
+	mySet2 = NewUintSync([]uint{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUintSyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetUintSyncSuperset(t *testing.T) {
 }
 
 func TestSetUintSyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetUintSync([]uint{100})
+	mySet := NewUintSync([]uint{100})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

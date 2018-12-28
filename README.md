@@ -1,5 +1,6 @@
-# functional-go
+# functional-go : Functional programming in golang. This library is inspired by clojure.
 ## Simple but functional
+
 ### Install
 ```
 go get github.com/logic-building/functional-go/list-op/
@@ -272,8 +273,8 @@ distinct := DistinctInt(list) // returns [8, 2, 0]
 
 ### Example10 - Set : Create set objects and apply union operation
 ```
-	mySet1 := NewSetInt([]int{10, 20, 30, 20})
-	mySet2 := NewSetInt([]int{30, 40, 50})
+	mySet1 := set.NewInt([]int{10, 20, 30, 20})
+	mySet2 := set.NewInt([]int{30, 40, 50})
 	mySet3 := mySet1.Union(mySet2) // Returns  [10, 20, 30, 40, 50]
 ```
 

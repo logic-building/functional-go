@@ -4,7 +4,7 @@ type SetFloat32 struct {
 	nodeMap map[float32]bool
 }
 
-func NewSetFloat32(nums []float32) *SetFloat32 {
+func NewFloat32(nums []float32) *SetFloat32 {
 	s := &SetFloat32{}
 	for _, num := range nums {
 		s.Add(num)

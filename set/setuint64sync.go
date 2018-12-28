@@ -7,7 +7,7 @@ type SetUint64Sync struct {
 	sync.RWMutex
 }
 
-func NewSetUint64Sync(nums []uint64) *SetUint64Sync {
+func NewUint64Sync(nums []uint64) *SetUint64Sync {
 	s := &SetUint64Sync{}
 	for _, num := range nums {
 		s.Add(num)
