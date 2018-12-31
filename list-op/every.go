@@ -1,5 +1,19 @@
 package list_op
 
+func Every(f func() bool, list []bool) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+
+	b := f()
+	for _, v := range list {
+		if !(b == v) {
+			return false
+		}
+	}
+	return true
+}
+
 func EveryInt(f func(int) bool, list []int) bool {
 	if f == nil || len(list) == 0 {
 		return false

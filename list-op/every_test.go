@@ -1,6 +1,27 @@
 package list_op
 
-import "testing"
+import (
+	bool2 "functional-go/bool"
+	"testing"
+)
+
+func TestEvery(t *testing.T) {
+	// Test : every value in the list is either true or false
+	list1 := []bool{true, true, true, true}
+	if !Every(bool2.True, list1) {
+		t.Errorf("Every failed. Expected=true, actual=false")
+	}
+
+	list1 = []bool{true, false, true, true}
+	if Every(bool2.True, list1) {
+		t.Errorf("Every failed. Expected=false, actual=true")
+	}
+
+	list1 = []bool{false, false, false, false}
+	if !Every(bool2.False, list1) {
+		t.Errorf("Every failed. Expected=true, actual=false")
+	}
+}
 
 func TestEveryInt(t *testing.T) {
 	// Test : every value in the list is even number
