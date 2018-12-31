@@ -17,7 +17,7 @@ version = "2.1"
 
 ### Contains functions
 ```
-Takes list as argument and returns Distinct list
+Takes list as argument and returns Distinct list.  Returns empty list if 2nd parameter is empty or nil
 DistinctInt
 DistinctInt64
 DistinctInt32
@@ -77,7 +77,7 @@ FilterMapFloat64
 FilterMapFloat32
 FilterMapStr
 
-Takes function as argument and apply it on each item in the list and return true/false
+Takes function as argument and apply it on each item in the list and return true/false. Returns false if 2nd argument is empty
 Every : Takes two arguments
         a. function without arguments and returns bool
         b. list of boolean values
