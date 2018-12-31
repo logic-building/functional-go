@@ -17,7 +17,7 @@ version = "2.1"
 
 ### Contains functions
 ```
-Takes list as argument and returns Distinct list
+Takes list as argument and returns Distinct list.  Returns empty list if 2nd parameter is empty or nil
 DistinctInt
 DistinctInt64
 DistinctInt32
@@ -77,8 +77,22 @@ FilterMapFloat64
 FilterMapFloat32
 FilterMapStr
 
-Takes function as argument and apply it on each item in the list and return true/false
-EveryInt
+Takes function as argument and apply it on each item in the list and return true/false. Returns false if 2nd argument is empty
+Every : Takes two arguments
+        a. function without arguments and returns bool
+        b. list of boolean values
+
+        return:
+           true if all the values in the list are true, otherwise false
+           See example below
+
+
+EveryInt :
+       Takes two arguments
+        a. function with 1 argument type int and returns bool
+        b. list of int
+
+        return: True if function-1st argument returns true for each item in the list, otherwise false
 EveryInt64
 EveryInt32
 EveryInt16
@@ -238,6 +252,10 @@ output:
 
 ### Example4 - Every: Test if every number in the list is even
 ```
+import bool2 "functional-go/bool"
+list := []bool{true, true, true, true}
+Every(bool2.True, list1)  // Returns true
+
 list1 := []int{8, 2, 10, 4}
 EveryInt(isEven, list1) // Returns true
 ```
