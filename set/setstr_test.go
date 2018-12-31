@@ -8,7 +8,7 @@ import (
 func TestSetStrAdd(t *testing.T) {
 	list := []string{"10.2", "20", "30", "20"}
 	expected := []string{"10.2", "20", "30", "40"}
-	mySet := NewSetStr(list)
+	mySet := NewStr(list)
 	mySet.Add("40")
 	mySet.Add("40")
 
@@ -22,7 +22,7 @@ func TestSetStrAdd(t *testing.T) {
 func TestSetStrRemove(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
 	expected := []string{"10", "20"}
-	mySet := NewSetStr(list)
+	mySet := NewStr(list)
 	mySet.Add("40")
 	mySet.Add("40")
 	mySet.Remove("30")
@@ -37,7 +37,7 @@ func TestSetStrRemove(t *testing.T) {
 
 func TestSetStrClear(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet := NewSetStr(list)
+	mySet := NewStr(list)
 	mySet.Add("40")
 	mySet.Add("40")
 	mySet.Remove("30")
@@ -51,7 +51,7 @@ func TestSetStrClear(t *testing.T) {
 
 func TestSetStrContains(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet := NewSetStr(list)
+	mySet := NewStr(list)
 
 	if !mySet.Contains("20") {
 		t.Errorf("TestSetStrContains failed.")
@@ -64,7 +64,7 @@ func TestSetStrContains(t *testing.T) {
 
 func TestSetStrSize(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet := NewSetStr(list)
+	mySet := NewStr(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetStrSize failed.")
@@ -73,10 +73,10 @@ func TestSetStrSize(t *testing.T) {
 
 func TestSetStrJoin(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet1 := NewSetStr(list)
+	mySet1 := NewStr(list)
 
 	list = []string{"30", "40", "50"}
-	mySet2 := NewSetStr(list)
+	mySet2 := NewStr(list)
 
 	expected := []string{"10", "20", "30", "40", "50"}
 
@@ -91,10 +91,10 @@ func TestSetStrJoin(t *testing.T) {
 
 func TestSetStrIntersection(t *testing.T) {
 	list := []string{"10", "20", "30.3", "20"}
-	mySet1 := NewSetStr(list)
+	mySet1 := NewStr(list)
 
 	list = []string{"30.3", "40", "50"}
-	mySet2 := NewSetStr(list)
+	mySet2 := NewStr(list)
 
 	expected := []string{"30.3"}
 
@@ -109,10 +109,10 @@ func TestSetStrIntersection(t *testing.T) {
 
 func TestSetStrMinus(t *testing.T) {
 	list := []string{"10", "20", "30", "20"}
-	mySet1 := NewSetStr(list)
+	mySet1 := NewStr(list)
 
 	list = []string{"30", "40", "50"}
-	mySet2 := NewSetStr(list)
+	mySet2 := NewStr(list)
 
 	expected := []string{"10", "20"}
 
@@ -127,10 +127,10 @@ func TestSetStrMinus(t *testing.T) {
 
 func TestSetStrSubset(t *testing.T) {
 	list := []string{"10.2", "20", "30", "20"}
-	mySet1 := NewSetStr(list)
+	mySet1 := NewStr(list)
 
 	list = []string{"10.2", "20"}
-	mySet2 := NewSetStr(list)
+	mySet2 := NewStr(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetStrSubset failed. Expected=true, Actual=false")
@@ -142,8 +142,8 @@ func TestSetStrSubset(t *testing.T) {
 }
 
 func TestSetStrSuperset(t *testing.T) {
-	mySet1 := NewSetStr([]string{"10", "20", "30", "20"})
-	mySet2 := NewSetStr([]string{"10", "20"})
+	mySet1 := NewStr([]string{"10", "20", "30", "20"})
+	mySet2 := NewStr([]string{"10", "20"})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetStrSubset failed. Expected=true, Actual=false")
@@ -153,15 +153,15 @@ func TestSetStrSuperset(t *testing.T) {
 		t.Errorf("TestSetStrSubset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetStr([]string{"10", "20", "30", "20"})
-	mySet2 = NewSetStr([]string{"10", "20", "30", "20"})
+	mySet1 = NewStr([]string{"10", "20", "30", "20"})
+	mySet2 = NewStr([]string{"10", "20", "30", "20"})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetStrSubset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetStr([]string{"10", "20", "30", "20", "40"})
-	mySet2 = NewSetStr([]string{"10", "20", "30", "20"})
+	mySet1 = NewStr([]string{"10", "20", "30", "20", "40"})
+	mySet2 = NewStr([]string{"10", "20", "30", "20"})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetStrSubset failed. Expected=false, Actual=true")

@@ -8,7 +8,7 @@ import (
 func TestSetFloat32Add(t *testing.T) {
 	list := []float32{10.2, 20, 30, 20}
 	expected := []float32{10.2, 20, 30, 40}
-	mySet := NewSetFloat32(list)
+	mySet := NewFloat32(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -22,7 +22,7 @@ func TestSetFloat32Add(t *testing.T) {
 func TestSetFloat32Remove(t *testing.T) {
 	list := []float32{10, 20, 30, 20}
 	expected := []float32{10, 20}
-	mySet := NewSetFloat32(list)
+	mySet := NewFloat32(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -37,7 +37,7 @@ func TestSetFloat32Remove(t *testing.T) {
 
 func TestSetFloat32Clear(t *testing.T) {
 	list := []float32{10, 20, 30, 20}
-	mySet := NewSetFloat32(list)
+	mySet := NewFloat32(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -51,7 +51,7 @@ func TestSetFloat32Clear(t *testing.T) {
 
 func TestSetFloat32Contains(t *testing.T) {
 	list := []float32{10, 20, 30, 20}
-	mySet := NewSetFloat32(list)
+	mySet := NewFloat32(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetFloat32Contains failed.")
@@ -64,7 +64,7 @@ func TestSetFloat32Contains(t *testing.T) {
 
 func TestSetFloat32Size(t *testing.T) {
 	list := []float32{10, 20, 30, 20}
-	mySet := NewSetFloat32(list)
+	mySet := NewFloat32(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetFloat32Size failed.")
@@ -73,10 +73,10 @@ func TestSetFloat32Size(t *testing.T) {
 
 func TestSetFloat32Join(t *testing.T) {
 	list := []float32{10, 20, 30, 20}
-	mySet1 := NewSetFloat32(list)
+	mySet1 := NewFloat32(list)
 
 	list = []float32{30, 40, 50}
-	mySet2 := NewSetFloat32(list)
+	mySet2 := NewFloat32(list)
 
 	expected := []float32{10, 20, 30, 40, 50}
 
@@ -91,10 +91,10 @@ func TestSetFloat32Join(t *testing.T) {
 
 func TestSetFloat32Intersection(t *testing.T) {
 	list := []float32{10, 20, 30.3, 20}
-	mySet1 := NewSetFloat32(list)
+	mySet1 := NewFloat32(list)
 
 	list = []float32{30.3, 40, 50}
-	mySet2 := NewSetFloat32(list)
+	mySet2 := NewFloat32(list)
 
 	expected := []float32{30.3}
 
@@ -109,10 +109,10 @@ func TestSetFloat32Intersection(t *testing.T) {
 
 func TestSetFloat32Minus(t *testing.T) {
 	list := []float32{10, 20, 30, 20}
-	mySet1 := NewSetFloat32(list)
+	mySet1 := NewFloat32(list)
 
 	list = []float32{30, 40, 50}
-	mySet2 := NewSetFloat32(list)
+	mySet2 := NewFloat32(list)
 
 	expected := []float32{10, 20}
 
@@ -127,10 +127,10 @@ func TestSetFloat32Minus(t *testing.T) {
 
 func TestSetFloat32Subset(t *testing.T) {
 	list := []float32{10.2, 20, 30, 20}
-	mySet1 := NewSetFloat32(list)
+	mySet1 := NewFloat32(list)
 
 	list = []float32{10.2, 20}
-	mySet2 := NewSetFloat32(list)
+	mySet2 := NewFloat32(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetFloat32Subset failed. Expected=true, Actual=false")
@@ -142,8 +142,8 @@ func TestSetFloat32Subset(t *testing.T) {
 }
 
 func TestSetFloat32Superset(t *testing.T) {
-	mySet1 := NewSetFloat32([]float32{10, 20, 30, 20})
-	mySet2 := NewSetFloat32([]float32{10, 20})
+	mySet1 := NewFloat32([]float32{10, 20, 30, 20})
+	mySet2 := NewFloat32([]float32{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetFloat32Subset failed. Expected=true, Actual=false")
@@ -153,15 +153,15 @@ func TestSetFloat32Superset(t *testing.T) {
 		t.Errorf("TestSetFloat32Subset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetFloat32([]float32{10, 20, 30, 20})
-	mySet2 = NewSetFloat32([]float32{10, 20, 30, 20})
+	mySet1 = NewFloat32([]float32{10, 20, 30, 20})
+	mySet2 = NewFloat32([]float32{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetFloat32Subset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetFloat32([]float32{10, 20, 30, 20, 40})
-	mySet2 = NewSetFloat32([]float32{10, 20, 30, 20})
+	mySet1 = NewFloat32([]float32{10, 20, 30, 20, 40})
+	mySet2 = NewFloat32([]float32{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetFloat32Subset failed. Expected=false, Actual=true")

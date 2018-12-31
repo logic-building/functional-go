@@ -4,7 +4,7 @@ type SetStr struct {
 	nodeMap map[string]bool
 }
 
-func NewSetStr(strList []string) *SetStr {
+func NewStr(strList []string) *SetStr {
 	s := &SetStr{}
 	for _, str := range strList {
 		s.Add(str)

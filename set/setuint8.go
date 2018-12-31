@@ -4,7 +4,7 @@ type SetUint8 struct {
 	nodeMap map[uint8]bool
 }
 
-func NewSetUint8(nums []uint8) *SetUint8 {
+func NewUint8(nums []uint8) *SetUint8 {
 	s := &SetUint8{}
 	for _, num := range nums {
 		s.Add(num)

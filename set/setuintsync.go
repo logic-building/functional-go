@@ -7,7 +7,7 @@ type SetUintSync struct {
 	sync.RWMutex
 }
 
-func NewSetUintSync(nums []uint) *SetUintSync {
+func NewUintSync(nums []uint) *SetUintSync {
 	s := &SetUintSync{}
 	for _, num := range nums {
 		s.Add(num)

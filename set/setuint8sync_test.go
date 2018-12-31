@@ -9,7 +9,7 @@ import (
 func TestSetUint8SyncAdd(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
 	expected := []uint8{10, 20, 30, 40}
-	mySet := NewSetUint8Sync(list)
+	mySet := NewUint8Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetUint8SyncAdd(t *testing.T) {
 func TestSetUint8SyncRemove(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
 	expected := []uint8{10, 20}
-	mySet := NewSetUint8Sync(list)
+	mySet := NewUint8Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetUint8SyncRemove(t *testing.T) {
 
 func TestSetUint8SyncClear(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet := NewSetUint8Sync(list)
+	mySet := NewUint8Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetUint8SyncClear(t *testing.T) {
 
 func TestSetUint8SyncContains(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet := NewSetUint8Sync(list)
+	mySet := NewUint8Sync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetUint8Contains failed.")
@@ -65,7 +65,7 @@ func TestSetUint8SyncContains(t *testing.T) {
 
 func TestSetUint8SyncSize(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet := NewSetUint8Sync(list)
+	mySet := NewUint8Sync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetUint8Size failed.")
@@ -74,10 +74,10 @@ func TestSetUint8SyncSize(t *testing.T) {
 
 func TestSetUint8SyncJoin(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8Sync(list)
+	mySet1 := NewUint8Sync(list)
 
 	list = []uint8{30, 40, 50}
-	mySet2 := NewSetUint8Sync(list)
+	mySet2 := NewUint8Sync(list)
 
 	expected := []uint8{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetUint8SyncJoin(t *testing.T) {
 
 func TestSetUint8SyncIntersection(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8Sync(list)
+	mySet1 := NewUint8Sync(list)
 
 	list = []uint8{30, 40, 50}
-	mySet2 := NewSetUint8Sync(list)
+	mySet2 := NewUint8Sync(list)
 
 	expected := []uint8{30}
 
@@ -110,10 +110,10 @@ func TestSetUint8SyncIntersection(t *testing.T) {
 
 func TestSetUint8SyncMinus(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8Sync(list)
+	mySet1 := NewUint8Sync(list)
 
 	list = []uint8{30, 40, 50}
-	mySet2 := NewSetUint8Sync(list)
+	mySet2 := NewUint8Sync(list)
 
 	expected := []uint8{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetUint8SyncMinus(t *testing.T) {
 
 func TestSetUint8SyncSubset(t *testing.T) {
 	list := []uint8{10, 20, 30, 20}
-	mySet1 := NewSetUint8Sync(list)
+	mySet1 := NewUint8Sync(list)
 
 	list = []uint8{10, 20}
-	mySet2 := NewSetUint8Sync(list)
+	mySet2 := NewUint8Sync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetUint8SyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetUint8SyncSubset(t *testing.T) {
 }
 
 func TestSetUint8SyncSuperset(t *testing.T) {
-	mySet1 := NewSetUint8Sync([]uint8{10, 20, 30, 20})
-	mySet2 := NewSetUint8Sync([]uint8{10, 20})
+	mySet1 := NewUint8Sync([]uint8{10, 20, 30, 20})
+	mySet2 := NewUint8Sync([]uint8{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetUint8SyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetUint8SyncSuperset(t *testing.T) {
 		t.Errorf("TestSetUint8SyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetUint8Sync([]uint8{10, 20, 30, 20})
-	mySet2 = NewSetUint8Sync([]uint8{10, 20, 30, 20})
+	mySet1 = NewUint8Sync([]uint8{10, 20, 30, 20})
+	mySet2 = NewUint8Sync([]uint8{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint8SyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetUint8Sync([]uint8{10, 20, 30, 20, 40})
-	mySet2 = NewSetUint8Sync([]uint8{10, 20, 30, 20})
+	mySet1 = NewUint8Sync([]uint8{10, 20, 30, 20, 40})
+	mySet2 = NewUint8Sync([]uint8{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint8SyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetUint8SyncSuperset(t *testing.T) {
 }
 
 func TestSetUint8SyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetUint8Sync([]uint8{100})
+	mySet := NewUint8Sync([]uint8{100})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

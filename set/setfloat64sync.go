@@ -7,7 +7,7 @@ type SetFloat64Sync struct {
 	sync.RWMutex
 }
 
-func NewSetFloat64Sync(nums []float64) *SetFloat64Sync {
+func NewFloat64Sync(nums []float64) *SetFloat64Sync {
 	s := &SetFloat64Sync{}
 	for _, num := range nums {
 		s.Add(num)

@@ -9,7 +9,7 @@ import (
 func TestSetInt64SyncAdd(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
 	expected := []int64{10, 20, 30, 40}
-	mySet := NewSetInt64Sync(list)
+	mySet := NewInt64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetInt64SyncAdd(t *testing.T) {
 func TestSetInt64SyncRemove(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
 	expected := []int64{10, 20}
-	mySet := NewSetInt64Sync(list)
+	mySet := NewInt64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetInt64SyncRemove(t *testing.T) {
 
 func TestSetInt64SyncClear(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
-	mySet := NewSetInt64Sync(list)
+	mySet := NewInt64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetInt64SyncClear(t *testing.T) {
 
 func TestSetInt64SyncContains(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
-	mySet := NewSetInt64Sync(list)
+	mySet := NewInt64Sync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetInt64Contains failed.")
@@ -65,7 +65,7 @@ func TestSetInt64SyncContains(t *testing.T) {
 
 func TestSetInt64SyncSize(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
-	mySet := NewSetInt64Sync(list)
+	mySet := NewInt64Sync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetInt64Size failed.")
@@ -74,10 +74,10 @@ func TestSetInt64SyncSize(t *testing.T) {
 
 func TestSetInt64SyncJoin(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
-	mySet1 := NewSetInt64Sync(list)
+	mySet1 := NewInt64Sync(list)
 
 	list = []int64{30, 40, 50}
-	mySet2 := NewSetInt64Sync(list)
+	mySet2 := NewInt64Sync(list)
 
 	expected := []int64{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetInt64SyncJoin(t *testing.T) {
 
 func TestSetInt64SyncIntersection(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
-	mySet1 := NewSetInt64Sync(list)
+	mySet1 := NewInt64Sync(list)
 
 	list = []int64{30, 40, 50}
-	mySet2 := NewSetInt64Sync(list)
+	mySet2 := NewInt64Sync(list)
 
 	expected := []int64{30}
 
@@ -110,10 +110,10 @@ func TestSetInt64SyncIntersection(t *testing.T) {
 
 func TestSetInt64SyncMinus(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
-	mySet1 := NewSetInt64Sync(list)
+	mySet1 := NewInt64Sync(list)
 
 	list = []int64{30, 40, 50}
-	mySet2 := NewSetInt64Sync(list)
+	mySet2 := NewInt64Sync(list)
 
 	expected := []int64{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetInt64SyncMinus(t *testing.T) {
 
 func TestSetInt64SyncSubset(t *testing.T) {
 	list := []int64{10, 20, 30, 20}
-	mySet1 := NewSetInt64Sync(list)
+	mySet1 := NewInt64Sync(list)
 
 	list = []int64{10, 20}
-	mySet2 := NewSetInt64Sync(list)
+	mySet2 := NewInt64Sync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetInt64SyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetInt64SyncSubset(t *testing.T) {
 }
 
 func TestSetInt64SyncSuperset(t *testing.T) {
-	mySet1 := NewSetInt64Sync([]int64{10, 20, 30, 20})
-	mySet2 := NewSetInt64Sync([]int64{10, 20})
+	mySet1 := NewInt64Sync([]int64{10, 20, 30, 20})
+	mySet2 := NewInt64Sync([]int64{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetInt64SyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetInt64SyncSuperset(t *testing.T) {
 		t.Errorf("TestSetInt64SyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetInt64Sync([]int64{10, 20, 30, 20})
-	mySet2 = NewSetInt64Sync([]int64{10, 20, 30, 20})
+	mySet1 = NewInt64Sync([]int64{10, 20, 30, 20})
+	mySet2 = NewInt64Sync([]int64{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetInt64SyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetInt64Sync([]int64{10, 20, 30, 20, 40})
-	mySet2 = NewSetInt64Sync([]int64{10, 20, 30, 20})
+	mySet1 = NewInt64Sync([]int64{10, 20, 30, 20, 40})
+	mySet2 = NewInt64Sync([]int64{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetInt64SyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetInt64SyncSuperset(t *testing.T) {
 }
 
 func TestSetInt64SyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetInt64Sync([]int64{1000})
+	mySet := NewInt64Sync([]int64{1000})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

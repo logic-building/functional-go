@@ -9,7 +9,7 @@ import (
 func TestSetUint64SyncAdd(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
 	expected := []uint64{10, 20, 30, 40}
-	mySet := NewSetUint64Sync(list)
+	mySet := NewUint64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetUint64SyncAdd(t *testing.T) {
 func TestSetUint64SyncRemove(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
 	expected := []uint64{10, 20}
-	mySet := NewSetUint64Sync(list)
+	mySet := NewUint64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetUint64SyncRemove(t *testing.T) {
 
 func TestSetUint64SyncClear(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet := NewSetUint64Sync(list)
+	mySet := NewUint64Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetUint64SyncClear(t *testing.T) {
 
 func TestSetUint64SyncContains(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet := NewSetUint64Sync(list)
+	mySet := NewUint64Sync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetUint64Contains failed.")
@@ -65,7 +65,7 @@ func TestSetUint64SyncContains(t *testing.T) {
 
 func TestSetUint64SyncSize(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet := NewSetUint64Sync(list)
+	mySet := NewUint64Sync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetUint64Size failed.")
@@ -74,10 +74,10 @@ func TestSetUint64SyncSize(t *testing.T) {
 
 func TestSetUint64SyncJoin(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64Sync(list)
+	mySet1 := NewUint64Sync(list)
 
 	list = []uint64{30, 40, 50}
-	mySet2 := NewSetUint64Sync(list)
+	mySet2 := NewUint64Sync(list)
 
 	expected := []uint64{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetUint64SyncJoin(t *testing.T) {
 
 func TestSetUint64SyncIntersection(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64Sync(list)
+	mySet1 := NewUint64Sync(list)
 
 	list = []uint64{30, 40, 50}
-	mySet2 := NewSetUint64Sync(list)
+	mySet2 := NewUint64Sync(list)
 
 	expected := []uint64{30}
 
@@ -110,10 +110,10 @@ func TestSetUint64SyncIntersection(t *testing.T) {
 
 func TestSetUint64SyncMinus(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64Sync(list)
+	mySet1 := NewUint64Sync(list)
 
 	list = []uint64{30, 40, 50}
-	mySet2 := NewSetUint64Sync(list)
+	mySet2 := NewUint64Sync(list)
 
 	expected := []uint64{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetUint64SyncMinus(t *testing.T) {
 
 func TestSetUint64SyncSubset(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64Sync(list)
+	mySet1 := NewUint64Sync(list)
 
 	list = []uint64{10, 20}
-	mySet2 := NewSetUint64Sync(list)
+	mySet2 := NewUint64Sync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetUint64SyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetUint64SyncSubset(t *testing.T) {
 }
 
 func TestSetUint64SyncSuperset(t *testing.T) {
-	mySet1 := NewSetUint64Sync([]uint64{10, 20, 30, 20})
-	mySet2 := NewSetUint64Sync([]uint64{10, 20})
+	mySet1 := NewUint64Sync([]uint64{10, 20, 30, 20})
+	mySet2 := NewUint64Sync([]uint64{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetUint64SyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetUint64SyncSuperset(t *testing.T) {
 		t.Errorf("TestSetUint64SyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetUint64Sync([]uint64{10, 20, 30, 20})
-	mySet2 = NewSetUint64Sync([]uint64{10, 20, 30, 20})
+	mySet1 = NewUint64Sync([]uint64{10, 20, 30, 20})
+	mySet2 = NewUint64Sync([]uint64{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint64SyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetUint64Sync([]uint64{10, 20, 30, 20, 40})
-	mySet2 = NewSetUint64Sync([]uint64{10, 20, 30, 20})
+	mySet1 = NewUint64Sync([]uint64{10, 20, 30, 20, 40})
+	mySet2 = NewUint64Sync([]uint64{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint64SyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetUint64SyncSuperset(t *testing.T) {
 }
 
 func TestSetUint64SyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetUint64Sync([]uint64{100})
+	mySet := NewUint64Sync([]uint64{100})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

@@ -8,7 +8,7 @@ import (
 func TestSetUint64Add(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
 	expected := []uint64{10, 20, 30, 40}
-	mySet := NewSetUint64(list)
+	mySet := NewUint64(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -22,7 +22,7 @@ func TestSetUint64Add(t *testing.T) {
 func TestSetUint64Remove(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
 	expected := []uint64{10, 20}
-	mySet := NewSetUint64(list)
+	mySet := NewUint64(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -37,7 +37,7 @@ func TestSetUint64Remove(t *testing.T) {
 
 func TestSetUint64Clear(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet := NewSetUint64(list)
+	mySet := NewUint64(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -51,7 +51,7 @@ func TestSetUint64Clear(t *testing.T) {
 
 func TestSetUint64Contains(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet := NewSetUint64(list)
+	mySet := NewUint64(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetUint64Contains failed.")
@@ -64,7 +64,7 @@ func TestSetUint64Contains(t *testing.T) {
 
 func TestSetUint64Size(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet := NewSetUint64(list)
+	mySet := NewUint64(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetUint64Size failed.")
@@ -73,10 +73,10 @@ func TestSetUint64Size(t *testing.T) {
 
 func TestSetUint64Join(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64(list)
+	mySet1 := NewUint64(list)
 
 	list = []uint64{30, 40, 50}
-	mySet2 := NewSetUint64(list)
+	mySet2 := NewUint64(list)
 
 	expected := []uint64{10, 20, 30, 40, 50}
 
@@ -91,10 +91,10 @@ func TestSetUint64Join(t *testing.T) {
 
 func TestSetUint64Intersection(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64(list)
+	mySet1 := NewUint64(list)
 
 	list = []uint64{30, 40, 50}
-	mySet2 := NewSetUint64(list)
+	mySet2 := NewUint64(list)
 
 	expected := []uint64{30}
 
@@ -109,10 +109,10 @@ func TestSetUint64Intersection(t *testing.T) {
 
 func TestSetUint64Minus(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64(list)
+	mySet1 := NewUint64(list)
 
 	list = []uint64{30, 40, 50}
-	mySet2 := NewSetUint64(list)
+	mySet2 := NewUint64(list)
 
 	expected := []uint64{10, 20}
 
@@ -127,10 +127,10 @@ func TestSetUint64Minus(t *testing.T) {
 
 func TestSetUint64Subset(t *testing.T) {
 	list := []uint64{10, 20, 30, 20}
-	mySet1 := NewSetUint64(list)
+	mySet1 := NewUint64(list)
 
 	list = []uint64{10, 20}
-	mySet2 := NewSetUint64(list)
+	mySet2 := NewUint64(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetUint64Subset failed. Expected=true, Actual=false")
@@ -142,8 +142,8 @@ func TestSetUint64Subset(t *testing.T) {
 }
 
 func TestSetUint64Superset(t *testing.T) {
-	mySet1 := NewSetUint64([]uint64{10, 20, 30, 20})
-	mySet2 := NewSetUint64([]uint64{10, 20})
+	mySet1 := NewUint64([]uint64{10, 20, 30, 20})
+	mySet2 := NewUint64([]uint64{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetUint64Subset failed. Expected=true, Actual=false")
@@ -153,15 +153,15 @@ func TestSetUint64Superset(t *testing.T) {
 		t.Errorf("TestSetUint64Subset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetUint64([]uint64{10, 20, 30, 20})
-	mySet2 = NewSetUint64([]uint64{10, 20, 30, 20})
+	mySet1 = NewUint64([]uint64{10, 20, 30, 20})
+	mySet2 = NewUint64([]uint64{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint64Subset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetUint64([]uint64{10, 20, 30, 20, 40})
-	mySet2 = NewSetUint64([]uint64{10, 20, 30, 20})
+	mySet1 = NewUint64([]uint64{10, 20, 30, 20, 40})
+	mySet2 = NewUint64([]uint64{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetUint64Subset failed. Expected=false, Actual=true")

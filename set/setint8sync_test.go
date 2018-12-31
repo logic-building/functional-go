@@ -9,7 +9,7 @@ import (
 func TestSetInt8SyncAdd(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
 	expected := []int8{10, 20, 30, 40}
-	mySet := NewSetInt8Sync(list)
+	mySet := NewInt8Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 
@@ -23,7 +23,7 @@ func TestSetInt8SyncAdd(t *testing.T) {
 func TestSetInt8SyncRemove(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
 	expected := []int8{10, 20}
-	mySet := NewSetInt8Sync(list)
+	mySet := NewInt8Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -38,7 +38,7 @@ func TestSetInt8SyncRemove(t *testing.T) {
 
 func TestSetInt8SyncClear(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
-	mySet := NewSetInt8Sync(list)
+	mySet := NewInt8Sync(list)
 	mySet.Add(40)
 	mySet.Add(40)
 	mySet.Remove(30)
@@ -52,7 +52,7 @@ func TestSetInt8SyncClear(t *testing.T) {
 
 func TestSetInt8SyncContains(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
-	mySet := NewSetInt8Sync(list)
+	mySet := NewInt8Sync(list)
 
 	if !mySet.Contains(20) {
 		t.Errorf("TestSetInt8Contains failed.")
@@ -65,7 +65,7 @@ func TestSetInt8SyncContains(t *testing.T) {
 
 func TestSetInt8SyncSize(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
-	mySet := NewSetInt8Sync(list)
+	mySet := NewInt8Sync(list)
 
 	if mySet.Size() != 3 {
 		t.Errorf("TestSetInt8Size failed.")
@@ -74,10 +74,10 @@ func TestSetInt8SyncSize(t *testing.T) {
 
 func TestSetInt8SyncJoin(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
-	mySet1 := NewSetInt8Sync(list)
+	mySet1 := NewInt8Sync(list)
 
 	list = []int8{30, 40, 50}
-	mySet2 := NewSetInt8Sync(list)
+	mySet2 := NewInt8Sync(list)
 
 	expected := []int8{10, 20, 30, 40, 50}
 
@@ -92,10 +92,10 @@ func TestSetInt8SyncJoin(t *testing.T) {
 
 func TestSetInt8SyncIntersection(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
-	mySet1 := NewSetInt8Sync(list)
+	mySet1 := NewInt8Sync(list)
 
 	list = []int8{30, 40, 50}
-	mySet2 := NewSetInt8Sync(list)
+	mySet2 := NewInt8Sync(list)
 
 	expected := []int8{30}
 
@@ -110,10 +110,10 @@ func TestSetInt8SyncIntersection(t *testing.T) {
 
 func TestSetInt8SyncMinus(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
-	mySet1 := NewSetInt8Sync(list)
+	mySet1 := NewInt8Sync(list)
 
 	list = []int8{30, 40, 50}
-	mySet2 := NewSetInt8Sync(list)
+	mySet2 := NewInt8Sync(list)
 
 	expected := []int8{10, 20}
 
@@ -128,10 +128,10 @@ func TestSetInt8SyncMinus(t *testing.T) {
 
 func TestSetInt8SyncSubset(t *testing.T) {
 	list := []int8{10, 20, 30, 20}
-	mySet1 := NewSetInt8Sync(list)
+	mySet1 := NewInt8Sync(list)
 
 	list = []int8{10, 20}
-	mySet2 := NewSetInt8Sync(list)
+	mySet2 := NewInt8Sync(list)
 
 	if !mySet2.Subset(mySet1) {
 		t.Errorf("TestSetInt8SyncSubset failed. Expected=true, Actual=false")
@@ -143,8 +143,8 @@ func TestSetInt8SyncSubset(t *testing.T) {
 }
 
 func TestSetInt8SyncSuperset(t *testing.T) {
-	mySet1 := NewSetInt8Sync([]int8{10, 20, 30, 20})
-	mySet2 := NewSetInt8Sync([]int8{10, 20})
+	mySet1 := NewInt8Sync([]int8{10, 20, 30, 20})
+	mySet2 := NewInt8Sync([]int8{10, 20})
 
 	if !mySet1.Superset(mySet2) {
 		t.Errorf("TestSetInt8SyncSuperset failed. Expected=true, Actual=false")
@@ -154,15 +154,15 @@ func TestSetInt8SyncSuperset(t *testing.T) {
 		t.Errorf("TestSetInt8SyncSuperset failed. Expected=false, Actual=true")
 	}
 
-	mySet1 = NewSetInt8Sync([]int8{10, 20, 30, 20})
-	mySet2 = NewSetInt8Sync([]int8{10, 20, 30, 20})
+	mySet1 = NewInt8Sync([]int8{10, 20, 30, 20})
+	mySet2 = NewInt8Sync([]int8{10, 20, 30, 20})
 
 	if !mySet2.Superset(mySet1) {
 		t.Errorf("TestSetInt8SyncSuperset failed. Expected=true, Actual=false")
 	}
 
-	mySet1 = NewSetInt8Sync([]int8{10, 20, 30, 20, 40})
-	mySet2 = NewSetInt8Sync([]int8{10, 20, 30, 20})
+	mySet1 = NewInt8Sync([]int8{10, 20, 30, 20, 40})
+	mySet2 = NewInt8Sync([]int8{10, 20, 30, 20})
 
 	if mySet2.Superset(mySet1) {
 		t.Errorf("TestSetInt8SyncSuperset failed. Expected=false, Actual=true")
@@ -170,7 +170,7 @@ func TestSetInt8SyncSuperset(t *testing.T) {
 }
 
 func TestSetInt8SyncMultipleGoRoutine(t *testing.T) {
-	mySet := NewSetInt8Sync([]int8{100})
+	mySet := NewInt8Sync([]int8{100})
 
 	var wg sync.WaitGroup
 	wg.Add(2)

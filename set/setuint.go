@@ -4,7 +4,7 @@ type SetUint struct {
 	nodeMap map[uint]bool
 }
 
-func NewSetUint(nums []uint) *SetUint {
+func NewUint(nums []uint) *SetUint {
 	s := &SetUint{}
 	for _, num := range nums {
 		s.Add(num)
