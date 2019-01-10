@@ -1,4 +1,4 @@
-package list_op
+package fp
 
 func FilterMapInt(fFilter func(int) bool, fMap func(int) int, list []int) []int {
 	if fFilter == nil || fMap == nil {

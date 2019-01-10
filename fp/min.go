@@ -1,4 +1,4 @@
-package list_op
+package fp
 
 func MinInt(list []int) int {
 	if list == nil || len(list) == 0 {

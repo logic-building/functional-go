@@ -1,4 +1,4 @@
-package list_op
+package fp
 
 func DistinctInt(list []int) []int {
 	s := make(map[int]struct{}, len(list))

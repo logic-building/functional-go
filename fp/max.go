@@ -1,4 +1,4 @@
-package list_op
+package fp
 
 func MaxInt(list []int) int {
 	var max int = 0

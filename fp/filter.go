@@ -1,4 +1,4 @@
-package list_op
+package fp
 
 func FilterInt(f func(int) bool, list []int) []int {
 	if f == nil {

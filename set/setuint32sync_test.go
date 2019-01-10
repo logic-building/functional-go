@@ -1,7 +1,7 @@
 package set
 
 import (
-	"functional-go/list-op"
+	"functional-go/fp"
 	"sync"
 	"testing"
 )
@@ -14,7 +14,7 @@ func TestSetUint32SyncAdd(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeUint32(num, expected) {
+		if !fp.SomeUint32(num, expected) {
 			t.Errorf("TestSetUint32SyncAdd failed")
 		}
 	}
@@ -30,7 +30,7 @@ func TestSetUint32SyncRemove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeUint32(num, expected) {
+		if !fp.SomeUint32(num, expected) {
 			t.Errorf("TestSetUint32SyncRemove failed")
 		}
 	}
@@ -84,7 +84,7 @@ func TestSetUint32SyncJoin(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint32(num, expected) {
+		if !fp.SomeUint32(num, expected) {
 			t.Errorf("TestSetUint32SyncJoin failed")
 		}
 	}
@@ -102,7 +102,7 @@ func TestSetUint32SyncIntersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint32(num, expected) {
+		if !fp.SomeUint32(num, expected) {
 			t.Errorf("TestSetUint32SyncIntersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -120,7 +120,7 @@ func TestSetUint32SyncMinus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint32(num, expected) {
+		if !fp.SomeUint32(num, expected) {
 			t.Errorf("TestSetUint32SyncMinus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}

@@ -1,7 +1,7 @@
 package set
 
 import (
-	"functional-go/list-op"
+	"functional-go/fp"
 	"testing"
 )
 
@@ -13,7 +13,7 @@ func TestSetUintAdd(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeUint(num, expected) {
+		if !fp.SomeUint(num, expected) {
 			t.Errorf("TestSetUintAdd failed")
 		}
 	}
@@ -29,7 +29,7 @@ func TestSetUintRemove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeUint(num, expected) {
+		if !fp.SomeUint(num, expected) {
 			t.Errorf("TestSetUintRemove failed")
 		}
 	}
@@ -83,7 +83,7 @@ func TestSetUintJoin(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint(num, expected) {
+		if !fp.SomeUint(num, expected) {
 			t.Errorf("TestSetUintJoin failed")
 		}
 	}
@@ -101,7 +101,7 @@ func TestSetUintIntersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint(num, expected) {
+		if !fp.SomeUint(num, expected) {
 			t.Errorf("TestSetUintIntersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -119,7 +119,7 @@ func TestSetUintMinus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint(num, expected) {
+		if !fp.SomeUint(num, expected) {
 			t.Errorf("TestSetUintMinus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
