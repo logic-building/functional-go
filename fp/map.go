@@ -1,4 +1,4 @@
-package list_op
+package fp
 
 func MapInt(f func(int) int, list []int) []int {
 	if f == nil {

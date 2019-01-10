@@ -1,4 +1,4 @@
-package list_op
+package fp
 
 import "testing"
 

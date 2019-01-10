@@ -3,7 +3,7 @@
 
 ### Install
 ```
-go get github.com/logic-building/functional-go/list-op/
+go get github.com/logic-building/functional-go/fp/
 go get github.com/logic-building/functional-go/set/
 
 ```
@@ -12,7 +12,7 @@ go get github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "2.1"
+version = "4.0"
 ```
 
 ### Contains functions
@@ -209,7 +209,7 @@ SetStrSync
 
 ### Example1 - Map : return the list of the square of each items in the list
 ```
-squareList := MapInt(squareInt, []int{1, 2, 3}) // see the map_test.go for detail
+squareList := fp.MapInt(squareInt, []int{1, 2, 3}) // see the map_test.go for detail
 
 func squareInt(num int) int {
 	return num * num
@@ -224,7 +224,7 @@ output
 
 ### Example2 - Filter: filter all the even numbers in the list
 ```
-filteredList := FilterInt(isEven, []int{1, 2, 3, 4})
+filteredList := fp.FilterInt(isEven, []int{1, 2, 3, 4})
 
 func isEven(num int) bool {
 	return num%2 == 0
@@ -235,7 +235,7 @@ output:
 
 ```
 
-### Example3 - FilterMap: Multiply all positive numbers in the list by 2
+### Example3 - fp.FilterMap: Multiply all positive numbers in the list by 2
 ```
 filteredList := FilterMapInt(isPositive, multiplyBy2, []int{-1, 0, 2, 4})
 
@@ -252,41 +252,40 @@ output:
 
 ### Example4 - Every: Test if every number in the list is even
 ```
-import bool2 "functional-go/bool"
 list := []bool{true, true, true, true}
-Every(bool2.True, list1)  // Returns true
+fp.Every(fp.True, list1)  // Returns true
 
 list1 := []int{8, 2, 10, 4}
-EveryInt(isEven, list1) // Returns true
+fp.EveryInt(isEven, list1) // Returns true
 ```
 
 ### Example5 - Some: Test if number presents in the list
 ```
 list1 := []int{8, 2, 10, 4}
-SomeInt(8, list1) // returns true
+fp.SomeInt(8, list1) // returns true
 ```
 
 ### Example6 - Max: Get max number in the list
 ```
 list := []int{8, 2, 10, 4}
-max := MaxInt(list) // returns 10
+max := fp.MaxInt(list) // returns 10
 ```
 
 ### Example7 - Min: Get min number in the list
 ```
 list := []int{8, 2, 10, 4}
-min := MinInt(list) // returns 2
+min := fp.MinInt(list) // returns 2
 ```
 
 ### Example8 - Remove: Remove num or string from list
 ```
-newList := RemoveInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
+newList := fp.RemoveInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
 ```
 
 ### Example9 - Distinct: returns distinct list
 ```
 list := []int{8, 2, 8, 0, 2, 0}
-distinct := DistinctInt(list) // returns [8, 2, 0]
+distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ```
 
 ### Example10 - Set : Create set objects and apply union operation

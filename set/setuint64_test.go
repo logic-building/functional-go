@@ -1,7 +1,7 @@
 package set
 
 import (
-	"functional-go/list-op"
+	"functional-go/fp"
 	"testing"
 )
 
@@ -13,7 +13,7 @@ func TestSetUint64Add(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeUint64(num, expected) {
+		if !fp.SomeUint64(num, expected) {
 			t.Errorf("TestSetUint64Add failed")
 		}
 	}
@@ -29,7 +29,7 @@ func TestSetUint64Remove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeUint64(num, expected) {
+		if !fp.SomeUint64(num, expected) {
 			t.Errorf("TestSetUint64Remove failed")
 		}
 	}
@@ -83,7 +83,7 @@ func TestSetUint64Join(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint64(num, expected) {
+		if !fp.SomeUint64(num, expected) {
 			t.Errorf("TestSetUint64Join failed")
 		}
 	}
@@ -101,7 +101,7 @@ func TestSetUint64Intersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint64(num, expected) {
+		if !fp.SomeUint64(num, expected) {
 			t.Errorf("TestSetUint64Intersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -119,7 +119,7 @@ func TestSetUint64Minus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeUint64(num, expected) {
+		if !fp.SomeUint64(num, expected) {
 			t.Errorf("TestSetUint64Minus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}

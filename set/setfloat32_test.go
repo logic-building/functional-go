@@ -1,7 +1,7 @@
 package set
 
 import (
-	"functional-go/list-op"
+	"functional-go/fp"
 	"testing"
 )
 
@@ -13,7 +13,7 @@ func TestSetFloat32Add(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeFloat32(num, expected) {
+		if !fp.SomeFloat32(num, expected) {
 			t.Errorf("TestSetFloat32Add failed")
 		}
 	}
@@ -29,7 +29,7 @@ func TestSetFloat32Remove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeFloat32(num, expected) {
+		if !fp.SomeFloat32(num, expected) {
 			t.Errorf("TestSetFloat32Remove failed")
 		}
 	}
@@ -83,7 +83,7 @@ func TestSetFloat32Join(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeFloat32(num, expected) {
+		if !fp.SomeFloat32(num, expected) {
 			t.Errorf("TestSetFloat32Join failed")
 		}
 	}
@@ -101,7 +101,7 @@ func TestSetFloat32Intersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeFloat32(num, expected) {
+		if !fp.SomeFloat32(num, expected) {
 			t.Errorf("TestSetFloat32Intersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -119,7 +119,7 @@ func TestSetFloat32Minus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeFloat32(num, expected) {
+		if !fp.SomeFloat32(num, expected) {
 			t.Errorf("TestSetFloat32Minus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}

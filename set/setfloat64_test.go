@@ -1,7 +1,7 @@
 package set
 
 import (
-	"functional-go/list-op"
+	"functional-go/fp"
 	"testing"
 )
 
@@ -13,7 +13,7 @@ func TestSetFloat64Add(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeFloat64(num, expected) {
+		if !fp.SomeFloat64(num, expected) {
 			t.Errorf("TestSetFloat64Add failed")
 		}
 	}
@@ -29,7 +29,7 @@ func TestSetFloat64Remove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !list_op.SomeFloat64(num, expected) {
+		if !fp.SomeFloat64(num, expected) {
 			t.Errorf("TestSetFloat64Remove failed")
 		}
 	}
@@ -83,7 +83,7 @@ func TestSetFloat64Join(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeFloat64(num, expected) {
+		if !fp.SomeFloat64(num, expected) {
 			t.Errorf("TestSetFloat64Join failed")
 		}
 	}
@@ -101,7 +101,7 @@ func TestSetFloat64Intersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeFloat64(num, expected) {
+		if !fp.SomeFloat64(num, expected) {
 			t.Errorf("TestSetFloat64Intersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -119,7 +119,7 @@ func TestSetFloat64Minus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !list_op.SomeFloat64(num, expected) {
+		if !fp.SomeFloat64(num, expected) {
 			t.Errorf("TestSetFloat64Minus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
