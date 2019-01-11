@@ -106,7 +106,7 @@ EveryFloat64
 EveryFloat32
 EveryStr
 
-Takes number and list as argument and returns true/false if it exists
+Takes number and list as arguments and returns true/false if number exists inthe list
 SomeInt
 SomeInt64
 SomeInt32
@@ -177,6 +177,19 @@ RemoveStr
 RemoveStrIgnoreCase
 RemoveStrs
 RemoveStrsIgnoreCase
+
+Takes lower and higher int value as arguments and returns list
+RangeInt
+RangeInt64
+RangeInt32
+RangeInt16
+RangeInt8
+RangeUint
+RangeUint64
+RangeUint32
+RangeUint16
+RangeUint8
+
 
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
@@ -295,6 +308,17 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 	mySet3 := mySet1.Union(mySet2) // Returns  [10, 20, 30, 40, 50]
 ```
 
+### Example11 - Range : accepts lower and end int and returns range list
+```
+	fp.Range(1, 5) // returns [1, 2, 3, 4]
+```
+
+### Test Coverage
+```
+ok  	functional-go/fp	0.018s	coverage: 98.5% of statements
+ok  	functional-go/set	0.021s	coverage: 100.0% of statements
+```
+
 ### BenchMark test:
 ```
   Model Identifier:	MacBookPro11,5
@@ -310,12 +334,12 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ```
 goos: darwin
 goarch: amd64
-pkg: functional-go/list-op
-BenchmarkFilterInt64-8                   	 1000000	      5408 ns/op
-BenchmarkFilterMapInt64-8                	 1000000	      6271 ns/op
-BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3767 ns/op
-BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3819 ns/op
-BenchmarkMapStr-8                        	 1000000	     52498 ns/op
+pkg: functional-go/fp
+BenchmarkFilterInt64-8                   	 1000000	      5030 ns/op
+BenchmarkFilterMapInt64-8                	 1000000	      5865 ns/op
+BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3597 ns/op
+BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3622 ns/op
+BenchmarkMapStr-8                        	 1000000	     49438 ns/op
 PASS
-ok  	functional-go/list-op	71.776s
+ok  	functional-go/fp	67.567s
 ```
