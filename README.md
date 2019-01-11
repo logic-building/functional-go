@@ -106,7 +106,7 @@ EveryFloat64
 EveryFloat32
 EveryStr
 
-Takes number and list as arguments and returns true/false if number exists inthe list
+Takes number and list as arguments and returns true/false if number exists in the list
 SomeInt
 SomeInt64
 SomeInt32
@@ -122,6 +122,8 @@ SomeFloat32
 SomeStr
 
 Takes list as argument and return max number
+- Returns 0 if list is either empty or nil
+
 MaxInt
 MaxInt64
 MaxInt32
@@ -136,6 +138,7 @@ MaxFloat64
 MaxFloat32
 
 Takes list as argument and return min number
+- Returns 0 if list is either empty or nil
 MinInt
 MinInt64
 MinInt32
@@ -147,6 +150,21 @@ MinUint16
 MinUint8
 MinFloat64
 MinFloat32
+
+Takes List as argument and returns Min and Max
+   - Returns 0, 0 if list is either empty or nil
+   - Returns same result for min and max if there is only one item in the list
+MinMaxInt
+MinMaxInt64
+MinMaxInt32
+MinMaxInt8
+MinMaxUint
+MinMaxUint64
+MinMaxUint32
+MinMaxUint16
+MinMaxUint8
+MinMaxFloat64
+MinMaxFloat32
 
 Takes number or string and list as arguments and remove the given item and returns the list
 RemoveInt
@@ -328,8 +346,8 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 
 ### Test Coverage
 ```
-ok  	functional-go/fp	0.014s	coverage: 100.0% of statements
-ok  	functional-go/set	0.029s	coverage: 100.0% of statements
+ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
+ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```
 
 ### BenchMark test:
