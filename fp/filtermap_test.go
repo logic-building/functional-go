@@ -33,7 +33,7 @@ func TestFilterMapInt64(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapInt64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterMapInt(nil, nil, nil)) > 0 {
+	if len(FilterMapInt64(nil, nil, nil)) > 0 {
 		t.Errorf("FilterMapInt64 failed.")
 	}
 }
@@ -142,7 +142,7 @@ func TestFilterMapUint32(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapUint32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterMapUint64(nil, nil, nil)) > 0 {
+	if len(FilterMapUint32(nil, nil, nil)) > 0 {
 		t.Errorf("FilterMapUint32 failed.")
 	}
 }
@@ -176,7 +176,7 @@ func TestFilterMapUint8(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapUint8 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterMapUint16(nil, nil, nil)) > 0 {
+	if len(FilterMapUint8(nil, nil, nil)) > 0 {
 		t.Errorf("FilterMapUint8 failed.")
 	}
 }
@@ -193,7 +193,7 @@ func TestFilterMapUint(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapUint failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterMapUint16(nil, nil, nil)) > 0 {
+	if len(FilterMapUint(nil, nil, nil)) > 0 {
 		t.Errorf("FilterMapUint failed.")
 	}
 }

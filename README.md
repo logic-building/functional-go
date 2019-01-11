@@ -78,9 +78,9 @@ FilterMapFloat32
 FilterMapStr
 
 Takes function as argument and apply it on each item in the list and return true/false. Returns false if 2nd argument is empty
-Every : Takes two arguments
-        a. function without arguments and returns bool
-        b. list of boolean values
+EveryBool : Takes two arguments
+             a. function without arguments and returns bool
+             b. list of boolean values
 
         return:
            true if all the values in the list are true, otherwise false
@@ -178,7 +178,19 @@ RemoveStrIgnoreCase
 RemoveStrs
 RemoveStrsIgnoreCase
 
-Takes lower and higher int value as arguments and returns list
+Range function
+Takes 3 inputs:
+   a. lower
+   b. upper
+   c. hops(optional)
+
+      Returns list of range between lower and upper value
+      Returns empty list if 3rd arguments is either of the following
+           a. 0
+           b. Negative number
+
+      Note: 3rd argument is considered as hops value if 3 or more than 3 arguments are passed.
+
 RangeInt
 RangeInt64
 RangeInt32
@@ -266,7 +278,7 @@ output:
 ### Example4 - Every: Test if every number in the list is even
 ```
 list := []bool{true, true, true, true}
-fp.Every(fp.True, list1)  // Returns true
+fp.EveryBool(fp.True, list)  // Returns true
 
 list1 := []int{8, 2, 10, 4}
 fp.EveryInt(isEven, list1) // Returns true
@@ -311,12 +323,13 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ### Example11 - Range : accepts lower and end int and returns range list
 ```
 	fp.Range(1, 5) // returns [1, 2, 3, 4]
+	fp.Range(1, 5, 2) // returns [1, 3]
 ```
 
 ### Test Coverage
 ```
-ok  	functional-go/fp	0.018s	coverage: 98.5% of statements
-ok  	functional-go/set	0.021s	coverage: 100.0% of statements
+ok  	functional-go/fp	0.014s	coverage: 100.0% of statements
+ok  	functional-go/set	0.029s	coverage: 100.0% of statements
 ```
 
 ### BenchMark test:

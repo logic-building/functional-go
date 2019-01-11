@@ -1,6 +1,6 @@
 package fp
 
-func Every(f func() bool, list []bool) bool {
+func EveryBool(f func() bool, list []bool) bool {
 	if f == nil || len(list) == 0 {
 		return false
 	}

@@ -182,7 +182,7 @@ func TestFilterUint64(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterUnt64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterInt8(nil, nil)) > 0 {
+	if len(FilterUint64(nil, nil)) > 0 {
 		t.Errorf("FilterUint64 failed.")
 	}
 }
@@ -212,7 +212,7 @@ func TestFilterUint32(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterUint32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterInt8(nil, nil)) > 0 {
+	if len(FilterUint32(nil, nil)) > 0 {
 		t.Errorf("FilterUint32 failed.")
 	}
 }
@@ -242,7 +242,7 @@ func TestFilterUint16(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterUint16 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterInt8(nil, nil)) > 0 {
+	if len(FilterUint16(nil, nil)) > 0 {
 		t.Errorf("FilterUint16 failed.")
 	}
 }
@@ -272,7 +272,7 @@ func TestFilterUint8(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterUint16 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterInt8(nil, nil)) > 0 {
+	if len(FilterUint8(nil, nil)) > 0 {
 		t.Errorf("FilterUint16 failed.")
 	}
 }
@@ -302,7 +302,7 @@ func TestFilterUint(t *testing.T) {
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterUint failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
-	if len(FilterInt(nil, nil)) > 0 {
+	if len(FilterUint(nil, nil)) > 0 {
 		t.Errorf("FilterUint16 failed.")
 	}
 }
@@ -339,6 +339,9 @@ func TestFilterFloat32(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("MapFilterFloat32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterFloat32(nil, nil)) > 0 {
+		t.Errorf("FilterFloat32 failed.")
 	}
 }
 
