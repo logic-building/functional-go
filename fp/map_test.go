@@ -340,7 +340,7 @@ func TestMapUint(t *testing.T) {
 	if sumList[0] != expectedSumList[0] || sumList[1] != expectedSumList[1] || sumList[2] != expectedSumList[2] {
 		t.Errorf("MapUInt failed")
 	}
-	if len(MapUint8(nil, nil)) > 0 {
+	if len(MapUint(nil, nil)) > 0 {
 		t.Errorf("MapUint failed.")
 	}
 }

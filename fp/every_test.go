@@ -4,21 +4,35 @@ import (
 	"testing"
 )
 
-func TestEvery(t *testing.T) {
+func TestEveryBool(t *testing.T) {
 	// Test : every value in the list is either true or false
 	list1 := []bool{true, true, true, true}
-	if !Every(True, list1) {
-		t.Errorf("Every failed. Expected=true, actual=false")
+	if !EveryBool(True, list1) {
+		t.Errorf("EveryBool failed. Expected=true, actual=false")
 	}
 
 	list1 = []bool{true, false, true, true}
-	if Every(True, list1) {
-		t.Errorf("Every failed. Expected=false, actual=true")
+	if EveryBool(True, list1) {
+		t.Errorf("EveryBool failed. Expected=false, actual=true")
+	}
+
+	list1 = []bool{true, false, true, true}
+	if EveryBool(False, list1) {
+		t.Errorf("EveryBool failed. Expected=true, actual=false")
 	}
 
 	list1 = []bool{false, false, false, false}
-	if !Every(False, list1) {
-		t.Errorf("Every failed. Expected=true, actual=false")
+	if !EveryBool(False, list1) {
+		t.Errorf("EveryBool failed. Expected=true, actual=false")
+	}
+
+	list1 = []bool{}
+	if EveryBool(False, list1) {
+		t.Errorf("EveryBool failed. Expected=false, actual=true")
+	}
+
+	if EveryBool(False, nil) {
+		t.Errorf("EveryBool failed. Expected=false, actual=true")
 	}
 }
 

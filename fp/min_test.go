@@ -218,4 +218,14 @@ func TestMinFloat32(t *testing.T) {
 	if min != 2.2 {
 		t.Errorf("MinFloat64 failed. Expected=2.2, actual=%f", min)
 	}
+
+	min = MinFloat32([]float32{})
+	if min != 0 {
+		t.Errorf("MinFloat32 failed. Expected=0, actual=%v", min)
+	}
+
+	min = MinFloat32(nil)
+	if min != 0 {
+		t.Errorf("MinFloat32 failed. Expected=0, actual=%v", min)
+	}
 }

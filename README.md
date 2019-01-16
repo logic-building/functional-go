@@ -78,9 +78,9 @@ FilterMapFloat32
 FilterMapStr
 
 Takes function as argument and apply it on each item in the list and return true/false. Returns false if 2nd argument is empty
-Every : Takes two arguments
-        a. function without arguments and returns bool
-        b. list of boolean values
+EveryBool : Takes two arguments
+             a. function without arguments and returns bool
+             b. list of boolean values
 
         return:
            true if all the values in the list are true, otherwise false
@@ -106,7 +106,7 @@ EveryFloat64
 EveryFloat32
 EveryStr
 
-Takes number and list as argument and returns true/false if it exists
+Takes number and list as arguments and returns true/false if number exists inthe list
 SomeInt
 SomeInt64
 SomeInt32
@@ -177,6 +177,31 @@ RemoveStr
 RemoveStrIgnoreCase
 RemoveStrs
 RemoveStrsIgnoreCase
+
+Range function
+Takes 3 inputs:
+   a. lower
+   b. upper
+   c. hops(optional)
+
+      Returns list of range between lower and upper value
+      Returns empty list if 3rd arguments is either of the following
+           a. 0
+           b. Negative number
+
+      Note: 3rd argument is considered as hops value if 3 or more than 3 arguments are passed.
+
+RangeInt
+RangeInt64
+RangeInt32
+RangeInt16
+RangeInt8
+RangeUint
+RangeUint64
+RangeUint32
+RangeUint16
+RangeUint8
+
 
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
@@ -253,7 +278,7 @@ output:
 ### Example4 - Every: Test if every number in the list is even
 ```
 list := []bool{true, true, true, true}
-fp.Every(fp.True, list1)  // Returns true
+fp.EveryBool(fp.True, list)  // Returns true
 
 list1 := []int{8, 2, 10, 4}
 fp.EveryInt(isEven, list1) // Returns true
@@ -295,6 +320,18 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 	mySet3 := mySet1.Union(mySet2) // Returns  [10, 20, 30, 40, 50]
 ```
 
+### Example11 - Range : accepts lower and end int and returns range list
+```
+	fp.Range(1, 5) // returns [1, 2, 3, 4]
+	fp.Range(1, 5, 2) // returns [1, 3]
+```
+
+### Test Coverage
+```
+ok  	functional-go/fp	0.014s	coverage: 100.0% of statements
+ok  	functional-go/set	0.029s	coverage: 100.0% of statements
+```
+
 ### BenchMark test:
 ```
   Model Identifier:	MacBookPro11,5
@@ -310,12 +347,12 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ```
 goos: darwin
 goarch: amd64
-pkg: functional-go/list-op
-BenchmarkFilterInt64-8                   	 1000000	      5408 ns/op
-BenchmarkFilterMapInt64-8                	 1000000	      6271 ns/op
-BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3767 ns/op
-BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3819 ns/op
-BenchmarkMapStr-8                        	 1000000	     52498 ns/op
+pkg: functional-go/fp
+BenchmarkFilterInt64-8                   	 1000000	      5030 ns/op
+BenchmarkFilterMapInt64-8                	 1000000	      5865 ns/op
+BenchmarkMapInt64_PassedMethod_1_Arg-8   	 1000000	      3597 ns/op
+BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3622 ns/op
+BenchmarkMapStr-8                        	 1000000	     49438 ns/op
 PASS
-ok  	functional-go/list-op	71.776s
+ok  	functional-go/fp	67.567s
 ```
