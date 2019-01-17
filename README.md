@@ -12,7 +12,7 @@ go get github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "4.0"
+version = "5.0"
 ```
 
 ### Contains functions
@@ -47,6 +47,21 @@ MapFloat64
 MapFloat32
 MapStr
 
+Pmap : For parallel processing
+PmapInt
+PmapInt64
+PmapInt32
+PmapInt16
+PmapInt8
+PmapUint
+PmapUint64
+PmapUint32
+PmapUint16
+PmapUint8
+PmapFloat64
+PmapFloat32
+PmapStr
+
 Takes function as argument and apply it on each item in the list and return filtered list
 FilterInt
 FilterInt64
@@ -62,7 +77,7 @@ FilterFloat64
 FilterFloat32
 FilterStr
 
-Takes two function as argument and apply it on each item in the list and return filtered list
+Takes two functions as argument and apply them on each item in the list and return the filtered list
 FilterMapInt
 FilterMapInt64
 FilterMapInt32
