@@ -181,7 +181,37 @@ MinMaxUint8
 MinMaxFloat64
 MinMaxFloat32
 
-Takes number or string and list as arguments and remove the given item and returns the list
+Takes number or string and list as arguments and Drop the given item and returns the list
+DropInt
+DropInts
+DropInt64
+DropInts64
+DropInt32
+DropInts32
+DropInt16
+DropInts16
+DropInt8
+DropInts8
+DropUint
+DropUInts
+DropUint64
+DropUints64
+DropUint32
+DropUints32
+DropUint16
+DropUints16
+DropUint8
+DropUints8
+DropFloat64
+DropFloats64
+DropFloat32
+DropFloats32
+DropStr
+DropStrIgnoreCase
+DropStrs
+DropStrsIgnoreCase
+
+Takes function  and list as arguments and remove items based on function passed and return new list. See example
 RemoveInt
 RemoveInts
 RemoveInt64
@@ -205,7 +235,7 @@ RemoveUints8
 RemoveFloat64
 RemoveFloats64
 RemoveFloat32
-RemoeFloats32
+RemoveFloats32
 RemoveStr
 RemoveStrIgnoreCase
 RemoveStrs
@@ -335,9 +365,9 @@ list := []int{8, 2, 10, 4}
 min := fp.MinInt(list) // returns 2
 ```
 
-### Example8 - Remove: Remove num or string from list
+### Example8 - Drop: Drop num or string from list
 ```
-newList := fp.RemoveInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
+newList := fp.DropInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
 ```
 
 ### Example9 - Distinct: returns distinct list
@@ -357,6 +387,16 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ```
 	fp.Range(1, 5) // returns [1, 2, 3, 4]
 	fp.Range(1, 5, 2) // returns [1, 3]
+```
+
+### Example12 - Remove :
+```
+    NewList := RemoveInt(isEven, []int{1, 2, 3, 4}) // returns [1, 3]
+
+    func isEven(num int) bool {
+    	return num%2 == 0
+    }
+
 ```
 
 ### Test Coverage

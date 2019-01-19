@@ -3,729 +3,273 @@ package fp
 import "testing"
 
 func TestRemoveInt(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int{2, 3}
-	newList := RemoveInt(1, []int{1, 2, 3, 1})
+	// Test : even number in the list
+	expectedNewList := []int{1, 3}
+	NewList := RemoveInt(isEven, []int{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInt failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveInt(1, []int{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []int{1, 3}
+	partialIsEven := func(num int) bool { return isEvenDivisibleBy(num, 10) }
+	NewList = RemoveInt(partialIsEven, []int{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveInt(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveInts(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int{2, 3}
-	newList := RemoveInts([]int{1, 4}, []int{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInts failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveInts([]int{1, 4}, []int{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts([]int{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts(nil, []int{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveInts failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveInt(nil, nil)) > 0 {
+		t.Errorf("RemoveInt failed.")
 	}
 }
 
 func TestRemoveInt64(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int64{2, 3}
-	newList := RemoveInt64(1, []int64{1, 2, 3, 1})
+	// Test : even number in the list
+	expectedNewList := []int64{1, 3}
+	NewList := RemoveInt64(isEvenInt64, []int64{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInt64 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveInt64(1, []int64{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []int64{1, 3}
+	partialIsEvenInt64 := func(num int64) bool { return isEvenInt64DivisibleBy(num, 10) }
+	NewList = RemoveInt64(partialIsEvenInt64, []int64{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt64 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveInt64(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt64 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if len(RemoveInt64(nil, nil)) > 0 {
+		t.Errorf("RemoveInt64 failed.")
 	}
 }
 
-func TestRemoveInts64(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int64{2, 3}
-	newList := RemoveInts64([]int64{1, 4}, []int64{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInts64 failed. Expected list=%v, actual list=%v", expectedList, newList)
+func BenchmarkRemoveInt64(b *testing.B) {
+	b.N = iterations
+	list := make([]int64, size)
+	var i int64
+	for i = 0; i < size; i++ {
+		list[i] = i
 	}
-
-	newList = RemoveInts64([]int64{1, 4}, []int64{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts64([]int64{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts64(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts64(nil, []int64{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveInts64 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	for i := 0; i < b.N; i++ {
+		RemoveInt64(isEvenInt64, list)
 	}
 }
 
 func TestRemoveInt32(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int32{2, 3}
-	newList := RemoveInt32(1, []int32{1, 2, 3, 1})
+	// Test : even number in the list
+	expectedNewList := []int32{1, 3}
+	NewList := RemoveInt32(isEvenInt32, []int32{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInt32 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveInt32(1, []int32{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []int32{1, 3}
+	partialIsEvenInt32 := func(num int32) bool { return isEvenInt32DivisibleBy(num, 10) }
+	NewList = RemoveInt32(partialIsEvenInt32, []int32{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt32 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveInt32(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveInts32(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int32{2, 3}
-	newList := RemoveInts32([]int32{1, 4}, []int32{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInts32 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveInts32([]int32{1, 4}, []int32{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts32([]int32{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts32(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts32(nil, []int32{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveInts32 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveInt32(nil, nil)) > 0 {
+		t.Errorf("RemoveInt32 failed.")
 	}
 }
 
 func TestRemoveInt16(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int16{2, 3}
-	newList := RemoveInt16(1, []int16{1, 2, 3, 1})
+	// Test : even number in the list
+	expectedNewList := []int16{1, 3}
+	NewList := RemoveInt16(isEvenInt16, []int16{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInt16 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveInt16(1, []int16{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []int16{1, 3}
+	partialIsEven := func(num int16) bool { return isEvenInt16DivisibleBy(num, 10) }
+	NewList = RemoveInt16(partialIsEven, []int16{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt16 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveInt16(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveInts16(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int16{2, 3}
-	newList := RemoveInts16([]int16{1, 4}, []int16{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInts16 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveInts16([]int16{1, 4}, []int16{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts16([]int16{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts16(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts16(nil, []int16{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveInts16 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveInt16(nil, nil)) > 0 {
+		t.Errorf("RemoveInt16 failed.")
 	}
 }
 
 func TestRemoveInt8(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int8{2, 3}
-	newList := RemoveInt8(1, []int8{1, 2, 3, 1})
+	// Test : even number in the list
+	expectedNewList := []int8{1, 3}
+	NewList := RemoveInt8(isEvenInt8, []int8{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInt8 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt8 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveInt8(1, []int8{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []int8{1, 3}
+	partialIsEvenInt8 := func(num int8) bool { return isEvenInt8DivisibleBy(num, 10) }
+	NewList = RemoveInt8(partialIsEvenInt8, []int8{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt8 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt8 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveInt8(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInt8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveInts8(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []int8{2, 3}
-	newList := RemoveInts8([]int8{1, 4}, []int8{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveInts8([]int8{1, 4}, []int8{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts8([]int8{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts8(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveInts8(nil, []int8{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveInt8(nil, nil)) > 0 {
+		t.Errorf("RemoveInt8 failed.")
 	}
 }
 
-func TestRemoveUInt(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint{2, 3}
-	newList := RemoveUint(1, []uint{1, 2, 3, 1})
+func TestRemoveUint64(t *testing.T) {
+	// Test : even number in the list
+	expectedNewList := []uint64{1, 3}
+	NewList := RemoveUint64(isEvenUint64, []uint64{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUint failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveUint(1, []uint{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []uint64{1, 3}
+	partialIsEvenUint64 := func(num uint64) bool { return isEvenUint64DivisibleBy(num, 10) }
+	NewList = RemoveUint64(partialIsEvenUint64, []uint64{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUnt64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveUint(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveUints(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint{2, 3}
-	newList := RemoveUints([]uint{1, 4}, []uint{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveUints([]uint{1, 4}, []uint{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints([]uint{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints(nil, []uint{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveInts8 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveUint64(nil, nil)) > 0 {
+		t.Errorf("RemoveUint64 failed.")
 	}
 }
 
-func TestRemoveUInt64(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint64{2, 3}
-	newList := RemoveUint64(1, []uint64{1, 2, 3, 1})
+func TestRemoveUint32(t *testing.T) {
+	// Test : even number in the list
+	expectedNewList := []uint32{1, 3}
+	NewList := RemoveUint32(isEvenUint32, []uint32{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUint64 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveUint64(1, []uint64{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []uint32{1, 3}
+	partialIsEvenUint32 := func(num uint32) bool { return isEvenUint32DivisibleBy(num, 10) }
+	NewList = RemoveUint32(partialIsEvenUint32, []uint32{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint64 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveUint64(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveUints64(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint64{2, 3}
-	newList := RemoveUints64([]uint64{1, 4}, []uint64{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUints64 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveUints64([]uint64{1, 4}, []uint64{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints64([]uint64{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints64(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints64(nil, []uint64{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveUints64 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveUint32(nil, nil)) > 0 {
+		t.Errorf("RemoveUint32 failed.")
 	}
 }
 
-func TestRemoveUInt32(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint32{2, 3}
-	newList := RemoveUint32(1, []uint32{1, 2, 3, 1})
+func TestRemoveUint16(t *testing.T) {
+	// Test : even number in the list
+	expectedNewList := []uint16{1, 3}
+	NewList := RemoveUint16(isEvenUint16, []uint16{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUint32 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveUint32(1, []uint32{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []uint16{1, 3}
+	partialIsEvenUint16 := func(num uint16) bool { return isEvenUint16DivisibleBy(num, 10) }
+	NewList = RemoveUint16(partialIsEvenUint16, []uint16{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint32 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveUint32(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveUints32(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint32{2, 3}
-	newList := RemoveUints32([]uint32{1, 4}, []uint32{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUints32 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveUints32([]uint32{1, 4}, []uint32{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints32([]uint32{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints32(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints32(nil, []uint32{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveUints32 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveUint16(nil, nil)) > 0 {
+		t.Errorf("RemoveUint16 failed.")
 	}
 }
 
-func TestRemoveUInt16(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint16{2, 3}
-	newList := RemoveUint16(1, []uint16{1, 2, 3, 1})
+func TestRemoveUint8(t *testing.T) {
+	// Test : even number in the list
+	expectedNewList := []uint8{1, 3}
+	NewList := RemoveUint8(isEvenUint8, []uint8{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUint16 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint8 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveUint16(1, []uint16{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []uint8{1, 3}
+	partialIsEvenUint8 := func(num uint8) bool { return isEvenUint8DivisibleBy(num, 10) }
+	NewList = RemoveUint8(partialIsEvenUint8, []uint8{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint16 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveUint16(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveUints16(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint16{2, 3}
-	newList := RemoveUints16([]uint16{1, 4}, []uint16{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUints16 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveUints16([]uint16{1, 4}, []uint16{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints16([]uint16{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints16(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints16 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints16(nil, []uint16{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveUints16 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveUint8(nil, nil)) > 0 {
+		t.Errorf("RemoveUint16 failed.")
 	}
 }
 
-func TestRemoveUInt8(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint8{2, 3}
-	newList := RemoveUint8(1, []uint8{1, 2, 3, 1})
+func TestRemoveUint(t *testing.T) {
+	// Test : even number in the list
+	expectedNewList := []uint{1, 3}
+	NewList := RemoveUint(isEvenUint, []uint{1, 2, 3, 4})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUint8 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	newList = RemoveUint8(1, []uint8{})
+	// Test: Remove all even numbers divisible by 10 in the list
+	expectedNewList = []uint{1, 3}
+	partialIsEvenUint := func(num uint) bool { return isEvenUintDivisibleBy(num, 10) }
+	NewList = RemoveUint(partialIsEvenUint, []uint{20, 1, 3, 40})
 
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint8 failed. Expected list=%v, actual list=%v", []int{}, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveUint8(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUint8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveUints8(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []uint8{2, 3}
-	newList := RemoveUints8([]uint8{1, 4}, []uint8{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveUints8 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveUints8([]uint8{1, 4}, []uint8{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints8([]uint8{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints8(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveUints8 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveUints8(nil, []uint8{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveUints8 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveUint(nil, nil)) > 0 {
+		t.Errorf("RemoveUint16 failed.")
 	}
 }
 
 func TestRemoveFloat64(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []float64{2, 3}
-	newList := RemoveFloat64(1, []float64{1, 2, 3, 1})
+	// Test : Remove all the positive numbers in the list
+	expectedNewList := []float64{0, -2}
+	NewList := RemoveFloat64(isPositiveFloat64, []float64{0, -2, 2, 40.50})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveFloat64 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveFloat64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveFloat64(1, []float64{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloat64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloat64(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloat64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveFloats64(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []float64{2, 3}
-	newList := RemoveFloats64([]float64{1, 4}, []float64{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveFloats64 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveFloats64([]float64{1, 4}, []float64{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloats64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloats64([]float64{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloats64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloats64(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloats64 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloats64(nil, []float64{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveFloats64 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveFloat64(nil, nil)) > 0 {
+		t.Errorf("RemoveFloat64 failed.")
 	}
 }
 
 func TestRemoveFloat32(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []float32{2.2, 3.3}
-	newList := RemoveFloat32(1, []float32{1, 2.2, 3.3, 1})
+	// Test : Remove all the positive numbers in the list
+	expectedNewList := []float32{0, -2}
+	NewList := RemoveFloat32(isPositiveFloat32, []float32{0, -2, 2, 40.50})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveFloat32 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveFloat32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveFloat32(1, []float32{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloat32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloat32(1, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloat32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveFloats32(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []float32{2, 3}
-	newList := RemoveFloats32([]float32{1, 4}, []float32{1, 2, 3, 1, 4})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveFloats32 failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveFloats32([]float32{1, 4}, []float32{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloats32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloats32([]float32{1, 4}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloats32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloats32(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveFloats32 failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveFloats32(nil, []float32{1, 4})
-	if newList[0] != 1 || newList[1] != 4 {
-		t.Errorf("RemoveFloats32 failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveFloat32(nil, nil)) > 0 {
+		t.Errorf("RemoveFloat32 failed.")
 	}
 }
 
 func TestRemoveStr(t *testing.T) {
-	// Test : remove string from the list
-	expectedList := []string{"Ram", "Shyam"}
-	newList := RemoveStr("Nks", []string{"Nks", "Ram", "Shyam", "Nks"})
+	// Test : Remove all the positive numbers in the list
+	expectedNewList := []string{"Nandeshwar"}
+	NewList := RemoveStr(isStringLengthLessThan10, []string{"gopal", "govinda", "Nandeshwar"})
 
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveStr failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if NewList[0] != expectedNewList[0] {
+		t.Errorf("FiltrStr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
-
-	newList = RemoveStr("1", []string{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveStr failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStr("1", nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveStr failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveStrIgnoreCase(t *testing.T) {
-	// Test : remove string from the list
-	expectedList := []string{"Ram", "Shyam"}
-	newList := RemoveStrIgnoreCase("nks", []string{"Nks", "Ram", "Shyam", "Nks"})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveStrIgonreCase failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveStrIgnoreCase("1", []string{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrIgonreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStrIgnoreCase("1", nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrIgonreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-}
-
-func TestRemoveStrs(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []string{"Ram", "Shyam"}
-	newList := RemoveStrs([]string{"nks", "bharat"}, []string{"nks", "Ram", "Shyam", "Nks", "bharat"})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveStrs([]string{"1", "4"}, []string{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStrs([]string{"1", "4"}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStrs(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStrs(nil, []string{"ram", "Shyam"})
-	if newList[0] != "ram" || newList[1] != "Shyam" {
-		t.Errorf("RemoveStrIgnoreCase failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-}
-
-func TestRemoveStrsIgonreCase(t *testing.T) {
-	// Test : remove number from the list
-	expectedList := []string{"Ram", "Shyam"}
-	newList := RemoveStrsIgnoreCase([]string{"nks", "bharat"}, []string{"Nks", "Ram", "Shyam", "Nks", "bharat"})
-
-	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", expectedList, newList)
-	}
-
-	newList = RemoveStrsIgnoreCase([]string{"1", "4"}, []string{})
-
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStrsIgnoreCase([]string{"1", "4"}, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStrsIgnoreCase(nil, nil)
-	if len(newList) != 0 {
-		t.Errorf("RemoveStrsIgnoreCase failed. Expected list=%v, actual list=%v", []int{}, newList)
-	}
-
-	newList = RemoveStrsIgnoreCase(nil, []string{"ram", "Shyam"})
-	if newList[0] != "ram" || newList[1] != "Shyam" {
-		t.Errorf("RemoveStrIgnoreCase failed. Expected list=%v, actual list=%v", expectedList, newList)
+	if len(RemoveStr(nil, nil)) > 0 {
+		t.Errorf("RemoveStr failed.")
 	}
 }
