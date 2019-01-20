@@ -12,7 +12,7 @@ go get github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "5.0"
+version = "6.0.0"
 ```
 
 ### Contains functions
@@ -265,6 +265,31 @@ RangeUint32
 RangeUint16
 RangeUint8
 
+DropWhile:
+  Drop the items in the list based on condition
+  Takes 2 inputs
+    a. Function : takes 1 input - int or float or string and return true/false
+    b. list
+  returns:
+      NewList
+
+      see example
+
+
+DropWhileInt
+DropWhileInt64
+DropWhileInt32
+DropWhileInt16
+DropWhileInt8
+DropWhileUint
+DropWhileUint64
+DropWhileUint32
+DropWhileUint16
+DropWhileUint8
+DropWhileFloat64
+DropWhileFloat32
+DropWhileStr
+
 
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
@@ -392,6 +417,16 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ### Example12 - Remove :
 ```
     NewList := RemoveInt(isEven, []int{1, 2, 3, 4}) // returns [1, 3]
+
+    func isEven(num int) bool {
+    	return num%2 == 0
+    }
+
+```
+
+### Example13 - DropWhileInt :
+```
+    NewList := DropWhile(isEven, []int{4, 2, 3, 4}) // returns [3, 4]
 
     func isEven(num int) bool {
     	return num%2 == 0
