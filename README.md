@@ -211,6 +211,56 @@ DropStrIgnoreCase
 DropStrs
 DropStrsIgnoreCase
 
+DropWhile:
+  Drop the items in the list based on condition
+  Takes 2 inputs
+    a. Function : takes 1 input - int or float or string and return true/false
+    b. list
+  returns:
+      NewList
+
+      see example
+
+DropWhileInt
+DropWhileInt64
+DropWhileInt32
+DropWhileInt16
+DropWhileInt8
+DropWhileUint
+DropWhileUint64
+DropWhileUint32
+DropWhileUint16
+DropWhileUint8
+DropWhileFloat64
+DropWhileFloat32
+DropWhileStr
+
+TakeWhile:
+  take the items in the list based on condition
+
+Takes 2 inputs
+  a. Function : takes 1 input - int or float or string and return true/false
+  b. list
+
+  returns:
+     NewList
+
+        see example
+
+TakeWhileInt
+TakeWhileInt64
+TakeWhileInt32
+TakeWhileInt16
+TakeWhileInt8
+TakeWhileUint
+TakeWhileUint64
+TakeWhileUint32
+TakeWhileUint16
+TakeWhileUint8
+TakeWhileFloat64
+TakeWhileFloat32
+TakeWhileStr
+
 Takes function  and list as arguments and remove items based on function passed and return new list. See example
 RemoveInt
 RemoveInts
@@ -264,32 +314,6 @@ RangeUint64
 RangeUint32
 RangeUint16
 RangeUint8
-
-DropWhile:
-  Drop the items in the list based on condition
-  Takes 2 inputs
-    a. Function : takes 1 input - int or float or string and return true/false
-    b. list
-  returns:
-      NewList
-
-      see example
-
-
-DropWhileInt
-DropWhileInt64
-DropWhileInt32
-DropWhileInt16
-DropWhileInt8
-DropWhileUint
-DropWhileUint64
-DropWhileUint32
-DropWhileUint16
-DropWhileUint8
-DropWhileFloat64
-DropWhileFloat32
-DropWhileStr
-
 
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
@@ -434,8 +458,19 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 
 ```
 
+### Example14 - TakeWhileInt :
+```
+    NewList := TakeWhile(isEven, []int{4, 2, 3, 4}) // returns [4, 2]
+
+    func isEven(num int) bool {
+    	return num%2 == 0
+    }
+
+```
+
 ### Test Coverage
 ```
+Tests Passed : 481
 ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
 ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```
