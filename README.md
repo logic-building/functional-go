@@ -20,10 +20,13 @@ version = "6.0.0"
 ### Generate functional code for user defined data type
 ```
 1. Install "gofp" to generate code
-go install github.com/logic-building/functional-go/gofp
+   go get github.com/logic-building/functional-go/gofp
+   go install github.com/logic-building/functional-go/gofp
 
 2. Add this line in a file where user defined data type exists
+
    //go:generate gofp -destination <file> -pkg <pkg> -type <Types separated by comma>
+
 example:
    //go:generate gofp -destination fp.go -pkg employee -type "Employee, Teacher"
 
