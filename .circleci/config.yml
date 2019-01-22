@@ -14,5 +14,13 @@ jobs: # basic units of work in a run
     steps: # steps that comprise the `build` job
       - checkout # check out source code to working directory
       - run: go test -v ./... # Run the tests
+      - run:
+          go test $(go list ./fp*) -coverprofile coverage.out
+          go tool cover -func coverage.out
+
+      - run:
+          go test $(go list ./set*) -coverprofile coverage.out
+          go tool cover -func coverage.out
+          
       - run: go test -v -race ./...
       - run: go vet ./...
