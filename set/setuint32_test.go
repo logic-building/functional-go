@@ -1,7 +1,7 @@
 package set
 
 import (
-	"functional-go/fp"
+	"github.com/logic-building/functional-go/fp"
 	"testing"
 )
 
