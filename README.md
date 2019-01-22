@@ -1,8 +1,7 @@
 # functional-go : Functional programming in golang. This library is inspired by clojure.
 ## Simple but functional
 
-[![Docs](https://godoc.org/github.com/logic-building/functional-go/fp?status.svg)](https://godoc.org/github.com/logic-building/functional-go/fp)
-
+[![Docs](https://godoc.org/github.com/logic-building/functional-go?status.svg)](https://godoc.org/github.com/logic-building/functional-go)
 
 ### Install
 ```
