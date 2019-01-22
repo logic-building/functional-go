@@ -2,6 +2,7 @@
 ## Simple but functional
 
 [![Docs](https://godoc.org/github.com/logic-building/functional-go?status.svg)](https://godoc.org/github.com/logic-building/functional-go)
+[![CircleCI](https://circleci.com/gh/logic-building/functional-go.svg?style=svg)](https://circleci.com/gh/logic-building/functional-go)
 
 ### Install
 ```
