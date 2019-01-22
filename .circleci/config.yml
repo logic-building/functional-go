@@ -6,7 +6,7 @@ jobs: # basic units of work in a run
       - image: circleci/golang:1.11 #
 
     # directory where steps are run. Path must conform to the Go Workspace requirements
-    working_directory: /go/src/github.com/CircleCI-Public/circleci-demo-go
+    working_directory: /go/src/github.com/logic-building/functional-go/
 
     environment: # environment variables for the build itself
       TEST_RESULTS: /tmp/test-results # path to where test results will be saved
@@ -14,3 +14,4 @@ jobs: # basic units of work in a run
     steps: # steps that comprise the `build` job
       - checkout # check out source code to working directory
       - run: mkdir -p $TEST_RESULTS # create the test results directory
+      - run: go test -v ./...
