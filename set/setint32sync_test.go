@@ -14,7 +14,7 @@ func TestSetInt32SyncAdd(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeInt32(num, expected) {
+		if !fp.ExistsInt32(num, expected) {
 			t.Errorf("TestSetInt32SyncAdd failed")
 		}
 	}
@@ -30,7 +30,7 @@ func TestSetInt32SyncRemove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeInt32(num, expected) {
+		if !fp.ExistsInt32(num, expected) {
 			t.Errorf("TestSetInt32SyncRemove failed")
 		}
 	}
@@ -84,7 +84,7 @@ func TestSetInt32SyncJoin(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeInt32(num, expected) {
+		if !fp.ExistsInt32(num, expected) {
 			t.Errorf("TestSetInt32SyncJoin failed")
 		}
 	}
@@ -102,7 +102,7 @@ func TestSetInt32SyncIntersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeInt32(num, expected) {
+		if !fp.ExistsInt32(num, expected) {
 			t.Errorf("TestSetInt32SyncIntersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -120,7 +120,7 @@ func TestSetInt32SyncMinus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeInt32(num, expected) {
+		if !fp.ExistsInt32(num, expected) {
 			t.Errorf("TestSetInt32SyncMinus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}

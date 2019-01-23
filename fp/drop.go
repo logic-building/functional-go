@@ -15,7 +15,7 @@ func DropInt(num int, list []int) []int {
 func DropInts(nums []int, list []int) []int {
 	var newList []int
 	for _, v := range list {
-		if !SomeInt(v, nums) {
+		if !ExistsInt(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -35,7 +35,7 @@ func DropInt64(num int64, list []int64) []int64 {
 func DropInts64(nums []int64, list []int64) []int64 {
 	var newList []int64
 	for _, v := range list {
-		if !SomeInt64(v, nums) {
+		if !ExistsInt64(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -55,7 +55,7 @@ func DropInt32(num int32, list []int32) []int32 {
 func DropInts32(nums []int32, list []int32) []int32 {
 	var newList []int32
 	for _, v := range list {
-		if !SomeInt32(v, nums) {
+		if !ExistsInt32(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -75,7 +75,7 @@ func DropInt16(num int16, list []int16) []int16 {
 func DropInts16(nums []int16, list []int16) []int16 {
 	var newList []int16
 	for _, v := range list {
-		if !SomeInt16(v, nums) {
+		if !ExistsInt16(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -95,7 +95,7 @@ func DropInt8(num int8, list []int8) []int8 {
 func DropInts8(nums []int8, list []int8) []int8 {
 	var newList []int8
 	for _, v := range list {
-		if !SomeInt8(v, nums) {
+		if !ExistsInt8(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -115,7 +115,7 @@ func DropUint(num uint, list []uint) []uint {
 func DropUints(nums []uint, list []uint) []uint {
 	var newList []uint
 	for _, v := range list {
-		if !SomeUint(v, nums) {
+		if !ExistsUint(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -135,7 +135,7 @@ func DropUint64(num uint64, list []uint64) []uint64 {
 func DropUints64(nums []uint64, list []uint64) []uint64 {
 	var newList []uint64
 	for _, v := range list {
-		if !SomeUint64(v, nums) {
+		if !ExistsUint64(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -155,7 +155,7 @@ func DropUint32(num uint32, list []uint32) []uint32 {
 func DropUints32(nums []uint32, list []uint32) []uint32 {
 	var newList []uint32
 	for _, v := range list {
-		if !SomeUint32(v, nums) {
+		if !ExistsUint32(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -175,7 +175,7 @@ func DropUint16(num uint16, list []uint16) []uint16 {
 func DropUints16(nums []uint16, list []uint16) []uint16 {
 	var newList []uint16
 	for _, v := range list {
-		if !SomeUint16(v, nums) {
+		if !ExistsUint16(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -195,7 +195,7 @@ func DropUint8(num uint8, list []uint8) []uint8 {
 func DropUints8(nums []uint8, list []uint8) []uint8 {
 	var newList []uint8
 	for _, v := range list {
-		if !SomeUint8(v, nums) {
+		if !ExistsUint8(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -215,7 +215,7 @@ func DropFloat64(num float64, list []float64) []float64 {
 func DropFloats64(nums []float64, list []float64) []float64 {
 	var newList []float64
 	for _, v := range list {
-		if !SomeFloat64(v, nums) {
+		if !ExistsFloat64(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -235,7 +235,7 @@ func DropFloat32(num float32, list []float32) []float32 {
 func DropFloats32(nums []float32, list []float32) []float32 {
 	var newList []float32
 	for _, v := range list {
-		if !SomeFloat32(v, nums) {
+		if !ExistsFloat32(v, nums) {
 			newList = append(newList, v)
 		}
 	}
@@ -266,7 +266,7 @@ func DropStrIgnoreCase(str string, list []string) []string {
 func DropStrs(strs []string, list []string) []string {
 	var newList []string
 	for _, v := range list {
-		if !SomeStr(v, strs) {
+		if !ExistsStr(v, strs) {
 			newList = append(newList, v)
 		}
 	}
@@ -277,7 +277,7 @@ func DropStrsIgnoreCase(strs []string, list []string) []string {
 	var newList []string
 
 	for _, v := range list {
-		if !SomeStrIgnoreCase(strings.ToLower(v), strs) {
+		if !ExistsStrIgnoreCase(strings.ToLower(v), strs) {
 			newList = append(newList, v)
 		}
 	}

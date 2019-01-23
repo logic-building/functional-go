@@ -13,7 +13,7 @@ func TestSetUint16Add(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeUint16(num, expected) {
+		if !fp.ExistsUint16(num, expected) {
 			t.Errorf("TestSetUint16Add failed")
 		}
 	}
@@ -29,7 +29,7 @@ func TestSetUint16Remove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeUint16(num, expected) {
+		if !fp.ExistsUint16(num, expected) {
 			t.Errorf("TestSetUint16Remove failed")
 		}
 	}
@@ -83,7 +83,7 @@ func TestSetUint16Join(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeUint16(num, expected) {
+		if !fp.ExistsUint16(num, expected) {
 			t.Errorf("TestSetUint16Join failed")
 		}
 	}
@@ -101,7 +101,7 @@ func TestSetUint16Intersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeUint16(num, expected) {
+		if !fp.ExistsUint16(num, expected) {
 			t.Errorf("TestSetUint16Intersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -119,7 +119,7 @@ func TestSetUint16Minus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeUint16(num, expected) {
+		if !fp.ExistsUint16(num, expected) {
 			t.Errorf("TestSetUint16Minus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}

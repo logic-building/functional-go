@@ -13,7 +13,7 @@ func TestSetInt8Add(t *testing.T) {
 	mySet.Add(40)
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeInt8(num, expected) {
+		if !fp.ExistsInt8(num, expected) {
 			t.Errorf("TestSetInt8Add failed")
 		}
 	}
@@ -29,7 +29,7 @@ func TestSetInt8Remove(t *testing.T) {
 	mySet.Remove(40)
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeInt8(num, expected) {
+		if !fp.ExistsInt8(num, expected) {
 			t.Errorf("TestSetInt8Remove failed")
 		}
 	}
@@ -83,7 +83,7 @@ func TestSetInt8Join(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeInt8(num, expected) {
+		if !fp.ExistsInt8(num, expected) {
 			t.Errorf("TestSetInt8Join failed")
 		}
 	}
@@ -101,7 +101,7 @@ func TestSetInt8Intersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeInt8(num, expected) {
+		if !fp.ExistsInt8(num, expected) {
 			t.Errorf("TestSetInt8Intersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -119,7 +119,7 @@ func TestSetInt8Minus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeInt8(num, expected) {
+		if !fp.ExistsInt8(num, expected) {
 			t.Errorf("TestSetInt8Minus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
