@@ -146,20 +146,20 @@ EveryFloat64
 EveryFloat32
 EveryStr
 
-Takes number and list as arguments and returns true/false if number exists in the list
-SomeInt
-SomeInt64
-SomeInt32
-SomeInt16
-SomeInt8
-SomeUint
-SomeUint64
-SomeUint32
-SomeUint16
-SomeUint8
-SomeFloat64
-SomeFloat32
-SomeStr
+Takes a number and a list as arguments and returns true if number exists in the list else returns false
+ExistsInt
+ExistsInt64
+ExistsInt32
+ExistsInt16
+ExistsInt8
+ExistsUint
+ExistsUint64
+ExistsUint32
+ExistsUint16
+ExistsUint8
+ExistsFloat64
+ExistsFloat32
+ExistsStr
 
 Takes list as argument and return max number
 - Returns 0 if list is either empty or nil
@@ -340,6 +340,32 @@ RangeUint32
 RangeUint16
 RangeUint8
 
+SomeInt: takes two parameters
+    A. Function - one parameter and returns boolean
+    B. list
+Returns:
+   Bool
+
+Ex.
+    SomeInt(isEven, []int{1, 2, 3, 5}) : returns true
+    SomeInt(nil, nil) : returns false
+    SomeInt(isEven, []int{}) : returns false
+
+SomeInt
+SomeInt64
+SomeInt32
+SomeInt16
+SomeInt8
+SomeUint
+SomeUint64
+SomeUint32
+SomeUint16
+SomeUint8
+SomeFloat64
+SomeFloat32
+SomeStr
+
+
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
 SetIntSync
@@ -421,10 +447,10 @@ list1 := []int{8, 2, 10, 4}
 fp.EveryInt(isEven, list1) // Returns true
 ```
 
-### Example5 - Some: Test if number presents in the list
+### Example5 - Exists: Test if number presents in the list
 ```
 list1 := []int{8, 2, 10, 4}
-fp.SomeInt(8, list1) // returns true
+fp.ExistsInt(8, list1) // returns true
 ```
 
 ### Example6 - Max: Get max number in the list

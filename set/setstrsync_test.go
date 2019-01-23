@@ -14,7 +14,7 @@ func TestSetStrSyncAdd(t *testing.T) {
 	mySet.Add("40")
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeStr(num, expected) {
+		if !fp.ExistsStr(num, expected) {
 			t.Errorf("TestSetStrSyncAdd failed")
 		}
 	}
@@ -30,7 +30,7 @@ func TestSetStrSyncRemove(t *testing.T) {
 	mySet.Remove("40")
 
 	for _, num := range mySet.GetList() {
-		if !fp.SomeStr(num, expected) {
+		if !fp.ExistsStr(num, expected) {
 			t.Errorf("TestSetStrSyncRemove failed")
 		}
 	}
@@ -84,7 +84,7 @@ func TestSetStrSyncJoin(t *testing.T) {
 	mySet3 := mySet1.Union(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeStr(num, expected) {
+		if !fp.ExistsStr(num, expected) {
 			t.Errorf("TestSetStrSyncJoin failed")
 		}
 	}
@@ -102,7 +102,7 @@ func TestSetStrSyncIntersection(t *testing.T) {
 	mySet3 := mySet1.Intersection(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeStr(num, expected) {
+		if !fp.ExistsStr(num, expected) {
 			t.Errorf("TestSetStrSyncIntersection failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
@@ -120,7 +120,7 @@ func TestSetStrSyncMinus(t *testing.T) {
 	mySet3 := mySet1.Minus(mySet2)
 
 	for _, num := range mySet3.GetList() {
-		if !fp.SomeStr(num, expected) {
+		if !fp.ExistsStr(num, expected) {
 			t.Errorf("TestSetStrSyncMinus failed. Expected=%v, Actual=%v", expected, mySet3.GetList())
 		}
 	}
