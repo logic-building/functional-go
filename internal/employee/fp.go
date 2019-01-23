@@ -35,6 +35,17 @@ func Remove(f func(Employee) bool, list []Employee) []Employee {
 	}
 	return newList
 }
+func Some(f func(Employee) bool, list []Employee) bool {
+	if f == nil {
+		return false
+	}
+	for _, v := range list {
+		if f(v) {
+			return true
+		}
+	}
+	return false
+}
 func MapTeacher(f func(Teacher) Teacher, list []Teacher) []Teacher {
 	if f == nil {
 		return []Teacher{}
@@ -68,4 +79,15 @@ func RemoveTeacher(f func(Teacher) bool, list []Teacher) []Teacher {
 		}
 	}
 	return newList
+}
+func SomeTeacher(f func(Teacher) bool, list []Teacher) bool {
+	if f == nil {
+		return false
+	}
+	for _, v := range list {
+		if f(v) {
+			return true
+		}
+	}
+	return false
 }
