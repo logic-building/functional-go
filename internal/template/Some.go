@@ -1,0 +1,16 @@
+package template
+
+func Some() string {
+	return `
+func Some<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) bool {
+	if f == nil {
+		return false
+	}
+	for _, v := range list {
+		if f(v) {
+			return true
+		}
+	}
+	return false
+}`
+}
