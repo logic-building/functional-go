@@ -68,6 +68,9 @@ func generateFPCode(pkg, dataTypes string) (string, error) {
 
 		template += template2.Filter()
 		template = r.Replace(template)
+
+		template += template2.Remove()
+		template = r.Replace(template)
 	}
 
 	return template, nil
