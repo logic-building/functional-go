@@ -158,6 +158,29 @@ FilterMapFloat64
 FilterMapFloat32
 FilterMapStr
 
+Takes list as parameter and returns new list which includes all the items except 1st one.
+    Input: list
+    output: New list includes all the items except 1st one.
+            Returns new empty list if the input is either nil or empty or length 1 list
+    Ex.
+		list := []int{1, 2, 3, 4, 5}
+		RestInt(list) // returns [2, 3, 4, 5]
+
+RestInt
+RestInt64
+RestInt32
+RestInt16
+RestInt8
+RestUint
+RestUint64
+RestUint32
+RestUint16
+RestUint8
+RestFloat64
+RestFloat32
+RestStr
+
+
 Takes function as argument and apply it on each item in the list and return true/false. Returns false if 2nd argument is empty
 EveryBool : Takes two arguments
              a. function without arguments and returns bool
@@ -562,7 +585,7 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 
 ### Test Coverage
 ```
-Tests Passed : 481
+Tests Passed : 507
 ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
 ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```

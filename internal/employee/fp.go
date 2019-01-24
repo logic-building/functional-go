@@ -133,6 +133,24 @@ func FilterMap(fFilter func(Employee) bool, fMap func(Employee) Employee, list [
 	}
 	return newList
 }
+func Rest(l []Employee) []Employee {
+	if l == nil {
+		return []Employee{}
+	}
+
+	len := len(l)
+	if len == 0 || len == 1 {
+		return []Employee{}
+	}
+
+	newList := make([]Employee, len-1)
+
+	for i, v := range l[1:] {
+		newList[i] = v
+	}
+
+	return newList
+}
 func MapTeacher(f func(Teacher) Teacher, list []Teacher) []Teacher {
 	if f == nil {
 		return []Teacher{}
@@ -262,5 +280,23 @@ func FilterMapTeacher(fFilter func(Teacher) bool, fMap func(Teacher) Teacher, li
 			newList = append(newList, fMap(v))
 		}
 	}
+	return newList
+}
+func RestTeacher(l []Teacher) []Teacher {
+	if l == nil {
+		return []Teacher{}
+	}
+
+	len := len(l)
+	if len == 0 || len == 1 {
+		return []Teacher{}
+	}
+
+	newList := make([]Teacher, len-1)
+
+	for i, v := range l[1:] {
+		newList[i] = v
+	}
+
 	return newList
 }
