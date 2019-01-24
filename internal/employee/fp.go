@@ -46,6 +46,17 @@ func Some(f func(Employee) bool, list []Employee) bool {
 	}
 	return false
 }
+func Every(f func(Employee) bool, list []Employee) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+	for _, v := range list {
+		if !f(v) {
+			return false
+		}
+	}
+	return true
+}
 func MapTeacher(f func(Teacher) Teacher, list []Teacher) []Teacher {
 	if f == nil {
 		return []Teacher{}
@@ -90,4 +101,15 @@ func SomeTeacher(f func(Teacher) bool, list []Teacher) bool {
 		}
 	}
 	return false
+}
+func EveryTeacher(f func(Teacher) bool, list []Teacher) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+	for _, v := range list {
+		if !f(v) {
+			return false
+		}
+	}
+	return true
 }

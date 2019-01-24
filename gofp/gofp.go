@@ -74,6 +74,9 @@ func generateFPCode(pkg, dataTypes string) (string, error) {
 
 		template += template2.Some()
 		template = r.Replace(template)
+
+		template += template2.Every()
+		template = r.Replace(template)
 	}
 
 	return template, nil
