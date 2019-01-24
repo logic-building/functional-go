@@ -23,7 +23,7 @@ version = "7.0.0"
 ```
 import "github.com/logic-building/functional-go/fp"
 
-fp.MapInt(square, []int{1, 2, 3, 4}) // Rerturn: [1 4 9 16]
+fp.MapInt(square, []int{1, 2, 3, 4}) // Returns: [1 4 9 16]
 
 func square(num int) int {
 	return num * num
@@ -72,11 +72,11 @@ Note:
 
    	empList := []employee.Employee{emp1, emp2, emp3}
 
-   	newEmpList := employee.Map(incrementSalary, empList) //  returns: [{1 A 1500} {1 A 1500} {1 A 1500}]
+   	newEmpList := employee.Map(incrementSalary, empList) //  Returns: [{1 A 1500} {1 A 1500} {1 A 1500}]
 
    func incrementSalary(emp employee.Employee) employee.Employee {
-        newSalary := emp.Salary + 500
-        return employee.Employee{Id: emp.Id, Name: emp.Name, Salary: newSalary
+        emp.Salary = emp.Salary + 500
+        return emp
    }
 
 ```

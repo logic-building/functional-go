@@ -1,0 +1,16 @@
+package template
+
+func Every() string {
+	return `
+func Every<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+	for _, v := range list {
+		if !f(v) {
+			return false
+		}
+	}
+	return true
+}`
+}
