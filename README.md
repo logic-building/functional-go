@@ -1,8 +1,8 @@
-# functional-go : Functional programming in golang. This library is inspired by clojure.
-## Simple but functional
-
 [![Docs](https://godoc.org/github.com/logic-building/functional-go?status.svg)](https://godoc.org/github.com/logic-building/functional-go)
 [![CircleCI](https://circleci.com/gh/logic-building/functional-go.svg?style=svg)](https://circleci.com/gh/logic-building/functional-go)
+
+# functional-go : Functional programming in golang. This library is inspired by clojure.
+## Simple but functional
 
 ### Install
 ```
@@ -15,29 +15,70 @@ go get github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "6.0.0"
+version = "7.0.0"
 ```
 
-### Generate functional code for user defined data type
+### Quick Start
+#### For Data types available in golang
+```
+import "github.com/logic-building/functional-go/fp"
+
+fp.MapInt(square, []int{1, 2, 3, 4}) // Rerturn: [1 4 9 16]
+
+func square(num int) int {
+	return num * num
+}
+
+```
+
+####  For user defined data type
 ```
 1. Install "gofp" to generate code
    go get github.com/logic-building/functional-go/gofp
    go install github.com/logic-building/functional-go/gofp
 
 2. Add this line in a file where user defined data type exists
-
    //go:generate gofp -destination <file> -pkg <pkg> -type <Types separated by comma>
 
 example:
+    package employee
+
    //go:generate gofp -destination fp.go -pkg employee -type "Employee, Teacher"
+   type Employee struct {
+   	id     int
+   	name   string
+   	salary float64
+   }
+
+   type Teacher struct {
+   	id     int
+   	name   string
+   	salary float64
+   }
 
 Note:
-   A. fp.go - contains generated code
-   B. employee - is package name
-   C. "Employee, Teacher" - are User defined data types
+   A. fp.go               :  generated code
+   B. employee            :  package name
+   C. "Employee, Teacher" :  User defined data types
 
 3. Generate functional code
    go generate ./...
+
+4. Now write your code
+
+    emp1 := employee.Employee{1, "A", 1000}
+   	emp2 := employee.Employee{1, "A", 1000}
+   	emp3 := employee.Employee{1, "A", 1000}
+
+   	empList := []employee.Employee{emp1, emp2, emp3}
+
+   	newEmpList := employee.Map(incrementSalary, empList) //  returns: [{1 A 1500} {1 A 1500} {1 A 1500}]
+
+   func incrementSalary(emp employee.Employee) employee.Employee {
+        newSalary := emp.Salary + 500
+        return employee.Employee{Id: emp.Id, Name: emp.Name, Salary: newSalary
+   }
+
 ```
 
 ### Contains functions
