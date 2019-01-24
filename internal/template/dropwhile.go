@@ -1,0 +1,25 @@
+package template
+
+func DropWhile() string {
+	return `
+func DropWhile<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
+	if f == nil {
+		return []<TYPE>{}
+	}
+	var newList []<TYPE>
+	for i, v := range list {
+		if !f(v) {
+			listLen := len(list)
+			newList = make([]<TYPE>, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList
+		}
+	}
+	return newList
+}`
+}
