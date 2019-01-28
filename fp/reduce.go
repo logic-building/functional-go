@@ -1,9 +1,9 @@
 package fp
 
 // Takes three inputs
-//    A. function - takes two argument
+//    A. function - takes two arguments
 //    B. list
-//    C. initialize (optional)
+//    C. initializer (optional)
 // Returns:
 //    single value
 //
