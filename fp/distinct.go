@@ -1,5 +1,10 @@
 package fp
 
+// Removes duplicates.
+//
+// Example
+// list := []int{8, 2, 8, 0, 2, 0}
+// fp.DistinctInt(list) // returns [8, 2, 0]
 func DistinctInt(list []int) []int {
 	s := make(map[int]struct{}, len(list))
 	i := 0
