@@ -356,7 +356,7 @@ func TestDistinctStr(t *testing.T) {
 	list := []string{"Bharat", "Hanuman", "Bharat", "Sita", "Hanuman", "Sita"}
 	distinct := DistinctStr(list)
 	if len(distinct) != 3 || distinct[0] != expected[0] || distinct[1] != expected[1] || distinct[2] != expected[2] {
-		t.Errorf("DistinctFloat32 failed. Expected=%v, actual=%v", expected, distinct)
+		t.Errorf("DistinctStr failed. Expected=%v, actual=%v", expected, distinct)
 	}
 
 	expected = []string{"Bharat", "Hanuman", "Sita"}
@@ -374,6 +374,35 @@ func TestDistinctStr(t *testing.T) {
 	}
 
 	distinct = DistinctStr(nil)
+	if len(distinct) != 0 {
+		t.Errorf("DistinctStr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctStrIgnoreCase(t *testing.T) {
+	// Test : Get distinct values
+	expected := []string{"Bharat", "HanumaN", "SiTa"}
+	list := []string{"Bharat", "HanumaN", "BharaT", "SiTa", "Hanuman", "Sita"}
+	distinct := DistinctStrIgnoreCase(list)
+	if len(distinct) != 3 || distinct[0] != expected[0] || distinct[1] != expected[1] || distinct[2] != expected[2] {
+		t.Errorf("TestDistinctStr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{"Bharat", "HanumaN", "Sita"}
+	list = []string{"Bharat", "HanumaN", "Sita"}
+	distinct = DistinctStrIgnoreCase(list)
+	if len(distinct) != 3 || distinct[0] != expected[0] || distinct[1] != expected[1] || distinct[2] != expected[2] {
+		t.Errorf("DistinctStr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{}
+	list = []string{}
+	distinct = DistinctStrIgnoreCase(list)
+	if len(distinct) != 0 {
+		t.Errorf("DistinctStr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = DistinctStrIgnoreCase(nil)
 	if len(distinct) != 0 {
 		t.Errorf("DistinctStr failed. Expected=%v, actual=%v", expected, distinct)
 	}
