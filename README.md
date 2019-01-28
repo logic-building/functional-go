@@ -15,7 +15,7 @@ go get github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "7.0.0"
+version = "7.1.0"
 ```
 
 ### Quick Start
@@ -31,7 +31,7 @@ func square(num int) int {
 
 ```
 
-####  For user defined data type
+####  Generate functional code locally in project for user defined data type
 ```
 1. Install "gofp" to generate code
    go get github.com/logic-building/functional-go/gofp
@@ -429,6 +429,34 @@ SomeFloat64
 SomeFloat32
 SomeStr
 
+Takes three inputs:
+   A. function - takes two argument
+   B. list
+   c. initializer - optional
+ Returns:
+    single value
+
+ Example
+   list := []int{1, 2, 3, 4, 5}
+   ReduceInt(plusInt, list) // returns: 15
+
+   func plusInt(num1, num2 int) int {
+	    return num1 + num2
+   }
+
+ReduceInt
+ReduceInt64
+ReduceInt32
+ReduceInt16
+ReduceInt8
+ReduceUint
+ReduceUint64
+ReduceUint32
+ReduceUint16
+ReduceUint8
+ReduceFloat64
+ReduceFloat32
+ReduceStr
 
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
@@ -585,7 +613,7 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 
 ### Test Coverage
 ```
-Tests Passed : 507
+Tests Passed : 520
 ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
 ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```

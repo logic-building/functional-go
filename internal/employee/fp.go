@@ -151,6 +151,28 @@ func Rest(l []Employee) []Employee {
 
 	return newList
 }
+func Reduce(f func(Employee, Employee) Employee, list []Employee, initializer ...Employee) Employee {
+	var init Employee 
+	lenList := len(list)
+
+	if initializer != nil {
+		init = initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0]
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+	
+	if lenList == 0 {
+		return init
+	}
+	r := f(init, list[0])
+	return Reduce(f, list[1:], r)
+}
 func MapTeacher(f func(Teacher) Teacher, list []Teacher) []Teacher {
 	if f == nil {
 		return []Teacher{}
@@ -299,4 +321,26 @@ func RestTeacher(l []Teacher) []Teacher {
 	}
 
 	return newList
+}
+func ReduceTeacher(f func(Teacher, Teacher) Teacher, list []Teacher, initializer ...Teacher) Teacher {
+	var init Teacher 
+	lenList := len(list)
+
+	if initializer != nil {
+		init = initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0]
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+	
+	if lenList == 0 {
+		return init
+	}
+	r := f(init, list[0])
+	return ReduceTeacher(f, list[1:], r)
 }
