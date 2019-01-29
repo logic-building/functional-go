@@ -270,7 +270,7 @@ MinMaxUint8
 MinMaxFloat64
 MinMaxFloat32
 
-Takes number or string and list as arguments and Drop the given item and returns the list
+Returns a new list after dropping single item or multiple items 
 DropInt
 DropInts
 DropInt64
@@ -557,9 +557,13 @@ list := []int{8, 2, 10, 4}
 min := fp.MinInt(list) // returns 2
 ```
 
-### Example8 - Drop: Drop num or string from list
+### Example8 - Returns a new list after dropping the given item
 ```
 newList := fp.DropInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
+
+To drop multiple items:
+newList := fp.DropInts([]int{1, 2}, []int{1, 2, 3, 1}) // returns [3]
+
 ```
 
 ### Example9 - Distinct: returns distinct list

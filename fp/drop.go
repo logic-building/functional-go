@@ -2,6 +2,10 @@ package fp
 
 import "strings"
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
 func DropInt(num int, list []int) []int {
 	var newList []int
 	for _, v := range list {
@@ -12,6 +16,10 @@ func DropInt(num int, list []int) []int {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropInts([]int{1, 4}, []int{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropInts(nums []int, list []int) []int {
 	var newList []int
 	for _, v := range list {
@@ -22,6 +30,10 @@ func DropInts(nums []int, list []int) []int {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropInt64(1, []int64{1, 2, 3, 1}) // returns [2, 3]
 func DropInt64(num int64, list []int64) []int64 {
 	var newList []int64
 	for _, v := range list {
@@ -32,6 +44,10 @@ func DropInt64(num int64, list []int64) []int64 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropInts64([]int64{1, 4}, []int64{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropInts64(nums []int64, list []int64) []int64 {
 	var newList []int64
 	for _, v := range list {
@@ -42,6 +58,10 @@ func DropInts64(nums []int64, list []int64) []int64 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropInt32(1, []int32{1, 2, 3, 1}) // returns [2, 3]
 func DropInt32(num int32, list []int32) []int32 {
 	var newList []int32
 	for _, v := range list {
@@ -52,6 +72,10 @@ func DropInt32(num int32, list []int32) []int32 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropInts32([]int32{1, 4}, []int32{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropInts32(nums []int32, list []int32) []int32 {
 	var newList []int32
 	for _, v := range list {
@@ -62,6 +86,10 @@ func DropInts32(nums []int32, list []int32) []int32 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropInt16(1, []int16{1, 2, 3, 1}) // returns [2, 3]
 func DropInt16(num int16, list []int16) []int16 {
 	var newList []int16
 	for _, v := range list {
@@ -72,6 +100,10 @@ func DropInt16(num int16, list []int16) []int16 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropInts16([]int16{1, 4}, []int16{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropInts16(nums []int16, list []int16) []int16 {
 	var newList []int16
 	for _, v := range list {
@@ -82,6 +114,10 @@ func DropInts16(nums []int16, list []int16) []int16 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropInt8(1, []int8{1, 2, 3, 1}) // returns [2, 3]
 func DropInt8(num int8, list []int8) []int8 {
 	var newList []int8
 	for _, v := range list {
@@ -92,6 +128,10 @@ func DropInt8(num int8, list []int8) []int8 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropInts8([]int8{1, 4}, []int8{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropInts8(nums []int8, list []int8) []int8 {
 	var newList []int8
 	for _, v := range list {
@@ -102,6 +142,10 @@ func DropInts8(nums []int8, list []int8) []int8 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropUint(1, []uint{1, 2, 3, 1}) // returns [2, 3]
 func DropUint(num uint, list []uint) []uint {
 	var newList []uint
 	for _, v := range list {
@@ -112,6 +156,10 @@ func DropUint(num uint, list []uint) []uint {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropUints([]uint{1, 4}, []uint{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropUints(nums []uint, list []uint) []uint {
 	var newList []uint
 	for _, v := range list {
@@ -122,6 +170,10 @@ func DropUints(nums []uint, list []uint) []uint {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropUint64(1, []uint64{1, 2, 3, 1}) // returns [2, 3]
 func DropUint64(num uint64, list []uint64) []uint64 {
 	var newList []uint64
 	for _, v := range list {
@@ -132,6 +184,10 @@ func DropUint64(num uint64, list []uint64) []uint64 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropUints64([]uint64{1, 4}, []uint64{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropUints64(nums []uint64, list []uint64) []uint64 {
 	var newList []uint64
 	for _, v := range list {
@@ -142,6 +198,10 @@ func DropUints64(nums []uint64, list []uint64) []uint64 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropUint32(1, []uint32{1, 2, 3, 1}) // returns [2, 3]
 func DropUint32(num uint32, list []uint32) []uint32 {
 	var newList []uint32
 	for _, v := range list {
@@ -152,6 +212,10 @@ func DropUint32(num uint32, list []uint32) []uint32 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropUints32([]uint32{1, 4}, []uint32{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropUints32(nums []uint32, list []uint32) []uint32 {
 	var newList []uint32
 	for _, v := range list {
@@ -162,6 +226,10 @@ func DropUints32(nums []uint32, list []uint32) []uint32 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropUint16(1, []uint16{1, 2, 3, 1}) // returns [2, 3]
 func DropUint16(num uint16, list []uint16) []uint16 {
 	var newList []uint16
 	for _, v := range list {
@@ -172,6 +240,10 @@ func DropUint16(num uint16, list []uint16) []uint16 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropUints16([]uint16{1, 4}, []uint16{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropUints16(nums []uint16, list []uint16) []uint16 {
 	var newList []uint16
 	for _, v := range list {
@@ -182,6 +254,10 @@ func DropUints16(nums []uint16, list []uint16) []uint16 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropUint8(1, []uint8{1, 2, 3, 1}) // returns [2, 3]
 func DropUint8(num uint8, list []uint8) []uint8 {
 	var newList []uint8
 	for _, v := range list {
@@ -192,6 +268,10 @@ func DropUint8(num uint8, list []uint8) []uint8 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropUints8([]uint8{1, 4}, []uint8{1, 2, 3, 1, 4}) // returns [2, 3]
 func DropUints8(nums []uint8, list []uint8) []uint8 {
 	var newList []uint8
 	for _, v := range list {
@@ -202,6 +282,10 @@ func DropUints8(nums []uint8, list []uint8) []uint8 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropFloat64(1.1, []float64{1.1, 2.1, 3.1, 1.1}) // returns [2.1, 3.1]
 func DropFloat64(num float64, list []float64) []float64 {
 	var newList []float64
 	for _, v := range list {
@@ -212,6 +296,10 @@ func DropFloat64(num float64, list []float64) []float64 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropFloats64([]float64{1.1, 4.1}, []float64{1.1, 2.1, 3.1, 1.1, 4.1}) // returns [2.1, 3.1]
 func DropFloats64(nums []float64, list []float64) []float64 {
 	var newList []float64
 	for _, v := range list {
@@ -222,6 +310,10 @@ func DropFloats64(nums []float64, list []float64) []float64 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropFloat32(1.1, []float32{1.1, 2.1, 3.1, 1.1}) // returns [2.1, 3.1]
 func DropFloat32(num float32, list []float32) []float32 {
 	var newList []float32
 	for _, v := range list {
@@ -232,6 +324,10 @@ func DropFloat32(num float32, list []float32) []float32 {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropFloats32([]float32{1.1, 4.1}, []float32{1.1, 2.1, 3.1, 1.1, 4.1}) // returns [2.1, 3.1]
 func DropFloats32(nums []float32, list []float32) []float32 {
 	var newList []float32
 	for _, v := range list {
@@ -242,6 +338,10 @@ func DropFloats32(nums []float32, list []float32) []float32 {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropStr("Ravan", []string{"Ravan", "Ram", "Shyam", "Ravan"} // returns ["Ram", "Shyam"]
 func DropStr(str string, list []string) []string {
 	var newList []string
 	for _, v := range list {
@@ -252,6 +352,10 @@ func DropStr(str string, list []string) []string {
 	return newList
 }
 
+// Returns a new list after dropping the given item
+//
+// Example:
+// fp.DropStrIgnoreCase("ravan", []string{"Ravan", "Ram", "Shyam", "Ravan"} // returns ["Ram", "Shyam"]
 func DropStrIgnoreCase(str string, list []string) []string {
 	strLower := strings.ToLower(str)
 	var newList []string
@@ -263,6 +367,10 @@ func DropStrIgnoreCase(str string, list []string) []string {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropStrs([]string{"nks", "bharat"}, []string{"nks", "Ram", "Shyam", "Nks", "bharat"}) // returns ["Ram", "Shyam"]
 func DropStrs(strs []string, list []string) []string {
 	var newList []string
 	for _, v := range list {
@@ -273,6 +381,10 @@ func DropStrs(strs []string, list []string) []string {
 	return newList
 }
 
+// Returns a new list after dropping the given items
+//
+// Example:
+// fp.DropStrs([]string{"nks", "bharat"}, []string{"Nks", "Ram", "Shyam", "Nks", "Bharat"}) // returns ["Ram", "Shyam"]
 func DropStrsIgnoreCase(strs []string, list []string) []string {
 	var newList []string
 
