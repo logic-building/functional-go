@@ -174,6 +174,15 @@ func quoteForTheDay() string {
 		"The real way to loving is giving not demanding",
 		"No one is greater or smaller than other. Everyone in this world is unique. Love everyone",
 		"The person who has heart full of love, has always something to give",
+		"Hell has three gates lust, anger, greed",
+		"Be happy with nothing and you will be happy with everything",
+		"Detachment is not that you should own nothing, but that nothing should own you",
+		"Devotion has the power to burn down any karma",
+		"Love is the greatest power on earth",
+		"When you wish good for others, good things come back to you. This is the Law of Nature",
+		"If you can win over your mind, you can win over the whole world",
+		"Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate. only love cna do that",
+		"Silence says so mcuh. Just listen",
 	}
 
 	s := rand.NewSource(time.Now().Unix())

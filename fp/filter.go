@@ -1,5 +1,19 @@
 package fp
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterInt(isEven, []int{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num int) bool {
+//		return num%2 == 0
+//	}
 func FilterInt(f func(int) bool, list []int) []int {
 	if f == nil {
 		return []int{}
@@ -13,6 +27,20 @@ func FilterInt(f func(int) bool, list []int) []int {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: FilterInt64 all even numbers
+//	fp.FilterInt(isEven, []int64{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num int64) bool {
+//		return num%2 == 0
+//	}
 func FilterInt64(f func(int64) bool, list []int64) []int64 {
 	if f == nil {
 		return []int64{}
@@ -26,6 +54,20 @@ func FilterInt64(f func(int64) bool, list []int64) []int64 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterInt(isEven, []int32{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num int32) bool {
+//		return num%2 == 0
+//	}
 func FilterInt32(f func(int32) bool, list []int32) []int32 {
 	if f == nil {
 		return []int32{}
@@ -39,6 +81,20 @@ func FilterInt32(f func(int32) bool, list []int32) []int32 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterInt16(isEven, []int32{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num int32) bool {
+//		return num%2 == 0
+//	}
 func FilterInt16(f func(int16) bool, list []int16) []int16 {
 	if f == nil {
 		return []int16{}
@@ -52,6 +108,20 @@ func FilterInt16(f func(int16) bool, list []int16) []int16 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterInt8(isEven, []int8{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num int8) bool {
+//		return num%2 == 0
+//	}
 func FilterInt8(f func(int8) bool, list []int8) []int8 {
 	if f == nil {
 		return []int8{}
@@ -65,6 +135,20 @@ func FilterInt8(f func(int8) bool, list []int8) []int8 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterUint64(isEven, []uint64{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num uint64) bool {
+//		return num%2 == 0
+//	}
 func FilterUint64(f func(uint64) bool, list []uint64) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -78,6 +162,20 @@ func FilterUint64(f func(uint64) bool, list []uint64) []uint64 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterUint32(isEven, []uint32{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num uint32) bool {
+//		return num%2 == 0
+//	}
 func FilterUint32(f func(uint32) bool, list []uint32) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -91,6 +189,20 @@ func FilterUint32(f func(uint32) bool, list []uint32) []uint32 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterUint16(isEven, []uint16{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num uint16) bool {
+//		return num%2 == 0
+//	}
 func FilterUint16(f func(uint16) bool, list []uint16) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -104,6 +216,20 @@ func FilterUint16(f func(uint16) bool, list []uint16) []uint16 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterUint8(isEven, []uint8{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num uint8) bool {
+//		return num%2 == 0
+//	}
 func FilterUint8(f func(uint8) bool, list []uint8) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -117,6 +243,20 @@ func FilterUint8(f func(uint8) bool, list []uint8) []uint8 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all even numbers
+//	fp.FilterUint(isEven, []uint{1, 2, 3, 4}) // Returns [2, 4]
+//
+//	func isEven(num uint) bool {
+//		return num%2 == 0
+//	}
 func FilterUint(f func(uint) bool, list []uint) []uint {
 	if f == nil {
 		return []uint{}
@@ -130,6 +270,20 @@ func FilterUint(f func(uint) bool, list []uint) []uint {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all positive numbers
+//	fp.FilterFloat64(isPositive, []float64{0, -2, 2, 40.50}) // Returns [2, 40.50]
+//
+//	func isPositive(num float64) bool {
+//		return num > 0
+//	}
 func FilterFloat64(f func(float64) bool, list []float64) []float64 {
 	if f == nil {
 		return []float64{}
@@ -143,6 +297,20 @@ func FilterFloat64(f func(float64) bool, list []float64) []float64 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all positive numbers
+//	fp.FilterFloat32(isPositive, []float32{0, -2, 2, 40.50}) // Returns [2, 40.50]
+//
+//	func isPositive(num float32) bool {
+//		return num > 0
+//	}
 func FilterFloat32(f func(float32) bool, list []float32) []float32 {
 	if f == nil {
 		return []float32{}
@@ -156,6 +324,20 @@ func FilterFloat32(f func(float32) bool, list []float32) []float32 {
 	return newList
 }
 
+// Filters list based on function passed as 1st argument
+// Takes two inputs
+//	1. function - Takes 1 input and returns bool
+// 	2. list
+// Returns:
+//	New Filtered List.
+//	Empty list if either of arguments or both of them are nil
+//
+// Example: Filter all the name which length is less than 10
+//	fp.FilterStr(isStringLengthLessThan10, []string{"gopal", "govinda", "Dasananda Ravan"}) // Returns ["gopal", "govinda"]
+//
+//	func isStringLengthLessThan10(str string) bool {
+//		return len(str) < 10
+//	}
 func FilterStr(f func(string) bool, list []string) []string {
 	if f == nil {
 		return []string{}

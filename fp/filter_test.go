@@ -350,7 +350,7 @@ func isPositiveFloat32(num float32) bool {
 }
 
 func TestFilterStr(t *testing.T) {
-	// Test : filter all the positive numbers in the list
+	// Test : filter all the name which length is less than 10
 	expectedFilteredList := []string{"gopal", "govinda"}
 	filteredList := FilterStr(isStringLengthLessThan10, []string{"gopal", "govinda", "Nandeshwar"})
 
