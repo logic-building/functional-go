@@ -1,3 +1,54 @@
+// Generates functional code locally for user defined data type.
+/*
+```
+1. Install "gofp" to generate code
+   go get github.com/logic-building/functional-go/gofp
+   go install github.com/logic-building/functional-go/gofp
+
+2. Add this line in a file where user defined data type exists
+   //go:generate gofp -destination <file> -pkg <pkg> -type <Types separated by comma>
+
+example:
+    package employee
+
+   //go:generate gofp -destination fp.go -pkg employee -type "Employee, Teacher"
+   type Employee struct {
+   	id     int
+   	name   string
+   	salary float64
+   }
+
+   type Teacher struct {
+   	id     int
+   	name   string
+   	salary float64
+   }
+
+Note:
+   A. fp.go               :  generated code
+   B. employee            :  package name
+   C. "Employee, Teacher" :  User defined data types
+
+3. Generate functional code
+   go generate ./...
+
+4. Now write your code
+
+    emp1 := employee.Employee{1, "A", 1000}
+   	emp2 := employee.Employee{1, "A", 1000}
+   	emp3 := employee.Employee{1, "A", 1000}
+
+   	empList := []employee.Employee{emp1, emp2, emp3}
+
+   	newEmpList := employee.Map(incrementSalary, empList) //  Returns: [{1 A 1500} {1 A 1500} {1 A 1500}]
+
+   func incrementSalary(emp employee.Employee) employee.Employee {
+        emp.Salary = emp.Salary + 500
+        return emp
+   }
+
+```
+*/
 package main
 
 import (
@@ -9,6 +60,8 @@ import (
 	"strings"
 
 	template2 "github.com/logic-building/functional-go/internal/template"
+	"math/rand"
+	"time"
 )
 
 var (
@@ -18,18 +71,24 @@ var (
 )
 
 func main() {
+	defer func() {
+		fmt.Println("\n\t\t\"" + quoteForTheDay() + "\"")
+	}()
+
 	fmt.Println("Welcome to functional-go")
 
 	flag.Parse()
 
 	if *destination == "" || *pkgName == "" || *types == "" {
-		fmt.Println("go:generate -destination fp.go -source employee.go -pkg Employee")
-		os.Exit(1)
+		fmt.Println("either of these fields : (destination, package, types) - is not provided")
+		usage()
+		return
 	}
 
 	if len(*destination) > 0 {
 		if err := os.MkdirAll(filepath.Dir(*destination), os.ModePerm); err != nil {
 			log.Fatalf("Unable to create destination directory: %v", err)
+			usage()
 		}
 		f, err := os.Create(*destination)
 		if err != nil {
@@ -38,12 +97,14 @@ func main() {
 		generatedCode, err := generateFPCode(*pkgName, *types)
 		if err != nil {
 			log.Fatalf("Failed code generation: %v", err)
+			usage()
 		}
 		f.Write([]byte(generatedCode))
 		defer f.Close()
 	}
 
-	log.Print("Code is generated successfully")
+	fmt.Println("Code is generated successfully")
+
 }
 
 func generateFPCode(pkg, dataTypes string) (string, error) {
@@ -99,4 +160,25 @@ func generateFPCode(pkg, dataTypes string) (string, error) {
 	}
 
 	return template, nil
+}
+
+func usage() {
+	fmt.Println("\nUsage:")
+	fmt.Println("go:generate -destination fp.go -source employee.go -pkg Employee")
+}
+func quoteForTheDay() string {
+	quotes := []string{
+		"Time spent in love is never waste",
+		"Enjoy every moment",
+		"Wherever there is love, there is God",
+		"The real way to loving is giving not demanding",
+		"No one is greater or smaller than other. Everyone in this world is unique. Love everyone",
+		"The person who has heart full of love, has always something to give",
+	}
+
+	s := rand.NewSource(time.Now().Unix())
+	r := rand.New(s) // initialize local pseudorandom generator
+	ind := r.Intn(len(quotes))
+
+	return quotes[ind]
 }
