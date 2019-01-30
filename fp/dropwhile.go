@@ -6,8 +6,8 @@ package fp
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
@@ -43,8 +43,8 @@ func DropWhileInt(f func(int) bool, list []int) []int {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileInt64(isEven, []int64{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -79,8 +79,8 @@ func DropWhileInt64(f func(int64) bool, list []int64) []int64 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileInt32(isEven, []int32{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -115,8 +115,8 @@ func DropWhileInt32(f func(int32) bool, list []int32) []int32 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileInt16(isEven, []int16{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -151,8 +151,8 @@ func DropWhileInt16(f func(int16) bool, list []int16) []int16 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileInt8(isEven, []int8{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -187,8 +187,8 @@ func DropWhileInt8(f func(int8) bool, list []int8) []int8 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileUint(isEven, []uint{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -223,8 +223,8 @@ func DropWhileUint(f func(uint) bool, list []uint) []uint {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileUint64(isEven, []uint64{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -259,8 +259,8 @@ func DropWhileUint64(f func(uint64) bool, list []uint64) []uint64 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileUint32(isEven, []uint32{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -295,8 +295,8 @@ func DropWhileUint32(f func(uint32) bool, list []uint32) []uint32 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileUint16(isEven, []uint16{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -331,8 +331,8 @@ func DropWhileUint16(f func(uint16) bool, list []uint16) []uint16 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops even number. Returns the remaining items once odd number is found in the list.
 //	fp.DropWhileUint8(isEven, []uint8{4, 2, 3, 4, 5}) // Returns [3, 4, 5]
@@ -367,8 +367,8 @@ func DropWhileUint8(f func(uint8) bool, list []uint8) []uint8 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops positive numbers. Returns the remaining items once negative number is found in the list.
 //	fp. DropWhileFloat64(isPositive, []float64{4, 2, 3, -1, 4, 5}) // Returns [-1, 4, 5]
@@ -403,8 +403,8 @@ func DropWhileFloat64(f func(float64) bool, list []float64) []float64 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops positive numbers. Returns the remaining items once negative number is found in the list.
 //	fp. DropWhileFloat32(isPositive, []float32{4, 2, 3, -1, 4, 5}) // Returns [-1, 4, 5]
@@ -439,8 +439,8 @@ func DropWhileFloat32(f func(float32) bool, list []float32) []float32 {
 //	1. Function: takes one input and returns boolean
 //	2. list
 // Returns:
-// 	- New List
-//  - Empty list if either one of arguments or both of them are nil
+// 	New List
+//  Empty list if either one of arguments or both of them are nil
 //
 // Example: Drops names as long as it's length is <10.
 //	fp.DropWhileStr(
