@@ -6,8 +6,8 @@
 
 ### Install
 ```
-go get github.com/logic-building/functional-go/fp/
-go get github.com/logic-building/functional-go/set/
+go get -u github.com/logic-building/functional-go/fp/
+go get -u github.com/logic-building/functional-go/set/
 
 ```
 
@@ -34,7 +34,7 @@ func square(num int) int {
 ####  Generate functional code locally in project for user defined data type
 ```
 1. Install "gofp" to generate code
-   go get github.com/logic-building/functional-go/gofp
+   go get -u github.com/logic-building/functional-go/gofp
    go install github.com/logic-building/functional-go/gofp
 
 2. Add this line in a file where user defined data type exists
