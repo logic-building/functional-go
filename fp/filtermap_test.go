@@ -239,7 +239,7 @@ func multiplyBy2Float32(num float32) float32 {
 func TestFilterMapStr(t *testing.T) {
 	// Test : filter all the names in the list which length is <10 and change them to upper case.
 	expectedFilteredList := []string{"GOPAL", "GOVINDA"}
-	filteredList := FilterMapStr(isStringLengthLessThan10, changeStrToUpperCase, []string{"gopal", "govinda", "nandeshwar", "Nandeshwar Sah"})
+	filteredList := FilterMapStr(isStringLengthLessThan10, strings.ToUpper, []string{"gopal", "govinda", "nandeshwar", "Nandeshwar Sah"})
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterMapStr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
@@ -247,8 +247,4 @@ func TestFilterMapStr(t *testing.T) {
 	if len(FilterMapStr(nil, nil, nil)) > 0 {
 		t.Errorf("FilterMapStr failed.")
 	}
-}
-
-func changeStrToUpperCase(str string) string {
-	return strings.ToUpper(str)
 }

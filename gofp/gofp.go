@@ -183,6 +183,8 @@ func quoteForTheDay() string {
 		"If you can win over your mind, you can win over the whole world",
 		"Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate. only love cna do that",
 		"Silence says so mcuh. Just listen",
+		"The greatest gift human can give to himself and others are tolerance and forgiveness",
+		"The practice of devotion involves replacing desires for the world with the desires for God",
 	}
 
 	s := rand.NewSource(time.Now().Unix())
