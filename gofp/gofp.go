@@ -2,7 +2,7 @@
 /*
 ```
 1. Install "gofp" to generate code
-   go get github.com/logic-building/functional-go/gofp
+   go get -u github.com/logic-building/functional-go/gofp
    go install github.com/logic-building/functional-go/gofp
 
 2. Add this line in a file where user defined data type exists
@@ -185,6 +185,14 @@ func quoteForTheDay() string {
 		"Silence says so mcuh. Just listen",
 		"The greatest gift human can give to himself and others are tolerance and forgiveness",
 		"The practice of devotion involves replacing desires for the world with the desires for God",
+		"The wealth of divine love is the only true wealth. Every other form of wealth simply enhances one's pride",
+		"Speak only when you feel your words are better than the silence",
+		"For our spiritual growth, negative people are often placed in our path, so we may learn selfless love, forgiveness & surrender to the will of God",
+		"The happiest people are givers not takers",
+		"Why do we close our eyes when we pray, cry, kiss or dream? Because the most beautiful things in life are not seen, but felt by the heart",
+		"If you have to choose between being kind and being right choose being kind and you will always be right",
+		"Silence & Smile are two powerful tools.Smile is the way to solve many problems & Silence is the way to avoid many problems",
+		"Don't get upset with people and situations, because both are powerless without your reaction",
 	}
 
 	s := rand.NewSource(time.Now().Unix())

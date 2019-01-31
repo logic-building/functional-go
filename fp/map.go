@@ -1,5 +1,21 @@
 package fp
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapInt(squareInt, []int{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num int) int {
+//		return num * num
+//	}
 func MapInt(f func(int) int, list []int) []int {
 	if f == nil {
 		return []int{}
@@ -11,6 +27,22 @@ func MapInt(f func(int) int, list []int) []int {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapInt64(squareInt, []int64{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num int64) int64 {
+//		return num * num
+//	}
 func MapInt64(f func(int64) int64, list []int64) []int64 {
 	if f == nil {
 		return []int64{}
@@ -22,6 +54,22 @@ func MapInt64(f func(int64) int64, list []int64) []int64 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapInt32(squareInt, []int32{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num int32) int32 {
+//		return num * num
+//	}
 func MapInt32(f func(int32) int32, list []int32) []int32 {
 	if f == nil {
 		return []int32{}
@@ -33,6 +81,22 @@ func MapInt32(f func(int32) int32, list []int32) []int32 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapInt8(squareInt, []int8{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num int8) int8 {
+//		return num * num
+//	}
 func MapInt8(f func(int8) int8, list []int8) []int8 {
 	if f == nil {
 		return []int8{}
@@ -44,6 +108,22 @@ func MapInt8(f func(int8) int8, list []int8) []int8 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapInt16(squareInt, []int16{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num int16) int16 {
+//		return num * num
+//	}
 func MapInt16(f func(int16) int16, list []int16) []int16 {
 	if f == nil {
 		return []int16{}
@@ -55,6 +135,22 @@ func MapInt16(f func(int16) int16, list []int16) []int16 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapUint64(squareInt, []uint64{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num uint64) uint64 {
+//		return num * num
+//	}
 func MapUint64(f func(uint64) uint64, list []uint64) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -66,6 +162,22 @@ func MapUint64(f func(uint64) uint64, list []uint64) []uint64 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapUint32(squareInt, []uint32{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num uint32) uint32 {
+//		return num * num
+//	}
 func MapUint32(f func(uint32) uint32, list []uint32) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -77,6 +189,22 @@ func MapUint32(f func(uint32) uint32, list []uint32) []uint32 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapUint16(squareInt, []uint16{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num uint16) uint16 {
+//		return num * num
+//	}
 func MapUint16(f func(uint16) uint16, list []uint16) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -88,6 +216,22 @@ func MapUint16(f func(uint16) uint16, list []uint16) []uint16 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapUint8(squareInt, []uint8{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num uint8) uint8 {
+//		return num * num
+//	}
 func MapUint8(f func(uint8) uint8, list []uint8) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -99,6 +243,22 @@ func MapUint8(f func(uint8) uint8, list []uint8) []uint8 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: Square each item in the list
+//	MapUint(squareInt, []uint{1, 2, 3}) // Returns [1, 4, 9]
+
+//	func squareInt(num uint) uint {
+//		return num * num
+//	}
 func MapUint(f func(uint) uint, list []uint) []uint {
 	if f == nil {
 		return []uint{}
@@ -110,6 +270,22 @@ func MapUint(f func(uint) uint, list []uint) []uint {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: add 1 to each item in the list
+//	MapFloat64(addOne, []float64{1, 2, 3}) // Returns [2, 3, 4]
+
+//	func addOne(num float64) float64 {
+//		return num + 1
+//	}
 func MapFloat64(f func(float64) float64, list []float64) []float64 {
 	if f == nil {
 		return []float64{}
@@ -121,6 +297,22 @@ func MapFloat64(f func(float64) float64, list []float64) []float64 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: add 1 to each item in the list
+//	MapFloat32(addOne, []float32{1, 2, 3}) // Returns [2, 3, 4]
+
+//	func addOne(num float32) float32 {
+//		return num + 1
+//	}
 func MapFloat32(f func(float32) float32, list []float32) []float32 {
 	if f == nil {
 		return []float32{}
@@ -132,6 +324,18 @@ func MapFloat32(f func(float32) float32, list []float32) []float32 {
 	return newList
 }
 
+// Apply the function(1st argument) on each item of the list and returns new list
+
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+
+// Example: change case to upper for each item in the list
+//	MapStr(strings.ToUpper, []string{"govinda", "gopal", "shyam"}) // Returns ["GOVINDA", "GOPAL", "SHYAM"]
 func MapStr(f func(string) string, list []string) []string {
 	if f == nil {
 		return []string{}

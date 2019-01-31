@@ -6,6 +6,10 @@ package fp
 //	2. Function: takes int as argument and returns int
 // 	3. List
 //
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapInt(isPositive, multiplyBy2, []int{-1, 0, 2, 4}) // Returns [4, 8]
 //
@@ -34,6 +38,10 @@ func FilterMapInt(fFilter func(int) bool, fMap func(int) int, list []int) []int 
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
 // 	3. List
+//
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
 //
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapInt64(isPositive, multiplyBy2, []int64{-1, 0, 2, 4}) // Returns [4, 8]
@@ -65,6 +73,10 @@ func FilterMapInt64(fFilter func(int64) bool, fMap func(int64) int64, list []int
 //	2. Function: takes int as argument and returns int
 // 	3. List
 //
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapInt32(isPositive, multiplyBy2, []int32{-1, 0, 2, 4}) // Returns [4, 8]
 //
@@ -93,6 +105,10 @@ func FilterMapInt32(fFilter func(int32) bool, fMap func(int32) int32, list []int
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
 // 	3. List
+//
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
 //
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapInt16(isPositive, multiplyBy2, []int16{-1, 0, 2, 4}) // Returns [4, 8]
@@ -123,6 +139,10 @@ func FilterMapInt16(fFilter func(int16) bool, fMap func(int16) int16, list []int
 //	2. Function: takes int as argument and returns int
 // 	3. List
 //
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapInt8(isPositive, multiplyBy2, []int8{-1, 0, 2, 4}) // Returns [4, 8]
 //
@@ -151,6 +171,10 @@ func FilterMapInt8(fFilter func(int8) bool, fMap func(int8) int8, list []int8) [
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
 // 	3. List
+//
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
 //
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapUint64(isPositive, multiplyBy2, []uint64{-1, 0, 2, 4}) // Returns [4, 8]
@@ -181,6 +205,10 @@ func FilterMapUint64(fFilter func(uint64) bool, fMap func(uint64) uint64, list [
 //	2. Function: takes int as argument and returns int
 // 	3. List
 //
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapUint32(isPositive, multiplyBy2, []uint64{-1, 0, 2, 4}) // Returns [4, 8]
 //
@@ -209,6 +237,10 @@ func FilterMapUint32(fFilter func(uint32) bool, fMap func(uint32) uint32, list [
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
 // 	3. List
+//
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
 //
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapUint16(isPositive, multiplyBy2, []uint16{-1, 0, 2, 4}) // Returns [4, 8]
@@ -239,6 +271,10 @@ func FilterMapUint16(fFilter func(uint16) bool, fMap func(uint16) uint16, list [
 //	2. Function: takes int as argument and returns int
 // 	3. List
 //
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapUint8(isPositive, multiplyBy2, []uint8{-1, 0, 2, 4}) // Returns [4, 8]
 //
@@ -267,6 +303,10 @@ func FilterMapUint8(fFilter func(uint8) bool, fMap func(uint8) uint8, list []uin
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
 // 	3. List
+//
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
 //
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapUint(isPositive, multiplyBy2, []uint{-1, 0, 2, 4}) // Returns [4, 8]
@@ -297,6 +337,10 @@ func FilterMapUint(fFilter func(uint) bool, fMap func(uint) uint, list []uint) [
 //	2. Function: takes int as argument and returns int
 // 	3. List
 //
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapFloat64(isPositive, multiplyBy2, []float64{-1, 0, 2, 4}) // Returns [4, 8]
 //
@@ -326,6 +370,10 @@ func FilterMapFloat64(fFilter func(float64) bool, fMap func(float64) float64, li
 //	2. Function: takes int as argument and returns int
 // 	3. List
 //
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
 // Example: Multiply all positive numbers in the list by 2
 //	fp.FilterMapFloat32(isPositive, multiplyBy2, []float32{-1, 0, 2, 4}) // Returns [4, 8]
 //
@@ -354,6 +402,10 @@ func FilterMapFloat32(fFilter func(float32) bool, fMap func(float32) float32, li
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
 // 	3. List
+//
+// Returns:
+//	New List.
+//  Empty list if all there parameters are nil or either of parameter is nil
 //
 // Example: filter all the names in the list which length is <10 and change them to upper case
 //	fp.FilterMapStr(isStringLengthLessThan10, strings.ToUpper, []string{"gopal", "govinda", "nandeshwar", "Nandeshwar Sah"}) // Returns [{"GOPAL", "GOVINDA"]
