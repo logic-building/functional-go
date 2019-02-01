@@ -9,6 +9,7 @@
 
 package fp
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestInt(l []int) []int {
 	if l == nil {
 		return []int{}
@@ -28,6 +29,7 @@ func RestInt(l []int) []int {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestInt64(l []int64) []int64 {
 	if l == nil {
 		return []int64{}
@@ -47,6 +49,7 @@ func RestInt64(l []int64) []int64 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestInt32(l []int32) []int32 {
 	if l == nil {
 		return []int32{}
@@ -66,6 +69,7 @@ func RestInt32(l []int32) []int32 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestInt16(l []int16) []int16 {
 	if l == nil {
 		return []int16{}
@@ -85,6 +89,7 @@ func RestInt16(l []int16) []int16 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestInt8(l []int8) []int8 {
 	if l == nil {
 		return []int8{}
@@ -104,6 +109,7 @@ func RestInt8(l []int8) []int8 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestUint(l []uint) []uint {
 	if l == nil {
 		return []uint{}
@@ -123,6 +129,7 @@ func RestUint(l []uint) []uint {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestUint64(l []uint64) []uint64 {
 	if l == nil {
 		return []uint64{}
@@ -142,6 +149,7 @@ func RestUint64(l []uint64) []uint64 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestUint32(l []uint32) []uint32 {
 	if l == nil {
 		return []uint32{}
@@ -161,6 +169,7 @@ func RestUint32(l []uint32) []uint32 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestUint16(l []uint16) []uint16 {
 	if l == nil {
 		return []uint16{}
@@ -180,6 +189,7 @@ func RestUint16(l []uint16) []uint16 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestUint8(l []uint8) []uint8 {
 	if l == nil {
 		return []uint8{}
@@ -199,6 +209,7 @@ func RestUint8(l []uint8) []uint8 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestFloat64(l []float64) []float64 {
 	if l == nil {
 		return []float64{}
@@ -218,6 +229,7 @@ func RestFloat64(l []float64) []float64 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestFloat32(l []float32) []float32 {
 	if l == nil {
 		return []float32{}
@@ -237,6 +249,7 @@ func RestFloat32(l []float32) []float32 {
 	return newList
 }
 
+// Remove 1st item of the list and return new list having rest of the items
 func RestStr(l []string) []string {
 	if l == nil {
 		return []string{}
