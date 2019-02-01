@@ -2,6 +2,7 @@
 /*
 ```
 1. Install "gofp" to generate code
+   go get github.com/logic-building/functional-go/gofp
    go get -u github.com/logic-building/functional-go/gofp
    go install github.com/logic-building/functional-go/gofp
 
@@ -193,6 +194,7 @@ func quoteForTheDay() string {
 		"If you have to choose between being kind and being right choose being kind and you will always be right",
 		"Silence & Smile are two powerful tools.Smile is the way to solve many problems & Silence is the way to avoid many problems",
 		"Don't get upset with people and situations, because both are powerless without your reaction",
+		"Most of the people are in lack of knowledge.Don't hate people.Love people and understand people are under influence of ignorance. Always do righteously.",
 	}
 
 	s := rand.NewSource(time.Now().Unix())
