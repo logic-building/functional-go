@@ -4,6 +4,7 @@ type SetUint struct {
 	nodeMap map[uint]bool
 }
 
+// Create set object
 func NewUint(nums []uint) *SetUint {
 	s := &SetUint{}
 	for _, num := range nums {
@@ -12,6 +13,7 @@ func NewUint(nums []uint) *SetUint {
 	return s
 }
 
+// Add an item
 func (s *SetUint) Add(num uint) *SetUint {
 	if s.nodeMap == nil {
 		s.nodeMap = make(map[uint]bool)
@@ -23,10 +25,12 @@ func (s *SetUint) Add(num uint) *SetUint {
 	return s
 }
 
+// Make object empty
 func (s *SetUint) Clear() {
 	s.nodeMap = make(map[uint]bool)
 }
 
+// Remove an item
 func (s *SetUint) Remove(num uint) bool {
 	_, ok := s.nodeMap[num]
 	if ok {
@@ -35,11 +39,13 @@ func (s *SetUint) Remove(num uint) bool {
 	return ok
 }
 
+// Check if item exists in set
 func (s *SetUint) Contains(num uint) bool {
 	_, ok := s.nodeMap[num]
 	return ok
 }
 
+// Get set items
 func (s *SetUint) GetList() []uint {
 	nums := []uint{}
 	for i := range s.nodeMap {
@@ -48,10 +54,12 @@ func (s *SetUint) GetList() []uint {
 	return nums
 }
 
+// Get size of set
 func (s *SetUint) Size() int {
 	return len(s.nodeMap)
 }
 
+// Returns all the items that are in S or in S2
 func (s *SetUint) Union(s2 *SetUint) *SetUint {
 	s3 := SetUint{}
 	s3.nodeMap = make(map[uint]bool)
@@ -67,7 +75,7 @@ func (s *SetUint) Union(s2 *SetUint) *SetUint {
 	return &s3
 }
 
-// common in A and B
+// Common items in S and S2
 func (s *SetUint) Intersection(s2 *SetUint) *SetUint {
 	s3 := SetUint{}
 	s3.nodeMap = make(map[uint]bool)
@@ -80,7 +88,7 @@ func (s *SetUint) Intersection(s2 *SetUint) *SetUint {
 	return &s3
 }
 
-// a.Minus(b) : all of a but not in b
+// s.Minus(s2) : all of S but not in S2
 func (s *SetUint) Minus(s2 *SetUint) *SetUint {
 	s3 := SetUint{}
 	s3.nodeMap = make(map[uint]bool)
@@ -93,6 +101,7 @@ func (s *SetUint) Minus(s2 *SetUint) *SetUint {
 	return &s3
 }
 
+// Checks if S is subset of S2
 func (s *SetUint) Subset(s2 *SetUint) bool {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
@@ -103,6 +112,7 @@ func (s *SetUint) Subset(s2 *SetUint) bool {
 	return true
 }
 
+// Checks if S is superset of S2
 func (s *SetUint) Superset(s2 *SetUint) bool {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]

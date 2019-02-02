@@ -7,6 +7,7 @@ type SetInt64Sync struct {
 	sync.RWMutex
 }
 
+// Create set object
 func NewInt64Sync(nums []int64) *SetInt64Sync {
 	s := &SetInt64Sync{}
 	for _, num := range nums {
@@ -15,6 +16,7 @@ func NewInt64Sync(nums []int64) *SetInt64Sync {
 	return s
 }
 
+// Add an item
 func (s *SetInt64Sync) Add(num int64) *SetInt64Sync {
 	s.Lock()
 	defer s.Unlock()
@@ -28,12 +30,14 @@ func (s *SetInt64Sync) Add(num int64) *SetInt64Sync {
 	return s
 }
 
+// Make object empty
 func (s *SetInt64Sync) Clear() {
 	s.Lock()
 	defer s.Unlock()
 	s.nodeMap = make(map[int64]bool)
 }
 
+// Remove an item
 func (s *SetInt64Sync) Remove(num int64) bool {
 	s.Lock()
 	defer s.Unlock()
@@ -44,6 +48,7 @@ func (s *SetInt64Sync) Remove(num int64) bool {
 	return ok
 }
 
+// Check if item exists in set
 func (s *SetInt64Sync) Contains(num int64) bool {
 	s.RLock()
 	defer s.RUnlock()
@@ -51,6 +56,7 @@ func (s *SetInt64Sync) Contains(num int64) bool {
 	return ok
 }
 
+// Get set items
 func (s *SetInt64Sync) GetList() []int64 {
 	s.RLock()
 	defer s.RUnlock()
@@ -61,12 +67,14 @@ func (s *SetInt64Sync) GetList() []int64 {
 	return nums
 }
 
+// Get size of set
 func (s *SetInt64Sync) Size() int {
 	s.RLock()
 	defer s.RUnlock()
 	return len(s.nodeMap)
 }
 
+// Returns all the items that are in S or in S2
 func (s *SetInt64Sync) Union(s2 *SetInt64Sync) *SetInt64Sync {
 	s3 := SetInt64Sync{}
 	s3.nodeMap = make(map[int64]bool)
@@ -86,7 +94,7 @@ func (s *SetInt64Sync) Union(s2 *SetInt64Sync) *SetInt64Sync {
 	return &s3
 }
 
-// common in A and B
+// Common items in S and S2
 func (s *SetInt64Sync) Intersection(s2 *SetInt64Sync) *SetInt64Sync {
 	s3 := SetInt64Sync{}
 	s3.nodeMap = make(map[int64]bool)
@@ -103,7 +111,7 @@ func (s *SetInt64Sync) Intersection(s2 *SetInt64Sync) *SetInt64Sync {
 	return &s3
 }
 
-// a.Minus(b) : all of a but not in b
+// s.Minus(s2) : all of S but not in S2
 func (s *SetInt64Sync) Minus(s2 *SetInt64Sync) *SetInt64Sync {
 	s3 := SetInt64Sync{}
 	s3.nodeMap = make(map[int64]bool)
@@ -120,6 +128,7 @@ func (s *SetInt64Sync) Minus(s2 *SetInt64Sync) *SetInt64Sync {
 	return &s3
 }
 
+// Checks if S is subset of S2
 func (s *SetInt64Sync) Subset(s2 *SetInt64Sync) bool {
 	s.RLock()
 	s2.RLock()
@@ -134,6 +143,7 @@ func (s *SetInt64Sync) Subset(s2 *SetInt64Sync) bool {
 	return true
 }
 
+// Checks if S is superset of S2
 func (s *SetInt64Sync) Superset(s2 *SetInt64Sync) bool {
 	s.RLock()
 	s2.RLock()
