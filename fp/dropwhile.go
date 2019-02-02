@@ -1,6 +1,6 @@
 package fp
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileInt drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -37,7 +37,7 @@ func DropWhileInt(f func(int) bool, list []int) []int {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileInt64 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -74,7 +74,7 @@ func DropWhileInt64(f func(int64) bool, list []int64) []int64 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileInt32 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -111,7 +111,7 @@ func DropWhileInt32(f func(int32) bool, list []int32) []int32 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileInt16 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -148,7 +148,7 @@ func DropWhileInt16(f func(int16) bool, list []int16) []int16 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileInt8 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -185,7 +185,7 @@ func DropWhileInt8(f func(int8) bool, list []int8) []int8 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileUint drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -222,7 +222,7 @@ func DropWhileUint(f func(uint) bool, list []uint) []uint {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileUint64 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -259,7 +259,7 @@ func DropWhileUint64(f func(uint64) bool, list []uint64) []uint64 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileUint32 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -296,7 +296,7 @@ func DropWhileUint32(f func(uint32) bool, list []uint32) []uint32 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileUint16 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -333,7 +333,7 @@ func DropWhileUint16(f func(uint16) bool, list []uint16) []uint16 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileUint8 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -370,7 +370,7 @@ func DropWhileUint8(f func(uint8) bool, list []uint8) []uint8 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileFloat64 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -407,7 +407,7 @@ func DropWhileFloat64(f func(float64) bool, list []float64) []float64 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileFloat32 drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -444,7 +444,7 @@ func DropWhileFloat32(f func(float32) bool, list []float32) []float32 {
 	return newList
 }
 
-// Drops the items from the list as long as condition satisfies.
+// DropWhileStr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean

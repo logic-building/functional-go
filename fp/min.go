@@ -1,6 +1,6 @@
 package fp
 
-// Returns min item from the list.
+// MinInt returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt(list []int) int {
 	if list == nil || len(list) == 0 {
@@ -15,7 +15,7 @@ func MinInt(list []int) int {
 	return min
 }
 
-// Returns min item from the list.
+// MinInt64 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt64(list []int64) int64 {
 	if list == nil || len(list) == 0 {
@@ -30,7 +30,7 @@ func MinInt64(list []int64) int64 {
 	return min
 }
 
-// Returns min item from the list.
+// MinInt32 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt32(list []int32) int32 {
 	if list == nil || len(list) == 0 {
@@ -45,7 +45,7 @@ func MinInt32(list []int32) int32 {
 	return min
 }
 
-// Returns min item from the list.
+// MinInt16 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt16(list []int16) int16 {
 	if list == nil || len(list) == 0 {
@@ -60,7 +60,7 @@ func MinInt16(list []int16) int16 {
 	return min
 }
 
-// Returns min item from the list.
+// MinInt8 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt8(list []int8) int8 {
 	if list == nil || len(list) == 0 {
@@ -75,7 +75,7 @@ func MinInt8(list []int8) int8 {
 	return min
 }
 
-// Returns min item from the list.
+// MinUint returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint(list []uint) uint {
 	if list == nil || len(list) == 0 {
@@ -90,7 +90,7 @@ func MinUint(list []uint) uint {
 	return min
 }
 
-// Returns min item from the list.
+// MinUint64 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint64(list []uint64) uint64 {
 	if list == nil || len(list) == 0 {
@@ -105,7 +105,7 @@ func MinUint64(list []uint64) uint64 {
 	return min
 }
 
-// Returns min item from the list.
+// MinUint32 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint32(list []uint32) uint32 {
 	if list == nil || len(list) == 0 {
@@ -120,7 +120,7 @@ func MinUint32(list []uint32) uint32 {
 	return min
 }
 
-// Returns min item from the list.
+// MinUint16 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint16(list []uint16) uint16 {
 	if list == nil || len(list) == 0 {
@@ -135,7 +135,7 @@ func MinUint16(list []uint16) uint16 {
 	return min
 }
 
-// Returns min item from the list.
+// MinUint8 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint8(list []uint8) uint8 {
 	if list == nil || len(list) == 0 {
@@ -150,7 +150,7 @@ func MinUint8(list []uint8) uint8 {
 	return min
 }
 
-// Returns min item from the list.
+// MinFloat64 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinFloat64(list []float64) float64 {
 	if list == nil || len(list) == 0 {
@@ -165,7 +165,7 @@ func MinFloat64(list []float64) float64 {
 	return min
 }
 
-// Returns min item from the list.
+// MinFloat32 returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinFloat32(list []float32) float32 {
 	if list == nil || len(list) == 0 {

@@ -1,5 +1,6 @@
 [![Docs](https://godoc.org/github.com/logic-building/functional-go?status.svg)](https://godoc.org/github.com/logic-building/functional-go)
 [![CircleCI](https://circleci.com/gh/logic-building/functional-go.svg?style=svg)](https://circleci.com/gh/logic-building/functional-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/logic-building/functional-go)](https://goreportcard.com/report/github.com/logic-building/functional-go)
 
 # functional-go : Functional programming in golang. This library is inspired by clojure.
 ## Simple but functional
@@ -18,7 +19,7 @@ go get -u github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "7.1.0"
+version = "7.1.1"
 ```
 
 ### Quick Start

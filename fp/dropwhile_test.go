@@ -12,7 +12,6 @@ func TestDropWhileInt(t *testing.T) {
 		t.Errorf("DropWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
-	expectedNewList = []int{}
 	NewList = DropWhileInt(isEven, []int{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileInt failed")
@@ -59,7 +58,6 @@ func TestDropWhileInt64(t *testing.T) {
 		t.Errorf("DropWhileInt64 failed.")
 	}
 
-	expectedNewList = []int64{}
 	NewList = DropWhileInt64(isEvenInt64, []int64{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileInt64 failed")
@@ -90,7 +88,6 @@ func TestDropWhileInt32(t *testing.T) {
 		t.Errorf("DropWhileInt32 failed.")
 	}
 
-	expectedNewList = []int32{}
 	NewList = DropWhileInt32(isEvenInt32, []int32{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileInt32 failed")
@@ -121,7 +118,6 @@ func TestDropWhileInt16(t *testing.T) {
 		t.Errorf("DropWhileInt16 failed.")
 	}
 
-	expectedNewList = []int16{}
 	NewList = DropWhileInt16(isEvenInt16, []int16{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileInt16 failed")
@@ -153,7 +149,6 @@ func TestDropWhileInt8(t *testing.T) {
 		t.Errorf("DropWhileInt8 failed.")
 	}
 
-	expectedNewList = []int8{}
 	NewList = DropWhileInt8(isEvenInt8, []int8{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileInt8 failed")
@@ -184,7 +179,6 @@ func TestDropWhileUInt(t *testing.T) {
 		t.Errorf("DropWhileUint failed.")
 	}
 
-	expectedNewList = []uint{}
 	NewList = DropWhileUint(isEvenUint, []uint{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileUint failed")
@@ -215,7 +209,6 @@ func TestDropWhileUInt64(t *testing.T) {
 		t.Errorf("DropWhileUint64 failed.")
 	}
 
-	expectedNewList = []uint64{}
 	NewList = DropWhileUint64(isEvenUint64, []uint64{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileUint64 failed")
@@ -246,7 +239,6 @@ func TestDropWhileUInt32(t *testing.T) {
 		t.Errorf("DropWhileUint32 failed.")
 	}
 
-	expectedNewList = []uint32{}
 	NewList = DropWhileUint32(isEvenUint32, []uint32{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileUint32 failed")
@@ -277,7 +269,6 @@ func TestDropWhileUInt16(t *testing.T) {
 		t.Errorf("DropWhileUint16 failed.")
 	}
 
-	expectedNewList = []uint16{}
 	NewList = DropWhileUint16(isEvenUint16, []uint16{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileUint16 failed")
@@ -308,7 +299,6 @@ func TestDropWhileUInt8(t *testing.T) {
 		t.Errorf("DropWhileUint8 failed.")
 	}
 
-	expectedNewList = []uint8{}
 	NewList = DropWhileUint8(isEvenUint8, []uint8{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileUint8 failed")
@@ -331,7 +321,6 @@ func TestDropWhileFloat64(t *testing.T) {
 		t.Errorf("DropWhileFloat64 failed.")
 	}
 
-	expectedNewList = []float64{}
 	NewList = DropWhileFloat64(isPositiveFloat64, []float64{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileFloat64 failed")
@@ -354,7 +343,6 @@ func TestDropWhileFloat32(t *testing.T) {
 		t.Errorf("DropWhileFloat64 failed.")
 	}
 
-	expectedNewList = []float32{}
 	NewList = DropWhileFloat32(isPositiveFloat32, []float32{4})
 	if len(NewList) != 0 {
 		t.Errorf("DropWhileFloat32 failed")

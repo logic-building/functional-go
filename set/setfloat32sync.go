@@ -2,14 +2,15 @@ package set
 
 import "sync"
 
-type SetFloat32Sync struct {
+// Float32Sync - struct
+type Float32Sync struct {
 	nodeMap map[float32]bool
 	sync.RWMutex
 }
 
-// Create set object
-func NewFloat32Sync(nums []float32) *SetFloat32Sync {
-	s := &SetFloat32Sync{}
+// NewFloat32Sync creates new set
+func NewFloat32Sync(nums []float32) *Float32Sync {
+	s := &Float32Sync{}
 	for _, num := range nums {
 		s.Add(num)
 	}
@@ -17,7 +18,7 @@ func NewFloat32Sync(nums []float32) *SetFloat32Sync {
 }
 
 // Add an item
-func (s *SetFloat32Sync) Add(num float32) *SetFloat32Sync {
+func (s *Float32Sync) Add(num float32) *Float32Sync {
 	s.Lock()
 	defer s.Unlock()
 	if s.nodeMap == nil {
@@ -30,15 +31,15 @@ func (s *SetFloat32Sync) Add(num float32) *SetFloat32Sync {
 	return s
 }
 
-// Make object empty
-func (s *SetFloat32Sync) Clear() {
+// Clear set
+func (s *Float32Sync) Clear() {
 	s.Lock()
 	defer s.Unlock()
 	s.nodeMap = make(map[float32]bool)
 }
 
 // Remove an item
-func (s *SetFloat32Sync) Remove(num float32) bool {
+func (s *Float32Sync) Remove(num float32) bool {
 	s.Lock()
 	defer s.Unlock()
 	_, ok := s.nodeMap[num]
@@ -48,16 +49,16 @@ func (s *SetFloat32Sync) Remove(num float32) bool {
 	return ok
 }
 
-// Check if item exists in set
-func (s *SetFloat32Sync) Contains(num float32) bool {
+// Contains - Check if item exists in set
+func (s *Float32Sync) Contains(num float32) bool {
 	s.RLock()
 	defer s.RUnlock()
 	_, ok := s.nodeMap[num]
 	return ok
 }
 
-// Get set items
-func (s *SetFloat32Sync) GetList() []float32 {
+// GetList - Get set items
+func (s *Float32Sync) GetList() []float32 {
 	s.RLock()
 	defer s.RUnlock()
 	nums := []float32{}
@@ -67,16 +68,16 @@ func (s *SetFloat32Sync) GetList() []float32 {
 	return nums
 }
 
-// Get size of set
-func (s *SetFloat32Sync) Size() int {
+// Size - Get size of set
+func (s *Float32Sync) Size() int {
 	s.RLock()
 	defer s.RUnlock()
 	return len(s.nodeMap)
 }
 
-// Returns all the items that are in S or in S2
-func (s *SetFloat32Sync) Union(s2 *SetFloat32Sync) *SetFloat32Sync {
-	s3 := SetFloat32Sync{}
+// Union returns all the items that are in S or in S2
+func (s *Float32Sync) Union(s2 *Float32Sync) *Float32Sync {
+	s3 := Float32Sync{}
 	s3.nodeMap = make(map[float32]bool)
 	s.RLock()
 	for i := range s.nodeMap {
@@ -94,9 +95,9 @@ func (s *SetFloat32Sync) Union(s2 *SetFloat32Sync) *SetFloat32Sync {
 	return &s3
 }
 
-// Common items in S and S2
-func (s *SetFloat32Sync) Intersection(s2 *SetFloat32Sync) *SetFloat32Sync {
-	s3 := SetFloat32Sync{}
+// Intersection returns common items in S and S2
+func (s *Float32Sync) Intersection(s2 *Float32Sync) *Float32Sync {
+	s3 := Float32Sync{}
 	s3.nodeMap = make(map[float32]bool)
 	s.RLock()
 	s2.RLock()
@@ -111,9 +112,9 @@ func (s *SetFloat32Sync) Intersection(s2 *SetFloat32Sync) *SetFloat32Sync {
 	return &s3
 }
 
-// s.Minus(s2) : all of S but not in S2
-func (s *SetFloat32Sync) Minus(s2 *SetFloat32Sync) *SetFloat32Sync {
-	s3 := SetFloat32Sync{}
+// Minus - s.Minus(s2) : all of S but not in S2
+func (s *Float32Sync) Minus(s2 *Float32Sync) *Float32Sync {
+	s3 := Float32Sync{}
 	s3.nodeMap = make(map[float32]bool)
 	s.RLock()
 	s2.RLock()
@@ -128,8 +129,8 @@ func (s *SetFloat32Sync) Minus(s2 *SetFloat32Sync) *SetFloat32Sync {
 	return &s3
 }
 
-// Checks if S is subset of S2
-func (s *SetFloat32Sync) Subset(s2 *SetFloat32Sync) bool {
+// Subset checks if S is subset of S2
+func (s *Float32Sync) Subset(s2 *Float32Sync) bool {
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -143,8 +144,8 @@ func (s *SetFloat32Sync) Subset(s2 *SetFloat32Sync) bool {
 	return true
 }
 
-// Checks if S is superset of S2
-func (s *SetFloat32Sync) Superset(s2 *SetFloat32Sync) bool {
+// Superset checks if S is superset of S2
+func (s *Float32Sync) Superset(s2 *Float32Sync) bool {
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()

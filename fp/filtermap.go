@@ -1,6 +1,6 @@
 package fp
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -33,7 +33,7 @@ func FilterMapInt(fFilter func(int) bool, fMap func(int) int, list []int) []int 
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -67,7 +67,7 @@ func FilterMapInt64(fFilter func(int64) bool, fMap func(int64) int64, list []int
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -100,7 +100,7 @@ func FilterMapInt32(fFilter func(int32) bool, fMap func(int32) int32, list []int
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt16 filter the list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -133,7 +133,7 @@ func FilterMapInt16(fFilter func(int16) bool, fMap func(int16) int16, list []int
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -166,7 +166,7 @@ func FilterMapInt8(fFilter func(int8) bool, fMap func(int8) int8, list []int8) [
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -199,7 +199,7 @@ func FilterMapUint64(fFilter func(uint64) bool, fMap func(uint64) uint64, list [
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -232,7 +232,7 @@ func FilterMapUint32(fFilter func(uint32) bool, fMap func(uint32) uint32, list [
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint16 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -265,7 +265,7 @@ func FilterMapUint16(fFilter func(uint16) bool, fMap func(uint16) uint16, list [
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -298,7 +298,7 @@ func FilterMapUint8(fFilter func(uint8) bool, fMap func(uint8) uint8, list []uin
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -331,7 +331,7 @@ func FilterMapUint(fFilter func(uint) bool, fMap func(uint) uint, list []uint) [
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapFloat64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -364,7 +364,7 @@ func FilterMapFloat64(fFilter func(float64) bool, fMap func(float64) float64, li
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapFloat32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -397,7 +397,7 @@ func FilterMapFloat32(fFilter func(float32) bool, fMap func(float32) float32, li
 	return newList
 }
 
-// Filter the list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapStr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int

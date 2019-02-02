@@ -2,7 +2,7 @@ package fp
 
 import "strings"
 
-// Check if item exists in the list
+// ExistsInt checkss if given item exists in the list
 //
 // Example:
 //	ExistsInt(8, []int{8, 2, 10, 4}) // Returns true
@@ -17,7 +17,7 @@ func ExistsInt(num int, list []int) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsInt64 checks if given item exists in the list
 //
 // Example:
 //	ExistsInt64(8, []int64{8, 2, 10, 4}) // Returns true
@@ -32,7 +32,7 @@ func ExistsInt64(num int64, list []int64) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsInt32 checks if given item exists in the list
 //
 // Example:
 //	ExistsInt32(8, []int32{8, 2, 10, 4}) // Returns true
@@ -47,7 +47,7 @@ func ExistsInt32(num int32, list []int32) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsInt16 checks if given item exists in the list
 //
 // Example:
 //	ExistsInt16(8, []int16{8, 2, 10, 4}) // Returns true
@@ -62,7 +62,7 @@ func ExistsInt16(num int16, list []int16) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsInt8 checks if given item exists in the list
 //
 // Example:
 //	ExistsInt8(8, []int8{8, 2, 10, 4}) // Returns true
@@ -77,7 +77,7 @@ func ExistsInt8(num int8, list []int8) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsUint64 checks if given item exists in the list
 //
 // Example:
 //	ExistsUint64(8, []uint64{8, 2, 10, 4}) // Returns true
@@ -92,7 +92,7 @@ func ExistsUint64(num uint64, list []uint64) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsUint32 checks if given item exists in the list
 //
 // Example:
 //	ExistsUint32(8, []uint32{8, 2, 10, 4}) // Returns true
@@ -107,7 +107,7 @@ func ExistsUint32(num uint32, list []uint32) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsUint16 checks if given item exists in the list
 //
 // Example:
 //	ExistsUint16(8, []uint16{8, 2, 10, 4}) // Returns true
@@ -122,7 +122,7 @@ func ExistsUint16(num uint16, list []uint16) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsUint8 checks if given item exists in the list
 //
 // Example:
 //	ExistsUint8(8, []uint8{8, 2, 10, 4}) // Returns true
@@ -137,7 +137,7 @@ func ExistsUint8(num uint8, list []uint8) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsUint checks if given item exists in the list
 //
 // Example:
 //	ExistsUint(8, []uint{8, 2, 10, 4}) // Returns true
@@ -152,7 +152,7 @@ func ExistsUint(num uint, list []uint) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsFloat64 checks if given item exists in the list
 //
 // Example:
 //	ExistsFloat64(8, []float64{8, 2, 10, 4}) // Returns true
@@ -167,7 +167,7 @@ func ExistsFloat64(num float64, list []float64) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsFloat32 checks if given item exists in the list
 //
 // Example:
 //	ExistsFloat32(8, []float32{8, 2, 10, 4}) // Returns true
@@ -182,7 +182,7 @@ func ExistsFloat32(num float32, list []float32) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsStr checks if given item exists in the list
 //
 // Example:
 //	ExistsStr("ram", []string{"shyam", "ram", "Hanuman"}) // Returns true
@@ -197,7 +197,7 @@ func ExistsStr(num string, list []string) bool {
 	return false
 }
 
-// Check if item exists in the list
+// ExistsStrIgnoreCase checks if given item exists in the list
 //
 // Example:
 //	ExistsStrIgnoreCase("Ram", []string{"shyam", "ram", "Hanuman"}) // Returns true

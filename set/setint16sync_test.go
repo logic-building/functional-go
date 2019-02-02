@@ -175,14 +175,14 @@ func TestSetInt16SyncMultipleGoRoutine(t *testing.T) {
 	var wg sync.WaitGroup
 	wg.Add(2)
 
-	go func(mySet *SetInt16Sync, wg *sync.WaitGroup) {
+	go func(mySet *Int16Sync, wg *sync.WaitGroup) {
 		defer wg.Done()
 		for i := int16(0); i < 1000; i++ {
 			mySet.Add(i)
 		}
 	}(mySet, &wg)
 
-	go func(mySet *SetInt16Sync, wg *sync.WaitGroup) {
+	go func(mySet *Int16Sync, wg *sync.WaitGroup) {
 		defer wg.Done()
 		for i := int16(0); i < 1000; i++ {
 			for {

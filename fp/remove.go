@@ -1,6 +1,6 @@
 package fp
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveInt removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -29,7 +29,7 @@ func RemoveInt(f func(int) bool, list []int) []int {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveInt64 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -58,7 +58,7 @@ func RemoveInt64(f func(int64) bool, list []int64) []int64 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveInt32 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -87,7 +87,7 @@ func RemoveInt32(f func(int32) bool, list []int32) []int32 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveInt16 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -116,7 +116,7 @@ func RemoveInt16(f func(int16) bool, list []int16) []int16 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveInt8 removs the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -145,7 +145,7 @@ func RemoveInt8(f func(int8) bool, list []int8) []int8 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveUint64 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -174,7 +174,7 @@ func RemoveUint64(f func(uint64) bool, list []uint64) []uint64 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveUint32 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -203,7 +203,7 @@ func RemoveUint32(f func(uint32) bool, list []uint32) []uint32 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveUint16 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -232,7 +232,7 @@ func RemoveUint16(f func(uint16) bool, list []uint16) []uint16 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveUint8 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -261,7 +261,7 @@ func RemoveUint8(f func(uint8) bool, list []uint8) []uint8 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveUint removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -290,7 +290,7 @@ func RemoveUint(f func(uint) bool, list []uint) []uint {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveFloat64 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -319,7 +319,7 @@ func RemoveFloat64(f func(float64) bool, list []float64) []float64 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveFloat32 removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function
@@ -348,7 +348,7 @@ func RemoveFloat32(f func(float32) bool, list []float32) []float32 {
 	return newList
 }
 
-// Remove items from a list based on supplied function and returns new list
+// RemoveStr removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function

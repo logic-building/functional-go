@@ -1,6 +1,6 @@
 package fp
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileInt returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -30,7 +30,7 @@ func TakeWhileInt(f func(int) bool, list []int) []int {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileInt64 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -60,7 +60,7 @@ func TakeWhileInt64(f func(int64) bool, list []int64) []int64 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileInt32 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -90,7 +90,7 @@ func TakeWhileInt32(f func(int32) bool, list []int32) []int32 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileInt16 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -120,7 +120,7 @@ func TakeWhileInt16(f func(int16) bool, list []int16) []int16 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileInt8 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -150,7 +150,7 @@ func TakeWhileInt8(f func(int8) bool, list []int8) []int8 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileUint returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -180,7 +180,7 @@ func TakeWhileUint(f func(uint) bool, list []uint) []uint {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileUint64 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -210,7 +210,7 @@ func TakeWhileUint64(f func(uint64) bool, list []uint64) []uint64 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileUint32 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -240,7 +240,7 @@ func TakeWhileUint32(f func(uint32) bool, list []uint32) []uint32 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileUint16 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -270,7 +270,7 @@ func TakeWhileUint16(f func(uint16) bool, list []uint16) []uint16 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileUint8 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -300,7 +300,7 @@ func TakeWhileUint8(f func(uint8) bool, list []uint8) []uint8 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileFloat64 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -330,7 +330,7 @@ func TakeWhileFloat64(f func(float64) bool, list []float64) []float64 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileFloat32 returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function
@@ -360,7 +360,7 @@ func TakeWhileFloat32(f func(float32) bool, list []float32) []float32 {
 	return newList
 }
 
-// Prepare new list based on condition in the supplied function.
+// TakeWhileStr returns new list based on condition in the supplied function. It returns new list once condition fails.
 //
 // Takes 2 inputs:
 //	1. Function

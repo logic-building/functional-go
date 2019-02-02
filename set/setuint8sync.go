@@ -2,14 +2,15 @@ package set
 
 import "sync"
 
-type SetUint8Sync struct {
+// Uint8Sync - struct
+type Uint8Sync struct {
 	nodeMap map[uint8]bool
 	sync.RWMutex
 }
 
-// Create set object
-func NewUint8Sync(nums []uint8) *SetUint8Sync {
-	s := &SetUint8Sync{}
+// NewUint8Sync creates set
+func NewUint8Sync(nums []uint8) *Uint8Sync {
+	s := &Uint8Sync{}
 	for _, num := range nums {
 		s.Add(num)
 	}
@@ -17,7 +18,7 @@ func NewUint8Sync(nums []uint8) *SetUint8Sync {
 }
 
 // Add an item
-func (s *SetUint8Sync) Add(num uint8) *SetUint8Sync {
+func (s *Uint8Sync) Add(num uint8) *Uint8Sync {
 	s.Lock()
 	defer s.Unlock()
 	if s.nodeMap == nil {
@@ -30,15 +31,15 @@ func (s *SetUint8Sync) Add(num uint8) *SetUint8Sync {
 	return s
 }
 
-// Make object empty
-func (s *SetUint8Sync) Clear() {
+// Clear set
+func (s *Uint8Sync) Clear() {
 	s.Lock()
 	defer s.Unlock()
 	s.nodeMap = make(map[uint8]bool)
 }
 
 // Remove an item
-func (s *SetUint8Sync) Remove(num uint8) bool {
+func (s *Uint8Sync) Remove(num uint8) bool {
 	s.Lock()
 	defer s.Unlock()
 	_, ok := s.nodeMap[num]
@@ -48,16 +49,16 @@ func (s *SetUint8Sync) Remove(num uint8) bool {
 	return ok
 }
 
-// Check if item exists in set
-func (s *SetUint8Sync) Contains(num uint8) bool {
+// Contains - Check if item exists in set
+func (s *Uint8Sync) Contains(num uint8) bool {
 	s.RLock()
 	defer s.RUnlock()
 	_, ok := s.nodeMap[num]
 	return ok
 }
 
-// Get set items
-func (s *SetUint8Sync) GetList() []uint8 {
+// GetList - Get set items
+func (s *Uint8Sync) GetList() []uint8 {
 	s.RLock()
 	defer s.RUnlock()
 	nums := []uint8{}
@@ -67,16 +68,16 @@ func (s *SetUint8Sync) GetList() []uint8 {
 	return nums
 }
 
-// Get size of set
-func (s *SetUint8Sync) Size() int {
+// Size - Get size of set
+func (s *Uint8Sync) Size() int {
 	s.RLock()
 	defer s.RUnlock()
 	return len(s.nodeMap)
 }
 
-// Returns all the items that are in S or in S2
-func (s *SetUint8Sync) Union(s2 *SetUint8Sync) *SetUint8Sync {
-	s3 := SetUint8Sync{}
+// Union returns all the items that are in S or in S2
+func (s *Uint8Sync) Union(s2 *Uint8Sync) *Uint8Sync {
+	s3 := Uint8Sync{}
 	s3.nodeMap = make(map[uint8]bool)
 	s.RLock()
 	for i := range s.nodeMap {
@@ -94,9 +95,9 @@ func (s *SetUint8Sync) Union(s2 *SetUint8Sync) *SetUint8Sync {
 	return &s3
 }
 
-// s.Minus(s2) : all of S but not in S2
-func (s *SetUint8Sync) Intersection(s2 *SetUint8Sync) *SetUint8Sync {
-	s3 := SetUint8Sync{}
+// Intersection returns common items in S and S2
+func (s *Uint8Sync) Intersection(s2 *Uint8Sync) *Uint8Sync {
+	s3 := Uint8Sync{}
 	s3.nodeMap = make(map[uint8]bool)
 	s.RLock()
 	s2.RLock()
@@ -111,9 +112,9 @@ func (s *SetUint8Sync) Intersection(s2 *SetUint8Sync) *SetUint8Sync {
 	return &s3
 }
 
-// s.Minus(s2) : all of S but not in S2
-func (s *SetUint8Sync) Minus(s2 *SetUint8Sync) *SetUint8Sync {
-	s3 := SetUint8Sync{}
+// Minus - s.Minus(s2) : all of S but not in S2
+func (s *Uint8Sync) Minus(s2 *Uint8Sync) *Uint8Sync {
+	s3 := Uint8Sync{}
 	s3.nodeMap = make(map[uint8]bool)
 	s.RLock()
 	s2.RLock()
@@ -128,8 +129,8 @@ func (s *SetUint8Sync) Minus(s2 *SetUint8Sync) *SetUint8Sync {
 	return &s3
 }
 
-// Checks if S is subset of S2
-func (s *SetUint8Sync) Subset(s2 *SetUint8Sync) bool {
+// Subset checks if S is subset of S2
+func (s *Uint8Sync) Subset(s2 *Uint8Sync) bool {
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -143,8 +144,8 @@ func (s *SetUint8Sync) Subset(s2 *SetUint8Sync) bool {
 	return true
 }
 
-// Checks if S is superset of S2
-func (s *SetUint8Sync) Superset(s2 *SetUint8Sync) bool {
+// Superset checks if S is superset of S2
+func (s *Uint8Sync) Superset(s2 *Uint8Sync) bool {
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()

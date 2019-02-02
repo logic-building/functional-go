@@ -4,7 +4,7 @@ import (
 	"sync"
 )
 
-// Apply the function(1st argument) on each item of the list and returns new list.
+// PmapInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -52,7 +52,7 @@ func PmapInt(f func(int) int, list []int) []int {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapInt64 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -100,7 +100,7 @@ func PmapInt64(f func(int64) int64, list []int64) []int64 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapInt32 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -148,7 +148,7 @@ func PmapInt32(f func(int32) int32, list []int32) []int32 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapInt16 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -196,7 +196,7 @@ func PmapInt16(f func(int16) int16, list []int16) []int16 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapInt8 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -244,7 +244,7 @@ func PmapInt8(f func(int8) int8, list []int8) []int8 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapUint applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -292,7 +292,7 @@ func PmapUint(f func(uint) uint, list []uint) []uint {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapUint64 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -340,7 +340,7 @@ func PmapUint64(f func(uint64) uint64, list []uint64) []uint64 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapUint32 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -388,7 +388,7 @@ func PmapUint32(f func(uint32) uint32, list []uint32) []uint32 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapUint16 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -436,7 +436,7 @@ func PmapUint16(f func(uint16) uint16, list []uint16) []uint16 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapUint8 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -484,7 +484,7 @@ func PmapUint8(f func(uint8) uint8, list []uint8) []uint8 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapFloat64 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -532,7 +532,7 @@ func PmapFloat64(f func(float64) float64, list []float64) []float64 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapFloat32 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -580,7 +580,7 @@ func PmapFloat32(f func(float32) float32, list []float32) []float32 {
 	return newList
 }
 
-// Apply the function(1st argument) on each item of the list and returns new list
+// PmapStr applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs

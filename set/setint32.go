@@ -1,12 +1,13 @@
 package set
 
-type SetInt32 struct {
+// Int32 - struct
+type Int32 struct {
 	nodeMap map[int32]bool
 }
 
-// Create set object
-func NewInt32(nums []int32) *SetInt32 {
-	s := &SetInt32{}
+// NewInt32 creates set
+func NewInt32(nums []int32) *Int32 {
+	s := &Int32{}
 	for _, num := range nums {
 		s.Add(num)
 	}
@@ -14,7 +15,7 @@ func NewInt32(nums []int32) *SetInt32 {
 }
 
 // Add an item
-func (s *SetInt32) Add(num int32) *SetInt32 {
+func (s *Int32) Add(num int32) *Int32 {
 	if s.nodeMap == nil {
 		s.nodeMap = make(map[int32]bool)
 	}
@@ -25,13 +26,13 @@ func (s *SetInt32) Add(num int32) *SetInt32 {
 	return s
 }
 
-// Make object empty
-func (s *SetInt32) Clear() {
+// Clear set
+func (s *Int32) Clear() {
 	s.nodeMap = make(map[int32]bool)
 }
 
 // Remove an item
-func (s *SetInt32) Remove(num int32) bool {
+func (s *Int32) Remove(num int32) bool {
 	_, ok := s.nodeMap[num]
 	if ok {
 		delete(s.nodeMap, num)
@@ -39,14 +40,14 @@ func (s *SetInt32) Remove(num int32) bool {
 	return ok
 }
 
-// Check if item exists in set
-func (s *SetInt32) Contains(num int32) bool {
+// Contains - Check if item exists in set
+func (s *Int32) Contains(num int32) bool {
 	_, ok := s.nodeMap[num]
 	return ok
 }
 
-// Get set items
-func (s *SetInt32) GetList() []int32 {
+// GetList - Get set items
+func (s *Int32) GetList() []int32 {
 	nums := []int32{}
 	for i := range s.nodeMap {
 		nums = append(nums, i)
@@ -54,14 +55,14 @@ func (s *SetInt32) GetList() []int32 {
 	return nums
 }
 
-// Get size of set
-func (s *SetInt32) Size() int {
+// Size - Get size of set
+func (s *Int32) Size() int {
 	return len(s.nodeMap)
 }
 
-// Returns all the items that are in S or in S2
-func (s *SetInt32) Union(s2 *SetInt32) *SetInt32 {
-	s3 := SetInt32{}
+// Union returns all the items that are in S or in S2
+func (s *Int32) Union(s2 *Int32) *Int32 {
+	s3 := Int32{}
 	s3.nodeMap = make(map[int32]bool)
 	for i := range s.nodeMap {
 		s3.nodeMap[i] = true
@@ -75,9 +76,9 @@ func (s *SetInt32) Union(s2 *SetInt32) *SetInt32 {
 	return &s3
 }
 
-// Common items in S and S2
-func (s *SetInt32) Intersection(s2 *SetInt32) *SetInt32 {
-	s3 := SetInt32{}
+// Intersection returns common items in S and S2
+func (s *Int32) Intersection(s2 *Int32) *Int32 {
+	s3 := Int32{}
 	s3.nodeMap = make(map[int32]bool)
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
@@ -88,9 +89,9 @@ func (s *SetInt32) Intersection(s2 *SetInt32) *SetInt32 {
 	return &s3
 }
 
-// s.Minus(s2) : all of S but not in S2
-func (s *SetInt32) Minus(s2 *SetInt32) *SetInt32 {
-	s3 := SetInt32{}
+// Minus - s.Minus(s2) : all of S but not in S2
+func (s *Int32) Minus(s2 *Int32) *Int32 {
+	s3 := Int32{}
 	s3.nodeMap = make(map[int32]bool)
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
@@ -101,8 +102,8 @@ func (s *SetInt32) Minus(s2 *SetInt32) *SetInt32 {
 	return &s3
 }
 
-// Checks if S is subset of S2
-func (s *SetInt32) Subset(s2 *SetInt32) bool {
+// Subset checks if S is subset of S2
+func (s *Int32) Subset(s2 *Int32) bool {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
@@ -112,8 +113,8 @@ func (s *SetInt32) Subset(s2 *SetInt32) bool {
 	return true
 }
 
-// Checks if S is superset of S2
-func (s *SetInt32) Superset(s2 *SetInt32) bool {
+// Superset checks if S is superset of S2
+func (s *Int32) Superset(s2 *Int32) bool {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if !ok {
