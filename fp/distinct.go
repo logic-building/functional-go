@@ -2,7 +2,7 @@ package fp
 
 import "strings"
 
-// Removes duplicates.
+// DistinctInt removes duplicates.
 //
 // Example
 // 	list := []int{8, 2, 8, 0, 2, 0}
@@ -20,7 +20,7 @@ func DistinctInt(list []int) []int {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctInt64 removes duplicates.
 //
 // Example
 // 	list := []int64{8, 2, 8, 0, 2, 0}
@@ -38,7 +38,7 @@ func DistinctInt64(list []int64) []int64 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctInt32 removes duplicates.
 //
 // Example
 // 	list := []int32{8, 2, 8, 0, 2, 0}
@@ -56,7 +56,7 @@ func DistinctInt32(list []int32) []int32 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctInt16 removes duplicates.
 //
 // Example
 // 	list := []int16{8, 2, 8, 0, 2, 0}
@@ -74,7 +74,7 @@ func DistinctInt16(list []int16) []int16 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctInt8 removes duplicates.
 //
 // Example
 // 	list := []int8{8, 2, 8, 0, 2, 0}
@@ -92,7 +92,7 @@ func DistinctInt8(list []int8) []int8 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctUint removes duplicates.
 //
 // Example
 // 	list := []uint{8, 2, 8, 0, 2, 0}
@@ -110,7 +110,7 @@ func DistinctUint(list []uint) []uint {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctUint64 removes duplicates.
 //
 // Example
 // 	list := []uint64{8, 2, 8, 0, 2, 0}
@@ -128,7 +128,7 @@ func DistinctUint64(list []uint64) []uint64 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctUint32 removes duplicates.
 //
 // Example
 // 	list := []uint32{8, 2, 8, 0, 2, 0}
@@ -146,7 +146,7 @@ func DistinctUint32(list []uint32) []uint32 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctUint16 removes duplicates.
 //
 // Example
 // 	list := []uint16{8, 2, 8, 0, 2, 0}
@@ -164,7 +164,7 @@ func DistinctUint16(list []uint16) []uint16 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctUint8 removes duplicates.
 //
 // Example
 // 	list := []uint8{8, 2, 8, 0, 2, 0}
@@ -182,7 +182,7 @@ func DistinctUint8(list []uint8) []uint8 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctFloat64 removes duplicates.
 //
 // Example
 // 	list := []float64{8.1, 2.1, 8.1, 0, 2.1, 0}
@@ -200,7 +200,7 @@ func DistinctFloat64(list []float64) []float64 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctFloat32 removes duplicates.
 //
 // Example
 // 	list := []float32{8.1, 2.1, 8.1, 0, 2.1, 0}
@@ -218,7 +218,7 @@ func DistinctFloat32(list []float32) []float32 {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctStr removes duplicates.
 //
 // Example
 // 	list := []string{"Bharat", "Hanuman", "Bharat", "Sita", "Hanuman", "Sita"}
@@ -236,7 +236,7 @@ func DistinctStr(list []string) []string {
 	return newList
 }
 
-// Removes duplicates.
+// DistinctStrIgnoreCase ignores case and removes duplicates.
 //
 // Example
 // 	list := []string{"Bharat", "HanumaN", "BharaT", "SiTa", "Hanuman", "Sita"}

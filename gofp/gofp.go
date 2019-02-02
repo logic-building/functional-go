@@ -196,6 +196,8 @@ func quoteForTheDay() string {
 		"Don't get upset with people and situations, because both are powerless without your reaction",
 		"Most of the people are in lack of knowledge.Don't hate people.Love people and understand people are under influence of ignorance. Always do righteously.",
 		"Every way and means that leads our mind to God is Devotion",
+		"The Only Purpose of Our Human Life is to Attain God",
+		"Meditation. Because some questions can't be answered by Google!",
 	}
 
 	s := rand.NewSource(time.Now().Unix())

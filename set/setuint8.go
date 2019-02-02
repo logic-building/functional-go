@@ -1,12 +1,13 @@
 package set
 
-type SetUint8 struct {
+// Uint8 - struct
+type Uint8 struct {
 	nodeMap map[uint8]bool
 }
 
-// Create set object
-func NewUint8(nums []uint8) *SetUint8 {
-	s := &SetUint8{}
+// NewUint8 creates set
+func NewUint8(nums []uint8) *Uint8 {
+	s := &Uint8{}
 	for _, num := range nums {
 		s.Add(num)
 	}
@@ -14,7 +15,7 @@ func NewUint8(nums []uint8) *SetUint8 {
 }
 
 // Add an item
-func (s *SetUint8) Add(num uint8) *SetUint8 {
+func (s *Uint8) Add(num uint8) *Uint8 {
 	if s.nodeMap == nil {
 		s.nodeMap = make(map[uint8]bool)
 	}
@@ -25,13 +26,13 @@ func (s *SetUint8) Add(num uint8) *SetUint8 {
 	return s
 }
 
-// Make object empty
-func (s *SetUint8) Clear() {
+// Clear set
+func (s *Uint8) Clear() {
 	s.nodeMap = make(map[uint8]bool)
 }
 
 // Remove an item
-func (s *SetUint8) Remove(num uint8) bool {
+func (s *Uint8) Remove(num uint8) bool {
 	_, ok := s.nodeMap[num]
 	if ok {
 		delete(s.nodeMap, num)
@@ -39,14 +40,14 @@ func (s *SetUint8) Remove(num uint8) bool {
 	return ok
 }
 
-// Check if item exists in set
-func (s *SetUint8) Contains(num uint8) bool {
+// Contains - Check if item exists in set
+func (s *Uint8) Contains(num uint8) bool {
 	_, ok := s.nodeMap[num]
 	return ok
 }
 
-// Get set items
-func (s *SetUint8) GetList() []uint8 {
+// GetList - Get set items
+func (s *Uint8) GetList() []uint8 {
 	nums := []uint8{}
 	for i := range s.nodeMap {
 		nums = append(nums, i)
@@ -54,14 +55,14 @@ func (s *SetUint8) GetList() []uint8 {
 	return nums
 }
 
-// Get size of set
-func (s *SetUint8) Size() int {
+// Size - Get size of set
+func (s *Uint8) Size() int {
 	return len(s.nodeMap)
 }
 
-// Returns all the items that are in S or in S2
-func (s *SetUint8) Union(s2 *SetUint8) *SetUint8 {
-	s3 := SetUint8{}
+// Union returns all the items that are in S or in S2
+func (s *Uint8) Union(s2 *Uint8) *Uint8 {
+	s3 := Uint8{}
 	s3.nodeMap = make(map[uint8]bool)
 	for i := range s.nodeMap {
 		s3.nodeMap[i] = true
@@ -75,9 +76,9 @@ func (s *SetUint8) Union(s2 *SetUint8) *SetUint8 {
 	return &s3
 }
 
-// s.Minus(s2) : all of S but not in S2
-func (s *SetUint8) Intersection(s2 *SetUint8) *SetUint8 {
-	s3 := SetUint8{}
+// Intersection returns common items in S and S2
+func (s *Uint8) Intersection(s2 *Uint8) *Uint8 {
+	s3 := Uint8{}
 	s3.nodeMap = make(map[uint8]bool)
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
@@ -88,9 +89,9 @@ func (s *SetUint8) Intersection(s2 *SetUint8) *SetUint8 {
 	return &s3
 }
 
-// s.Minus(s2) : all of S but not in S2
-func (s *SetUint8) Minus(s2 *SetUint8) *SetUint8 {
-	s3 := SetUint8{}
+// Minus - s.Minus(s2) : all of S but not in S2
+func (s *Uint8) Minus(s2 *Uint8) *Uint8 {
+	s3 := Uint8{}
 	s3.nodeMap = make(map[uint8]bool)
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
@@ -101,8 +102,8 @@ func (s *SetUint8) Minus(s2 *SetUint8) *SetUint8 {
 	return &s3
 }
 
-// Checks if S is subset of S2
-func (s *SetUint8) Subset(s2 *SetUint8) bool {
+// Subset checks if S is subset of S2
+func (s *Uint8) Subset(s2 *Uint8) bool {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
@@ -112,8 +113,8 @@ func (s *SetUint8) Subset(s2 *SetUint8) bool {
 	return true
 }
 
-// Checks if S is superset of S2
-func (s *SetUint8) Superset(s2 *SetUint8) bool {
+// Superset checks if S is superset of S2
+func (s *Uint8) Superset(s2 *Uint8) bool {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if !ok {

@@ -1,6 +1,6 @@
 package fp
 
-// Returns a list of range between lower and upper value
+// RangeInt returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -36,7 +36,7 @@ func RangeInt(lower, higher int, hops ...int) []int {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeInt64 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -72,7 +72,7 @@ func RangeInt64(lower, higher int64, hops ...int64) []int64 {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeInt32 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -108,7 +108,7 @@ func RangeInt32(lower, higher int32, hops ...int32) []int32 {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeInt16 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -144,7 +144,7 @@ func RangeInt16(lower, higher int16, hops ...int16) []int16 {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeInt8 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -180,7 +180,7 @@ func RangeInt8(lower, higher int8, hops ...int8) []int8 {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeUint returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -216,7 +216,7 @@ func RangeUint(lower, higher uint, hops ...uint) []uint {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeUint64 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -252,7 +252,7 @@ func RangeUint64(lower, higher uint64, hops ...uint64) []uint64 {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeUint32 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -288,7 +288,7 @@ func RangeUint32(lower, higher uint32, hops ...uint32) []uint32 {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeUint16 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit
@@ -323,7 +323,7 @@ func RangeUint16(lower, higher uint16, hops ...uint16) []uint16 {
 	return l
 }
 
-// Returns a list of range between lower and upper value
+// RangeUint8 returns a list of range between lower and upper value
 //
 // Takes 3 inputs
 //	1. lower limit

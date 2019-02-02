@@ -1,12 +1,13 @@
 package set
 
-type SetStr struct {
+// Str - struct
+type Str struct {
 	nodeMap map[string]bool
 }
 
-// Create set object
-func NewStr(strList []string) *SetStr {
-	s := &SetStr{}
+// NewStr creates set
+func NewStr(strList []string) *Str {
+	s := &Str{}
 	for _, str := range strList {
 		s.Add(str)
 	}
@@ -14,7 +15,7 @@ func NewStr(strList []string) *SetStr {
 }
 
 // Add an item
-func (s *SetStr) Add(str string) *SetStr {
+func (s *Str) Add(str string) *Str {
 	if s.nodeMap == nil {
 		s.nodeMap = make(map[string]bool)
 	}
@@ -25,13 +26,13 @@ func (s *SetStr) Add(str string) *SetStr {
 	return s
 }
 
-// Make object empty
-func (s *SetStr) Clear() {
+// Clear set
+func (s *Str) Clear() {
 	s.nodeMap = make(map[string]bool)
 }
 
 // Remove an item
-func (s *SetStr) Remove(str string) bool {
+func (s *Str) Remove(str string) bool {
 	_, ok := s.nodeMap[str]
 	if ok {
 		delete(s.nodeMap, str)
@@ -39,14 +40,14 @@ func (s *SetStr) Remove(str string) bool {
 	return ok
 }
 
-// Check if item exists in set
-func (s *SetStr) Contains(str string) bool {
+// Contains - Check if item exists in set
+func (s *Str) Contains(str string) bool {
 	_, ok := s.nodeMap[str]
 	return ok
 }
 
-// Get set items
-func (s *SetStr) GetList() []string {
+// GetList - Get set items
+func (s *Str) GetList() []string {
 	strList := []string{}
 	for i := range s.nodeMap {
 		strList = append(strList, i)
@@ -54,14 +55,14 @@ func (s *SetStr) GetList() []string {
 	return strList
 }
 
-// Get size of set
-func (s *SetStr) Size() int {
+// Size - Get size of set
+func (s *Str) Size() int {
 	return len(s.nodeMap)
 }
 
-// Returns all the items that are in S or in S2
-func (s *SetStr) Union(s2 *SetStr) *SetStr {
-	s3 := SetStr{}
+// Union returns all the items that are in S or in S2
+func (s *Str) Union(s2 *Str) *Str {
+	s3 := Str{}
 	s3.nodeMap = make(map[string]bool)
 	for i := range s.nodeMap {
 		s3.nodeMap[i] = true
@@ -75,9 +76,9 @@ func (s *SetStr) Union(s2 *SetStr) *SetStr {
 	return &s3
 }
 
-// Common items in S and S2
-func (s *SetStr) Intersection(s2 *SetStr) *SetStr {
-	s3 := SetStr{}
+// Intersection returns common items in S and S2
+func (s *Str) Intersection(s2 *Str) *Str {
+	s3 := Str{}
 	s3.nodeMap = make(map[string]bool)
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
@@ -88,9 +89,9 @@ func (s *SetStr) Intersection(s2 *SetStr) *SetStr {
 	return &s3
 }
 
-// s.Minus(s2) : all of S but not in S2
-func (s *SetStr) Minus(s2 *SetStr) *SetStr {
-	s3 := SetStr{}
+// Minus - s.Minus(s2) : all of S but not in S2
+func (s *Str) Minus(s2 *Str) *Str {
+	s3 := Str{}
 	s3.nodeMap = make(map[string]bool)
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
@@ -101,8 +102,8 @@ func (s *SetStr) Minus(s2 *SetStr) *SetStr {
 	return &s3
 }
 
-// Checks if S is subset of S2
-func (s *SetStr) Subset(s2 *SetStr) bool {
+// Subset checks if S is subset of S2
+func (s *Str) Subset(s2 *Str) bool {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
@@ -112,8 +113,8 @@ func (s *SetStr) Subset(s2 *SetStr) bool {
 	return true
 }
 
-// Checks if S is superset of S2
-func (s *SetStr) Superset(s2 *SetStr) bool {
+// Superset checks if S is superset of S2
+func (s *Str) Superset(s2 *Str) bool {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if !ok {

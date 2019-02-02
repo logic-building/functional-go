@@ -1,6 +1,6 @@
 package fp
 
-// Find item in the list based on supplied function.
+// SomeInt findss item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -31,7 +31,7 @@ func SomeInt(f func(int) bool, list []int) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeInt64 findss item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -62,7 +62,7 @@ func SomeInt64(f func(int64) bool, list []int64) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeInt32 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -93,7 +93,7 @@ func SomeInt32(f func(int32) bool, list []int32) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeInt16 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -124,7 +124,7 @@ func SomeInt16(f func(int16) bool, list []int16) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeInt8 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -155,7 +155,7 @@ func SomeInt8(f func(int8) bool, list []int8) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeUint64 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -186,7 +186,7 @@ func SomeUint64(f func(uint64) bool, list []uint64) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeUint32 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -217,7 +217,7 @@ func SomeUint32(f func(uint32) bool, list []uint32) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeUint16 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -248,7 +248,7 @@ func SomeUint16(f func(uint16) bool, list []uint16) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeUint8 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -279,7 +279,7 @@ func SomeUint8(f func(uint8) bool, list []uint8) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeUint finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -310,7 +310,7 @@ func SomeUint(f func(uint) bool, list []uint) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeFloat64 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -340,7 +340,7 @@ func SomeFloat64(f func(float64) bool, list []float64) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeFloat32 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -370,7 +370,7 @@ func SomeFloat32(f func(float32) bool, list []float32) bool {
 	return false
 }
 
-// Find item in the list based on supplied function.
+// SomeStr finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function

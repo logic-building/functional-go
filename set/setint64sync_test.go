@@ -175,14 +175,14 @@ func TestSetInt64SyncMultipleGoRoutine(t *testing.T) {
 	var wg sync.WaitGroup
 	wg.Add(2)
 
-	go func(mySet *SetInt64Sync, wg *sync.WaitGroup) {
+	go func(mySet *Int64Sync, wg *sync.WaitGroup) {
 		defer wg.Done()
 		for i := int64(0); i < 1000; i++ {
 			mySet.Add(i)
 		}
 	}(mySet, &wg)
 
-	go func(mySet *SetInt64Sync, wg *sync.WaitGroup) {
+	go func(mySet *Int64Sync, wg *sync.WaitGroup) {
 		defer wg.Done()
 		for i := int64(0); i < 1000; i++ {
 			for {

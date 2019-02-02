@@ -1,6 +1,6 @@
 package fp
 
-// Filters list based on function passed as 1st argument
+// FilterInt filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -29,7 +29,7 @@ func FilterInt(f func(int) bool, list []int) []int {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterInt64 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -58,7 +58,7 @@ func FilterInt64(f func(int64) bool, list []int64) []int64 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterInt32 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -87,7 +87,7 @@ func FilterInt32(f func(int32) bool, list []int32) []int32 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterInt16 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -116,7 +116,7 @@ func FilterInt16(f func(int16) bool, list []int16) []int16 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterInt8 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -145,7 +145,7 @@ func FilterInt8(f func(int8) bool, list []int8) []int8 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterUint64 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -174,7 +174,7 @@ func FilterUint64(f func(uint64) bool, list []uint64) []uint64 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterUint32 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -203,7 +203,7 @@ func FilterUint32(f func(uint32) bool, list []uint32) []uint32 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterUint16 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -232,7 +232,7 @@ func FilterUint16(f func(uint16) bool, list []uint16) []uint16 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterUint8 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -261,7 +261,7 @@ func FilterUint8(f func(uint8) bool, list []uint8) []uint8 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterUint filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -290,7 +290,7 @@ func FilterUint(f func(uint) bool, list []uint) []uint {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterFloat64 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -319,7 +319,7 @@ func FilterFloat64(f func(float64) bool, list []float64) []float64 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterFloat32 filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool
@@ -348,7 +348,7 @@ func FilterFloat32(f func(float32) bool, list []float32) []float32 {
 	return newList
 }
 
-// Filters list based on function passed as 1st argument
+// FilterStr filters list based on function passed as 1st argument
 //
 // Takes two inputs
 //	1. function - Takes 1 input and returns bool

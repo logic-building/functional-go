@@ -1,11 +1,11 @@
 package fp
 
-// Returns true
+// True returns true
 func True() bool {
 	return true
 }
 
-// Returns false
+// False returns false
 func False() bool {
 	return false
 }
