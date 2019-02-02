@@ -4,6 +4,7 @@ type SetInt16 struct {
 	nodeMap map[int16]bool
 }
 
+// Create set object
 func NewInt16(nums []int16) *SetInt16 {
 	s := &SetInt16{}
 	for _, num := range nums {
@@ -12,6 +13,7 @@ func NewInt16(nums []int16) *SetInt16 {
 	return s
 }
 
+// Add an item
 func (s *SetInt16) Add(num int16) *SetInt16 {
 	if s.nodeMap == nil {
 		s.nodeMap = make(map[int16]bool)
@@ -23,10 +25,12 @@ func (s *SetInt16) Add(num int16) *SetInt16 {
 	return s
 }
 
+// Make object empty
 func (s *SetInt16) Clear() {
 	s.nodeMap = make(map[int16]bool)
 }
 
+// Remove an item
 func (s *SetInt16) Remove(num int16) bool {
 	_, ok := s.nodeMap[num]
 	if ok {
@@ -35,11 +39,13 @@ func (s *SetInt16) Remove(num int16) bool {
 	return ok
 }
 
+// Check if item exists in set
 func (s *SetInt16) Contains(num int16) bool {
 	_, ok := s.nodeMap[num]
 	return ok
 }
 
+// Get set items
 func (s *SetInt16) GetList() []int16 {
 	nums := []int16{}
 	for i := range s.nodeMap {
@@ -48,10 +54,12 @@ func (s *SetInt16) GetList() []int16 {
 	return nums
 }
 
+// Get size of set
 func (s *SetInt16) Size() int {
 	return len(s.nodeMap)
 }
 
+// Returns all the items that are in S or in S2
 func (s *SetInt16) Union(s2 *SetInt16) *SetInt16 {
 	s3 := SetInt16{}
 	s3.nodeMap = make(map[int16]bool)
@@ -67,7 +75,7 @@ func (s *SetInt16) Union(s2 *SetInt16) *SetInt16 {
 	return &s3
 }
 
-// common in A and B
+// Common items in S and S2
 func (s *SetInt16) Intersection(s2 *SetInt16) *SetInt16 {
 	s3 := SetInt16{}
 	s3.nodeMap = make(map[int16]bool)
@@ -80,7 +88,7 @@ func (s *SetInt16) Intersection(s2 *SetInt16) *SetInt16 {
 	return &s3
 }
 
-// a.Minus(b) : all of a but not in b
+// s.Minus(s2) : all of S but not in S2
 func (s *SetInt16) Minus(s2 *SetInt16) *SetInt16 {
 	s3 := SetInt16{}
 	s3.nodeMap = make(map[int16]bool)
@@ -93,6 +101,7 @@ func (s *SetInt16) Minus(s2 *SetInt16) *SetInt16 {
 	return &s3
 }
 
+// Checks if S is subset of S2
 func (s *SetInt16) Subset(s2 *SetInt16) bool {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
@@ -103,6 +112,7 @@ func (s *SetInt16) Subset(s2 *SetInt16) bool {
 	return true
 }
 
+// Checks if S is superset of S2
 func (s *SetInt16) Superset(s2 *SetInt16) bool {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]

@@ -4,6 +4,7 @@ type SetStr struct {
 	nodeMap map[string]bool
 }
 
+// Create set object
 func NewStr(strList []string) *SetStr {
 	s := &SetStr{}
 	for _, str := range strList {
@@ -12,6 +13,7 @@ func NewStr(strList []string) *SetStr {
 	return s
 }
 
+// Add an item
 func (s *SetStr) Add(str string) *SetStr {
 	if s.nodeMap == nil {
 		s.nodeMap = make(map[string]bool)
@@ -23,10 +25,12 @@ func (s *SetStr) Add(str string) *SetStr {
 	return s
 }
 
+// Make object empty
 func (s *SetStr) Clear() {
 	s.nodeMap = make(map[string]bool)
 }
 
+// Remove an item
 func (s *SetStr) Remove(str string) bool {
 	_, ok := s.nodeMap[str]
 	if ok {
@@ -35,11 +39,13 @@ func (s *SetStr) Remove(str string) bool {
 	return ok
 }
 
+// Check if item exists in set
 func (s *SetStr) Contains(str string) bool {
 	_, ok := s.nodeMap[str]
 	return ok
 }
 
+// Get set items
 func (s *SetStr) GetList() []string {
 	strList := []string{}
 	for i := range s.nodeMap {
@@ -48,10 +54,12 @@ func (s *SetStr) GetList() []string {
 	return strList
 }
 
+// Get size of set
 func (s *SetStr) Size() int {
 	return len(s.nodeMap)
 }
 
+// Returns all the items that are in S or in S2
 func (s *SetStr) Union(s2 *SetStr) *SetStr {
 	s3 := SetStr{}
 	s3.nodeMap = make(map[string]bool)
@@ -67,7 +75,7 @@ func (s *SetStr) Union(s2 *SetStr) *SetStr {
 	return &s3
 }
 
-// common in A and B
+// Common items in S and S2
 func (s *SetStr) Intersection(s2 *SetStr) *SetStr {
 	s3 := SetStr{}
 	s3.nodeMap = make(map[string]bool)
@@ -80,7 +88,7 @@ func (s *SetStr) Intersection(s2 *SetStr) *SetStr {
 	return &s3
 }
 
-// a.Minus(b) : all of a but not in b
+// s.Minus(s2) : all of S but not in S2
 func (s *SetStr) Minus(s2 *SetStr) *SetStr {
 	s3 := SetStr{}
 	s3.nodeMap = make(map[string]bool)
@@ -93,6 +101,7 @@ func (s *SetStr) Minus(s2 *SetStr) *SetStr {
 	return &s3
 }
 
+// Checks if S is subset of S2
 func (s *SetStr) Subset(s2 *SetStr) bool {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
@@ -103,6 +112,7 @@ func (s *SetStr) Subset(s2 *SetStr) bool {
 	return true
 }
 
+// Checks if S is superset of S2
 func (s *SetStr) Superset(s2 *SetStr) bool {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]

@@ -7,6 +7,7 @@ type SetStrSync struct {
 	sync.RWMutex
 }
 
+// Create set object
 func NewStrSync(strList []string) *SetStrSync {
 	s := &SetStrSync{}
 	for _, str := range strList {
@@ -15,6 +16,7 @@ func NewStrSync(strList []string) *SetStrSync {
 	return s
 }
 
+// Add an item
 func (s *SetStrSync) Add(str string) *SetStrSync {
 	s.Lock()
 	defer s.Unlock()
@@ -28,12 +30,14 @@ func (s *SetStrSync) Add(str string) *SetStrSync {
 	return s
 }
 
+// Make object empty
 func (s *SetStrSync) Clear() {
 	s.Lock()
 	defer s.Unlock()
 	s.nodeMap = make(map[string]bool)
 }
 
+// Remove an item
 func (s *SetStrSync) Remove(str string) bool {
 	s.Lock()
 	defer s.Unlock()
@@ -44,6 +48,7 @@ func (s *SetStrSync) Remove(str string) bool {
 	return ok
 }
 
+// Check if item exists in set
 func (s *SetStrSync) Contains(str string) bool {
 	s.RLock()
 	defer s.RUnlock()
@@ -51,6 +56,7 @@ func (s *SetStrSync) Contains(str string) bool {
 	return ok
 }
 
+// Get set items
 func (s *SetStrSync) GetList() []string {
 	s.RLock()
 	defer s.RUnlock()
@@ -61,12 +67,14 @@ func (s *SetStrSync) GetList() []string {
 	return strList
 }
 
+// Get size of set
 func (s *SetStrSync) Size() int {
 	s.RLock()
 	defer s.RUnlock()
 	return len(s.nodeMap)
 }
 
+// Returns all the items that are in S or in S2
 func (s *SetStrSync) Union(s2 *SetStrSync) *SetStrSync {
 	s3 := SetStrSync{}
 	s3.nodeMap = make(map[string]bool)
@@ -86,7 +94,7 @@ func (s *SetStrSync) Union(s2 *SetStrSync) *SetStrSync {
 	return &s3
 }
 
-// common in A and B
+// Common items in S and S2
 func (s *SetStrSync) Intersection(s2 *SetStrSync) *SetStrSync {
 	s3 := SetStrSync{}
 	s3.nodeMap = make(map[string]bool)
@@ -103,7 +111,7 @@ func (s *SetStrSync) Intersection(s2 *SetStrSync) *SetStrSync {
 	return &s3
 }
 
-// a.Minus(b) : all of a but not in b
+// s.Minus(s2) : all of S but not in S2
 func (s *SetStrSync) Minus(s2 *SetStrSync) *SetStrSync {
 	s3 := SetStrSync{}
 	s3.nodeMap = make(map[string]bool)
@@ -120,6 +128,7 @@ func (s *SetStrSync) Minus(s2 *SetStrSync) *SetStrSync {
 	return &s3
 }
 
+// Checks if S is subset of S2
 func (s *SetStrSync) Subset(s2 *SetStrSync) bool {
 	s.RLock()
 	s2.RLock()
@@ -134,6 +143,7 @@ func (s *SetStrSync) Subset(s2 *SetStrSync) bool {
 	return true
 }
 
+// Checks if S is superset of S2
 func (s *SetStrSync) Superset(s2 *SetStrSync) bool {
 	s.RLock()
 	s2.RLock()
