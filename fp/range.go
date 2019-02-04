@@ -28,10 +28,9 @@ func RangeInt(lower, higher int, hops ...int) []int {
 		return []int{}
 	}
 
-	l := make([]int, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []int
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -64,10 +63,9 @@ func RangeInt64(lower, higher int64, hops ...int64) []int64 {
 		return []int64{}
 	}
 
-	l := make([]int64, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []int64
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -100,10 +98,9 @@ func RangeInt32(lower, higher int32, hops ...int32) []int32 {
 		return []int32{}
 	}
 
-	l := make([]int32, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []int32
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -136,10 +133,9 @@ func RangeInt16(lower, higher int16, hops ...int16) []int16 {
 		return []int16{}
 	}
 
-	l := make([]int16, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []int16
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -172,10 +168,9 @@ func RangeInt8(lower, higher int8, hops ...int8) []int8 {
 		return []int8{}
 	}
 
-	l := make([]int8, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []int8
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -208,10 +203,9 @@ func RangeUint(lower, higher uint, hops ...uint) []uint {
 		return []uint{}
 	}
 
-	l := make([]uint, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []uint
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -244,10 +238,9 @@ func RangeUint64(lower, higher uint64, hops ...uint64) []uint64 {
 		return []uint64{}
 	}
 
-	l := make([]uint64, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []uint64
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -280,10 +273,9 @@ func RangeUint32(lower, higher uint32, hops ...uint32) []uint32 {
 		return []uint32{}
 	}
 
-	l := make([]uint32, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []uint32
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -315,10 +307,9 @@ func RangeUint16(lower, higher uint16, hops ...uint16) []uint16 {
 		return []uint16{}
 	}
 
-	l := make([]uint16, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []uint16
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
@@ -351,10 +342,9 @@ func RangeUint8(lower, higher uint8, hops ...uint8) []uint8 {
 		return []uint8{}
 	}
 
-	l := make([]uint8, higher-lower)
-	for i, v := 0, lower; v < higher; v += hop {
-		l[i] = v
-		i++
+	var l []uint8
+	for _, v := 0, lower; v < higher; v += hop {
+		l = append(l, v)
 	}
 	return l
 }
