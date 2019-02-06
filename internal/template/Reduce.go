@@ -1,5 +1,6 @@
 package template
 
+// Reduce is template to generate function(Reduce) for user defined data type
 func Reduce() string {
 	return `
 func Reduce<CONDITIONAL_TYPE>(f func(<TYPE>, <TYPE>) <TYPE>, list []<TYPE>, initializer ...<TYPE>) <TYPE> {

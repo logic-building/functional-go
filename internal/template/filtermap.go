@@ -1,5 +1,6 @@
 package template
 
+// FilterMap is template to generate function(FilterMap) for user defined data type
 func FilterMap() string {
 	return `
 func FilterMap<CONDITIONAL_TYPE>(fFilter func(<TYPE>) bool, fMap func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {

@@ -1,5 +1,6 @@
 package template
 
+// Map is template to generate function(Map) for user defined data type
 func Map() string {
 	return `
 func Map<CONDITIONAL_TYPE>(f func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {

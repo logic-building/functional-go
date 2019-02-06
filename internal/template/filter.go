@@ -1,5 +1,6 @@
 package template
 
+// Filter is template to generate function(Filter) for user defined data type
 func Filter() string {
 	return `
 func Filter<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {

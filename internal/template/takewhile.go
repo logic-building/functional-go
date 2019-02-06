@@ -1,5 +1,6 @@
 package template
 
+// TakeWhile is template to generate function(TakeWhile) for user defined data type
 func TakeWhile() string {
 	return `
 func TakeWhile<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
