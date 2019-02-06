@@ -1,5 +1,6 @@
 package template
 
+// Pmap is template to generate function(Pmap) for user defined data type
 func Pmap() string {
 	return `
 func Pmap<CONDITIONAL_TYPE>(f func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {

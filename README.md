@@ -19,7 +19,7 @@ go get -u github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "7.1.1"
+version = "7.1.2"
 ```
 
 ### Quick Start
@@ -623,7 +623,7 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 
 ### Test Coverage
 ```
-Tests Passed : 520
+Tests Passed : 521
 ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
 ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```

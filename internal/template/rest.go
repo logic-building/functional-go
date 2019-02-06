@@ -1,5 +1,6 @@
 package template
 
+// Rest is template to generate function(Rest) for user defined data type
 func Rest() string {
 	return `
 func Rest<CONDITIONAL_TYPE>(l []<TYPE>) []<TYPE> {

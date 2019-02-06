@@ -1,5 +1,6 @@
 package template
 
+// Remove is template to generate function(Remove) for user defined data type
 func Remove() string {
 	return `
 func Remove<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {

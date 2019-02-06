@@ -83,6 +83,14 @@ func TestRangeInt(t *testing.T) {
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeInt failed. expected=%v, actual=%v", expectedList, actualList)
 	}
+
+	actualList = RangeInt(1, 100, 10)
+	expectedList = []int{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("RangeInt failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
+	}
 }
 
 func TestRangeInt64(t *testing.T) {
@@ -155,6 +163,14 @@ func TestRangeInt64(t *testing.T) {
 	actualList = RangeInt64(1, 3, 0)
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeInt64 failed. expected=%v, actual=%v", expectedList, actualList)
+	}
+
+	actualList = RangeInt64(1, 100, 10)
+	expectedList = []int64{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeInt64 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
 	}
 }
 
@@ -230,6 +246,15 @@ func TestRangeInt32(t *testing.T) {
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeInt32 failed. expected=%v, actual=%v", expectedList, actualList)
 	}
+
+	actualList = RangeInt32(1, 100, 10)
+	expectedList = []int32{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeInt32 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
+	}
+
 }
 
 func TestRangeInt16(t *testing.T) {
@@ -303,6 +328,14 @@ func TestRangeInt16(t *testing.T) {
 	actualList = RangeInt16(1, 3, 0)
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeInt16 failed. expected=%v, actual=%v", expectedList, actualList)
+	}
+
+	actualList = RangeInt16(1, 100, 10)
+	expectedList = []int16{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeInt16 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
 	}
 }
 
@@ -378,6 +411,14 @@ func TestRangeInt8(t *testing.T) {
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeInt8 failed. expected=%v, actual=%v", expectedList, actualList)
 	}
+
+	actualList = RangeInt8(1, 100, 10)
+	expectedList = []int8{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeInt8 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
+	}
 }
 
 func TestRangeUint(t *testing.T) {
@@ -415,6 +456,14 @@ func TestRangeUint(t *testing.T) {
 	actualList = RangeUint(1, 3, 0)
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeUint failed. expected=%v, actual=%v", expectedList, actualList)
+	}
+
+	actualList = RangeUint(1, 100, 10)
+	expectedList = []uint{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeUint failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
 	}
 }
 
@@ -454,6 +503,14 @@ func TestRangeUint64(t *testing.T) {
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeUint64 failed. expected=%v, actual=%v", expectedList, actualList)
 	}
+
+	actualList = RangeUint64(1, 100, 10)
+	expectedList = []uint64{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeUint64 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
+	}
 }
 
 func TestRangeUint32(t *testing.T) {
@@ -491,6 +548,14 @@ func TestRangeUint32(t *testing.T) {
 	actualList = RangeUint32(1, 3, 0)
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeUint32 failed. expected=%v, actual=%v", expectedList, actualList)
+	}
+
+	actualList = RangeUint32(1, 100, 10)
+	expectedList = []uint32{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeUint32 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
 	}
 }
 
@@ -530,6 +595,14 @@ func TestRangeUint16(t *testing.T) {
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeUint16 failed. expected=%v, actual=%v", expectedList, actualList)
 	}
+
+	actualList = RangeUint16(1, 100, 10)
+	expectedList = []uint16{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeUint16 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
+	}
 }
 
 func TestRangeUint8(t *testing.T) {
@@ -567,5 +640,13 @@ func TestRangeUint8(t *testing.T) {
 	actualList = RangeUint8(1, 3, 0)
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestRangeUint8 failed. expected=%v, actual=%v", expectedList, actualList)
+	}
+
+	actualList = RangeUint8(1, 100, 10)
+	expectedList = []uint8{1, 11, 21, 31, 41, 51, 61, 71, 81, 91}
+	expectedLen := 10
+	actualLen := len(actualList)
+	if actualLen != expectedLen || !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestRangeUint8 failed. expected-list=%v, length=%d, actual-list=%v, actual-length=%d", expectedList, expectedLen, actualList, actualLen)
 	}
 }

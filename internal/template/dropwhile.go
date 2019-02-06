@@ -1,5 +1,6 @@
 package template
 
+// DropWhile is template to generate function(DropWhhile) for user defined data type
 func DropWhile() string {
 	return `
 func DropWhile<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {

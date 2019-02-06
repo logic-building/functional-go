@@ -1,5 +1,6 @@
 package template
 
+// Some is template to generate function(Some) for user defined data type
 func Some() string {
 	return `
 func Some<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) bool {

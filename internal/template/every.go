@@ -1,5 +1,6 @@
 package template
 
+// Every is template to generate function(Every) for user defined data type
 func Every() string {
 	return `
 func Every<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) bool {
