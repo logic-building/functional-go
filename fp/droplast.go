@@ -1,5 +1,7 @@
-package fp
+package fp 
 
+// DropLastInt drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastInt(list []int) []int {
 	listLen := len(list)
 
@@ -15,6 +17,8 @@ func DropLastInt(list []int) []int {
 	return newList
 }
 
+// DropLastInt64 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastInt64(list []int64) []int64 {
 	listLen := len(list)
 
@@ -30,6 +34,8 @@ func DropLastInt64(list []int64) []int64 {
 	return newList
 }
 
+// DropLastInt32 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastInt32(list []int32) []int32 {
 	listLen := len(list)
 
@@ -45,6 +51,8 @@ func DropLastInt32(list []int32) []int32 {
 	return newList
 }
 
+// DropLastInt16 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastInt16(list []int16) []int16 {
 	listLen := len(list)
 
@@ -60,6 +68,8 @@ func DropLastInt16(list []int16) []int16 {
 	return newList
 }
 
+// DropLastInt8 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastInt8(list []int8) []int8 {
 	listLen := len(list)
 
@@ -75,6 +85,8 @@ func DropLastInt8(list []int8) []int8 {
 	return newList
 }
 
+// DropLastUint drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastUint(list []uint) []uint {
 	listLen := len(list)
 
@@ -90,6 +102,8 @@ func DropLastUint(list []uint) []uint {
 	return newList
 }
 
+// DropLastUint64 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastUint64(list []uint64) []uint64 {
 	listLen := len(list)
 
@@ -105,6 +119,8 @@ func DropLastUint64(list []uint64) []uint64 {
 	return newList
 }
 
+// DropLastUint32 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastUint32(list []uint32) []uint32 {
 	listLen := len(list)
 
@@ -120,6 +136,8 @@ func DropLastUint32(list []uint32) []uint32 {
 	return newList
 }
 
+// DropLastUint16 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastUint16(list []uint16) []uint16 {
 	listLen := len(list)
 
@@ -135,6 +153,8 @@ func DropLastUint16(list []uint16) []uint16 {
 	return newList
 }
 
+// DropLastUint8 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastUint8(list []uint8) []uint8 {
 	listLen := len(list)
 
@@ -150,6 +170,8 @@ func DropLastUint8(list []uint8) []uint8 {
 	return newList
 }
 
+// DropLastStr drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
 func DropLastStr(list []string) []string {
 	listLen := len(list)
 

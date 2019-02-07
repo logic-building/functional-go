@@ -1,10 +1,9 @@
-package fp
+package fp 
 
 import (
 	"reflect"
 	"testing"
 )
-
 func TestDropLastInt(t *testing.T) {
 	list := []int{1, 2, 3, 4, 5}
 	expectedList := []int{1, 2, 3, 4}

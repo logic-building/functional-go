@@ -1,10 +1,10 @@
-package basic
+package template
 
 func DropLast() string {
 	return `
-// DropLast<FTYPE> drops last item from the list and returns new list.
+// DropLast<CONDITIONAL_TYPE> drops last item from the list and returns new list.
 // Returns empty list if there is only one item in the list or list empty
-func DropLast<FTYPE>(list []<TYPE>) []<TYPE> {
+func DropLast<CONDITIONAL_TYPE>(list []<TYPE>) []<TYPE> {
 	listLen := len(list)
 
 	if list == nil || listLen == 0 || listLen == 1 {

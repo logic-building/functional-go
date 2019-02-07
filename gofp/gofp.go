@@ -158,6 +158,9 @@ func generateFPCode(pkg, dataTypes string) (string, error) {
 
 		template += template2.Reduce()
 		template = r.Replace(template)
+
+		template += template2.DropLast()
+		template = r.Replace(template)
 	}
 
 	return template, nil
@@ -198,6 +201,7 @@ func quoteForTheDay() string {
 		"Every way and means that leads our mind to God is Devotion",
 		"The Only Purpose of Our Human Life is to Attain God",
 		"Meditation. Because some questions can't be answered by Google!",
+		"This is the nature of existence - if you do the right things, the right things will happen to you",
 	}
 
 	s := rand.NewSource(time.Now().Unix())
