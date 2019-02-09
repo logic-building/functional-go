@@ -4,7 +4,7 @@ import (
 	"sync"
 )
 
-// PmapInt applies the function(1st argument) on each item of the list and returns new list.
+// PMapInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -16,12 +16,12 @@ import (
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapInt(squareInt, []int{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapInt(squareInt, []int{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num int) int {
 //		return num * num
 //	}
-func PmapInt(f func(int) int, list []int) []int {
+func PMapInt(f func(int) int, list []int) []int {
 	if f == nil {
 		return []int{}
 	}
@@ -52,7 +52,7 @@ func PmapInt(f func(int) int, list []int) []int {
 	return newList
 }
 
-// PmapInt64 applies the function(1st argument) on each item of the list and returns new list
+// PMapInt64 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -64,12 +64,12 @@ func PmapInt(f func(int) int, list []int) []int {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapInt64(squareInt, []int64{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapInt64(squareInt, []int64{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num int64) int64 {
 //		return num * num
 //	}
-func PmapInt64(f func(int64) int64, list []int64) []int64 {
+func PMapInt64(f func(int64) int64, list []int64) []int64 {
 	if f == nil {
 		return []int64{}
 	}
@@ -100,7 +100,7 @@ func PmapInt64(f func(int64) int64, list []int64) []int64 {
 	return newList
 }
 
-// PmapInt32 applies the function(1st argument) on each item of the list and returns new list
+// PMapInt32 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -112,12 +112,12 @@ func PmapInt64(f func(int64) int64, list []int64) []int64 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapInt32(squareInt, []int32{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapInt32(squareInt, []int32{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num int32) int32 {
 //		return num * num
 //	}
-func PmapInt32(f func(int32) int32, list []int32) []int32 {
+func PMapInt32(f func(int32) int32, list []int32) []int32 {
 	if f == nil {
 		return []int32{}
 	}
@@ -148,7 +148,7 @@ func PmapInt32(f func(int32) int32, list []int32) []int32 {
 	return newList
 }
 
-// PmapInt16 applies the function(1st argument) on each item of the list and returns new list
+// PMapInt16 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -160,12 +160,12 @@ func PmapInt32(f func(int32) int32, list []int32) []int32 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapInt16(squareInt, []int16{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapInt16(squareInt, []int16{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num int16) int16 {
 //		return num * num
 //	}
-func PmapInt16(f func(int16) int16, list []int16) []int16 {
+func PMapInt16(f func(int16) int16, list []int16) []int16 {
 	if f == nil {
 		return []int16{}
 	}
@@ -196,7 +196,7 @@ func PmapInt16(f func(int16) int16, list []int16) []int16 {
 	return newList
 }
 
-// PmapInt8 applies the function(1st argument) on each item of the list and returns new list
+// PMapInt8 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -208,12 +208,12 @@ func PmapInt16(f func(int16) int16, list []int16) []int16 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapInt8(squareInt, []int8{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapInt8(squareInt, []int8{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num int8) int8 {
 //		return num * num
 //	}
-func PmapInt8(f func(int8) int8, list []int8) []int8 {
+func PMapInt8(f func(int8) int8, list []int8) []int8 {
 	if f == nil {
 		return []int8{}
 	}
@@ -244,7 +244,7 @@ func PmapInt8(f func(int8) int8, list []int8) []int8 {
 	return newList
 }
 
-// PmapUint applies the function(1st argument) on each item of the list and returns new list
+// PMapUint applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -256,12 +256,12 @@ func PmapInt8(f func(int8) int8, list []int8) []int8 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapUint(squareInt, []uint{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapUint(squareInt, []uint{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num uint) uint {
 //		return num * num
 //	}
-func PmapUint(f func(uint) uint, list []uint) []uint {
+func PMapUint(f func(uint) uint, list []uint) []uint {
 	if f == nil {
 		return []uint{}
 	}
@@ -292,7 +292,7 @@ func PmapUint(f func(uint) uint, list []uint) []uint {
 	return newList
 }
 
-// PmapUint64 applies the function(1st argument) on each item of the list and returns new list
+// PMapUint64 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -304,12 +304,12 @@ func PmapUint(f func(uint) uint, list []uint) []uint {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapUint64(squareInt, []uint64{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapUint64(squareInt, []uint64{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num uint64) uint64 {
 //		return num * num
 //	}
-func PmapUint64(f func(uint64) uint64, list []uint64) []uint64 {
+func PMapUint64(f func(uint64) uint64, list []uint64) []uint64 {
 	if f == nil {
 		return []uint64{}
 	}
@@ -340,7 +340,7 @@ func PmapUint64(f func(uint64) uint64, list []uint64) []uint64 {
 	return newList
 }
 
-// PmapUint32 applies the function(1st argument) on each item of the list and returns new list
+// PMapUint32 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -352,12 +352,12 @@ func PmapUint64(f func(uint64) uint64, list []uint64) []uint64 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapUint32(squareInt, []uint32{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapUint32(squareInt, []uint32{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num uint32) uint32 {
 //		return num * num
 //	}
-func PmapUint32(f func(uint32) uint32, list []uint32) []uint32 {
+func PMapUint32(f func(uint32) uint32, list []uint32) []uint32 {
 	if f == nil {
 		return []uint32{}
 	}
@@ -388,7 +388,7 @@ func PmapUint32(f func(uint32) uint32, list []uint32) []uint32 {
 	return newList
 }
 
-// PmapUint16 applies the function(1st argument) on each item of the list and returns new list
+// PMapUint16 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -400,12 +400,12 @@ func PmapUint32(f func(uint32) uint32, list []uint32) []uint32 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapInt16(squareInt, []int16{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapInt16(squareInt, []int16{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num int16) int16 {
 //		return num * num
 //	}
-func PmapUint16(f func(uint16) uint16, list []uint16) []uint16 {
+func PMapUint16(f func(uint16) uint16, list []uint16) []uint16 {
 	if f == nil {
 		return []uint16{}
 	}
@@ -436,7 +436,7 @@ func PmapUint16(f func(uint16) uint16, list []uint16) []uint16 {
 	return newList
 }
 
-// PmapUint8 applies the function(1st argument) on each item of the list and returns new list
+// PMapUint8 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -448,12 +448,12 @@ func PmapUint16(f func(uint16) uint16, list []uint16) []uint16 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: Square each item in the list
-//	MapUint8(squareInt, []uint8{1, 2, 3}) // Returns [1, 4, 9]
+//	PMapUint8(squareInt, []uint8{1, 2, 3}) // Returns [1, 4, 9]
 //
 //	func squareInt(num uint8) uint8 {
 //		return num * num
 //	}
-func PmapUint8(f func(uint8) uint8, list []uint8) []uint8 {
+func PMapUint8(f func(uint8) uint8, list []uint8) []uint8 {
 	if f == nil {
 		return []uint8{}
 	}
@@ -484,7 +484,7 @@ func PmapUint8(f func(uint8) uint8, list []uint8) []uint8 {
 	return newList
 }
 
-// PmapFloat64 applies the function(1st argument) on each item of the list and returns new list
+// PMapFloat64 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -496,12 +496,12 @@ func PmapUint8(f func(uint8) uint8, list []uint8) []uint8 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: add 1 to each item in the list
-//	MapFloat64(addOne, []float64{1, 2, 3}) // Returns [2, 3, 4]
+//	PMapFloat64(addOne, []float64{1, 2, 3}) // Returns [2, 3, 4]
 //
 //	func addOne(num float64) float64 {
 //		return num + 1
 //	}
-func PmapFloat64(f func(float64) float64, list []float64) []float64 {
+func PMapFloat64(f func(float64) float64, list []float64) []float64 {
 	if f == nil {
 		return []float64{}
 	}
@@ -532,7 +532,7 @@ func PmapFloat64(f func(float64) float64, list []float64) []float64 {
 	return newList
 }
 
-// PmapFloat32 applies the function(1st argument) on each item of the list and returns new list
+// PMapFloat32 applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -544,12 +544,12 @@ func PmapFloat64(f func(float64) float64, list []float64) []float64 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: add 1 to each item in the list
-//	MapFloat32(addOne, []float32{1, 2, 3}) // Returns [2, 3, 4]
+//	PMapFloat32(addOne, []float32{1, 2, 3}) // Returns [2, 3, 4]
 //
 //	func addOne(num float32) float32 {
 //		return num + 1
 //	}
-func PmapFloat32(f func(float32) float32, list []float32) []float32 {
+func PMapFloat32(f func(float32) float32, list []float32) []float32 {
 	if f == nil {
 		return []float32{}
 	}
@@ -580,7 +580,7 @@ func PmapFloat32(f func(float32) float32, list []float32) []float32 {
 	return newList
 }
 
-// PmapStr applies the function(1st argument) on each item of the list and returns new list
+// PMapStr applies the function(1st argument) on each item of the list and returns new list
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
 // Takes 2 inputs
@@ -592,7 +592,8 @@ func PmapFloat32(f func(float32) float32, list []float32) []float32 {
 //	Empty list if all arguments are nil or either one is nil
 //
 // Example: change case to upper for each item in the list
-func PmapStr(f func(string) string, list []string) []string {
+//	PMapStr(strings.ToUpper, []string{"govinda", "gopal", "shyam"}) // Returns: ["GOVINDA", "GOPAL", "SHYAM"]
+func PMapStr(f func(string) string, list []string) []string {
 	if f == nil {
 		return []string{}
 	}
