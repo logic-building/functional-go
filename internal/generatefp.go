@@ -25,6 +25,11 @@ var fpCodeList = []fpCode{fpCode{
 
 	testTemplate:          basic.DropLastTest(),
 	generatedTestFileName: "droplast_test.go",
+}, fpCode{
+	function:          "PMapIO",
+	codeTemplate:      basic.PMapIO(),
+	dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string"},
+	generatedFileName: "pmapio.go",
 }}
 
 var importTestTemplate = `
@@ -44,29 +49,61 @@ func generateFpCode(fpCodeList []fpCode) {
 	for _, fpCode := range fpCodeList {
 		codeTemplate := "package fp \n"
 
+		if strings.Contains(strings.ToLower(fpCode.function), "pmap") {
+			codeTemplate += "\n" + `import "sync"` + "\n"
+		}
+
 		testTemplate := "package fp \n"
 		testTemplate += importTestTemplate
 
-		for _, t := range fpCode.dataTypes {
-			codeTemplate += fpCode.codeTemplate + "\n"
+		if strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE>") &&
+			strings.Contains(fpCode.codeTemplate, "<OUTPUT_TYPE") {
 
-			ftype := strings.Title(t)
-			switch t {
-			case "string":
-				ftype = "Str"
-				testTemplate += modifyTestDataToStr(fpCode.testTemplate) + "\n"
+			for _, inputType := range fpCode.dataTypes {
+				for _, outputType := range fpCode.dataTypes {
 
-			default:
-				testTemplate += fpCode.testTemplate + "\n"
+					fInputType := strings.Title(inputType)
+					fOutputType := strings.Title(outputType)
+
+					if fInputType == "String" {
+						fInputType = "Str"
+					}
+
+					if fOutputType == "String" {
+						fOutputType = "Str"
+					}
+
+					codeTemplate += fpCode.codeTemplate + "\n"
+					r := strings.NewReplacer("<FINPUT_TYPE>", fInputType, "<FOUTPUT_TYPE>", fOutputType, "<INPUT_TYPE>", inputType, "<OUTPUT_TYPE>", outputType)
+					codeTemplate = r.Replace(codeTemplate)
+				}
 			}
 
-			r := strings.NewReplacer("<TYPE>", t, "<FTYPE>", ftype)
-			codeTemplate = r.Replace(codeTemplate)
-			testTemplate = r.Replace(testTemplate)
+		} else {
+
+			for _, t := range fpCode.dataTypes {
+				codeTemplate += fpCode.codeTemplate + "\n"
+
+				ftype := strings.Title(t)
+				switch t {
+				case "string":
+					ftype = "Str"
+					testTemplate += modifyTestDataToStr(fpCode.testTemplate) + "\n"
+
+				default:
+					testTemplate += fpCode.testTemplate + "\n"
+				}
+
+				r := strings.NewReplacer("<TYPE>", t, "<FTYPE>", ftype)
+				codeTemplate = r.Replace(codeTemplate)
+				testTemplate = r.Replace(testTemplate)
+			}
 		}
 
 		writeToFile(codeTemplate, fmt.Sprintf("fp/%s", fpCode.generatedFileName))
-		writeToFile(testTemplate, fmt.Sprintf("fp/%s", fpCode.generatedTestFileName))
+		if fpCode.generatedTestFileName != "" {
+			writeToFile(testTemplate, fmt.Sprintf("fp/%s", fpCode.generatedTestFileName))
+		}
 	}
 
 	fmt.Println("Functional code generated successfully")
