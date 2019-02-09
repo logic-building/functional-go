@@ -186,3 +186,20 @@ func DropLastStr(list []string) []string {
 	}
 	return newList
 }
+
+// DropLastBool drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastBool(list []bool) []bool {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []bool{}
+	}
+
+	newList := make([]bool, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}

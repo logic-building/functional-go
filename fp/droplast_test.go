@@ -410,3 +410,40 @@ func TestDropLastStr(t *testing.T) {
 		t.Errorf("TestDropLastStr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 }
+
+func TestDropLastBool(t *testing.T) {
+	list := []bool{true, true, true, true, false}
+	expectedList := []bool{true, true, true, true}
+	actualList := DropLastBool(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastBool failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []bool{true, true}
+	expectedList = []bool{true}
+	actualList = DropLastBool(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastBool failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []bool{true}
+	expectedList = []bool{}
+	actualList = DropLastBool(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastBool failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []bool{}
+	expectedList = []bool{}
+	actualList = DropLastBool(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastBool failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = nil
+	expectedList = []bool{}
+	actualList = DropLastBool(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastBool failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+}

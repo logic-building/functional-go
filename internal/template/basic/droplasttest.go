@@ -39,3 +39,43 @@ func TestDropLast<FTYPE>(t *testing.T) {
 	}
 }`
 }
+
+func DropLastBoolTest() string {
+	return `
+func TestDropLast<FTYPE>(t *testing.T) {
+	list := []<TYPE>{true, true, true, true, false}
+	expectedList := []<TYPE>{true, true, true, true}
+	actualList := DropLast<FTYPE>(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []<TYPE>{true, true}
+	expectedList = []<TYPE>{true}
+	actualList = DropLast<FTYPE>(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []<TYPE>{true}
+	expectedList = []<TYPE>{}
+	actualList = DropLast<FTYPE>(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []<TYPE>{}
+	expectedList = []<TYPE>{}
+	actualList = DropLast<FTYPE>(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = nil
+	expectedList = []<TYPE>{}
+	actualList = DropLast<FTYPE>(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+}`
+}

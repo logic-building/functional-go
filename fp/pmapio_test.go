@@ -1,0 +1,3341 @@
+package fp 
+
+import (
+	"reflect"
+	"testing"
+)
+
+func TestPmapIntInt64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapIntInt64(plusOneIntInt64, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntInt64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntInt64(nil, nil)) > 0 {
+		t.Errorf("PMapIntInt64 failed")
+	}
+
+	if len(PMapIntInt64(nil, []int{})) > 0 {
+		t.Errorf("PMapIntInt64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntInt64(num int) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapIntInt32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapIntInt32(plusOneIntInt32, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntInt32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntInt32(nil, nil)) > 0 {
+		t.Errorf("PMapIntInt32 failed")
+	}
+
+	if len(PMapIntInt32(nil, []int{})) > 0 {
+		t.Errorf("PMapIntInt32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntInt32(num int) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapIntInt16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapIntInt16(plusOneIntInt16, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntInt16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntInt16(nil, nil)) > 0 {
+		t.Errorf("PMapIntInt16 failed")
+	}
+
+	if len(PMapIntInt16(nil, []int{})) > 0 {
+		t.Errorf("PMapIntInt16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntInt16(num int) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapIntInt8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapIntInt8(plusOneIntInt8, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntInt8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntInt8(nil, nil)) > 0 {
+		t.Errorf("PMapIntInt8 failed")
+	}
+
+	if len(PMapIntInt8(nil, []int{})) > 0 {
+		t.Errorf("PMapIntInt8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntInt8(num int) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapIntUint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapIntUint(plusOneIntUint, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntUint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntUint(nil, nil)) > 0 {
+		t.Errorf("PMapIntUint failed")
+	}
+
+	if len(PMapIntUint(nil, []int{})) > 0 {
+		t.Errorf("PMapIntUint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntUint(num int) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapIntUint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapIntUint64(plusOneIntUint64, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntUint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntUint64(nil, nil)) > 0 {
+		t.Errorf("PMapIntUint64 failed")
+	}
+
+	if len(PMapIntUint64(nil, []int{})) > 0 {
+		t.Errorf("PMapIntUint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntUint64(num int) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapIntUint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapIntUint32(plusOneIntUint32, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntUint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntUint32(nil, nil)) > 0 {
+		t.Errorf("PMapIntUint32 failed")
+	}
+
+	if len(PMapIntUint32(nil, []int{})) > 0 {
+		t.Errorf("PMapIntUint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntUint32(num int) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapIntUint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapIntUint16(plusOneIntUint16, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntUint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntUint16(nil, nil)) > 0 {
+		t.Errorf("PMapIntUint16 failed")
+	}
+
+	if len(PMapIntUint16(nil, []int{})) > 0 {
+		t.Errorf("PMapIntUint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntUint16(num int) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapIntUint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapIntUint8(plusOneIntUint8, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapIntUint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntUint8(nil, nil)) > 0 {
+		t.Errorf("PMapIntUint8 failed")
+	}
+
+	if len(PMapIntUint8(nil, []int{})) > 0 {
+		t.Errorf("PMapIntUint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneIntUint8(num int) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapIntStr(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapIntStr(someLogicIntStr, []int{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapIntStr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntStr(nil, nil)) > 0 {
+		t.Errorf("PMapIntStr failed")
+	}
+
+	if len(PMapIntStr(nil, []int{})) > 0 {
+		t.Errorf("PMapIntStr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicIntStr(num int) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapIntBool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapIntBool(someLogicIntBool, []int{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapIntBool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapIntBool(nil, nil)) > 0 {
+		t.Errorf("PMapIntBool failed")
+	}
+
+	if len(PMapIntBool(nil, []int{})) > 0 {
+		t.Errorf("PMapIntBool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicIntBool(num int) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapInt64Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapInt64Int(plusOneInt64Int, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Int(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Int failed")
+	}
+
+	if len(PMapInt64Int(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Int(num int64) int {
+	return int(num + 1)
+}
+
+
+func TestPmapInt64Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapInt64Int32(plusOneInt64Int32, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Int32(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Int32 failed")
+	}
+
+	if len(PMapInt64Int32(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Int32(num int64) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapInt64Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapInt64Int16(plusOneInt64Int16, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Int16(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Int16 failed")
+	}
+
+	if len(PMapInt64Int16(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Int16(num int64) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapInt64Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapInt64Int8(plusOneInt64Int8, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Int8(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Int8 failed")
+	}
+
+	if len(PMapInt64Int8(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Int8(num int64) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapInt64Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapInt64Uint(plusOneInt64Uint, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Uint(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Uint failed")
+	}
+
+	if len(PMapInt64Uint(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Uint(num int64) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapInt64Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapInt64Uint64(plusOneInt64Uint64, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Uint64(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Uint64 failed")
+	}
+
+	if len(PMapInt64Uint64(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Uint64(num int64) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapInt64Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapInt64Uint32(plusOneInt64Uint32, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Uint32(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Uint32 failed")
+	}
+
+	if len(PMapInt64Uint32(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Uint32(num int64) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapInt64Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapInt64Uint16(plusOneInt64Uint16, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Uint16(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Uint16 failed")
+	}
+
+	if len(PMapInt64Uint16(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Uint16(num int64) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapInt64Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapInt64Uint8(plusOneInt64Uint8, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt64Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Uint8(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Uint8 failed")
+	}
+
+	if len(PMapInt64Uint8(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt64Uint8(num int64) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapInt64Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapInt64Str(someLogicInt64Str, []int64{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapInt64Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Str(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Str failed")
+	}
+
+	if len(PMapInt64Str(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt64Str(num int64) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapInt64Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapInt64Bool(someLogicInt64Bool, []int64{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapInt64Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt64Bool(nil, nil)) > 0 {
+		t.Errorf("PMapInt64Bool failed")
+	}
+
+	if len(PMapInt64Bool(nil, []int64{})) > 0 {
+		t.Errorf("PMapInt64Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt64Bool(num int64) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapInt32Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapInt32Int(plusOneInt32Int, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Int(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Int failed")
+	}
+
+	if len(PMapInt32Int(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Int(num int32) int {
+	return int(num + 1)
+}
+
+
+func TestPmapInt32Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapInt32Int64(plusOneInt32Int64, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Int64(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Int64 failed")
+	}
+
+	if len(PMapInt32Int64(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Int64(num int32) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapInt32Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapInt32Int16(plusOneInt32Int16, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Int16(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Int16 failed")
+	}
+
+	if len(PMapInt32Int16(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Int16(num int32) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapInt32Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapInt32Int8(plusOneInt32Int8, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Int8(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Int8 failed")
+	}
+
+	if len(PMapInt32Int8(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Int8(num int32) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapInt32Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapInt32Uint(plusOneInt32Uint, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Uint(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Uint failed")
+	}
+
+	if len(PMapInt32Uint(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Uint(num int32) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapInt32Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapInt32Uint64(plusOneInt32Uint64, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Uint64(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Uint64 failed")
+	}
+
+	if len(PMapInt32Uint64(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Uint64(num int32) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapInt32Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapInt32Uint32(plusOneInt32Uint32, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Uint32(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Uint32 failed")
+	}
+
+	if len(PMapInt32Uint32(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Uint32(num int32) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapInt32Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapInt32Uint16(plusOneInt32Uint16, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Uint16(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Uint16 failed")
+	}
+
+	if len(PMapInt32Uint16(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Uint16(num int32) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapInt32Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapInt32Uint8(plusOneInt32Uint8, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt32Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Uint8(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Uint8 failed")
+	}
+
+	if len(PMapInt32Uint8(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt32Uint8(num int32) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapInt32Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapInt32Str(someLogicInt32Str, []int32{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapInt32Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Str(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Str failed")
+	}
+
+	if len(PMapInt32Str(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt32Str(num int32) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapInt32Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapInt32Bool(someLogicInt32Bool, []int32{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapInt32Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt32Bool(nil, nil)) > 0 {
+		t.Errorf("PMapInt32Bool failed")
+	}
+
+	if len(PMapInt32Bool(nil, []int32{})) > 0 {
+		t.Errorf("PMapInt32Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt32Bool(num int32) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapInt16Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapInt16Int(plusOneInt16Int, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Int(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Int failed")
+	}
+
+	if len(PMapInt16Int(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Int(num int16) int {
+	return int(num + 1)
+}
+
+
+func TestPmapInt16Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapInt16Int64(plusOneInt16Int64, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Int64(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Int64 failed")
+	}
+
+	if len(PMapInt16Int64(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Int64(num int16) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapInt16Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapInt16Int32(plusOneInt16Int32, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Int32(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Int32 failed")
+	}
+
+	if len(PMapInt16Int32(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Int32(num int16) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapInt16Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapInt16Int8(plusOneInt16Int8, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Int8(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Int8 failed")
+	}
+
+	if len(PMapInt16Int8(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Int8(num int16) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapInt16Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapInt16Uint(plusOneInt16Uint, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Uint(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Uint failed")
+	}
+
+	if len(PMapInt16Uint(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Uint(num int16) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapInt16Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapInt16Uint64(plusOneInt16Uint64, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Uint64(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Uint64 failed")
+	}
+
+	if len(PMapInt16Uint64(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Uint64(num int16) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapInt16Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapInt16Uint32(plusOneInt16Uint32, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Uint32(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Uint32 failed")
+	}
+
+	if len(PMapInt16Uint32(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Uint32(num int16) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapInt16Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapInt16Uint16(plusOneInt16Uint16, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Uint16(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Uint16 failed")
+	}
+
+	if len(PMapInt16Uint16(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Uint16(num int16) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapInt16Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapInt16Uint8(plusOneInt16Uint8, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt16Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Uint8(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Uint8 failed")
+	}
+
+	if len(PMapInt16Uint8(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt16Uint8(num int16) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapInt16Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapInt16Str(someLogicInt16Str, []int16{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapInt16Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Str(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Str failed")
+	}
+
+	if len(PMapInt16Str(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt16Str(num int16) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapInt16Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapInt16Bool(someLogicInt16Bool, []int16{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapInt16Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt16Bool(nil, nil)) > 0 {
+		t.Errorf("PMapInt16Bool failed")
+	}
+
+	if len(PMapInt16Bool(nil, []int16{})) > 0 {
+		t.Errorf("PMapInt16Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt16Bool(num int16) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapInt8Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapInt8Int(plusOneInt8Int, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Int(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Int failed")
+	}
+
+	if len(PMapInt8Int(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Int(num int8) int {
+	return int(num + 1)
+}
+
+
+func TestPmapInt8Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapInt8Int64(plusOneInt8Int64, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Int64(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Int64 failed")
+	}
+
+	if len(PMapInt8Int64(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Int64(num int8) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapInt8Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapInt8Int32(plusOneInt8Int32, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Int32(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Int32 failed")
+	}
+
+	if len(PMapInt8Int32(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Int32(num int8) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapInt8Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapInt8Int16(plusOneInt8Int16, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Int16(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Int16 failed")
+	}
+
+	if len(PMapInt8Int16(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Int16(num int8) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapInt8Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapInt8Uint(plusOneInt8Uint, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Uint(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Uint failed")
+	}
+
+	if len(PMapInt8Uint(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Uint(num int8) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapInt8Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapInt8Uint64(plusOneInt8Uint64, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Uint64(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Uint64 failed")
+	}
+
+	if len(PMapInt8Uint64(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Uint64(num int8) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapInt8Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapInt8Uint32(plusOneInt8Uint32, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Uint32(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Uint32 failed")
+	}
+
+	if len(PMapInt8Uint32(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Uint32(num int8) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapInt8Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapInt8Uint16(plusOneInt8Uint16, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Uint16(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Uint16 failed")
+	}
+
+	if len(PMapInt8Uint16(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Uint16(num int8) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapInt8Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapInt8Uint8(plusOneInt8Uint8, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapInt8Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Uint8(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Uint8 failed")
+	}
+
+	if len(PMapInt8Uint8(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneInt8Uint8(num int8) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapInt8Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapInt8Str(someLogicInt8Str, []int8{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapInt8Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Str(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Str failed")
+	}
+
+	if len(PMapInt8Str(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt8Str(num int8) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapInt8Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapInt8Bool(someLogicInt8Bool, []int8{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapInt8Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapInt8Bool(nil, nil)) > 0 {
+		t.Errorf("PMapInt8Bool failed")
+	}
+
+	if len(PMapInt8Bool(nil, []int8{})) > 0 {
+		t.Errorf("PMapInt8Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicInt8Bool(num int8) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapUintInt(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapUintInt(plusOneUintInt, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintInt failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintInt(nil, nil)) > 0 {
+		t.Errorf("PMapUintInt failed")
+	}
+
+	if len(PMapUintInt(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintInt failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintInt(num uint) int {
+	return int(num + 1)
+}
+
+
+func TestPmapUintInt64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapUintInt64(plusOneUintInt64, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintInt64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintInt64(nil, nil)) > 0 {
+		t.Errorf("PMapUintInt64 failed")
+	}
+
+	if len(PMapUintInt64(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintInt64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintInt64(num uint) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapUintInt32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapUintInt32(plusOneUintInt32, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintInt32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintInt32(nil, nil)) > 0 {
+		t.Errorf("PMapUintInt32 failed")
+	}
+
+	if len(PMapUintInt32(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintInt32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintInt32(num uint) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapUintInt16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapUintInt16(plusOneUintInt16, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintInt16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintInt16(nil, nil)) > 0 {
+		t.Errorf("PMapUintInt16 failed")
+	}
+
+	if len(PMapUintInt16(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintInt16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintInt16(num uint) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapUintInt8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapUintInt8(plusOneUintInt8, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintInt8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintInt8(nil, nil)) > 0 {
+		t.Errorf("PMapUintInt8 failed")
+	}
+
+	if len(PMapUintInt8(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintInt8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintInt8(num uint) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapUintUint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapUintUint64(plusOneUintUint64, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintUint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintUint64(nil, nil)) > 0 {
+		t.Errorf("PMapUintUint64 failed")
+	}
+
+	if len(PMapUintUint64(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintUint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintUint64(num uint) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapUintUint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapUintUint32(plusOneUintUint32, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintUint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintUint32(nil, nil)) > 0 {
+		t.Errorf("PMapUintUint32 failed")
+	}
+
+	if len(PMapUintUint32(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintUint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintUint32(num uint) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapUintUint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapUintUint16(plusOneUintUint16, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintUint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintUint16(nil, nil)) > 0 {
+		t.Errorf("PMapUintUint16 failed")
+	}
+
+	if len(PMapUintUint16(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintUint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintUint16(num uint) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapUintUint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapUintUint8(plusOneUintUint8, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUintUint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintUint8(nil, nil)) > 0 {
+		t.Errorf("PMapUintUint8 failed")
+	}
+
+	if len(PMapUintUint8(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintUint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUintUint8(num uint) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapUintStr(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapUintStr(someLogicUintStr, []uint{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapUintStr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintStr(nil, nil)) > 0 {
+		t.Errorf("PMapUintStr failed")
+	}
+
+	if len(PMapUintStr(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintStr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUintStr(num uint) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapUintBool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapUintBool(someLogicUintBool, []uint{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapUintBool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUintBool(nil, nil)) > 0 {
+		t.Errorf("PMapUintBool failed")
+	}
+
+	if len(PMapUintBool(nil, []uint{})) > 0 {
+		t.Errorf("PMapUintBool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUintBool(num uint) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapUint64Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapUint64Int(plusOneUint64Int, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Int(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Int failed")
+	}
+
+	if len(PMapUint64Int(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Int(num uint64) int {
+	return int(num + 1)
+}
+
+
+func TestPmapUint64Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapUint64Int64(plusOneUint64Int64, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Int64(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Int64 failed")
+	}
+
+	if len(PMapUint64Int64(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Int64(num uint64) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapUint64Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapUint64Int32(plusOneUint64Int32, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Int32(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Int32 failed")
+	}
+
+	if len(PMapUint64Int32(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Int32(num uint64) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapUint64Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapUint64Int16(plusOneUint64Int16, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Int16(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Int16 failed")
+	}
+
+	if len(PMapUint64Int16(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Int16(num uint64) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapUint64Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapUint64Int8(plusOneUint64Int8, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Int8(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Int8 failed")
+	}
+
+	if len(PMapUint64Int8(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Int8(num uint64) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapUint64Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapUint64Uint(plusOneUint64Uint, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Uint(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Uint failed")
+	}
+
+	if len(PMapUint64Uint(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Uint(num uint64) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapUint64Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapUint64Uint32(plusOneUint64Uint32, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Uint32(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Uint32 failed")
+	}
+
+	if len(PMapUint64Uint32(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Uint32(num uint64) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapUint64Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapUint64Uint16(plusOneUint64Uint16, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Uint16(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Uint16 failed")
+	}
+
+	if len(PMapUint64Uint16(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Uint16(num uint64) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapUint64Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapUint64Uint8(plusOneUint64Uint8, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint64Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Uint8(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Uint8 failed")
+	}
+
+	if len(PMapUint64Uint8(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint64Uint8(num uint64) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapUint64Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapUint64Str(someLogicUint64Str, []uint64{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapUint64Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Str(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Str failed")
+	}
+
+	if len(PMapUint64Str(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint64Str(num uint64) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapUint64Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapUint64Bool(someLogicUint64Bool, []uint64{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapUint64Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint64Bool(nil, nil)) > 0 {
+		t.Errorf("PMapUint64Bool failed")
+	}
+
+	if len(PMapUint64Bool(nil, []uint64{})) > 0 {
+		t.Errorf("PMapUint64Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint64Bool(num uint64) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapUint32Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapUint32Int(plusOneUint32Int, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Int(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Int failed")
+	}
+
+	if len(PMapUint32Int(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Int(num uint32) int {
+	return int(num + 1)
+}
+
+
+func TestPmapUint32Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapUint32Int64(plusOneUint32Int64, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Int64(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Int64 failed")
+	}
+
+	if len(PMapUint32Int64(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Int64(num uint32) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapUint32Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapUint32Int32(plusOneUint32Int32, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Int32(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Int32 failed")
+	}
+
+	if len(PMapUint32Int32(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Int32(num uint32) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapUint32Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapUint32Int16(plusOneUint32Int16, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Int16(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Int16 failed")
+	}
+
+	if len(PMapUint32Int16(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Int16(num uint32) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapUint32Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapUint32Int8(plusOneUint32Int8, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Int8(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Int8 failed")
+	}
+
+	if len(PMapUint32Int8(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Int8(num uint32) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapUint32Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapUint32Uint(plusOneUint32Uint, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Uint(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Uint failed")
+	}
+
+	if len(PMapUint32Uint(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Uint(num uint32) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapUint32Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapUint32Uint64(plusOneUint32Uint64, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Uint64(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Uint64 failed")
+	}
+
+	if len(PMapUint32Uint64(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Uint64(num uint32) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapUint32Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapUint32Uint16(plusOneUint32Uint16, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Uint16(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Uint16 failed")
+	}
+
+	if len(PMapUint32Uint16(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Uint16(num uint32) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapUint32Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapUint32Uint8(plusOneUint32Uint8, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint32Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Uint8(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Uint8 failed")
+	}
+
+	if len(PMapUint32Uint8(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint32Uint8(num uint32) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapUint32Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapUint32Str(someLogicUint32Str, []uint32{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapUint32Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Str(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Str failed")
+	}
+
+	if len(PMapUint32Str(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint32Str(num uint32) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapUint32Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapUint32Bool(someLogicUint32Bool, []uint32{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapUint32Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint32Bool(nil, nil)) > 0 {
+		t.Errorf("PMapUint32Bool failed")
+	}
+
+	if len(PMapUint32Bool(nil, []uint32{})) > 0 {
+		t.Errorf("PMapUint32Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint32Bool(num uint32) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapUint16Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapUint16Int(plusOneUint16Int, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Int(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Int failed")
+	}
+
+	if len(PMapUint16Int(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Int(num uint16) int {
+	return int(num + 1)
+}
+
+
+func TestPmapUint16Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapUint16Int64(plusOneUint16Int64, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Int64(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Int64 failed")
+	}
+
+	if len(PMapUint16Int64(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Int64(num uint16) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapUint16Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapUint16Int32(plusOneUint16Int32, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Int32(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Int32 failed")
+	}
+
+	if len(PMapUint16Int32(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Int32(num uint16) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapUint16Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapUint16Int16(plusOneUint16Int16, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Int16(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Int16 failed")
+	}
+
+	if len(PMapUint16Int16(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Int16(num uint16) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapUint16Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapUint16Int8(plusOneUint16Int8, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Int8(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Int8 failed")
+	}
+
+	if len(PMapUint16Int8(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Int8(num uint16) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapUint16Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapUint16Uint(plusOneUint16Uint, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Uint(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Uint failed")
+	}
+
+	if len(PMapUint16Uint(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Uint(num uint16) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapUint16Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapUint16Uint64(plusOneUint16Uint64, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Uint64(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Uint64 failed")
+	}
+
+	if len(PMapUint16Uint64(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Uint64(num uint16) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapUint16Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapUint16Uint32(plusOneUint16Uint32, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Uint32(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Uint32 failed")
+	}
+
+	if len(PMapUint16Uint32(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Uint32(num uint16) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapUint16Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := PMapUint16Uint8(plusOneUint16Uint8, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint16Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Uint8(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Uint8 failed")
+	}
+
+	if len(PMapUint16Uint8(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint16Uint8(num uint16) uint8 {
+	return uint8(num + 1)
+}
+
+
+func TestPmapUint16Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapUint16Str(someLogicUint16Str, []uint16{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapUint16Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Str(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Str failed")
+	}
+
+	if len(PMapUint16Str(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint16Str(num uint16) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapUint16Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapUint16Bool(someLogicUint16Bool, []uint16{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapUint16Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint16Bool(nil, nil)) > 0 {
+		t.Errorf("PMapUint16Bool failed")
+	}
+
+	if len(PMapUint16Bool(nil, []uint16{})) > 0 {
+		t.Errorf("PMapUint16Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint16Bool(num uint16) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapUint8Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := PMapUint8Int(plusOneUint8Int, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Int(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Int failed")
+	}
+
+	if len(PMapUint8Int(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Int(num uint8) int {
+	return int(num + 1)
+}
+
+
+func TestPmapUint8Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := PMapUint8Int64(plusOneUint8Int64, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Int64(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Int64 failed")
+	}
+
+	if len(PMapUint8Int64(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Int64(num uint8) int64 {
+	return int64(num + 1)
+}
+
+
+func TestPmapUint8Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := PMapUint8Int32(plusOneUint8Int32, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Int32(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Int32 failed")
+	}
+
+	if len(PMapUint8Int32(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Int32(num uint8) int32 {
+	return int32(num + 1)
+}
+
+
+func TestPmapUint8Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := PMapUint8Int16(plusOneUint8Int16, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Int16(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Int16 failed")
+	}
+
+	if len(PMapUint8Int16(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Int16(num uint8) int16 {
+	return int16(num + 1)
+}
+
+
+func TestPmapUint8Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := PMapUint8Int8(plusOneUint8Int8, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Int8(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Int8 failed")
+	}
+
+	if len(PMapUint8Int8(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Int8(num uint8) int8 {
+	return int8(num + 1)
+}
+
+
+func TestPmapUint8Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := PMapUint8Uint(plusOneUint8Uint, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Uint(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Uint failed")
+	}
+
+	if len(PMapUint8Uint(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Uint(num uint8) uint {
+	return uint(num + 1)
+}
+
+
+func TestPmapUint8Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := PMapUint8Uint64(plusOneUint8Uint64, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Uint64(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Uint64 failed")
+	}
+
+	if len(PMapUint8Uint64(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Uint64(num uint8) uint64 {
+	return uint64(num + 1)
+}
+
+
+func TestPmapUint8Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := PMapUint8Uint32(plusOneUint8Uint32, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Uint32(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Uint32 failed")
+	}
+
+	if len(PMapUint8Uint32(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Uint32(num uint8) uint32 {
+	return uint32(num + 1)
+}
+
+
+func TestPmapUint8Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := PMapUint8Uint16(plusOneUint8Uint16, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("PMapUint8Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Uint16(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Uint16 failed")
+	}
+
+	if len(PMapUint8Uint16(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func plusOneUint8Uint16(num uint8) uint16 {
+	return uint16(num + 1)
+}
+
+
+func TestPmapUint8Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := PMapUint8Str(someLogicUint8Str, []uint8{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapUint8Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Str(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Str failed")
+	}
+
+	if len(PMapUint8Str(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint8Str(num uint8) string {
+	if num == 10 {
+		return string("10")
+	} else {
+		return "0"
+	}
+}
+
+
+func TestPmapUint8Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapUint8Bool(someLogicUint8Bool, []uint8{10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapUint8Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapUint8Bool(nil, nil)) > 0 {
+		t.Errorf("PMapUint8Bool failed")
+	}
+
+	if len(PMapUint8Bool(nil, []uint8{})) > 0 {
+		t.Errorf("PMapUint8Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicUint8Bool(num uint8) bool {
+	if num > 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapStrInt(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int{10}
+	newList := PMapStrInt(someLogicStrInt, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrInt failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrInt(nil, nil)) > 0 {
+		t.Errorf("PMapStrInt failed")
+	}
+
+	if len(PMapStrInt(nil, []string{})) > 0 {
+		t.Errorf("PMapStrInt failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrInt(num string) int {
+	if num == "ten" {
+		return int(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrInt64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int64{10}
+	newList := PMapStrInt64(someLogicStrInt64, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrInt64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrInt64(nil, nil)) > 0 {
+		t.Errorf("PMapStrInt64 failed")
+	}
+
+	if len(PMapStrInt64(nil, []string{})) > 0 {
+		t.Errorf("PMapStrInt64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrInt64(num string) int64 {
+	if num == "ten" {
+		return int64(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrInt32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int32{10}
+	newList := PMapStrInt32(someLogicStrInt32, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrInt32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrInt32(nil, nil)) > 0 {
+		t.Errorf("PMapStrInt32 failed")
+	}
+
+	if len(PMapStrInt32(nil, []string{})) > 0 {
+		t.Errorf("PMapStrInt32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrInt32(num string) int32 {
+	if num == "ten" {
+		return int32(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrInt16(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int16{10}
+	newList := PMapStrInt16(someLogicStrInt16, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrInt16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrInt16(nil, nil)) > 0 {
+		t.Errorf("PMapStrInt16 failed")
+	}
+
+	if len(PMapStrInt16(nil, []string{})) > 0 {
+		t.Errorf("PMapStrInt16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrInt16(num string) int16 {
+	if num == "ten" {
+		return int16(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrInt8(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int8{10}
+	newList := PMapStrInt8(someLogicStrInt8, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrInt8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrInt8(nil, nil)) > 0 {
+		t.Errorf("PMapStrInt8 failed")
+	}
+
+	if len(PMapStrInt8(nil, []string{})) > 0 {
+		t.Errorf("PMapStrInt8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrInt8(num string) int8 {
+	if num == "ten" {
+		return int8(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrUint(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint{10}
+	newList := PMapStrUint(someLogicStrUint, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrUint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrUint(nil, nil)) > 0 {
+		t.Errorf("PMapStrUint failed")
+	}
+
+	if len(PMapStrUint(nil, []string{})) > 0 {
+		t.Errorf("PMapStrUint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrUint(num string) uint {
+	if num == "ten" {
+		return uint(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrUint64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint64{10}
+	newList := PMapStrUint64(someLogicStrUint64, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrUint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrUint64(nil, nil)) > 0 {
+		t.Errorf("PMapStrUint64 failed")
+	}
+
+	if len(PMapStrUint64(nil, []string{})) > 0 {
+		t.Errorf("PMapStrUint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrUint64(num string) uint64 {
+	if num == "ten" {
+		return uint64(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrUint32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint32{10}
+	newList := PMapStrUint32(someLogicStrUint32, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrUint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrUint32(nil, nil)) > 0 {
+		t.Errorf("PMapStrUint32 failed")
+	}
+
+	if len(PMapStrUint32(nil, []string{})) > 0 {
+		t.Errorf("PMapStrUint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrUint32(num string) uint32 {
+	if num == "ten" {
+		return uint32(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrUint16(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint16{10}
+	newList := PMapStrUint16(someLogicStrUint16, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrUint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrUint16(nil, nil)) > 0 {
+		t.Errorf("PMapStrUint16 failed")
+	}
+
+	if len(PMapStrUint16(nil, []string{})) > 0 {
+		t.Errorf("PMapStrUint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrUint16(num string) uint16 {
+	if num == "ten" {
+		return uint16(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrUint8(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint8{10}
+	newList := PMapStrUint8(someLogicStrUint8, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("PMapStrUint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrUint8(nil, nil)) > 0 {
+		t.Errorf("PMapStrUint8 failed")
+	}
+
+	if len(PMapStrUint8(nil, []string{})) > 0 {
+		t.Errorf("PMapStrUint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrUint8(num string) uint8 {
+	if num == "ten" {
+		return uint8(10)
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapStrBool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := PMapStrBool(someLogicStrBool, []string{"10", "0"})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapStrBool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapStrBool(nil, nil)) > 0 {
+		t.Errorf("PMapStrBool failed")
+	}
+
+	if len(PMapStrBool(nil, []string{})) > 0 {
+		t.Errorf("PMapStrBool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicStrBool(num string) bool {
+	if num != "0" {
+		return true
+	} else {
+		return false
+	}
+}
+
+
+func TestPmapBoolInt(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int{10, 0}
+	newList := PMapBoolInt(someLogicBoolInt, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolInt failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolInt(nil, nil)) > 0 {
+		t.Errorf("PMapBoolInt failed")
+	}
+
+	if len(PMapBoolInt(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolInt failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolInt(num bool) int {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolInt64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int64{10, 0}
+	newList := PMapBoolInt64(someLogicBoolInt64, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolInt64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolInt64(nil, nil)) > 0 {
+		t.Errorf("PMapBoolInt64 failed")
+	}
+
+	if len(PMapBoolInt64(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolInt64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolInt64(num bool) int64 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolInt32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int32{10, 0}
+	newList := PMapBoolInt32(someLogicBoolInt32, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolInt32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolInt32(nil, nil)) > 0 {
+		t.Errorf("PMapBoolInt32 failed")
+	}
+
+	if len(PMapBoolInt32(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolInt32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolInt32(num bool) int32 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolInt16(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int16{10, 0}
+	newList := PMapBoolInt16(someLogicBoolInt16, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolInt16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolInt16(nil, nil)) > 0 {
+		t.Errorf("PMapBoolInt16 failed")
+	}
+
+	if len(PMapBoolInt16(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolInt16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolInt16(num bool) int16 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolInt8(t *testing.T) {
+	// Test : someLogic
+	expectedList := []int8{10, 0}
+	newList := PMapBoolInt8(someLogicBoolInt8, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolInt8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolInt8(nil, nil)) > 0 {
+		t.Errorf("PMapBoolInt8 failed")
+	}
+
+	if len(PMapBoolInt8(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolInt8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolInt8(num bool) int8 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolUint(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint{10, 0}
+	newList := PMapBoolUint(someLogicBoolUint, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolUint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolUint(nil, nil)) > 0 {
+		t.Errorf("PMapBoolUint failed")
+	}
+
+	if len(PMapBoolUint(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolUint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolUint(num bool) uint {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolUint64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint64{10, 0}
+	newList := PMapBoolUint64(someLogicBoolUint64, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolUint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolUint64(nil, nil)) > 0 {
+		t.Errorf("PMapBoolUint64 failed")
+	}
+
+	if len(PMapBoolUint64(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolUint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolUint64(num bool) uint64 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolUint32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint32{10, 0}
+	newList := PMapBoolUint32(someLogicBoolUint32, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolUint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolUint32(nil, nil)) > 0 {
+		t.Errorf("PMapBoolUint32 failed")
+	}
+
+	if len(PMapBoolUint32(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolUint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolUint32(num bool) uint32 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolUint16(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint16{10, 0}
+	newList := PMapBoolUint16(someLogicBoolUint16, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolUint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolUint16(nil, nil)) > 0 {
+		t.Errorf("PMapBoolUint16 failed")
+	}
+
+	if len(PMapBoolUint16(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolUint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolUint16(num bool) uint16 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolUint8(t *testing.T) {
+	// Test : someLogic
+	expectedList := []uint8{10, 0}
+	newList := PMapBoolUint8(someLogicBoolUint8, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolUint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolUint8(nil, nil)) > 0 {
+		t.Errorf("PMapBoolUint8 failed")
+	}
+
+	if len(PMapBoolUint8(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolUint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolUint8(num bool) uint8 {
+	if num == true {
+		return 10
+	} else {
+		return 0
+	}
+}
+
+
+func TestPmapBoolStr(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10", "0"}
+	newList := PMapBoolStr(someLogicBoolStr, []bool{true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMapBoolStr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(PMapBoolStr(nil, nil)) > 0 {
+		t.Errorf("PMapBoolStr failed")
+	}
+
+	if len(PMapBoolStr(nil, []bool{})) > 0 {
+		t.Errorf("PMapBoolStr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogicBoolStr(num bool) string {
+	if num == true {
+		return "10"
+	} else {
+		return "0"
+	}
+}
