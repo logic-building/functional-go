@@ -202,6 +202,7 @@ func quoteForTheDay() string {
 		"The Only Purpose of Our Human Life is to Attain God",
 		"Meditation. Because some questions can't be answered by Google!",
 		"This is the nature of existence - if you do the right things, the right things will happen to you",
+		"Devotion is the only way to be liberated from material attachment. It is only then that we become free from lust, anger and greed",
 	}
 
 	s := rand.NewSource(time.Now().Unix())

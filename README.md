@@ -19,7 +19,7 @@ go get -u github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "7.1.2"
+version = "8.0.0"
 ```
 
 ### Quick Start
@@ -118,6 +118,10 @@ MapUint8
 MapFloat64
 MapFloat32
 MapStr
+   And also all basic combination such as
+MapStrInt64
+MapInt64Str
+...
 
 Pmap : For parallel processing
 PmapInt
@@ -133,6 +137,9 @@ PmapUint8
 PmapFloat64
 PmapFloat32
 PmapStr
+    And also all basic combination such as
+PMapStrInt64
+PMapInt64Str
 
 Takes function as argument and apply it on each item in the list and return filtered list
 FilterInt
@@ -163,6 +170,9 @@ FilterMapUint8
 FilterMapFloat64
 FilterMapFloat32
 FilterMapStr
+    And also all basic combination such as
+FilterMapStrInt64
+FilterMapInt64Str
 
 Takes list as parameter and returns new list which includes all the items except 1st one.
     Input: list
@@ -623,7 +633,7 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 
 ### Test Coverage
 ```
-Tests Passed : 521
+Tests Passed : 929
 ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
 ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```

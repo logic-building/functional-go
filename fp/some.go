@@ -1,6 +1,6 @@
 package fp
 
-// SomeInt findss item in the list based on supplied function.
+// SomeInt finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
@@ -31,7 +31,7 @@ func SomeInt(f func(int) bool, list []int) bool {
 	return false
 }
 
-// SomeInt64 findss item in the list based on supplied function.
+// SomeInt64 finds item in the list based on supplied function.
 //
 // Takes 2 input:
 //	1. Function
