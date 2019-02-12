@@ -5,7 +5,7 @@ func FilterMapIO() string {
 // FilterMap<FINPUT_TYPE><FOUTPUT_TYPE> filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - <INPUT_TYPE> and returns true/false.
-//	2. Function: takes <INPUT_TYPE> as argument and returns <OUTPUT>
+//	2. Function: takes <INPUT_TYPE> as argument and returns <OUTPUT_TYPE>
 // 	3. List of type <INPUT_TYPE>
 //
 // Returns:
