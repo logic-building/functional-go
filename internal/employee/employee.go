@@ -1,6 +1,6 @@
 package employee
 
-//go:generate gofp -destination fp.go -pkg employee -type "Employee, Teacher"
+//go:generate gofp -destination fp.go -pkg employee -type "Employee, Teacher, int, string"
 type Employee struct {
 	Id     int
 	Name   string
