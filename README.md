@@ -46,6 +46,9 @@ func square(num int) int {
 2. Add this line in a file where user defined data type exists
    //go:generate gofp -destination <file> -pkg <pkg> -type <Types separated by comma>
 
+   // If the user defined type has to be imported, then use options "-imports" and value is command separated.
+   // See the file internal/employer/employer.go for the example
+
 example:
     package employee
 
