@@ -286,6 +286,14 @@ func quoteForTheDay() string {
 		"This is the nature of existence - if you do the right things, the right things will happen to you",
 		"Devotion is the only way to be liberated from material attachment. It is only then that we become free from lust, anger and greed",
 		"I belong to no religion. My religion is love. Every heart is my temple",
+		"Don't focus too much on the defects, be aware of them, but our endeavor should be towards positive",
+		"To purify the mind, we must engage in devotion to the lord, When our mind is purified, out attitude and our experience will change towards the outer world",
+		"The reason that we are in a state of suffering and we are enveloped in the darkness of material existence, is our forgetfulness of God",
+		"If you can establish your relationship with God, that ultimate satisfaction that you have been searching for since innumerable lifetimes, will eventually be attained",
+		"The Joy of the mind is the measure of its strength",
+		"When you come to a point where you have no need to impress anybody, your freedom will begin",
+		"Ritualistic worship, chanting and meditation are done with the body, voice and the mind: they excel each other in the ascending order",
+		"Uttering the sacred word, either in a loud or low tone is preferable to chants in praise of the Supreme. Mental contemplation is superior to both",
 	}
 
 	s := rand.NewSource(time.Now().Unix())

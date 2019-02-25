@@ -46,7 +46,7 @@ func square(num int) int {
 2. Add this line in a file where user defined data type exists
    //go:generate gofp -destination <file> -pkg <pkg> -type <Types separated by comma>
 
-   // If the user defined type has to be imported, then use options "-imports" and value is command separated.
+   // If the user defined type has to be imported, then use options "-imports" and value will be comma separated.
    // See the file internal/employer/employer.go for the example
 
 example:
@@ -476,6 +476,36 @@ ReduceUint8
 ReduceFloat64
 ReduceFloat32
 ReduceStr
+
+Merge : Takes two inputs - map1 and map2 and returns new map after merging map1 and map2
+
+MergeInt - takes input1: map<int,int>, input2: map<int, int>
+MergeInt64
+MergeInt32
+MergeInt16
+MergeInt8
+MergeUint
+MergeUInt64
+MergeUint32
+MergeUint16
+MergeUint8
+MergeFloat64
+MergeFloat32
+MergeFloat16
+MergeBool
+MergeStr
+
+and there are also functions available for different combination of inputs in map
+
+MergeIntStr - takes input1: map<int,string>, input2: map<int, string>
+MergeStrFloat64
+...
+
+Example:
+    map1 := map[int]int{1: 10, 2: 20, 3: 30}
+    map2 := map[int]int{4: 40, 5: 50, 3: 300}
+    MergeIntInt(map1, map2) // Returns: map[1:10 2:20 4:40 5:50 3:300]
+
 
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
