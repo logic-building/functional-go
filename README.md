@@ -76,12 +76,12 @@ Note:
 4. Now write your code
 
     emp1 := employee.Employee{1, "A", 1000}
-   	emp2 := employee.Employee{1, "A", 1000}
-   	emp3 := employee.Employee{1, "A", 1000}
+   	emp2 := employee.Employee{2, "B", 1000}
+   	emp3 := employee.Employee{3, "C", 1000}
 
    	empList := []employee.Employee{emp1, emp2, emp3}
 
-   	newEmpList := employee.Map(incrementSalary, empList) //  Returns: [{1 A 1500} {1 A 1500} {1 A 1500}]
+   	newEmpList := employee.Map(incrementSalary, empList) //  Returns: [{1 A 1500} {2 B 1500} {3 C 1500}]
 
    func incrementSalary(emp employee.Employee) employee.Employee {
         emp.Salary = emp.Salary + 500
@@ -491,7 +491,6 @@ MergeUint16
 MergeUint8
 MergeFloat64
 MergeFloat32
-MergeFloat16
 MergeBool
 MergeStr
 

@@ -64,6 +64,7 @@ import (
 	template2 "github.com/logic-building/functional-go/internal/template"
 	"github.com/logic-building/functional-go/internal/template/basic"
 	"math/rand"
+	"runtime"
 	"time"
 )
 
@@ -75,8 +76,11 @@ var (
 )
 
 func main() {
+	isAlreadyRun := runWithin(time.Second * 15)
 	defer func() {
-		fmt.Println("\n\t\t\"" + quoteForTheDay() + "\"\n")
+		if !isAlreadyRun {
+			fmt.Println("\n\t\t\"" + quoteForTheDay() + "\"\n")
+		}
 	}()
 
 	flag.Parse()
@@ -108,11 +112,19 @@ func main() {
 			log.Fatalf("Failed code generation for different IO combination: %v", err)
 		}
 
-		f.Write([]byte(generatedCode + "\n" + generatedCodeIO))
+		generatedCodeII, err := generateFPCodeII(*pkgName, *types)
+		if err != nil {
+			usage()
+			log.Fatalf("Failed code generation for different IO combination: %v", err)
+		}
+
+		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII))
 		defer f.Close()
 	}
 
-	fmt.Println("Functional code generation is successful.")
+	if !isAlreadyRun {
+		fmt.Println("Functional code generation is successful.")
+	}
 
 }
 
@@ -248,6 +260,64 @@ func generateFPCodeIO(pkg, dataTypes string) (string, error) {
 	return template, nil
 }
 
+func generateFPCodeII(pkg, dataTypes string) (string, error) {
+	basicTypes := "int, int64, int32, int16, int8, uint, uint64, uint32, uint16, uint8, float64, float32, string, bool"
+	template := ""
+	types := strings.Split(dataTypes, ",")
+
+	types = fp.DistinctStrIgnoreCase(types)
+
+	// For different input output combination
+	for _, inputType1 := range types {
+		for _, inputType2 := range types {
+
+			inputType1 = strings.TrimSpace(inputType1)
+			inputType2 = strings.TrimSpace(inputType2)
+
+			// Skip same basic data type
+			if strings.Contains(basicTypes, inputType1) && strings.Contains(basicTypes, inputType2) {
+				continue
+			}
+
+			if strings.Contains(basicTypes, strings.ToLower(inputType1)) {
+				inputType1 = strings.ToLower(inputType1)
+			}
+
+			if strings.Contains(basicTypes, strings.ToLower(inputType2)) {
+				inputType2 = strings.ToLower(inputType2)
+			}
+
+			fInputType1 := strings.Title(inputType1)
+			fInputType2 := strings.Title(inputType2)
+
+			if fInputType1 == "String" {
+				fInputType1 = "Str"
+			}
+
+			if fInputType2 == "String" {
+				fInputType2 = "Str"
+			}
+
+			// Standard function name for same user defined type
+			if inputType1 == inputType2 && strings.ToLower(inputType1) == strings.ToLower(pkg) {
+				fInputType1 = ""
+				fInputType2 = ""
+			}
+
+			// Standard function name for same user defined type
+			if inputType1 == inputType2 {
+				fInputType2 = ""
+			}
+
+			r := strings.NewReplacer("<FINPUT_TYPE1>", removeFirstPartOfDot(fInputType1), "<FINPUT_TYPE2>", removeFirstPartOfDot(fInputType2), "<INPUT_TYPE1>", inputType1, "<INPUT_TYPE2>", inputType2)
+			template += basic.Merge()
+			template = r.Replace(template)
+		}
+	}
+
+	return template, nil
+}
+
 func usage() {
 	fmt.Println("\nUsage:")
 	fmt.Println("go:generate -destination fp.go -source employee.go -pkg Employee")
@@ -301,4 +371,41 @@ func quoteForTheDay() string {
 	ind := r.Intn(len(quotes))
 
 	return quotes[ind]
+}
+
+func runWithin(duration time.Duration) bool {
+
+	runWithin := func(file string, duration time.Duration) bool {
+		writeToFile := func(file string) {
+			f, _ := os.Create(file)
+			defer f.Close()
+			f.WriteString("Functional go")
+		}
+		runWithin := true
+		if f, err := os.Stat(file); err == nil {
+			modificationTime := f.ModTime()
+
+			currentTime := time.Now()
+			diffSeconds := currentTime.Sub(modificationTime).Seconds()
+			if diffSeconds > duration.Seconds() {
+				runWithin = false
+				writeToFile(file)
+			}
+
+		} else {
+			writeToFile(file)
+		}
+		return runWithin
+	}
+
+	if runtime.GOOS == "windows" {
+		home := os.Getenv("HOMEDRIVE") + os.Getenv("HOMEPATH")
+		if home == "" {
+			home = os.Getenv("USERPROFILE")
+		}
+
+		return runWithin(home+"\functional-go.txt", duration)
+	} else {
+		return runWithin("/tmp/functional-go.txt", duration)
+	}
 }
