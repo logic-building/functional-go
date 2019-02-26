@@ -27,7 +27,6 @@ func notOneIntInt64(num int) bool {
 	return num != 1
 }
 
-
 func TestFilterMapIntInt32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
@@ -49,7 +48,6 @@ func TestFilterMapIntInt32(t *testing.T) {
 func notOneIntInt32(num int) bool {
 	return num != 1
 }
-
 
 func TestFilterMapIntInt16(t *testing.T) {
 	// Test : some logic
@@ -73,7 +71,6 @@ func notOneIntInt16(num int) bool {
 	return num != 1
 }
 
-
 func TestFilterMapIntInt8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
@@ -95,7 +92,6 @@ func TestFilterMapIntInt8(t *testing.T) {
 func notOneIntInt8(num int) bool {
 	return num != 1
 }
-
 
 func TestFilterMapIntUint(t *testing.T) {
 	// Test : some logic
@@ -119,7 +115,6 @@ func notOneIntUint(num int) bool {
 	return num != 1
 }
 
-
 func TestFilterMapIntUint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
@@ -141,7 +136,6 @@ func TestFilterMapIntUint64(t *testing.T) {
 func notOneIntUint64(num int) bool {
 	return num != 1
 }
-
 
 func TestFilterMapIntUint32(t *testing.T) {
 	// Test : some logic
@@ -165,7 +159,6 @@ func notOneIntUint32(num int) bool {
 	return num != 1
 }
 
-
 func TestFilterMapIntUint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
@@ -187,7 +180,6 @@ func TestFilterMapIntUint16(t *testing.T) {
 func notOneIntUint16(num int) bool {
 	return num != 1
 }
-
 
 func TestFilterMapIntUint8(t *testing.T) {
 	// Test : some logic
@@ -211,7 +203,6 @@ func notOneIntUint8(num int) bool {
 	return num != 1
 }
 
-
 func TestFilterMapIntStr(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -233,7 +224,6 @@ func TestFilterMapIntStr(t *testing.T) {
 func notOneIntStr(num int) bool {
 	return num != 1
 }
-
 
 func TestFilterMapIntBool(t *testing.T) {
 	// Test : someLogic
@@ -257,7 +247,6 @@ func notOneIntBool(num int) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt64Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -279,7 +268,6 @@ func TestFilterMapInt64Int(t *testing.T) {
 func notOneInt64Int(num int64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt64Int32(t *testing.T) {
 	// Test : some logic
@@ -303,7 +291,6 @@ func notOneInt64Int32(num int64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt64Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
@@ -325,7 +312,6 @@ func TestFilterMapInt64Int16(t *testing.T) {
 func notOneInt64Int16(num int64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt64Int8(t *testing.T) {
 	// Test : some logic
@@ -349,7 +335,6 @@ func notOneInt64Int8(num int64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt64Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
@@ -371,7 +356,6 @@ func TestFilterMapInt64Uint(t *testing.T) {
 func notOneInt64Uint(num int64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt64Uint64(t *testing.T) {
 	// Test : some logic
@@ -395,7 +379,6 @@ func notOneInt64Uint64(num int64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt64Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
@@ -417,7 +400,6 @@ func TestFilterMapInt64Uint32(t *testing.T) {
 func notOneInt64Uint32(num int64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt64Uint16(t *testing.T) {
 	// Test : some logic
@@ -441,7 +423,6 @@ func notOneInt64Uint16(num int64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt64Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
@@ -463,7 +444,6 @@ func TestFilterMapInt64Uint8(t *testing.T) {
 func notOneInt64Uint8(num int64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt64Str(t *testing.T) {
 	// Test : someLogic
@@ -487,7 +467,6 @@ func notOneInt64Str(num int64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt64Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -509,7 +488,6 @@ func TestFilterMapInt64Bool(t *testing.T) {
 func notOneInt64Bool(num int64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt32Int(t *testing.T) {
 	// Test : some logic
@@ -533,7 +511,6 @@ func notOneInt32Int(num int32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt32Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
@@ -555,7 +532,6 @@ func TestFilterMapInt32Int64(t *testing.T) {
 func notOneInt32Int64(num int32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt32Int16(t *testing.T) {
 	// Test : some logic
@@ -579,7 +555,6 @@ func notOneInt32Int16(num int32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt32Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
@@ -601,7 +576,6 @@ func TestFilterMapInt32Int8(t *testing.T) {
 func notOneInt32Int8(num int32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt32Uint(t *testing.T) {
 	// Test : some logic
@@ -625,7 +599,6 @@ func notOneInt32Uint(num int32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt32Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
@@ -647,7 +620,6 @@ func TestFilterMapInt32Uint64(t *testing.T) {
 func notOneInt32Uint64(num int32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt32Uint32(t *testing.T) {
 	// Test : some logic
@@ -671,7 +643,6 @@ func notOneInt32Uint32(num int32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt32Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
@@ -693,7 +664,6 @@ func TestFilterMapInt32Uint16(t *testing.T) {
 func notOneInt32Uint16(num int32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt32Uint8(t *testing.T) {
 	// Test : some logic
@@ -717,7 +687,6 @@ func notOneInt32Uint8(num int32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt32Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -739,7 +708,6 @@ func TestFilterMapInt32Str(t *testing.T) {
 func notOneInt32Str(num int32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt32Bool(t *testing.T) {
 	// Test : someLogic
@@ -763,7 +731,6 @@ func notOneInt32Bool(num int32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt16Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -785,7 +752,6 @@ func TestFilterMapInt16Int(t *testing.T) {
 func notOneInt16Int(num int16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt16Int64(t *testing.T) {
 	// Test : some logic
@@ -809,7 +775,6 @@ func notOneInt16Int64(num int16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt16Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
@@ -831,7 +796,6 @@ func TestFilterMapInt16Int32(t *testing.T) {
 func notOneInt16Int32(num int16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt16Int8(t *testing.T) {
 	// Test : some logic
@@ -855,7 +819,6 @@ func notOneInt16Int8(num int16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt16Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
@@ -877,7 +840,6 @@ func TestFilterMapInt16Uint(t *testing.T) {
 func notOneInt16Uint(num int16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt16Uint64(t *testing.T) {
 	// Test : some logic
@@ -901,7 +863,6 @@ func notOneInt16Uint64(num int16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt16Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
@@ -923,7 +884,6 @@ func TestFilterMapInt16Uint32(t *testing.T) {
 func notOneInt16Uint32(num int16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt16Uint16(t *testing.T) {
 	// Test : some logic
@@ -947,7 +907,6 @@ func notOneInt16Uint16(num int16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt16Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
@@ -969,7 +928,6 @@ func TestFilterMapInt16Uint8(t *testing.T) {
 func notOneInt16Uint8(num int16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt16Str(t *testing.T) {
 	// Test : someLogic
@@ -993,7 +951,6 @@ func notOneInt16Str(num int16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt16Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1015,7 +972,6 @@ func TestFilterMapInt16Bool(t *testing.T) {
 func notOneInt16Bool(num int16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt8Int(t *testing.T) {
 	// Test : some logic
@@ -1039,7 +995,6 @@ func notOneInt8Int(num int8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt8Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
@@ -1061,7 +1016,6 @@ func TestFilterMapInt8Int64(t *testing.T) {
 func notOneInt8Int64(num int8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt8Int32(t *testing.T) {
 	// Test : some logic
@@ -1085,7 +1039,6 @@ func notOneInt8Int32(num int8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt8Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
@@ -1107,7 +1060,6 @@ func TestFilterMapInt8Int16(t *testing.T) {
 func notOneInt8Int16(num int8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt8Uint(t *testing.T) {
 	// Test : some logic
@@ -1131,7 +1083,6 @@ func notOneInt8Uint(num int8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt8Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
@@ -1153,7 +1104,6 @@ func TestFilterMapInt8Uint64(t *testing.T) {
 func notOneInt8Uint64(num int8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt8Uint32(t *testing.T) {
 	// Test : some logic
@@ -1177,7 +1127,6 @@ func notOneInt8Uint32(num int8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt8Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
@@ -1199,7 +1148,6 @@ func TestFilterMapInt8Uint16(t *testing.T) {
 func notOneInt8Uint16(num int8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt8Uint8(t *testing.T) {
 	// Test : some logic
@@ -1223,7 +1171,6 @@ func notOneInt8Uint8(num int8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapInt8Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -1245,7 +1192,6 @@ func TestFilterMapInt8Str(t *testing.T) {
 func notOneInt8Str(num int8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapInt8Bool(t *testing.T) {
 	// Test : someLogic
@@ -1269,7 +1215,6 @@ func notOneInt8Bool(num int8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUintInt(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -1291,7 +1236,6 @@ func TestFilterMapUintInt(t *testing.T) {
 func notOneUintInt(num uint) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUintInt64(t *testing.T) {
 	// Test : some logic
@@ -1315,7 +1259,6 @@ func notOneUintInt64(num uint) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUintInt32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
@@ -1337,7 +1280,6 @@ func TestFilterMapUintInt32(t *testing.T) {
 func notOneUintInt32(num uint) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUintInt16(t *testing.T) {
 	// Test : some logic
@@ -1361,7 +1303,6 @@ func notOneUintInt16(num uint) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUintInt8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
@@ -1383,7 +1324,6 @@ func TestFilterMapUintInt8(t *testing.T) {
 func notOneUintInt8(num uint) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUintUint64(t *testing.T) {
 	// Test : some logic
@@ -1407,7 +1347,6 @@ func notOneUintUint64(num uint) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUintUint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
@@ -1429,7 +1368,6 @@ func TestFilterMapUintUint32(t *testing.T) {
 func notOneUintUint32(num uint) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUintUint16(t *testing.T) {
 	// Test : some logic
@@ -1453,7 +1391,6 @@ func notOneUintUint16(num uint) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUintUint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
@@ -1475,7 +1412,6 @@ func TestFilterMapUintUint8(t *testing.T) {
 func notOneUintUint8(num uint) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUintStr(t *testing.T) {
 	// Test : someLogic
@@ -1499,7 +1435,6 @@ func notOneUintStr(num uint) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUintBool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1521,7 +1456,6 @@ func TestFilterMapUintBool(t *testing.T) {
 func notOneUintBool(num uint) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint64Int(t *testing.T) {
 	// Test : some logic
@@ -1545,7 +1479,6 @@ func notOneUint64Int(num uint64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint64Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
@@ -1567,7 +1500,6 @@ func TestFilterMapUint64Int64(t *testing.T) {
 func notOneUint64Int64(num uint64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint64Int32(t *testing.T) {
 	// Test : some logic
@@ -1591,7 +1523,6 @@ func notOneUint64Int32(num uint64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint64Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
@@ -1613,7 +1544,6 @@ func TestFilterMapUint64Int16(t *testing.T) {
 func notOneUint64Int16(num uint64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint64Int8(t *testing.T) {
 	// Test : some logic
@@ -1637,7 +1567,6 @@ func notOneUint64Int8(num uint64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint64Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
@@ -1659,7 +1588,6 @@ func TestFilterMapUint64Uint(t *testing.T) {
 func notOneUint64Uint(num uint64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint64Uint32(t *testing.T) {
 	// Test : some logic
@@ -1683,7 +1611,6 @@ func notOneUint64Uint32(num uint64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint64Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
@@ -1705,7 +1632,6 @@ func TestFilterMapUint64Uint16(t *testing.T) {
 func notOneUint64Uint16(num uint64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint64Uint8(t *testing.T) {
 	// Test : some logic
@@ -1729,7 +1655,6 @@ func notOneUint64Uint8(num uint64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint64Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -1751,7 +1676,6 @@ func TestFilterMapUint64Str(t *testing.T) {
 func notOneUint64Str(num uint64) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint64Bool(t *testing.T) {
 	// Test : someLogic
@@ -1775,7 +1699,6 @@ func notOneUint64Bool(num uint64) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint32Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -1797,7 +1720,6 @@ func TestFilterMapUint32Int(t *testing.T) {
 func notOneUint32Int(num uint32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint32Int64(t *testing.T) {
 	// Test : some logic
@@ -1821,7 +1743,6 @@ func notOneUint32Int64(num uint32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint32Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
@@ -1843,7 +1764,6 @@ func TestFilterMapUint32Int32(t *testing.T) {
 func notOneUint32Int32(num uint32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint32Int16(t *testing.T) {
 	// Test : some logic
@@ -1867,7 +1787,6 @@ func notOneUint32Int16(num uint32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint32Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
@@ -1889,7 +1808,6 @@ func TestFilterMapUint32Int8(t *testing.T) {
 func notOneUint32Int8(num uint32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint32Uint(t *testing.T) {
 	// Test : some logic
@@ -1913,7 +1831,6 @@ func notOneUint32Uint(num uint32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint32Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
@@ -1935,7 +1852,6 @@ func TestFilterMapUint32Uint64(t *testing.T) {
 func notOneUint32Uint64(num uint32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint32Uint16(t *testing.T) {
 	// Test : some logic
@@ -1959,7 +1875,6 @@ func notOneUint32Uint16(num uint32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint32Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
@@ -1981,7 +1896,6 @@ func TestFilterMapUint32Uint8(t *testing.T) {
 func notOneUint32Uint8(num uint32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint32Str(t *testing.T) {
 	// Test : someLogic
@@ -2005,7 +1919,6 @@ func notOneUint32Str(num uint32) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint32Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -2027,7 +1940,6 @@ func TestFilterMapUint32Bool(t *testing.T) {
 func notOneUint32Bool(num uint32) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint16Int(t *testing.T) {
 	// Test : some logic
@@ -2051,7 +1963,6 @@ func notOneUint16Int(num uint16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint16Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
@@ -2073,7 +1984,6 @@ func TestFilterMapUint16Int64(t *testing.T) {
 func notOneUint16Int64(num uint16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint16Int32(t *testing.T) {
 	// Test : some logic
@@ -2097,7 +2007,6 @@ func notOneUint16Int32(num uint16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint16Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
@@ -2119,7 +2028,6 @@ func TestFilterMapUint16Int16(t *testing.T) {
 func notOneUint16Int16(num uint16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint16Int8(t *testing.T) {
 	// Test : some logic
@@ -2143,7 +2051,6 @@ func notOneUint16Int8(num uint16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint16Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
@@ -2165,7 +2072,6 @@ func TestFilterMapUint16Uint(t *testing.T) {
 func notOneUint16Uint(num uint16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint16Uint64(t *testing.T) {
 	// Test : some logic
@@ -2189,7 +2095,6 @@ func notOneUint16Uint64(num uint16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint16Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
@@ -2211,7 +2116,6 @@ func TestFilterMapUint16Uint32(t *testing.T) {
 func notOneUint16Uint32(num uint16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint16Uint8(t *testing.T) {
 	// Test : some logic
@@ -2235,7 +2139,6 @@ func notOneUint16Uint8(num uint16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint16Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -2257,7 +2160,6 @@ func TestFilterMapUint16Str(t *testing.T) {
 func notOneUint16Str(num uint16) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint16Bool(t *testing.T) {
 	// Test : someLogic
@@ -2281,7 +2183,6 @@ func notOneUint16Bool(num uint16) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint8Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -2303,7 +2204,6 @@ func TestFilterMapUint8Int(t *testing.T) {
 func notOneUint8Int(num uint8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint8Int64(t *testing.T) {
 	// Test : some logic
@@ -2327,7 +2227,6 @@ func notOneUint8Int64(num uint8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint8Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
@@ -2349,7 +2248,6 @@ func TestFilterMapUint8Int32(t *testing.T) {
 func notOneUint8Int32(num uint8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint8Int16(t *testing.T) {
 	// Test : some logic
@@ -2373,7 +2271,6 @@ func notOneUint8Int16(num uint8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint8Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
@@ -2395,7 +2292,6 @@ func TestFilterMapUint8Int8(t *testing.T) {
 func notOneUint8Int8(num uint8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint8Uint(t *testing.T) {
 	// Test : some logic
@@ -2419,7 +2315,6 @@ func notOneUint8Uint(num uint8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint8Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
@@ -2441,7 +2336,6 @@ func TestFilterMapUint8Uint64(t *testing.T) {
 func notOneUint8Uint64(num uint8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint8Uint32(t *testing.T) {
 	// Test : some logic
@@ -2465,7 +2359,6 @@ func notOneUint8Uint32(num uint8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint8Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
@@ -2487,7 +2380,6 @@ func TestFilterMapUint8Uint16(t *testing.T) {
 func notOneUint8Uint16(num uint8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapUint8Str(t *testing.T) {
 	// Test : someLogic
@@ -2511,7 +2403,6 @@ func notOneUint8Str(num uint8) bool {
 	return num != 1
 }
 
-
 func TestFilterMapUint8Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -2533,7 +2424,6 @@ func TestFilterMapUint8Bool(t *testing.T) {
 func notOneUint8Bool(num uint8) bool {
 	return num != 1
 }
-
 
 func TestFilterMapStrInt(t *testing.T) {
 	// Test : someLogic
@@ -2557,7 +2447,6 @@ func notOneStrInt(num string) bool {
 	return num != "one"
 }
 
-
 func TestFilterMapStrInt64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int64{10}
@@ -2579,7 +2468,6 @@ func TestFilterMapStrInt64(t *testing.T) {
 func notOneStrInt64(num string) bool {
 	return num != "one"
 }
-
 
 func TestFilterMapStrInt32(t *testing.T) {
 	// Test : someLogic
@@ -2603,7 +2491,6 @@ func notOneStrInt32(num string) bool {
 	return num != "one"
 }
 
-
 func TestFilterMapStrInt16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int16{10}
@@ -2625,7 +2512,6 @@ func TestFilterMapStrInt16(t *testing.T) {
 func notOneStrInt16(num string) bool {
 	return num != "one"
 }
-
 
 func TestFilterMapStrInt8(t *testing.T) {
 	// Test : someLogic
@@ -2649,7 +2535,6 @@ func notOneStrInt8(num string) bool {
 	return num != "one"
 }
 
-
 func TestFilterMapStrUint(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint{10}
@@ -2671,7 +2556,6 @@ func TestFilterMapStrUint(t *testing.T) {
 func notOneStrUint(num string) bool {
 	return num != "one"
 }
-
 
 func TestFilterMapStrUint64(t *testing.T) {
 	// Test : someLogic
@@ -2695,7 +2579,6 @@ func notOneStrUint64(num string) bool {
 	return num != "one"
 }
 
-
 func TestFilterMapStrUint32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint32{10}
@@ -2717,7 +2600,6 @@ func TestFilterMapStrUint32(t *testing.T) {
 func notOneStrUint32(num string) bool {
 	return num != "one"
 }
-
 
 func TestFilterMapStrUint16(t *testing.T) {
 	// Test : someLogic
@@ -2741,7 +2623,6 @@ func notOneStrUint16(num string) bool {
 	return num != "one"
 }
 
-
 func TestFilterMapStrUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10}
@@ -2763,7 +2644,6 @@ func TestFilterMapStrUint8(t *testing.T) {
 func notOneStrUint8(num string) bool {
 	return num != "one"
 }
-
 
 func TestFilterMapStrBool(t *testing.T) {
 	// Test : someLogic
@@ -2787,7 +2667,6 @@ func notOneStrBool(num string) bool {
 	return num != "1"
 }
 
-
 func TestFilterMapBoolInt(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int{10, 10}
@@ -2809,7 +2688,6 @@ func TestFilterMapBoolInt(t *testing.T) {
 func notOneBoolInt(num bool) bool {
 	return num == true
 }
-
 
 func TestFilterMapBoolInt64(t *testing.T) {
 	// Test : someLogic
@@ -2833,7 +2711,6 @@ func notOneBoolInt64(num bool) bool {
 	return num == true
 }
 
-
 func TestFilterMapBoolInt32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int32{10, 10}
@@ -2855,7 +2732,6 @@ func TestFilterMapBoolInt32(t *testing.T) {
 func notOneBoolInt32(num bool) bool {
 	return num == true
 }
-
 
 func TestFilterMapBoolInt16(t *testing.T) {
 	// Test : someLogic
@@ -2879,7 +2755,6 @@ func notOneBoolInt16(num bool) bool {
 	return num == true
 }
 
-
 func TestFilterMapBoolInt8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int8{10, 10}
@@ -2901,7 +2776,6 @@ func TestFilterMapBoolInt8(t *testing.T) {
 func notOneBoolInt8(num bool) bool {
 	return num == true
 }
-
 
 func TestFilterMapBoolUint(t *testing.T) {
 	// Test : someLogic
@@ -2925,7 +2799,6 @@ func notOneBoolUint(num bool) bool {
 	return num == true
 }
 
-
 func TestFilterMapBoolUint64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint64{10, 10}
@@ -2947,7 +2820,6 @@ func TestFilterMapBoolUint64(t *testing.T) {
 func notOneBoolUint64(num bool) bool {
 	return num == true
 }
-
 
 func TestFilterMapBoolUint32(t *testing.T) {
 	// Test : someLogic
@@ -2971,7 +2843,6 @@ func notOneBoolUint32(num bool) bool {
 	return num == true
 }
 
-
 func TestFilterMapBoolUint16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint16{10, 10}
@@ -2994,7 +2865,6 @@ func notOneBoolUint16(num bool) bool {
 	return num == true
 }
 
-
 func TestFilterMapBoolUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10, 10}
@@ -3016,7 +2886,6 @@ func TestFilterMapBoolUint8(t *testing.T) {
 func notOneBoolUint8(num bool) bool {
 	return num == true
 }
-
 
 func TestFilterMapBoolStr(t *testing.T) {
 	// Test : someLogic

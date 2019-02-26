@@ -24,7 +24,6 @@ func TestMapIntInt64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapIntInt32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -43,7 +42,6 @@ func TestMapIntInt32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapIntInt16(t *testing.T) {
 	// Test : add 1 to the list
@@ -64,7 +62,6 @@ func TestMapIntInt16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapIntInt8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -83,7 +80,6 @@ func TestMapIntInt8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapIntUint(t *testing.T) {
 	// Test : add 1 to the list
@@ -104,7 +100,6 @@ func TestMapIntUint(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapIntUint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -123,7 +118,6 @@ func TestMapIntUint64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapIntUint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -144,7 +138,6 @@ func TestMapIntUint32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapIntUint16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint16{2, 3, 4}
@@ -163,7 +156,6 @@ func TestMapIntUint16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapIntUint8(t *testing.T) {
 	// Test : add 1 to the list
@@ -184,7 +176,6 @@ func TestMapIntUint8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapIntStr(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -203,7 +194,6 @@ func TestMapIntStr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapIntBool(t *testing.T) {
 	// Test : someLogic
@@ -224,7 +214,6 @@ func TestMapIntBool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt64Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -243,7 +232,6 @@ func TestMapInt64Int(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt64Int32(t *testing.T) {
 	// Test : add 1 to the list
@@ -264,7 +252,6 @@ func TestMapInt64Int32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt64Int16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int16{2, 3, 4}
@@ -283,7 +270,6 @@ func TestMapInt64Int16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt64Int8(t *testing.T) {
 	// Test : add 1 to the list
@@ -304,7 +290,6 @@ func TestMapInt64Int8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt64Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -323,7 +308,6 @@ func TestMapInt64Uint(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt64Uint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -344,7 +328,6 @@ func TestMapInt64Uint64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt64Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -363,7 +346,6 @@ func TestMapInt64Uint32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt64Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -384,7 +366,6 @@ func TestMapInt64Uint16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt64Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -403,7 +384,6 @@ func TestMapInt64Uint8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt64Str(t *testing.T) {
 	// Test : someLogic
@@ -424,7 +404,6 @@ func TestMapInt64Str(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt64Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -443,7 +422,6 @@ func TestMapInt64Bool(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt32Int(t *testing.T) {
 	// Test : add 1 to the list
@@ -464,7 +442,6 @@ func TestMapInt32Int(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt32Int64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int64{2, 3, 4}
@@ -483,7 +460,6 @@ func TestMapInt32Int64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt32Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -504,7 +480,6 @@ func TestMapInt32Int16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt32Int8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -523,7 +498,6 @@ func TestMapInt32Int8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt32Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -544,7 +518,6 @@ func TestMapInt32Uint(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt32Uint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -563,7 +536,6 @@ func TestMapInt32Uint64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt32Uint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -584,7 +556,6 @@ func TestMapInt32Uint32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt32Uint16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint16{2, 3, 4}
@@ -603,7 +574,6 @@ func TestMapInt32Uint16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt32Uint8(t *testing.T) {
 	// Test : add 1 to the list
@@ -624,7 +594,6 @@ func TestMapInt32Uint8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt32Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -643,7 +612,6 @@ func TestMapInt32Str(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt32Bool(t *testing.T) {
 	// Test : someLogic
@@ -664,7 +632,6 @@ func TestMapInt32Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt16Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -683,7 +650,6 @@ func TestMapInt16Int(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt16Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -704,7 +670,6 @@ func TestMapInt16Int64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt16Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -723,7 +688,6 @@ func TestMapInt16Int32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt16Int8(t *testing.T) {
 	// Test : add 1 to the list
@@ -744,7 +708,6 @@ func TestMapInt16Int8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt16Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -763,7 +726,6 @@ func TestMapInt16Uint(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt16Uint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -784,7 +746,6 @@ func TestMapInt16Uint64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt16Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -803,7 +764,6 @@ func TestMapInt16Uint32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt16Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -824,7 +784,6 @@ func TestMapInt16Uint16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt16Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -843,7 +802,6 @@ func TestMapInt16Uint8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt16Str(t *testing.T) {
 	// Test : someLogic
@@ -864,7 +822,6 @@ func TestMapInt16Str(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt16Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -883,7 +840,6 @@ func TestMapInt16Bool(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt8Int(t *testing.T) {
 	// Test : add 1 to the list
@@ -904,7 +860,6 @@ func TestMapInt8Int(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt8Int64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int64{2, 3, 4}
@@ -923,7 +878,6 @@ func TestMapInt8Int64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt8Int32(t *testing.T) {
 	// Test : add 1 to the list
@@ -944,7 +898,6 @@ func TestMapInt8Int32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt8Int16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int16{2, 3, 4}
@@ -963,7 +916,6 @@ func TestMapInt8Int16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt8Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -984,7 +936,6 @@ func TestMapInt8Uint(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt8Uint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -1003,7 +954,6 @@ func TestMapInt8Uint64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt8Uint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -1024,7 +974,6 @@ func TestMapInt8Uint32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt8Uint16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint16{2, 3, 4}
@@ -1043,7 +992,6 @@ func TestMapInt8Uint16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt8Uint8(t *testing.T) {
 	// Test : add 1 to the list
@@ -1064,7 +1012,6 @@ func TestMapInt8Uint8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapInt8Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -1083,7 +1030,6 @@ func TestMapInt8Str(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapInt8Bool(t *testing.T) {
 	// Test : someLogic
@@ -1104,7 +1050,6 @@ func TestMapInt8Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUintInt(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1123,7 +1068,6 @@ func TestMapUintInt(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUintInt64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1144,7 +1088,6 @@ func TestMapUintInt64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUintInt32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -1163,7 +1106,6 @@ func TestMapUintInt32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUintInt16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1184,7 +1126,6 @@ func TestMapUintInt16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUintInt8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -1203,7 +1144,6 @@ func TestMapUintInt8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUintUint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1224,7 +1164,6 @@ func TestMapUintUint64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUintUint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -1243,7 +1182,6 @@ func TestMapUintUint32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUintUint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1264,7 +1202,6 @@ func TestMapUintUint16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUintUint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -1283,7 +1220,6 @@ func TestMapUintUint8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUintStr(t *testing.T) {
 	// Test : someLogic
@@ -1304,7 +1240,6 @@ func TestMapUintStr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUintBool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1323,7 +1258,6 @@ func TestMapUintBool(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint64Int(t *testing.T) {
 	// Test : add 1 to the list
@@ -1344,7 +1278,6 @@ func TestMapUint64Int(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint64Int64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int64{2, 3, 4}
@@ -1363,7 +1296,6 @@ func TestMapUint64Int64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint64Int32(t *testing.T) {
 	// Test : add 1 to the list
@@ -1384,7 +1316,6 @@ func TestMapUint64Int32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint64Int16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int16{2, 3, 4}
@@ -1403,7 +1334,6 @@ func TestMapUint64Int16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint64Int8(t *testing.T) {
 	// Test : add 1 to the list
@@ -1424,7 +1354,6 @@ func TestMapUint64Int8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint64Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -1443,7 +1372,6 @@ func TestMapUint64Uint(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint64Uint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -1464,7 +1392,6 @@ func TestMapUint64Uint32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint64Uint16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint16{2, 3, 4}
@@ -1483,7 +1410,6 @@ func TestMapUint64Uint16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint64Uint8(t *testing.T) {
 	// Test : add 1 to the list
@@ -1504,7 +1430,6 @@ func TestMapUint64Uint8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint64Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -1523,7 +1448,6 @@ func TestMapUint64Str(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint64Bool(t *testing.T) {
 	// Test : someLogic
@@ -1544,7 +1468,6 @@ func TestMapUint64Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint32Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1563,7 +1486,6 @@ func TestMapUint32Int(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint32Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1584,7 +1506,6 @@ func TestMapUint32Int64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint32Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -1603,7 +1524,6 @@ func TestMapUint32Int32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint32Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1624,7 +1544,6 @@ func TestMapUint32Int16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint32Int8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -1643,7 +1562,6 @@ func TestMapUint32Int8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint32Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -1664,7 +1582,6 @@ func TestMapUint32Uint(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint32Uint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -1683,7 +1600,6 @@ func TestMapUint32Uint64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint32Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1704,7 +1620,6 @@ func TestMapUint32Uint16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint32Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -1723,7 +1638,6 @@ func TestMapUint32Uint8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint32Str(t *testing.T) {
 	// Test : someLogic
@@ -1744,7 +1658,6 @@ func TestMapUint32Str(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint32Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1763,7 +1676,6 @@ func TestMapUint32Bool(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint16Int(t *testing.T) {
 	// Test : add 1 to the list
@@ -1784,7 +1696,6 @@ func TestMapUint16Int(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint16Int64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int64{2, 3, 4}
@@ -1803,7 +1714,6 @@ func TestMapUint16Int64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint16Int32(t *testing.T) {
 	// Test : add 1 to the list
@@ -1824,7 +1734,6 @@ func TestMapUint16Int32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint16Int16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int16{2, 3, 4}
@@ -1843,7 +1752,6 @@ func TestMapUint16Int16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint16Int8(t *testing.T) {
 	// Test : add 1 to the list
@@ -1864,7 +1772,6 @@ func TestMapUint16Int8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint16Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -1883,7 +1790,6 @@ func TestMapUint16Uint(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint16Uint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1904,7 +1810,6 @@ func TestMapUint16Uint64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint16Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -1923,7 +1828,6 @@ func TestMapUint16Uint32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint16Uint8(t *testing.T) {
 	// Test : add 1 to the list
@@ -1944,7 +1848,6 @@ func TestMapUint16Uint8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint16Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
@@ -1963,7 +1866,6 @@ func TestMapUint16Str(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint16Bool(t *testing.T) {
 	// Test : someLogic
@@ -1984,7 +1886,6 @@ func TestMapUint16Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint8Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -2003,7 +1904,6 @@ func TestMapUint8Int(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint8Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -2024,7 +1924,6 @@ func TestMapUint8Int64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint8Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -2043,7 +1942,6 @@ func TestMapUint8Int32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint8Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -2064,7 +1962,6 @@ func TestMapUint8Int16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint8Int8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -2083,7 +1980,6 @@ func TestMapUint8Int8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint8Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -2104,7 +2000,6 @@ func TestMapUint8Uint(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint8Uint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -2123,7 +2018,6 @@ func TestMapUint8Uint64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint8Uint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -2144,7 +2038,6 @@ func TestMapUint8Uint32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint8Uint16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint16{2, 3, 4}
@@ -2163,7 +2056,6 @@ func TestMapUint8Uint16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapUint8Str(t *testing.T) {
 	// Test : someLogic
@@ -2184,7 +2076,6 @@ func TestMapUint8Str(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapUint8Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -2203,7 +2094,6 @@ func TestMapUint8Bool(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapStrInt(t *testing.T) {
 	// Test : someLogic
@@ -2224,7 +2114,6 @@ func TestMapStrInt(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapStrInt64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int64{10}
@@ -2243,7 +2132,6 @@ func TestMapStrInt64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapStrInt32(t *testing.T) {
 	// Test : someLogic
@@ -2264,7 +2152,6 @@ func TestMapStrInt32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapStrInt16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int16{10}
@@ -2283,7 +2170,6 @@ func TestMapStrInt16(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapStrInt8(t *testing.T) {
 	// Test : someLogic
@@ -2304,7 +2190,6 @@ func TestMapStrInt8(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapStrUint(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint{10}
@@ -2323,7 +2208,6 @@ func TestMapStrUint(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapStrUint64(t *testing.T) {
 	// Test : someLogic
@@ -2344,7 +2228,6 @@ func TestMapStrUint64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapStrUint32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint32{10}
@@ -2363,7 +2246,6 @@ func TestMapStrUint32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapStrUint16(t *testing.T) {
 	// Test : someLogic
@@ -2384,7 +2266,6 @@ func TestMapStrUint16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapStrUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10}
@@ -2403,7 +2284,6 @@ func TestMapStrUint8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapStrBool(t *testing.T) {
 	// Test : someLogic
@@ -2424,7 +2304,6 @@ func TestMapStrBool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapBoolInt(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int{10, 0}
@@ -2443,7 +2322,6 @@ func TestMapBoolInt(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapBoolInt64(t *testing.T) {
 	// Test : someLogic
@@ -2464,7 +2342,6 @@ func TestMapBoolInt64(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapBoolInt32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int32{10, 0}
@@ -2483,7 +2360,6 @@ func TestMapBoolInt32(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapBoolInt16(t *testing.T) {
 	// Test : someLogic
@@ -2504,7 +2380,6 @@ func TestMapBoolInt16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapBoolInt8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int8{10, 0}
@@ -2523,7 +2398,6 @@ func TestMapBoolInt8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapBoolUint(t *testing.T) {
 	// Test : someLogic
@@ -2544,7 +2418,6 @@ func TestMapBoolUint(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapBoolUint64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint64{10, 0}
@@ -2563,7 +2436,6 @@ func TestMapBoolUint64(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapBoolUint32(t *testing.T) {
 	// Test : someLogic
@@ -2584,7 +2456,6 @@ func TestMapBoolUint32(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapBoolUint16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint16{10, 0}
@@ -2604,7 +2475,6 @@ func TestMapBoolUint16(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestMapBoolUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10, 0}
@@ -2623,7 +2493,6 @@ func TestMapBoolUint8(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestMapBoolStr(t *testing.T) {
 	// Test : someLogic

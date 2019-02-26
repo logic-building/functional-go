@@ -138,6 +138,7 @@ func generateFpCode(fpCodeList []fpCode) {
 		if strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE>") &&
 			strings.Contains(fpCode.codeTemplate, "<OUTPUT_TYPE>") {
 
+			testTemplate += "\n"
 			for _, inputType := range fpCode.dataTypes {
 				for _, outputType := range fpCode.dataTypes {
 
@@ -156,7 +157,7 @@ func generateFpCode(fpCodeList []fpCode) {
 						fOutputType = "Str"
 					}
 
-					codeTemplate += fpCode.codeTemplate + "\n"
+					codeTemplate += fpCode.codeTemplate
 					r := strings.NewReplacer("<FINPUT_TYPE>", fInputType, "<FOUTPUT_TYPE>", fOutputType, "<INPUT_TYPE>", inputType, "<OUTPUT_TYPE>", outputType)
 					codeTemplate = r.Replace(codeTemplate)
 
@@ -164,45 +165,46 @@ func generateFpCode(fpCodeList []fpCode) {
 					inputTypeNumbers := "int, int64, int32, int16, int8, uint, uint64, uint32, uint16, uint8, float64, float32"
 					outputTypeNumbers := "int, int64, int32, int16, int8, uint, uint64, uint32, uint16, uint8, float64, float32"
 					if strings.Contains(inputTypeNumbers, strings.ToLower(fInputType)) && strings.Contains(outputTypeNumbers, strings.ToLower(outputType)) {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateIONumber)
+						testTemplate += r.Replace(fpCode.testTemplateIONumber)
 					}
 
 					// Generate tests for input type string - output type numbers
 					if strings.ToLower(inputType) == "string" && strings.Contains(outputTypeNumbers, strings.ToLower(outputType)) {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateIOStrNumber)
+						testTemplate += r.Replace(fpCode.testTemplateIOStrNumber)
 					}
 
 					// Generate tests for input type Number - output type string
 					if strings.Contains(inputTypeNumbers, strings.ToLower(inputType)) && strings.ToLower(outputType) == "string" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateIONumberStr)
+						testTemplate += r.Replace(fpCode.testTemplateIONumberStr)
 					}
 
 					// Generate tests for input type Number - output type bool
 					if strings.Contains(inputTypeNumbers, strings.ToLower(inputType)) && strings.ToLower(outputType) == "bool" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateIONumberBool)
+						testTemplate += r.Replace(fpCode.testTemplateIONumberBool)
 					}
 
 					// Generate tests for input type str - output type bool
 					if strings.ToLower(inputType) == "string" && strings.ToLower(outputType) == "bool" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateIOStrBool)
+						testTemplate += r.Replace(fpCode.testTemplateIOStrBool)
 					}
 
 					// Generate tests for input type Bool - output type Number
 					if strings.ToLower(inputType) == "bool" && strings.Contains(outputTypeNumbers, strings.ToLower(outputType)) {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateIOBoolNumber)
+						testTemplate += r.Replace(fpCode.testTemplateIOBoolNumber)
 					}
 
 					// Generate tests for input type Bool - output type Str
 					if strings.ToLower(inputType) == "bool" && strings.ToLower(outputType) == "string" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateIOBoolStr)
+						testTemplate += r.Replace(fpCode.testTemplateIOBoolStr)
 					}
 				}
 			}
 
-			// For Merge -
+			// For Merge, Zip -
 		} else if strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE1>") &&
 			strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE2>") {
 
+			testTemplate += "\n"
 			for _, inputType1 := range fpCode.dataTypes {
 				for _, inputType2 := range fpCode.dataTypes {
 
@@ -221,54 +223,54 @@ func generateFpCode(fpCodeList []fpCode) {
 						fInputType2 = ""
 					}
 
-					codeTemplate += fpCode.codeTemplate + "\n"
+					codeTemplate += fpCode.codeTemplate
 					r := strings.NewReplacer("<FINPUT_TYPE1>", fInputType1, "<FINPUT_TYPE2>", fInputType2, "<INPUT_TYPE1>", inputType1, "<INPUT_TYPE2>", inputType2)
 					codeTemplate = r.Replace(codeTemplate)
 
 					// Generate tests for number types combination
 					inputTypeNumbers := "int, int64, int32, int16, int8, uint, uint64, uint32, uint16, uint8, float64, float32"
 					if strings.Contains(inputTypeNumbers, strings.ToLower(fInputType1)) && strings.Contains(inputTypeNumbers, strings.ToLower(inputType2)) {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplate)
+						testTemplate += r.Replace(fpCode.testTemplate)
 					}
 
 					// Generate tests for input type1 Number - input type2 string
 					if strings.Contains(inputTypeNumbers, strings.ToLower(inputType1)) && strings.ToLower(inputType2) == "string" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateNumberStr)
+						testTemplate += r.Replace(fpCode.testTemplateNumberStr)
 					}
 
 					// Generate tests for input type1 string - input type2 Numbers
 					if strings.ToLower(inputType1) == "string" && strings.Contains(inputTypeNumbers, strings.ToLower(inputType2)) {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateStrNumber)
+						testTemplate += r.Replace(fpCode.testTemplateStrNumber)
 					}
 
 					// Generate tests for input type1 string - input type2 Bool
 					if strings.ToLower(inputType1) == "string" && strings.ToLower(inputType2) == "bool" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateStrBool)
+						testTemplate += r.Replace(fpCode.testTemplateStrBool)
 					}
 
 					// Generate tests for input type1 bool - input type2 string
 					if strings.ToLower(inputType1) == "bool" && strings.ToLower(inputType2) == "string" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateBoolStr)
+						testTemplate += r.Replace(fpCode.testTemplateBoolStr)
 					}
 
 					// Generate tests for input type1 Number - input type2 bool
 					if strings.Contains(inputTypeNumbers, inputType1) && strings.ToLower(inputType2) == "bool" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateNumberBool)
+						testTemplate += r.Replace(fpCode.testTemplateNumberBool)
 					}
 
 					// Generate tests for input type1 bool - input type2 Number
 					if strings.ToLower(inputType1) == "bool" && strings.Contains(inputTypeNumbers, inputType2) {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateBoolNumber)
+						testTemplate += r.Replace(fpCode.testTemplateBoolNumber)
 					}
 
 					// Generate tests for input type1 bool - input type2 bool
 					if strings.ToLower(inputType1) == "bool" && strings.ToLower(inputType2) == "bool" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateBoolBool)
+						testTemplate += r.Replace(fpCode.testTemplateBoolBool)
 					}
 
 					// Generate tests for input type1 string - input type2 string
 					if strings.ToLower(inputType1) == "string" && strings.ToLower(inputType2) == "string" {
-						testTemplate += "\n" + r.Replace(fpCode.testTemplateStrStr)
+						testTemplate += r.Replace(fpCode.testTemplateStrStr)
 					}
 				}
 			}
