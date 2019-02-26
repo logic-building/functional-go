@@ -1096,3 +1096,400 @@ func FilterMapStrTeacher(fFilter func(string) bool, fMap func(string) Teacher, l
 	}
 	return newList
 }
+
+
+// Merge takes two input: map[Employee]Employee and map[Employee]Employee and merge two maps and returns a new map[Employee]Employee.
+func Merge(map1, map2 map[Employee]Employee) map[Employee]Employee {
+	if map1 == nil && map2 == nil {
+		return map[Employee]Employee{}
+	}
+
+	newMap := make(map[Employee]Employee)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployeeTeacher takes two input: map[Employee]Teacher and map[Employee]Teacher and merge two maps and returns a new map[Employee]Teacher.
+func MergeEmployeeTeacher(map1, map2 map[Employee]Teacher) map[Employee]Teacher {
+	if map1 == nil && map2 == nil {
+		return map[Employee]Teacher{}
+	}
+
+	newMap := make(map[Employee]Teacher)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployeeInt takes two input: map[Employee]int and map[Employee]int and merge two maps and returns a new map[Employee]int.
+func MergeEmployeeInt(map1, map2 map[Employee]int) map[Employee]int {
+	if map1 == nil && map2 == nil {
+		return map[Employee]int{}
+	}
+
+	newMap := make(map[Employee]int)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployeeStr takes two input: map[Employee]string and map[Employee]string and merge two maps and returns a new map[Employee]string.
+func MergeEmployeeStr(map1, map2 map[Employee]string) map[Employee]string {
+	if map1 == nil && map2 == nil {
+		return map[Employee]string{}
+	}
+
+	newMap := make(map[Employee]string)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeTeacherEmployee takes two input: map[Teacher]Employee and map[Teacher]Employee and merge two maps and returns a new map[Teacher]Employee.
+func MergeTeacherEmployee(map1, map2 map[Teacher]Employee) map[Teacher]Employee {
+	if map1 == nil && map2 == nil {
+		return map[Teacher]Employee{}
+	}
+
+	newMap := make(map[Teacher]Employee)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeTeacher takes two input: map[Teacher]Teacher and map[Teacher]Teacher and merge two maps and returns a new map[Teacher]Teacher.
+func MergeTeacher(map1, map2 map[Teacher]Teacher) map[Teacher]Teacher {
+	if map1 == nil && map2 == nil {
+		return map[Teacher]Teacher{}
+	}
+
+	newMap := make(map[Teacher]Teacher)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeTeacherInt takes two input: map[Teacher]int and map[Teacher]int and merge two maps and returns a new map[Teacher]int.
+func MergeTeacherInt(map1, map2 map[Teacher]int) map[Teacher]int {
+	if map1 == nil && map2 == nil {
+		return map[Teacher]int{}
+	}
+
+	newMap := make(map[Teacher]int)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeTeacherStr takes two input: map[Teacher]string and map[Teacher]string and merge two maps and returns a new map[Teacher]string.
+func MergeTeacherStr(map1, map2 map[Teacher]string) map[Teacher]string {
+	if map1 == nil && map2 == nil {
+		return map[Teacher]string{}
+	}
+
+	newMap := make(map[Teacher]string)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeIntEmployee takes two input: map[int]Employee and map[int]Employee and merge two maps and returns a new map[int]Employee.
+func MergeIntEmployee(map1, map2 map[int]Employee) map[int]Employee {
+	if map1 == nil && map2 == nil {
+		return map[int]Employee{}
+	}
+
+	newMap := make(map[int]Employee)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeIntTeacher takes two input: map[int]Teacher and map[int]Teacher and merge two maps and returns a new map[int]Teacher.
+func MergeIntTeacher(map1, map2 map[int]Teacher) map[int]Teacher {
+	if map1 == nil && map2 == nil {
+		return map[int]Teacher{}
+	}
+
+	newMap := make(map[int]Teacher)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeStrEmployee takes two input: map[string]Employee and map[string]Employee and merge two maps and returns a new map[string]Employee.
+func MergeStrEmployee(map1, map2 map[string]Employee) map[string]Employee {
+	if map1 == nil && map2 == nil {
+		return map[string]Employee{}
+	}
+
+	newMap := make(map[string]Employee)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeStrTeacher takes two input: map[string]Teacher and map[string]Teacher and merge two maps and returns a new map[string]Teacher.
+func MergeStrTeacher(map1, map2 map[string]Teacher) map[string]Teacher {
+	if map1 == nil && map2 == nil {
+		return map[string]Teacher{}
+	}
+
+	newMap := make(map[string]Teacher)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}

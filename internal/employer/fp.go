@@ -809,3 +809,268 @@ func FilterMapIntEmployee(fFilter func(int) bool, fMap func(int) employee.Employ
 	}
 	return newList
 }
+
+
+// Merge takes two input: map[Employer]Employer and map[Employer]Employer and merge two maps and returns a new map[Employer]Employer.
+func Merge(map1, map2 map[Employer]Employer) map[Employer]Employer {
+	if map1 == nil && map2 == nil {
+		return map[Employer]Employer{}
+	}
+
+	newMap := make(map[Employer]Employer)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployerEmployee takes two input: map[Employer]employee.Employee and map[Employer]employee.Employee and merge two maps and returns a new map[Employer]employee.Employee.
+func MergeEmployerEmployee(map1, map2 map[Employer]employee.Employee) map[Employer]employee.Employee {
+	if map1 == nil && map2 == nil {
+		return map[Employer]employee.Employee{}
+	}
+
+	newMap := make(map[Employer]employee.Employee)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployerInt takes two input: map[Employer]int and map[Employer]int and merge two maps and returns a new map[Employer]int.
+func MergeEmployerInt(map1, map2 map[Employer]int) map[Employer]int {
+	if map1 == nil && map2 == nil {
+		return map[Employer]int{}
+	}
+
+	newMap := make(map[Employer]int)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployeeEmployer takes two input: map[employee.Employee]Employer and map[employee.Employee]Employer and merge two maps and returns a new map[employee.Employee]Employer.
+func MergeEmployeeEmployer(map1, map2 map[employee.Employee]Employer) map[employee.Employee]Employer {
+	if map1 == nil && map2 == nil {
+		return map[employee.Employee]Employer{}
+	}
+
+	newMap := make(map[employee.Employee]Employer)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployee takes two input: map[employee.Employee]employee.Employee and map[employee.Employee]employee.Employee and merge two maps and returns a new map[employee.Employee]employee.Employee.
+func MergeEmployee(map1, map2 map[employee.Employee]employee.Employee) map[employee.Employee]employee.Employee {
+	if map1 == nil && map2 == nil {
+		return map[employee.Employee]employee.Employee{}
+	}
+
+	newMap := make(map[employee.Employee]employee.Employee)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeEmployeeInt takes two input: map[employee.Employee]int and map[employee.Employee]int and merge two maps and returns a new map[employee.Employee]int.
+func MergeEmployeeInt(map1, map2 map[employee.Employee]int) map[employee.Employee]int {
+	if map1 == nil && map2 == nil {
+		return map[employee.Employee]int{}
+	}
+
+	newMap := make(map[employee.Employee]int)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeIntEmployer takes two input: map[int]Employer and map[int]Employer and merge two maps and returns a new map[int]Employer.
+func MergeIntEmployer(map1, map2 map[int]Employer) map[int]Employer {
+	if map1 == nil && map2 == nil {
+		return map[int]Employer{}
+	}
+
+	newMap := make(map[int]Employer)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeIntEmployee takes two input: map[int]employee.Employee and map[int]employee.Employee and merge two maps and returns a new map[int]employee.Employee.
+func MergeIntEmployee(map1, map2 map[int]employee.Employee) map[int]employee.Employee {
+	if map1 == nil && map2 == nil {
+		return map[int]employee.Employee{}
+	}
+
+	newMap := make(map[int]employee.Employee)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
