@@ -506,6 +506,35 @@ Example:
     MergeIntInt(map1, map2) // Returns: map[1:10 2:20 4:40 5:50 3:300]
 
 
+Zip: Takes two inputs - list1 and list2 and returns new map after zipping two lists
+
+ZipInt  : takes input1 - type "int", input2 - type "int"
+ZipInt64 : takes input1 - type "int64", input2 - type "int64"
+ZipInt32
+ZipInt16
+ZipInt8
+ZipUint
+ZipUint64
+ZipUint32
+ZipUint16
+ZipUint8
+ZipFloat64
+ZipFloat32
+ZipStr
+ZipBool
+
+and there are also functions available for different combination of inputs,
+
+ZipIntStr : takes input1 - type "int", input2 - type "string"
+ZipStrFloat64 : takes input1 - type "string", input2 - type "float64"
+ ...
+
+    Example:
+        list1 := []int{1, 2, 3, 4}
+        list2 := []int{10, 20, 30, 40}
+
+        ZipInt(list1, list2) // returns map[1: 10, 2: 20, 3: 30, 4: 40]
+
 Set operations: Add, Remove, Clear, GetList, NewSetInt, Join, Intersection, Minus, Subset, Superset
 SetInt
 SetIntSync
@@ -665,7 +694,7 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 
 ### Test Coverage
 ```
-Tests Passed : 929
+Tests Passed : 1217
 ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
 ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```

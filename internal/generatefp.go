@@ -69,6 +69,24 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Zip",
+		codeTemplate:      basic.Zip(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "zip.go",
+
+		testTemplate:           basic.ZIPNumberToNumber(),
+		testTemplateNumberStr:  basic.ZIPNumberToStr(),
+		testTemplateStrNumber:  basic.ZIPStrToNumber(),
+		testTemplateStrBool:    basic.ZIPStrToBool(),
+		testTemplateBoolStr:    basic.ZIPBoolToStr(),
+		testTemplateNumberBool: basic.ZIPNumberToBool(),
+		testTemplateBoolNumber: basic.ZIPBoolToNumber(),
+		testTemplateBoolBool:   basic.ZIPBoolToBool(),
+		testTemplateStrStr:     basic.ZIPStrToStr(),
+		generatedTestFileName:  "zip_test.go",
+	},
+
+	fpCode{
 		function:                 "PMapIO",
 		codeTemplate:             basic.PMapIO(),
 		testTemplateIONumber:     basic.PMapIONumber(),
