@@ -63,7 +63,6 @@ func TestMergeInt(t *testing.T) {
 	}
 }
 
-
 func TestMergeIntInt64(t *testing.T) {
 	map1 := map[int]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[int]int64{4: 40, 5: 50, 3: 30}
@@ -121,7 +120,6 @@ func TestMergeIntInt64(t *testing.T) {
 		t.Errorf("TestMergeIntInt64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeIntInt32(t *testing.T) {
 	map1 := map[int]int32{1: 10, 2: 20, 3: 30}
@@ -181,7 +179,6 @@ func TestMergeIntInt32(t *testing.T) {
 	}
 }
 
-
 func TestMergeIntInt16(t *testing.T) {
 	map1 := map[int]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[int]int16{4: 40, 5: 50, 3: 30}
@@ -239,7 +236,6 @@ func TestMergeIntInt16(t *testing.T) {
 		t.Errorf("TestMergeIntInt16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeIntInt8(t *testing.T) {
 	map1 := map[int]int8{1: 10, 2: 20, 3: 30}
@@ -299,7 +295,6 @@ func TestMergeIntInt8(t *testing.T) {
 	}
 }
 
-
 func TestMergeIntUint(t *testing.T) {
 	map1 := map[int]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[int]uint{4: 40, 5: 50, 3: 30}
@@ -357,7 +352,6 @@ func TestMergeIntUint(t *testing.T) {
 		t.Errorf("TestMergeIntUint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeIntUint64(t *testing.T) {
 	map1 := map[int]uint64{1: 10, 2: 20, 3: 30}
@@ -417,7 +411,6 @@ func TestMergeIntUint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeIntUint32(t *testing.T) {
 	map1 := map[int]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[int]uint32{4: 40, 5: 50, 3: 30}
@@ -475,7 +468,6 @@ func TestMergeIntUint32(t *testing.T) {
 		t.Errorf("TestMergeIntUint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeIntUint16(t *testing.T) {
 	map1 := map[int]uint16{1: 10, 2: 20, 3: 30}
@@ -535,7 +527,6 @@ func TestMergeIntUint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeIntUint8(t *testing.T) {
 	map1 := map[int]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[int]uint8{4: 40, 5: 50, 3: 30}
@@ -593,7 +584,6 @@ func TestMergeIntUint8(t *testing.T) {
 		t.Errorf("TestMergeIntUint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeIntStr(t *testing.T) {
 	map1 := map[int]string{1: "10", 2: "20", 3: "30"}
@@ -653,7 +643,6 @@ func TestMergeIntStr(t *testing.T) {
 	}
 }
 
-
 func TestMergeIntBool(t *testing.T) {
 	map1 := map[int]bool{1: true, 0: false, 3: true}
 	map2 := map[int]bool{4: true, 5: true, 3: true}
@@ -711,7 +700,6 @@ func TestMergeIntBool(t *testing.T) {
 		t.Errorf("TestMergeIntBool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt64Int(t *testing.T) {
 	map1 := map[int64]int{1: 10, 2: 20, 3: 30}
@@ -771,7 +759,6 @@ func TestMergeInt64Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt64(t *testing.T) {
 	map1 := map[int64]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[int64]int64{4: 40, 5: 50, 3: 30}
@@ -829,7 +816,6 @@ func TestMergeInt64(t *testing.T) {
 		t.Errorf("TestMergeInt64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt64Int32(t *testing.T) {
 	map1 := map[int64]int32{1: 10, 2: 20, 3: 30}
@@ -889,7 +875,6 @@ func TestMergeInt64Int32(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt64Int16(t *testing.T) {
 	map1 := map[int64]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[int64]int16{4: 40, 5: 50, 3: 30}
@@ -947,7 +932,6 @@ func TestMergeInt64Int16(t *testing.T) {
 		t.Errorf("TestMergeInt64Int16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt64Int8(t *testing.T) {
 	map1 := map[int64]int8{1: 10, 2: 20, 3: 30}
@@ -1007,7 +991,6 @@ func TestMergeInt64Int8(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt64Uint(t *testing.T) {
 	map1 := map[int64]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[int64]uint{4: 40, 5: 50, 3: 30}
@@ -1065,7 +1048,6 @@ func TestMergeInt64Uint(t *testing.T) {
 		t.Errorf("TestMergeInt64Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt64Uint64(t *testing.T) {
 	map1 := map[int64]uint64{1: 10, 2: 20, 3: 30}
@@ -1125,7 +1107,6 @@ func TestMergeInt64Uint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt64Uint32(t *testing.T) {
 	map1 := map[int64]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[int64]uint32{4: 40, 5: 50, 3: 30}
@@ -1183,7 +1164,6 @@ func TestMergeInt64Uint32(t *testing.T) {
 		t.Errorf("TestMergeInt64Uint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt64Uint16(t *testing.T) {
 	map1 := map[int64]uint16{1: 10, 2: 20, 3: 30}
@@ -1243,7 +1223,6 @@ func TestMergeInt64Uint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt64Uint8(t *testing.T) {
 	map1 := map[int64]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[int64]uint8{4: 40, 5: 50, 3: 30}
@@ -1301,7 +1280,6 @@ func TestMergeInt64Uint8(t *testing.T) {
 		t.Errorf("TestMergeInt64Uint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt64Str(t *testing.T) {
 	map1 := map[int64]string{1: "10", 2: "20", 3: "30"}
@@ -1361,7 +1339,6 @@ func TestMergeInt64Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt64Bool(t *testing.T) {
 	map1 := map[int64]bool{1: true, 0: false, 3: true}
 	map2 := map[int64]bool{4: true, 5: true, 3: true}
@@ -1419,7 +1396,6 @@ func TestMergeInt64Bool(t *testing.T) {
 		t.Errorf("TestMergeInt64Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt32Int(t *testing.T) {
 	map1 := map[int32]int{1: 10, 2: 20, 3: 30}
@@ -1479,7 +1455,6 @@ func TestMergeInt32Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt32Int64(t *testing.T) {
 	map1 := map[int32]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[int32]int64{4: 40, 5: 50, 3: 30}
@@ -1537,7 +1512,6 @@ func TestMergeInt32Int64(t *testing.T) {
 		t.Errorf("TestMergeInt32Int64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt32(t *testing.T) {
 	map1 := map[int32]int32{1: 10, 2: 20, 3: 30}
@@ -1597,7 +1571,6 @@ func TestMergeInt32(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt32Int16(t *testing.T) {
 	map1 := map[int32]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[int32]int16{4: 40, 5: 50, 3: 30}
@@ -1655,7 +1628,6 @@ func TestMergeInt32Int16(t *testing.T) {
 		t.Errorf("TestMergeInt32Int16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt32Int8(t *testing.T) {
 	map1 := map[int32]int8{1: 10, 2: 20, 3: 30}
@@ -1715,7 +1687,6 @@ func TestMergeInt32Int8(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt32Uint(t *testing.T) {
 	map1 := map[int32]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[int32]uint{4: 40, 5: 50, 3: 30}
@@ -1773,7 +1744,6 @@ func TestMergeInt32Uint(t *testing.T) {
 		t.Errorf("TestMergeInt32Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt32Uint64(t *testing.T) {
 	map1 := map[int32]uint64{1: 10, 2: 20, 3: 30}
@@ -1833,7 +1803,6 @@ func TestMergeInt32Uint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt32Uint32(t *testing.T) {
 	map1 := map[int32]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[int32]uint32{4: 40, 5: 50, 3: 30}
@@ -1891,7 +1860,6 @@ func TestMergeInt32Uint32(t *testing.T) {
 		t.Errorf("TestMergeInt32Uint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt32Uint16(t *testing.T) {
 	map1 := map[int32]uint16{1: 10, 2: 20, 3: 30}
@@ -1951,7 +1919,6 @@ func TestMergeInt32Uint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt32Uint8(t *testing.T) {
 	map1 := map[int32]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[int32]uint8{4: 40, 5: 50, 3: 30}
@@ -2009,7 +1976,6 @@ func TestMergeInt32Uint8(t *testing.T) {
 		t.Errorf("TestMergeInt32Uint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt32Str(t *testing.T) {
 	map1 := map[int32]string{1: "10", 2: "20", 3: "30"}
@@ -2069,7 +2035,6 @@ func TestMergeInt32Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt32Bool(t *testing.T) {
 	map1 := map[int32]bool{1: true, 0: false, 3: true}
 	map2 := map[int32]bool{4: true, 5: true, 3: true}
@@ -2127,7 +2092,6 @@ func TestMergeInt32Bool(t *testing.T) {
 		t.Errorf("TestMergeInt32Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt16Int(t *testing.T) {
 	map1 := map[int16]int{1: 10, 2: 20, 3: 30}
@@ -2187,7 +2151,6 @@ func TestMergeInt16Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt16Int64(t *testing.T) {
 	map1 := map[int16]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[int16]int64{4: 40, 5: 50, 3: 30}
@@ -2245,7 +2208,6 @@ func TestMergeInt16Int64(t *testing.T) {
 		t.Errorf("TestMergeInt16Int64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt16Int32(t *testing.T) {
 	map1 := map[int16]int32{1: 10, 2: 20, 3: 30}
@@ -2305,7 +2267,6 @@ func TestMergeInt16Int32(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt16(t *testing.T) {
 	map1 := map[int16]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[int16]int16{4: 40, 5: 50, 3: 30}
@@ -2363,7 +2324,6 @@ func TestMergeInt16(t *testing.T) {
 		t.Errorf("TestMergeInt16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt16Int8(t *testing.T) {
 	map1 := map[int16]int8{1: 10, 2: 20, 3: 30}
@@ -2423,7 +2383,6 @@ func TestMergeInt16Int8(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt16Uint(t *testing.T) {
 	map1 := map[int16]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[int16]uint{4: 40, 5: 50, 3: 30}
@@ -2481,7 +2440,6 @@ func TestMergeInt16Uint(t *testing.T) {
 		t.Errorf("TestMergeInt16Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt16Uint64(t *testing.T) {
 	map1 := map[int16]uint64{1: 10, 2: 20, 3: 30}
@@ -2541,7 +2499,6 @@ func TestMergeInt16Uint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt16Uint32(t *testing.T) {
 	map1 := map[int16]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[int16]uint32{4: 40, 5: 50, 3: 30}
@@ -2599,7 +2556,6 @@ func TestMergeInt16Uint32(t *testing.T) {
 		t.Errorf("TestMergeInt16Uint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt16Uint16(t *testing.T) {
 	map1 := map[int16]uint16{1: 10, 2: 20, 3: 30}
@@ -2659,7 +2615,6 @@ func TestMergeInt16Uint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt16Uint8(t *testing.T) {
 	map1 := map[int16]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[int16]uint8{4: 40, 5: 50, 3: 30}
@@ -2717,7 +2672,6 @@ func TestMergeInt16Uint8(t *testing.T) {
 		t.Errorf("TestMergeInt16Uint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt16Str(t *testing.T) {
 	map1 := map[int16]string{1: "10", 2: "20", 3: "30"}
@@ -2777,7 +2731,6 @@ func TestMergeInt16Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt16Bool(t *testing.T) {
 	map1 := map[int16]bool{1: true, 0: false, 3: true}
 	map2 := map[int16]bool{4: true, 5: true, 3: true}
@@ -2835,7 +2788,6 @@ func TestMergeInt16Bool(t *testing.T) {
 		t.Errorf("TestMergeInt16Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt8Int(t *testing.T) {
 	map1 := map[int8]int{1: 10, 2: 20, 3: 30}
@@ -2895,7 +2847,6 @@ func TestMergeInt8Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt8Int64(t *testing.T) {
 	map1 := map[int8]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[int8]int64{4: 40, 5: 50, 3: 30}
@@ -2953,7 +2904,6 @@ func TestMergeInt8Int64(t *testing.T) {
 		t.Errorf("TestMergeInt8Int64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt8Int32(t *testing.T) {
 	map1 := map[int8]int32{1: 10, 2: 20, 3: 30}
@@ -3013,7 +2963,6 @@ func TestMergeInt8Int32(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt8Int16(t *testing.T) {
 	map1 := map[int8]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[int8]int16{4: 40, 5: 50, 3: 30}
@@ -3071,7 +3020,6 @@ func TestMergeInt8Int16(t *testing.T) {
 		t.Errorf("TestMergeInt8Int16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt8(t *testing.T) {
 	map1 := map[int8]int8{1: 10, 2: 20, 3: 30}
@@ -3131,7 +3079,6 @@ func TestMergeInt8(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt8Uint(t *testing.T) {
 	map1 := map[int8]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[int8]uint{4: 40, 5: 50, 3: 30}
@@ -3189,7 +3136,6 @@ func TestMergeInt8Uint(t *testing.T) {
 		t.Errorf("TestMergeInt8Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt8Uint64(t *testing.T) {
 	map1 := map[int8]uint64{1: 10, 2: 20, 3: 30}
@@ -3249,7 +3195,6 @@ func TestMergeInt8Uint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt8Uint32(t *testing.T) {
 	map1 := map[int8]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[int8]uint32{4: 40, 5: 50, 3: 30}
@@ -3307,7 +3252,6 @@ func TestMergeInt8Uint32(t *testing.T) {
 		t.Errorf("TestMergeInt8Uint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt8Uint16(t *testing.T) {
 	map1 := map[int8]uint16{1: 10, 2: 20, 3: 30}
@@ -3367,7 +3311,6 @@ func TestMergeInt8Uint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt8Uint8(t *testing.T) {
 	map1 := map[int8]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[int8]uint8{4: 40, 5: 50, 3: 30}
@@ -3425,7 +3368,6 @@ func TestMergeInt8Uint8(t *testing.T) {
 		t.Errorf("TestMergeInt8Uint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeInt8Str(t *testing.T) {
 	map1 := map[int8]string{1: "10", 2: "20", 3: "30"}
@@ -3485,7 +3427,6 @@ func TestMergeInt8Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeInt8Bool(t *testing.T) {
 	map1 := map[int8]bool{1: true, 0: false, 3: true}
 	map2 := map[int8]bool{4: true, 5: true, 3: true}
@@ -3543,7 +3484,6 @@ func TestMergeInt8Bool(t *testing.T) {
 		t.Errorf("TestMergeInt8Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUintInt(t *testing.T) {
 	map1 := map[uint]int{1: 10, 2: 20, 3: 30}
@@ -3603,7 +3543,6 @@ func TestMergeUintInt(t *testing.T) {
 	}
 }
 
-
 func TestMergeUintInt64(t *testing.T) {
 	map1 := map[uint]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[uint]int64{4: 40, 5: 50, 3: 30}
@@ -3661,7 +3600,6 @@ func TestMergeUintInt64(t *testing.T) {
 		t.Errorf("TestMergeUintInt64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUintInt32(t *testing.T) {
 	map1 := map[uint]int32{1: 10, 2: 20, 3: 30}
@@ -3721,7 +3659,6 @@ func TestMergeUintInt32(t *testing.T) {
 	}
 }
 
-
 func TestMergeUintInt16(t *testing.T) {
 	map1 := map[uint]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[uint]int16{4: 40, 5: 50, 3: 30}
@@ -3779,7 +3716,6 @@ func TestMergeUintInt16(t *testing.T) {
 		t.Errorf("TestMergeUintInt16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUintInt8(t *testing.T) {
 	map1 := map[uint]int8{1: 10, 2: 20, 3: 30}
@@ -3839,7 +3775,6 @@ func TestMergeUintInt8(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint(t *testing.T) {
 	map1 := map[uint]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[uint]uint{4: 40, 5: 50, 3: 30}
@@ -3897,7 +3832,6 @@ func TestMergeUint(t *testing.T) {
 		t.Errorf("TestMergeUint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUintUint64(t *testing.T) {
 	map1 := map[uint]uint64{1: 10, 2: 20, 3: 30}
@@ -3957,7 +3891,6 @@ func TestMergeUintUint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeUintUint32(t *testing.T) {
 	map1 := map[uint]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[uint]uint32{4: 40, 5: 50, 3: 30}
@@ -4015,7 +3948,6 @@ func TestMergeUintUint32(t *testing.T) {
 		t.Errorf("TestMergeUintUint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUintUint16(t *testing.T) {
 	map1 := map[uint]uint16{1: 10, 2: 20, 3: 30}
@@ -4075,7 +4007,6 @@ func TestMergeUintUint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeUintUint8(t *testing.T) {
 	map1 := map[uint]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[uint]uint8{4: 40, 5: 50, 3: 30}
@@ -4133,7 +4064,6 @@ func TestMergeUintUint8(t *testing.T) {
 		t.Errorf("TestMergeUintUint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUintStr(t *testing.T) {
 	map1 := map[uint]string{1: "10", 2: "20", 3: "30"}
@@ -4193,7 +4123,6 @@ func TestMergeUintStr(t *testing.T) {
 	}
 }
 
-
 func TestMergeUintBool(t *testing.T) {
 	map1 := map[uint]bool{1: true, 0: false, 3: true}
 	map2 := map[uint]bool{4: true, 5: true, 3: true}
@@ -4251,7 +4180,6 @@ func TestMergeUintBool(t *testing.T) {
 		t.Errorf("TestMergeUintBool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint64Int(t *testing.T) {
 	map1 := map[uint64]int{1: 10, 2: 20, 3: 30}
@@ -4311,7 +4239,6 @@ func TestMergeUint64Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint64Int64(t *testing.T) {
 	map1 := map[uint64]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[uint64]int64{4: 40, 5: 50, 3: 30}
@@ -4369,7 +4296,6 @@ func TestMergeUint64Int64(t *testing.T) {
 		t.Errorf("TestMergeUint64Int64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint64Int32(t *testing.T) {
 	map1 := map[uint64]int32{1: 10, 2: 20, 3: 30}
@@ -4429,7 +4355,6 @@ func TestMergeUint64Int32(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint64Int16(t *testing.T) {
 	map1 := map[uint64]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[uint64]int16{4: 40, 5: 50, 3: 30}
@@ -4487,7 +4412,6 @@ func TestMergeUint64Int16(t *testing.T) {
 		t.Errorf("TestMergeUint64Int16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint64Int8(t *testing.T) {
 	map1 := map[uint64]int8{1: 10, 2: 20, 3: 30}
@@ -4547,7 +4471,6 @@ func TestMergeUint64Int8(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint64Uint(t *testing.T) {
 	map1 := map[uint64]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[uint64]uint{4: 40, 5: 50, 3: 30}
@@ -4605,7 +4528,6 @@ func TestMergeUint64Uint(t *testing.T) {
 		t.Errorf("TestMergeUint64Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint64(t *testing.T) {
 	map1 := map[uint64]uint64{1: 10, 2: 20, 3: 30}
@@ -4665,7 +4587,6 @@ func TestMergeUint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint64Uint32(t *testing.T) {
 	map1 := map[uint64]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[uint64]uint32{4: 40, 5: 50, 3: 30}
@@ -4723,7 +4644,6 @@ func TestMergeUint64Uint32(t *testing.T) {
 		t.Errorf("TestMergeUint64Uint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint64Uint16(t *testing.T) {
 	map1 := map[uint64]uint16{1: 10, 2: 20, 3: 30}
@@ -4783,7 +4703,6 @@ func TestMergeUint64Uint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint64Uint8(t *testing.T) {
 	map1 := map[uint64]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[uint64]uint8{4: 40, 5: 50, 3: 30}
@@ -4841,7 +4760,6 @@ func TestMergeUint64Uint8(t *testing.T) {
 		t.Errorf("TestMergeUint64Uint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint64Str(t *testing.T) {
 	map1 := map[uint64]string{1: "10", 2: "20", 3: "30"}
@@ -4901,7 +4819,6 @@ func TestMergeUint64Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint64Bool(t *testing.T) {
 	map1 := map[uint64]bool{1: true, 0: false, 3: true}
 	map2 := map[uint64]bool{4: true, 5: true, 3: true}
@@ -4959,7 +4876,6 @@ func TestMergeUint64Bool(t *testing.T) {
 		t.Errorf("TestMergeUint64Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint32Int(t *testing.T) {
 	map1 := map[uint32]int{1: 10, 2: 20, 3: 30}
@@ -5019,7 +4935,6 @@ func TestMergeUint32Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint32Int64(t *testing.T) {
 	map1 := map[uint32]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[uint32]int64{4: 40, 5: 50, 3: 30}
@@ -5077,7 +4992,6 @@ func TestMergeUint32Int64(t *testing.T) {
 		t.Errorf("TestMergeUint32Int64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint32Int32(t *testing.T) {
 	map1 := map[uint32]int32{1: 10, 2: 20, 3: 30}
@@ -5137,7 +5051,6 @@ func TestMergeUint32Int32(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint32Int16(t *testing.T) {
 	map1 := map[uint32]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[uint32]int16{4: 40, 5: 50, 3: 30}
@@ -5195,7 +5108,6 @@ func TestMergeUint32Int16(t *testing.T) {
 		t.Errorf("TestMergeUint32Int16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint32Int8(t *testing.T) {
 	map1 := map[uint32]int8{1: 10, 2: 20, 3: 30}
@@ -5255,7 +5167,6 @@ func TestMergeUint32Int8(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint32Uint(t *testing.T) {
 	map1 := map[uint32]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[uint32]uint{4: 40, 5: 50, 3: 30}
@@ -5313,7 +5224,6 @@ func TestMergeUint32Uint(t *testing.T) {
 		t.Errorf("TestMergeUint32Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint32Uint64(t *testing.T) {
 	map1 := map[uint32]uint64{1: 10, 2: 20, 3: 30}
@@ -5373,7 +5283,6 @@ func TestMergeUint32Uint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint32(t *testing.T) {
 	map1 := map[uint32]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[uint32]uint32{4: 40, 5: 50, 3: 30}
@@ -5431,7 +5340,6 @@ func TestMergeUint32(t *testing.T) {
 		t.Errorf("TestMergeUint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint32Uint16(t *testing.T) {
 	map1 := map[uint32]uint16{1: 10, 2: 20, 3: 30}
@@ -5491,7 +5399,6 @@ func TestMergeUint32Uint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint32Uint8(t *testing.T) {
 	map1 := map[uint32]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[uint32]uint8{4: 40, 5: 50, 3: 30}
@@ -5549,7 +5456,6 @@ func TestMergeUint32Uint8(t *testing.T) {
 		t.Errorf("TestMergeUint32Uint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint32Str(t *testing.T) {
 	map1 := map[uint32]string{1: "10", 2: "20", 3: "30"}
@@ -5609,7 +5515,6 @@ func TestMergeUint32Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint32Bool(t *testing.T) {
 	map1 := map[uint32]bool{1: true, 0: false, 3: true}
 	map2 := map[uint32]bool{4: true, 5: true, 3: true}
@@ -5667,7 +5572,6 @@ func TestMergeUint32Bool(t *testing.T) {
 		t.Errorf("TestMergeUint32Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint16Int(t *testing.T) {
 	map1 := map[uint16]int{1: 10, 2: 20, 3: 30}
@@ -5727,7 +5631,6 @@ func TestMergeUint16Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint16Int64(t *testing.T) {
 	map1 := map[uint16]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[uint16]int64{4: 40, 5: 50, 3: 30}
@@ -5785,7 +5688,6 @@ func TestMergeUint16Int64(t *testing.T) {
 		t.Errorf("TestMergeUint16Int64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint16Int32(t *testing.T) {
 	map1 := map[uint16]int32{1: 10, 2: 20, 3: 30}
@@ -5845,7 +5747,6 @@ func TestMergeUint16Int32(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint16Int16(t *testing.T) {
 	map1 := map[uint16]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[uint16]int16{4: 40, 5: 50, 3: 30}
@@ -5903,7 +5804,6 @@ func TestMergeUint16Int16(t *testing.T) {
 		t.Errorf("TestMergeUint16Int16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint16Int8(t *testing.T) {
 	map1 := map[uint16]int8{1: 10, 2: 20, 3: 30}
@@ -5963,7 +5863,6 @@ func TestMergeUint16Int8(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint16Uint(t *testing.T) {
 	map1 := map[uint16]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[uint16]uint{4: 40, 5: 50, 3: 30}
@@ -6021,7 +5920,6 @@ func TestMergeUint16Uint(t *testing.T) {
 		t.Errorf("TestMergeUint16Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint16Uint64(t *testing.T) {
 	map1 := map[uint16]uint64{1: 10, 2: 20, 3: 30}
@@ -6081,7 +5979,6 @@ func TestMergeUint16Uint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint16Uint32(t *testing.T) {
 	map1 := map[uint16]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[uint16]uint32{4: 40, 5: 50, 3: 30}
@@ -6139,7 +6036,6 @@ func TestMergeUint16Uint32(t *testing.T) {
 		t.Errorf("TestMergeUint16Uint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint16(t *testing.T) {
 	map1 := map[uint16]uint16{1: 10, 2: 20, 3: 30}
@@ -6199,7 +6095,6 @@ func TestMergeUint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint16Uint8(t *testing.T) {
 	map1 := map[uint16]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[uint16]uint8{4: 40, 5: 50, 3: 30}
@@ -6257,7 +6152,6 @@ func TestMergeUint16Uint8(t *testing.T) {
 		t.Errorf("TestMergeUint16Uint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint16Str(t *testing.T) {
 	map1 := map[uint16]string{1: "10", 2: "20", 3: "30"}
@@ -6317,7 +6211,6 @@ func TestMergeUint16Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint16Bool(t *testing.T) {
 	map1 := map[uint16]bool{1: true, 0: false, 3: true}
 	map2 := map[uint16]bool{4: true, 5: true, 3: true}
@@ -6375,7 +6268,6 @@ func TestMergeUint16Bool(t *testing.T) {
 		t.Errorf("TestMergeUint16Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint8Int(t *testing.T) {
 	map1 := map[uint8]int{1: 10, 2: 20, 3: 30}
@@ -6435,7 +6327,6 @@ func TestMergeUint8Int(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint8Int64(t *testing.T) {
 	map1 := map[uint8]int64{1: 10, 2: 20, 3: 30}
 	map2 := map[uint8]int64{4: 40, 5: 50, 3: 30}
@@ -6493,7 +6384,6 @@ func TestMergeUint8Int64(t *testing.T) {
 		t.Errorf("TestMergeUint8Int64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint8Int32(t *testing.T) {
 	map1 := map[uint8]int32{1: 10, 2: 20, 3: 30}
@@ -6553,7 +6443,6 @@ func TestMergeUint8Int32(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint8Int16(t *testing.T) {
 	map1 := map[uint8]int16{1: 10, 2: 20, 3: 30}
 	map2 := map[uint8]int16{4: 40, 5: 50, 3: 30}
@@ -6611,7 +6500,6 @@ func TestMergeUint8Int16(t *testing.T) {
 		t.Errorf("TestMergeUint8Int16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint8Int8(t *testing.T) {
 	map1 := map[uint8]int8{1: 10, 2: 20, 3: 30}
@@ -6671,7 +6559,6 @@ func TestMergeUint8Int8(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint8Uint(t *testing.T) {
 	map1 := map[uint8]uint{1: 10, 2: 20, 3: 30}
 	map2 := map[uint8]uint{4: 40, 5: 50, 3: 30}
@@ -6729,7 +6616,6 @@ func TestMergeUint8Uint(t *testing.T) {
 		t.Errorf("TestMergeUint8Uint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint8Uint64(t *testing.T) {
 	map1 := map[uint8]uint64{1: 10, 2: 20, 3: 30}
@@ -6789,7 +6675,6 @@ func TestMergeUint8Uint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint8Uint32(t *testing.T) {
 	map1 := map[uint8]uint32{1: 10, 2: 20, 3: 30}
 	map2 := map[uint8]uint32{4: 40, 5: 50, 3: 30}
@@ -6847,7 +6732,6 @@ func TestMergeUint8Uint32(t *testing.T) {
 		t.Errorf("TestMergeUint8Uint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint8Uint16(t *testing.T) {
 	map1 := map[uint8]uint16{1: 10, 2: 20, 3: 30}
@@ -6907,7 +6791,6 @@ func TestMergeUint8Uint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint8(t *testing.T) {
 	map1 := map[uint8]uint8{1: 10, 2: 20, 3: 30}
 	map2 := map[uint8]uint8{4: 40, 5: 50, 3: 30}
@@ -6965,7 +6848,6 @@ func TestMergeUint8(t *testing.T) {
 		t.Errorf("TestMergeUint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeUint8Str(t *testing.T) {
 	map1 := map[uint8]string{1: "10", 2: "20", 3: "30"}
@@ -7025,7 +6907,6 @@ func TestMergeUint8Str(t *testing.T) {
 	}
 }
 
-
 func TestMergeUint8Bool(t *testing.T) {
 	map1 := map[uint8]bool{1: true, 0: false, 3: true}
 	map2 := map[uint8]bool{4: true, 5: true, 3: true}
@@ -7083,7 +6964,6 @@ func TestMergeUint8Bool(t *testing.T) {
 		t.Errorf("TestMergeUint8Bool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeStrInt(t *testing.T) {
 	map1 := map[string]int{"1": 10, "2": 20, "3": 30}
@@ -7143,7 +7023,6 @@ func TestMergeStrInt(t *testing.T) {
 	}
 }
 
-
 func TestMergeStrInt64(t *testing.T) {
 	map1 := map[string]int64{"1": 10, "2": 20, "3": 30}
 	map2 := map[string]int64{"4": 40, "5": 50, "3": 30}
@@ -7201,7 +7080,6 @@ func TestMergeStrInt64(t *testing.T) {
 		t.Errorf("TestMergeStrInt64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeStrInt32(t *testing.T) {
 	map1 := map[string]int32{"1": 10, "2": 20, "3": 30}
@@ -7261,7 +7139,6 @@ func TestMergeStrInt32(t *testing.T) {
 	}
 }
 
-
 func TestMergeStrInt16(t *testing.T) {
 	map1 := map[string]int16{"1": 10, "2": 20, "3": 30}
 	map2 := map[string]int16{"4": 40, "5": 50, "3": 30}
@@ -7319,7 +7196,6 @@ func TestMergeStrInt16(t *testing.T) {
 		t.Errorf("TestMergeStrInt16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeStrInt8(t *testing.T) {
 	map1 := map[string]int8{"1": 10, "2": 20, "3": 30}
@@ -7379,7 +7255,6 @@ func TestMergeStrInt8(t *testing.T) {
 	}
 }
 
-
 func TestMergeStrUint(t *testing.T) {
 	map1 := map[string]uint{"1": 10, "2": 20, "3": 30}
 	map2 := map[string]uint{"4": 40, "5": 50, "3": 30}
@@ -7437,7 +7312,6 @@ func TestMergeStrUint(t *testing.T) {
 		t.Errorf("TestMergeStrUint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeStrUint64(t *testing.T) {
 	map1 := map[string]uint64{"1": 10, "2": 20, "3": 30}
@@ -7497,7 +7371,6 @@ func TestMergeStrUint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeStrUint32(t *testing.T) {
 	map1 := map[string]uint32{"1": 10, "2": 20, "3": 30}
 	map2 := map[string]uint32{"4": 40, "5": 50, "3": 30}
@@ -7555,7 +7428,6 @@ func TestMergeStrUint32(t *testing.T) {
 		t.Errorf("TestMergeStrUint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeStrUint16(t *testing.T) {
 	map1 := map[string]uint16{"1": 10, "2": 20, "3": 30}
@@ -7615,7 +7487,6 @@ func TestMergeStrUint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeStrUint8(t *testing.T) {
 	map1 := map[string]uint8{"1": 10, "2": 20, "3": 30}
 	map2 := map[string]uint8{"4": 40, "5": 50, "3": 30}
@@ -7673,7 +7544,6 @@ func TestMergeStrUint8(t *testing.T) {
 		t.Errorf("TestMergeStrUint8 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeStr(t *testing.T) {
 	map1 := map[string]string{"1": "One", "2": "two"}
@@ -7733,7 +7603,6 @@ func TestMergeStr(t *testing.T) {
 	}
 }
 
-
 func TestMergeStrBool(t *testing.T) {
 	map1 := map[string]bool{"1": true, "0": false, "3": true}
 	map2 := map[string]bool{"4": true, "5": true, "3": true}
@@ -7791,7 +7660,6 @@ func TestMergeStrBool(t *testing.T) {
 		t.Errorf("TestMergeStrBool failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeBoolInt(t *testing.T) {
 	map1 := map[bool]int{true: 1, false: 0}
@@ -7851,7 +7719,6 @@ func TestMergeBoolInt(t *testing.T) {
 	}
 }
 
-
 func TestMergeBoolInt64(t *testing.T) {
 	map1 := map[bool]int64{true: 1, false: 0}
 	map2 := map[bool]int64{true: 2}
@@ -7909,7 +7776,6 @@ func TestMergeBoolInt64(t *testing.T) {
 		t.Errorf("TestMergeBoolInt64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeBoolInt32(t *testing.T) {
 	map1 := map[bool]int32{true: 1, false: 0}
@@ -7969,7 +7835,6 @@ func TestMergeBoolInt32(t *testing.T) {
 	}
 }
 
-
 func TestMergeBoolInt16(t *testing.T) {
 	map1 := map[bool]int16{true: 1, false: 0}
 	map2 := map[bool]int16{true: 2}
@@ -8027,7 +7892,6 @@ func TestMergeBoolInt16(t *testing.T) {
 		t.Errorf("TestMergeBoolInt16 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeBoolInt8(t *testing.T) {
 	map1 := map[bool]int8{true: 1, false: 0}
@@ -8087,7 +7951,6 @@ func TestMergeBoolInt8(t *testing.T) {
 	}
 }
 
-
 func TestMergeBoolUint(t *testing.T) {
 	map1 := map[bool]uint{true: 1, false: 0}
 	map2 := map[bool]uint{true: 2}
@@ -8145,7 +8008,6 @@ func TestMergeBoolUint(t *testing.T) {
 		t.Errorf("TestMergeBoolUint failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeBoolUint64(t *testing.T) {
 	map1 := map[bool]uint64{true: 1, false: 0}
@@ -8205,7 +8067,6 @@ func TestMergeBoolUint64(t *testing.T) {
 	}
 }
 
-
 func TestMergeBoolUint32(t *testing.T) {
 	map1 := map[bool]uint32{true: 1, false: 0}
 	map2 := map[bool]uint32{true: 2}
@@ -8263,7 +8124,6 @@ func TestMergeBoolUint32(t *testing.T) {
 		t.Errorf("TestMergeBoolUint32 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeBoolUint16(t *testing.T) {
 	map1 := map[bool]uint16{true: 1, false: 0}
@@ -8323,7 +8183,6 @@ func TestMergeBoolUint16(t *testing.T) {
 	}
 }
 
-
 func TestMergeBoolUint8(t *testing.T) {
 	map1 := map[bool]uint8{true: 1, false: 0}
 	map2 := map[bool]uint8{true: 2}
@@ -8382,7 +8241,6 @@ func TestMergeBoolUint8(t *testing.T) {
 	}
 }
 
-
 func TestMergeBoolStr(t *testing.T) {
 	map1 := map[bool]string{true: "1", false: "0"}
 	map2 := map[bool]string{true: "2"}
@@ -8440,7 +8298,6 @@ func TestMergeBoolStr(t *testing.T) {
 		t.Errorf("TestMergeBoolStr failed. Expected=empty mape, actual=%v", actual)
 	}
 }
-
 
 func TestMergeBool(t *testing.T) {
 	map1 := map[bool]bool{true: true, false: false}

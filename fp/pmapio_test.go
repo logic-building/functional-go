@@ -28,7 +28,6 @@ func plusOneIntInt64(num int) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapIntInt32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -51,7 +50,6 @@ func TestPmapIntInt32(t *testing.T) {
 func plusOneIntInt32(num int) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapIntInt16(t *testing.T) {
 	// Test : add 1 to the list
@@ -76,7 +74,6 @@ func plusOneIntInt16(num int) int16 {
 	return int16(num + 1)
 }
 
-
 func TestPmapIntInt8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -99,7 +96,6 @@ func TestPmapIntInt8(t *testing.T) {
 func plusOneIntInt8(num int) int8 {
 	return int8(num + 1)
 }
-
 
 func TestPmapIntUint(t *testing.T) {
 	// Test : add 1 to the list
@@ -124,7 +120,6 @@ func plusOneIntUint(num int) uint {
 	return uint(num + 1)
 }
 
-
 func TestPmapIntUint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -147,7 +142,6 @@ func TestPmapIntUint64(t *testing.T) {
 func plusOneIntUint64(num int) uint64 {
 	return uint64(num + 1)
 }
-
 
 func TestPmapIntUint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -172,7 +166,6 @@ func plusOneIntUint32(num int) uint32 {
 	return uint32(num + 1)
 }
 
-
 func TestPmapIntUint16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint16{2, 3, 4}
@@ -196,7 +189,6 @@ func plusOneIntUint16(num int) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapIntUint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -219,7 +211,6 @@ func TestPmapIntUint8(t *testing.T) {
 func plusOneIntUint8(num int) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapIntStr(t *testing.T) {
 	// Test : someLogic
@@ -248,7 +239,6 @@ func someLogicIntStr(num int) string {
 	}
 }
 
-
 func TestPmapIntBool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -276,7 +266,6 @@ func someLogicIntBool(num int) bool {
 	}
 }
 
-
 func TestPmapInt64Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -299,7 +288,6 @@ func TestPmapInt64Int(t *testing.T) {
 func plusOneInt64Int(num int64) int {
 	return int(num + 1)
 }
-
 
 func TestPmapInt64Int32(t *testing.T) {
 	// Test : add 1 to the list
@@ -324,7 +312,6 @@ func plusOneInt64Int32(num int64) int32 {
 	return int32(num + 1)
 }
 
-
 func TestPmapInt64Int16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int16{2, 3, 4}
@@ -347,7 +334,6 @@ func TestPmapInt64Int16(t *testing.T) {
 func plusOneInt64Int16(num int64) int16 {
 	return int16(num + 1)
 }
-
 
 func TestPmapInt64Int8(t *testing.T) {
 	// Test : add 1 to the list
@@ -372,7 +358,6 @@ func plusOneInt64Int8(num int64) int8 {
 	return int8(num + 1)
 }
 
-
 func TestPmapInt64Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -395,7 +380,6 @@ func TestPmapInt64Uint(t *testing.T) {
 func plusOneInt64Uint(num int64) uint {
 	return uint(num + 1)
 }
-
 
 func TestPmapInt64Uint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -420,7 +404,6 @@ func plusOneInt64Uint64(num int64) uint64 {
 	return uint64(num + 1)
 }
 
-
 func TestPmapInt64Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -443,7 +426,6 @@ func TestPmapInt64Uint32(t *testing.T) {
 func plusOneInt64Uint32(num int64) uint32 {
 	return uint32(num + 1)
 }
-
 
 func TestPmapInt64Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -468,7 +450,6 @@ func plusOneInt64Uint16(num int64) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapInt64Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -491,7 +472,6 @@ func TestPmapInt64Uint8(t *testing.T) {
 func plusOneInt64Uint8(num int64) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapInt64Str(t *testing.T) {
 	// Test : someLogic
@@ -520,7 +500,6 @@ func someLogicInt64Str(num int64) string {
 	}
 }
 
-
 func TestPmapInt64Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -548,7 +527,6 @@ func someLogicInt64Bool(num int64) bool {
 	}
 }
 
-
 func TestPmapInt32Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -571,7 +549,6 @@ func TestPmapInt32Int(t *testing.T) {
 func plusOneInt32Int(num int32) int {
 	return int(num + 1)
 }
-
 
 func TestPmapInt32Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -596,7 +573,6 @@ func plusOneInt32Int64(num int32) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapInt32Int16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int16{2, 3, 4}
@@ -619,7 +595,6 @@ func TestPmapInt32Int16(t *testing.T) {
 func plusOneInt32Int16(num int32) int16 {
 	return int16(num + 1)
 }
-
 
 func TestPmapInt32Int8(t *testing.T) {
 	// Test : add 1 to the list
@@ -644,7 +619,6 @@ func plusOneInt32Int8(num int32) int8 {
 	return int8(num + 1)
 }
 
-
 func TestPmapInt32Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -667,7 +641,6 @@ func TestPmapInt32Uint(t *testing.T) {
 func plusOneInt32Uint(num int32) uint {
 	return uint(num + 1)
 }
-
 
 func TestPmapInt32Uint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -692,7 +665,6 @@ func plusOneInt32Uint64(num int32) uint64 {
 	return uint64(num + 1)
 }
 
-
 func TestPmapInt32Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -715,7 +687,6 @@ func TestPmapInt32Uint32(t *testing.T) {
 func plusOneInt32Uint32(num int32) uint32 {
 	return uint32(num + 1)
 }
-
 
 func TestPmapInt32Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -740,7 +711,6 @@ func plusOneInt32Uint16(num int32) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapInt32Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -763,7 +733,6 @@ func TestPmapInt32Uint8(t *testing.T) {
 func plusOneInt32Uint8(num int32) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapInt32Str(t *testing.T) {
 	// Test : someLogic
@@ -792,7 +761,6 @@ func someLogicInt32Str(num int32) string {
 	}
 }
 
-
 func TestPmapInt32Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -820,7 +788,6 @@ func someLogicInt32Bool(num int32) bool {
 	}
 }
 
-
 func TestPmapInt16Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -843,7 +810,6 @@ func TestPmapInt16Int(t *testing.T) {
 func plusOneInt16Int(num int16) int {
 	return int(num + 1)
 }
-
 
 func TestPmapInt16Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -868,7 +834,6 @@ func plusOneInt16Int64(num int16) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapInt16Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -891,7 +856,6 @@ func TestPmapInt16Int32(t *testing.T) {
 func plusOneInt16Int32(num int16) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapInt16Int8(t *testing.T) {
 	// Test : add 1 to the list
@@ -916,7 +880,6 @@ func plusOneInt16Int8(num int16) int8 {
 	return int8(num + 1)
 }
 
-
 func TestPmapInt16Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -939,7 +902,6 @@ func TestPmapInt16Uint(t *testing.T) {
 func plusOneInt16Uint(num int16) uint {
 	return uint(num + 1)
 }
-
 
 func TestPmapInt16Uint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -964,7 +926,6 @@ func plusOneInt16Uint64(num int16) uint64 {
 	return uint64(num + 1)
 }
 
-
 func TestPmapInt16Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -987,7 +948,6 @@ func TestPmapInt16Uint32(t *testing.T) {
 func plusOneInt16Uint32(num int16) uint32 {
 	return uint32(num + 1)
 }
-
 
 func TestPmapInt16Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1012,7 +972,6 @@ func plusOneInt16Uint16(num int16) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapInt16Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -1035,7 +994,6 @@ func TestPmapInt16Uint8(t *testing.T) {
 func plusOneInt16Uint8(num int16) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapInt16Str(t *testing.T) {
 	// Test : someLogic
@@ -1064,7 +1022,6 @@ func someLogicInt16Str(num int16) string {
 	}
 }
 
-
 func TestPmapInt16Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1092,7 +1049,6 @@ func someLogicInt16Bool(num int16) bool {
 	}
 }
 
-
 func TestPmapInt8Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1115,7 +1071,6 @@ func TestPmapInt8Int(t *testing.T) {
 func plusOneInt8Int(num int8) int {
 	return int(num + 1)
 }
-
 
 func TestPmapInt8Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1140,7 +1095,6 @@ func plusOneInt8Int64(num int8) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapInt8Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -1163,7 +1117,6 @@ func TestPmapInt8Int32(t *testing.T) {
 func plusOneInt8Int32(num int8) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapInt8Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1188,7 +1141,6 @@ func plusOneInt8Int16(num int8) int16 {
 	return int16(num + 1)
 }
 
-
 func TestPmapInt8Uint(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint{2, 3, 4}
@@ -1211,7 +1163,6 @@ func TestPmapInt8Uint(t *testing.T) {
 func plusOneInt8Uint(num int8) uint {
 	return uint(num + 1)
 }
-
 
 func TestPmapInt8Uint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1236,7 +1187,6 @@ func plusOneInt8Uint64(num int8) uint64 {
 	return uint64(num + 1)
 }
 
-
 func TestPmapInt8Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -1259,7 +1209,6 @@ func TestPmapInt8Uint32(t *testing.T) {
 func plusOneInt8Uint32(num int8) uint32 {
 	return uint32(num + 1)
 }
-
 
 func TestPmapInt8Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1284,7 +1233,6 @@ func plusOneInt8Uint16(num int8) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapInt8Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -1307,7 +1255,6 @@ func TestPmapInt8Uint8(t *testing.T) {
 func plusOneInt8Uint8(num int8) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapInt8Str(t *testing.T) {
 	// Test : someLogic
@@ -1336,7 +1283,6 @@ func someLogicInt8Str(num int8) string {
 	}
 }
 
-
 func TestPmapInt8Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1364,7 +1310,6 @@ func someLogicInt8Bool(num int8) bool {
 	}
 }
 
-
 func TestPmapUintInt(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1387,7 +1332,6 @@ func TestPmapUintInt(t *testing.T) {
 func plusOneUintInt(num uint) int {
 	return int(num + 1)
 }
-
 
 func TestPmapUintInt64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1412,7 +1356,6 @@ func plusOneUintInt64(num uint) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapUintInt32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -1435,7 +1378,6 @@ func TestPmapUintInt32(t *testing.T) {
 func plusOneUintInt32(num uint) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapUintInt16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1460,7 +1402,6 @@ func plusOneUintInt16(num uint) int16 {
 	return int16(num + 1)
 }
 
-
 func TestPmapUintInt8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -1483,7 +1424,6 @@ func TestPmapUintInt8(t *testing.T) {
 func plusOneUintInt8(num uint) int8 {
 	return int8(num + 1)
 }
-
 
 func TestPmapUintUint64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1508,7 +1448,6 @@ func plusOneUintUint64(num uint) uint64 {
 	return uint64(num + 1)
 }
 
-
 func TestPmapUintUint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -1531,7 +1470,6 @@ func TestPmapUintUint32(t *testing.T) {
 func plusOneUintUint32(num uint) uint32 {
 	return uint32(num + 1)
 }
-
 
 func TestPmapUintUint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1556,7 +1494,6 @@ func plusOneUintUint16(num uint) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapUintUint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -1579,7 +1516,6 @@ func TestPmapUintUint8(t *testing.T) {
 func plusOneUintUint8(num uint) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapUintStr(t *testing.T) {
 	// Test : someLogic
@@ -1608,7 +1544,6 @@ func someLogicUintStr(num uint) string {
 	}
 }
 
-
 func TestPmapUintBool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1636,7 +1571,6 @@ func someLogicUintBool(num uint) bool {
 	}
 }
 
-
 func TestPmapUint64Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1659,7 +1593,6 @@ func TestPmapUint64Int(t *testing.T) {
 func plusOneUint64Int(num uint64) int {
 	return int(num + 1)
 }
-
 
 func TestPmapUint64Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1684,7 +1617,6 @@ func plusOneUint64Int64(num uint64) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapUint64Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -1707,7 +1639,6 @@ func TestPmapUint64Int32(t *testing.T) {
 func plusOneUint64Int32(num uint64) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapUint64Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1732,7 +1663,6 @@ func plusOneUint64Int16(num uint64) int16 {
 	return int16(num + 1)
 }
 
-
 func TestPmapUint64Int8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -1755,7 +1685,6 @@ func TestPmapUint64Int8(t *testing.T) {
 func plusOneUint64Int8(num uint64) int8 {
 	return int8(num + 1)
 }
-
 
 func TestPmapUint64Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -1780,7 +1709,6 @@ func plusOneUint64Uint(num uint64) uint {
 	return uint(num + 1)
 }
 
-
 func TestPmapUint64Uint32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint32{2, 3, 4}
@@ -1803,7 +1731,6 @@ func TestPmapUint64Uint32(t *testing.T) {
 func plusOneUint64Uint32(num uint64) uint32 {
 	return uint32(num + 1)
 }
-
 
 func TestPmapUint64Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -1828,7 +1755,6 @@ func plusOneUint64Uint16(num uint64) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapUint64Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -1851,7 +1777,6 @@ func TestPmapUint64Uint8(t *testing.T) {
 func plusOneUint64Uint8(num uint64) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapUint64Str(t *testing.T) {
 	// Test : someLogic
@@ -1880,7 +1805,6 @@ func someLogicUint64Str(num uint64) string {
 	}
 }
 
-
 func TestPmapUint64Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -1908,7 +1832,6 @@ func someLogicUint64Bool(num uint64) bool {
 	}
 }
 
-
 func TestPmapUint32Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1931,7 +1854,6 @@ func TestPmapUint32Int(t *testing.T) {
 func plusOneUint32Int(num uint32) int {
 	return int(num + 1)
 }
-
 
 func TestPmapUint32Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -1956,7 +1878,6 @@ func plusOneUint32Int64(num uint32) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapUint32Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -1979,7 +1900,6 @@ func TestPmapUint32Int32(t *testing.T) {
 func plusOneUint32Int32(num uint32) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapUint32Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -2004,7 +1924,6 @@ func plusOneUint32Int16(num uint32) int16 {
 	return int16(num + 1)
 }
 
-
 func TestPmapUint32Int8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -2027,7 +1946,6 @@ func TestPmapUint32Int8(t *testing.T) {
 func plusOneUint32Int8(num uint32) int8 {
 	return int8(num + 1)
 }
-
 
 func TestPmapUint32Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -2052,7 +1970,6 @@ func plusOneUint32Uint(num uint32) uint {
 	return uint(num + 1)
 }
 
-
 func TestPmapUint32Uint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -2075,7 +1992,6 @@ func TestPmapUint32Uint64(t *testing.T) {
 func plusOneUint32Uint64(num uint32) uint64 {
 	return uint64(num + 1)
 }
-
 
 func TestPmapUint32Uint16(t *testing.T) {
 	// Test : add 1 to the list
@@ -2100,7 +2016,6 @@ func plusOneUint32Uint16(num uint32) uint16 {
 	return uint16(num + 1)
 }
 
-
 func TestPmapUint32Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -2123,7 +2038,6 @@ func TestPmapUint32Uint8(t *testing.T) {
 func plusOneUint32Uint8(num uint32) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapUint32Str(t *testing.T) {
 	// Test : someLogic
@@ -2152,7 +2066,6 @@ func someLogicUint32Str(num uint32) string {
 	}
 }
 
-
 func TestPmapUint32Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -2180,7 +2093,6 @@ func someLogicUint32Bool(num uint32) bool {
 	}
 }
 
-
 func TestPmapUint16Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -2203,7 +2115,6 @@ func TestPmapUint16Int(t *testing.T) {
 func plusOneUint16Int(num uint16) int {
 	return int(num + 1)
 }
-
 
 func TestPmapUint16Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -2228,7 +2139,6 @@ func plusOneUint16Int64(num uint16) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapUint16Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -2251,7 +2161,6 @@ func TestPmapUint16Int32(t *testing.T) {
 func plusOneUint16Int32(num uint16) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapUint16Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -2276,7 +2185,6 @@ func plusOneUint16Int16(num uint16) int16 {
 	return int16(num + 1)
 }
 
-
 func TestPmapUint16Int8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -2299,7 +2207,6 @@ func TestPmapUint16Int8(t *testing.T) {
 func plusOneUint16Int8(num uint16) int8 {
 	return int8(num + 1)
 }
-
 
 func TestPmapUint16Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -2324,7 +2231,6 @@ func plusOneUint16Uint(num uint16) uint {
 	return uint(num + 1)
 }
 
-
 func TestPmapUint16Uint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -2347,7 +2253,6 @@ func TestPmapUint16Uint64(t *testing.T) {
 func plusOneUint16Uint64(num uint16) uint64 {
 	return uint64(num + 1)
 }
-
 
 func TestPmapUint16Uint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -2372,7 +2277,6 @@ func plusOneUint16Uint32(num uint16) uint32 {
 	return uint32(num + 1)
 }
 
-
 func TestPmapUint16Uint8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint8{2, 3, 4}
@@ -2395,7 +2299,6 @@ func TestPmapUint16Uint8(t *testing.T) {
 func plusOneUint16Uint8(num uint16) uint8 {
 	return uint8(num + 1)
 }
-
 
 func TestPmapUint16Str(t *testing.T) {
 	// Test : someLogic
@@ -2424,7 +2327,6 @@ func someLogicUint16Str(num uint16) string {
 	}
 }
 
-
 func TestPmapUint16Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -2452,7 +2354,6 @@ func someLogicUint16Bool(num uint16) bool {
 	}
 }
 
-
 func TestPmapUint8Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -2475,7 +2376,6 @@ func TestPmapUint8Int(t *testing.T) {
 func plusOneUint8Int(num uint8) int {
 	return int(num + 1)
 }
-
 
 func TestPmapUint8Int64(t *testing.T) {
 	// Test : add 1 to the list
@@ -2500,7 +2400,6 @@ func plusOneUint8Int64(num uint8) int64 {
 	return int64(num + 1)
 }
 
-
 func TestPmapUint8Int32(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int32{2, 3, 4}
@@ -2523,7 +2422,6 @@ func TestPmapUint8Int32(t *testing.T) {
 func plusOneUint8Int32(num uint8) int32 {
 	return int32(num + 1)
 }
-
 
 func TestPmapUint8Int16(t *testing.T) {
 	// Test : add 1 to the list
@@ -2548,7 +2446,6 @@ func plusOneUint8Int16(num uint8) int16 {
 	return int16(num + 1)
 }
 
-
 func TestPmapUint8Int8(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int8{2, 3, 4}
@@ -2571,7 +2468,6 @@ func TestPmapUint8Int8(t *testing.T) {
 func plusOneUint8Int8(num uint8) int8 {
 	return int8(num + 1)
 }
-
 
 func TestPmapUint8Uint(t *testing.T) {
 	// Test : add 1 to the list
@@ -2596,7 +2492,6 @@ func plusOneUint8Uint(num uint8) uint {
 	return uint(num + 1)
 }
 
-
 func TestPmapUint8Uint64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint64{2, 3, 4}
@@ -2619,7 +2514,6 @@ func TestPmapUint8Uint64(t *testing.T) {
 func plusOneUint8Uint64(num uint8) uint64 {
 	return uint64(num + 1)
 }
-
 
 func TestPmapUint8Uint32(t *testing.T) {
 	// Test : add 1 to the list
@@ -2644,7 +2538,6 @@ func plusOneUint8Uint32(num uint8) uint32 {
 	return uint32(num + 1)
 }
 
-
 func TestPmapUint8Uint16(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []uint16{2, 3, 4}
@@ -2667,7 +2560,6 @@ func TestPmapUint8Uint16(t *testing.T) {
 func plusOneUint8Uint16(num uint8) uint16 {
 	return uint16(num + 1)
 }
-
 
 func TestPmapUint8Str(t *testing.T) {
 	// Test : someLogic
@@ -2696,7 +2588,6 @@ func someLogicUint8Str(num uint8) string {
 	}
 }
 
-
 func TestPmapUint8Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
@@ -2723,7 +2614,6 @@ func someLogicUint8Bool(num uint8) bool {
 		return false
 	}
 }
-
 
 func TestPmapStrInt(t *testing.T) {
 	// Test : someLogic
@@ -2752,7 +2642,6 @@ func someLogicStrInt(num string) int {
 	}
 }
 
-
 func TestPmapStrInt64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int64{10}
@@ -2779,7 +2668,6 @@ func someLogicStrInt64(num string) int64 {
 		return 0
 	}
 }
-
 
 func TestPmapStrInt32(t *testing.T) {
 	// Test : someLogic
@@ -2808,7 +2696,6 @@ func someLogicStrInt32(num string) int32 {
 	}
 }
 
-
 func TestPmapStrInt16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int16{10}
@@ -2835,7 +2722,6 @@ func someLogicStrInt16(num string) int16 {
 		return 0
 	}
 }
-
 
 func TestPmapStrInt8(t *testing.T) {
 	// Test : someLogic
@@ -2864,7 +2750,6 @@ func someLogicStrInt8(num string) int8 {
 	}
 }
 
-
 func TestPmapStrUint(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint{10}
@@ -2891,7 +2776,6 @@ func someLogicStrUint(num string) uint {
 		return 0
 	}
 }
-
 
 func TestPmapStrUint64(t *testing.T) {
 	// Test : someLogic
@@ -2920,7 +2804,6 @@ func someLogicStrUint64(num string) uint64 {
 	}
 }
 
-
 func TestPmapStrUint32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint32{10}
@@ -2947,7 +2830,6 @@ func someLogicStrUint32(num string) uint32 {
 		return 0
 	}
 }
-
 
 func TestPmapStrUint16(t *testing.T) {
 	// Test : someLogic
@@ -2976,7 +2858,6 @@ func someLogicStrUint16(num string) uint16 {
 	}
 }
 
-
 func TestPmapStrUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10}
@@ -3003,7 +2884,6 @@ func someLogicStrUint8(num string) uint8 {
 		return 0
 	}
 }
-
 
 func TestPmapStrBool(t *testing.T) {
 	// Test : someLogic
@@ -3032,7 +2912,6 @@ func someLogicStrBool(num string) bool {
 	}
 }
 
-
 func TestPmapBoolInt(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int{10, 0}
@@ -3059,7 +2938,6 @@ func someLogicBoolInt(num bool) int {
 		return 0
 	}
 }
-
 
 func TestPmapBoolInt64(t *testing.T) {
 	// Test : someLogic
@@ -3088,7 +2966,6 @@ func someLogicBoolInt64(num bool) int64 {
 	}
 }
 
-
 func TestPmapBoolInt32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int32{10, 0}
@@ -3115,7 +2992,6 @@ func someLogicBoolInt32(num bool) int32 {
 		return 0
 	}
 }
-
 
 func TestPmapBoolInt16(t *testing.T) {
 	// Test : someLogic
@@ -3144,7 +3020,6 @@ func someLogicBoolInt16(num bool) int16 {
 	}
 }
 
-
 func TestPmapBoolInt8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int8{10, 0}
@@ -3171,7 +3046,6 @@ func someLogicBoolInt8(num bool) int8 {
 		return 0
 	}
 }
-
 
 func TestPmapBoolUint(t *testing.T) {
 	// Test : someLogic
@@ -3200,7 +3074,6 @@ func someLogicBoolUint(num bool) uint {
 	}
 }
 
-
 func TestPmapBoolUint64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint64{10, 0}
@@ -3227,7 +3100,6 @@ func someLogicBoolUint64(num bool) uint64 {
 		return 0
 	}
 }
-
 
 func TestPmapBoolUint32(t *testing.T) {
 	// Test : someLogic
@@ -3256,7 +3128,6 @@ func someLogicBoolUint32(num bool) uint32 {
 	}
 }
 
-
 func TestPmapBoolUint16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint16{10, 0}
@@ -3284,7 +3155,6 @@ func someLogicBoolUint16(num bool) uint16 {
 	}
 }
 
-
 func TestPmapBoolUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10, 0}
@@ -3311,7 +3181,6 @@ func someLogicBoolUint8(num bool) uint8 {
 		return 0
 	}
 }
-
 
 func TestPmapBoolStr(t *testing.T) {
 	// Test : someLogic
