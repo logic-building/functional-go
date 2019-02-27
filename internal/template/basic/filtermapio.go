@@ -1,5 +1,6 @@
 package basic
 
+// FilterMapIO is template to generate itself for different combination of data type.
 func FilterMapIO() string {
 	return `
 // FilterMap<FINPUT_TYPE><FOUTPUT_TYPE> filters given list, then apply function(2nd argument) on each item in the list and returns a new list

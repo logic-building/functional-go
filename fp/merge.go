@@ -1,4 +1,4 @@
-package fp 
+package fp
 
 // MergeInt takes two input: map[int]int and map[int]int and merge two maps and returns a new map[int]int.
 func MergeInt(map1, map2 map[int]int) map[int]int {

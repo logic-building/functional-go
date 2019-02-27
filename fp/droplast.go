@@ -1,4 +1,4 @@
-package fp 
+package fp
 
 // DropLastInt drops last item from the list and returns new list.
 // Returns empty list if there is only one item in the list or list empty

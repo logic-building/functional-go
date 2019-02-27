@@ -1,4 +1,4 @@
-package fp 
+package fp
 
 func ZipInt(list1 []int, list2 []int) map[int]int {
 	newMap := make(map[int]int)

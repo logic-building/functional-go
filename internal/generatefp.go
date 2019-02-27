@@ -144,7 +144,7 @@ func main() {
 func generateFpCode(fpCodeList []fpCode) {
 
 	for _, fpCode := range fpCodeList {
-		codeTemplate := "package fp \n"
+		codeTemplate := "package fp\n"
 
 		if strings.Contains(strings.ToLower(fpCode.function), "pmap") {
 			codeTemplate += "\n" + `import "sync"` + "\n"

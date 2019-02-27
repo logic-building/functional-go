@@ -1,5 +1,6 @@
 package basic
 
+// PMapIONumber is template to generate itself for different combination of data type.
 func PMapIONumber() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -27,6 +28,7 @@ func plusOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 `
 }
 
+// PMapIOStrNumber is template to generate itself for different combination of data type.
 func PMapIOStrNumber() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -58,6 +60,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 `
 }
 
+// PMapIONumberStr is template to generate itself for different combination of data type.
 func PMapIONumberStr() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -89,6 +92,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 `
 }
 
+// PMapIONumberBool is template to generate itself for different combination of data type.
 func PMapIONumberBool() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -120,6 +124,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 `
 }
 
+// PMapIOStrBool is template to generate itself for different combination of data type.
 func PMapIOStrBool() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -151,6 +156,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 `
 }
 
+// PMapIOBoolNumber is template to generate itself for different combination of data type.
 func PMapIOBoolNumber() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -182,6 +188,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 `
 }
 
+// PMapIOBoolStr is template to generate itself for different combination of data type.
 func PMapIOBoolStr() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {

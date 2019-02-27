@@ -1,5 +1,6 @@
 package basic
 
+// MapIONumber is template to generate itself for different combination of data type.
 func MapIONumber() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -23,6 +24,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 `
 }
 
+// MapIOStrNumber is template to generate itself for different combination of data type.
 func MapIOStrNumber() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -46,6 +48,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 `
 }
 
+// MapIONumberStr is template to generate itself for different combination of data type.
 func MapIONumberStr() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -69,6 +72,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 `
 }
 
+// MapIONumberBool is template to generate itself for different combination of data type.
 func MapIONumberBool() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -92,6 +96,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 `
 }
 
+// MapIOStrBool is template to generate itself for different combination of data type.
 func MapIOStrBool() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -115,6 +120,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 `
 }
 
+// MapIOBoolNumber is template to generate itself for different combination of data type.
 func MapIOBoolNumber() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -138,6 +144,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 `
 }
 
+// MapIOBoolStr is template to generate itself for different combination of data type.
 func MapIOBoolStr() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {

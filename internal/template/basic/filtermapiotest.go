@@ -1,5 +1,6 @@
 package basic
 
+// FilterMapIONumber is template to generate itself for different combination of data type.
 func FilterMapIONumber() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -26,6 +27,7 @@ func notOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) bool {
 `
 }
 
+// FilterMapIOStrNumber is template to generate itself for different combination of data type.
 func FilterMapIOStrNumber() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -52,6 +54,7 @@ func notOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) bool {
 `
 }
 
+// FilterMapIONumberStr is template to generate itself for different combination of data type.
 func FilterMapIONumberStr() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -78,6 +81,7 @@ func notOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) bool {
 `
 }
 
+// FilterMapIONumberBool is template to generate itself for different combination of data type.
 func FilterMapIONumberBool() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -104,6 +108,7 @@ func notOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) bool {
 `
 }
 
+// FilterMapIOStrBool is template to generate itself for different combination of data type.
 func FilterMapIOStrBool() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -130,6 +135,7 @@ func notOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) bool {
 `
 }
 
+// FilterMapIOBoolNumber is template to generate itself for different combination of data type.
 func FilterMapIOBoolNumber() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
@@ -156,6 +162,7 @@ func notOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) bool {
 `
 }
 
+// FilterMapIOBoolStr is template to generate itself for different combination of data type.
 func FilterMapIOBoolStr() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {

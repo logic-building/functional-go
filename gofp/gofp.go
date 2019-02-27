@@ -310,7 +310,11 @@ func generateFPCodeII(pkg, dataTypes string) (string, error) {
 			}
 
 			r := strings.NewReplacer("<FINPUT_TYPE1>", removeFirstPartOfDot(fInputType1), "<FINPUT_TYPE2>", removeFirstPartOfDot(fInputType2), "<INPUT_TYPE1>", inputType1, "<INPUT_TYPE2>", inputType2)
+
 			template += basic.Merge()
+			template = r.Replace(template)
+
+			template += basic.Zip()
 			template = r.Replace(template)
 		}
 	}
@@ -364,6 +368,8 @@ func quoteForTheDay() string {
 		"When you come to a point where you have no need to impress anybody, your freedom will begin",
 		"Ritualistic worship, chanting and meditation are done with the body, voice and the mind: they excel each other in the ascending order",
 		"Uttering the sacred word, either in a loud or low tone is preferable to chants in praise of the Supreme. Mental contemplation is superior to both",
+		"When one learns to turn the mind away from material allurements and renounces the desires of the senses, such a person comes in touch with the inner bliss of the soul",
+		"When we decide that God is ours and the whole world is His, then our consciousness transforms from seeking self-enjoyment to serving the Lord with everything that we have",
 	}
 
 	s := rand.NewSource(time.Now().Unix())

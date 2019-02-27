@@ -1,4 +1,4 @@
-package fp 
+package fp
 
 // FilterMapIntInt64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
