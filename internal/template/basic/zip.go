@@ -1,5 +1,6 @@
 package basic
 
+// Zip is template to generate itself for different combination of data type.
 func Zip() string {
 	return `
 func Zip<FINPUT_TYPE1><FINPUT_TYPE2>(list1 []<INPUT_TYPE1>, list2 []<INPUT_TYPE2>) map[<INPUT_TYPE1>]<INPUT_TYPE2> {

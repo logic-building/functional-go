@@ -1,5 +1,6 @@
 package template
 
+// DropLast is template to generate itself for different combination of data type.
 func DropLast() string {
 	return `
 // DropLast<CONDITIONAL_TYPE> drops last item from the list and returns new list.

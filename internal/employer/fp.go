@@ -844,6 +844,28 @@ func Merge(map1, map2 map[Employer]Employer) map[Employer]Employer {
 	return newMap
 }
 
+func Zip(list1 []Employer, list2 []Employer) map[Employer]Employer {
+	newMap := make(map[Employer]Employer)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
+	}
+
+	return newMap
+}
+
 // MergeEmployerEmployee takes two input: map[Employer]employee.Employee and map[Employer]employee.Employee and merge two maps and returns a new map[Employer]employee.Employee.
 func MergeEmployerEmployee(map1, map2 map[Employer]employee.Employee) map[Employer]employee.Employee {
 	if map1 == nil && map2 == nil {
@@ -872,6 +894,28 @@ func MergeEmployerEmployee(map1, map2 map[Employer]employee.Employee) map[Employ
 
 	for k, v := range map2 {
 		newMap[k] = v
+	}
+
+	return newMap
+}
+
+func ZipEmployerEmployee(list1 []Employer, list2 []employee.Employee) map[Employer]employee.Employee {
+	newMap := make(map[Employer]employee.Employee)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
 	}
 
 	return newMap
@@ -910,6 +954,28 @@ func MergeEmployerInt(map1, map2 map[Employer]int) map[Employer]int {
 	return newMap
 }
 
+func ZipEmployerInt(list1 []Employer, list2 []int) map[Employer]int {
+	newMap := make(map[Employer]int)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
+	}
+
+	return newMap
+}
+
 // MergeEmployeeEmployer takes two input: map[employee.Employee]Employer and map[employee.Employee]Employer and merge two maps and returns a new map[employee.Employee]Employer.
 func MergeEmployeeEmployer(map1, map2 map[employee.Employee]Employer) map[employee.Employee]Employer {
 	if map1 == nil && map2 == nil {
@@ -938,6 +1004,28 @@ func MergeEmployeeEmployer(map1, map2 map[employee.Employee]Employer) map[employ
 
 	for k, v := range map2 {
 		newMap[k] = v
+	}
+
+	return newMap
+}
+
+func ZipEmployeeEmployer(list1 []employee.Employee, list2 []Employer) map[employee.Employee]Employer {
+	newMap := make(map[employee.Employee]Employer)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
 	}
 
 	return newMap
@@ -976,6 +1064,28 @@ func MergeEmployee(map1, map2 map[employee.Employee]employee.Employee) map[emplo
 	return newMap
 }
 
+func ZipEmployee(list1 []employee.Employee, list2 []employee.Employee) map[employee.Employee]employee.Employee {
+	newMap := make(map[employee.Employee]employee.Employee)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
+	}
+
+	return newMap
+}
+
 // MergeEmployeeInt takes two input: map[employee.Employee]int and map[employee.Employee]int and merge two maps and returns a new map[employee.Employee]int.
 func MergeEmployeeInt(map1, map2 map[employee.Employee]int) map[employee.Employee]int {
 	if map1 == nil && map2 == nil {
@@ -1004,6 +1114,28 @@ func MergeEmployeeInt(map1, map2 map[employee.Employee]int) map[employee.Employe
 
 	for k, v := range map2 {
 		newMap[k] = v
+	}
+
+	return newMap
+}
+
+func ZipEmployeeInt(list1 []employee.Employee, list2 []int) map[employee.Employee]int {
+	newMap := make(map[employee.Employee]int)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
 	}
 
 	return newMap
@@ -1042,6 +1174,28 @@ func MergeIntEmployer(map1, map2 map[int]Employer) map[int]Employer {
 	return newMap
 }
 
+func ZipIntEmployer(list1 []int, list2 []Employer) map[int]Employer {
+	newMap := make(map[int]Employer)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
+	}
+
+	return newMap
+}
+
 // MergeIntEmployee takes two input: map[int]employee.Employee and map[int]employee.Employee and merge two maps and returns a new map[int]employee.Employee.
 func MergeIntEmployee(map1, map2 map[int]employee.Employee) map[int]employee.Employee {
 	if map1 == nil && map2 == nil {
@@ -1070,6 +1224,28 @@ func MergeIntEmployee(map1, map2 map[int]employee.Employee) map[int]employee.Emp
 
 	for k, v := range map2 {
 		newMap[k] = v
+	}
+
+	return newMap
+}
+
+func ZipIntEmployee(list1 []int, list2 []employee.Employee) map[int]employee.Employee {
+	newMap := make(map[int]employee.Employee)
+
+	len1 := len(list1)
+	len2 := len(list2)
+
+	if len1 == 0 || len2 == 0 {
+		return newMap
+	}
+
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	for i := 0; i < minLen; i++ {
+		newMap[list1[i]] = list2[i]
 	}
 
 	return newMap

@@ -1,5 +1,6 @@
 package basic
 
+// ZIPNumberToNumber is template to generate itself for different combination of data type.
 func ZIPNumberToNumber() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -87,6 +88,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPNumberToStr is template to generate itself for different combination of data type.
 func ZIPNumberToStr() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -174,6 +176,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPStrToNumber is template to generate itself for different combination of data type.
 func ZIPStrToNumber() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -261,6 +264,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPStrToStr is template to generate itself for different combination of data type.
 func ZIPStrToStr() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -348,6 +352,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPStrToBool is template to generate itself for different combination of data type.
 func ZIPStrToBool() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -435,6 +440,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPBoolToStr is template to generate itself for different combination of data type.
 func ZIPBoolToStr() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -522,6 +528,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPNumberToBool is template to generate itself for different combination of data type.
 func ZIPNumberToBool() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -609,6 +616,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPBoolToNumber is template to generate itself for different combination of data type.
 func ZIPBoolToNumber() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -696,6 +704,7 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// ZIPBoolToBool is template to generate itself for different combination of data type.
 func ZIPBoolToBool() string {
 	return `
 func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {

@@ -1,5 +1,6 @@
 package basic
 
+// MergeTest is template to generate itself for different combination of data type.
 func MergeTest() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -62,6 +63,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestNumbersToString is template to generate itself for different combination of data type.
 func MergeTestNumbersToString() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -124,6 +126,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestStringToNumbers is template to generate itself for different combination of data type.
 func MergeTestStringToNumbers() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -186,6 +189,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestStringToBool is template to generate itself for different combination of data type.
 func MergeTestStringToBool() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -248,6 +252,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestBoolToString is template to generate itself for different combination of data type.
 func MergeTestBoolToString() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -310,6 +315,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestNumberToBool is template to generate itself for different combination of data type.
 func MergeTestNumberToBool() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -372,6 +378,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestBoolToNumber is template to generate itself for different combination of data type.
 func MergeTestBoolToNumber() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -434,6 +441,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestBoolToBool is template to generate itself for different combination of data type.
 func MergeTestBoolToBool() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -496,6 +504,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
+// MergeTestStrToStr is template to generate itself for different combination of data type.
 func MergeTestStrToStr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {

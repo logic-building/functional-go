@@ -1,5 +1,6 @@
 package basic
 
+// DropLastTest is template to generate itself for different combination of data type.
 func DropLastTest() string {
 	return `
 func TestDropLast<FTYPE>(t *testing.T) {
@@ -40,6 +41,7 @@ func TestDropLast<FTYPE>(t *testing.T) {
 }`
 }
 
+// DropLastBoolTest is template to generate itself for different combination of data type.
 func DropLastBoolTest() string {
 	return `
 func TestDropLast<FTYPE>(t *testing.T) {

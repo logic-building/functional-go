@@ -1,4 +1,4 @@
-package fp 
+package fp
 
 func MapIntInt64(f func(int) int64, list []int) []int64 {
 	if f == nil {
