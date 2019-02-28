@@ -305,7 +305,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 	if !reflect.DeepEqual(expected, actual) {
 		t.Errorf("TestMerge<FINPUT_TYPE1><FINPUT_TYPE2> failed. Expected=%v, actual=%v", expected, actual)
 	}
-	
+
 	actual = Merge<FINPUT_TYPE1><FINPUT_TYPE2>(nil, nil)
 
 	if len(actual) != 0 {

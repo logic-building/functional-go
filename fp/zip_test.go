@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-
 func TestZipInt(t *testing.T) {
 
 	list1 := []int{1, 2, 3, 4}

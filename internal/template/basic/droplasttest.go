@@ -38,7 +38,8 @@ func TestDropLast<FTYPE>(t *testing.T) {
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
-}`
+}
+`
 }
 
 // DropLastBoolTest is template to generate itself for different combination of data type.
@@ -79,5 +80,6 @@ func TestDropLast<FTYPE>(t *testing.T) {
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
-}`
+}
+`
 }

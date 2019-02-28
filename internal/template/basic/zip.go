@@ -3,7 +3,7 @@ package basic
 // Zip is template to generate itself for different combination of data type.
 func Zip() string {
 	return `
-// Zip<FINPUT_TYPE1><FINPUT_TYPE2> takes two inputs: first list of type: []<INPUT_TYPE1>, second list of type: []<INPUT_TYPE2>. 
+// Zip<FINPUT_TYPE1><FINPUT_TYPE2> takes two inputs: first list of type: []<INPUT_TYPE1>, second list of type: []<INPUT_TYPE2>.
 // Then it merges two list and returns a new map of type: map[<INPUT_TYPE1>]<INPUT_TYPE2>
 func Zip<FINPUT_TYPE1><FINPUT_TYPE2>(list1 []<INPUT_TYPE1>, list2 []<INPUT_TYPE2>) map[<INPUT_TYPE1>]<INPUT_TYPE2> {
 	newMap := make(map[<INPUT_TYPE1>]<INPUT_TYPE2>)

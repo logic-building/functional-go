@@ -14,5 +14,6 @@ func Remove<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
 		}
 	}
 	return newList
-}`
+}
+`
 }

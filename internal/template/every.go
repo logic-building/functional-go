@@ -13,5 +13,6 @@ func Every<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) bool {
 		}
 	}
 	return true
-}`
+}
+`
 }

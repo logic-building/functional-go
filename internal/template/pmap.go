@@ -32,5 +32,6 @@ func PMap<CONDITIONAL_TYPE>(f func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {
 		}
 	}
 	return newList
-}`
+}
+`
 }

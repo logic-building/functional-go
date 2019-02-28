@@ -5,11 +5,10 @@ import (
 	"testing"
 )
 
-
 func TestFilterMapIntInt64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapIntInt64(notOneIntInt64,plusOneIntInt64, []int{1, 2, 3})
+	newList := FilterMapIntInt64(notOneIntInt64, plusOneIntInt64, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntInt64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -31,7 +30,7 @@ func notOneIntInt64(num int) bool {
 func TestFilterMapIntInt32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapIntInt32(notOneIntInt32,plusOneIntInt32, []int{1, 2, 3})
+	newList := FilterMapIntInt32(notOneIntInt32, plusOneIntInt32, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntInt32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -53,7 +52,7 @@ func notOneIntInt32(num int) bool {
 func TestFilterMapIntInt16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapIntInt16(notOneIntInt16,plusOneIntInt16, []int{1, 2, 3})
+	newList := FilterMapIntInt16(notOneIntInt16, plusOneIntInt16, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntInt16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -75,7 +74,7 @@ func notOneIntInt16(num int) bool {
 func TestFilterMapIntInt8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapIntInt8(notOneIntInt8,plusOneIntInt8, []int{1, 2, 3})
+	newList := FilterMapIntInt8(notOneIntInt8, plusOneIntInt8, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntInt8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -97,7 +96,7 @@ func notOneIntInt8(num int) bool {
 func TestFilterMapIntUint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapIntUint(notOneIntUint,plusOneIntUint, []int{1, 2, 3})
+	newList := FilterMapIntUint(notOneIntUint, plusOneIntUint, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntUint failed. expected=%v, actual=%v", expectedList, newList)
@@ -119,7 +118,7 @@ func notOneIntUint(num int) bool {
 func TestFilterMapIntUint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapIntUint64(notOneIntUint64,plusOneIntUint64, []int{1, 2, 3})
+	newList := FilterMapIntUint64(notOneIntUint64, plusOneIntUint64, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntUint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -141,7 +140,7 @@ func notOneIntUint64(num int) bool {
 func TestFilterMapIntUint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapIntUint32(notOneIntUint32,plusOneIntUint32, []int{1, 2, 3})
+	newList := FilterMapIntUint32(notOneIntUint32, plusOneIntUint32, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntUint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -163,7 +162,7 @@ func notOneIntUint32(num int) bool {
 func TestFilterMapIntUint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapIntUint16(notOneIntUint16,plusOneIntUint16, []int{1, 2, 3})
+	newList := FilterMapIntUint16(notOneIntUint16, plusOneIntUint16, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntUint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -185,7 +184,7 @@ func notOneIntUint16(num int) bool {
 func TestFilterMapIntUint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapIntUint8(notOneIntUint8,plusOneIntUint8, []int{1, 2, 3})
+	newList := FilterMapIntUint8(notOneIntUint8, plusOneIntUint8, []int{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntUint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -207,7 +206,7 @@ func notOneIntUint8(num int) bool {
 func TestFilterMapIntStr(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapIntStr(notOneIntStr,someLogicIntStr, []int{1,10})
+	newList := FilterMapIntStr(notOneIntStr, someLogicIntStr, []int{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapIntStr failed. expected=%v, actual=%v", expectedList, newList)
@@ -229,7 +228,7 @@ func notOneIntStr(num int) bool {
 func TestFilterMapIntBool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapIntBool(notOneIntBool,someLogicIntBool, []int{1,10, 0})
+	newList := FilterMapIntBool(notOneIntBool, someLogicIntBool, []int{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapIntBool failed. expected=%v, actual=%v", expectedList, newList)
@@ -251,7 +250,7 @@ func notOneIntBool(num int) bool {
 func TestFilterMapInt64Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapInt64Int(notOneInt64Int,plusOneInt64Int, []int64{1, 2, 3})
+	newList := FilterMapInt64Int(notOneInt64Int, plusOneInt64Int, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -273,7 +272,7 @@ func notOneInt64Int(num int64) bool {
 func TestFilterMapInt64Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapInt64Int32(notOneInt64Int32,plusOneInt64Int32, []int64{1, 2, 3})
+	newList := FilterMapInt64Int32(notOneInt64Int32, plusOneInt64Int32, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Int32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -295,7 +294,7 @@ func notOneInt64Int32(num int64) bool {
 func TestFilterMapInt64Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapInt64Int16(notOneInt64Int16,plusOneInt64Int16, []int64{1, 2, 3})
+	newList := FilterMapInt64Int16(notOneInt64Int16, plusOneInt64Int16, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Int16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -317,7 +316,7 @@ func notOneInt64Int16(num int64) bool {
 func TestFilterMapInt64Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapInt64Int8(notOneInt64Int8,plusOneInt64Int8, []int64{1, 2, 3})
+	newList := FilterMapInt64Int8(notOneInt64Int8, plusOneInt64Int8, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Int8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -339,7 +338,7 @@ func notOneInt64Int8(num int64) bool {
 func TestFilterMapInt64Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapInt64Uint(notOneInt64Uint,plusOneInt64Uint, []int64{1, 2, 3})
+	newList := FilterMapInt64Uint(notOneInt64Uint, plusOneInt64Uint, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -361,7 +360,7 @@ func notOneInt64Uint(num int64) bool {
 func TestFilterMapInt64Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapInt64Uint64(notOneInt64Uint64,plusOneInt64Uint64, []int64{1, 2, 3})
+	newList := FilterMapInt64Uint64(notOneInt64Uint64, plusOneInt64Uint64, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Uint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -383,7 +382,7 @@ func notOneInt64Uint64(num int64) bool {
 func TestFilterMapInt64Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapInt64Uint32(notOneInt64Uint32,plusOneInt64Uint32, []int64{1, 2, 3})
+	newList := FilterMapInt64Uint32(notOneInt64Uint32, plusOneInt64Uint32, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Uint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -405,7 +404,7 @@ func notOneInt64Uint32(num int64) bool {
 func TestFilterMapInt64Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapInt64Uint16(notOneInt64Uint16,plusOneInt64Uint16, []int64{1, 2, 3})
+	newList := FilterMapInt64Uint16(notOneInt64Uint16, plusOneInt64Uint16, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Uint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -427,7 +426,7 @@ func notOneInt64Uint16(num int64) bool {
 func TestFilterMapInt64Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapInt64Uint8(notOneInt64Uint8,plusOneInt64Uint8, []int64{1, 2, 3})
+	newList := FilterMapInt64Uint8(notOneInt64Uint8, plusOneInt64Uint8, []int64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Uint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -449,7 +448,7 @@ func notOneInt64Uint8(num int64) bool {
 func TestFilterMapInt64Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapInt64Str(notOneInt64Str,someLogicInt64Str, []int64{1,10})
+	newList := FilterMapInt64Str(notOneInt64Str, someLogicInt64Str, []int64{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapInt64Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -471,7 +470,7 @@ func notOneInt64Str(num int64) bool {
 func TestFilterMapInt64Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapInt64Bool(notOneInt64Bool,someLogicInt64Bool, []int64{1,10, 0})
+	newList := FilterMapInt64Bool(notOneInt64Bool, someLogicInt64Bool, []int64{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt64Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -493,7 +492,7 @@ func notOneInt64Bool(num int64) bool {
 func TestFilterMapInt32Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapInt32Int(notOneInt32Int,plusOneInt32Int, []int32{1, 2, 3})
+	newList := FilterMapInt32Int(notOneInt32Int, plusOneInt32Int, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -515,7 +514,7 @@ func notOneInt32Int(num int32) bool {
 func TestFilterMapInt32Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapInt32Int64(notOneInt32Int64,plusOneInt32Int64, []int32{1, 2, 3})
+	newList := FilterMapInt32Int64(notOneInt32Int64, plusOneInt32Int64, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Int64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -537,7 +536,7 @@ func notOneInt32Int64(num int32) bool {
 func TestFilterMapInt32Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapInt32Int16(notOneInt32Int16,plusOneInt32Int16, []int32{1, 2, 3})
+	newList := FilterMapInt32Int16(notOneInt32Int16, plusOneInt32Int16, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Int16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -559,7 +558,7 @@ func notOneInt32Int16(num int32) bool {
 func TestFilterMapInt32Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapInt32Int8(notOneInt32Int8,plusOneInt32Int8, []int32{1, 2, 3})
+	newList := FilterMapInt32Int8(notOneInt32Int8, plusOneInt32Int8, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Int8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -581,7 +580,7 @@ func notOneInt32Int8(num int32) bool {
 func TestFilterMapInt32Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapInt32Uint(notOneInt32Uint,plusOneInt32Uint, []int32{1, 2, 3})
+	newList := FilterMapInt32Uint(notOneInt32Uint, plusOneInt32Uint, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -603,7 +602,7 @@ func notOneInt32Uint(num int32) bool {
 func TestFilterMapInt32Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapInt32Uint64(notOneInt32Uint64,plusOneInt32Uint64, []int32{1, 2, 3})
+	newList := FilterMapInt32Uint64(notOneInt32Uint64, plusOneInt32Uint64, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Uint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -625,7 +624,7 @@ func notOneInt32Uint64(num int32) bool {
 func TestFilterMapInt32Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapInt32Uint32(notOneInt32Uint32,plusOneInt32Uint32, []int32{1, 2, 3})
+	newList := FilterMapInt32Uint32(notOneInt32Uint32, plusOneInt32Uint32, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Uint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -647,7 +646,7 @@ func notOneInt32Uint32(num int32) bool {
 func TestFilterMapInt32Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapInt32Uint16(notOneInt32Uint16,plusOneInt32Uint16, []int32{1, 2, 3})
+	newList := FilterMapInt32Uint16(notOneInt32Uint16, plusOneInt32Uint16, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Uint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -669,7 +668,7 @@ func notOneInt32Uint16(num int32) bool {
 func TestFilterMapInt32Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapInt32Uint8(notOneInt32Uint8,plusOneInt32Uint8, []int32{1, 2, 3})
+	newList := FilterMapInt32Uint8(notOneInt32Uint8, plusOneInt32Uint8, []int32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Uint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -691,7 +690,7 @@ func notOneInt32Uint8(num int32) bool {
 func TestFilterMapInt32Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapInt32Str(notOneInt32Str,someLogicInt32Str, []int32{1,10})
+	newList := FilterMapInt32Str(notOneInt32Str, someLogicInt32Str, []int32{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapInt32Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -713,7 +712,7 @@ func notOneInt32Str(num int32) bool {
 func TestFilterMapInt32Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapInt32Bool(notOneInt32Bool,someLogicInt32Bool, []int32{1,10, 0})
+	newList := FilterMapInt32Bool(notOneInt32Bool, someLogicInt32Bool, []int32{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt32Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -735,7 +734,7 @@ func notOneInt32Bool(num int32) bool {
 func TestFilterMapInt16Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapInt16Int(notOneInt16Int,plusOneInt16Int, []int16{1, 2, 3})
+	newList := FilterMapInt16Int(notOneInt16Int, plusOneInt16Int, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -757,7 +756,7 @@ func notOneInt16Int(num int16) bool {
 func TestFilterMapInt16Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapInt16Int64(notOneInt16Int64,plusOneInt16Int64, []int16{1, 2, 3})
+	newList := FilterMapInt16Int64(notOneInt16Int64, plusOneInt16Int64, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Int64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -779,7 +778,7 @@ func notOneInt16Int64(num int16) bool {
 func TestFilterMapInt16Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapInt16Int32(notOneInt16Int32,plusOneInt16Int32, []int16{1, 2, 3})
+	newList := FilterMapInt16Int32(notOneInt16Int32, plusOneInt16Int32, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Int32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -801,7 +800,7 @@ func notOneInt16Int32(num int16) bool {
 func TestFilterMapInt16Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapInt16Int8(notOneInt16Int8,plusOneInt16Int8, []int16{1, 2, 3})
+	newList := FilterMapInt16Int8(notOneInt16Int8, plusOneInt16Int8, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Int8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -823,7 +822,7 @@ func notOneInt16Int8(num int16) bool {
 func TestFilterMapInt16Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapInt16Uint(notOneInt16Uint,plusOneInt16Uint, []int16{1, 2, 3})
+	newList := FilterMapInt16Uint(notOneInt16Uint, plusOneInt16Uint, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -845,7 +844,7 @@ func notOneInt16Uint(num int16) bool {
 func TestFilterMapInt16Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapInt16Uint64(notOneInt16Uint64,plusOneInt16Uint64, []int16{1, 2, 3})
+	newList := FilterMapInt16Uint64(notOneInt16Uint64, plusOneInt16Uint64, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Uint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -867,7 +866,7 @@ func notOneInt16Uint64(num int16) bool {
 func TestFilterMapInt16Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapInt16Uint32(notOneInt16Uint32,plusOneInt16Uint32, []int16{1, 2, 3})
+	newList := FilterMapInt16Uint32(notOneInt16Uint32, plusOneInt16Uint32, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Uint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -889,7 +888,7 @@ func notOneInt16Uint32(num int16) bool {
 func TestFilterMapInt16Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapInt16Uint16(notOneInt16Uint16,plusOneInt16Uint16, []int16{1, 2, 3})
+	newList := FilterMapInt16Uint16(notOneInt16Uint16, plusOneInt16Uint16, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Uint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -911,7 +910,7 @@ func notOneInt16Uint16(num int16) bool {
 func TestFilterMapInt16Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapInt16Uint8(notOneInt16Uint8,plusOneInt16Uint8, []int16{1, 2, 3})
+	newList := FilterMapInt16Uint8(notOneInt16Uint8, plusOneInt16Uint8, []int16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Uint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -933,7 +932,7 @@ func notOneInt16Uint8(num int16) bool {
 func TestFilterMapInt16Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapInt16Str(notOneInt16Str,someLogicInt16Str, []int16{1,10})
+	newList := FilterMapInt16Str(notOneInt16Str, someLogicInt16Str, []int16{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapInt16Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -955,7 +954,7 @@ func notOneInt16Str(num int16) bool {
 func TestFilterMapInt16Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapInt16Bool(notOneInt16Bool,someLogicInt16Bool, []int16{1,10, 0})
+	newList := FilterMapInt16Bool(notOneInt16Bool, someLogicInt16Bool, []int16{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt16Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -977,7 +976,7 @@ func notOneInt16Bool(num int16) bool {
 func TestFilterMapInt8Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapInt8Int(notOneInt8Int,plusOneInt8Int, []int8{1, 2, 3})
+	newList := FilterMapInt8Int(notOneInt8Int, plusOneInt8Int, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -999,7 +998,7 @@ func notOneInt8Int(num int8) bool {
 func TestFilterMapInt8Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapInt8Int64(notOneInt8Int64,plusOneInt8Int64, []int8{1, 2, 3})
+	newList := FilterMapInt8Int64(notOneInt8Int64, plusOneInt8Int64, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Int64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1021,7 +1020,7 @@ func notOneInt8Int64(num int8) bool {
 func TestFilterMapInt8Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapInt8Int32(notOneInt8Int32,plusOneInt8Int32, []int8{1, 2, 3})
+	newList := FilterMapInt8Int32(notOneInt8Int32, plusOneInt8Int32, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Int32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1043,7 +1042,7 @@ func notOneInt8Int32(num int8) bool {
 func TestFilterMapInt8Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapInt8Int16(notOneInt8Int16,plusOneInt8Int16, []int8{1, 2, 3})
+	newList := FilterMapInt8Int16(notOneInt8Int16, plusOneInt8Int16, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Int16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1065,7 +1064,7 @@ func notOneInt8Int16(num int8) bool {
 func TestFilterMapInt8Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapInt8Uint(notOneInt8Uint,plusOneInt8Uint, []int8{1, 2, 3})
+	newList := FilterMapInt8Uint(notOneInt8Uint, plusOneInt8Uint, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -1087,7 +1086,7 @@ func notOneInt8Uint(num int8) bool {
 func TestFilterMapInt8Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapInt8Uint64(notOneInt8Uint64,plusOneInt8Uint64, []int8{1, 2, 3})
+	newList := FilterMapInt8Uint64(notOneInt8Uint64, plusOneInt8Uint64, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Uint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1109,7 +1108,7 @@ func notOneInt8Uint64(num int8) bool {
 func TestFilterMapInt8Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapInt8Uint32(notOneInt8Uint32,plusOneInt8Uint32, []int8{1, 2, 3})
+	newList := FilterMapInt8Uint32(notOneInt8Uint32, plusOneInt8Uint32, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Uint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1131,7 +1130,7 @@ func notOneInt8Uint32(num int8) bool {
 func TestFilterMapInt8Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapInt8Uint16(notOneInt8Uint16,plusOneInt8Uint16, []int8{1, 2, 3})
+	newList := FilterMapInt8Uint16(notOneInt8Uint16, plusOneInt8Uint16, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Uint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1153,7 +1152,7 @@ func notOneInt8Uint16(num int8) bool {
 func TestFilterMapInt8Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapInt8Uint8(notOneInt8Uint8,plusOneInt8Uint8, []int8{1, 2, 3})
+	newList := FilterMapInt8Uint8(notOneInt8Uint8, plusOneInt8Uint8, []int8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Uint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1175,7 +1174,7 @@ func notOneInt8Uint8(num int8) bool {
 func TestFilterMapInt8Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapInt8Str(notOneInt8Str,someLogicInt8Str, []int8{1,10})
+	newList := FilterMapInt8Str(notOneInt8Str, someLogicInt8Str, []int8{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapInt8Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -1197,7 +1196,7 @@ func notOneInt8Str(num int8) bool {
 func TestFilterMapInt8Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapInt8Bool(notOneInt8Bool,someLogicInt8Bool, []int8{1,10, 0})
+	newList := FilterMapInt8Bool(notOneInt8Bool, someLogicInt8Bool, []int8{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapInt8Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -1219,7 +1218,7 @@ func notOneInt8Bool(num int8) bool {
 func TestFilterMapUintInt(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapUintInt(notOneUintInt,plusOneUintInt, []uint{1, 2, 3})
+	newList := FilterMapUintInt(notOneUintInt, plusOneUintInt, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintInt failed. expected=%v, actual=%v", expectedList, newList)
@@ -1241,7 +1240,7 @@ func notOneUintInt(num uint) bool {
 func TestFilterMapUintInt64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapUintInt64(notOneUintInt64,plusOneUintInt64, []uint{1, 2, 3})
+	newList := FilterMapUintInt64(notOneUintInt64, plusOneUintInt64, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintInt64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1263,7 +1262,7 @@ func notOneUintInt64(num uint) bool {
 func TestFilterMapUintInt32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapUintInt32(notOneUintInt32,plusOneUintInt32, []uint{1, 2, 3})
+	newList := FilterMapUintInt32(notOneUintInt32, plusOneUintInt32, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintInt32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1285,7 +1284,7 @@ func notOneUintInt32(num uint) bool {
 func TestFilterMapUintInt16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapUintInt16(notOneUintInt16,plusOneUintInt16, []uint{1, 2, 3})
+	newList := FilterMapUintInt16(notOneUintInt16, plusOneUintInt16, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintInt16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1307,7 +1306,7 @@ func notOneUintInt16(num uint) bool {
 func TestFilterMapUintInt8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapUintInt8(notOneUintInt8,plusOneUintInt8, []uint{1, 2, 3})
+	newList := FilterMapUintInt8(notOneUintInt8, plusOneUintInt8, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintInt8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1329,7 +1328,7 @@ func notOneUintInt8(num uint) bool {
 func TestFilterMapUintUint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapUintUint64(notOneUintUint64,plusOneUintUint64, []uint{1, 2, 3})
+	newList := FilterMapUintUint64(notOneUintUint64, plusOneUintUint64, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintUint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1351,7 +1350,7 @@ func notOneUintUint64(num uint) bool {
 func TestFilterMapUintUint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapUintUint32(notOneUintUint32,plusOneUintUint32, []uint{1, 2, 3})
+	newList := FilterMapUintUint32(notOneUintUint32, plusOneUintUint32, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintUint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1373,7 +1372,7 @@ func notOneUintUint32(num uint) bool {
 func TestFilterMapUintUint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapUintUint16(notOneUintUint16,plusOneUintUint16, []uint{1, 2, 3})
+	newList := FilterMapUintUint16(notOneUintUint16, plusOneUintUint16, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintUint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1395,7 +1394,7 @@ func notOneUintUint16(num uint) bool {
 func TestFilterMapUintUint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapUintUint8(notOneUintUint8,plusOneUintUint8, []uint{1, 2, 3})
+	newList := FilterMapUintUint8(notOneUintUint8, plusOneUintUint8, []uint{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintUint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1417,7 +1416,7 @@ func notOneUintUint8(num uint) bool {
 func TestFilterMapUintStr(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapUintStr(notOneUintStr,someLogicUintStr, []uint{1,10})
+	newList := FilterMapUintStr(notOneUintStr, someLogicUintStr, []uint{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapUintStr failed. expected=%v, actual=%v", expectedList, newList)
@@ -1439,7 +1438,7 @@ func notOneUintStr(num uint) bool {
 func TestFilterMapUintBool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapUintBool(notOneUintBool,someLogicUintBool, []uint{1,10, 0})
+	newList := FilterMapUintBool(notOneUintBool, someLogicUintBool, []uint{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUintBool failed. expected=%v, actual=%v", expectedList, newList)
@@ -1461,7 +1460,7 @@ func notOneUintBool(num uint) bool {
 func TestFilterMapUint64Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapUint64Int(notOneUint64Int,plusOneUint64Int, []uint64{1, 2, 3})
+	newList := FilterMapUint64Int(notOneUint64Int, plusOneUint64Int, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -1483,7 +1482,7 @@ func notOneUint64Int(num uint64) bool {
 func TestFilterMapUint64Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapUint64Int64(notOneUint64Int64,plusOneUint64Int64, []uint64{1, 2, 3})
+	newList := FilterMapUint64Int64(notOneUint64Int64, plusOneUint64Int64, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Int64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1505,7 +1504,7 @@ func notOneUint64Int64(num uint64) bool {
 func TestFilterMapUint64Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapUint64Int32(notOneUint64Int32,plusOneUint64Int32, []uint64{1, 2, 3})
+	newList := FilterMapUint64Int32(notOneUint64Int32, plusOneUint64Int32, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Int32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1527,7 +1526,7 @@ func notOneUint64Int32(num uint64) bool {
 func TestFilterMapUint64Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapUint64Int16(notOneUint64Int16,plusOneUint64Int16, []uint64{1, 2, 3})
+	newList := FilterMapUint64Int16(notOneUint64Int16, plusOneUint64Int16, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Int16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1549,7 +1548,7 @@ func notOneUint64Int16(num uint64) bool {
 func TestFilterMapUint64Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapUint64Int8(notOneUint64Int8,plusOneUint64Int8, []uint64{1, 2, 3})
+	newList := FilterMapUint64Int8(notOneUint64Int8, plusOneUint64Int8, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Int8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1571,7 +1570,7 @@ func notOneUint64Int8(num uint64) bool {
 func TestFilterMapUint64Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapUint64Uint(notOneUint64Uint,plusOneUint64Uint, []uint64{1, 2, 3})
+	newList := FilterMapUint64Uint(notOneUint64Uint, plusOneUint64Uint, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -1593,7 +1592,7 @@ func notOneUint64Uint(num uint64) bool {
 func TestFilterMapUint64Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapUint64Uint32(notOneUint64Uint32,plusOneUint64Uint32, []uint64{1, 2, 3})
+	newList := FilterMapUint64Uint32(notOneUint64Uint32, plusOneUint64Uint32, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Uint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1615,7 +1614,7 @@ func notOneUint64Uint32(num uint64) bool {
 func TestFilterMapUint64Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapUint64Uint16(notOneUint64Uint16,plusOneUint64Uint16, []uint64{1, 2, 3})
+	newList := FilterMapUint64Uint16(notOneUint64Uint16, plusOneUint64Uint16, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Uint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1637,7 +1636,7 @@ func notOneUint64Uint16(num uint64) bool {
 func TestFilterMapUint64Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapUint64Uint8(notOneUint64Uint8,plusOneUint64Uint8, []uint64{1, 2, 3})
+	newList := FilterMapUint64Uint8(notOneUint64Uint8, plusOneUint64Uint8, []uint64{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Uint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1659,7 +1658,7 @@ func notOneUint64Uint8(num uint64) bool {
 func TestFilterMapUint64Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapUint64Str(notOneUint64Str,someLogicUint64Str, []uint64{1,10})
+	newList := FilterMapUint64Str(notOneUint64Str, someLogicUint64Str, []uint64{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapUint64Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -1681,7 +1680,7 @@ func notOneUint64Str(num uint64) bool {
 func TestFilterMapUint64Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapUint64Bool(notOneUint64Bool,someLogicUint64Bool, []uint64{1,10, 0})
+	newList := FilterMapUint64Bool(notOneUint64Bool, someLogicUint64Bool, []uint64{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint64Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -1703,7 +1702,7 @@ func notOneUint64Bool(num uint64) bool {
 func TestFilterMapUint32Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapUint32Int(notOneUint32Int,plusOneUint32Int, []uint32{1, 2, 3})
+	newList := FilterMapUint32Int(notOneUint32Int, plusOneUint32Int, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -1725,7 +1724,7 @@ func notOneUint32Int(num uint32) bool {
 func TestFilterMapUint32Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapUint32Int64(notOneUint32Int64,plusOneUint32Int64, []uint32{1, 2, 3})
+	newList := FilterMapUint32Int64(notOneUint32Int64, plusOneUint32Int64, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Int64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1747,7 +1746,7 @@ func notOneUint32Int64(num uint32) bool {
 func TestFilterMapUint32Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapUint32Int32(notOneUint32Int32,plusOneUint32Int32, []uint32{1, 2, 3})
+	newList := FilterMapUint32Int32(notOneUint32Int32, plusOneUint32Int32, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Int32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1769,7 +1768,7 @@ func notOneUint32Int32(num uint32) bool {
 func TestFilterMapUint32Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapUint32Int16(notOneUint32Int16,plusOneUint32Int16, []uint32{1, 2, 3})
+	newList := FilterMapUint32Int16(notOneUint32Int16, plusOneUint32Int16, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Int16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1791,7 +1790,7 @@ func notOneUint32Int16(num uint32) bool {
 func TestFilterMapUint32Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapUint32Int8(notOneUint32Int8,plusOneUint32Int8, []uint32{1, 2, 3})
+	newList := FilterMapUint32Int8(notOneUint32Int8, plusOneUint32Int8, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Int8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1813,7 +1812,7 @@ func notOneUint32Int8(num uint32) bool {
 func TestFilterMapUint32Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapUint32Uint(notOneUint32Uint,plusOneUint32Uint, []uint32{1, 2, 3})
+	newList := FilterMapUint32Uint(notOneUint32Uint, plusOneUint32Uint, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -1835,7 +1834,7 @@ func notOneUint32Uint(num uint32) bool {
 func TestFilterMapUint32Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapUint32Uint64(notOneUint32Uint64,plusOneUint32Uint64, []uint32{1, 2, 3})
+	newList := FilterMapUint32Uint64(notOneUint32Uint64, plusOneUint32Uint64, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Uint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1857,7 +1856,7 @@ func notOneUint32Uint64(num uint32) bool {
 func TestFilterMapUint32Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapUint32Uint16(notOneUint32Uint16,plusOneUint32Uint16, []uint32{1, 2, 3})
+	newList := FilterMapUint32Uint16(notOneUint32Uint16, plusOneUint32Uint16, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Uint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1879,7 +1878,7 @@ func notOneUint32Uint16(num uint32) bool {
 func TestFilterMapUint32Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapUint32Uint8(notOneUint32Uint8,plusOneUint32Uint8, []uint32{1, 2, 3})
+	newList := FilterMapUint32Uint8(notOneUint32Uint8, plusOneUint32Uint8, []uint32{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Uint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1901,7 +1900,7 @@ func notOneUint32Uint8(num uint32) bool {
 func TestFilterMapUint32Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapUint32Str(notOneUint32Str,someLogicUint32Str, []uint32{1,10})
+	newList := FilterMapUint32Str(notOneUint32Str, someLogicUint32Str, []uint32{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapUint32Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -1923,7 +1922,7 @@ func notOneUint32Str(num uint32) bool {
 func TestFilterMapUint32Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapUint32Bool(notOneUint32Bool,someLogicUint32Bool, []uint32{1,10, 0})
+	newList := FilterMapUint32Bool(notOneUint32Bool, someLogicUint32Bool, []uint32{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint32Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -1945,7 +1944,7 @@ func notOneUint32Bool(num uint32) bool {
 func TestFilterMapUint16Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapUint16Int(notOneUint16Int,plusOneUint16Int, []uint16{1, 2, 3})
+	newList := FilterMapUint16Int(notOneUint16Int, plusOneUint16Int, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -1967,7 +1966,7 @@ func notOneUint16Int(num uint16) bool {
 func TestFilterMapUint16Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapUint16Int64(notOneUint16Int64,plusOneUint16Int64, []uint16{1, 2, 3})
+	newList := FilterMapUint16Int64(notOneUint16Int64, plusOneUint16Int64, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Int64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -1989,7 +1988,7 @@ func notOneUint16Int64(num uint16) bool {
 func TestFilterMapUint16Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapUint16Int32(notOneUint16Int32,plusOneUint16Int32, []uint16{1, 2, 3})
+	newList := FilterMapUint16Int32(notOneUint16Int32, plusOneUint16Int32, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Int32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2011,7 +2010,7 @@ func notOneUint16Int32(num uint16) bool {
 func TestFilterMapUint16Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapUint16Int16(notOneUint16Int16,plusOneUint16Int16, []uint16{1, 2, 3})
+	newList := FilterMapUint16Int16(notOneUint16Int16, plusOneUint16Int16, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Int16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2033,7 +2032,7 @@ func notOneUint16Int16(num uint16) bool {
 func TestFilterMapUint16Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapUint16Int8(notOneUint16Int8,plusOneUint16Int8, []uint16{1, 2, 3})
+	newList := FilterMapUint16Int8(notOneUint16Int8, plusOneUint16Int8, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Int8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2055,7 +2054,7 @@ func notOneUint16Int8(num uint16) bool {
 func TestFilterMapUint16Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapUint16Uint(notOneUint16Uint,plusOneUint16Uint, []uint16{1, 2, 3})
+	newList := FilterMapUint16Uint(notOneUint16Uint, plusOneUint16Uint, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -2077,7 +2076,7 @@ func notOneUint16Uint(num uint16) bool {
 func TestFilterMapUint16Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapUint16Uint64(notOneUint16Uint64,plusOneUint16Uint64, []uint16{1, 2, 3})
+	newList := FilterMapUint16Uint64(notOneUint16Uint64, plusOneUint16Uint64, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Uint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2099,7 +2098,7 @@ func notOneUint16Uint64(num uint16) bool {
 func TestFilterMapUint16Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapUint16Uint32(notOneUint16Uint32,plusOneUint16Uint32, []uint16{1, 2, 3})
+	newList := FilterMapUint16Uint32(notOneUint16Uint32, plusOneUint16Uint32, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Uint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2121,7 +2120,7 @@ func notOneUint16Uint32(num uint16) bool {
 func TestFilterMapUint16Uint8(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint8{3, 4}
-	newList := FilterMapUint16Uint8(notOneUint16Uint8,plusOneUint16Uint8, []uint16{1, 2, 3})
+	newList := FilterMapUint16Uint8(notOneUint16Uint8, plusOneUint16Uint8, []uint16{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Uint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2143,7 +2142,7 @@ func notOneUint16Uint8(num uint16) bool {
 func TestFilterMapUint16Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapUint16Str(notOneUint16Str,someLogicUint16Str, []uint16{1,10})
+	newList := FilterMapUint16Str(notOneUint16Str, someLogicUint16Str, []uint16{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapUint16Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -2165,7 +2164,7 @@ func notOneUint16Str(num uint16) bool {
 func TestFilterMapUint16Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapUint16Bool(notOneUint16Bool,someLogicUint16Bool, []uint16{1,10, 0})
+	newList := FilterMapUint16Bool(notOneUint16Bool, someLogicUint16Bool, []uint16{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint16Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -2187,7 +2186,7 @@ func notOneUint16Bool(num uint16) bool {
 func TestFilterMapUint8Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
-	newList := FilterMapUint8Int(notOneUint8Int,plusOneUint8Int, []uint8{1, 2, 3})
+	newList := FilterMapUint8Int(notOneUint8Int, plusOneUint8Int, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Int failed. expected=%v, actual=%v", expectedList, newList)
@@ -2209,7 +2208,7 @@ func notOneUint8Int(num uint8) bool {
 func TestFilterMapUint8Int64(t *testing.T) {
 	// Test : some logic
 	expectedList := []int64{3, 4}
-	newList := FilterMapUint8Int64(notOneUint8Int64,plusOneUint8Int64, []uint8{1, 2, 3})
+	newList := FilterMapUint8Int64(notOneUint8Int64, plusOneUint8Int64, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Int64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2231,7 +2230,7 @@ func notOneUint8Int64(num uint8) bool {
 func TestFilterMapUint8Int32(t *testing.T) {
 	// Test : some logic
 	expectedList := []int32{3, 4}
-	newList := FilterMapUint8Int32(notOneUint8Int32,plusOneUint8Int32, []uint8{1, 2, 3})
+	newList := FilterMapUint8Int32(notOneUint8Int32, plusOneUint8Int32, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Int32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2253,7 +2252,7 @@ func notOneUint8Int32(num uint8) bool {
 func TestFilterMapUint8Int16(t *testing.T) {
 	// Test : some logic
 	expectedList := []int16{3, 4}
-	newList := FilterMapUint8Int16(notOneUint8Int16,plusOneUint8Int16, []uint8{1, 2, 3})
+	newList := FilterMapUint8Int16(notOneUint8Int16, plusOneUint8Int16, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Int16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2275,7 +2274,7 @@ func notOneUint8Int16(num uint8) bool {
 func TestFilterMapUint8Int8(t *testing.T) {
 	// Test : some logic
 	expectedList := []int8{3, 4}
-	newList := FilterMapUint8Int8(notOneUint8Int8,plusOneUint8Int8, []uint8{1, 2, 3})
+	newList := FilterMapUint8Int8(notOneUint8Int8, plusOneUint8Int8, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Int8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2297,7 +2296,7 @@ func notOneUint8Int8(num uint8) bool {
 func TestFilterMapUint8Uint(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint{3, 4}
-	newList := FilterMapUint8Uint(notOneUint8Uint,plusOneUint8Uint, []uint8{1, 2, 3})
+	newList := FilterMapUint8Uint(notOneUint8Uint, plusOneUint8Uint, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Uint failed. expected=%v, actual=%v", expectedList, newList)
@@ -2319,7 +2318,7 @@ func notOneUint8Uint(num uint8) bool {
 func TestFilterMapUint8Uint64(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint64{3, 4}
-	newList := FilterMapUint8Uint64(notOneUint8Uint64,plusOneUint8Uint64, []uint8{1, 2, 3})
+	newList := FilterMapUint8Uint64(notOneUint8Uint64, plusOneUint8Uint64, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Uint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2341,7 +2340,7 @@ func notOneUint8Uint64(num uint8) bool {
 func TestFilterMapUint8Uint32(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint32{3, 4}
-	newList := FilterMapUint8Uint32(notOneUint8Uint32,plusOneUint8Uint32, []uint8{1, 2, 3})
+	newList := FilterMapUint8Uint32(notOneUint8Uint32, plusOneUint8Uint32, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Uint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2363,7 +2362,7 @@ func notOneUint8Uint32(num uint8) bool {
 func TestFilterMapUint8Uint16(t *testing.T) {
 	// Test : some logic
 	expectedList := []uint16{3, 4}
-	newList := FilterMapUint8Uint16(notOneUint8Uint16,plusOneUint8Uint16, []uint8{1, 2, 3})
+	newList := FilterMapUint8Uint16(notOneUint8Uint16, plusOneUint8Uint16, []uint8{1, 2, 3})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Uint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2385,7 +2384,7 @@ func notOneUint8Uint16(num uint8) bool {
 func TestFilterMapUint8Str(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10"}
-	newList := FilterMapUint8Str(notOneUint8Str,someLogicUint8Str, []uint8{1,10})
+	newList := FilterMapUint8Str(notOneUint8Str, someLogicUint8Str, []uint8{1, 10})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapUint8Str failed. expected=%v, actual=%v", expectedList, newList)
@@ -2407,7 +2406,7 @@ func notOneUint8Str(num uint8) bool {
 func TestFilterMapUint8Bool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapUint8Bool(notOneUint8Bool,someLogicUint8Bool, []uint8{1,10, 0})
+	newList := FilterMapUint8Bool(notOneUint8Bool, someLogicUint8Bool, []uint8{1, 10, 0})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapUint8Bool failed. expected=%v, actual=%v", expectedList, newList)
@@ -2429,7 +2428,7 @@ func notOneUint8Bool(num uint8) bool {
 func TestFilterMapStrInt(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int{10}
-	newList := FilterMapStrInt(notOneStrInt,someLogicStrInt, []string{"one","ten"})
+	newList := FilterMapStrInt(notOneStrInt, someLogicStrInt, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrInt failed. expected=%v, actual=%v", expectedList, newList)
@@ -2451,7 +2450,7 @@ func notOneStrInt(num string) bool {
 func TestFilterMapStrInt64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int64{10}
-	newList := FilterMapStrInt64(notOneStrInt64,someLogicStrInt64, []string{"one","ten"})
+	newList := FilterMapStrInt64(notOneStrInt64, someLogicStrInt64, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrInt64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2473,7 +2472,7 @@ func notOneStrInt64(num string) bool {
 func TestFilterMapStrInt32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int32{10}
-	newList := FilterMapStrInt32(notOneStrInt32,someLogicStrInt32, []string{"one","ten"})
+	newList := FilterMapStrInt32(notOneStrInt32, someLogicStrInt32, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrInt32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2495,7 +2494,7 @@ func notOneStrInt32(num string) bool {
 func TestFilterMapStrInt16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int16{10}
-	newList := FilterMapStrInt16(notOneStrInt16,someLogicStrInt16, []string{"one","ten"})
+	newList := FilterMapStrInt16(notOneStrInt16, someLogicStrInt16, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrInt16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2517,7 +2516,7 @@ func notOneStrInt16(num string) bool {
 func TestFilterMapStrInt8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int8{10}
-	newList := FilterMapStrInt8(notOneStrInt8,someLogicStrInt8, []string{"one","ten"})
+	newList := FilterMapStrInt8(notOneStrInt8, someLogicStrInt8, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrInt8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2539,7 +2538,7 @@ func notOneStrInt8(num string) bool {
 func TestFilterMapStrUint(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint{10}
-	newList := FilterMapStrUint(notOneStrUint,someLogicStrUint, []string{"one","ten"})
+	newList := FilterMapStrUint(notOneStrUint, someLogicStrUint, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrUint failed. expected=%v, actual=%v", expectedList, newList)
@@ -2561,7 +2560,7 @@ func notOneStrUint(num string) bool {
 func TestFilterMapStrUint64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint64{10}
-	newList := FilterMapStrUint64(notOneStrUint64,someLogicStrUint64, []string{"one","ten"})
+	newList := FilterMapStrUint64(notOneStrUint64, someLogicStrUint64, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrUint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2583,7 +2582,7 @@ func notOneStrUint64(num string) bool {
 func TestFilterMapStrUint32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint32{10}
-	newList := FilterMapStrUint32(notOneStrUint32,someLogicStrUint32, []string{"one","ten"})
+	newList := FilterMapStrUint32(notOneStrUint32, someLogicStrUint32, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrUint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2605,7 +2604,7 @@ func notOneStrUint32(num string) bool {
 func TestFilterMapStrUint16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint16{10}
-	newList := FilterMapStrUint16(notOneStrUint16,someLogicStrUint16, []string{"one","ten"})
+	newList := FilterMapStrUint16(notOneStrUint16, someLogicStrUint16, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrUint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2627,7 +2626,7 @@ func notOneStrUint16(num string) bool {
 func TestFilterMapStrUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10}
-	newList := FilterMapStrUint8(notOneStrUint8,someLogicStrUint8, []string{"one","ten"})
+	newList := FilterMapStrUint8(notOneStrUint8, someLogicStrUint8, []string{"one", "ten"})
 
 	if newList[0] != expectedList[0] {
 		t.Errorf("FilterMapStrUint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2649,7 +2648,7 @@ func notOneStrUint8(num string) bool {
 func TestFilterMapStrBool(t *testing.T) {
 	// Test : someLogic
 	expectedList := []bool{true, false}
-	newList := FilterMapStrBool(notOneStrBool,someLogicStrBool, []string{"1","10", "0"})
+	newList := FilterMapStrBool(notOneStrBool, someLogicStrBool, []string{"1", "10", "0"})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapStrBool failed. expected=%v, actual=%v", expectedList, newList)
@@ -2671,7 +2670,7 @@ func notOneStrBool(num string) bool {
 func TestFilterMapBoolInt(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int{10, 10}
-	newList := FilterMapBoolInt(notOneBoolInt,someLogicBoolInt, []bool{true, true, false})
+	newList := FilterMapBoolInt(notOneBoolInt, someLogicBoolInt, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolInt failed. expected=%v, actual=%v", expectedList, newList)
@@ -2693,7 +2692,7 @@ func notOneBoolInt(num bool) bool {
 func TestFilterMapBoolInt64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int64{10, 10}
-	newList := FilterMapBoolInt64(notOneBoolInt64,someLogicBoolInt64, []bool{true, true, false})
+	newList := FilterMapBoolInt64(notOneBoolInt64, someLogicBoolInt64, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolInt64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2715,7 +2714,7 @@ func notOneBoolInt64(num bool) bool {
 func TestFilterMapBoolInt32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int32{10, 10}
-	newList := FilterMapBoolInt32(notOneBoolInt32,someLogicBoolInt32, []bool{true, true, false})
+	newList := FilterMapBoolInt32(notOneBoolInt32, someLogicBoolInt32, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolInt32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2737,7 +2736,7 @@ func notOneBoolInt32(num bool) bool {
 func TestFilterMapBoolInt16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int16{10, 10}
-	newList := FilterMapBoolInt16(notOneBoolInt16,someLogicBoolInt16, []bool{true, true, false})
+	newList := FilterMapBoolInt16(notOneBoolInt16, someLogicBoolInt16, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolInt16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2759,7 +2758,7 @@ func notOneBoolInt16(num bool) bool {
 func TestFilterMapBoolInt8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int8{10, 10}
-	newList := FilterMapBoolInt8(notOneBoolInt8,someLogicBoolInt8, []bool{true, true, false})
+	newList := FilterMapBoolInt8(notOneBoolInt8, someLogicBoolInt8, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolInt8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2781,7 +2780,7 @@ func notOneBoolInt8(num bool) bool {
 func TestFilterMapBoolUint(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint{10, 10}
-	newList := FilterMapBoolUint(notOneBoolUint,someLogicBoolUint, []bool{true, true, false})
+	newList := FilterMapBoolUint(notOneBoolUint, someLogicBoolUint, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolUint failed. expected=%v, actual=%v", expectedList, newList)
@@ -2803,7 +2802,7 @@ func notOneBoolUint(num bool) bool {
 func TestFilterMapBoolUint64(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint64{10, 10}
-	newList := FilterMapBoolUint64(notOneBoolUint64,someLogicBoolUint64, []bool{true, true, false})
+	newList := FilterMapBoolUint64(notOneBoolUint64, someLogicBoolUint64, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolUint64 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2825,7 +2824,7 @@ func notOneBoolUint64(num bool) bool {
 func TestFilterMapBoolUint32(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint32{10, 10}
-	newList := FilterMapBoolUint32(notOneBoolUint32,someLogicBoolUint32, []bool{true, true, false})
+	newList := FilterMapBoolUint32(notOneBoolUint32, someLogicBoolUint32, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolUint32 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2847,7 +2846,7 @@ func notOneBoolUint32(num bool) bool {
 func TestFilterMapBoolUint16(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint16{10, 10}
-	newList := FilterMapBoolUint16(notOneBoolUint16,someLogicBoolUint16, []bool{true, true, false})
+	newList := FilterMapBoolUint16(notOneBoolUint16, someLogicBoolUint16, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolUint16 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2869,7 +2868,7 @@ func notOneBoolUint16(num bool) bool {
 func TestFilterMapBoolUint8(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10, 10}
-	newList := FilterMapBoolUint8(notOneBoolUint8,someLogicBoolUint8, []bool{true, true, false})
+	newList := FilterMapBoolUint8(notOneBoolUint8, someLogicBoolUint8, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolUint8 failed. expected=%v, actual=%v", expectedList, newList)
@@ -2891,7 +2890,7 @@ func notOneBoolUint8(num bool) bool {
 func TestFilterMapBoolStr(t *testing.T) {
 	// Test : someLogic
 	expectedList := []string{"10", "10"}
-	newList := FilterMapBoolStr(notOneBoolStr,someLogicBoolStr, []bool{true, true, false})
+	newList := FilterMapBoolStr(notOneBoolStr, someLogicBoolStr, []bool{true, true, false})
 
 	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
 		t.Errorf("FilterMapBoolStr failed. expected=%v, actual=%v", expectedList, newList)

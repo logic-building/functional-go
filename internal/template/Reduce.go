@@ -24,5 +24,6 @@ func Reduce<CONDITIONAL_TYPE>(f func(<TYPE>, <TYPE>) <TYPE>, list []<TYPE>, init
 	}
 	r := f(init, list[0])
 	return Reduce<CONDITIONAL_TYPE>(f, list[1:], r)
-}`
+}
+`
 }

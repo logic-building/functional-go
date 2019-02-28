@@ -131,6 +131,7 @@ var fpCodeList = []fpCode{
 }
 
 var importTestTemplate = `
+
 import (
 	"reflect"
 	"testing"
@@ -145,19 +146,20 @@ func main() {
 func generateFpCode(fpCodeList []fpCode) {
 
 	for _, fpCode := range fpCodeList {
-		codeTemplate := "package fp\n"
+		codeTemplate := "package fp"
 
 		if strings.Contains(strings.ToLower(fpCode.function), "pmap") {
-			codeTemplate += "\n" + `import "sync"` + "\n"
+			codeTemplate += "\n\n" + `import "sync"`
 		}
 
-		testTemplate := "package fp\n"
+		codeTemplate += "\n"
+
+		testTemplate := "package fp"
 		testTemplate += importTestTemplate
 
 		if strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE>") &&
 			strings.Contains(fpCode.codeTemplate, "<OUTPUT_TYPE>") {
 
-			testTemplate += "\n"
 			for _, inputType := range fpCode.dataTypes {
 				for _, outputType := range fpCode.dataTypes {
 
@@ -223,7 +225,6 @@ func generateFpCode(fpCodeList []fpCode) {
 		} else if strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE1>") &&
 			strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE2>") {
 
-			testTemplate += "\n"
 			for _, inputType1 := range fpCode.dataTypes {
 				for _, inputType2 := range fpCode.dataTypes {
 
@@ -294,21 +295,22 @@ func generateFpCode(fpCodeList []fpCode) {
 				}
 			}
 		} else {
+
 			for _, t := range fpCode.dataTypes {
 
-				codeTemplate += fpCode.codeTemplate + "\n"
+				codeTemplate += fpCode.codeTemplate
 
 				ftype := strings.Title(t)
 				switch t {
 				case "string":
 					ftype = "Str"
-					testTemplate += modifyTestDataToStr(fpCode.testTemplate) + "\n"
+					testTemplate += modifyTestDataToStr(fpCode.testTemplate)
 
 				default:
 					if strings.ToLower(t) == "bool" {
-						testTemplate += fpCode.testTemplateBool + "\n"
+						testTemplate += fpCode.testTemplateBool
 					} else {
-						testTemplate += fpCode.testTemplate + "\n"
+						testTemplate += fpCode.testTemplate
 					}
 				}
 

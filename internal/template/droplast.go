@@ -18,5 +18,6 @@ func DropLast<CONDITIONAL_TYPE>(list []<TYPE>) []<TYPE> {
 		newList[i] = list[i]
 	}
 	return newList
-}`
+}
+`
 }

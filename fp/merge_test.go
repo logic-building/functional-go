@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-
 func TestMergeInt(t *testing.T) {
 	map1 := map[int]int{1: 10, 2: 20, 3: 30}
 	map2 := map[int]int{4: 40, 5: 50, 3: 30}
@@ -8292,7 +8291,7 @@ func TestMergeBoolStr(t *testing.T) {
 	if !reflect.DeepEqual(expected, actual) {
 		t.Errorf("TestMergeBoolStr failed. Expected=%v, actual=%v", expected, actual)
 	}
-	
+
 	actual = MergeBoolStr(nil, nil)
 
 	if len(actual) != 0 {

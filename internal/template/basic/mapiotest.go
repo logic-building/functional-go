@@ -80,7 +80,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 	expectedList := []<OUTPUT_TYPE>{true, false}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -104,7 +104,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 	expectedList := []<OUTPUT_TYPE>{true, false}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{"10", "0"})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -128,7 +128,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 	expectedList := []<OUTPUT_TYPE>{10, 0}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -152,7 +152,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 	expectedList := []<OUTPUT_TYPE>{"10", "0"}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
 	}
 

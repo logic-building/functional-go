@@ -13,5 +13,6 @@ func Some<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) bool {
 		}
 	}
 	return false
-}`
+}
+`
 }
