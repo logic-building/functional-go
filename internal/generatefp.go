@@ -150,7 +150,7 @@ func generateFpCode(fpCodeList []fpCode) {
 			codeTemplate += "\n" + `import "sync"` + "\n"
 		}
 
-		testTemplate := "package fp \n"
+		testTemplate := "package fp\n"
 		testTemplate += importTestTemplate
 
 		if strings.Contains(fpCode.codeTemplate, "<INPUT_TYPE>") &&

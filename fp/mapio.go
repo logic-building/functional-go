@@ -1,5 +1,7 @@
 package fp
 
+// MapIntInt64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntInt64(f func(int) int64, list []int) []int64 {
 	if f == nil {
 		return []int64{}
@@ -10,6 +12,8 @@ func MapIntInt64(f func(int) int64, list []int) []int64 {
 	}
 	return newList
 }
+// MapIntInt32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntInt32(f func(int) int32, list []int) []int32 {
 	if f == nil {
 		return []int32{}
@@ -20,6 +24,8 @@ func MapIntInt32(f func(int) int32, list []int) []int32 {
 	}
 	return newList
 }
+// MapIntInt16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntInt16(f func(int) int16, list []int) []int16 {
 	if f == nil {
 		return []int16{}
@@ -30,6 +36,8 @@ func MapIntInt16(f func(int) int16, list []int) []int16 {
 	}
 	return newList
 }
+// MapIntInt8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntInt8(f func(int) int8, list []int) []int8 {
 	if f == nil {
 		return []int8{}
@@ -40,6 +48,8 @@ func MapIntInt8(f func(int) int8, list []int) []int8 {
 	}
 	return newList
 }
+// MapIntUint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntUint(f func(int) uint, list []int) []uint {
 	if f == nil {
 		return []uint{}
@@ -50,6 +60,8 @@ func MapIntUint(f func(int) uint, list []int) []uint {
 	}
 	return newList
 }
+// MapIntUint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntUint64(f func(int) uint64, list []int) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -60,6 +72,8 @@ func MapIntUint64(f func(int) uint64, list []int) []uint64 {
 	}
 	return newList
 }
+// MapIntUint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntUint32(f func(int) uint32, list []int) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -70,6 +84,8 @@ func MapIntUint32(f func(int) uint32, list []int) []uint32 {
 	}
 	return newList
 }
+// MapIntUint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntUint16(f func(int) uint16, list []int) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -80,6 +96,8 @@ func MapIntUint16(f func(int) uint16, list []int) []uint16 {
 	}
 	return newList
 }
+// MapIntUint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntUint8(f func(int) uint8, list []int) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -90,6 +108,8 @@ func MapIntUint8(f func(int) uint8, list []int) []uint8 {
 	}
 	return newList
 }
+// MapIntStr takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntStr(f func(int) string, list []int) []string {
 	if f == nil {
 		return []string{}
@@ -100,6 +120,8 @@ func MapIntStr(f func(int) string, list []int) []string {
 	}
 	return newList
 }
+// MapIntBool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapIntBool(f func(int) bool, list []int) []bool {
 	if f == nil {
 		return []bool{}
@@ -110,6 +132,8 @@ func MapIntBool(f func(int) bool, list []int) []bool {
 	}
 	return newList
 }
+// MapInt64Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Int(f func(int64) int, list []int64) []int {
 	if f == nil {
 		return []int{}
@@ -120,6 +144,8 @@ func MapInt64Int(f func(int64) int, list []int64) []int {
 	}
 	return newList
 }
+// MapInt64Int32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Int32(f func(int64) int32, list []int64) []int32 {
 	if f == nil {
 		return []int32{}
@@ -130,6 +156,8 @@ func MapInt64Int32(f func(int64) int32, list []int64) []int32 {
 	}
 	return newList
 }
+// MapInt64Int16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Int16(f func(int64) int16, list []int64) []int16 {
 	if f == nil {
 		return []int16{}
@@ -140,6 +168,8 @@ func MapInt64Int16(f func(int64) int16, list []int64) []int16 {
 	}
 	return newList
 }
+// MapInt64Int8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Int8(f func(int64) int8, list []int64) []int8 {
 	if f == nil {
 		return []int8{}
@@ -150,6 +180,8 @@ func MapInt64Int8(f func(int64) int8, list []int64) []int8 {
 	}
 	return newList
 }
+// MapInt64Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Uint(f func(int64) uint, list []int64) []uint {
 	if f == nil {
 		return []uint{}
@@ -160,6 +192,8 @@ func MapInt64Uint(f func(int64) uint, list []int64) []uint {
 	}
 	return newList
 }
+// MapInt64Uint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Uint64(f func(int64) uint64, list []int64) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -170,6 +204,8 @@ func MapInt64Uint64(f func(int64) uint64, list []int64) []uint64 {
 	}
 	return newList
 }
+// MapInt64Uint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Uint32(f func(int64) uint32, list []int64) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -180,6 +216,8 @@ func MapInt64Uint32(f func(int64) uint32, list []int64) []uint32 {
 	}
 	return newList
 }
+// MapInt64Uint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Uint16(f func(int64) uint16, list []int64) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -190,6 +228,8 @@ func MapInt64Uint16(f func(int64) uint16, list []int64) []uint16 {
 	}
 	return newList
 }
+// MapInt64Uint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Uint8(f func(int64) uint8, list []int64) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -200,6 +240,8 @@ func MapInt64Uint8(f func(int64) uint8, list []int64) []uint8 {
 	}
 	return newList
 }
+// MapInt64Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Str(f func(int64) string, list []int64) []string {
 	if f == nil {
 		return []string{}
@@ -210,6 +252,8 @@ func MapInt64Str(f func(int64) string, list []int64) []string {
 	}
 	return newList
 }
+// MapInt64Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt64Bool(f func(int64) bool, list []int64) []bool {
 	if f == nil {
 		return []bool{}
@@ -220,6 +264,8 @@ func MapInt64Bool(f func(int64) bool, list []int64) []bool {
 	}
 	return newList
 }
+// MapInt32Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Int(f func(int32) int, list []int32) []int {
 	if f == nil {
 		return []int{}
@@ -230,6 +276,8 @@ func MapInt32Int(f func(int32) int, list []int32) []int {
 	}
 	return newList
 }
+// MapInt32Int64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Int64(f func(int32) int64, list []int32) []int64 {
 	if f == nil {
 		return []int64{}
@@ -240,6 +288,8 @@ func MapInt32Int64(f func(int32) int64, list []int32) []int64 {
 	}
 	return newList
 }
+// MapInt32Int16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Int16(f func(int32) int16, list []int32) []int16 {
 	if f == nil {
 		return []int16{}
@@ -250,6 +300,8 @@ func MapInt32Int16(f func(int32) int16, list []int32) []int16 {
 	}
 	return newList
 }
+// MapInt32Int8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Int8(f func(int32) int8, list []int32) []int8 {
 	if f == nil {
 		return []int8{}
@@ -260,6 +312,8 @@ func MapInt32Int8(f func(int32) int8, list []int32) []int8 {
 	}
 	return newList
 }
+// MapInt32Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Uint(f func(int32) uint, list []int32) []uint {
 	if f == nil {
 		return []uint{}
@@ -270,6 +324,8 @@ func MapInt32Uint(f func(int32) uint, list []int32) []uint {
 	}
 	return newList
 }
+// MapInt32Uint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Uint64(f func(int32) uint64, list []int32) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -280,6 +336,8 @@ func MapInt32Uint64(f func(int32) uint64, list []int32) []uint64 {
 	}
 	return newList
 }
+// MapInt32Uint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Uint32(f func(int32) uint32, list []int32) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -290,6 +348,8 @@ func MapInt32Uint32(f func(int32) uint32, list []int32) []uint32 {
 	}
 	return newList
 }
+// MapInt32Uint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Uint16(f func(int32) uint16, list []int32) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -300,6 +360,8 @@ func MapInt32Uint16(f func(int32) uint16, list []int32) []uint16 {
 	}
 	return newList
 }
+// MapInt32Uint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Uint8(f func(int32) uint8, list []int32) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -310,6 +372,8 @@ func MapInt32Uint8(f func(int32) uint8, list []int32) []uint8 {
 	}
 	return newList
 }
+// MapInt32Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Str(f func(int32) string, list []int32) []string {
 	if f == nil {
 		return []string{}
@@ -320,6 +384,8 @@ func MapInt32Str(f func(int32) string, list []int32) []string {
 	}
 	return newList
 }
+// MapInt32Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt32Bool(f func(int32) bool, list []int32) []bool {
 	if f == nil {
 		return []bool{}
@@ -330,6 +396,8 @@ func MapInt32Bool(f func(int32) bool, list []int32) []bool {
 	}
 	return newList
 }
+// MapInt16Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Int(f func(int16) int, list []int16) []int {
 	if f == nil {
 		return []int{}
@@ -340,6 +408,8 @@ func MapInt16Int(f func(int16) int, list []int16) []int {
 	}
 	return newList
 }
+// MapInt16Int64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Int64(f func(int16) int64, list []int16) []int64 {
 	if f == nil {
 		return []int64{}
@@ -350,6 +420,8 @@ func MapInt16Int64(f func(int16) int64, list []int16) []int64 {
 	}
 	return newList
 }
+// MapInt16Int32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Int32(f func(int16) int32, list []int16) []int32 {
 	if f == nil {
 		return []int32{}
@@ -360,6 +432,8 @@ func MapInt16Int32(f func(int16) int32, list []int16) []int32 {
 	}
 	return newList
 }
+// MapInt16Int8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Int8(f func(int16) int8, list []int16) []int8 {
 	if f == nil {
 		return []int8{}
@@ -370,6 +444,8 @@ func MapInt16Int8(f func(int16) int8, list []int16) []int8 {
 	}
 	return newList
 }
+// MapInt16Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Uint(f func(int16) uint, list []int16) []uint {
 	if f == nil {
 		return []uint{}
@@ -380,6 +456,8 @@ func MapInt16Uint(f func(int16) uint, list []int16) []uint {
 	}
 	return newList
 }
+// MapInt16Uint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Uint64(f func(int16) uint64, list []int16) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -390,6 +468,8 @@ func MapInt16Uint64(f func(int16) uint64, list []int16) []uint64 {
 	}
 	return newList
 }
+// MapInt16Uint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Uint32(f func(int16) uint32, list []int16) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -400,6 +480,8 @@ func MapInt16Uint32(f func(int16) uint32, list []int16) []uint32 {
 	}
 	return newList
 }
+// MapInt16Uint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Uint16(f func(int16) uint16, list []int16) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -410,6 +492,8 @@ func MapInt16Uint16(f func(int16) uint16, list []int16) []uint16 {
 	}
 	return newList
 }
+// MapInt16Uint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Uint8(f func(int16) uint8, list []int16) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -420,6 +504,8 @@ func MapInt16Uint8(f func(int16) uint8, list []int16) []uint8 {
 	}
 	return newList
 }
+// MapInt16Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Str(f func(int16) string, list []int16) []string {
 	if f == nil {
 		return []string{}
@@ -430,6 +516,8 @@ func MapInt16Str(f func(int16) string, list []int16) []string {
 	}
 	return newList
 }
+// MapInt16Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt16Bool(f func(int16) bool, list []int16) []bool {
 	if f == nil {
 		return []bool{}
@@ -440,6 +528,8 @@ func MapInt16Bool(f func(int16) bool, list []int16) []bool {
 	}
 	return newList
 }
+// MapInt8Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Int(f func(int8) int, list []int8) []int {
 	if f == nil {
 		return []int{}
@@ -450,6 +540,8 @@ func MapInt8Int(f func(int8) int, list []int8) []int {
 	}
 	return newList
 }
+// MapInt8Int64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Int64(f func(int8) int64, list []int8) []int64 {
 	if f == nil {
 		return []int64{}
@@ -460,6 +552,8 @@ func MapInt8Int64(f func(int8) int64, list []int8) []int64 {
 	}
 	return newList
 }
+// MapInt8Int32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Int32(f func(int8) int32, list []int8) []int32 {
 	if f == nil {
 		return []int32{}
@@ -470,6 +564,8 @@ func MapInt8Int32(f func(int8) int32, list []int8) []int32 {
 	}
 	return newList
 }
+// MapInt8Int16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Int16(f func(int8) int16, list []int8) []int16 {
 	if f == nil {
 		return []int16{}
@@ -480,6 +576,8 @@ func MapInt8Int16(f func(int8) int16, list []int8) []int16 {
 	}
 	return newList
 }
+// MapInt8Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Uint(f func(int8) uint, list []int8) []uint {
 	if f == nil {
 		return []uint{}
@@ -490,6 +588,8 @@ func MapInt8Uint(f func(int8) uint, list []int8) []uint {
 	}
 	return newList
 }
+// MapInt8Uint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Uint64(f func(int8) uint64, list []int8) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -500,6 +600,8 @@ func MapInt8Uint64(f func(int8) uint64, list []int8) []uint64 {
 	}
 	return newList
 }
+// MapInt8Uint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Uint32(f func(int8) uint32, list []int8) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -510,6 +612,8 @@ func MapInt8Uint32(f func(int8) uint32, list []int8) []uint32 {
 	}
 	return newList
 }
+// MapInt8Uint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Uint16(f func(int8) uint16, list []int8) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -520,6 +624,8 @@ func MapInt8Uint16(f func(int8) uint16, list []int8) []uint16 {
 	}
 	return newList
 }
+// MapInt8Uint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Uint8(f func(int8) uint8, list []int8) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -530,6 +636,8 @@ func MapInt8Uint8(f func(int8) uint8, list []int8) []uint8 {
 	}
 	return newList
 }
+// MapInt8Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Str(f func(int8) string, list []int8) []string {
 	if f == nil {
 		return []string{}
@@ -540,6 +648,8 @@ func MapInt8Str(f func(int8) string, list []int8) []string {
 	}
 	return newList
 }
+// MapInt8Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapInt8Bool(f func(int8) bool, list []int8) []bool {
 	if f == nil {
 		return []bool{}
@@ -550,6 +660,8 @@ func MapInt8Bool(f func(int8) bool, list []int8) []bool {
 	}
 	return newList
 }
+// MapUintInt takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintInt(f func(uint) int, list []uint) []int {
 	if f == nil {
 		return []int{}
@@ -560,6 +672,8 @@ func MapUintInt(f func(uint) int, list []uint) []int {
 	}
 	return newList
 }
+// MapUintInt64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintInt64(f func(uint) int64, list []uint) []int64 {
 	if f == nil {
 		return []int64{}
@@ -570,6 +684,8 @@ func MapUintInt64(f func(uint) int64, list []uint) []int64 {
 	}
 	return newList
 }
+// MapUintInt32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintInt32(f func(uint) int32, list []uint) []int32 {
 	if f == nil {
 		return []int32{}
@@ -580,6 +696,8 @@ func MapUintInt32(f func(uint) int32, list []uint) []int32 {
 	}
 	return newList
 }
+// MapUintInt16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintInt16(f func(uint) int16, list []uint) []int16 {
 	if f == nil {
 		return []int16{}
@@ -590,6 +708,8 @@ func MapUintInt16(f func(uint) int16, list []uint) []int16 {
 	}
 	return newList
 }
+// MapUintInt8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintInt8(f func(uint) int8, list []uint) []int8 {
 	if f == nil {
 		return []int8{}
@@ -600,6 +720,8 @@ func MapUintInt8(f func(uint) int8, list []uint) []int8 {
 	}
 	return newList
 }
+// MapUintUint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintUint64(f func(uint) uint64, list []uint) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -610,6 +732,8 @@ func MapUintUint64(f func(uint) uint64, list []uint) []uint64 {
 	}
 	return newList
 }
+// MapUintUint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintUint32(f func(uint) uint32, list []uint) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -620,6 +744,8 @@ func MapUintUint32(f func(uint) uint32, list []uint) []uint32 {
 	}
 	return newList
 }
+// MapUintUint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintUint16(f func(uint) uint16, list []uint) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -630,6 +756,8 @@ func MapUintUint16(f func(uint) uint16, list []uint) []uint16 {
 	}
 	return newList
 }
+// MapUintUint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintUint8(f func(uint) uint8, list []uint) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -640,6 +768,8 @@ func MapUintUint8(f func(uint) uint8, list []uint) []uint8 {
 	}
 	return newList
 }
+// MapUintStr takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintStr(f func(uint) string, list []uint) []string {
 	if f == nil {
 		return []string{}
@@ -650,6 +780,8 @@ func MapUintStr(f func(uint) string, list []uint) []string {
 	}
 	return newList
 }
+// MapUintBool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUintBool(f func(uint) bool, list []uint) []bool {
 	if f == nil {
 		return []bool{}
@@ -660,6 +792,8 @@ func MapUintBool(f func(uint) bool, list []uint) []bool {
 	}
 	return newList
 }
+// MapUint64Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Int(f func(uint64) int, list []uint64) []int {
 	if f == nil {
 		return []int{}
@@ -670,6 +804,8 @@ func MapUint64Int(f func(uint64) int, list []uint64) []int {
 	}
 	return newList
 }
+// MapUint64Int64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Int64(f func(uint64) int64, list []uint64) []int64 {
 	if f == nil {
 		return []int64{}
@@ -680,6 +816,8 @@ func MapUint64Int64(f func(uint64) int64, list []uint64) []int64 {
 	}
 	return newList
 }
+// MapUint64Int32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Int32(f func(uint64) int32, list []uint64) []int32 {
 	if f == nil {
 		return []int32{}
@@ -690,6 +828,8 @@ func MapUint64Int32(f func(uint64) int32, list []uint64) []int32 {
 	}
 	return newList
 }
+// MapUint64Int16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Int16(f func(uint64) int16, list []uint64) []int16 {
 	if f == nil {
 		return []int16{}
@@ -700,6 +840,8 @@ func MapUint64Int16(f func(uint64) int16, list []uint64) []int16 {
 	}
 	return newList
 }
+// MapUint64Int8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Int8(f func(uint64) int8, list []uint64) []int8 {
 	if f == nil {
 		return []int8{}
@@ -710,6 +852,8 @@ func MapUint64Int8(f func(uint64) int8, list []uint64) []int8 {
 	}
 	return newList
 }
+// MapUint64Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Uint(f func(uint64) uint, list []uint64) []uint {
 	if f == nil {
 		return []uint{}
@@ -720,6 +864,8 @@ func MapUint64Uint(f func(uint64) uint, list []uint64) []uint {
 	}
 	return newList
 }
+// MapUint64Uint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Uint32(f func(uint64) uint32, list []uint64) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -730,6 +876,8 @@ func MapUint64Uint32(f func(uint64) uint32, list []uint64) []uint32 {
 	}
 	return newList
 }
+// MapUint64Uint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Uint16(f func(uint64) uint16, list []uint64) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -740,6 +888,8 @@ func MapUint64Uint16(f func(uint64) uint16, list []uint64) []uint16 {
 	}
 	return newList
 }
+// MapUint64Uint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Uint8(f func(uint64) uint8, list []uint64) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -750,6 +900,8 @@ func MapUint64Uint8(f func(uint64) uint8, list []uint64) []uint8 {
 	}
 	return newList
 }
+// MapUint64Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Str(f func(uint64) string, list []uint64) []string {
 	if f == nil {
 		return []string{}
@@ -760,6 +912,8 @@ func MapUint64Str(f func(uint64) string, list []uint64) []string {
 	}
 	return newList
 }
+// MapUint64Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint64Bool(f func(uint64) bool, list []uint64) []bool {
 	if f == nil {
 		return []bool{}
@@ -770,6 +924,8 @@ func MapUint64Bool(f func(uint64) bool, list []uint64) []bool {
 	}
 	return newList
 }
+// MapUint32Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Int(f func(uint32) int, list []uint32) []int {
 	if f == nil {
 		return []int{}
@@ -780,6 +936,8 @@ func MapUint32Int(f func(uint32) int, list []uint32) []int {
 	}
 	return newList
 }
+// MapUint32Int64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Int64(f func(uint32) int64, list []uint32) []int64 {
 	if f == nil {
 		return []int64{}
@@ -790,6 +948,8 @@ func MapUint32Int64(f func(uint32) int64, list []uint32) []int64 {
 	}
 	return newList
 }
+// MapUint32Int32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Int32(f func(uint32) int32, list []uint32) []int32 {
 	if f == nil {
 		return []int32{}
@@ -800,6 +960,8 @@ func MapUint32Int32(f func(uint32) int32, list []uint32) []int32 {
 	}
 	return newList
 }
+// MapUint32Int16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Int16(f func(uint32) int16, list []uint32) []int16 {
 	if f == nil {
 		return []int16{}
@@ -810,6 +972,8 @@ func MapUint32Int16(f func(uint32) int16, list []uint32) []int16 {
 	}
 	return newList
 }
+// MapUint32Int8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Int8(f func(uint32) int8, list []uint32) []int8 {
 	if f == nil {
 		return []int8{}
@@ -820,6 +984,8 @@ func MapUint32Int8(f func(uint32) int8, list []uint32) []int8 {
 	}
 	return newList
 }
+// MapUint32Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Uint(f func(uint32) uint, list []uint32) []uint {
 	if f == nil {
 		return []uint{}
@@ -830,6 +996,8 @@ func MapUint32Uint(f func(uint32) uint, list []uint32) []uint {
 	}
 	return newList
 }
+// MapUint32Uint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Uint64(f func(uint32) uint64, list []uint32) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -840,6 +1008,8 @@ func MapUint32Uint64(f func(uint32) uint64, list []uint32) []uint64 {
 	}
 	return newList
 }
+// MapUint32Uint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Uint16(f func(uint32) uint16, list []uint32) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -850,6 +1020,8 @@ func MapUint32Uint16(f func(uint32) uint16, list []uint32) []uint16 {
 	}
 	return newList
 }
+// MapUint32Uint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Uint8(f func(uint32) uint8, list []uint32) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -860,6 +1032,8 @@ func MapUint32Uint8(f func(uint32) uint8, list []uint32) []uint8 {
 	}
 	return newList
 }
+// MapUint32Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Str(f func(uint32) string, list []uint32) []string {
 	if f == nil {
 		return []string{}
@@ -870,6 +1044,8 @@ func MapUint32Str(f func(uint32) string, list []uint32) []string {
 	}
 	return newList
 }
+// MapUint32Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint32Bool(f func(uint32) bool, list []uint32) []bool {
 	if f == nil {
 		return []bool{}
@@ -880,6 +1056,8 @@ func MapUint32Bool(f func(uint32) bool, list []uint32) []bool {
 	}
 	return newList
 }
+// MapUint16Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Int(f func(uint16) int, list []uint16) []int {
 	if f == nil {
 		return []int{}
@@ -890,6 +1068,8 @@ func MapUint16Int(f func(uint16) int, list []uint16) []int {
 	}
 	return newList
 }
+// MapUint16Int64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Int64(f func(uint16) int64, list []uint16) []int64 {
 	if f == nil {
 		return []int64{}
@@ -900,6 +1080,8 @@ func MapUint16Int64(f func(uint16) int64, list []uint16) []int64 {
 	}
 	return newList
 }
+// MapUint16Int32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Int32(f func(uint16) int32, list []uint16) []int32 {
 	if f == nil {
 		return []int32{}
@@ -910,6 +1092,8 @@ func MapUint16Int32(f func(uint16) int32, list []uint16) []int32 {
 	}
 	return newList
 }
+// MapUint16Int16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Int16(f func(uint16) int16, list []uint16) []int16 {
 	if f == nil {
 		return []int16{}
@@ -920,6 +1104,8 @@ func MapUint16Int16(f func(uint16) int16, list []uint16) []int16 {
 	}
 	return newList
 }
+// MapUint16Int8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Int8(f func(uint16) int8, list []uint16) []int8 {
 	if f == nil {
 		return []int8{}
@@ -930,6 +1116,8 @@ func MapUint16Int8(f func(uint16) int8, list []uint16) []int8 {
 	}
 	return newList
 }
+// MapUint16Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Uint(f func(uint16) uint, list []uint16) []uint {
 	if f == nil {
 		return []uint{}
@@ -940,6 +1128,8 @@ func MapUint16Uint(f func(uint16) uint, list []uint16) []uint {
 	}
 	return newList
 }
+// MapUint16Uint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Uint64(f func(uint16) uint64, list []uint16) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -950,6 +1140,8 @@ func MapUint16Uint64(f func(uint16) uint64, list []uint16) []uint64 {
 	}
 	return newList
 }
+// MapUint16Uint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Uint32(f func(uint16) uint32, list []uint16) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -960,6 +1152,8 @@ func MapUint16Uint32(f func(uint16) uint32, list []uint16) []uint32 {
 	}
 	return newList
 }
+// MapUint16Uint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Uint8(f func(uint16) uint8, list []uint16) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -970,6 +1164,8 @@ func MapUint16Uint8(f func(uint16) uint8, list []uint16) []uint8 {
 	}
 	return newList
 }
+// MapUint16Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Str(f func(uint16) string, list []uint16) []string {
 	if f == nil {
 		return []string{}
@@ -980,6 +1176,8 @@ func MapUint16Str(f func(uint16) string, list []uint16) []string {
 	}
 	return newList
 }
+// MapUint16Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint16Bool(f func(uint16) bool, list []uint16) []bool {
 	if f == nil {
 		return []bool{}
@@ -990,6 +1188,8 @@ func MapUint16Bool(f func(uint16) bool, list []uint16) []bool {
 	}
 	return newList
 }
+// MapUint8Int takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Int(f func(uint8) int, list []uint8) []int {
 	if f == nil {
 		return []int{}
@@ -1000,6 +1200,8 @@ func MapUint8Int(f func(uint8) int, list []uint8) []int {
 	}
 	return newList
 }
+// MapUint8Int64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Int64(f func(uint8) int64, list []uint8) []int64 {
 	if f == nil {
 		return []int64{}
@@ -1010,6 +1212,8 @@ func MapUint8Int64(f func(uint8) int64, list []uint8) []int64 {
 	}
 	return newList
 }
+// MapUint8Int32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Int32(f func(uint8) int32, list []uint8) []int32 {
 	if f == nil {
 		return []int32{}
@@ -1020,6 +1224,8 @@ func MapUint8Int32(f func(uint8) int32, list []uint8) []int32 {
 	}
 	return newList
 }
+// MapUint8Int16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Int16(f func(uint8) int16, list []uint8) []int16 {
 	if f == nil {
 		return []int16{}
@@ -1030,6 +1236,8 @@ func MapUint8Int16(f func(uint8) int16, list []uint8) []int16 {
 	}
 	return newList
 }
+// MapUint8Int8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Int8(f func(uint8) int8, list []uint8) []int8 {
 	if f == nil {
 		return []int8{}
@@ -1040,6 +1248,8 @@ func MapUint8Int8(f func(uint8) int8, list []uint8) []int8 {
 	}
 	return newList
 }
+// MapUint8Uint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Uint(f func(uint8) uint, list []uint8) []uint {
 	if f == nil {
 		return []uint{}
@@ -1050,6 +1260,8 @@ func MapUint8Uint(f func(uint8) uint, list []uint8) []uint {
 	}
 	return newList
 }
+// MapUint8Uint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Uint64(f func(uint8) uint64, list []uint8) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -1060,6 +1272,8 @@ func MapUint8Uint64(f func(uint8) uint64, list []uint8) []uint64 {
 	}
 	return newList
 }
+// MapUint8Uint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Uint32(f func(uint8) uint32, list []uint8) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -1070,6 +1284,8 @@ func MapUint8Uint32(f func(uint8) uint32, list []uint8) []uint32 {
 	}
 	return newList
 }
+// MapUint8Uint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Uint16(f func(uint8) uint16, list []uint8) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -1080,6 +1296,8 @@ func MapUint8Uint16(f func(uint8) uint16, list []uint8) []uint16 {
 	}
 	return newList
 }
+// MapUint8Str takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Str(f func(uint8) string, list []uint8) []string {
 	if f == nil {
 		return []string{}
@@ -1090,6 +1308,8 @@ func MapUint8Str(f func(uint8) string, list []uint8) []string {
 	}
 	return newList
 }
+// MapUint8Bool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapUint8Bool(f func(uint8) bool, list []uint8) []bool {
 	if f == nil {
 		return []bool{}
@@ -1100,6 +1320,8 @@ func MapUint8Bool(f func(uint8) bool, list []uint8) []bool {
 	}
 	return newList
 }
+// MapStrInt takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrInt(f func(string) int, list []string) []int {
 	if f == nil {
 		return []int{}
@@ -1110,6 +1332,8 @@ func MapStrInt(f func(string) int, list []string) []int {
 	}
 	return newList
 }
+// MapStrInt64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrInt64(f func(string) int64, list []string) []int64 {
 	if f == nil {
 		return []int64{}
@@ -1120,6 +1344,8 @@ func MapStrInt64(f func(string) int64, list []string) []int64 {
 	}
 	return newList
 }
+// MapStrInt32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrInt32(f func(string) int32, list []string) []int32 {
 	if f == nil {
 		return []int32{}
@@ -1130,6 +1356,8 @@ func MapStrInt32(f func(string) int32, list []string) []int32 {
 	}
 	return newList
 }
+// MapStrInt16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrInt16(f func(string) int16, list []string) []int16 {
 	if f == nil {
 		return []int16{}
@@ -1140,6 +1368,8 @@ func MapStrInt16(f func(string) int16, list []string) []int16 {
 	}
 	return newList
 }
+// MapStrInt8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrInt8(f func(string) int8, list []string) []int8 {
 	if f == nil {
 		return []int8{}
@@ -1150,6 +1380,8 @@ func MapStrInt8(f func(string) int8, list []string) []int8 {
 	}
 	return newList
 }
+// MapStrUint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrUint(f func(string) uint, list []string) []uint {
 	if f == nil {
 		return []uint{}
@@ -1160,6 +1392,8 @@ func MapStrUint(f func(string) uint, list []string) []uint {
 	}
 	return newList
 }
+// MapStrUint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrUint64(f func(string) uint64, list []string) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -1170,6 +1404,8 @@ func MapStrUint64(f func(string) uint64, list []string) []uint64 {
 	}
 	return newList
 }
+// MapStrUint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrUint32(f func(string) uint32, list []string) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -1180,6 +1416,8 @@ func MapStrUint32(f func(string) uint32, list []string) []uint32 {
 	}
 	return newList
 }
+// MapStrUint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrUint16(f func(string) uint16, list []string) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -1190,6 +1428,8 @@ func MapStrUint16(f func(string) uint16, list []string) []uint16 {
 	}
 	return newList
 }
+// MapStrUint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrUint8(f func(string) uint8, list []string) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -1200,6 +1440,8 @@ func MapStrUint8(f func(string) uint8, list []string) []uint8 {
 	}
 	return newList
 }
+// MapStrBool takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapStrBool(f func(string) bool, list []string) []bool {
 	if f == nil {
 		return []bool{}
@@ -1210,6 +1452,8 @@ func MapStrBool(f func(string) bool, list []string) []bool {
 	}
 	return newList
 }
+// MapBoolInt takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolInt(f func(bool) int, list []bool) []int {
 	if f == nil {
 		return []int{}
@@ -1220,6 +1464,8 @@ func MapBoolInt(f func(bool) int, list []bool) []int {
 	}
 	return newList
 }
+// MapBoolInt64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolInt64(f func(bool) int64, list []bool) []int64 {
 	if f == nil {
 		return []int64{}
@@ -1230,6 +1476,8 @@ func MapBoolInt64(f func(bool) int64, list []bool) []int64 {
 	}
 	return newList
 }
+// MapBoolInt32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolInt32(f func(bool) int32, list []bool) []int32 {
 	if f == nil {
 		return []int32{}
@@ -1240,6 +1488,8 @@ func MapBoolInt32(f func(bool) int32, list []bool) []int32 {
 	}
 	return newList
 }
+// MapBoolInt16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolInt16(f func(bool) int16, list []bool) []int16 {
 	if f == nil {
 		return []int16{}
@@ -1250,6 +1500,8 @@ func MapBoolInt16(f func(bool) int16, list []bool) []int16 {
 	}
 	return newList
 }
+// MapBoolInt8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolInt8(f func(bool) int8, list []bool) []int8 {
 	if f == nil {
 		return []int8{}
@@ -1260,6 +1512,8 @@ func MapBoolInt8(f func(bool) int8, list []bool) []int8 {
 	}
 	return newList
 }
+// MapBoolUint takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolUint(f func(bool) uint, list []bool) []uint {
 	if f == nil {
 		return []uint{}
@@ -1270,6 +1524,8 @@ func MapBoolUint(f func(bool) uint, list []bool) []uint {
 	}
 	return newList
 }
+// MapBoolUint64 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolUint64(f func(bool) uint64, list []bool) []uint64 {
 	if f == nil {
 		return []uint64{}
@@ -1280,6 +1536,8 @@ func MapBoolUint64(f func(bool) uint64, list []bool) []uint64 {
 	}
 	return newList
 }
+// MapBoolUint32 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolUint32(f func(bool) uint32, list []bool) []uint32 {
 	if f == nil {
 		return []uint32{}
@@ -1290,6 +1548,8 @@ func MapBoolUint32(f func(bool) uint32, list []bool) []uint32 {
 	}
 	return newList
 }
+// MapBoolUint16 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolUint16(f func(bool) uint16, list []bool) []uint16 {
 	if f == nil {
 		return []uint16{}
@@ -1300,6 +1560,8 @@ func MapBoolUint16(f func(bool) uint16, list []bool) []uint16 {
 	}
 	return newList
 }
+// MapBoolUint8 takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolUint8(f func(bool) uint8, list []bool) []uint8 {
 	if f == nil {
 		return []uint8{}
@@ -1310,6 +1572,8 @@ func MapBoolUint8(f func(bool) uint8, list []bool) []uint8 {
 	}
 	return newList
 }
+// MapBoolStr takes two inputs - 
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list 
 func MapBoolStr(f func(bool) string, list []bool) []string {
 	if f == nil {
 		return []string{}

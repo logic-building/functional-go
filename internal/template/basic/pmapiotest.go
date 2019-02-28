@@ -53,9 +53,8 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 	if num == "ten" {
 		return <OUTPUT_TYPE>(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 `
 }
@@ -85,9 +84,8 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 	if num == 10 {
 		return <OUTPUT_TYPE>("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 `
 }
@@ -117,9 +115,8 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 `
 }
@@ -149,9 +146,8 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 	if num != "0" {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 `
 }
@@ -181,9 +177,8 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 `
 }
@@ -213,9 +208,8 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
 	if num == true {
 		return "10"
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 `
 }
