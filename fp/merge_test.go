@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+
 func TestMergeInt(t *testing.T) {
 	map1 := map[int]int{1: 10, 2: 20, 3: 30}
 	map2 := map[int]int{4: 40, 5: 50, 3: 30}
