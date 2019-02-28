@@ -1,4 +1,4 @@
-package fp 
+package fp
 
 import (
 	"reflect"
@@ -234,9 +234,8 @@ func TestPmapIntStr(t *testing.T) {
 func someLogicIntStr(num int) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapIntBool(t *testing.T) {
@@ -261,9 +260,8 @@ func TestPmapIntBool(t *testing.T) {
 func someLogicIntBool(num int) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapInt64Int(t *testing.T) {
@@ -495,9 +493,8 @@ func TestPmapInt64Str(t *testing.T) {
 func someLogicInt64Str(num int64) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapInt64Bool(t *testing.T) {
@@ -522,9 +519,8 @@ func TestPmapInt64Bool(t *testing.T) {
 func someLogicInt64Bool(num int64) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapInt32Int(t *testing.T) {
@@ -756,9 +752,8 @@ func TestPmapInt32Str(t *testing.T) {
 func someLogicInt32Str(num int32) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapInt32Bool(t *testing.T) {
@@ -783,9 +778,8 @@ func TestPmapInt32Bool(t *testing.T) {
 func someLogicInt32Bool(num int32) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapInt16Int(t *testing.T) {
@@ -1017,9 +1011,8 @@ func TestPmapInt16Str(t *testing.T) {
 func someLogicInt16Str(num int16) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapInt16Bool(t *testing.T) {
@@ -1044,9 +1037,8 @@ func TestPmapInt16Bool(t *testing.T) {
 func someLogicInt16Bool(num int16) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapInt8Int(t *testing.T) {
@@ -1278,9 +1270,8 @@ func TestPmapInt8Str(t *testing.T) {
 func someLogicInt8Str(num int8) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapInt8Bool(t *testing.T) {
@@ -1305,9 +1296,8 @@ func TestPmapInt8Bool(t *testing.T) {
 func someLogicInt8Bool(num int8) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapUintInt(t *testing.T) {
@@ -1539,9 +1529,8 @@ func TestPmapUintStr(t *testing.T) {
 func someLogicUintStr(num uint) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapUintBool(t *testing.T) {
@@ -1566,9 +1555,8 @@ func TestPmapUintBool(t *testing.T) {
 func someLogicUintBool(num uint) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapUint64Int(t *testing.T) {
@@ -1800,9 +1788,8 @@ func TestPmapUint64Str(t *testing.T) {
 func someLogicUint64Str(num uint64) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapUint64Bool(t *testing.T) {
@@ -1827,9 +1814,8 @@ func TestPmapUint64Bool(t *testing.T) {
 func someLogicUint64Bool(num uint64) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapUint32Int(t *testing.T) {
@@ -2061,9 +2047,8 @@ func TestPmapUint32Str(t *testing.T) {
 func someLogicUint32Str(num uint32) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapUint32Bool(t *testing.T) {
@@ -2088,9 +2073,8 @@ func TestPmapUint32Bool(t *testing.T) {
 func someLogicUint32Bool(num uint32) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapUint16Int(t *testing.T) {
@@ -2322,9 +2306,8 @@ func TestPmapUint16Str(t *testing.T) {
 func someLogicUint16Str(num uint16) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapUint16Bool(t *testing.T) {
@@ -2349,9 +2332,8 @@ func TestPmapUint16Bool(t *testing.T) {
 func someLogicUint16Bool(num uint16) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapUint8Int(t *testing.T) {
@@ -2583,9 +2565,8 @@ func TestPmapUint8Str(t *testing.T) {
 func someLogicUint8Str(num uint8) string {
 	if num == 10 {
 		return string("10")
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
 
 func TestPmapUint8Bool(t *testing.T) {
@@ -2610,9 +2591,8 @@ func TestPmapUint8Bool(t *testing.T) {
 func someLogicUint8Bool(num uint8) bool {
 	if num > 0 {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapStrInt(t *testing.T) {
@@ -2637,9 +2617,8 @@ func TestPmapStrInt(t *testing.T) {
 func someLogicStrInt(num string) int {
 	if num == "ten" {
 		return int(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrInt64(t *testing.T) {
@@ -2664,9 +2643,8 @@ func TestPmapStrInt64(t *testing.T) {
 func someLogicStrInt64(num string) int64 {
 	if num == "ten" {
 		return int64(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrInt32(t *testing.T) {
@@ -2691,9 +2669,8 @@ func TestPmapStrInt32(t *testing.T) {
 func someLogicStrInt32(num string) int32 {
 	if num == "ten" {
 		return int32(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrInt16(t *testing.T) {
@@ -2718,9 +2695,8 @@ func TestPmapStrInt16(t *testing.T) {
 func someLogicStrInt16(num string) int16 {
 	if num == "ten" {
 		return int16(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrInt8(t *testing.T) {
@@ -2745,9 +2721,8 @@ func TestPmapStrInt8(t *testing.T) {
 func someLogicStrInt8(num string) int8 {
 	if num == "ten" {
 		return int8(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrUint(t *testing.T) {
@@ -2772,9 +2747,8 @@ func TestPmapStrUint(t *testing.T) {
 func someLogicStrUint(num string) uint {
 	if num == "ten" {
 		return uint(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrUint64(t *testing.T) {
@@ -2799,9 +2773,8 @@ func TestPmapStrUint64(t *testing.T) {
 func someLogicStrUint64(num string) uint64 {
 	if num == "ten" {
 		return uint64(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrUint32(t *testing.T) {
@@ -2826,9 +2799,8 @@ func TestPmapStrUint32(t *testing.T) {
 func someLogicStrUint32(num string) uint32 {
 	if num == "ten" {
 		return uint32(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrUint16(t *testing.T) {
@@ -2853,9 +2825,8 @@ func TestPmapStrUint16(t *testing.T) {
 func someLogicStrUint16(num string) uint16 {
 	if num == "ten" {
 		return uint16(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrUint8(t *testing.T) {
@@ -2880,9 +2851,8 @@ func TestPmapStrUint8(t *testing.T) {
 func someLogicStrUint8(num string) uint8 {
 	if num == "ten" {
 		return uint8(10)
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapStrBool(t *testing.T) {
@@ -2907,9 +2877,8 @@ func TestPmapStrBool(t *testing.T) {
 func someLogicStrBool(num string) bool {
 	if num != "0" {
 		return true
-	} else {
-		return false
-	}
+	} 
+	return false
 }
 
 func TestPmapBoolInt(t *testing.T) {
@@ -2934,9 +2903,8 @@ func TestPmapBoolInt(t *testing.T) {
 func someLogicBoolInt(num bool) int {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolInt64(t *testing.T) {
@@ -2961,9 +2929,8 @@ func TestPmapBoolInt64(t *testing.T) {
 func someLogicBoolInt64(num bool) int64 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolInt32(t *testing.T) {
@@ -2988,9 +2955,8 @@ func TestPmapBoolInt32(t *testing.T) {
 func someLogicBoolInt32(num bool) int32 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolInt16(t *testing.T) {
@@ -3015,9 +2981,8 @@ func TestPmapBoolInt16(t *testing.T) {
 func someLogicBoolInt16(num bool) int16 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolInt8(t *testing.T) {
@@ -3042,9 +3007,8 @@ func TestPmapBoolInt8(t *testing.T) {
 func someLogicBoolInt8(num bool) int8 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolUint(t *testing.T) {
@@ -3069,9 +3033,8 @@ func TestPmapBoolUint(t *testing.T) {
 func someLogicBoolUint(num bool) uint {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolUint64(t *testing.T) {
@@ -3096,9 +3059,8 @@ func TestPmapBoolUint64(t *testing.T) {
 func someLogicBoolUint64(num bool) uint64 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolUint32(t *testing.T) {
@@ -3123,9 +3085,8 @@ func TestPmapBoolUint32(t *testing.T) {
 func someLogicBoolUint32(num bool) uint32 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolUint16(t *testing.T) {
@@ -3150,9 +3111,8 @@ func TestPmapBoolUint16(t *testing.T) {
 func someLogicBoolUint16(num bool) uint16 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolUint8(t *testing.T) {
@@ -3177,9 +3137,8 @@ func TestPmapBoolUint8(t *testing.T) {
 func someLogicBoolUint8(num bool) uint8 {
 	if num == true {
 		return 10
-	} else {
-		return 0
-	}
+	} 
+	return 0
 }
 
 func TestPmapBoolStr(t *testing.T) {
@@ -3204,7 +3163,6 @@ func TestPmapBoolStr(t *testing.T) {
 func someLogicBoolStr(num bool) string {
 	if num == true {
 		return "10"
-	} else {
-		return "0"
-	}
+	} 
+	return "0"
 }
