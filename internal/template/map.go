@@ -12,5 +12,6 @@ func Map<CONDITIONAL_TYPE>(f func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {
 		newList[i] = f(v)
 	}
 	return newList
-}`
+}
+`
 }

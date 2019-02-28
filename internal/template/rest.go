@@ -20,5 +20,6 @@ func Rest<CONDITIONAL_TYPE>(l []<TYPE>) []<TYPE> {
 	}
 
 	return newList
-}`
+}
+`
 }

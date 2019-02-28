@@ -42,6 +42,7 @@ func PMapIntInt64(f func(int) int64, list []int) []int64 {
 	}
 	return newList
 }
+
 // PMapIntInt32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -82,6 +83,7 @@ func PMapIntInt32(f func(int) int32, list []int) []int32 {
 	}
 	return newList
 }
+
 // PMapIntInt16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -122,6 +124,7 @@ func PMapIntInt16(f func(int) int16, list []int) []int16 {
 	}
 	return newList
 }
+
 // PMapIntInt8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -162,6 +165,7 @@ func PMapIntInt8(f func(int) int8, list []int) []int8 {
 	}
 	return newList
 }
+
 // PMapIntUint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -202,6 +206,7 @@ func PMapIntUint(f func(int) uint, list []int) []uint {
 	}
 	return newList
 }
+
 // PMapIntUint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -242,6 +247,7 @@ func PMapIntUint64(f func(int) uint64, list []int) []uint64 {
 	}
 	return newList
 }
+
 // PMapIntUint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -282,6 +288,7 @@ func PMapIntUint32(f func(int) uint32, list []int) []uint32 {
 	}
 	return newList
 }
+
 // PMapIntUint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -322,6 +329,7 @@ func PMapIntUint16(f func(int) uint16, list []int) []uint16 {
 	}
 	return newList
 }
+
 // PMapIntUint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -362,6 +370,7 @@ func PMapIntUint8(f func(int) uint8, list []int) []uint8 {
 	}
 	return newList
 }
+
 // PMapIntStr applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -402,6 +411,7 @@ func PMapIntStr(f func(int) string, list []int) []string {
 	}
 	return newList
 }
+
 // PMapIntBool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -442,6 +452,7 @@ func PMapIntBool(f func(int) bool, list []int) []bool {
 	}
 	return newList
 }
+
 // PMapInt64Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -482,6 +493,7 @@ func PMapInt64Int(f func(int64) int, list []int64) []int {
 	}
 	return newList
 }
+
 // PMapInt64Int32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -522,6 +534,7 @@ func PMapInt64Int32(f func(int64) int32, list []int64) []int32 {
 	}
 	return newList
 }
+
 // PMapInt64Int16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -562,6 +575,7 @@ func PMapInt64Int16(f func(int64) int16, list []int64) []int16 {
 	}
 	return newList
 }
+
 // PMapInt64Int8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -602,6 +616,7 @@ func PMapInt64Int8(f func(int64) int8, list []int64) []int8 {
 	}
 	return newList
 }
+
 // PMapInt64Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -642,6 +657,7 @@ func PMapInt64Uint(f func(int64) uint, list []int64) []uint {
 	}
 	return newList
 }
+
 // PMapInt64Uint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -682,6 +698,7 @@ func PMapInt64Uint64(f func(int64) uint64, list []int64) []uint64 {
 	}
 	return newList
 }
+
 // PMapInt64Uint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -722,6 +739,7 @@ func PMapInt64Uint32(f func(int64) uint32, list []int64) []uint32 {
 	}
 	return newList
 }
+
 // PMapInt64Uint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -762,6 +780,7 @@ func PMapInt64Uint16(f func(int64) uint16, list []int64) []uint16 {
 	}
 	return newList
 }
+
 // PMapInt64Uint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -802,6 +821,7 @@ func PMapInt64Uint8(f func(int64) uint8, list []int64) []uint8 {
 	}
 	return newList
 }
+
 // PMapInt64Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -842,6 +862,7 @@ func PMapInt64Str(f func(int64) string, list []int64) []string {
 	}
 	return newList
 }
+
 // PMapInt64Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -882,6 +903,7 @@ func PMapInt64Bool(f func(int64) bool, list []int64) []bool {
 	}
 	return newList
 }
+
 // PMapInt32Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -922,6 +944,7 @@ func PMapInt32Int(f func(int32) int, list []int32) []int {
 	}
 	return newList
 }
+
 // PMapInt32Int64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -962,6 +985,7 @@ func PMapInt32Int64(f func(int32) int64, list []int32) []int64 {
 	}
 	return newList
 }
+
 // PMapInt32Int16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1002,6 +1026,7 @@ func PMapInt32Int16(f func(int32) int16, list []int32) []int16 {
 	}
 	return newList
 }
+
 // PMapInt32Int8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1042,6 +1067,7 @@ func PMapInt32Int8(f func(int32) int8, list []int32) []int8 {
 	}
 	return newList
 }
+
 // PMapInt32Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1082,6 +1108,7 @@ func PMapInt32Uint(f func(int32) uint, list []int32) []uint {
 	}
 	return newList
 }
+
 // PMapInt32Uint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1122,6 +1149,7 @@ func PMapInt32Uint64(f func(int32) uint64, list []int32) []uint64 {
 	}
 	return newList
 }
+
 // PMapInt32Uint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1162,6 +1190,7 @@ func PMapInt32Uint32(f func(int32) uint32, list []int32) []uint32 {
 	}
 	return newList
 }
+
 // PMapInt32Uint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1202,6 +1231,7 @@ func PMapInt32Uint16(f func(int32) uint16, list []int32) []uint16 {
 	}
 	return newList
 }
+
 // PMapInt32Uint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1242,6 +1272,7 @@ func PMapInt32Uint8(f func(int32) uint8, list []int32) []uint8 {
 	}
 	return newList
 }
+
 // PMapInt32Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1282,6 +1313,7 @@ func PMapInt32Str(f func(int32) string, list []int32) []string {
 	}
 	return newList
 }
+
 // PMapInt32Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1322,6 +1354,7 @@ func PMapInt32Bool(f func(int32) bool, list []int32) []bool {
 	}
 	return newList
 }
+
 // PMapInt16Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1362,6 +1395,7 @@ func PMapInt16Int(f func(int16) int, list []int16) []int {
 	}
 	return newList
 }
+
 // PMapInt16Int64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1402,6 +1436,7 @@ func PMapInt16Int64(f func(int16) int64, list []int16) []int64 {
 	}
 	return newList
 }
+
 // PMapInt16Int32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1442,6 +1477,7 @@ func PMapInt16Int32(f func(int16) int32, list []int16) []int32 {
 	}
 	return newList
 }
+
 // PMapInt16Int8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1482,6 +1518,7 @@ func PMapInt16Int8(f func(int16) int8, list []int16) []int8 {
 	}
 	return newList
 }
+
 // PMapInt16Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1522,6 +1559,7 @@ func PMapInt16Uint(f func(int16) uint, list []int16) []uint {
 	}
 	return newList
 }
+
 // PMapInt16Uint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1562,6 +1600,7 @@ func PMapInt16Uint64(f func(int16) uint64, list []int16) []uint64 {
 	}
 	return newList
 }
+
 // PMapInt16Uint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1602,6 +1641,7 @@ func PMapInt16Uint32(f func(int16) uint32, list []int16) []uint32 {
 	}
 	return newList
 }
+
 // PMapInt16Uint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1642,6 +1682,7 @@ func PMapInt16Uint16(f func(int16) uint16, list []int16) []uint16 {
 	}
 	return newList
 }
+
 // PMapInt16Uint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1682,6 +1723,7 @@ func PMapInt16Uint8(f func(int16) uint8, list []int16) []uint8 {
 	}
 	return newList
 }
+
 // PMapInt16Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1722,6 +1764,7 @@ func PMapInt16Str(f func(int16) string, list []int16) []string {
 	}
 	return newList
 }
+
 // PMapInt16Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1762,6 +1805,7 @@ func PMapInt16Bool(f func(int16) bool, list []int16) []bool {
 	}
 	return newList
 }
+
 // PMapInt8Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1802,6 +1846,7 @@ func PMapInt8Int(f func(int8) int, list []int8) []int {
 	}
 	return newList
 }
+
 // PMapInt8Int64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1842,6 +1887,7 @@ func PMapInt8Int64(f func(int8) int64, list []int8) []int64 {
 	}
 	return newList
 }
+
 // PMapInt8Int32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1882,6 +1928,7 @@ func PMapInt8Int32(f func(int8) int32, list []int8) []int32 {
 	}
 	return newList
 }
+
 // PMapInt8Int16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1922,6 +1969,7 @@ func PMapInt8Int16(f func(int8) int16, list []int8) []int16 {
 	}
 	return newList
 }
+
 // PMapInt8Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1962,6 +2010,7 @@ func PMapInt8Uint(f func(int8) uint, list []int8) []uint {
 	}
 	return newList
 }
+
 // PMapInt8Uint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2002,6 +2051,7 @@ func PMapInt8Uint64(f func(int8) uint64, list []int8) []uint64 {
 	}
 	return newList
 }
+
 // PMapInt8Uint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2042,6 +2092,7 @@ func PMapInt8Uint32(f func(int8) uint32, list []int8) []uint32 {
 	}
 	return newList
 }
+
 // PMapInt8Uint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2082,6 +2133,7 @@ func PMapInt8Uint16(f func(int8) uint16, list []int8) []uint16 {
 	}
 	return newList
 }
+
 // PMapInt8Uint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2122,6 +2174,7 @@ func PMapInt8Uint8(f func(int8) uint8, list []int8) []uint8 {
 	}
 	return newList
 }
+
 // PMapInt8Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2162,6 +2215,7 @@ func PMapInt8Str(f func(int8) string, list []int8) []string {
 	}
 	return newList
 }
+
 // PMapInt8Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2202,6 +2256,7 @@ func PMapInt8Bool(f func(int8) bool, list []int8) []bool {
 	}
 	return newList
 }
+
 // PMapUintInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2242,6 +2297,7 @@ func PMapUintInt(f func(uint) int, list []uint) []int {
 	}
 	return newList
 }
+
 // PMapUintInt64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2282,6 +2338,7 @@ func PMapUintInt64(f func(uint) int64, list []uint) []int64 {
 	}
 	return newList
 }
+
 // PMapUintInt32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2322,6 +2379,7 @@ func PMapUintInt32(f func(uint) int32, list []uint) []int32 {
 	}
 	return newList
 }
+
 // PMapUintInt16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2362,6 +2420,7 @@ func PMapUintInt16(f func(uint) int16, list []uint) []int16 {
 	}
 	return newList
 }
+
 // PMapUintInt8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2402,6 +2461,7 @@ func PMapUintInt8(f func(uint) int8, list []uint) []int8 {
 	}
 	return newList
 }
+
 // PMapUintUint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2442,6 +2502,7 @@ func PMapUintUint64(f func(uint) uint64, list []uint) []uint64 {
 	}
 	return newList
 }
+
 // PMapUintUint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2482,6 +2543,7 @@ func PMapUintUint32(f func(uint) uint32, list []uint) []uint32 {
 	}
 	return newList
 }
+
 // PMapUintUint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2522,6 +2584,7 @@ func PMapUintUint16(f func(uint) uint16, list []uint) []uint16 {
 	}
 	return newList
 }
+
 // PMapUintUint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2562,6 +2625,7 @@ func PMapUintUint8(f func(uint) uint8, list []uint) []uint8 {
 	}
 	return newList
 }
+
 // PMapUintStr applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2602,6 +2666,7 @@ func PMapUintStr(f func(uint) string, list []uint) []string {
 	}
 	return newList
 }
+
 // PMapUintBool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2642,6 +2707,7 @@ func PMapUintBool(f func(uint) bool, list []uint) []bool {
 	}
 	return newList
 }
+
 // PMapUint64Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2682,6 +2748,7 @@ func PMapUint64Int(f func(uint64) int, list []uint64) []int {
 	}
 	return newList
 }
+
 // PMapUint64Int64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2722,6 +2789,7 @@ func PMapUint64Int64(f func(uint64) int64, list []uint64) []int64 {
 	}
 	return newList
 }
+
 // PMapUint64Int32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2762,6 +2830,7 @@ func PMapUint64Int32(f func(uint64) int32, list []uint64) []int32 {
 	}
 	return newList
 }
+
 // PMapUint64Int16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2802,6 +2871,7 @@ func PMapUint64Int16(f func(uint64) int16, list []uint64) []int16 {
 	}
 	return newList
 }
+
 // PMapUint64Int8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2842,6 +2912,7 @@ func PMapUint64Int8(f func(uint64) int8, list []uint64) []int8 {
 	}
 	return newList
 }
+
 // PMapUint64Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2882,6 +2953,7 @@ func PMapUint64Uint(f func(uint64) uint, list []uint64) []uint {
 	}
 	return newList
 }
+
 // PMapUint64Uint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2922,6 +2994,7 @@ func PMapUint64Uint32(f func(uint64) uint32, list []uint64) []uint32 {
 	}
 	return newList
 }
+
 // PMapUint64Uint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2962,6 +3035,7 @@ func PMapUint64Uint16(f func(uint64) uint16, list []uint64) []uint16 {
 	}
 	return newList
 }
+
 // PMapUint64Uint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3002,6 +3076,7 @@ func PMapUint64Uint8(f func(uint64) uint8, list []uint64) []uint8 {
 	}
 	return newList
 }
+
 // PMapUint64Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3042,6 +3117,7 @@ func PMapUint64Str(f func(uint64) string, list []uint64) []string {
 	}
 	return newList
 }
+
 // PMapUint64Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3082,6 +3158,7 @@ func PMapUint64Bool(f func(uint64) bool, list []uint64) []bool {
 	}
 	return newList
 }
+
 // PMapUint32Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3122,6 +3199,7 @@ func PMapUint32Int(f func(uint32) int, list []uint32) []int {
 	}
 	return newList
 }
+
 // PMapUint32Int64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3162,6 +3240,7 @@ func PMapUint32Int64(f func(uint32) int64, list []uint32) []int64 {
 	}
 	return newList
 }
+
 // PMapUint32Int32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3202,6 +3281,7 @@ func PMapUint32Int32(f func(uint32) int32, list []uint32) []int32 {
 	}
 	return newList
 }
+
 // PMapUint32Int16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3242,6 +3322,7 @@ func PMapUint32Int16(f func(uint32) int16, list []uint32) []int16 {
 	}
 	return newList
 }
+
 // PMapUint32Int8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3282,6 +3363,7 @@ func PMapUint32Int8(f func(uint32) int8, list []uint32) []int8 {
 	}
 	return newList
 }
+
 // PMapUint32Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3322,6 +3404,7 @@ func PMapUint32Uint(f func(uint32) uint, list []uint32) []uint {
 	}
 	return newList
 }
+
 // PMapUint32Uint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3362,6 +3445,7 @@ func PMapUint32Uint64(f func(uint32) uint64, list []uint32) []uint64 {
 	}
 	return newList
 }
+
 // PMapUint32Uint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3402,6 +3486,7 @@ func PMapUint32Uint16(f func(uint32) uint16, list []uint32) []uint16 {
 	}
 	return newList
 }
+
 // PMapUint32Uint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3442,6 +3527,7 @@ func PMapUint32Uint8(f func(uint32) uint8, list []uint32) []uint8 {
 	}
 	return newList
 }
+
 // PMapUint32Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3482,6 +3568,7 @@ func PMapUint32Str(f func(uint32) string, list []uint32) []string {
 	}
 	return newList
 }
+
 // PMapUint32Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3522,6 +3609,7 @@ func PMapUint32Bool(f func(uint32) bool, list []uint32) []bool {
 	}
 	return newList
 }
+
 // PMapUint16Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3562,6 +3650,7 @@ func PMapUint16Int(f func(uint16) int, list []uint16) []int {
 	}
 	return newList
 }
+
 // PMapUint16Int64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3602,6 +3691,7 @@ func PMapUint16Int64(f func(uint16) int64, list []uint16) []int64 {
 	}
 	return newList
 }
+
 // PMapUint16Int32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3642,6 +3732,7 @@ func PMapUint16Int32(f func(uint16) int32, list []uint16) []int32 {
 	}
 	return newList
 }
+
 // PMapUint16Int16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3682,6 +3773,7 @@ func PMapUint16Int16(f func(uint16) int16, list []uint16) []int16 {
 	}
 	return newList
 }
+
 // PMapUint16Int8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3722,6 +3814,7 @@ func PMapUint16Int8(f func(uint16) int8, list []uint16) []int8 {
 	}
 	return newList
 }
+
 // PMapUint16Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3762,6 +3855,7 @@ func PMapUint16Uint(f func(uint16) uint, list []uint16) []uint {
 	}
 	return newList
 }
+
 // PMapUint16Uint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3802,6 +3896,7 @@ func PMapUint16Uint64(f func(uint16) uint64, list []uint16) []uint64 {
 	}
 	return newList
 }
+
 // PMapUint16Uint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3842,6 +3937,7 @@ func PMapUint16Uint32(f func(uint16) uint32, list []uint16) []uint32 {
 	}
 	return newList
 }
+
 // PMapUint16Uint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3882,6 +3978,7 @@ func PMapUint16Uint8(f func(uint16) uint8, list []uint16) []uint8 {
 	}
 	return newList
 }
+
 // PMapUint16Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3922,6 +4019,7 @@ func PMapUint16Str(f func(uint16) string, list []uint16) []string {
 	}
 	return newList
 }
+
 // PMapUint16Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3962,6 +4060,7 @@ func PMapUint16Bool(f func(uint16) bool, list []uint16) []bool {
 	}
 	return newList
 }
+
 // PMapUint8Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4002,6 +4101,7 @@ func PMapUint8Int(f func(uint8) int, list []uint8) []int {
 	}
 	return newList
 }
+
 // PMapUint8Int64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4042,6 +4142,7 @@ func PMapUint8Int64(f func(uint8) int64, list []uint8) []int64 {
 	}
 	return newList
 }
+
 // PMapUint8Int32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4082,6 +4183,7 @@ func PMapUint8Int32(f func(uint8) int32, list []uint8) []int32 {
 	}
 	return newList
 }
+
 // PMapUint8Int16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4122,6 +4224,7 @@ func PMapUint8Int16(f func(uint8) int16, list []uint8) []int16 {
 	}
 	return newList
 }
+
 // PMapUint8Int8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4162,6 +4265,7 @@ func PMapUint8Int8(f func(uint8) int8, list []uint8) []int8 {
 	}
 	return newList
 }
+
 // PMapUint8Uint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4202,6 +4306,7 @@ func PMapUint8Uint(f func(uint8) uint, list []uint8) []uint {
 	}
 	return newList
 }
+
 // PMapUint8Uint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4242,6 +4347,7 @@ func PMapUint8Uint64(f func(uint8) uint64, list []uint8) []uint64 {
 	}
 	return newList
 }
+
 // PMapUint8Uint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4282,6 +4388,7 @@ func PMapUint8Uint32(f func(uint8) uint32, list []uint8) []uint32 {
 	}
 	return newList
 }
+
 // PMapUint8Uint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4322,6 +4429,7 @@ func PMapUint8Uint16(f func(uint8) uint16, list []uint8) []uint16 {
 	}
 	return newList
 }
+
 // PMapUint8Str applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4362,6 +4470,7 @@ func PMapUint8Str(f func(uint8) string, list []uint8) []string {
 	}
 	return newList
 }
+
 // PMapUint8Bool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4402,6 +4511,7 @@ func PMapUint8Bool(f func(uint8) bool, list []uint8) []bool {
 	}
 	return newList
 }
+
 // PMapStrInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4442,6 +4552,7 @@ func PMapStrInt(f func(string) int, list []string) []int {
 	}
 	return newList
 }
+
 // PMapStrInt64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4482,6 +4593,7 @@ func PMapStrInt64(f func(string) int64, list []string) []int64 {
 	}
 	return newList
 }
+
 // PMapStrInt32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4522,6 +4634,7 @@ func PMapStrInt32(f func(string) int32, list []string) []int32 {
 	}
 	return newList
 }
+
 // PMapStrInt16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4562,6 +4675,7 @@ func PMapStrInt16(f func(string) int16, list []string) []int16 {
 	}
 	return newList
 }
+
 // PMapStrInt8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4602,6 +4716,7 @@ func PMapStrInt8(f func(string) int8, list []string) []int8 {
 	}
 	return newList
 }
+
 // PMapStrUint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4642,6 +4757,7 @@ func PMapStrUint(f func(string) uint, list []string) []uint {
 	}
 	return newList
 }
+
 // PMapStrUint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4682,6 +4798,7 @@ func PMapStrUint64(f func(string) uint64, list []string) []uint64 {
 	}
 	return newList
 }
+
 // PMapStrUint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4722,6 +4839,7 @@ func PMapStrUint32(f func(string) uint32, list []string) []uint32 {
 	}
 	return newList
 }
+
 // PMapStrUint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4762,6 +4880,7 @@ func PMapStrUint16(f func(string) uint16, list []string) []uint16 {
 	}
 	return newList
 }
+
 // PMapStrUint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4802,6 +4921,7 @@ func PMapStrUint8(f func(string) uint8, list []string) []uint8 {
 	}
 	return newList
 }
+
 // PMapStrBool applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4842,6 +4962,7 @@ func PMapStrBool(f func(string) bool, list []string) []bool {
 	}
 	return newList
 }
+
 // PMapBoolInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4882,6 +5003,7 @@ func PMapBoolInt(f func(bool) int, list []bool) []int {
 	}
 	return newList
 }
+
 // PMapBoolInt64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4922,6 +5044,7 @@ func PMapBoolInt64(f func(bool) int64, list []bool) []int64 {
 	}
 	return newList
 }
+
 // PMapBoolInt32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4962,6 +5085,7 @@ func PMapBoolInt32(f func(bool) int32, list []bool) []int32 {
 	}
 	return newList
 }
+
 // PMapBoolInt16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5002,6 +5126,7 @@ func PMapBoolInt16(f func(bool) int16, list []bool) []int16 {
 	}
 	return newList
 }
+
 // PMapBoolInt8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5042,6 +5167,7 @@ func PMapBoolInt8(f func(bool) int8, list []bool) []int8 {
 	}
 	return newList
 }
+
 // PMapBoolUint applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5082,6 +5208,7 @@ func PMapBoolUint(f func(bool) uint, list []bool) []uint {
 	}
 	return newList
 }
+
 // PMapBoolUint64 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5122,6 +5249,7 @@ func PMapBoolUint64(f func(bool) uint64, list []bool) []uint64 {
 	}
 	return newList
 }
+
 // PMapBoolUint32 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5162,6 +5290,7 @@ func PMapBoolUint32(f func(bool) uint32, list []bool) []uint32 {
 	}
 	return newList
 }
+
 // PMapBoolUint16 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5202,6 +5331,7 @@ func PMapBoolUint16(f func(bool) uint16, list []bool) []uint16 {
 	}
 	return newList
 }
+
 // PMapBoolUint8 applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5242,6 +5372,7 @@ func PMapBoolUint8(f func(bool) uint8, list []bool) []uint8 {
 	}
 	return newList
 }
+
 // PMapBoolStr applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //

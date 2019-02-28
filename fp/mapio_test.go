@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-
 func TestMapIntInt64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int64{2, 3, 4}
@@ -201,7 +200,7 @@ func TestMapIntBool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapIntBool(someLogicIntBool, []int{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapIntBool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -410,7 +409,7 @@ func TestMapInt64Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapInt64Bool(someLogicInt64Bool, []int64{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapInt64Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -619,7 +618,7 @@ func TestMapInt32Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapInt32Bool(someLogicInt32Bool, []int32{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapInt32Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -828,7 +827,7 @@ func TestMapInt16Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapInt16Bool(someLogicInt16Bool, []int16{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapInt16Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -1037,7 +1036,7 @@ func TestMapInt8Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapInt8Bool(someLogicInt8Bool, []int8{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapInt8Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -1246,7 +1245,7 @@ func TestMapUintBool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapUintBool(someLogicUintBool, []uint{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapUintBool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -1455,7 +1454,7 @@ func TestMapUint64Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapUint64Bool(someLogicUint64Bool, []uint64{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapUint64Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -1664,7 +1663,7 @@ func TestMapUint32Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapUint32Bool(someLogicUint32Bool, []uint32{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapUint32Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -1873,7 +1872,7 @@ func TestMapUint16Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapUint16Bool(someLogicUint16Bool, []uint16{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapUint16Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2082,7 +2081,7 @@ func TestMapUint8Bool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapUint8Bool(someLogicUint8Bool, []uint8{10, 0})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapUint8Bool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2291,7 +2290,7 @@ func TestMapStrBool(t *testing.T) {
 	expectedList := []bool{true, false}
 	newList := MapStrBool(someLogicStrBool, []string{"10", "0"})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapStrBool failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2310,7 +2309,7 @@ func TestMapBoolInt(t *testing.T) {
 	expectedList := []int{10, 0}
 	newList := MapBoolInt(someLogicBoolInt, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolInt failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2329,7 +2328,7 @@ func TestMapBoolInt64(t *testing.T) {
 	expectedList := []int64{10, 0}
 	newList := MapBoolInt64(someLogicBoolInt64, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolInt64 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2348,7 +2347,7 @@ func TestMapBoolInt32(t *testing.T) {
 	expectedList := []int32{10, 0}
 	newList := MapBoolInt32(someLogicBoolInt32, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolInt32 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2367,7 +2366,7 @@ func TestMapBoolInt16(t *testing.T) {
 	expectedList := []int16{10, 0}
 	newList := MapBoolInt16(someLogicBoolInt16, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolInt16 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2386,7 +2385,7 @@ func TestMapBoolInt8(t *testing.T) {
 	expectedList := []int8{10, 0}
 	newList := MapBoolInt8(someLogicBoolInt8, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolInt8 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2405,7 +2404,7 @@ func TestMapBoolUint(t *testing.T) {
 	expectedList := []uint{10, 0}
 	newList := MapBoolUint(someLogicBoolUint, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolUint failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2424,7 +2423,7 @@ func TestMapBoolUint64(t *testing.T) {
 	expectedList := []uint64{10, 0}
 	newList := MapBoolUint64(someLogicBoolUint64, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolUint64 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2443,7 +2442,7 @@ func TestMapBoolUint32(t *testing.T) {
 	expectedList := []uint32{10, 0}
 	newList := MapBoolUint32(someLogicBoolUint32, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolUint32 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2462,7 +2461,7 @@ func TestMapBoolUint16(t *testing.T) {
 	expectedList := []uint16{10, 0}
 	newList := MapBoolUint16(someLogicBoolUint16, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolUint16 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2481,7 +2480,7 @@ func TestMapBoolUint8(t *testing.T) {
 	expectedList := []uint8{10, 0}
 	newList := MapBoolUint8(someLogicBoolUint8, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolUint8 failed. expected=%v, actual=%v", expectedList, newList)
 	}
 
@@ -2500,7 +2499,7 @@ func TestMapBoolStr(t *testing.T) {
 	expectedList := []string{"10", "0"}
 	newList := MapBoolStr(someLogicBoolStr, []bool{true, false})
 
-	if newList[0] != expectedList[0] && newList[1] != expectedList[1]{
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
 		t.Errorf("MapBoolStr failed. expected=%v, actual=%v", expectedList, newList)
 	}
 

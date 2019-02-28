@@ -18,5 +18,6 @@ func DropLast<FTYPE>(list []<TYPE>) []<TYPE> {
 		newList[i] = list[i]
 	}
 	return newList
-}`
+}
+`
 }

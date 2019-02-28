@@ -42,5 +42,6 @@ func PMap<FINPUT_TYPE><FOUTPUT_TYPE>(f func(<INPUT_TYPE>) <OUTPUT_TYPE>, list []
 		}
 	}
 	return newList
-}`
+}
+`
 }

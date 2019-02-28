@@ -14,5 +14,6 @@ func FilterMap<CONDITIONAL_TYPE>(fFilter func(<TYPE>) bool, fMap func(<TYPE>) <T
 		}
 	}
 	return newList
-}`
+}
+`
 }

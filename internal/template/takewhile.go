@@ -15,5 +15,6 @@ func TakeWhile<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
 		newList = append(newList, v)
 	}
 	return newList
-}`
+}
+`
 }
