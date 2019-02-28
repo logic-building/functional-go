@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+
 func TestMapIntInt64(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int64{2, 3, 4}

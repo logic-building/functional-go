@@ -134,7 +134,8 @@ var importTestTemplate = `
 import (
 	"reflect"
 	"testing"
-)`
+)
+`
 
 func main() {
 	fmt.Println("Generating fp code")
