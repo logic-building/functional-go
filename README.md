@@ -37,6 +37,11 @@ func square(num int) int {
 
 ####  Generate functional code locally in project for user defined data type
 ```
+Design 1: Functional code distributed within different package
+Design 2: All functional code in one place
+```
+### Design 1:  Functional code distributed within different package
+```
 1. Install "gofp" to generate code
    go get github.com/logic-building/functional-go/gofp
    go get -u github.com/logic-building/functional-go/gofp
@@ -89,6 +94,40 @@ Note:
    }
 
 ```
+
+### Design 2: All functional code in one place
+```
+1. Install "gofp" to generate code
+   go get -u github.com/logic-building/functional-go/gofp
+   go install github.com/logic-building/functional-go/gofp
+
+2. create package "gfp" : See the example - internal/gfp/gfp.go
+   and two lines given below
+
+   package gfp
+   //go:generate gofp -destination fp.go -pkg gfp -type "employer.Employer, employee.Employee, int" -imports "github.com/logic-building/functional-go/internal/employee, github.com/logic-building/functional-go/internal/employer"
+
+
+   -destination fp.go  : Generated file in package "gfp" will be "fp.go" which contains all the functional code
+   -pkg gfp : Saying that package is "gfp"
+   -type "employer.Employer, employee.Employee, int" : Generate functions for the combinations of these three data types
+   -imports "github.com/logic-building/functional-go/internal/employee, github.com/logic-building/functional-go/internal/employer" : import statements for two user defined types
+                "employee.Employee" and employer.Employer. The value for -imports should be comma separated
+
+
+3. Generate functional code : Run the command given below from the root folder of your project
+   go generate ./...
+
+4. Now write your code
+
+    gfp.MapEmployer
+    or
+    gfp.MapEmployee
+    or
+    gfp.MapEmployerEmployee
+
+```
+
 
 ### Contains functions
 ```
