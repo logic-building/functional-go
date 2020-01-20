@@ -51,6 +51,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "DropLastPtr",
+		codeTemplate:      basic.DropLastPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "droplastPtr.go",
+
+		testTemplate:          basic.DropLastPtrTest(),
+		testTemplateBool:      basic.DropLastPtrBoolTest(),
+		generatedTestFileName: "droplastPtr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
@@ -323,6 +334,7 @@ func generateFpCode(fpCodeList []fpCode) {
 
 		writeToFile(codeTemplate, fmt.Sprintf("fp/%s", fpCode.generatedFileName))
 		if fpCode.generatedTestFileName != "" {
+			testTemplate = modifyTestDataToStr2(testTemplate)
 			writeToFile(testTemplate, fmt.Sprintf("fp/%s", fpCode.generatedTestFileName))
 		}
 	}
@@ -345,5 +357,20 @@ func modifyTestDataToStr(code string) string {
 	code = strings.Replace(code, "{1, 2, 3, 4}", "{\"1\", \"2\", \"3\", \"4\"}", -1)
 	code = strings.Replace(code, "{1, 2}", "{\"1\", \"2\"}", -1)
 	code = strings.Replace(code, "{1}", "{\"1\"}", -1)
+
+	code = strings.Replace(code, "var v1 string = 1", "var v1 string = \"1\"", -1)
+	code = strings.Replace(code, "var v2 string = 2", "var v2 string = \"2\"", -1)
+	code = strings.Replace(code, "var v3 string = 3", "var v3 string = \"3\"", -1)
+	code = strings.Replace(code, "var v4 string = 4", "var v4 string = \"4\"", -1)
+	code = strings.Replace(code, "var v5 string = 5", "var v5 string = \"5\"", -1)
+	return code
+}
+
+func modifyTestDataToStr2(code string) string {
+	code = strings.Replace(code, "var v1 string = 1", "var v1 string = \"1\"", -1)
+	code = strings.Replace(code, "var v2 string = 2", "var v2 string = \"2\"", -1)
+	code = strings.Replace(code, "var v3 string = 3", "var v3 string = \"3\"", -1)
+	code = strings.Replace(code, "var v4 string = 4", "var v4 string = \"4\"", -1)
+	code = strings.Replace(code, "var v5 string = 5", "var v5 string = \"5\"", -1)
 	return code
 }

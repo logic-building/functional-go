@@ -28,6 +28,19 @@ func FilterEmployer(f func(employer.Employer) bool, list []employer.Employer) []
 	return newList
 }
 
+func FilterPtrEmployer(f func(*employer.Employer) bool, list []*employer.Employer) []*employer.Employer {
+	if f == nil {
+		return []*employer.Employer{}
+	}
+	var newList []*employer.Employer
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
 func RemoveEmployer(f func(employer.Employer) bool, list []employer.Employer) []employer.Employer {
 	if f == nil {
 		return []employer.Employer{}
@@ -219,6 +232,19 @@ func FilterEmployee(f func(employee.Employee) bool, list []employee.Employee) []
 		return []employee.Employee{}
 	}
 	var newList []employee.Employee
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
+func FilterPtrEmployee(f func(*employee.Employee) bool, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	var newList []*employee.Employee
 	for _, v := range list {
 		if f(v) {
 			newList = append(newList, v)
