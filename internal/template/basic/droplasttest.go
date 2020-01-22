@@ -87,7 +87,7 @@ func TestDropLast<FTYPE>(t *testing.T) {
 // DropLastTest is template to generate itself for different combination of data type.
 func DropLastPtrTest() string {
 	return `
-func TestDropLastPtr<FTYPE>(t *testing.T) {
+func TestDropLast<FTYPE>Ptr(t *testing.T) {
     var v1 <TYPE> = 1
 	var v2 <TYPE> = 2
     var v3 <TYPE> = 3
@@ -96,37 +96,37 @@ func TestDropLastPtr<FTYPE>(t *testing.T) {
 
 	list := []*<TYPE>{&v1, &v2, &v3, &v4, &v5}
 	expectedList := []*<TYPE>{&v1, &v2, &v3, &v4}
-	actualList := DropLastPtr<FTYPE>(list)
+	actualList := DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = []*<TYPE>{&v1, &v2}
 	expectedList = []*<TYPE>{&v1}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
 		t.Errorf("TestDropLast<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = []*<TYPE>{&v1}
 	expectedList = []*<TYPE>{}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = []*<TYPE>{}
 	expectedList = []*<TYPE>{}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = nil
 	expectedList = []*<TYPE>{}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 }
 `
@@ -135,42 +135,42 @@ func TestDropLastPtr<FTYPE>(t *testing.T) {
 // DropLastBoolTest is template to generate itself for different combination of data type.
 func DropLastPtrBoolTest() string {
 	return `
-func TestDropLastPtr<FTYPE>(t *testing.T) {
+func TestDropLast<FTYPE>Ptr(t *testing.T) {
 	var true bool = true
     var false bool = false
 	list := []*<TYPE>{&true, &true, &true, &true, &false}
 	expectedList := []*<TYPE>{&true, &true, &true, &true}
-	actualList := DropLastPtr<FTYPE>(list)
+	actualList := DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = []*<TYPE>{&true, &true}
 	expectedList = []*<TYPE>{&true}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = []*<TYPE>{&true}
 	expectedList = []*<TYPE>{}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = []*<TYPE>{}
 	expectedList = []*<TYPE>{}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 
 	list = nil
 	expectedList = []*<TYPE>{}
-	actualList = DropLastPtr<FTYPE>(list)
+	actualList = DropLast<FTYPE>Ptr(list)
 	if !reflect.DeepEqual(expectedList, actualList) {
-		t.Errorf("TestDropLastPtr<FTYPE> failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+		t.Errorf("TestDropLast<FTYPE>Ptr failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 }
 `
