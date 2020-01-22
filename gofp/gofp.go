@@ -73,6 +73,7 @@ var (
 	pkgName     = flag.String("pkg", "", "package name for generated files")
 	types       = flag.String("type", "", "user defined type")
 	imports     = flag.String("imports", "", "import statements for user defined types when structs are in different package")
+	mapFunction = flag.String("map-function", "", "this allows to create map function such as zip, merge.")
 )
 
 func main() {
@@ -116,6 +117,11 @@ func main() {
 		if err != nil {
 			usage()
 			log.Fatalf("Failed code generation for different IO combination: %v", err)
+		}
+
+		// Generate zip or merge function if this is true
+		if *mapFunction != "true" {
+			generatedCodeII = ""
 		}
 
 		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII))
