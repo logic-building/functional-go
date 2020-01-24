@@ -36,3 +36,34 @@ func add<FTYPE>Ptr(num1, num2 *<TYPE>) *<TYPE> {
 
 `
 }
+
+// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+func MapPtrBoolTest() string {
+	return `
+func TestMap<FTYPE>Ptr(t *testing.T) {
+	var vt <TYPE> = true
+	var vf <TYPE> = false
+
+	expectedSumList := []*<TYPE>{&vf}
+	
+	newList := Map<FTYPE>Ptr(inverse<FTYPE>Ptr, []*<TYPE>{&vt})
+	if *newList[0] != *expectedSumList[0]  {
+		t.Errorf("Map<FTYPE>Ptr failed")
+	}
+
+	if len(Map<FTYPE>Ptr(nil, nil)) > 0 {
+		t.Errorf("Map<FTYPE>Ptr failed.")
+	}
+}
+
+func inverse<FTYPE>Ptr(num1 *<TYPE>) *<TYPE> {
+	vt := true
+    if *num1 == true {
+		v := false
+		return &v
+	} 
+	return &vt
+}
+
+`
+}
