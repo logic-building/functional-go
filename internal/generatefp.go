@@ -62,6 +62,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "MapPtr",
+		codeTemplate:      basic.MapPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "mapPtr.go",
+
+		testTemplate: basic.MapPtrTest(),
+		//testTemplateBool:      basic.mapptr,
+		generatedTestFileName: "mapPtr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
@@ -372,5 +383,65 @@ func modifyTestDataToStr2(code string) string {
 	code = strings.Replace(code, "var v3 string = 3", "var v3 string = \"3\"", -1)
 	code = strings.Replace(code, "var v4 string = 4", "var v4 string = \"4\"", -1)
 	code = strings.Replace(code, "var v5 string = 5", "var v5 string = \"5\"", -1)
+	code = strings.Replace(code, "var v6 string = 6", "var v6 string = \"6\"", -1)
+	code = strings.Replace(code, "var v7 string = 7", "var v7 string = \"7\"", -1)
+	code = strings.Replace(code, "var v8 string = 8", "var v8 string = \"8\"", -1)
+	code = strings.Replace(code, "var v9 string = 9", "var v9 string = \"9\"", -1)
+
+	// Change one of the test for MapPtrStr
+	s1 := `func TestMapStrPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v5 string = "5"
+	var v6 string = "6"
+	var v7 string = "7"
+	var v8 string = "8"
+
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []*string{&v6, &v7, &v8}
+	partialAddStrPtr := func(num *string) *string {
+		return addStrPtr(&v5, num)
+	}
+	sumList := MapStrPtr(partialAddStrPtr, []*string{&v1, &v2, &v3})
+	if *sumList[0] != *expectedSumList[0] || *sumList[1] != *expectedSumList[1] || *sumList[2] != *expectedSumList[2] {
+		t.Errorf("MapStrPtr failed")
+	}
+
+	if len(MapStrPtr(nil, nil)) > 0 {
+		t.Errorf("MapStrPtr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}`
+
+	s2 := `func TestMapStrPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v5 string = "5"
+	var v6 string = "51"
+	var v7 string = "52"
+	var v8 string = "53"
+
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []*string{&v6, &v7, &v8}
+	partialAddStrPtr := func(num *string) *string {
+		return addStrPtr(&v5, num)
+	}
+	sumList := MapStrPtr(partialAddStrPtr, []*string{&v1, &v2, &v3})
+	if *sumList[0] != *expectedSumList[0] || *sumList[1] != *expectedSumList[1] || *sumList[2] != *expectedSumList[2] {
+		t.Errorf("MapStrPtr failed")
+	}
+
+	if len(MapStrPtr(nil, nil)) > 0 {
+		t.Errorf("MapStrPtr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
 	return code
 }
