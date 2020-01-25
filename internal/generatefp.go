@@ -67,9 +67,20 @@ var fpCodeList = []fpCode{
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
 		generatedFileName: "mapPtr.go",
 
-		testTemplate: basic.MapPtrTest(),
-		//testTemplateBool:      basic.mapptr,
+		testTemplate:          basic.MapPtrTest(),
+		testTemplateBool:      basic.MapPtrBoolTest(),
 		generatedTestFileName: "mapPtr_test.go",
+	},
+
+	fpCode{
+		function:          "FilterPtr",
+		codeTemplate:      basic.FilterPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "filterPtr.go",
+
+		testTemplate:          basic.FilterPtrTest(),
+		testTemplateBool:      basic.FilterPtrBoolTest(),
+		generatedTestFileName: "filterPtr_test.go",
 	},
 
 	fpCode{
@@ -387,6 +398,9 @@ func modifyTestDataToStr2(code string) string {
 	code = strings.Replace(code, "var v7 string = 7", "var v7 string = \"7\"", -1)
 	code = strings.Replace(code, "var v8 string = 8", "var v8 string = \"8\"", -1)
 	code = strings.Replace(code, "var v9 string = 9", "var v9 string = \"9\"", -1)
+	code = strings.Replace(code, "var v10 string = 10", "var v10 string = \"10\"", -1)
+	code = strings.Replace(code, "var v20 string = 20", "var v20 string = \"20\"", -1)
+	code = strings.Replace(code, "var v40 string = 40", "var v40 string = \"40\"", -1)
 
 	// Change one of the test for MapPtrStr
 	s1 := `func TestMapStrPtr(t *testing.T) {
@@ -439,6 +453,71 @@ func modifyTestDataToStr2(code string) string {
 		t.Errorf("MapStrPtr failed.")
 		t.Errorf(reflect.String.String())
 	}
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func TestFilterStrPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v10 string = "10"
+	var v20 string = "20"
+	var v40 string = "40"
+
+
+	// Test : even number in the list
+	expectedFilteredList := []*string{&v2, &v4}
+	filteredList := FilterStrPtr(isEvenStrPtr, []*string{&v1, &v2, &v3, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	// Test: filter all even numbers divisible by 10 in the list
+	expectedFilteredList = []*string{&v20, &v40}
+	partialIsEven := func(num *string) bool { return isEvenDivisibleByStrPtr(num, &v10) }
+	filteredList = FilterStrPtr(partialIsEven, []*string{&v20, &v1, &v3, &v40})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	if len(FilterStrPtr(nil, nil)) > 0 {
+		t.Errorf("FilterInt failed.")
+	}
+}
+
+func isEvenStrPtr(num *string) bool {
+	return *num%2 == 0
+}
+
+func isEvenDivisibleByStrPtr(num, divisibleBy *string) bool {
+	return *num%2 == 0 && *num % *divisibleBy == 0
+}`
+	s2 = `func TestFilterStrPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+
+	// Test : even number in the list
+	expectedFilteredList := []*string{&v1, &v2, &v3, &v4}
+	filteredList := FilterStrPtr(isEvenStrPtr, []*string{&v1, &v2, &v3, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] {
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	if len(FilterStrPtr(nil, nil)) > 0 {
+		t.Errorf("FilterInt failed.")
+        t.Errorf(reflect.String.String())
+	}
+}
+
+func isEvenStrPtr(num *string) bool {
+	return true
 }`
 
 	code = strings.Replace(code, s1, s2, -1)

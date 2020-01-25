@@ -356,3 +356,29 @@ func addStrPtr(num1, num2 *string) *string {
 	return &result
 }
 
+
+func TestMapBoolPtr(t *testing.T) {
+	var vt bool = true
+	var vf bool = false
+
+	expectedSumList := []*bool{&vf}
+	
+	newList := MapBoolPtr(inverseBoolPtr, []*bool{&vt})
+	if *newList[0] != *expectedSumList[0]  {
+		t.Errorf("MapBoolPtr failed")
+	}
+
+	if len(MapBoolPtr(nil, nil)) > 0 {
+		t.Errorf("MapBoolPtr failed.")
+	}
+}
+
+func inverseBoolPtr(num1 *bool) *bool {
+	vt := true
+    if *num1 == true {
+		v := false
+		return &v
+	} 
+	return &vt
+}
+
