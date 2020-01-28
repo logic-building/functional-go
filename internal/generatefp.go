@@ -84,6 +84,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "DistinctPtr",
+		codeTemplate:      basic.DistinctPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "distinctPtr.go",
+
+		testTemplate: basic.DistinctPtrTest(),
+		//testTemplateBool:      basic.FilterPtrBoolTest(),
+		generatedTestFileName: "distinctPtr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
@@ -389,6 +400,7 @@ func modifyTestDataToStr(code string) string {
 }
 
 func modifyTestDataToStr2(code string) string {
+	code = strings.Replace(code, "var v0 string = 0", "var v0 string = \"0\"", -1)
 	code = strings.Replace(code, "var v1 string = 1", "var v1 string = \"1\"", -1)
 	code = strings.Replace(code, "var v2 string = 2", "var v2 string = \"2\"", -1)
 	code = strings.Replace(code, "var v3 string = 3", "var v3 string = \"3\"", -1)
