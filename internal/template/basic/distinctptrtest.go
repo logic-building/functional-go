@@ -39,3 +39,22 @@ func TestDistinct<FTYPE>Ptr(t *testing.T) {
 }
 `
 }
+
+// DistinctBoolPtr removes duplicates.
+func DistinctPtrBoolTest() string {
+	return `
+func TestDistinct<FTYPE>Ptr(t *testing.T) {
+	var vt <TYPE> = true
+
+	newList := Distinct<FTYPE>Ptr([]*<TYPE>{&vt, &vt})
+	if *newList[0] != vt  {
+		t.Errorf("Distinct<FTYPE>Ptr failed")
+	}
+
+	if len(Distinct<FTYPE>Ptr(nil)) > 0 {
+		t.Errorf("Distinct<FTYPE>Ptr failed.")
+	}
+}
+
+`
+}
