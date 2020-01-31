@@ -89,9 +89,20 @@ var fpCodeList = []fpCode{
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
 		generatedFileName: "distinctPtr.go",
 
-		testTemplate: basic.DistinctPtrTest(),
-		//testTemplateBool:      basic.FilterPtrBoolTest(),
+		testTemplate:          basic.DistinctPtrTest(),
+		testTemplateBool:      basic.DistinctPtrBoolTest(),
 		generatedTestFileName: "distinctPtr_test.go",
+	},
+
+	fpCode{
+		function:          "FilterMapPtr",
+		codeTemplate:      basic.FilterMapPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "filtermapptr.go",
+
+		testTemplate:          basic.FilterMapPtrTest(),
+		testTemplateBool:      basic.FilterMapPtrBoolTest(),
+		generatedTestFileName: "filtermapptr_test.go",
 	},
 
 	fpCode{
@@ -531,7 +542,60 @@ func isEvenDivisibleByStrPtr(num, divisibleBy *string) bool {
 func isEvenStrPtr(num *string) bool {
 	return true
 }`
+	code = strings.Replace(code, s1, s2, -1)
 
+	s1 = `func TestFilterMapStrPtr(t *testing.T) {
+	// Test : Multiply all positive numbers in the list by 2
+
+	var v1 string = "1"
+	var v4 string = "4"
+	var v8 string = "8"
+	var v0 string = "0"
+	var v2 string = "2"
+
+	expectedFilteredList := []*string{&v2, &v4, &v8}
+	filteredList := FilterMapStrPtr(isPositiveStrPtr, multiplyBy2StrPtr, []*string{&v1, &v0, &v2, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+		t.Errorf("FilterMapStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapStrPtr(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapStrPtr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func isPositiveStrPtr(num *string) bool {
+	return *num > 0
+}
+func multiplyBy2StrPtr(num *string) *string {
+	result := *num * 2
+	return &result
+}`
+	s2 = `func TestFilterMapStrPtr(t *testing.T) {
+	var v1 string = "1"
+	var v4 string = "4"
+	var v0 string = "0"
+	var v2 string = "2"
+
+	expectedFilteredList := []*string{&v1, &v0, &v2, &v4}
+	filteredList := FilterMapStrPtr(noFilter, concatA, []*string{&v1, &v0, &v2, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0]+"A" || *filteredList[1] != *expectedFilteredList[1]+"A" {
+		t.Errorf("FilterMapStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapStrPtr(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapStrPtr failed.")
+	}
+}
+
+func noFilter(num *string) bool {
+	return true
+}
+func concatA(num *string) *string {
+	result := *num + "A"
+	return &result
+}`
 	code = strings.Replace(code, s1, s2, -1)
 
 	return code

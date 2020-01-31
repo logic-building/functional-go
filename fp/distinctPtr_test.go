@@ -389,3 +389,17 @@ func TestDistinctStrPtr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
+
+func TestDistinctBoolPtr(t *testing.T) {
+	var vt bool = true
+
+	newList := DistinctBoolPtr([]*bool{&vt, &vt})
+	if *newList[0] != vt  {
+		t.Errorf("DistinctBoolPtr failed")
+	}
+
+	if len(DistinctBoolPtr(nil)) > 0 {
+		t.Errorf("DistinctBoolPtr failed.")
+	}
+}
+
