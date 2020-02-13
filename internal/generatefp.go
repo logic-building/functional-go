@@ -111,9 +111,9 @@ var fpCodeList = []fpCode{
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "existsptr.go",
 
-		//testTemplate: basic.DropPtrTest(),
+		testTemplate: basic.ExistsPtrTest(),
 		//testTemplateBool:      basic.FilterMapPtrBoolTest(),
-		//generatedTestFileName: "dropptr_test.go",
+		generatedTestFileName: "existsptr_test.go",
 	},
 
 	fpCode{
@@ -122,8 +122,8 @@ var fpCodeList = []fpCode{
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "dropptr.go",
 
-		testTemplate: basic.DropPtrTest(),
-		//testTemplateBool:      basic.FilterMapPtrBoolTest(),
+		testTemplate:          basic.DropPtrTest(),
+		testTemplateBool:      basic.DropPtrBoolTest(),
 		generatedTestFileName: "dropptr_test.go",
 	},
 
@@ -460,6 +460,7 @@ func modifyTestDataToStr2(code string) string {
 	code = strings.Replace(code, "var v10 string = 10", "var v10 string = \"10\"", -1)
 	code = strings.Replace(code, "var v20 string = 20", "var v20 string = \"20\"", -1)
 	code = strings.Replace(code, "var v40 string = 40", "var v40 string = \"40\"", -1)
+	code = strings.Replace(code, "var v80 string = 80", "var v80 string = \"80\"", -1)
 
 	// Change one of the test for MapPtrStr
 	s1 := `func TestMapStrPtr(t *testing.T) {

@@ -65,3 +65,22 @@ func TestDrop<FTYPE>sPtr(t *testing.T) {
 }
 `
 }
+
+// DistinctBoolPtr removes duplicates.
+func DropPtrBoolTest() string {
+	return `
+func TestDrop<FTYPE>Ptr(t *testing.T) {
+	var v1 <TYPE> = false
+	var v2 <TYPE> = true
+	var v3 <TYPE> = true
+
+	expectedList := []*<TYPE>{&v2, &v3}
+	newList := Drop<FTYPE>Ptr(&v1, []*<TYPE>{&v1, &v2, &v3, &v1})
+
+	if *newList[0] != *expectedList[0] || *newList[1] != *expectedList[1] {
+		t.Errorf("Drop<FTYPE>Ptr failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+}
+
+`
+}
