@@ -675,3 +675,125 @@ func TestDropStrsPtr(t *testing.T) {
 		t.Errorf("DropStrs failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
+
+func TestDropFloat32Ptr(t *testing.T) {
+	var v1 float32 = 1
+	var v2 float32 = 2
+	var v3 float32 = 3
+
+	expectedList := []*float32{&v2, &v3}
+	newList := DropFloat32Ptr(&v1, []*float32{&v1, &v2, &v3, &v1})
+
+	if *newList[0] != *expectedList[0] || *newList[1] != *expectedList[1] {
+		t.Errorf("DropFloat32Ptr failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+
+	newList = DropFloat32Ptr(&v1, []*float32{})
+
+	if len(newList) != 0 {
+		t.Errorf("DropFloat32Ptr failed. Expected list=%v, actual list=%v", []*float32{}, newList)
+	}
+
+	newList = DropFloat32Ptr(&v1, nil)
+	if len(newList) != 0 {
+		t.Errorf("DropFloat32Ptr failed. Expected list=%v, actual list=%v", []*float32{}, newList)
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func TestDropFloat32sPtr(t *testing.T) {
+	var v1 float32 = 1
+	var v2 float32 = 2
+	var v3 float32 = 3
+	var v4 float32 = 4
+
+	// Test : Drop number from the list
+	expectedList := []*float32{&v2, &v3}
+	newList := DropFloat32sPtr([]*float32{&v1, &v4}, []*float32{&v1, &v2, &v3, &v1, &v4})
+
+	if *newList[0] != *expectedList[0] || *newList[1] != *expectedList[1] {
+		t.Errorf("DropFloat32sPtr failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+
+	newList = DropFloat32sPtr([]*float32{&v1, &v4}, []*float32{})
+
+	if len(newList) != 0 {
+		t.Errorf("DropFloat32sPtr failed. Expected list=%v, actual list=%v", []*float32{}, newList)
+	}
+
+	newList = DropFloat32sPtr([]*float32{&v1, &v4}, nil)
+	if len(newList) != 0 {
+		t.Errorf("DropFloat32sPtr failed. Expected list=%v, actual list=%v", []*float32{}, newList)
+	}
+
+	newList = DropFloat32sPtr(nil, nil)
+	if len(newList) != 0 {
+		t.Errorf("DropFloat32sPtr failed. Expected list=%v, actual list=%v", []*float32{}, newList)
+	}
+
+	newList = DropFloat32sPtr(nil, []*float32{&v1, &v4})
+	if *newList[0] != 1 || *newList[1] != 4 {
+		t.Errorf("DropFloat32s failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+}
+
+func TestDropFloat64Ptr(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+
+	expectedList := []*float64{&v2, &v3}
+	newList := DropFloat64Ptr(&v1, []*float64{&v1, &v2, &v3, &v1})
+
+	if *newList[0] != *expectedList[0] || *newList[1] != *expectedList[1] {
+		t.Errorf("DropFloat64Ptr failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+
+	newList = DropFloat64Ptr(&v1, []*float64{})
+
+	if len(newList) != 0 {
+		t.Errorf("DropFloat64Ptr failed. Expected list=%v, actual list=%v", []*float64{}, newList)
+	}
+
+	newList = DropFloat64Ptr(&v1, nil)
+	if len(newList) != 0 {
+		t.Errorf("DropFloat64Ptr failed. Expected list=%v, actual list=%v", []*float64{}, newList)
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func TestDropFloat64sPtr(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+
+	// Test : Drop number from the list
+	expectedList := []*float64{&v2, &v3}
+	newList := DropFloat64sPtr([]*float64{&v1, &v4}, []*float64{&v1, &v2, &v3, &v1, &v4})
+
+	if *newList[0] != *expectedList[0] || *newList[1] != *expectedList[1] {
+		t.Errorf("DropFloat64sPtr failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+
+	newList = DropFloat64sPtr([]*float64{&v1, &v4}, []*float64{})
+
+	if len(newList) != 0 {
+		t.Errorf("DropFloat64sPtr failed. Expected list=%v, actual list=%v", []*float64{}, newList)
+	}
+
+	newList = DropFloat64sPtr([]*float64{&v1, &v4}, nil)
+	if len(newList) != 0 {
+		t.Errorf("DropFloat64sPtr failed. Expected list=%v, actual list=%v", []*float64{}, newList)
+	}
+
+	newList = DropFloat64sPtr(nil, nil)
+	if len(newList) != 0 {
+		t.Errorf("DropFloat64sPtr failed. Expected list=%v, actual list=%v", []*float64{}, newList)
+	}
+
+	newList = DropFloat64sPtr(nil, []*float64{&v1, &v4})
+	if *newList[0] != 1 || *newList[1] != 4 {
+		t.Errorf("DropFloat64s failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+}

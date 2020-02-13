@@ -167,3 +167,31 @@ func DistinctBoolPtr(list []*bool) []*bool {
 	}
 	return newList
 }
+
+// DistinctFloat32Ptr removes duplicates.
+func DistinctFloat32Ptr(list []*float32) []*float32 {
+	var newList []*float32
+	s := make(map[float32]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			continue
+		}
+		s[*v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
+// DistinctFloat64Ptr removes duplicates.
+func DistinctFloat64Ptr(list []*float64) []*float64 {
+	var newList []*float64
+	s := make(map[float64]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			continue
+		}
+		s[*v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}

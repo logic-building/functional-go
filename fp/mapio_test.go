@@ -214,6 +214,44 @@ func TestMapIntBool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
+func TestMapIntFloat32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapIntFloat32(plusOneIntFloat32, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapIntFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapIntFloat32(nil, nil)) > 0 {
+		t.Errorf("MapIntFloat32 failed")
+	}
+
+	if len(MapIntFloat32(nil, []int{})) > 0 {
+		t.Errorf("MapIntFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapIntFloat64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapIntFloat64(plusOneIntFloat64, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapIntFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapIntFloat64(nil, nil)) > 0 {
+		t.Errorf("MapIntFloat64 failed")
+	}
+
+	if len(MapIntFloat64(nil, []int{})) > 0 {
+		t.Errorf("MapIntFloat64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
 func TestMapInt64Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -419,6 +457,44 @@ func TestMapInt64Bool(t *testing.T) {
 
 	if len(MapInt64Bool(nil, []int64{})) > 0 {
 		t.Errorf("MapInt64Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapInt64Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapInt64Float32(plusOneInt64Float32, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt64Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt64Float32(nil, nil)) > 0 {
+		t.Errorf("MapInt64Float32 failed")
+	}
+
+	if len(MapInt64Float32(nil, []int64{})) > 0 {
+		t.Errorf("MapInt64Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapInt64Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapInt64Float64(plusOneInt64Float64, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt64Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt64Float64(nil, nil)) > 0 {
+		t.Errorf("MapInt64Float64 failed")
+	}
+
+	if len(MapInt64Float64(nil, []int64{})) > 0 {
+		t.Errorf("MapInt64Float64 failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
@@ -632,6 +708,44 @@ func TestMapInt32Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
+func TestMapInt32Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapInt32Float32(plusOneInt32Float32, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt32Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt32Float32(nil, nil)) > 0 {
+		t.Errorf("MapInt32Float32 failed")
+	}
+
+	if len(MapInt32Float32(nil, []int32{})) > 0 {
+		t.Errorf("MapInt32Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapInt32Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapInt32Float64(plusOneInt32Float64, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt32Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt32Float64(nil, nil)) > 0 {
+		t.Errorf("MapInt32Float64 failed")
+	}
+
+	if len(MapInt32Float64(nil, []int32{})) > 0 {
+		t.Errorf("MapInt32Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
 func TestMapInt16Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -837,6 +951,44 @@ func TestMapInt16Bool(t *testing.T) {
 
 	if len(MapInt16Bool(nil, []int16{})) > 0 {
 		t.Errorf("MapInt16Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapInt16Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapInt16Float32(plusOneInt16Float32, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt16Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt16Float32(nil, nil)) > 0 {
+		t.Errorf("MapInt16Float32 failed")
+	}
+
+	if len(MapInt16Float32(nil, []int16{})) > 0 {
+		t.Errorf("MapInt16Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapInt16Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapInt16Float64(plusOneInt16Float64, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt16Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt16Float64(nil, nil)) > 0 {
+		t.Errorf("MapInt16Float64 failed")
+	}
+
+	if len(MapInt16Float64(nil, []int16{})) > 0 {
+		t.Errorf("MapInt16Float64 failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
@@ -1050,6 +1202,44 @@ func TestMapInt8Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
+func TestMapInt8Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapInt8Float32(plusOneInt8Float32, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt8Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt8Float32(nil, nil)) > 0 {
+		t.Errorf("MapInt8Float32 failed")
+	}
+
+	if len(MapInt8Float32(nil, []int8{})) > 0 {
+		t.Errorf("MapInt8Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapInt8Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapInt8Float64(plusOneInt8Float64, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapInt8Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapInt8Float64(nil, nil)) > 0 {
+		t.Errorf("MapInt8Float64 failed")
+	}
+
+	if len(MapInt8Float64(nil, []int8{})) > 0 {
+		t.Errorf("MapInt8Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
 func TestMapUintInt(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1255,6 +1445,44 @@ func TestMapUintBool(t *testing.T) {
 
 	if len(MapUintBool(nil, []uint{})) > 0 {
 		t.Errorf("MapUintBool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUintFloat32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapUintFloat32(plusOneUintFloat32, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUintFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUintFloat32(nil, nil)) > 0 {
+		t.Errorf("MapUintFloat32 failed")
+	}
+
+	if len(MapUintFloat32(nil, []uint{})) > 0 {
+		t.Errorf("MapUintFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUintFloat64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapUintFloat64(plusOneUintFloat64, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUintFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUintFloat64(nil, nil)) > 0 {
+		t.Errorf("MapUintFloat64 failed")
+	}
+
+	if len(MapUintFloat64(nil, []uint{})) > 0 {
+		t.Errorf("MapUintFloat64 failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
@@ -1468,6 +1696,44 @@ func TestMapUint64Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
+func TestMapUint64Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapUint64Float32(plusOneUint64Float32, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint64Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint64Float32(nil, nil)) > 0 {
+		t.Errorf("MapUint64Float32 failed")
+	}
+
+	if len(MapUint64Float32(nil, []uint64{})) > 0 {
+		t.Errorf("MapUint64Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUint64Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapUint64Float64(plusOneUint64Float64, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint64Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint64Float64(nil, nil)) > 0 {
+		t.Errorf("MapUint64Float64 failed")
+	}
+
+	if len(MapUint64Float64(nil, []uint64{})) > 0 {
+		t.Errorf("MapUint64Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
 func TestMapUint32Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -1673,6 +1939,44 @@ func TestMapUint32Bool(t *testing.T) {
 
 	if len(MapUint32Bool(nil, []uint32{})) > 0 {
 		t.Errorf("MapUint32Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUint32Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapUint32Float32(plusOneUint32Float32, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint32Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint32Float32(nil, nil)) > 0 {
+		t.Errorf("MapUint32Float32 failed")
+	}
+
+	if len(MapUint32Float32(nil, []uint32{})) > 0 {
+		t.Errorf("MapUint32Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUint32Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapUint32Float64(plusOneUint32Float64, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint32Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint32Float64(nil, nil)) > 0 {
+		t.Errorf("MapUint32Float64 failed")
+	}
+
+	if len(MapUint32Float64(nil, []uint32{})) > 0 {
+		t.Errorf("MapUint32Float64 failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
@@ -1886,6 +2190,44 @@ func TestMapUint16Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
+func TestMapUint16Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapUint16Float32(plusOneUint16Float32, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint16Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint16Float32(nil, nil)) > 0 {
+		t.Errorf("MapUint16Float32 failed")
+	}
+
+	if len(MapUint16Float32(nil, []uint16{})) > 0 {
+		t.Errorf("MapUint16Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUint16Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapUint16Float64(plusOneUint16Float64, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint16Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint16Float64(nil, nil)) > 0 {
+		t.Errorf("MapUint16Float64 failed")
+	}
+
+	if len(MapUint16Float64(nil, []uint16{})) > 0 {
+		t.Errorf("MapUint16Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
 func TestMapUint8Int(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []int{2, 3, 4}
@@ -2091,6 +2433,44 @@ func TestMapUint8Bool(t *testing.T) {
 
 	if len(MapUint8Bool(nil, []uint8{})) > 0 {
 		t.Errorf("MapUint8Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUint8Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapUint8Float32(plusOneUint8Float32, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint8Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint8Float32(nil, nil)) > 0 {
+		t.Errorf("MapUint8Float32 failed")
+	}
+
+	if len(MapUint8Float32(nil, []uint8{})) > 0 {
+		t.Errorf("MapUint8Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapUint8Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapUint8Float64(plusOneUint8Float64, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapUint8Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapUint8Float64(nil, nil)) > 0 {
+		t.Errorf("MapUint8Float64 failed")
+	}
+
+	if len(MapUint8Float64(nil, []uint8{})) > 0 {
+		t.Errorf("MapUint8Float64 failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
@@ -2304,6 +2684,44 @@ func TestMapStrBool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
+func TestMapStrFloat32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float32{10}
+	newList := MapStrFloat32(someLogicStrFloat32, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("MapStrFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapStrFloat32(nil, nil)) > 0 {
+		t.Errorf("MapStrFloat32 failed")
+	}
+
+	if len(MapStrFloat32(nil, []string{})) > 0 {
+		t.Errorf("MapStrFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapStrFloat64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float64{10}
+	newList := MapStrFloat64(someLogicStrFloat64, []string{"ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("MapStrFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapStrFloat64(nil, nil)) > 0 {
+		t.Errorf("MapStrFloat64 failed")
+	}
+
+	if len(MapStrFloat64(nil, []string{})) > 0 {
+		t.Errorf("MapStrFloat64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
 func TestMapBoolInt(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int{10, 0}
@@ -2509,6 +2927,538 @@ func TestMapBoolStr(t *testing.T) {
 
 	if len(MapBoolStr(nil, []bool{})) > 0 {
 		t.Errorf("MapBoolStr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapBoolFloat32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float32{10, 0}
+	newList := MapBoolFloat32(someLogicBoolFloat32, []bool{true, false})
+
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
+		t.Errorf("MapBoolFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapBoolFloat32(nil, nil)) > 0 {
+		t.Errorf("MapBoolFloat32 failed")
+	}
+
+	if len(MapBoolFloat32(nil, []bool{})) > 0 {
+		t.Errorf("MapBoolFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapBoolFloat64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float64{10, 0}
+	newList := MapBoolFloat64(someLogicBoolFloat64, []bool{true, false})
+
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
+		t.Errorf("MapBoolFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapBoolFloat64(nil, nil)) > 0 {
+		t.Errorf("MapBoolFloat64 failed")
+	}
+
+	if len(MapBoolFloat64(nil, []bool{})) > 0 {
+		t.Errorf("MapBoolFloat64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := MapFloat32Int(plusOneFloat32Int, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Int(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Int failed")
+	}
+
+	if len(MapFloat32Int(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := MapFloat32Int64(plusOneFloat32Int64, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Int64(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Int64 failed")
+	}
+
+	if len(MapFloat32Int64(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := MapFloat32Int32(plusOneFloat32Int32, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Int32(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Int32 failed")
+	}
+
+	if len(MapFloat32Int32(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := MapFloat32Int16(plusOneFloat32Int16, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Int16(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Int16 failed")
+	}
+
+	if len(MapFloat32Int16(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := MapFloat32Int8(plusOneFloat32Int8, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Int8(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Int8 failed")
+	}
+
+	if len(MapFloat32Int8(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := MapFloat32Uint(plusOneFloat32Uint, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Uint(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Uint failed")
+	}
+
+	if len(MapFloat32Uint(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := MapFloat32Uint64(plusOneFloat32Uint64, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Uint64(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Uint64 failed")
+	}
+
+	if len(MapFloat32Uint64(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := MapFloat32Uint32(plusOneFloat32Uint32, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Uint32(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Uint32 failed")
+	}
+
+	if len(MapFloat32Uint32(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := MapFloat32Uint16(plusOneFloat32Uint16, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Uint16(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Uint16 failed")
+	}
+
+	if len(MapFloat32Uint16(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := MapFloat32Uint8(plusOneFloat32Uint8, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Uint8(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Uint8 failed")
+	}
+
+	if len(MapFloat32Uint8(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := MapFloat32Str(someLogicFloat32Str, []float32{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("MapFloat32Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Str(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Str failed")
+	}
+
+	if len(MapFloat32Str(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := MapFloat32Bool(someLogicFloat32Bool, []float32{10, 0})
+
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
+		t.Errorf("MapFloat32Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Bool(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Bool failed")
+	}
+
+	if len(MapFloat32Bool(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat32Float64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float64{2, 3, 4}
+	newList := MapFloat32Float64(plusOneFloat32Float64, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat32Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat32Float64(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Float64 failed")
+	}
+
+	if len(MapFloat32Float64(nil, []float32{})) > 0 {
+		t.Errorf("MapFloat32Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Int(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int{2, 3, 4}
+	newList := MapFloat64Int(plusOneFloat64Int, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Int(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Int failed")
+	}
+
+	if len(MapFloat64Int(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Int64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int64{2, 3, 4}
+	newList := MapFloat64Int64(plusOneFloat64Int64, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Int64(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Int64 failed")
+	}
+
+	if len(MapFloat64Int64(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Int32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int32{2, 3, 4}
+	newList := MapFloat64Int32(plusOneFloat64Int32, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Int32(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Int32 failed")
+	}
+
+	if len(MapFloat64Int32(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Int16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int16{2, 3, 4}
+	newList := MapFloat64Int16(plusOneFloat64Int16, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Int16(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Int16 failed")
+	}
+
+	if len(MapFloat64Int16(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Int8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []int8{2, 3, 4}
+	newList := MapFloat64Int8(plusOneFloat64Int8, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Int8(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Int8 failed")
+	}
+
+	if len(MapFloat64Int8(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Uint(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint{2, 3, 4}
+	newList := MapFloat64Uint(plusOneFloat64Uint, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Uint(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Uint failed")
+	}
+
+	if len(MapFloat64Uint(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Uint64(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint64{2, 3, 4}
+	newList := MapFloat64Uint64(plusOneFloat64Uint64, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Uint64(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Uint64 failed")
+	}
+
+	if len(MapFloat64Uint64(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Uint32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint32{2, 3, 4}
+	newList := MapFloat64Uint32(plusOneFloat64Uint32, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Uint32(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Uint32 failed")
+	}
+
+	if len(MapFloat64Uint32(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Uint16(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint16{2, 3, 4}
+	newList := MapFloat64Uint16(plusOneFloat64Uint16, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Uint16(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Uint16 failed")
+	}
+
+	if len(MapFloat64Uint16(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Uint8(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []uint8{2, 3, 4}
+	newList := MapFloat64Uint8(plusOneFloat64Uint8, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Uint8(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Uint8 failed")
+	}
+
+	if len(MapFloat64Uint8(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := MapFloat64Str(someLogicFloat64Str, []float64{10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("MapFloat64Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Str(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Str failed")
+	}
+
+	if len(MapFloat64Str(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := MapFloat64Bool(someLogicFloat64Bool, []float64{10, 0})
+
+	if newList[0] != expectedList[0] && newList[1] != expectedList[1] {
+		t.Errorf("MapFloat64Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Bool(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Bool failed")
+	}
+
+	if len(MapFloat64Bool(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func TestMapFloat64Float32(t *testing.T) {
+	// Test : add 1 to the list
+	expectedList := []float32{2, 3, 4}
+	newList := MapFloat64Float32(plusOneFloat64Float32, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] || newList[2] != expectedList[2] {
+		t.Errorf("MapFloat64Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(MapFloat64Float32(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Float32 failed")
+	}
+
+	if len(MapFloat64Float32(nil, []float64{})) > 0 {
+		t.Errorf("MapFloat64Float32 failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }

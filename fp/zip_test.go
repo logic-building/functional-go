@@ -1001,6 +1001,172 @@ func TestZipIntBool(t *testing.T) {
 	}
 }
 
+func TestZipIntFloat32(t *testing.T) {
+
+	list1 := []int{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[int]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[int]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int]float32{}
+	actualMap = ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[int]float32{}
+	actualMap = ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{}
+	list2 = []float32{}
+
+	expectedMap = map[int]float32{}
+	actualMap = ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int]float32{}
+	actualMap = ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{}
+	list2 = nil
+
+	expectedMap = map[int]float32{}
+	actualMap = ZipIntFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipIntFloat64(t *testing.T) {
+
+	list1 := []int{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[int]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[int]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int]float64{}
+	actualMap = ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[int]float64{}
+	actualMap = ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{}
+	list2 = []float64{}
+
+	expectedMap = map[int]float64{}
+	actualMap = ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int]float64{}
+	actualMap = ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int{}
+	list2 = nil
+
+	expectedMap = map[int]float64{}
+	actualMap = ZipIntFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipIntFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
 func TestZipInt64Int(t *testing.T) {
 
 	list1 := []int64{1, 2, 3, 4}
@@ -1994,6 +2160,172 @@ func TestZipInt64Bool(t *testing.T) {
 
 	if !reflect.DeepEqual(expectedMap, actualMap) {
 		t.Errorf("TestZipInt64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipInt64Float32(t *testing.T) {
+
+	list1 := []int64{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[int64]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[int64]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int64]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int64]float32{}
+	actualMap = ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[int64]float32{}
+	actualMap = ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{}
+	list2 = []float32{}
+
+	expectedMap = map[int64]float32{}
+	actualMap = ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int64]float32{}
+	actualMap = ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{}
+	list2 = nil
+
+	expectedMap = map[int64]float32{}
+	actualMap = ZipInt64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipInt64Float64(t *testing.T) {
+
+	list1 := []int64{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[int64]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[int64]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int64]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int64]float64{}
+	actualMap = ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[int64]float64{}
+	actualMap = ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{}
+	list2 = []float64{}
+
+	expectedMap = map[int64]float64{}
+	actualMap = ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int64]float64{}
+	actualMap = ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int64{}
+	list2 = nil
+
+	expectedMap = map[int64]float64{}
+	actualMap = ZipInt64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
 	}
 }
 
@@ -2993,6 +3325,172 @@ func TestZipInt32Bool(t *testing.T) {
 	}
 }
 
+func TestZipInt32Float32(t *testing.T) {
+
+	list1 := []int32{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[int32]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[int32]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int32]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int32]float32{}
+	actualMap = ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[int32]float32{}
+	actualMap = ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{}
+	list2 = []float32{}
+
+	expectedMap = map[int32]float32{}
+	actualMap = ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int32]float32{}
+	actualMap = ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{}
+	list2 = nil
+
+	expectedMap = map[int32]float32{}
+	actualMap = ZipInt32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipInt32Float64(t *testing.T) {
+
+	list1 := []int32{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[int32]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[int32]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int32]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int32]float64{}
+	actualMap = ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[int32]float64{}
+	actualMap = ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{}
+	list2 = []float64{}
+
+	expectedMap = map[int32]float64{}
+	actualMap = ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int32]float64{}
+	actualMap = ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int32{}
+	list2 = nil
+
+	expectedMap = map[int32]float64{}
+	actualMap = ZipInt32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
 func TestZipInt16Int(t *testing.T) {
 
 	list1 := []int16{1, 2, 3, 4}
@@ -3986,6 +4484,172 @@ func TestZipInt16Bool(t *testing.T) {
 
 	if !reflect.DeepEqual(expectedMap, actualMap) {
 		t.Errorf("TestZipInt16Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipInt16Float32(t *testing.T) {
+
+	list1 := []int16{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[int16]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[int16]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int16]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int16]float32{}
+	actualMap = ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[int16]float32{}
+	actualMap = ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{}
+	list2 = []float32{}
+
+	expectedMap = map[int16]float32{}
+	actualMap = ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int16]float32{}
+	actualMap = ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{}
+	list2 = nil
+
+	expectedMap = map[int16]float32{}
+	actualMap = ZipInt16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipInt16Float64(t *testing.T) {
+
+	list1 := []int16{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[int16]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[int16]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int16]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int16]float64{}
+	actualMap = ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[int16]float64{}
+	actualMap = ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{}
+	list2 = []float64{}
+
+	expectedMap = map[int16]float64{}
+	actualMap = ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int16]float64{}
+	actualMap = ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int16{}
+	list2 = nil
+
+	expectedMap = map[int16]float64{}
+	actualMap = ZipInt16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
 	}
 }
 
@@ -4985,6 +5649,172 @@ func TestZipInt8Bool(t *testing.T) {
 	}
 }
 
+func TestZipInt8Float32(t *testing.T) {
+
+	list1 := []int8{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[int8]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[int8]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int8]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[int8]float32{}
+	actualMap = ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[int8]float32{}
+	actualMap = ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{}
+	list2 = []float32{}
+
+	expectedMap = map[int8]float32{}
+	actualMap = ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int8]float32{}
+	actualMap = ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{}
+	list2 = nil
+
+	expectedMap = map[int8]float32{}
+	actualMap = ZipInt8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipInt8Float64(t *testing.T) {
+
+	list1 := []int8{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[int8]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[int8]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int8]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[int8]float64{}
+	actualMap = ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[int8]float64{}
+	actualMap = ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{}
+	list2 = []float64{}
+
+	expectedMap = map[int8]float64{}
+	actualMap = ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[int8]float64{}
+	actualMap = ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []int8{}
+	list2 = nil
+
+	expectedMap = map[int8]float64{}
+	actualMap = ZipInt8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipInt8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
 func TestZipUintInt(t *testing.T) {
 
 	list1 := []uint{1, 2, 3, 4}
@@ -5978,6 +6808,172 @@ func TestZipUintBool(t *testing.T) {
 
 	if !reflect.DeepEqual(expectedMap, actualMap) {
 		t.Errorf("TestZipUintBool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUintFloat32(t *testing.T) {
+
+	list1 := []uint{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[uint]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[uint]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint]float32{}
+	actualMap = ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[uint]float32{}
+	actualMap = ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{}
+	list2 = []float32{}
+
+	expectedMap = map[uint]float32{}
+	actualMap = ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint]float32{}
+	actualMap = ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{}
+	list2 = nil
+
+	expectedMap = map[uint]float32{}
+	actualMap = ZipUintFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUintFloat64(t *testing.T) {
+
+	list1 := []uint{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[uint]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[uint]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint]float64{}
+	actualMap = ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[uint]float64{}
+	actualMap = ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{}
+	list2 = []float64{}
+
+	expectedMap = map[uint]float64{}
+	actualMap = ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint]float64{}
+	actualMap = ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint{}
+	list2 = nil
+
+	expectedMap = map[uint]float64{}
+	actualMap = ZipUintFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUintFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
 	}
 }
 
@@ -6977,6 +7973,172 @@ func TestZipUint64Bool(t *testing.T) {
 	}
 }
 
+func TestZipUint64Float32(t *testing.T) {
+
+	list1 := []uint64{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[uint64]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[uint64]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint64]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint64]float32{}
+	actualMap = ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[uint64]float32{}
+	actualMap = ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{}
+	list2 = []float32{}
+
+	expectedMap = map[uint64]float32{}
+	actualMap = ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint64]float32{}
+	actualMap = ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{}
+	list2 = nil
+
+	expectedMap = map[uint64]float32{}
+	actualMap = ZipUint64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUint64Float64(t *testing.T) {
+
+	list1 := []uint64{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[uint64]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[uint64]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint64]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint64]float64{}
+	actualMap = ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[uint64]float64{}
+	actualMap = ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{}
+	list2 = []float64{}
+
+	expectedMap = map[uint64]float64{}
+	actualMap = ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint64]float64{}
+	actualMap = ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint64{}
+	list2 = nil
+
+	expectedMap = map[uint64]float64{}
+	actualMap = ZipUint64Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint64Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
 func TestZipUint32Int(t *testing.T) {
 
 	list1 := []uint32{1, 2, 3, 4}
@@ -7970,6 +9132,172 @@ func TestZipUint32Bool(t *testing.T) {
 
 	if !reflect.DeepEqual(expectedMap, actualMap) {
 		t.Errorf("TestZipUint32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUint32Float32(t *testing.T) {
+
+	list1 := []uint32{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[uint32]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[uint32]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint32]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint32]float32{}
+	actualMap = ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[uint32]float32{}
+	actualMap = ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{}
+	list2 = []float32{}
+
+	expectedMap = map[uint32]float32{}
+	actualMap = ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint32]float32{}
+	actualMap = ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{}
+	list2 = nil
+
+	expectedMap = map[uint32]float32{}
+	actualMap = ZipUint32Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUint32Float64(t *testing.T) {
+
+	list1 := []uint32{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[uint32]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[uint32]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint32]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint32]float64{}
+	actualMap = ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[uint32]float64{}
+	actualMap = ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{}
+	list2 = []float64{}
+
+	expectedMap = map[uint32]float64{}
+	actualMap = ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint32]float64{}
+	actualMap = ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint32{}
+	list2 = nil
+
+	expectedMap = map[uint32]float64{}
+	actualMap = ZipUint32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
 	}
 }
 
@@ -8969,6 +10297,172 @@ func TestZipUint16Bool(t *testing.T) {
 	}
 }
 
+func TestZipUint16Float32(t *testing.T) {
+
+	list1 := []uint16{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[uint16]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[uint16]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint16]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint16]float32{}
+	actualMap = ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[uint16]float32{}
+	actualMap = ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{}
+	list2 = []float32{}
+
+	expectedMap = map[uint16]float32{}
+	actualMap = ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint16]float32{}
+	actualMap = ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{}
+	list2 = nil
+
+	expectedMap = map[uint16]float32{}
+	actualMap = ZipUint16Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUint16Float64(t *testing.T) {
+
+	list1 := []uint16{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[uint16]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[uint16]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint16]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint16]float64{}
+	actualMap = ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[uint16]float64{}
+	actualMap = ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{}
+	list2 = []float64{}
+
+	expectedMap = map[uint16]float64{}
+	actualMap = ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint16]float64{}
+	actualMap = ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint16{}
+	list2 = nil
+
+	expectedMap = map[uint16]float64{}
+	actualMap = ZipUint16Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint16Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
 func TestZipUint8Int(t *testing.T) {
 
 	list1 := []uint8{1, 2, 3, 4}
@@ -9962,6 +11456,172 @@ func TestZipUint8Bool(t *testing.T) {
 
 	if !reflect.DeepEqual(expectedMap, actualMap) {
 		t.Errorf("TestZipUint8Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUint8Float32(t *testing.T) {
+
+	list1 := []uint8{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[uint8]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[uint8]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint8]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[uint8]float32{}
+	actualMap = ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[uint8]float32{}
+	actualMap = ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{}
+	list2 = []float32{}
+
+	expectedMap = map[uint8]float32{}
+	actualMap = ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint8]float32{}
+	actualMap = ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{}
+	list2 = nil
+
+	expectedMap = map[uint8]float32{}
+	actualMap = ZipUint8Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipUint8Float64(t *testing.T) {
+
+	list1 := []uint8{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[uint8]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[uint8]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint8]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[uint8]float64{}
+	actualMap = ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[uint8]float64{}
+	actualMap = ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{}
+	list2 = []float64{}
+
+	expectedMap = map[uint8]float64{}
+	actualMap = ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[uint8]float64{}
+	actualMap = ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []uint8{}
+	list2 = nil
+
+	expectedMap = map[uint8]float64{}
+	actualMap = ZipUint8Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipUint8Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
 	}
 }
 
@@ -10961,6 +12621,172 @@ func TestZipStrBool(t *testing.T) {
 	}
 }
 
+func TestZipStrFloat32(t *testing.T) {
+
+	list1 := []string{"1", "2", "3", "4"}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[string]float32{"1": 10, "2": 20, "3": 30, "4": 40}
+	actualMap := ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{"1", "2", "3", "4"}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[string]float32{"1": 10, "2": 20, "3": 30}
+	actualMap = ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{"1", "2", "3"}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[string]float32{"1": 10, "2": 20, "3": 30}
+	actualMap = ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[string]float32{}
+	actualMap = ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{"1", "2", "3", "4"}
+	list2 = []float32{}
+
+	expectedMap = map[string]float32{}
+	actualMap = ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{}
+	list2 = []float32{}
+
+	expectedMap = map[string]float32{}
+	actualMap = ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[string]float32{}
+	actualMap = ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{}
+	list2 = nil
+
+	expectedMap = map[string]float32{}
+	actualMap = ZipStrFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipStrFloat64(t *testing.T) {
+
+	list1 := []string{"1", "2", "3", "4"}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[string]float64{"1": 10, "2": 20, "3": 30, "4": 40}
+	actualMap := ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{"1", "2", "3", "4"}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[string]float64{"1": 10, "2": 20, "3": 30}
+	actualMap = ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{"1", "2", "3"}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[string]float64{"1": 10, "2": 20, "3": 30}
+	actualMap = ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[string]float64{}
+	actualMap = ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{"1", "2", "3", "4"}
+	list2 = []float64{}
+
+	expectedMap = map[string]float64{}
+	actualMap = ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{}
+	list2 = []float64{}
+
+	expectedMap = map[string]float64{}
+	actualMap = ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[string]float64{}
+	actualMap = ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []string{}
+	list2 = nil
+
+	expectedMap = map[string]float64{}
+	actualMap = ZipStrFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipStrFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
 func TestZipBoolInt(t *testing.T) {
 
 	list1 := []bool{true, true, false, true}
@@ -11954,5 +13780,2495 @@ func TestZipBool(t *testing.T) {
 
 	if !reflect.DeepEqual(expectedMap, actualMap) {
 		t.Errorf("TestZipBool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipBoolFloat32(t *testing.T) {
+
+	list1 := []bool{true, true, false, true}
+	list2 := []float32{1, 2, 3, 4}
+
+	expectedMap := map[bool]float32{true: 4, false: 3}
+	actualMap := ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{true, true, false, true}
+	list2 = []float32{1, 2, 3}
+
+	expectedMap = map[bool]float32{true: 2, false: 3}
+	actualMap = ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{true, true, false}
+	list2 = []float32{1, 2, 3, 4}
+
+	expectedMap = map[bool]float32{true: 2, false: 3}
+	actualMap = ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{}
+	list2 = []float32{1, 2, 3, 4}
+
+	expectedMap = map[bool]float32{}
+	actualMap = ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{true, true, false, true}
+	list2 = []float32{}
+
+	expectedMap = map[bool]float32{}
+	actualMap = ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{}
+	list2 = []float32{}
+
+	expectedMap = map[bool]float32{}
+	actualMap = ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[bool]float32{}
+	actualMap = ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{}
+	list2 = nil
+
+	expectedMap = map[bool]float32{}
+	actualMap = ZipBoolFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipBoolFloat64(t *testing.T) {
+
+	list1 := []bool{true, true, false, true}
+	list2 := []float64{1, 2, 3, 4}
+
+	expectedMap := map[bool]float64{true: 4, false: 3}
+	actualMap := ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{true, true, false, true}
+	list2 = []float64{1, 2, 3}
+
+	expectedMap = map[bool]float64{true: 2, false: 3}
+	actualMap = ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{true, true, false}
+	list2 = []float64{1, 2, 3, 4}
+
+	expectedMap = map[bool]float64{true: 2, false: 3}
+	actualMap = ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{}
+	list2 = []float64{1, 2, 3, 4}
+
+	expectedMap = map[bool]float64{}
+	actualMap = ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{true, true, false, true}
+	list2 = []float64{}
+
+	expectedMap = map[bool]float64{}
+	actualMap = ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{}
+	list2 = []float64{}
+
+	expectedMap = map[bool]float64{}
+	actualMap = ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[bool]float64{}
+	actualMap = ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []bool{}
+	list2 = nil
+
+	expectedMap = map[bool]float64{}
+	actualMap = ZipBoolFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipBoolFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Int(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []int{10, 20, 30, 40}
+
+	expectedMap := map[float32]int{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int{10, 20, 30}
+
+	expectedMap = map[float32]int{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []int{10, 20, 30, 40}
+
+	expectedMap = map[float32]int{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int{10, 20, 30, 40}
+
+	expectedMap = map[float32]int{}
+	actualMap = ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int{}
+
+	expectedMap = map[float32]int{}
+	actualMap = ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int{}
+
+	expectedMap = map[float32]int{}
+	actualMap = ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]int{}
+	actualMap = ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]int{}
+	actualMap = ZipFloat32Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Int64(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []int64{10, 20, 30, 40}
+
+	expectedMap := map[float32]int64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int64{10, 20, 30}
+
+	expectedMap = map[float32]int64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []int64{10, 20, 30, 40}
+
+	expectedMap = map[float32]int64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int64{10, 20, 30, 40}
+
+	expectedMap = map[float32]int64{}
+	actualMap = ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int64{}
+
+	expectedMap = map[float32]int64{}
+	actualMap = ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int64{}
+
+	expectedMap = map[float32]int64{}
+	actualMap = ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]int64{}
+	actualMap = ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]int64{}
+	actualMap = ZipFloat32Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Int32(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []int32{10, 20, 30, 40}
+
+	expectedMap := map[float32]int32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int32{10, 20, 30}
+
+	expectedMap = map[float32]int32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []int32{10, 20, 30, 40}
+
+	expectedMap = map[float32]int32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int32{10, 20, 30, 40}
+
+	expectedMap = map[float32]int32{}
+	actualMap = ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int32{}
+
+	expectedMap = map[float32]int32{}
+	actualMap = ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int32{}
+
+	expectedMap = map[float32]int32{}
+	actualMap = ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]int32{}
+	actualMap = ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]int32{}
+	actualMap = ZipFloat32Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Int16(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []int16{10, 20, 30, 40}
+
+	expectedMap := map[float32]int16{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int16{10, 20, 30}
+
+	expectedMap = map[float32]int16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []int16{10, 20, 30, 40}
+
+	expectedMap = map[float32]int16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int16{10, 20, 30, 40}
+
+	expectedMap = map[float32]int16{}
+	actualMap = ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int16{}
+
+	expectedMap = map[float32]int16{}
+	actualMap = ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int16{}
+
+	expectedMap = map[float32]int16{}
+	actualMap = ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]int16{}
+	actualMap = ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]int16{}
+	actualMap = ZipFloat32Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Int8(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []int8{10, 20, 30, 40}
+
+	expectedMap := map[float32]int8{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int8{10, 20, 30}
+
+	expectedMap = map[float32]int8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []int8{10, 20, 30, 40}
+
+	expectedMap = map[float32]int8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int8{10, 20, 30, 40}
+
+	expectedMap = map[float32]int8{}
+	actualMap = ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []int8{}
+
+	expectedMap = map[float32]int8{}
+	actualMap = ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []int8{}
+
+	expectedMap = map[float32]int8{}
+	actualMap = ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]int8{}
+	actualMap = ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]int8{}
+	actualMap = ZipFloat32Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Uint(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []uint{10, 20, 30, 40}
+
+	expectedMap := map[float32]uint{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint{10, 20, 30}
+
+	expectedMap = map[float32]uint{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []uint{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint{}
+	actualMap = ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint{}
+
+	expectedMap = map[float32]uint{}
+	actualMap = ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint{}
+
+	expectedMap = map[float32]uint{}
+	actualMap = ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]uint{}
+	actualMap = ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]uint{}
+	actualMap = ZipFloat32Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Uint64(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []uint64{10, 20, 30, 40}
+
+	expectedMap := map[float32]uint64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint64{10, 20, 30}
+
+	expectedMap = map[float32]uint64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []uint64{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint64{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint64{}
+	actualMap = ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint64{}
+
+	expectedMap = map[float32]uint64{}
+	actualMap = ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint64{}
+
+	expectedMap = map[float32]uint64{}
+	actualMap = ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]uint64{}
+	actualMap = ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]uint64{}
+	actualMap = ZipFloat32Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Uint32(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []uint32{10, 20, 30, 40}
+
+	expectedMap := map[float32]uint32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint32{10, 20, 30}
+
+	expectedMap = map[float32]uint32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []uint32{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint32{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint32{}
+	actualMap = ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint32{}
+
+	expectedMap = map[float32]uint32{}
+	actualMap = ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint32{}
+
+	expectedMap = map[float32]uint32{}
+	actualMap = ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]uint32{}
+	actualMap = ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]uint32{}
+	actualMap = ZipFloat32Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Uint16(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []uint16{10, 20, 30, 40}
+
+	expectedMap := map[float32]uint16{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint16{10, 20, 30}
+
+	expectedMap = map[float32]uint16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []uint16{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint16{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint16{}
+	actualMap = ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint16{}
+
+	expectedMap = map[float32]uint16{}
+	actualMap = ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint16{}
+
+	expectedMap = map[float32]uint16{}
+	actualMap = ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]uint16{}
+	actualMap = ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]uint16{}
+	actualMap = ZipFloat32Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Uint8(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []uint8{10, 20, 30, 40}
+
+	expectedMap := map[float32]uint8{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint8{10, 20, 30}
+
+	expectedMap = map[float32]uint8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []uint8{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint8{10, 20, 30, 40}
+
+	expectedMap = map[float32]uint8{}
+	actualMap = ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []uint8{}
+
+	expectedMap = map[float32]uint8{}
+	actualMap = ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []uint8{}
+
+	expectedMap = map[float32]uint8{}
+	actualMap = ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]uint8{}
+	actualMap = ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]uint8{}
+	actualMap = ZipFloat32Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Str(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []string{"10", "20", "30", "40"}
+
+	expectedMap := map[float32]string{1: "10", 2: "20", 3: "30", 4: "40"}
+	actualMap := ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []string{"10", "20", "30"}
+
+	expectedMap = map[float32]string{1: "10", 2: "20", 3: "30"}
+	actualMap = ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []string{"10", "20", "30", "40"}
+
+	expectedMap = map[float32]string{1: "10", 2: "20", 3: "30"}
+	actualMap = ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []string{"10", "20", "30", "40"}
+
+	expectedMap = map[float32]string{}
+	actualMap = ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []string{}
+
+	expectedMap = map[float32]string{}
+	actualMap = ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []string{}
+
+	expectedMap = map[float32]string{}
+	actualMap = ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]string{}
+	actualMap = ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]string{}
+	actualMap = ZipFloat32Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Bool(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []bool{true, true, false, true}
+
+	expectedMap := map[float32]bool{1: true, 2: true, 3: false, 4: true}
+	actualMap := ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []bool{true, true, false}
+
+	expectedMap = map[float32]bool{1: true, 2: true, 3: false}
+	actualMap = ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []bool{true, true, false, true}
+
+	expectedMap = map[float32]bool{1: true, 2: true, 3: false}
+	actualMap = ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []bool{true, true, true, true}
+
+	expectedMap = map[float32]bool{}
+	actualMap = ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []bool{}
+
+	expectedMap = map[float32]bool{}
+	actualMap = ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []bool{}
+
+	expectedMap = map[float32]bool{}
+	actualMap = ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]bool{}
+	actualMap = ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]bool{}
+	actualMap = ZipFloat32Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[float32]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[float32]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[float32]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[float32]float32{}
+	actualMap = ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[float32]float32{}
+	actualMap = ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []float32{}
+
+	expectedMap = map[float32]float32{}
+	actualMap = ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]float32{}
+	actualMap = ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]float32{}
+	actualMap = ZipFloat32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat32Float64(t *testing.T) {
+
+	list1 := []float32{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[float32]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[float32]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[float32]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[float32]float64{}
+	actualMap = ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[float32]float64{}
+	actualMap = ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = []float64{}
+
+	expectedMap = map[float32]float64{}
+	actualMap = ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float32]float64{}
+	actualMap = ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float32{}
+	list2 = nil
+
+	expectedMap = map[float32]float64{}
+	actualMap = ZipFloat32Float64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat32Float64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Int(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []int{10, 20, 30, 40}
+
+	expectedMap := map[float64]int{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int{10, 20, 30}
+
+	expectedMap = map[float64]int{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []int{10, 20, 30, 40}
+
+	expectedMap = map[float64]int{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int{10, 20, 30, 40}
+
+	expectedMap = map[float64]int{}
+	actualMap = ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int{}
+
+	expectedMap = map[float64]int{}
+	actualMap = ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int{}
+
+	expectedMap = map[float64]int{}
+	actualMap = ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]int{}
+	actualMap = ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]int{}
+	actualMap = ZipFloat64Int(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Int64(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []int64{10, 20, 30, 40}
+
+	expectedMap := map[float64]int64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int64{10, 20, 30}
+
+	expectedMap = map[float64]int64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []int64{10, 20, 30, 40}
+
+	expectedMap = map[float64]int64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int64{10, 20, 30, 40}
+
+	expectedMap = map[float64]int64{}
+	actualMap = ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int64{}
+
+	expectedMap = map[float64]int64{}
+	actualMap = ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int64{}
+
+	expectedMap = map[float64]int64{}
+	actualMap = ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]int64{}
+	actualMap = ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]int64{}
+	actualMap = ZipFloat64Int64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Int32(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []int32{10, 20, 30, 40}
+
+	expectedMap := map[float64]int32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int32{10, 20, 30}
+
+	expectedMap = map[float64]int32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []int32{10, 20, 30, 40}
+
+	expectedMap = map[float64]int32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int32{10, 20, 30, 40}
+
+	expectedMap = map[float64]int32{}
+	actualMap = ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int32{}
+
+	expectedMap = map[float64]int32{}
+	actualMap = ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int32{}
+
+	expectedMap = map[float64]int32{}
+	actualMap = ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]int32{}
+	actualMap = ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]int32{}
+	actualMap = ZipFloat64Int32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Int16(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []int16{10, 20, 30, 40}
+
+	expectedMap := map[float64]int16{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int16{10, 20, 30}
+
+	expectedMap = map[float64]int16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []int16{10, 20, 30, 40}
+
+	expectedMap = map[float64]int16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int16{10, 20, 30, 40}
+
+	expectedMap = map[float64]int16{}
+	actualMap = ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int16{}
+
+	expectedMap = map[float64]int16{}
+	actualMap = ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int16{}
+
+	expectedMap = map[float64]int16{}
+	actualMap = ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]int16{}
+	actualMap = ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]int16{}
+	actualMap = ZipFloat64Int16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Int8(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []int8{10, 20, 30, 40}
+
+	expectedMap := map[float64]int8{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int8{10, 20, 30}
+
+	expectedMap = map[float64]int8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []int8{10, 20, 30, 40}
+
+	expectedMap = map[float64]int8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int8{10, 20, 30, 40}
+
+	expectedMap = map[float64]int8{}
+	actualMap = ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []int8{}
+
+	expectedMap = map[float64]int8{}
+	actualMap = ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []int8{}
+
+	expectedMap = map[float64]int8{}
+	actualMap = ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]int8{}
+	actualMap = ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]int8{}
+	actualMap = ZipFloat64Int8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Int8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Uint(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []uint{10, 20, 30, 40}
+
+	expectedMap := map[float64]uint{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint{10, 20, 30}
+
+	expectedMap = map[float64]uint{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []uint{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint{}
+	actualMap = ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint{}
+
+	expectedMap = map[float64]uint{}
+	actualMap = ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint{}
+
+	expectedMap = map[float64]uint{}
+	actualMap = ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]uint{}
+	actualMap = ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]uint{}
+	actualMap = ZipFloat64Uint(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Uint64(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []uint64{10, 20, 30, 40}
+
+	expectedMap := map[float64]uint64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint64{10, 20, 30}
+
+	expectedMap = map[float64]uint64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []uint64{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint64{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint64{}
+	actualMap = ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint64{}
+
+	expectedMap = map[float64]uint64{}
+	actualMap = ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint64{}
+
+	expectedMap = map[float64]uint64{}
+	actualMap = ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]uint64{}
+	actualMap = ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]uint64{}
+	actualMap = ZipFloat64Uint64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Uint32(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []uint32{10, 20, 30, 40}
+
+	expectedMap := map[float64]uint32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint32{10, 20, 30}
+
+	expectedMap = map[float64]uint32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []uint32{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint32{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint32{}
+	actualMap = ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint32{}
+
+	expectedMap = map[float64]uint32{}
+	actualMap = ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint32{}
+
+	expectedMap = map[float64]uint32{}
+	actualMap = ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]uint32{}
+	actualMap = ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]uint32{}
+	actualMap = ZipFloat64Uint32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Uint16(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []uint16{10, 20, 30, 40}
+
+	expectedMap := map[float64]uint16{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint16{10, 20, 30}
+
+	expectedMap = map[float64]uint16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []uint16{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint16{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint16{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint16{}
+	actualMap = ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint16{}
+
+	expectedMap = map[float64]uint16{}
+	actualMap = ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint16{}
+
+	expectedMap = map[float64]uint16{}
+	actualMap = ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]uint16{}
+	actualMap = ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]uint16{}
+	actualMap = ZipFloat64Uint16(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint16 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Uint8(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []uint8{10, 20, 30, 40}
+
+	expectedMap := map[float64]uint8{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint8{10, 20, 30}
+
+	expectedMap = map[float64]uint8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []uint8{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint8{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint8{10, 20, 30, 40}
+
+	expectedMap = map[float64]uint8{}
+	actualMap = ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []uint8{}
+
+	expectedMap = map[float64]uint8{}
+	actualMap = ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []uint8{}
+
+	expectedMap = map[float64]uint8{}
+	actualMap = ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]uint8{}
+	actualMap = ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]uint8{}
+	actualMap = ZipFloat64Uint8(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Uint8 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Str(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []string{"10", "20", "30", "40"}
+
+	expectedMap := map[float64]string{1: "10", 2: "20", 3: "30", 4: "40"}
+	actualMap := ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []string{"10", "20", "30"}
+
+	expectedMap = map[float64]string{1: "10", 2: "20", 3: "30"}
+	actualMap = ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []string{"10", "20", "30", "40"}
+
+	expectedMap = map[float64]string{1: "10", 2: "20", 3: "30"}
+	actualMap = ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []string{"10", "20", "30", "40"}
+
+	expectedMap = map[float64]string{}
+	actualMap = ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []string{}
+
+	expectedMap = map[float64]string{}
+	actualMap = ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []string{}
+
+	expectedMap = map[float64]string{}
+	actualMap = ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]string{}
+	actualMap = ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]string{}
+	actualMap = ZipFloat64Str(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Str failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Bool(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []bool{true, true, false, true}
+
+	expectedMap := map[float64]bool{1: true, 2: true, 3: false, 4: true}
+	actualMap := ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []bool{true, true, false}
+
+	expectedMap = map[float64]bool{1: true, 2: true, 3: false}
+	actualMap = ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []bool{true, true, false, true}
+
+	expectedMap = map[float64]bool{1: true, 2: true, 3: false}
+	actualMap = ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []bool{true, true, true, true}
+
+	expectedMap = map[float64]bool{}
+	actualMap = ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []bool{}
+
+	expectedMap = map[float64]bool{}
+	actualMap = ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []bool{}
+
+	expectedMap = map[float64]bool{}
+	actualMap = ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]bool{}
+	actualMap = ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]bool{}
+	actualMap = ZipFloat64Bool(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Bool failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64Float32(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []float32{10, 20, 30, 40}
+
+	expectedMap := map[float64]float32{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []float32{10, 20, 30}
+
+	expectedMap = map[float64]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[float64]float32{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []float32{10, 20, 30, 40}
+
+	expectedMap = map[float64]float32{}
+	actualMap = ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []float32{}
+
+	expectedMap = map[float64]float32{}
+	actualMap = ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []float32{}
+
+	expectedMap = map[float64]float32{}
+	actualMap = ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]float32{}
+	actualMap = ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]float32{}
+	actualMap = ZipFloat64Float32(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64Float32 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+}
+
+func TestZipFloat64(t *testing.T) {
+
+	list1 := []float64{1, 2, 3, 4}
+	list2 := []float64{10, 20, 30, 40}
+
+	expectedMap := map[float64]float64{1: 10, 2: 20, 3: 30, 4: 40}
+	actualMap := ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []float64{10, 20, 30}
+
+	expectedMap = map[float64]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[float64]float64{1: 10, 2: 20, 3: 30}
+	actualMap = ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []float64{10, 20, 30, 40}
+
+	expectedMap = map[float64]float64{}
+	actualMap = ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{1, 2, 3, 4}
+	list2 = []float64{}
+
+	expectedMap = map[float64]float64{}
+	actualMap = ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = []float64{}
+
+	expectedMap = map[float64]float64{}
+	actualMap = ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = nil
+	list2 = nil
+
+	expectedMap = map[float64]float64{}
+	actualMap = ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
+	}
+
+	list1 = []float64{}
+	list2 = nil
+
+	expectedMap = map[float64]float64{}
+	actualMap = ZipFloat64(list1, list2)
+
+	if !reflect.DeepEqual(expectedMap, actualMap) {
+		t.Errorf("TestZipFloat64 failed. Expected=%v, actual=%v", expectedMap, actualMap)
 	}
 }

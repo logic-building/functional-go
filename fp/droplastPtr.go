@@ -203,3 +203,37 @@ func DropLastBoolPtr(list []*bool) []*bool {
 	}
 	return newList
 }
+
+// DropLastFloat32Ptr drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastFloat32Ptr(list []*float32) []*float32 {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []*float32{}
+	}
+
+	newList := make([]*float32, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// DropLastFloat64Ptr drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastFloat64Ptr(list []*float64) []*float64 {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []*float64{}
+	}
+
+	newList := make([]*float64, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}

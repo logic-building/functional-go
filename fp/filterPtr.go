@@ -155,3 +155,29 @@ func FilterBoolPtr(f func(*bool) bool, list []*bool) []*bool {
 	}
 	return newList
 }
+
+func FilterFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
+	if f == nil {
+		return []*float32{}
+	}
+	var newList []*float32
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
+func FilterFloat64Ptr(f func(*float64) bool, list []*float64) []*float64 {
+	if f == nil {
+		return []*float64{}
+	}
+	var newList []*float64
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}

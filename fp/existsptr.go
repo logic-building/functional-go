@@ -119,3 +119,23 @@ func ExistsBoolPtr(num *bool, list []*bool) bool {
 	}
 	return false
 }
+
+// ExistsFloat32Ptr checkss if given item exists in the list
+func ExistsFloat32Ptr(num *float32, list []*float32) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}
+
+// ExistsFloat64Ptr checkss if given item exists in the list
+func ExistsFloat64Ptr(num *float64, list []*float64) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}

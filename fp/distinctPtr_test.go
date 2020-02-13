@@ -403,3 +403,73 @@ func TestDistinctBoolPtr(t *testing.T) {
 	}
 }
 
+
+func TestDistinctFloat32Ptr(t *testing.T) {
+	var v8 float32 = 8
+	var v2 float32 = 2
+	var v0 float32 = 0
+
+
+	// Test : Get distinct values
+	expected := []*float32{&v8, &v2, &v0}
+	list := []*float32{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := DistinctFloat32Ptr(list)
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctFloat32Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float32{&v8, &v2, &v0}
+	list = []*float32{&v8, &v2, &v0}
+	distinct = DistinctFloat32Ptr(list)
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctFloat32Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float32{}
+	list = []*float32{}
+	distinct = DistinctFloat32Ptr(list)
+	if len(distinct) != 0 {
+		t.Errorf("DistinctFloat32Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = DistinctFloat32Ptr(nil)
+	if len(distinct) != 0 {
+		t.Errorf("Distinctfloat32 failed. Expected=%v, actual=%v", expected, distinct)
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func TestDistinctFloat64Ptr(t *testing.T) {
+	var v8 float64 = 8
+	var v2 float64 = 2
+	var v0 float64 = 0
+
+
+	// Test : Get distinct values
+	expected := []*float64{&v8, &v2, &v0}
+	list := []*float64{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := DistinctFloat64Ptr(list)
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctFloat64Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float64{&v8, &v2, &v0}
+	list = []*float64{&v8, &v2, &v0}
+	distinct = DistinctFloat64Ptr(list)
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctFloat64Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float64{}
+	list = []*float64{}
+	distinct = DistinctFloat64Ptr(list)
+	if len(distinct) != 0 {
+		t.Errorf("DistinctFloat64Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = DistinctFloat64Ptr(nil)
+	if len(distinct) != 0 {
+		t.Errorf("Distinctfloat64 failed. Expected=%v, actual=%v", expected, distinct)
+		t.Errorf(reflect.String.String())
+	}
+}
