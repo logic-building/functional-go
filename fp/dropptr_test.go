@@ -689,6 +689,19 @@ func TestDropBoolPtr(t *testing.T) {
 	}
 }
 
+func TestDropBoolsPtr(t *testing.T) {
+	var v1 bool = false
+	var v2 bool = true
+	var v3 bool = true
+
+	expectedList := []*bool{&v2, &v3}
+	newList := DropBoolsPtr([]*bool{&v1}, []*bool{&v1, &v2, &v3, &v1})
+
+	if *newList[0] != *expectedList[0] || *newList[1] != *expectedList[1] {
+		t.Errorf("DropBoolsPtr failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}
+}
+
 
 func TestDropFloat32Ptr(t *testing.T) {
 	var v1 float32 = 1
