@@ -106,6 +106,28 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "ExistsPtr",
+		codeTemplate:      basic.ExistsPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "existsptr.go",
+
+		//testTemplate: basic.DropPtrTest(),
+		//testTemplateBool:      basic.FilterMapPtrBoolTest(),
+		//generatedTestFileName: "dropptr_test.go",
+	},
+
+	fpCode{
+		function:          "DropPtr",
+		codeTemplate:      basic.DropPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		generatedFileName: "dropptr.go",
+
+		testTemplate: basic.DropPtrTest(),
+		//testTemplateBool:      basic.FilterMapPtrBoolTest(),
+		generatedTestFileName: "dropptr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
@@ -376,9 +398,11 @@ func generateFpCode(fpCodeList []fpCode) {
 			}
 		}
 
+		codeTemplate = modifyCodeData(codeTemplate)
 		writeToFile(codeTemplate, fmt.Sprintf("fp/%s", fpCode.generatedFileName))
 		if fpCode.generatedTestFileName != "" {
 			testTemplate = modifyTestDataToStr2(testTemplate)
+			testTemplate = modifyCodeData(testTemplate)
 			writeToFile(testTemplate, fmt.Sprintf("fp/%s", fpCode.generatedTestFileName))
 		}
 	}
@@ -394,6 +418,18 @@ func writeToFile(text, file string) {
 
 	f.Write([]byte(text))
 	defer f.Close()
+}
+
+func modifyCodeData(code string) string {
+	code = strings.Replace(code, "Int64sPtr", "Ints64Ptr", -1)
+	code = strings.Replace(code, "Int32sPtr", "Ints32Ptr", -1)
+	code = strings.Replace(code, "Int16sPtr", "Ints16Ptr", -1)
+	code = strings.Replace(code, "Int8sPtr", "Ints8Ptr", -1)
+	code = strings.Replace(code, "Unt64sPtr", "Uints64Ptr", -1)
+	code = strings.Replace(code, "Uint32sPtr", "Uints32Ptr", -1)
+	code = strings.Replace(code, "Uint16sPtr", "Uints16Ptr", -1)
+	code = strings.Replace(code, "Uint8sPtr", "Uints8Ptr", -1)
+	return code
 }
 
 func modifyTestDataToStr(code string) string {
@@ -596,6 +632,16 @@ func concatA(num *string) *string {
 	result := *num + "A"
 	return &result
 }`
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `newList = DropStrsPtr(nil, []*string{&v1, &v4})
+	if *newList[0] != 1 || *newList[1] != 4 {
+		t.Errorf("DropStrs failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}`
+	s2 = `newList = DropStrsPtr(nil, []*string{&v1, &v4})
+	if *newList[0] != "1" || *newList[1] != "4" {
+		t.Errorf("DropStrs failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}`
 	code = strings.Replace(code, s1, s2, -1)
 
 	return code
