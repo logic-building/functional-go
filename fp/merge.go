@@ -396,6 +396,72 @@ func MergeIntBool(map1, map2 map[int]bool) map[int]bool {
 	return newMap
 }
 
+// MergeIntFloat32 takes two inputs: map[int]float32 and map[int]float32 and merge two maps and returns a new map[int]float32.
+func MergeIntFloat32(map1, map2 map[int]float32) map[int]float32 {
+	if map1 == nil && map2 == nil {
+		return map[int]float32{}
+	}
+
+	newMap := make(map[int]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeIntFloat64 takes two inputs: map[int]float64 and map[int]float64 and merge two maps and returns a new map[int]float64.
+func MergeIntFloat64(map1, map2 map[int]float64) map[int]float64 {
+	if map1 == nil && map2 == nil {
+		return map[int]float64{}
+	}
+
+	newMap := make(map[int]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
 // MergeInt64Int takes two inputs: map[int64]int and map[int64]int and merge two maps and returns a new map[int64]int.
 func MergeInt64Int(map1, map2 map[int64]int) map[int64]int {
 	if map1 == nil && map2 == nil {
@@ -766,6 +832,72 @@ func MergeInt64Bool(map1, map2 map[int64]bool) map[int64]bool {
 	}
 
 	newMap := make(map[int64]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeInt64Float32 takes two inputs: map[int64]float32 and map[int64]float32 and merge two maps and returns a new map[int64]float32.
+func MergeInt64Float32(map1, map2 map[int64]float32) map[int64]float32 {
+	if map1 == nil && map2 == nil {
+		return map[int64]float32{}
+	}
+
+	newMap := make(map[int64]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeInt64Float64 takes two inputs: map[int64]float64 and map[int64]float64 and merge two maps and returns a new map[int64]float64.
+func MergeInt64Float64(map1, map2 map[int64]float64) map[int64]float64 {
+	if map1 == nil && map2 == nil {
+		return map[int64]float64{}
+	}
+
+	newMap := make(map[int64]float64)
 
 	if map1 == nil {
 		for k, v := range map2 {
@@ -1188,6 +1320,72 @@ func MergeInt32Bool(map1, map2 map[int32]bool) map[int32]bool {
 	return newMap
 }
 
+// MergeInt32Float32 takes two inputs: map[int32]float32 and map[int32]float32 and merge two maps and returns a new map[int32]float32.
+func MergeInt32Float32(map1, map2 map[int32]float32) map[int32]float32 {
+	if map1 == nil && map2 == nil {
+		return map[int32]float32{}
+	}
+
+	newMap := make(map[int32]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeInt32Float64 takes two inputs: map[int32]float64 and map[int32]float64 and merge two maps and returns a new map[int32]float64.
+func MergeInt32Float64(map1, map2 map[int32]float64) map[int32]float64 {
+	if map1 == nil && map2 == nil {
+		return map[int32]float64{}
+	}
+
+	newMap := make(map[int32]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
 // MergeInt16Int takes two inputs: map[int16]int and map[int16]int and merge two maps and returns a new map[int16]int.
 func MergeInt16Int(map1, map2 map[int16]int) map[int16]int {
 	if map1 == nil && map2 == nil {
@@ -1558,6 +1756,72 @@ func MergeInt16Bool(map1, map2 map[int16]bool) map[int16]bool {
 	}
 
 	newMap := make(map[int16]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeInt16Float32 takes two inputs: map[int16]float32 and map[int16]float32 and merge two maps and returns a new map[int16]float32.
+func MergeInt16Float32(map1, map2 map[int16]float32) map[int16]float32 {
+	if map1 == nil && map2 == nil {
+		return map[int16]float32{}
+	}
+
+	newMap := make(map[int16]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeInt16Float64 takes two inputs: map[int16]float64 and map[int16]float64 and merge two maps and returns a new map[int16]float64.
+func MergeInt16Float64(map1, map2 map[int16]float64) map[int16]float64 {
+	if map1 == nil && map2 == nil {
+		return map[int16]float64{}
+	}
+
+	newMap := make(map[int16]float64)
 
 	if map1 == nil {
 		for k, v := range map2 {
@@ -1980,6 +2244,72 @@ func MergeInt8Bool(map1, map2 map[int8]bool) map[int8]bool {
 	return newMap
 }
 
+// MergeInt8Float32 takes two inputs: map[int8]float32 and map[int8]float32 and merge two maps and returns a new map[int8]float32.
+func MergeInt8Float32(map1, map2 map[int8]float32) map[int8]float32 {
+	if map1 == nil && map2 == nil {
+		return map[int8]float32{}
+	}
+
+	newMap := make(map[int8]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeInt8Float64 takes two inputs: map[int8]float64 and map[int8]float64 and merge two maps and returns a new map[int8]float64.
+func MergeInt8Float64(map1, map2 map[int8]float64) map[int8]float64 {
+	if map1 == nil && map2 == nil {
+		return map[int8]float64{}
+	}
+
+	newMap := make(map[int8]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
 // MergeUintInt takes two inputs: map[uint]int and map[uint]int and merge two maps and returns a new map[uint]int.
 func MergeUintInt(map1, map2 map[uint]int) map[uint]int {
 	if map1 == nil && map2 == nil {
@@ -2350,6 +2680,72 @@ func MergeUintBool(map1, map2 map[uint]bool) map[uint]bool {
 	}
 
 	newMap := make(map[uint]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUintFloat32 takes two inputs: map[uint]float32 and map[uint]float32 and merge two maps and returns a new map[uint]float32.
+func MergeUintFloat32(map1, map2 map[uint]float32) map[uint]float32 {
+	if map1 == nil && map2 == nil {
+		return map[uint]float32{}
+	}
+
+	newMap := make(map[uint]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUintFloat64 takes two inputs: map[uint]float64 and map[uint]float64 and merge two maps and returns a new map[uint]float64.
+func MergeUintFloat64(map1, map2 map[uint]float64) map[uint]float64 {
+	if map1 == nil && map2 == nil {
+		return map[uint]float64{}
+	}
+
+	newMap := make(map[uint]float64)
 
 	if map1 == nil {
 		for k, v := range map2 {
@@ -2772,6 +3168,72 @@ func MergeUint64Bool(map1, map2 map[uint64]bool) map[uint64]bool {
 	return newMap
 }
 
+// MergeUint64Float32 takes two inputs: map[uint64]float32 and map[uint64]float32 and merge two maps and returns a new map[uint64]float32.
+func MergeUint64Float32(map1, map2 map[uint64]float32) map[uint64]float32 {
+	if map1 == nil && map2 == nil {
+		return map[uint64]float32{}
+	}
+
+	newMap := make(map[uint64]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUint64Float64 takes two inputs: map[uint64]float64 and map[uint64]float64 and merge two maps and returns a new map[uint64]float64.
+func MergeUint64Float64(map1, map2 map[uint64]float64) map[uint64]float64 {
+	if map1 == nil && map2 == nil {
+		return map[uint64]float64{}
+	}
+
+	newMap := make(map[uint64]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
 // MergeUint32Int takes two inputs: map[uint32]int and map[uint32]int and merge two maps and returns a new map[uint32]int.
 func MergeUint32Int(map1, map2 map[uint32]int) map[uint32]int {
 	if map1 == nil && map2 == nil {
@@ -3142,6 +3604,72 @@ func MergeUint32Bool(map1, map2 map[uint32]bool) map[uint32]bool {
 	}
 
 	newMap := make(map[uint32]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUint32Float32 takes two inputs: map[uint32]float32 and map[uint32]float32 and merge two maps and returns a new map[uint32]float32.
+func MergeUint32Float32(map1, map2 map[uint32]float32) map[uint32]float32 {
+	if map1 == nil && map2 == nil {
+		return map[uint32]float32{}
+	}
+
+	newMap := make(map[uint32]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUint32Float64 takes two inputs: map[uint32]float64 and map[uint32]float64 and merge two maps and returns a new map[uint32]float64.
+func MergeUint32Float64(map1, map2 map[uint32]float64) map[uint32]float64 {
+	if map1 == nil && map2 == nil {
+		return map[uint32]float64{}
+	}
+
+	newMap := make(map[uint32]float64)
 
 	if map1 == nil {
 		for k, v := range map2 {
@@ -3564,6 +4092,72 @@ func MergeUint16Bool(map1, map2 map[uint16]bool) map[uint16]bool {
 	return newMap
 }
 
+// MergeUint16Float32 takes two inputs: map[uint16]float32 and map[uint16]float32 and merge two maps and returns a new map[uint16]float32.
+func MergeUint16Float32(map1, map2 map[uint16]float32) map[uint16]float32 {
+	if map1 == nil && map2 == nil {
+		return map[uint16]float32{}
+	}
+
+	newMap := make(map[uint16]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUint16Float64 takes two inputs: map[uint16]float64 and map[uint16]float64 and merge two maps and returns a new map[uint16]float64.
+func MergeUint16Float64(map1, map2 map[uint16]float64) map[uint16]float64 {
+	if map1 == nil && map2 == nil {
+		return map[uint16]float64{}
+	}
+
+	newMap := make(map[uint16]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
 // MergeUint8Int takes two inputs: map[uint8]int and map[uint8]int and merge two maps and returns a new map[uint8]int.
 func MergeUint8Int(map1, map2 map[uint8]int) map[uint8]int {
 	if map1 == nil && map2 == nil {
@@ -3934,6 +4528,72 @@ func MergeUint8Bool(map1, map2 map[uint8]bool) map[uint8]bool {
 	}
 
 	newMap := make(map[uint8]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUint8Float32 takes two inputs: map[uint8]float32 and map[uint8]float32 and merge two maps and returns a new map[uint8]float32.
+func MergeUint8Float32(map1, map2 map[uint8]float32) map[uint8]float32 {
+	if map1 == nil && map2 == nil {
+		return map[uint8]float32{}
+	}
+
+	newMap := make(map[uint8]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeUint8Float64 takes two inputs: map[uint8]float64 and map[uint8]float64 and merge two maps and returns a new map[uint8]float64.
+func MergeUint8Float64(map1, map2 map[uint8]float64) map[uint8]float64 {
+	if map1 == nil && map2 == nil {
+		return map[uint8]float64{}
+	}
+
+	newMap := make(map[uint8]float64)
 
 	if map1 == nil {
 		for k, v := range map2 {
@@ -4356,6 +5016,72 @@ func MergeStrBool(map1, map2 map[string]bool) map[string]bool {
 	return newMap
 }
 
+// MergeStrFloat32 takes two inputs: map[string]float32 and map[string]float32 and merge two maps and returns a new map[string]float32.
+func MergeStrFloat32(map1, map2 map[string]float32) map[string]float32 {
+	if map1 == nil && map2 == nil {
+		return map[string]float32{}
+	}
+
+	newMap := make(map[string]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeStrFloat64 takes two inputs: map[string]float64 and map[string]float64 and merge two maps and returns a new map[string]float64.
+func MergeStrFloat64(map1, map2 map[string]float64) map[string]float64 {
+	if map1 == nil && map2 == nil {
+		return map[string]float64{}
+	}
+
+	newMap := make(map[string]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
 // MergeBoolInt takes two inputs: map[bool]int and map[bool]int and merge two maps and returns a new map[bool]int.
 func MergeBoolInt(map1, map2 map[bool]int) map[bool]int {
 	if map1 == nil && map2 == nil {
@@ -4726,6 +5452,996 @@ func MergeBool(map1, map2 map[bool]bool) map[bool]bool {
 	}
 
 	newMap := make(map[bool]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeBoolFloat32 takes two inputs: map[bool]float32 and map[bool]float32 and merge two maps and returns a new map[bool]float32.
+func MergeBoolFloat32(map1, map2 map[bool]float32) map[bool]float32 {
+	if map1 == nil && map2 == nil {
+		return map[bool]float32{}
+	}
+
+	newMap := make(map[bool]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeBoolFloat64 takes two inputs: map[bool]float64 and map[bool]float64 and merge two maps and returns a new map[bool]float64.
+func MergeBoolFloat64(map1, map2 map[bool]float64) map[bool]float64 {
+	if map1 == nil && map2 == nil {
+		return map[bool]float64{}
+	}
+
+	newMap := make(map[bool]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Int takes two inputs: map[float32]int and map[float32]int and merge two maps and returns a new map[float32]int.
+func MergeFloat32Int(map1, map2 map[float32]int) map[float32]int {
+	if map1 == nil && map2 == nil {
+		return map[float32]int{}
+	}
+
+	newMap := make(map[float32]int)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Int64 takes two inputs: map[float32]int64 and map[float32]int64 and merge two maps and returns a new map[float32]int64.
+func MergeFloat32Int64(map1, map2 map[float32]int64) map[float32]int64 {
+	if map1 == nil && map2 == nil {
+		return map[float32]int64{}
+	}
+
+	newMap := make(map[float32]int64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Int32 takes two inputs: map[float32]int32 and map[float32]int32 and merge two maps and returns a new map[float32]int32.
+func MergeFloat32Int32(map1, map2 map[float32]int32) map[float32]int32 {
+	if map1 == nil && map2 == nil {
+		return map[float32]int32{}
+	}
+
+	newMap := make(map[float32]int32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Int16 takes two inputs: map[float32]int16 and map[float32]int16 and merge two maps and returns a new map[float32]int16.
+func MergeFloat32Int16(map1, map2 map[float32]int16) map[float32]int16 {
+	if map1 == nil && map2 == nil {
+		return map[float32]int16{}
+	}
+
+	newMap := make(map[float32]int16)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Int8 takes two inputs: map[float32]int8 and map[float32]int8 and merge two maps and returns a new map[float32]int8.
+func MergeFloat32Int8(map1, map2 map[float32]int8) map[float32]int8 {
+	if map1 == nil && map2 == nil {
+		return map[float32]int8{}
+	}
+
+	newMap := make(map[float32]int8)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Uint takes two inputs: map[float32]uint and map[float32]uint and merge two maps and returns a new map[float32]uint.
+func MergeFloat32Uint(map1, map2 map[float32]uint) map[float32]uint {
+	if map1 == nil && map2 == nil {
+		return map[float32]uint{}
+	}
+
+	newMap := make(map[float32]uint)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Uint64 takes two inputs: map[float32]uint64 and map[float32]uint64 and merge two maps and returns a new map[float32]uint64.
+func MergeFloat32Uint64(map1, map2 map[float32]uint64) map[float32]uint64 {
+	if map1 == nil && map2 == nil {
+		return map[float32]uint64{}
+	}
+
+	newMap := make(map[float32]uint64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Uint32 takes two inputs: map[float32]uint32 and map[float32]uint32 and merge two maps and returns a new map[float32]uint32.
+func MergeFloat32Uint32(map1, map2 map[float32]uint32) map[float32]uint32 {
+	if map1 == nil && map2 == nil {
+		return map[float32]uint32{}
+	}
+
+	newMap := make(map[float32]uint32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Uint16 takes two inputs: map[float32]uint16 and map[float32]uint16 and merge two maps and returns a new map[float32]uint16.
+func MergeFloat32Uint16(map1, map2 map[float32]uint16) map[float32]uint16 {
+	if map1 == nil && map2 == nil {
+		return map[float32]uint16{}
+	}
+
+	newMap := make(map[float32]uint16)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Uint8 takes two inputs: map[float32]uint8 and map[float32]uint8 and merge two maps and returns a new map[float32]uint8.
+func MergeFloat32Uint8(map1, map2 map[float32]uint8) map[float32]uint8 {
+	if map1 == nil && map2 == nil {
+		return map[float32]uint8{}
+	}
+
+	newMap := make(map[float32]uint8)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Str takes two inputs: map[float32]string and map[float32]string and merge two maps and returns a new map[float32]string.
+func MergeFloat32Str(map1, map2 map[float32]string) map[float32]string {
+	if map1 == nil && map2 == nil {
+		return map[float32]string{}
+	}
+
+	newMap := make(map[float32]string)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Bool takes two inputs: map[float32]bool and map[float32]bool and merge two maps and returns a new map[float32]bool.
+func MergeFloat32Bool(map1, map2 map[float32]bool) map[float32]bool {
+	if map1 == nil && map2 == nil {
+		return map[float32]bool{}
+	}
+
+	newMap := make(map[float32]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32 takes two inputs: map[float32]float32 and map[float32]float32 and merge two maps and returns a new map[float32]float32.
+func MergeFloat32(map1, map2 map[float32]float32) map[float32]float32 {
+	if map1 == nil && map2 == nil {
+		return map[float32]float32{}
+	}
+
+	newMap := make(map[float32]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat32Float64 takes two inputs: map[float32]float64 and map[float32]float64 and merge two maps and returns a new map[float32]float64.
+func MergeFloat32Float64(map1, map2 map[float32]float64) map[float32]float64 {
+	if map1 == nil && map2 == nil {
+		return map[float32]float64{}
+	}
+
+	newMap := make(map[float32]float64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Int takes two inputs: map[float64]int and map[float64]int and merge two maps and returns a new map[float64]int.
+func MergeFloat64Int(map1, map2 map[float64]int) map[float64]int {
+	if map1 == nil && map2 == nil {
+		return map[float64]int{}
+	}
+
+	newMap := make(map[float64]int)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Int64 takes two inputs: map[float64]int64 and map[float64]int64 and merge two maps and returns a new map[float64]int64.
+func MergeFloat64Int64(map1, map2 map[float64]int64) map[float64]int64 {
+	if map1 == nil && map2 == nil {
+		return map[float64]int64{}
+	}
+
+	newMap := make(map[float64]int64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Int32 takes two inputs: map[float64]int32 and map[float64]int32 and merge two maps and returns a new map[float64]int32.
+func MergeFloat64Int32(map1, map2 map[float64]int32) map[float64]int32 {
+	if map1 == nil && map2 == nil {
+		return map[float64]int32{}
+	}
+
+	newMap := make(map[float64]int32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Int16 takes two inputs: map[float64]int16 and map[float64]int16 and merge two maps and returns a new map[float64]int16.
+func MergeFloat64Int16(map1, map2 map[float64]int16) map[float64]int16 {
+	if map1 == nil && map2 == nil {
+		return map[float64]int16{}
+	}
+
+	newMap := make(map[float64]int16)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Int8 takes two inputs: map[float64]int8 and map[float64]int8 and merge two maps and returns a new map[float64]int8.
+func MergeFloat64Int8(map1, map2 map[float64]int8) map[float64]int8 {
+	if map1 == nil && map2 == nil {
+		return map[float64]int8{}
+	}
+
+	newMap := make(map[float64]int8)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Uint takes two inputs: map[float64]uint and map[float64]uint and merge two maps and returns a new map[float64]uint.
+func MergeFloat64Uint(map1, map2 map[float64]uint) map[float64]uint {
+	if map1 == nil && map2 == nil {
+		return map[float64]uint{}
+	}
+
+	newMap := make(map[float64]uint)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Uint64 takes two inputs: map[float64]uint64 and map[float64]uint64 and merge two maps and returns a new map[float64]uint64.
+func MergeFloat64Uint64(map1, map2 map[float64]uint64) map[float64]uint64 {
+	if map1 == nil && map2 == nil {
+		return map[float64]uint64{}
+	}
+
+	newMap := make(map[float64]uint64)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Uint32 takes two inputs: map[float64]uint32 and map[float64]uint32 and merge two maps and returns a new map[float64]uint32.
+func MergeFloat64Uint32(map1, map2 map[float64]uint32) map[float64]uint32 {
+	if map1 == nil && map2 == nil {
+		return map[float64]uint32{}
+	}
+
+	newMap := make(map[float64]uint32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Uint16 takes two inputs: map[float64]uint16 and map[float64]uint16 and merge two maps and returns a new map[float64]uint16.
+func MergeFloat64Uint16(map1, map2 map[float64]uint16) map[float64]uint16 {
+	if map1 == nil && map2 == nil {
+		return map[float64]uint16{}
+	}
+
+	newMap := make(map[float64]uint16)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Uint8 takes two inputs: map[float64]uint8 and map[float64]uint8 and merge two maps and returns a new map[float64]uint8.
+func MergeFloat64Uint8(map1, map2 map[float64]uint8) map[float64]uint8 {
+	if map1 == nil && map2 == nil {
+		return map[float64]uint8{}
+	}
+
+	newMap := make(map[float64]uint8)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Str takes two inputs: map[float64]string and map[float64]string and merge two maps and returns a new map[float64]string.
+func MergeFloat64Str(map1, map2 map[float64]string) map[float64]string {
+	if map1 == nil && map2 == nil {
+		return map[float64]string{}
+	}
+
+	newMap := make(map[float64]string)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Bool takes two inputs: map[float64]bool and map[float64]bool and merge two maps and returns a new map[float64]bool.
+func MergeFloat64Bool(map1, map2 map[float64]bool) map[float64]bool {
+	if map1 == nil && map2 == nil {
+		return map[float64]bool{}
+	}
+
+	newMap := make(map[float64]bool)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64Float32 takes two inputs: map[float64]float32 and map[float64]float32 and merge two maps and returns a new map[float64]float32.
+func MergeFloat64Float32(map1, map2 map[float64]float32) map[float64]float32 {
+	if map1 == nil && map2 == nil {
+		return map[float64]float32{}
+	}
+
+	newMap := make(map[float64]float32)
+
+	if map1 == nil {
+		for k, v := range map2 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	if map2 == nil {
+		for k, v := range map1 {
+			newMap[k] = v
+		}
+		return newMap
+	}
+
+	for k, v := range map1 {
+		newMap[k] = v
+	}
+
+	for k, v := range map2 {
+		newMap[k] = v
+	}
+
+	return newMap
+}
+
+// MergeFloat64 takes two inputs: map[float64]float64 and map[float64]float64 and merge two maps and returns a new map[float64]float64.
+func MergeFloat64(map1, map2 map[float64]float64) map[float64]float64 {
+	if map1 == nil && map2 == nil {
+		return map[float64]float64{}
+	}
+
+	newMap := make(map[float64]float64)
 
 	if map1 == nil {
 		for k, v := range map2 {

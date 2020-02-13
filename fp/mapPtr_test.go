@@ -382,3 +382,67 @@ func inverseBoolPtr(num1 *bool) *bool {
 	return &vt
 }
 
+
+func TestMapFloat32Ptr(t *testing.T) {
+	var v1 float32 = 1
+	var v2 float32 = 2
+	var v3 float32 = 3
+	var v5 float32 = 5
+	var v6 float32 = 6
+	var v7 float32 = 7
+	var v8 float32 = 8
+
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []*float32{&v6, &v7, &v8}
+	partialAddFloat32Ptr := func(num *float32) *float32 {
+		return addFloat32Ptr(&v5, num)
+	}
+	sumList := MapFloat32Ptr(partialAddFloat32Ptr, []*float32{&v1, &v2, &v3})
+	if *sumList[0] != *expectedSumList[0] || *sumList[1] != *expectedSumList[1] || *sumList[2] != *expectedSumList[2] {
+		t.Errorf("MapFloat32Ptr failed")
+	}
+
+	if len(MapFloat32Ptr(nil, nil)) > 0 {
+		t.Errorf("MapFloat32Ptr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func addFloat32Ptr(num1, num2 *float32) *float32 {
+    result := *num1 + *num2
+	return &result
+}
+
+
+func TestMapFloat64Ptr(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v5 float64 = 5
+	var v6 float64 = 6
+	var v7 float64 = 7
+	var v8 float64 = 8
+
+
+	// Test: add 5 to each item in the list
+	expectedSumList := []*float64{&v6, &v7, &v8}
+	partialAddFloat64Ptr := func(num *float64) *float64 {
+		return addFloat64Ptr(&v5, num)
+	}
+	sumList := MapFloat64Ptr(partialAddFloat64Ptr, []*float64{&v1, &v2, &v3})
+	if *sumList[0] != *expectedSumList[0] || *sumList[1] != *expectedSumList[1] || *sumList[2] != *expectedSumList[2] {
+		t.Errorf("MapFloat64Ptr failed")
+	}
+
+	if len(MapFloat64Ptr(nil, nil)) > 0 {
+		t.Errorf("MapFloat64Ptr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func addFloat64Ptr(num1, num2 *float64) *float64 {
+    result := *num1 + *num2
+	return &result
+}
+

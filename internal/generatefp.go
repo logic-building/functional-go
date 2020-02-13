@@ -42,7 +42,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "DropLast",
 		codeTemplate:      basic.DropLast(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "droplast.go",
 
 		testTemplate:          basic.DropLastTest(),
@@ -53,7 +53,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "DropLastPtr",
 		codeTemplate:      basic.DropLastPtr(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "droplastPtr.go",
 
 		testTemplate:          basic.DropLastPtrTest(),
@@ -64,7 +64,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "MapPtr",
 		codeTemplate:      basic.MapPtr(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "mapPtr.go",
 
 		testTemplate:          basic.MapPtrTest(),
@@ -75,7 +75,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "FilterPtr",
 		codeTemplate:      basic.FilterPtr(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "filterPtr.go",
 
 		testTemplate:          basic.FilterPtrTest(),
@@ -86,7 +86,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "DistinctPtr",
 		codeTemplate:      basic.DistinctPtr(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "distinctPtr.go",
 
 		testTemplate:          basic.DistinctPtrTest(),
@@ -97,7 +97,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "FilterMapPtr",
 		codeTemplate:      basic.FilterMapPtr(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "filtermapptr.go",
 
 		testTemplate:          basic.FilterMapPtrTest(),
@@ -106,9 +106,31 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "ExistsPtr",
+		codeTemplate:      basic.ExistsPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "existsptr.go",
+
+		testTemplate: basic.ExistsPtrTest(),
+		//testTemplateBool:      basic.FilterMapPtrBoolTest(),
+		generatedTestFileName: "existsptr_test.go",
+	},
+
+	fpCode{
+		function:          "DropPtr",
+		codeTemplate:      basic.DropPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "dropptr.go",
+
+		testTemplate:          basic.DropPtrTest(),
+		testTemplateBool:      basic.DropPtrBoolTest(),
+		generatedTestFileName: "dropptr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "merge.go",
 
 		testTemplate:           basic.MergeTest(),
@@ -126,7 +148,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "Zip",
 		codeTemplate:      basic.Zip(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "zip.go",
 
 		testTemplate:           basic.ZIPNumberToNumber(),
@@ -151,7 +173,7 @@ var fpCodeList = []fpCode{
 		testTemplateIOStrBool:    basic.PMapIOStrBool(),
 		testTemplateIOBoolNumber: basic.PMapIOBoolNumber(),
 		testTemplateIOBoolStr:    basic.PMapIOBoolStr(),
-		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName:        "pmapio.go",
 		generatedTestFileName:    "pmapio_test.go",
 	},
@@ -165,7 +187,7 @@ var fpCodeList = []fpCode{
 		testTemplateIOStrBool:    basic.MapIOStrBool(),
 		testTemplateIOBoolNumber: basic.MapIOBoolNumber(),
 		testTemplateIOBoolStr:    basic.MapIOBoolStr(),
-		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName:        "mapio.go",
 		generatedTestFileName:    "mapio_test.go",
 	},
@@ -179,7 +201,7 @@ var fpCodeList = []fpCode{
 		testTemplateIOStrBool:    basic.FilterMapIOStrBool(),
 		testTemplateIOBoolNumber: basic.FilterMapIOBoolNumber(),
 		testTemplateIOBoolStr:    basic.FilterMapIOBoolStr(),
-		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool"},
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName:        "filtermapio.go",
 		generatedTestFileName:    "filtermapio_test.go",
 	},
@@ -376,9 +398,11 @@ func generateFpCode(fpCodeList []fpCode) {
 			}
 		}
 
+		codeTemplate = modifyCodeData(codeTemplate)
 		writeToFile(codeTemplate, fmt.Sprintf("fp/%s", fpCode.generatedFileName))
 		if fpCode.generatedTestFileName != "" {
 			testTemplate = modifyTestDataToStr2(testTemplate)
+			testTemplate = modifyCodeData(testTemplate)
 			writeToFile(testTemplate, fmt.Sprintf("fp/%s", fpCode.generatedTestFileName))
 		}
 	}
@@ -394,6 +418,18 @@ func writeToFile(text, file string) {
 
 	f.Write([]byte(text))
 	defer f.Close()
+}
+
+func modifyCodeData(code string) string {
+	code = strings.Replace(code, "Int64sPtr", "Ints64Ptr", -1)
+	code = strings.Replace(code, "Int32sPtr", "Ints32Ptr", -1)
+	code = strings.Replace(code, "Int16sPtr", "Ints16Ptr", -1)
+	code = strings.Replace(code, "Int8sPtr", "Ints8Ptr", -1)
+	code = strings.Replace(code, "Unt64sPtr", "Uints64Ptr", -1)
+	code = strings.Replace(code, "Uint32sPtr", "Uints32Ptr", -1)
+	code = strings.Replace(code, "Uint16sPtr", "Uints16Ptr", -1)
+	code = strings.Replace(code, "Uint8sPtr", "Uints8Ptr", -1)
+	return code
 }
 
 func modifyTestDataToStr(code string) string {
@@ -424,6 +460,7 @@ func modifyTestDataToStr2(code string) string {
 	code = strings.Replace(code, "var v10 string = 10", "var v10 string = \"10\"", -1)
 	code = strings.Replace(code, "var v20 string = 20", "var v20 string = \"20\"", -1)
 	code = strings.Replace(code, "var v40 string = 40", "var v40 string = \"40\"", -1)
+	code = strings.Replace(code, "var v80 string = 80", "var v80 string = \"80\"", -1)
 
 	// Change one of the test for MapPtrStr
 	s1 := `func TestMapStrPtr(t *testing.T) {
@@ -598,5 +635,49 @@ func concatA(num *string) *string {
 }`
 	code = strings.Replace(code, s1, s2, -1)
 
+	s1 = `newList = DropStrsPtr(nil, []*string{&v1, &v4})
+	if *newList[0] != 1 || *newList[1] != 4 {
+		t.Errorf("DropStrs failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}`
+	s2 = `newList = DropStrsPtr(nil, []*string{&v1, &v4})
+	if *newList[0] != "1" || *newList[1] != "4" {
+		t.Errorf("DropStrs failed. Expected list=%v, actual list=%v", expectedList, newList)
+	}`
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenFloat32Ptr(num *float32) bool {
+	return *num%2 == 0
+}
+
+func isEvenDivisibleByFloat32Ptr(num, divisibleBy *float32) bool {
+	return *num%2 == 0 && *num % *divisibleBy == 0
+}`
+	s2 = `func isEvenFloat32Ptr(num *float32) bool {
+		return int(*num)%2 == 0
+	}
+	
+	func isEvenDivisibleByFloat32Ptr(num, divisibleBy *float32) bool {
+		return int(*num)%2 == 0 && int(*num) % int(*divisibleBy) == 0
+	}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenFloat64Ptr(num *float64) bool {
+	return *num%2 == 0
+}
+
+func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
+	return *num%2 == 0 && *num % *divisibleBy == 0
+}`
+	s2 = `func isEvenFloat64Ptr(num *float64) bool {
+	return int(*num)%2 == 0
+}
+
+func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
+	return int(*num)%2 == 0 && int(*num) % int(*divisibleBy) == 0
+}
+`
+
+	code = strings.Replace(code, s1, s2, -1)
 	return code
 }

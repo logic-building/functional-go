@@ -203,3 +203,37 @@ func DropLastBool(list []bool) []bool {
 	}
 	return newList
 }
+
+// DropLastFloat32 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastFloat32(list []float32) []float32 {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []float32{}
+	}
+
+	newList := make([]float32, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// DropLastFloat64 drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastFloat64(list []float64) []float64 {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []float64{}
+	}
+
+	newList := make([]float64, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}

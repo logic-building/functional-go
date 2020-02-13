@@ -242,6 +242,50 @@ func FilterMapIntBool(fFilter func(int) bool, fMap func(int) bool, list []int) [
 	return newList
 }
 
+// FilterMapIntFloat32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int and returns true/false.
+//	2. Function: takes int as argument and returns float32
+// 	3. List of type int
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapIntFloat32(fFilter func(int) bool, fMap func(int) float32, list []int) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapIntFloat64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int and returns true/false.
+//	2. Function: takes int as argument and returns float64
+// 	3. List of type int
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapIntFloat64(fFilter func(int) bool, fMap func(int) float64, list []int) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 // FilterMapInt64Int filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - int64 and returns true/false.
@@ -476,6 +520,50 @@ func FilterMapInt64Bool(fFilter func(int64) bool, fMap func(int64) bool, list []
 		return []bool{}
 	}
 	var newList []bool
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapInt64Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int64 and returns true/false.
+//	2. Function: takes int64 as argument and returns float32
+// 	3. List of type int64
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt64Float32(fFilter func(int64) bool, fMap func(int64) float32, list []int64) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapInt64Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int64 and returns true/false.
+//	2. Function: takes int64 as argument and returns float64
+// 	3. List of type int64
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt64Float64(fFilter func(int64) bool, fMap func(int64) float64, list []int64) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))
@@ -726,6 +814,50 @@ func FilterMapInt32Bool(fFilter func(int32) bool, fMap func(int32) bool, list []
 	return newList
 }
 
+// FilterMapInt32Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int32 and returns true/false.
+//	2. Function: takes int32 as argument and returns float32
+// 	3. List of type int32
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt32Float32(fFilter func(int32) bool, fMap func(int32) float32, list []int32) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapInt32Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int32 and returns true/false.
+//	2. Function: takes int32 as argument and returns float64
+// 	3. List of type int32
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt32Float64(fFilter func(int32) bool, fMap func(int32) float64, list []int32) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 // FilterMapInt16Int filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - int16 and returns true/false.
@@ -960,6 +1092,50 @@ func FilterMapInt16Bool(fFilter func(int16) bool, fMap func(int16) bool, list []
 		return []bool{}
 	}
 	var newList []bool
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapInt16Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int16 and returns true/false.
+//	2. Function: takes int16 as argument and returns float32
+// 	3. List of type int16
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt16Float32(fFilter func(int16) bool, fMap func(int16) float32, list []int16) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapInt16Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int16 and returns true/false.
+//	2. Function: takes int16 as argument and returns float64
+// 	3. List of type int16
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt16Float64(fFilter func(int16) bool, fMap func(int16) float64, list []int16) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))
@@ -1210,6 +1386,50 @@ func FilterMapInt8Bool(fFilter func(int8) bool, fMap func(int8) bool, list []int
 	return newList
 }
 
+// FilterMapInt8Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int8 and returns true/false.
+//	2. Function: takes int8 as argument and returns float32
+// 	3. List of type int8
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt8Float32(fFilter func(int8) bool, fMap func(int8) float32, list []int8) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapInt8Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - int8 and returns true/false.
+//	2. Function: takes int8 as argument and returns float64
+// 	3. List of type int8
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapInt8Float64(fFilter func(int8) bool, fMap func(int8) float64, list []int8) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 // FilterMapUintInt filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - uint and returns true/false.
@@ -1444,6 +1664,50 @@ func FilterMapUintBool(fFilter func(uint) bool, fMap func(uint) bool, list []uin
 		return []bool{}
 	}
 	var newList []bool
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUintFloat32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint and returns true/false.
+//	2. Function: takes uint as argument and returns float32
+// 	3. List of type uint
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUintFloat32(fFilter func(uint) bool, fMap func(uint) float32, list []uint) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUintFloat64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint and returns true/false.
+//	2. Function: takes uint as argument and returns float64
+// 	3. List of type uint
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUintFloat64(fFilter func(uint) bool, fMap func(uint) float64, list []uint) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))
@@ -1694,6 +1958,50 @@ func FilterMapUint64Bool(fFilter func(uint64) bool, fMap func(uint64) bool, list
 	return newList
 }
 
+// FilterMapUint64Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint64 and returns true/false.
+//	2. Function: takes uint64 as argument and returns float32
+// 	3. List of type uint64
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint64Float32(fFilter func(uint64) bool, fMap func(uint64) float32, list []uint64) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUint64Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint64 and returns true/false.
+//	2. Function: takes uint64 as argument and returns float64
+// 	3. List of type uint64
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint64Float64(fFilter func(uint64) bool, fMap func(uint64) float64, list []uint64) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 // FilterMapUint32Int filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - uint32 and returns true/false.
@@ -1928,6 +2236,50 @@ func FilterMapUint32Bool(fFilter func(uint32) bool, fMap func(uint32) bool, list
 		return []bool{}
 	}
 	var newList []bool
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUint32Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint32 and returns true/false.
+//	2. Function: takes uint32 as argument and returns float32
+// 	3. List of type uint32
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint32Float32(fFilter func(uint32) bool, fMap func(uint32) float32, list []uint32) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUint32Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint32 and returns true/false.
+//	2. Function: takes uint32 as argument and returns float64
+// 	3. List of type uint32
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint32Float64(fFilter func(uint32) bool, fMap func(uint32) float64, list []uint32) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))
@@ -2178,6 +2530,50 @@ func FilterMapUint16Bool(fFilter func(uint16) bool, fMap func(uint16) bool, list
 	return newList
 }
 
+// FilterMapUint16Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint16 and returns true/false.
+//	2. Function: takes uint16 as argument and returns float32
+// 	3. List of type uint16
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint16Float32(fFilter func(uint16) bool, fMap func(uint16) float32, list []uint16) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUint16Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint16 and returns true/false.
+//	2. Function: takes uint16 as argument and returns float64
+// 	3. List of type uint16
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint16Float64(fFilter func(uint16) bool, fMap func(uint16) float64, list []uint16) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 // FilterMapUint8Int filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - uint8 and returns true/false.
@@ -2412,6 +2808,50 @@ func FilterMapUint8Bool(fFilter func(uint8) bool, fMap func(uint8) bool, list []
 		return []bool{}
 	}
 	var newList []bool
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUint8Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint8 and returns true/false.
+//	2. Function: takes uint8 as argument and returns float32
+// 	3. List of type uint8
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint8Float32(fFilter func(uint8) bool, fMap func(uint8) float32, list []uint8) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapUint8Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - uint8 and returns true/false.
+//	2. Function: takes uint8 as argument and returns float64
+// 	3. List of type uint8
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapUint8Float64(fFilter func(uint8) bool, fMap func(uint8) float64, list []uint8) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))
@@ -2662,6 +3102,50 @@ func FilterMapStrBool(fFilter func(string) bool, fMap func(string) bool, list []
 	return newList
 }
 
+// FilterMapStrFloat32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - string and returns true/false.
+//	2. Function: takes string as argument and returns float32
+// 	3. List of type string
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapStrFloat32(fFilter func(string) bool, fMap func(string) float32, list []string) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapStrFloat64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - string and returns true/false.
+//	2. Function: takes string as argument and returns float64
+// 	3. List of type string
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapStrFloat64(fFilter func(string) bool, fMap func(string) float64, list []string) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 // FilterMapBoolInt filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - bool and returns true/false.
@@ -2896,6 +3380,622 @@ func FilterMapBoolStr(fFilter func(bool) bool, fMap func(bool) string, list []bo
 		return []string{}
 	}
 	var newList []string
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapBoolFloat32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - bool and returns true/false.
+//	2. Function: takes bool as argument and returns float32
+// 	3. List of type bool
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapBoolFloat32(fFilter func(bool) bool, fMap func(bool) float32, list []bool) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapBoolFloat64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - bool and returns true/false.
+//	2. Function: takes bool as argument and returns float64
+// 	3. List of type bool
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapBoolFloat64(fFilter func(bool) bool, fMap func(bool) float64, list []bool) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Int filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns int
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type int
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Int(fFilter func(float32) bool, fMap func(float32) int, list []float32) []int {
+	if fFilter == nil || fMap == nil {
+		return []int{}
+	}
+	var newList []int
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Int64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns int64
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type int64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Int64(fFilter func(float32) bool, fMap func(float32) int64, list []float32) []int64 {
+	if fFilter == nil || fMap == nil {
+		return []int64{}
+	}
+	var newList []int64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Int32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns int32
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type int32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Int32(fFilter func(float32) bool, fMap func(float32) int32, list []float32) []int32 {
+	if fFilter == nil || fMap == nil {
+		return []int32{}
+	}
+	var newList []int32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Int16 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns int16
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type int16
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Int16(fFilter func(float32) bool, fMap func(float32) int16, list []float32) []int16 {
+	if fFilter == nil || fMap == nil {
+		return []int16{}
+	}
+	var newList []int16
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Int8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns int8
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type int8
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Int8(fFilter func(float32) bool, fMap func(float32) int8, list []float32) []int8 {
+	if fFilter == nil || fMap == nil {
+		return []int8{}
+	}
+	var newList []int8
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Uint filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns uint
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type uint
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Uint(fFilter func(float32) bool, fMap func(float32) uint, list []float32) []uint {
+	if fFilter == nil || fMap == nil {
+		return []uint{}
+	}
+	var newList []uint
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Uint64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns uint64
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type uint64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Uint64(fFilter func(float32) bool, fMap func(float32) uint64, list []float32) []uint64 {
+	if fFilter == nil || fMap == nil {
+		return []uint64{}
+	}
+	var newList []uint64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Uint32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns uint32
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type uint32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Uint32(fFilter func(float32) bool, fMap func(float32) uint32, list []float32) []uint32 {
+	if fFilter == nil || fMap == nil {
+		return []uint32{}
+	}
+	var newList []uint32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Uint16 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns uint16
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type uint16
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Uint16(fFilter func(float32) bool, fMap func(float32) uint16, list []float32) []uint16 {
+	if fFilter == nil || fMap == nil {
+		return []uint16{}
+	}
+	var newList []uint16
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Uint8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns uint8
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type uint8
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Uint8(fFilter func(float32) bool, fMap func(float32) uint8, list []float32) []uint8 {
+	if fFilter == nil || fMap == nil {
+		return []uint8{}
+	}
+	var newList []uint8
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Str filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns string
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type string
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Str(fFilter func(float32) bool, fMap func(float32) string, list []float32) []string {
+	if fFilter == nil || fMap == nil {
+		return []string{}
+	}
+	var newList []string
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Bool filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns bool
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type bool
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Bool(fFilter func(float32) bool, fMap func(float32) bool, list []float32) []bool {
+	if fFilter == nil || fMap == nil {
+		return []bool{}
+	}
+	var newList []bool
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat32Float64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float32 and returns true/false.
+//	2. Function: takes float32 as argument and returns float64
+// 	3. List of type float32
+//
+// Returns:
+//	New List of type float64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat32Float64(fFilter func(float32) bool, fMap func(float32) float64, list []float32) []float64 {
+	if fFilter == nil || fMap == nil {
+		return []float64{}
+	}
+	var newList []float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Int filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns int
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type int
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Int(fFilter func(float64) bool, fMap func(float64) int, list []float64) []int {
+	if fFilter == nil || fMap == nil {
+		return []int{}
+	}
+	var newList []int
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Int64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns int64
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type int64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Int64(fFilter func(float64) bool, fMap func(float64) int64, list []float64) []int64 {
+	if fFilter == nil || fMap == nil {
+		return []int64{}
+	}
+	var newList []int64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Int32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns int32
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type int32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Int32(fFilter func(float64) bool, fMap func(float64) int32, list []float64) []int32 {
+	if fFilter == nil || fMap == nil {
+		return []int32{}
+	}
+	var newList []int32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Int16 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns int16
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type int16
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Int16(fFilter func(float64) bool, fMap func(float64) int16, list []float64) []int16 {
+	if fFilter == nil || fMap == nil {
+		return []int16{}
+	}
+	var newList []int16
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Int8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns int8
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type int8
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Int8(fFilter func(float64) bool, fMap func(float64) int8, list []float64) []int8 {
+	if fFilter == nil || fMap == nil {
+		return []int8{}
+	}
+	var newList []int8
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Uint filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns uint
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type uint
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Uint(fFilter func(float64) bool, fMap func(float64) uint, list []float64) []uint {
+	if fFilter == nil || fMap == nil {
+		return []uint{}
+	}
+	var newList []uint
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Uint64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns uint64
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type uint64
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Uint64(fFilter func(float64) bool, fMap func(float64) uint64, list []float64) []uint64 {
+	if fFilter == nil || fMap == nil {
+		return []uint64{}
+	}
+	var newList []uint64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Uint32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns uint32
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type uint32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Uint32(fFilter func(float64) bool, fMap func(float64) uint32, list []float64) []uint32 {
+	if fFilter == nil || fMap == nil {
+		return []uint32{}
+	}
+	var newList []uint32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Uint16 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns uint16
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type uint16
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Uint16(fFilter func(float64) bool, fMap func(float64) uint16, list []float64) []uint16 {
+	if fFilter == nil || fMap == nil {
+		return []uint16{}
+	}
+	var newList []uint16
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Uint8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns uint8
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type uint8
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Uint8(fFilter func(float64) bool, fMap func(float64) uint8, list []float64) []uint8 {
+	if fFilter == nil || fMap == nil {
+		return []uint8{}
+	}
+	var newList []uint8
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Str filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns string
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type string
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Str(fFilter func(float64) bool, fMap func(float64) string, list []float64) []string {
+	if fFilter == nil || fMap == nil {
+		return []string{}
+	}
+	var newList []string
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Bool filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns bool
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type bool
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Bool(fFilter func(float64) bool, fMap func(float64) bool, list []float64) []bool {
+	if fFilter == nil || fMap == nil {
+		return []bool{}
+	}
+	var newList []bool
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+// FilterMapFloat64Float32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input type - float64 and returns true/false.
+//	2. Function: takes float64 as argument and returns float32
+// 	3. List of type float64
+//
+// Returns:
+//	New List of type float32
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapFloat64Float32(fFilter func(float64) bool, fMap func(float64) float32, list []float64) []float32 {
+	if fFilter == nil || fMap == nil {
+		return []float32{}
+	}
+	var newList []float32
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))

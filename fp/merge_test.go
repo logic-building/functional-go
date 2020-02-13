@@ -701,6 +701,122 @@ func TestMergeIntBool(t *testing.T) {
 	}
 }
 
+func TestMergeIntFloat32(t *testing.T) {
+	map1 := map[int]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[int]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[int]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeIntFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int]float32{}
+	map2 = map[int]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[int]float32{}
+
+	expected = map[int]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeIntFloat32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeIntFloat32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeIntFloat64(t *testing.T) {
+	map1 := map[int]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[int]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[int]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeIntFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int]float64{}
+	map2 = map[int]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[int]float64{}
+
+	expected = map[int]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeIntFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeIntFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeIntFloat64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeIntFloat64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
 func TestMergeInt64Int(t *testing.T) {
 	map1 := map[int64]int{1: 10, 2: 20, 3: 30}
 	map2 := map[int64]int{4: 40, 5: 50, 3: 30}
@@ -1394,6 +1510,122 @@ func TestMergeInt64Bool(t *testing.T) {
 
 	if len(actual) != 0 {
 		t.Errorf("TestMergeInt64Bool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeInt64Float32(t *testing.T) {
+	map1 := map[int64]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[int64]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[int64]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int64]float32{}
+	map2 = map[int64]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int64]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int64]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int64]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[int64]float32{}
+
+	expected = map[int64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt64Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt64Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeInt64Float64(t *testing.T) {
+	map1 := map[int64]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[int64]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[int64]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int64]float64{}
+	map2 = map[int64]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int64]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int64]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int64]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[int64]float64{}
+
+	expected = map[int64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt64Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt64Float64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
 
@@ -2093,6 +2325,122 @@ func TestMergeInt32Bool(t *testing.T) {
 	}
 }
 
+func TestMergeInt32Float32(t *testing.T) {
+	map1 := map[int32]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[int32]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[int32]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int32]float32{}
+	map2 = map[int32]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int32]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int32]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int32]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[int32]float32{}
+
+	expected = map[int32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt32Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt32Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeInt32Float64(t *testing.T) {
+	map1 := map[int32]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[int32]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[int32]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int32]float64{}
+	map2 = map[int32]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int32]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int32]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int32]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[int32]float64{}
+
+	expected = map[int32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt32Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt32Float64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
 func TestMergeInt16Int(t *testing.T) {
 	map1 := map[int16]int{1: 10, 2: 20, 3: 30}
 	map2 := map[int16]int{4: 40, 5: 50, 3: 30}
@@ -2786,6 +3134,122 @@ func TestMergeInt16Bool(t *testing.T) {
 
 	if len(actual) != 0 {
 		t.Errorf("TestMergeInt16Bool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeInt16Float32(t *testing.T) {
+	map1 := map[int16]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[int16]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[int16]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int16]float32{}
+	map2 = map[int16]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int16]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int16]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int16]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[int16]float32{}
+
+	expected = map[int16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt16Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt16Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeInt16Float64(t *testing.T) {
+	map1 := map[int16]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[int16]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[int16]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int16]float64{}
+	map2 = map[int16]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int16]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int16]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int16]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[int16]float64{}
+
+	expected = map[int16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt16Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt16Float64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
 
@@ -3485,6 +3949,122 @@ func TestMergeInt8Bool(t *testing.T) {
 	}
 }
 
+func TestMergeInt8Float32(t *testing.T) {
+	map1 := map[int8]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[int8]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[int8]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int8]float32{}
+	map2 = map[int8]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int8]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[int8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int8]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int8]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[int8]float32{}
+
+	expected = map[int8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt8Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt8Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeInt8Float64(t *testing.T) {
+	map1 := map[int8]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[int8]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[int8]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeInt8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int8]float64{}
+	map2 = map[int8]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[int8]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[int8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int8]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[int8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[int8]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[int8]float64{}
+
+	expected = map[int8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeInt8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeInt8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeInt8Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeInt8Float64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
 func TestMergeUintInt(t *testing.T) {
 	map1 := map[uint]int{1: 10, 2: 20, 3: 30}
 	map2 := map[uint]int{4: 40, 5: 50, 3: 30}
@@ -4178,6 +4758,122 @@ func TestMergeUintBool(t *testing.T) {
 
 	if len(actual) != 0 {
 		t.Errorf("TestMergeUintBool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUintFloat32(t *testing.T) {
+	map1 := map[uint]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[uint]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUintFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint]float32{}
+	map2 = map[uint]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[uint]float32{}
+
+	expected = map[uint]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUintFloat32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUintFloat32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUintFloat64(t *testing.T) {
+	map1 := map[uint]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[uint]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUintFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint]float64{}
+	map2 = map[uint]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[uint]float64{}
+
+	expected = map[uint]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUintFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUintFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUintFloat64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUintFloat64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
 
@@ -4877,6 +5573,122 @@ func TestMergeUint64Bool(t *testing.T) {
 	}
 }
 
+func TestMergeUint64Float32(t *testing.T) {
+	map1 := map[uint64]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[uint64]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint64]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint64]float32{}
+	map2 = map[uint64]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint64]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint64]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint64]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[uint64]float32{}
+
+	expected = map[uint64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint64Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint64Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUint64Float64(t *testing.T) {
+	map1 := map[uint64]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[uint64]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint64]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint64]float64{}
+	map2 = map[uint64]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint64]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint64]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint64]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[uint64]float64{}
+
+	expected = map[uint64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint64Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint64Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint64Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint64Float64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
 func TestMergeUint32Int(t *testing.T) {
 	map1 := map[uint32]int{1: 10, 2: 20, 3: 30}
 	map2 := map[uint32]int{4: 40, 5: 50, 3: 30}
@@ -5570,6 +6382,122 @@ func TestMergeUint32Bool(t *testing.T) {
 
 	if len(actual) != 0 {
 		t.Errorf("TestMergeUint32Bool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUint32Float32(t *testing.T) {
+	map1 := map[uint32]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[uint32]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint32]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint32]float32{}
+	map2 = map[uint32]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint32]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint32]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint32]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[uint32]float32{}
+
+	expected = map[uint32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint32Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint32Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUint32Float64(t *testing.T) {
+	map1 := map[uint32]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[uint32]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint32]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint32]float64{}
+	map2 = map[uint32]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint32]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint32]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint32]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[uint32]float64{}
+
+	expected = map[uint32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint32Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint32Float64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
 
@@ -6269,6 +7197,122 @@ func TestMergeUint16Bool(t *testing.T) {
 	}
 }
 
+func TestMergeUint16Float32(t *testing.T) {
+	map1 := map[uint16]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[uint16]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint16]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint16]float32{}
+	map2 = map[uint16]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint16]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint16]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint16]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[uint16]float32{}
+
+	expected = map[uint16]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint16Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint16Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUint16Float64(t *testing.T) {
+	map1 := map[uint16]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[uint16]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint16]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint16]float64{}
+	map2 = map[uint16]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint16]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint16]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint16]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[uint16]float64{}
+
+	expected = map[uint16]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint16Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint16Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint16Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint16Float64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
 func TestMergeUint8Int(t *testing.T) {
 	map1 := map[uint8]int{1: 10, 2: 20, 3: 30}
 	map2 := map[uint8]int{4: 40, 5: 50, 3: 30}
@@ -6962,6 +8006,122 @@ func TestMergeUint8Bool(t *testing.T) {
 
 	if len(actual) != 0 {
 		t.Errorf("TestMergeUint8Bool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUint8Float32(t *testing.T) {
+	map1 := map[uint8]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[uint8]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint8]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint8]float32{}
+	map2 = map[uint8]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint8]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint8]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint8]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[uint8]float32{}
+
+	expected = map[uint8]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint8Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint8Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeUint8Float64(t *testing.T) {
+	map1 := map[uint8]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[uint8]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[uint8]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeUint8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint8]float64{}
+	map2 = map[uint8]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[uint8]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[uint8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint8]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[uint8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[uint8]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[uint8]float64{}
+
+	expected = map[uint8]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeUint8Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeUint8Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeUint8Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeUint8Float64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }
 
@@ -7661,6 +8821,122 @@ func TestMergeStrBool(t *testing.T) {
 	}
 }
 
+func TestMergeStrFloat32(t *testing.T) {
+	map1 := map[string]float32{"1": 10, "2": 20, "3": 30}
+	map2 := map[string]float32{"4": 40, "5": 50, "3": 30}
+
+	expected := map[string]float32{"1": 10, "2": 20, "4": 40, "5": 50, "3": 30}
+	actual := MergeStrFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[string]float32{}
+	map2 = map[string]float32{"4": 40, "5": 50, "3": 30}
+
+	expected = map[string]float32{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[string]float32{"4": 40, "5": 50, "3": 30}
+
+	expected = map[string]float32{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[string]float32{"4": 40, "5": 50, "3": 30}
+	map2 = nil
+
+	expected = map[string]float32{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[string]float32{"4": 40, "5": 50, "3": 30}
+	map2 = map[string]float32{}
+
+	expected = map[string]float32{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeStrFloat32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeStrFloat32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeStrFloat64(t *testing.T) {
+	map1 := map[string]float64{"1": 10, "2": 20, "3": 30}
+	map2 := map[string]float64{"4": 40, "5": 50, "3": 30}
+
+	expected := map[string]float64{"1": 10, "2": 20, "4": 40, "5": 50, "3": 30}
+	actual := MergeStrFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[string]float64{}
+	map2 = map[string]float64{"4": 40, "5": 50, "3": 30}
+
+	expected = map[string]float64{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[string]float64{"4": 40, "5": 50, "3": 30}
+
+	expected = map[string]float64{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[string]float64{"4": 40, "5": 50, "3": 30}
+	map2 = nil
+
+	expected = map[string]float64{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[string]float64{"4": 40, "5": 50, "3": 30}
+	map2 = map[string]float64{}
+
+	expected = map[string]float64{"4": 40, "5": 50, "3": 30}
+	actual = MergeStrFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeStrFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeStrFloat64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeStrFloat64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
 func TestMergeBoolInt(t *testing.T) {
 	map1 := map[bool]int{true: 1, false: 0}
 	map2 := map[bool]int{true: 2}
@@ -8354,5 +9630,1745 @@ func TestMergeBool(t *testing.T) {
 
 	if len(actual) != 0 {
 		t.Errorf("TestMergeBool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeBoolFloat32(t *testing.T) {
+	map1 := map[bool]float32{true: 1, false: 0}
+	map2 := map[bool]float32{true: 2}
+
+	expected := map[bool]float32{true: 2, false: 0}
+	actual := MergeBoolFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[bool]float32{}
+	map2 = map[bool]float32{true: 1, false: 0}
+
+	expected = map[bool]float32{true: 1, false: 0}
+	actual = MergeBoolFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[bool]float32{true: 1, false: 0}
+
+	expected = map[bool]float32{true: 1, false: 0}
+	actual = MergeBoolFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[bool]float32{true: 1, false: 0}
+	map2 = nil
+
+	expected = map[bool]float32{true: 1, false: 0}
+	actual = MergeBoolFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[bool]float32{true: 1, false: 0}
+	map2 = map[bool]float32{}
+
+	expected = map[bool]float32{true: 1, false: 0}
+	actual = MergeBoolFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeBoolFloat32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeBoolFloat32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeBoolFloat64(t *testing.T) {
+	map1 := map[bool]float64{true: 1, false: 0}
+	map2 := map[bool]float64{true: 2}
+
+	expected := map[bool]float64{true: 2, false: 0}
+	actual := MergeBoolFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[bool]float64{}
+	map2 = map[bool]float64{true: 1, false: 0}
+
+	expected = map[bool]float64{true: 1, false: 0}
+	actual = MergeBoolFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[bool]float64{true: 1, false: 0}
+
+	expected = map[bool]float64{true: 1, false: 0}
+	actual = MergeBoolFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[bool]float64{true: 1, false: 0}
+	map2 = nil
+
+	expected = map[bool]float64{true: 1, false: 0}
+	actual = MergeBoolFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[bool]float64{true: 1, false: 0}
+	map2 = map[bool]float64{}
+
+	expected = map[bool]float64{true: 1, false: 0}
+	actual = MergeBoolFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeBoolFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeBoolFloat64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeBoolFloat64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Int(t *testing.T) {
+	map1 := map[float32]int{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]int{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]int{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int{}
+	map2 = map[float32]int{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]int{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]int{}
+
+	expected = map[float32]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Int(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Int failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Int64(t *testing.T) {
+	map1 := map[float32]int64{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]int64{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]int64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int64{}
+	map2 = map[float32]int64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]int64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int64{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]int64{}
+
+	expected = map[float32]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Int64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Int64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Int32(t *testing.T) {
+	map1 := map[float32]int32{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]int32{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]int32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int32{}
+	map2 = map[float32]int32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]int32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int32{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]int32{}
+
+	expected = map[float32]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Int32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Int32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Int16(t *testing.T) {
+	map1 := map[float32]int16{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]int16{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]int16{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int16{}
+	map2 = map[float32]int16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]int16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int16{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int16{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]int16{}
+
+	expected = map[float32]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Int16(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Int16 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Int8(t *testing.T) {
+	map1 := map[float32]int8{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]int8{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]int8{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int8{}
+	map2 = map[float32]int8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]int8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int8{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]int8{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]int8{}
+
+	expected = map[float32]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Int8(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Int8 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Uint(t *testing.T) {
+	map1 := map[float32]uint{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]uint{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]uint{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint{}
+	map2 = map[float32]uint{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]uint{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]uint{}
+
+	expected = map[float32]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Uint(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Uint failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Uint64(t *testing.T) {
+	map1 := map[float32]uint64{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]uint64{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]uint64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint64{}
+	map2 = map[float32]uint64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]uint64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint64{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]uint64{}
+
+	expected = map[float32]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Uint64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Uint64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Uint32(t *testing.T) {
+	map1 := map[float32]uint32{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]uint32{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]uint32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint32{}
+	map2 = map[float32]uint32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]uint32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint32{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]uint32{}
+
+	expected = map[float32]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Uint32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Uint32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Uint16(t *testing.T) {
+	map1 := map[float32]uint16{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]uint16{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]uint16{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint16{}
+	map2 = map[float32]uint16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]uint16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint16{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint16{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]uint16{}
+
+	expected = map[float32]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Uint16(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Uint16 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Uint8(t *testing.T) {
+	map1 := map[float32]uint8{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]uint8{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]uint8{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint8{}
+	map2 = map[float32]uint8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]uint8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint8{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]uint8{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]uint8{}
+
+	expected = map[float32]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Uint8(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Uint8 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Str(t *testing.T) {
+	map1 := map[float32]string{1: "10", 2: "20", 3: "30"}
+	map2 := map[float32]string{4: "40", 5: "50", 3: "30"}
+
+	expected := map[float32]string{1: "10", 2: "20", 4: "40", 5: "50", 3: "30"}
+	actual := MergeFloat32Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]string{}
+	map2 = map[float32]string{4: "40", 5: "50", 3: "30"}
+
+	expected = map[float32]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat32Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]string{4: "40", 5: "50", 3: "30"}
+
+	expected = map[float32]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat32Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]string{4: "40", 5: "50", 3: "30"}
+	map2 = nil
+
+	expected = map[float32]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat32Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]string{4: "40", 5: "50", 3: "30"}
+	map2 = map[float32]string{}
+
+	expected = map[float32]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat32Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Str(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Str failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Bool(t *testing.T) {
+	map1 := map[float32]bool{1: true, 0: false, 3: true}
+	map2 := map[float32]bool{4: true, 5: true, 3: true}
+
+	expected := map[float32]bool{1: true, 0: false, 4: true, 5: true, 3: true}
+	actual := MergeFloat32Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]bool{}
+	map2 = map[float32]bool{4: true, 5: true, 3: true}
+
+	expected = map[float32]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat32Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]bool{4: true, 5: true, 3: true}
+
+	expected = map[float32]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat32Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]bool{4: true, 5: true, 3: true}
+	map2 = nil
+
+	expected = map[float32]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat32Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]bool{4: true, 5: true, 3: true}
+	map2 = map[float32]bool{}
+
+	expected = map[float32]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat32Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Bool(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Bool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32(t *testing.T) {
+	map1 := map[float32]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]float32{}
+	map2 = map[float32]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]float32{}
+
+	expected = map[float32]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat32Float64(t *testing.T) {
+	map1 := map[float32]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[float32]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[float32]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]float64{}
+	map2 = map[float32]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float32]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float32]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[float32]float64{}
+
+	expected = map[float32]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat32Float64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat32Float64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat32Float64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat32Float64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Int(t *testing.T) {
+	map1 := map[float64]int{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]int{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]int{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int{}
+	map2 = map[float64]int{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]int{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]int{}
+
+	expected = map[float64]int{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Int(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Int failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Int64(t *testing.T) {
+	map1 := map[float64]int64{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]int64{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]int64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int64{}
+	map2 = map[float64]int64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]int64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int64{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]int64{}
+
+	expected = map[float64]int64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Int64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Int64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Int32(t *testing.T) {
+	map1 := map[float64]int32{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]int32{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]int32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int32{}
+	map2 = map[float64]int32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]int32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int32{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]int32{}
+
+	expected = map[float64]int32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Int32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Int32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Int16(t *testing.T) {
+	map1 := map[float64]int16{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]int16{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]int16{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int16{}
+	map2 = map[float64]int16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]int16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int16{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int16{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]int16{}
+
+	expected = map[float64]int16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Int16(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Int16 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Int8(t *testing.T) {
+	map1 := map[float64]int8{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]int8{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]int8{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int8{}
+	map2 = map[float64]int8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]int8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int8{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]int8{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]int8{}
+
+	expected = map[float64]int8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Int8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Int8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Int8(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Int8 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Uint(t *testing.T) {
+	map1 := map[float64]uint{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]uint{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]uint{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint{}
+	map2 = map[float64]uint{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]uint{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]uint{}
+
+	expected = map[float64]uint{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Uint(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Uint failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Uint64(t *testing.T) {
+	map1 := map[float64]uint64{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]uint64{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]uint64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint64{}
+	map2 = map[float64]uint64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]uint64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint64{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]uint64{}
+
+	expected = map[float64]uint64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Uint64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Uint64 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Uint32(t *testing.T) {
+	map1 := map[float64]uint32{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]uint32{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]uint32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint32{}
+	map2 = map[float64]uint32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]uint32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint32{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]uint32{}
+
+	expected = map[float64]uint32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Uint32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Uint32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Uint16(t *testing.T) {
+	map1 := map[float64]uint16{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]uint16{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]uint16{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint16{}
+	map2 = map[float64]uint16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]uint16{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint16{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint16{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]uint16{}
+
+	expected = map[float64]uint16{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint16(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint16 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Uint16(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Uint16 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Uint8(t *testing.T) {
+	map1 := map[float64]uint8{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]uint8{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]uint8{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint8{}
+	map2 = map[float64]uint8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]uint8{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint8{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]uint8{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]uint8{}
+
+	expected = map[float64]uint8{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Uint8(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Uint8 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Uint8(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Uint8 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Str(t *testing.T) {
+	map1 := map[float64]string{1: "10", 2: "20", 3: "30"}
+	map2 := map[float64]string{4: "40", 5: "50", 3: "30"}
+
+	expected := map[float64]string{1: "10", 2: "20", 4: "40", 5: "50", 3: "30"}
+	actual := MergeFloat64Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]string{}
+	map2 = map[float64]string{4: "40", 5: "50", 3: "30"}
+
+	expected = map[float64]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat64Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]string{4: "40", 5: "50", 3: "30"}
+
+	expected = map[float64]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat64Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]string{4: "40", 5: "50", 3: "30"}
+	map2 = nil
+
+	expected = map[float64]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat64Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]string{4: "40", 5: "50", 3: "30"}
+	map2 = map[float64]string{}
+
+	expected = map[float64]string{4: "40", 5: "50", 3: "30"}
+	actual = MergeFloat64Str(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Str failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Str(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Str failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Bool(t *testing.T) {
+	map1 := map[float64]bool{1: true, 0: false, 3: true}
+	map2 := map[float64]bool{4: true, 5: true, 3: true}
+
+	expected := map[float64]bool{1: true, 0: false, 4: true, 5: true, 3: true}
+	actual := MergeFloat64Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]bool{}
+	map2 = map[float64]bool{4: true, 5: true, 3: true}
+
+	expected = map[float64]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat64Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]bool{4: true, 5: true, 3: true}
+
+	expected = map[float64]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat64Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]bool{4: true, 5: true, 3: true}
+	map2 = nil
+
+	expected = map[float64]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat64Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]bool{4: true, 5: true, 3: true}
+	map2 = map[float64]bool{}
+
+	expected = map[float64]bool{4: true, 5: true, 3: true}
+	actual = MergeFloat64Bool(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Bool failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Bool(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Bool failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64Float32(t *testing.T) {
+	map1 := map[float64]float32{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]float32{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]float32{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]float32{}
+	map2 = map[float64]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]float32{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]float32{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]float32{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]float32{}
+
+	expected = map[float64]float32{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64Float32(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64Float32 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64Float32(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64Float32 failed. Expected=empty mape, actual=%v", actual)
+	}
+}
+
+func TestMergeFloat64(t *testing.T) {
+	map1 := map[float64]float64{1: 10, 2: 20, 3: 30}
+	map2 := map[float64]float64{4: 40, 5: 50, 3: 30}
+
+	expected := map[float64]float64{1: 10, 2: 20, 4: 40, 5: 50, 3: 30}
+	actual := MergeFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]float64{}
+	map2 = map[float64]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = nil
+	map2 = map[float64]float64{4: 40, 5: 50, 3: 30}
+
+	expected = map[float64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]float64{4: 40, 5: 50, 3: 30}
+	map2 = nil
+
+	expected = map[float64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	map1 = map[float64]float64{4: 40, 5: 50, 3: 30}
+	map2 = map[float64]float64{}
+
+	expected = map[float64]float64{4: 40, 5: 50, 3: 30}
+	actual = MergeFloat64(map1, map2)
+
+	if !reflect.DeepEqual(expected, actual) {
+		t.Errorf("TestMergeFloat64 failed. Expected=%v, actual=%v", expected, actual)
+	}
+
+	actual = MergeFloat64(nil, nil)
+
+	if len(actual) != 0 {
+		t.Errorf("TestMergeFloat64 failed. Expected=empty mape, actual=%v", actual)
 	}
 }

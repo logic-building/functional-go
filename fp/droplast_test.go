@@ -448,3 +448,77 @@ func TestDropLastBool(t *testing.T) {
 		t.Errorf("TestDropLastBool failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
 	}
 }
+
+func TestDropLastFloat32(t *testing.T) {
+	list := []float32{1, 2, 3, 4, 5}
+	expectedList := []float32{1, 2, 3, 4}
+	actualList := DropLastFloat32(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat32 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []float32{1, 2}
+	expectedList = []float32{1}
+	actualList = DropLastFloat32(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat32 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []float32{1}
+	expectedList = []float32{}
+	actualList = DropLastFloat32(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat32 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []float32{}
+	expectedList = []float32{}
+	actualList = DropLastFloat32(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat32 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = nil
+	expectedList = []float32{}
+	actualList = DropLastFloat32(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat32 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+}
+
+func TestDropLastFloat64(t *testing.T) {
+	list := []float64{1, 2, 3, 4, 5}
+	expectedList := []float64{1, 2, 3, 4}
+	actualList := DropLastFloat64(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat64 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []float64{1, 2}
+	expectedList = []float64{1}
+	actualList = DropLastFloat64(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat64 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []float64{1}
+	expectedList = []float64{}
+	actualList = DropLastFloat64(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat64 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = []float64{}
+	expectedList = []float64{}
+	actualList = DropLastFloat64(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat64 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+
+	list = nil
+	expectedList = []float64{}
+	actualList = DropLastFloat64(list)
+	if !reflect.DeepEqual(expectedList, actualList) {
+		t.Errorf("TestDropLastFloat64 failed. acutal_list=%v, expected_list=%v", actualList, expectedList)
+	}
+}

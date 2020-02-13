@@ -131,3 +131,25 @@ func MapBoolPtr(f func(*bool) *bool, list []*bool) []*bool {
 	}
 	return newList
 }
+
+func MapFloat32Ptr(f func(*float32) *float32, list []*float32) []*float32 {
+	if f == nil {
+		return []*float32{}
+	}
+	newList := make([]*float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+func MapFloat64Ptr(f func(*float64) *float64, list []*float64) []*float64 {
+	if f == nil {
+		return []*float64{}
+	}
+	newList := make([]*float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}

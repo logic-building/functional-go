@@ -459,3 +459,86 @@ func trueBoolPtr(num1 *bool) bool {
 	return true
 }
 
+
+func TestFilterFloat32Ptr(t *testing.T) {
+	var v1 float32 = 1
+	var v2 float32 = 2
+	var v3 float32 = 3
+	var v4 float32 = 4
+	var v10 float32 = 10
+	var v20 float32 = 20
+	var v40 float32 = 40
+
+
+	// Test : even number in the list
+	expectedFilteredList := []*float32{&v2, &v4}
+	filteredList := FilterFloat32Ptr(isEvenFloat32Ptr, []*float32{&v1, &v2, &v3, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	// Test: filter all even numbers divisible by 10 in the list
+	expectedFilteredList = []*float32{&v20, &v40}
+	partialIsEven := func(num *float32) bool { return isEvenDivisibleByFloat32Ptr(num, &v10) }
+	filteredList = FilterFloat32Ptr(partialIsEven, []*float32{&v20, &v1, &v3, &v40})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	if len(FilterFloat32Ptr(nil, nil)) > 0 {
+		t.Errorf("FilterInt failed.")
+	}
+}
+
+func isEvenFloat32Ptr(num *float32) bool {
+		return int(*num)%2 == 0
+	}
+	
+	func isEvenDivisibleByFloat32Ptr(num, divisibleBy *float32) bool {
+		return int(*num)%2 == 0 && int(*num) % int(*divisibleBy) == 0
+	}
+
+
+func TestFilterFloat64Ptr(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+	var v10 float64 = 10
+	var v20 float64 = 20
+	var v40 float64 = 40
+
+
+	// Test : even number in the list
+	expectedFilteredList := []*float64{&v2, &v4}
+	filteredList := FilterFloat64Ptr(isEvenFloat64Ptr, []*float64{&v1, &v2, &v3, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	// Test: filter all even numbers divisible by 10 in the list
+	expectedFilteredList = []*float64{&v20, &v40}
+	partialIsEven := func(num *float64) bool { return isEvenDivisibleByFloat64Ptr(num, &v10) }
+	filteredList = FilterFloat64Ptr(partialIsEven, []*float64{&v20, &v1, &v3, &v40})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	if len(FilterFloat64Ptr(nil, nil)) > 0 {
+		t.Errorf("FilterInt failed.")
+	}
+}
+
+func isEvenFloat64Ptr(num *float64) bool {
+	return int(*num)%2 == 0
+}
+
+func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
+	return int(*num)%2 == 0 && int(*num) % int(*divisibleBy) == 0
+}
+
+

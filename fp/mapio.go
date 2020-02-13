@@ -143,6 +143,32 @@ func MapIntBool(f func(int) bool, list []int) []bool {
 	return newList
 }
 
+// MapIntFloat32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapIntFloat32(f func(int) float32, list []int) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapIntFloat64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapIntFloat64(f func(int) float64, list []int) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // MapInt64Int takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapInt64Int(f func(int64) int, list []int64) []int {
@@ -280,6 +306,32 @@ func MapInt64Bool(f func(int64) bool, list []int64) []bool {
 		return []bool{}
 	}
 	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapInt64Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt64Float32(f func(int64) float32, list []int64) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapInt64Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt64Float64(f func(int64) float64, list []int64) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -429,6 +481,32 @@ func MapInt32Bool(f func(int32) bool, list []int32) []bool {
 	return newList
 }
 
+// MapInt32Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt32Float32(f func(int32) float32, list []int32) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapInt32Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt32Float64(f func(int32) float64, list []int32) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // MapInt16Int takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapInt16Int(f func(int16) int, list []int16) []int {
@@ -566,6 +644,32 @@ func MapInt16Bool(f func(int16) bool, list []int16) []bool {
 		return []bool{}
 	}
 	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapInt16Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt16Float32(f func(int16) float32, list []int16) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapInt16Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt16Float64(f func(int16) float64, list []int16) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -715,6 +819,32 @@ func MapInt8Bool(f func(int8) bool, list []int8) []bool {
 	return newList
 }
 
+// MapInt8Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt8Float32(f func(int8) float32, list []int8) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapInt8Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapInt8Float64(f func(int8) float64, list []int8) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // MapUintInt takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapUintInt(f func(uint) int, list []uint) []int {
@@ -852,6 +982,32 @@ func MapUintBool(f func(uint) bool, list []uint) []bool {
 		return []bool{}
 	}
 	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUintFloat32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUintFloat32(f func(uint) float32, list []uint) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUintFloat64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUintFloat64(f func(uint) float64, list []uint) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -1001,6 +1157,32 @@ func MapUint64Bool(f func(uint64) bool, list []uint64) []bool {
 	return newList
 }
 
+// MapUint64Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint64Float32(f func(uint64) float32, list []uint64) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUint64Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint64Float64(f func(uint64) float64, list []uint64) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // MapUint32Int takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapUint32Int(f func(uint32) int, list []uint32) []int {
@@ -1138,6 +1320,32 @@ func MapUint32Bool(f func(uint32) bool, list []uint32) []bool {
 		return []bool{}
 	}
 	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUint32Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint32Float32(f func(uint32) float32, list []uint32) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUint32Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint32Float64(f func(uint32) float64, list []uint32) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -1287,6 +1495,32 @@ func MapUint16Bool(f func(uint16) bool, list []uint16) []bool {
 	return newList
 }
 
+// MapUint16Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint16Float32(f func(uint16) float32, list []uint16) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUint16Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint16Float64(f func(uint16) float64, list []uint16) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // MapUint8Int takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapUint8Int(f func(uint8) int, list []uint8) []int {
@@ -1424,6 +1658,32 @@ func MapUint8Bool(f func(uint8) bool, list []uint8) []bool {
 		return []bool{}
 	}
 	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUint8Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint8Float32(f func(uint8) float32, list []uint8) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapUint8Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapUint8Float64(f func(uint8) float64, list []uint8) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -1573,6 +1833,32 @@ func MapStrBool(f func(string) bool, list []string) []bool {
 	return newList
 }
 
+// MapStrFloat32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapStrFloat32(f func(string) float32, list []string) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapStrFloat64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapStrFloat64(f func(string) float64, list []string) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // MapBoolInt takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapBoolInt(f func(bool) int, list []bool) []int {
@@ -1710,6 +1996,370 @@ func MapBoolStr(f func(bool) string, list []bool) []string {
 		return []string{}
 	}
 	newList := make([]string, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapBoolFloat32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapBoolFloat32(f func(bool) float32, list []bool) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapBoolFloat64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapBoolFloat64(f func(bool) float64, list []bool) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Int takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Int(f func(float32) int, list []float32) []int {
+	if f == nil {
+		return []int{}
+	}
+	newList := make([]int, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Int64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Int64(f func(float32) int64, list []float32) []int64 {
+	if f == nil {
+		return []int64{}
+	}
+	newList := make([]int64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Int32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Int32(f func(float32) int32, list []float32) []int32 {
+	if f == nil {
+		return []int32{}
+	}
+	newList := make([]int32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Int16 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Int16(f func(float32) int16, list []float32) []int16 {
+	if f == nil {
+		return []int16{}
+	}
+	newList := make([]int16, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Int8 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Int8(f func(float32) int8, list []float32) []int8 {
+	if f == nil {
+		return []int8{}
+	}
+	newList := make([]int8, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Uint takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Uint(f func(float32) uint, list []float32) []uint {
+	if f == nil {
+		return []uint{}
+	}
+	newList := make([]uint, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Uint64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Uint64(f func(float32) uint64, list []float32) []uint64 {
+	if f == nil {
+		return []uint64{}
+	}
+	newList := make([]uint64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Uint32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Uint32(f func(float32) uint32, list []float32) []uint32 {
+	if f == nil {
+		return []uint32{}
+	}
+	newList := make([]uint32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Uint16 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Uint16(f func(float32) uint16, list []float32) []uint16 {
+	if f == nil {
+		return []uint16{}
+	}
+	newList := make([]uint16, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Uint8 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Uint8(f func(float32) uint8, list []float32) []uint8 {
+	if f == nil {
+		return []uint8{}
+	}
+	newList := make([]uint8, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Str takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Str(f func(float32) string, list []float32) []string {
+	if f == nil {
+		return []string{}
+	}
+	newList := make([]string, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Bool takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Bool(f func(float32) bool, list []float32) []bool {
+	if f == nil {
+		return []bool{}
+	}
+	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat32Float64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat32Float64(f func(float32) float64, list []float32) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+	newList := make([]float64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Int takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Int(f func(float64) int, list []float64) []int {
+	if f == nil {
+		return []int{}
+	}
+	newList := make([]int, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Int64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Int64(f func(float64) int64, list []float64) []int64 {
+	if f == nil {
+		return []int64{}
+	}
+	newList := make([]int64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Int32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Int32(f func(float64) int32, list []float64) []int32 {
+	if f == nil {
+		return []int32{}
+	}
+	newList := make([]int32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Int16 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Int16(f func(float64) int16, list []float64) []int16 {
+	if f == nil {
+		return []int16{}
+	}
+	newList := make([]int16, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Int8 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Int8(f func(float64) int8, list []float64) []int8 {
+	if f == nil {
+		return []int8{}
+	}
+	newList := make([]int8, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Uint takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Uint(f func(float64) uint, list []float64) []uint {
+	if f == nil {
+		return []uint{}
+	}
+	newList := make([]uint, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Uint64 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Uint64(f func(float64) uint64, list []float64) []uint64 {
+	if f == nil {
+		return []uint64{}
+	}
+	newList := make([]uint64, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Uint32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Uint32(f func(float64) uint32, list []float64) []uint32 {
+	if f == nil {
+		return []uint32{}
+	}
+	newList := make([]uint32, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Uint16 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Uint16(f func(float64) uint16, list []float64) []uint16 {
+	if f == nil {
+		return []uint16{}
+	}
+	newList := make([]uint16, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Uint8 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Uint8(f func(float64) uint8, list []float64) []uint8 {
+	if f == nil {
+		return []uint8{}
+	}
+	newList := make([]uint8, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Str takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Str(f func(float64) string, list []float64) []string {
+	if f == nil {
+		return []string{}
+	}
+	newList := make([]string, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Bool takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Bool(f func(float64) bool, list []float64) []bool {
+	if f == nil {
+		return []bool{}
+	}
+	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapFloat64Float32 takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapFloat64Float32(f func(float64) float32, list []float64) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+	newList := make([]float32, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}

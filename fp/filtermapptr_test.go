@@ -355,3 +355,63 @@ func isTrueBoolPtr(num *bool) bool {
 func returnSameBoolPtr(num *bool) *bool {
 	return num
 }
+
+func TestFilterMapFloat32Ptr(t *testing.T) {
+	// Test : Multiply all positive numbers in the list by 2
+
+	var v1 float32 = 1
+	var v4 float32 = 4
+	var v8 float32 = 8
+	var v0 float32 = 0
+	var v2 float32 = 2
+
+	expectedFilteredList := []*float32{&v2, &v4, &v8}
+	filteredList := FilterMapFloat32Ptr(isPositiveFloat32Ptr, multiplyBy2Float32Ptr, []*float32{&v1, &v0, &v2, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+		t.Errorf("FilterMapFloat32Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapFloat32Ptr(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Ptr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func isPositiveFloat32Ptr(num *float32) bool {
+	return *num > 0
+}
+func multiplyBy2Float32Ptr(num *float32) *float32 {
+	result := *num * 2
+	return &result
+}
+
+
+func TestFilterMapFloat64Ptr(t *testing.T) {
+	// Test : Multiply all positive numbers in the list by 2
+
+	var v1 float64 = 1
+	var v4 float64 = 4
+	var v8 float64 = 8
+	var v0 float64 = 0
+	var v2 float64 = 2
+
+	expectedFilteredList := []*float64{&v2, &v4, &v8}
+	filteredList := FilterMapFloat64Ptr(isPositiveFloat64Ptr, multiplyBy2Float64Ptr, []*float64{&v1, &v0, &v2, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+		t.Errorf("FilterMapFloat64Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+	if len(FilterMapFloat64Ptr(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Ptr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+func isPositiveFloat64Ptr(num *float64) bool {
+	return *num > 0
+}
+func multiplyBy2Float64Ptr(num *float64) *float64 {
+	result := *num * 2
+	return &result
+}
+

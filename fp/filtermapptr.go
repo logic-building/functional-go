@@ -155,3 +155,29 @@ func FilterMapBoolPtr(fFilter func(*bool) bool, fMap func(*bool) *bool, list []*
 	}
 	return newList
 }
+
+func FilterMapFloat32Ptr(fFilter func(*float32) bool, fMap func(*float32) *float32, list []*float32) []*float32 {
+	if fFilter == nil || fMap == nil {
+		return []*float32{}
+	}
+	var newList []*float32
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+func FilterMapFloat64Ptr(fFilter func(*float64) bool, fMap func(*float64) *float64, list []*float64) []*float64 {
+	if fFilter == nil || fMap == nil {
+		return []*float64{}
+	}
+	var newList []*float64
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}

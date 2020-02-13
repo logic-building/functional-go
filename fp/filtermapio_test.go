@@ -247,6 +247,50 @@ func notOneIntBool(num int) bool {
 	return num != 1
 }
 
+func TestFilterMapIntFloat32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapIntFloat32(notOneIntFloat32, plusOneIntFloat32, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapIntFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapIntFloat32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapIntFloat32 failed")
+	}
+
+	if len(FilterMapIntFloat32(nil, nil, []int{})) > 0 {
+		t.Errorf("FilterMapIntFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneIntFloat32(num int) bool {
+	return num != 1
+}
+
+func TestFilterMapIntFloat64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapIntFloat64(notOneIntFloat64, plusOneIntFloat64, []int{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapIntFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapIntFloat64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapIntFloat64 failed")
+	}
+
+	if len(FilterMapIntFloat64(nil, nil, []int{})) > 0 {
+		t.Errorf("FilterMapIntFloat64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneIntFloat64(num int) bool {
+	return num != 1
+}
+
 func TestFilterMapInt64Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -486,6 +530,50 @@ func TestFilterMapInt64Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 func notOneInt64Bool(num int64) bool {
+	return num != 1
+}
+
+func TestFilterMapInt64Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapInt64Float32(notOneInt64Float32, plusOneInt64Float32, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt64Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt64Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt64Float32 failed")
+	}
+
+	if len(FilterMapInt64Float32(nil, nil, []int64{})) > 0 {
+		t.Errorf("FilterMapInt64Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt64Float32(num int64) bool {
+	return num != 1
+}
+
+func TestFilterMapInt64Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapInt64Float64(notOneInt64Float64, plusOneInt64Float64, []int64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt64Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt64Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt64Float64 failed")
+	}
+
+	if len(FilterMapInt64Float64(nil, nil, []int64{})) > 0 {
+		t.Errorf("FilterMapInt64Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt64Float64(num int64) bool {
 	return num != 1
 }
 
@@ -731,6 +819,50 @@ func notOneInt32Bool(num int32) bool {
 	return num != 1
 }
 
+func TestFilterMapInt32Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapInt32Float32(notOneInt32Float32, plusOneInt32Float32, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt32Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt32Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt32Float32 failed")
+	}
+
+	if len(FilterMapInt32Float32(nil, nil, []int32{})) > 0 {
+		t.Errorf("FilterMapInt32Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt32Float32(num int32) bool {
+	return num != 1
+}
+
+func TestFilterMapInt32Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapInt32Float64(notOneInt32Float64, plusOneInt32Float64, []int32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt32Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt32Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt32Float64 failed")
+	}
+
+	if len(FilterMapInt32Float64(nil, nil, []int32{})) > 0 {
+		t.Errorf("FilterMapInt32Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt32Float64(num int32) bool {
+	return num != 1
+}
+
 func TestFilterMapInt16Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -970,6 +1102,50 @@ func TestFilterMapInt16Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 func notOneInt16Bool(num int16) bool {
+	return num != 1
+}
+
+func TestFilterMapInt16Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapInt16Float32(notOneInt16Float32, plusOneInt16Float32, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt16Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt16Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt16Float32 failed")
+	}
+
+	if len(FilterMapInt16Float32(nil, nil, []int16{})) > 0 {
+		t.Errorf("FilterMapInt16Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt16Float32(num int16) bool {
+	return num != 1
+}
+
+func TestFilterMapInt16Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapInt16Float64(notOneInt16Float64, plusOneInt16Float64, []int16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt16Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt16Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt16Float64 failed")
+	}
+
+	if len(FilterMapInt16Float64(nil, nil, []int16{})) > 0 {
+		t.Errorf("FilterMapInt16Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt16Float64(num int16) bool {
 	return num != 1
 }
 
@@ -1215,6 +1391,50 @@ func notOneInt8Bool(num int8) bool {
 	return num != 1
 }
 
+func TestFilterMapInt8Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapInt8Float32(notOneInt8Float32, plusOneInt8Float32, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt8Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt8Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt8Float32 failed")
+	}
+
+	if len(FilterMapInt8Float32(nil, nil, []int8{})) > 0 {
+		t.Errorf("FilterMapInt8Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt8Float32(num int8) bool {
+	return num != 1
+}
+
+func TestFilterMapInt8Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapInt8Float64(notOneInt8Float64, plusOneInt8Float64, []int8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapInt8Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapInt8Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapInt8Float64 failed")
+	}
+
+	if len(FilterMapInt8Float64(nil, nil, []int8{})) > 0 {
+		t.Errorf("FilterMapInt8Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneInt8Float64(num int8) bool {
+	return num != 1
+}
+
 func TestFilterMapUintInt(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -1454,6 +1674,50 @@ func TestFilterMapUintBool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 func notOneUintBool(num uint) bool {
+	return num != 1
+}
+
+func TestFilterMapUintFloat32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapUintFloat32(notOneUintFloat32, plusOneUintFloat32, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUintFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUintFloat32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUintFloat32 failed")
+	}
+
+	if len(FilterMapUintFloat32(nil, nil, []uint{})) > 0 {
+		t.Errorf("FilterMapUintFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUintFloat32(num uint) bool {
+	return num != 1
+}
+
+func TestFilterMapUintFloat64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapUintFloat64(notOneUintFloat64, plusOneUintFloat64, []uint{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUintFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUintFloat64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUintFloat64 failed")
+	}
+
+	if len(FilterMapUintFloat64(nil, nil, []uint{})) > 0 {
+		t.Errorf("FilterMapUintFloat64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUintFloat64(num uint) bool {
 	return num != 1
 }
 
@@ -1699,6 +1963,50 @@ func notOneUint64Bool(num uint64) bool {
 	return num != 1
 }
 
+func TestFilterMapUint64Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapUint64Float32(notOneUint64Float32, plusOneUint64Float32, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint64Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint64Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint64Float32 failed")
+	}
+
+	if len(FilterMapUint64Float32(nil, nil, []uint64{})) > 0 {
+		t.Errorf("FilterMapUint64Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint64Float32(num uint64) bool {
+	return num != 1
+}
+
+func TestFilterMapUint64Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapUint64Float64(notOneUint64Float64, plusOneUint64Float64, []uint64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint64Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint64Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint64Float64 failed")
+	}
+
+	if len(FilterMapUint64Float64(nil, nil, []uint64{})) > 0 {
+		t.Errorf("FilterMapUint64Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint64Float64(num uint64) bool {
+	return num != 1
+}
+
 func TestFilterMapUint32Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -1938,6 +2246,50 @@ func TestFilterMapUint32Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 func notOneUint32Bool(num uint32) bool {
+	return num != 1
+}
+
+func TestFilterMapUint32Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapUint32Float32(notOneUint32Float32, plusOneUint32Float32, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint32Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint32Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint32Float32 failed")
+	}
+
+	if len(FilterMapUint32Float32(nil, nil, []uint32{})) > 0 {
+		t.Errorf("FilterMapUint32Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint32Float32(num uint32) bool {
+	return num != 1
+}
+
+func TestFilterMapUint32Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapUint32Float64(notOneUint32Float64, plusOneUint32Float64, []uint32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint32Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint32Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint32Float64 failed")
+	}
+
+	if len(FilterMapUint32Float64(nil, nil, []uint32{})) > 0 {
+		t.Errorf("FilterMapUint32Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint32Float64(num uint32) bool {
 	return num != 1
 }
 
@@ -2183,6 +2535,50 @@ func notOneUint16Bool(num uint16) bool {
 	return num != 1
 }
 
+func TestFilterMapUint16Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapUint16Float32(notOneUint16Float32, plusOneUint16Float32, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint16Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint16Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint16Float32 failed")
+	}
+
+	if len(FilterMapUint16Float32(nil, nil, []uint16{})) > 0 {
+		t.Errorf("FilterMapUint16Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint16Float32(num uint16) bool {
+	return num != 1
+}
+
+func TestFilterMapUint16Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapUint16Float64(notOneUint16Float64, plusOneUint16Float64, []uint16{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint16Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint16Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint16Float64 failed")
+	}
+
+	if len(FilterMapUint16Float64(nil, nil, []uint16{})) > 0 {
+		t.Errorf("FilterMapUint16Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint16Float64(num uint16) bool {
+	return num != 1
+}
+
 func TestFilterMapUint8Int(t *testing.T) {
 	// Test : some logic
 	expectedList := []int{3, 4}
@@ -2422,6 +2818,50 @@ func TestFilterMapUint8Bool(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 func notOneUint8Bool(num uint8) bool {
+	return num != 1
+}
+
+func TestFilterMapUint8Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapUint8Float32(notOneUint8Float32, plusOneUint8Float32, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint8Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint8Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint8Float32 failed")
+	}
+
+	if len(FilterMapUint8Float32(nil, nil, []uint8{})) > 0 {
+		t.Errorf("FilterMapUint8Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint8Float32(num uint8) bool {
+	return num != 1
+}
+
+func TestFilterMapUint8Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapUint8Float64(notOneUint8Float64, plusOneUint8Float64, []uint8{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapUint8Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapUint8Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapUint8Float64 failed")
+	}
+
+	if len(FilterMapUint8Float64(nil, nil, []uint8{})) > 0 {
+		t.Errorf("FilterMapUint8Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneUint8Float64(num uint8) bool {
 	return num != 1
 }
 
@@ -2667,6 +3107,50 @@ func notOneStrBool(num string) bool {
 	return num != "1"
 }
 
+func TestFilterMapStrFloat32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float32{10}
+	newList := FilterMapStrFloat32(notOneStrFloat32, someLogicStrFloat32, []string{"one", "ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("FilterMapStrFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapStrFloat32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapStrFloat32 failed")
+	}
+
+	if len(FilterMapStrFloat32(nil, nil, []string{})) > 0 {
+		t.Errorf("FilterMapStrFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneStrFloat32(num string) bool {
+	return num != "one"
+}
+
+func TestFilterMapStrFloat64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float64{10}
+	newList := FilterMapStrFloat64(notOneStrFloat64, someLogicStrFloat64, []string{"one", "ten"})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("FilterMapStrFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapStrFloat64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapStrFloat64 failed")
+	}
+
+	if len(FilterMapStrFloat64(nil, nil, []string{})) > 0 {
+		t.Errorf("FilterMapStrFloat64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneStrFloat64(num string) bool {
+	return num != "one"
+}
+
 func TestFilterMapBoolInt(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int{10, 10}
@@ -2907,4 +3391,620 @@ func TestFilterMapBoolStr(t *testing.T) {
 }
 func notOneBoolStr(num bool) bool {
 	return num == true
+}
+
+func TestFilterMapBoolFloat32(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float32{10, 10}
+	newList := FilterMapBoolFloat32(notOneBoolFloat32, someLogicBoolFloat32, []bool{true, true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapBoolFloat32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapBoolFloat32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapBoolFloat32 failed")
+	}
+
+	if len(FilterMapBoolFloat32(nil, nil, []bool{})) > 0 {
+		t.Errorf("FilterMapBoolFloat32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneBoolFloat32(num bool) bool {
+	return num == true
+}
+
+func TestFilterMapBoolFloat64(t *testing.T) {
+	// Test : someLogic
+	expectedList := []float64{10, 10}
+	newList := FilterMapBoolFloat64(notOneBoolFloat64, someLogicBoolFloat64, []bool{true, true, false})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapBoolFloat64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapBoolFloat64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapBoolFloat64 failed")
+	}
+
+	if len(FilterMapBoolFloat64(nil, nil, []bool{})) > 0 {
+		t.Errorf("FilterMapBoolFloat64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneBoolFloat64(num bool) bool {
+	return num == true
+}
+
+func TestFilterMapFloat32Int(t *testing.T) {
+	// Test : some logic
+	expectedList := []int{3, 4}
+	newList := FilterMapFloat32Int(notOneFloat32Int, plusOneFloat32Int, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Int(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Int failed")
+	}
+
+	if len(FilterMapFloat32Int(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Int(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Int64(t *testing.T) {
+	// Test : some logic
+	expectedList := []int64{3, 4}
+	newList := FilterMapFloat32Int64(notOneFloat32Int64, plusOneFloat32Int64, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Int64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Int64 failed")
+	}
+
+	if len(FilterMapFloat32Int64(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Int64(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Int32(t *testing.T) {
+	// Test : some logic
+	expectedList := []int32{3, 4}
+	newList := FilterMapFloat32Int32(notOneFloat32Int32, plusOneFloat32Int32, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Int32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Int32 failed")
+	}
+
+	if len(FilterMapFloat32Int32(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Int32(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Int16(t *testing.T) {
+	// Test : some logic
+	expectedList := []int16{3, 4}
+	newList := FilterMapFloat32Int16(notOneFloat32Int16, plusOneFloat32Int16, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Int16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Int16 failed")
+	}
+
+	if len(FilterMapFloat32Int16(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Int16(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Int8(t *testing.T) {
+	// Test : some logic
+	expectedList := []int8{3, 4}
+	newList := FilterMapFloat32Int8(notOneFloat32Int8, plusOneFloat32Int8, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Int8(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Int8 failed")
+	}
+
+	if len(FilterMapFloat32Int8(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Int8(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Uint(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint{3, 4}
+	newList := FilterMapFloat32Uint(notOneFloat32Uint, plusOneFloat32Uint, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Uint(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Uint failed")
+	}
+
+	if len(FilterMapFloat32Uint(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Uint(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Uint64(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint64{3, 4}
+	newList := FilterMapFloat32Uint64(notOneFloat32Uint64, plusOneFloat32Uint64, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Uint64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Uint64 failed")
+	}
+
+	if len(FilterMapFloat32Uint64(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Uint64(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Uint32(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint32{3, 4}
+	newList := FilterMapFloat32Uint32(notOneFloat32Uint32, plusOneFloat32Uint32, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Uint32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Uint32 failed")
+	}
+
+	if len(FilterMapFloat32Uint32(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Uint32(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Uint16(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint16{3, 4}
+	newList := FilterMapFloat32Uint16(notOneFloat32Uint16, plusOneFloat32Uint16, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Uint16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Uint16 failed")
+	}
+
+	if len(FilterMapFloat32Uint16(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Uint16(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Uint8(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint8{3, 4}
+	newList := FilterMapFloat32Uint8(notOneFloat32Uint8, plusOneFloat32Uint8, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Uint8(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Uint8 failed")
+	}
+
+	if len(FilterMapFloat32Uint8(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Uint8(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := FilterMapFloat32Str(notOneFloat32Str, someLogicFloat32Str, []float32{1, 10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("FilterMapFloat32Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Str(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Str failed")
+	}
+
+	if len(FilterMapFloat32Str(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Str(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := FilterMapFloat32Bool(notOneFloat32Bool, someLogicFloat32Bool, []float32{1, 10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Bool(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Bool failed")
+	}
+
+	if len(FilterMapFloat32Bool(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Bool(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat32Float64(t *testing.T) {
+	// Test : some logic
+	expectedList := []float64{3, 4}
+	newList := FilterMapFloat32Float64(notOneFloat32Float64, plusOneFloat32Float64, []float32{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat32Float64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat32Float64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat32Float64 failed")
+	}
+
+	if len(FilterMapFloat32Float64(nil, nil, []float32{})) > 0 {
+		t.Errorf("FilterMapFloat32Float64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat32Float64(num float32) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Int(t *testing.T) {
+	// Test : some logic
+	expectedList := []int{3, 4}
+	newList := FilterMapFloat64Int(notOneFloat64Int, plusOneFloat64Int, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Int failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Int(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Int failed")
+	}
+
+	if len(FilterMapFloat64Int(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Int failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Int(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Int64(t *testing.T) {
+	// Test : some logic
+	expectedList := []int64{3, 4}
+	newList := FilterMapFloat64Int64(notOneFloat64Int64, plusOneFloat64Int64, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Int64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Int64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Int64 failed")
+	}
+
+	if len(FilterMapFloat64Int64(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Int64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Int64(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Int32(t *testing.T) {
+	// Test : some logic
+	expectedList := []int32{3, 4}
+	newList := FilterMapFloat64Int32(notOneFloat64Int32, plusOneFloat64Int32, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Int32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Int32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Int32 failed")
+	}
+
+	if len(FilterMapFloat64Int32(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Int32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Int32(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Int16(t *testing.T) {
+	// Test : some logic
+	expectedList := []int16{3, 4}
+	newList := FilterMapFloat64Int16(notOneFloat64Int16, plusOneFloat64Int16, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Int16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Int16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Int16 failed")
+	}
+
+	if len(FilterMapFloat64Int16(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Int16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Int16(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Int8(t *testing.T) {
+	// Test : some logic
+	expectedList := []int8{3, 4}
+	newList := FilterMapFloat64Int8(notOneFloat64Int8, plusOneFloat64Int8, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Int8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Int8(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Int8 failed")
+	}
+
+	if len(FilterMapFloat64Int8(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Int8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Int8(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Uint(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint{3, 4}
+	newList := FilterMapFloat64Uint(notOneFloat64Uint, plusOneFloat64Uint, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Uint failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Uint(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Uint failed")
+	}
+
+	if len(FilterMapFloat64Uint(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Uint failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Uint(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Uint64(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint64{3, 4}
+	newList := FilterMapFloat64Uint64(notOneFloat64Uint64, plusOneFloat64Uint64, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Uint64 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Uint64(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Uint64 failed")
+	}
+
+	if len(FilterMapFloat64Uint64(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Uint64 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Uint64(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Uint32(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint32{3, 4}
+	newList := FilterMapFloat64Uint32(notOneFloat64Uint32, plusOneFloat64Uint32, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Uint32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Uint32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Uint32 failed")
+	}
+
+	if len(FilterMapFloat64Uint32(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Uint32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Uint32(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Uint16(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint16{3, 4}
+	newList := FilterMapFloat64Uint16(notOneFloat64Uint16, plusOneFloat64Uint16, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Uint16 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Uint16(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Uint16 failed")
+	}
+
+	if len(FilterMapFloat64Uint16(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Uint16 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Uint16(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Uint8(t *testing.T) {
+	// Test : some logic
+	expectedList := []uint8{3, 4}
+	newList := FilterMapFloat64Uint8(notOneFloat64Uint8, plusOneFloat64Uint8, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Uint8 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Uint8(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Uint8 failed")
+	}
+
+	if len(FilterMapFloat64Uint8(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Uint8 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Uint8(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Str(t *testing.T) {
+	// Test : someLogic
+	expectedList := []string{"10"}
+	newList := FilterMapFloat64Str(notOneFloat64Str, someLogicFloat64Str, []float64{1, 10})
+
+	if newList[0] != expectedList[0] {
+		t.Errorf("FilterMapFloat64Str failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Str(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Str failed")
+	}
+
+	if len(FilterMapFloat64Str(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Str failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Str(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Bool(t *testing.T) {
+	// Test : someLogic
+	expectedList := []bool{true, false}
+	newList := FilterMapFloat64Bool(notOneFloat64Bool, someLogicFloat64Bool, []float64{1, 10, 0})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Bool failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Bool(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Bool failed")
+	}
+
+	if len(FilterMapFloat64Bool(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Bool failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Bool(num float64) bool {
+	return num != 1
+}
+
+func TestFilterMapFloat64Float32(t *testing.T) {
+	// Test : some logic
+	expectedList := []float32{3, 4}
+	newList := FilterMapFloat64Float32(notOneFloat64Float32, plusOneFloat64Float32, []float64{1, 2, 3})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("FilterMapFloat64Float32 failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	if len(FilterMapFloat64Float32(nil, nil, nil)) > 0 {
+		t.Errorf("FilterMapFloat64Float32 failed")
+	}
+
+	if len(FilterMapFloat64Float32(nil, nil, []float64{})) > 0 {
+		t.Errorf("FilterMapFloat64Float32 failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+func notOneFloat64Float32(num float64) bool {
+	return num != 1
 }

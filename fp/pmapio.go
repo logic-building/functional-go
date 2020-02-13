@@ -453,6 +453,88 @@ func PMapIntBool(f func(int) bool, list []int) []bool {
 	return newList
 }
 
+// PMapIntFloat32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntFloat32(f func(int) float32, list []int) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v int) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapIntFloat64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntFloat64(f func(int) float64, list []int) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v int) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 // PMapInt64Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -896,6 +978,88 @@ func PMapInt64Bool(f func(int64) bool, list []int64) []bool {
 	}()
 
 	newList := make([]bool, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapInt64Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int64 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt64Float32(f func(int64) float32, list []int64) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v int64) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapInt64Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int64 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt64Float64(f func(int64) float64, list []int64) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v int64) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
@@ -1355,6 +1519,88 @@ func PMapInt32Bool(f func(int32) bool, list []int32) []bool {
 	return newList
 }
 
+// PMapInt32Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int32 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt32Float32(f func(int32) float32, list []int32) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v int32) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapInt32Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int32 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt32Float64(f func(int32) float64, list []int32) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v int32) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 // PMapInt16Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1798,6 +2044,88 @@ func PMapInt16Bool(f func(int16) bool, list []int16) []bool {
 	}()
 
 	newList := make([]bool, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapInt16Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int16 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt16Float32(f func(int16) float32, list []int16) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v int16) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapInt16Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int16 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt16Float64(f func(int16) float64, list []int16) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v int16) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
@@ -2257,6 +2585,88 @@ func PMapInt8Bool(f func(int8) bool, list []int8) []bool {
 	return newList
 }
 
+// PMapInt8Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int8 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt8Float32(f func(int8) float32, list []int8) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v int8) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapInt8Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int8 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapInt8Float64(f func(int8) float64, list []int8) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v int8) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 // PMapUintInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2700,6 +3110,88 @@ func PMapUintBool(f func(uint) bool, list []uint) []bool {
 	}()
 
 	newList := make([]bool, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUintFloat32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapUintFloat32(f func(uint) float32, list []uint) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v uint) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUintFloat64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapUintFloat64(f func(uint) float64, list []uint) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v uint) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
@@ -3159,6 +3651,88 @@ func PMapUint64Bool(f func(uint64) bool, list []uint64) []bool {
 	return newList
 }
 
+// PMapUint64Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint64 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint64Float32(f func(uint64) float32, list []uint64) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v uint64) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUint64Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint64 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint64Float64(f func(uint64) float64, list []uint64) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v uint64) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 // PMapUint32Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -3602,6 +4176,88 @@ func PMapUint32Bool(f func(uint32) bool, list []uint32) []bool {
 	}()
 
 	newList := make([]bool, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUint32Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint32 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint32Float32(f func(uint32) float32, list []uint32) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v uint32) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUint32Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint32 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint32Float64(f func(uint32) float64, list []uint32) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v uint32) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
@@ -4061,6 +4717,88 @@ func PMapUint16Bool(f func(uint16) bool, list []uint16) []bool {
 	return newList
 }
 
+// PMapUint16Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint16 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint16Float32(f func(uint16) float32, list []uint16) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v uint16) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUint16Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint16 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint16Float64(f func(uint16) float64, list []uint16) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v uint16) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 // PMapUint8Int applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -4504,6 +5242,88 @@ func PMapUint8Bool(f func(uint8) bool, list []uint8) []bool {
 	}()
 
 	newList := make([]bool, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUint8Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint8 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint8Float32(f func(uint8) float32, list []uint8) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v uint8) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapUint8Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: uint8 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapUint8Float64(f func(uint8) float64, list []uint8) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v uint8) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
@@ -4963,6 +5783,88 @@ func PMapStrBool(f func(string) bool, list []string) []bool {
 	return newList
 }
 
+// PMapStrFloat32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: string output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapStrFloat32(f func(string) float32, list []string) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v string) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapStrFloat64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: string output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapStrFloat64(f func(string) float64, list []string) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v string) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 // PMapBoolInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -5406,6 +6308,1154 @@ func PMapBoolStr(f func(bool) string, list []bool) []string {
 	}()
 
 	newList := make([]string, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapBoolFloat32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: bool output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapBoolFloat32(f func(bool) float32, list []bool) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v bool) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapBoolFloat64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: bool output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapBoolFloat64(f func(bool) float64, list []bool) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v bool) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Int applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: int
+//	2. List
+//
+// Returns
+//	New List of type int
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Int(f func(float32) int, list []float32) []int {
+	if f == nil {
+		return []int{}
+	}
+
+	ch := make(chan map[int]int)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]int{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Int64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: int64
+//	2. List
+//
+// Returns
+//	New List of type int64
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Int64(f func(float32) int64, list []float32) []int64 {
+	if f == nil {
+		return []int64{}
+	}
+
+	ch := make(chan map[int]int64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int64, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]int64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Int32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: int32
+//	2. List
+//
+// Returns
+//	New List of type int32
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Int32(f func(float32) int32, list []float32) []int32 {
+	if f == nil {
+		return []int32{}
+	}
+
+	ch := make(chan map[int]int32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int32, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]int32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Int16 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: int16
+//	2. List
+//
+// Returns
+//	New List of type int16
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Int16(f func(float32) int16, list []float32) []int16 {
+	if f == nil {
+		return []int16{}
+	}
+
+	ch := make(chan map[int]int16)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int16, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]int16{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int16, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Int8 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: int8
+//	2. List
+//
+// Returns
+//	New List of type int8
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Int8(f func(float32) int8, list []float32) []int8 {
+	if f == nil {
+		return []int8{}
+	}
+
+	ch := make(chan map[int]int8)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int8, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]int8{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int8, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Uint applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: uint
+//	2. List
+//
+// Returns
+//	New List of type uint
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Uint(f func(float32) uint, list []float32) []uint {
+	if f == nil {
+		return []uint{}
+	}
+
+	ch := make(chan map[int]uint)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]uint{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Uint64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: uint64
+//	2. List
+//
+// Returns
+//	New List of type uint64
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Uint64(f func(float32) uint64, list []float32) []uint64 {
+	if f == nil {
+		return []uint64{}
+	}
+
+	ch := make(chan map[int]uint64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint64, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]uint64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Uint32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: uint32
+//	2. List
+//
+// Returns
+//	New List of type uint32
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Uint32(f func(float32) uint32, list []float32) []uint32 {
+	if f == nil {
+		return []uint32{}
+	}
+
+	ch := make(chan map[int]uint32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint32, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]uint32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Uint16 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: uint16
+//	2. List
+//
+// Returns
+//	New List of type uint16
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Uint16(f func(float32) uint16, list []float32) []uint16 {
+	if f == nil {
+		return []uint16{}
+	}
+
+	ch := make(chan map[int]uint16)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint16, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]uint16{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint16, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Uint8 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: uint8
+//	2. List
+//
+// Returns
+//	New List of type uint8
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Uint8(f func(float32) uint8, list []float32) []uint8 {
+	if f == nil {
+		return []uint8{}
+	}
+
+	ch := make(chan map[int]uint8)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint8, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]uint8{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint8, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Str applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: string
+//	2. List
+//
+// Returns
+//	New List of type string
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Str(f func(float32) string, list []float32) []string {
+	if f == nil {
+		return []string{}
+	}
+
+	ch := make(chan map[int]string)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]string, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]string{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]string, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Bool applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: bool
+//	2. List
+//
+// Returns
+//	New List of type bool
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Bool(f func(float32) bool, list []float32) []bool {
+	if f == nil {
+		return []bool{}
+	}
+
+	ch := make(chan map[int]bool)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]bool, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]bool{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]bool, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat32Float64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float32 output type: float64
+//	2. List
+//
+// Returns
+//	New List of type float64
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat32Float64(f func(float32) float64, list []float32) []float64 {
+	if f == nil {
+		return []float64{}
+	}
+
+	ch := make(chan map[int]float64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float64, i int, v float32) {
+			defer wg.Done()
+			ch <- map[int]float64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Int applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: int
+//	2. List
+//
+// Returns
+//	New List of type int
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Int(f func(float64) int, list []float64) []int {
+	if f == nil {
+		return []int{}
+	}
+
+	ch := make(chan map[int]int)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]int{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Int64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: int64
+//	2. List
+//
+// Returns
+//	New List of type int64
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Int64(f func(float64) int64, list []float64) []int64 {
+	if f == nil {
+		return []int64{}
+	}
+
+	ch := make(chan map[int]int64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int64, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]int64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Int32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: int32
+//	2. List
+//
+// Returns
+//	New List of type int32
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Int32(f func(float64) int32, list []float64) []int32 {
+	if f == nil {
+		return []int32{}
+	}
+
+	ch := make(chan map[int]int32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int32, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]int32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Int16 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: int16
+//	2. List
+//
+// Returns
+//	New List of type int16
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Int16(f func(float64) int16, list []float64) []int16 {
+	if f == nil {
+		return []int16{}
+	}
+
+	ch := make(chan map[int]int16)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int16, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]int16{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int16, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Int8 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: int8
+//	2. List
+//
+// Returns
+//	New List of type int8
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Int8(f func(float64) int8, list []float64) []int8 {
+	if f == nil {
+		return []int8{}
+	}
+
+	ch := make(chan map[int]int8)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int8, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]int8{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]int8, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Uint applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: uint
+//	2. List
+//
+// Returns
+//	New List of type uint
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Uint(f func(float64) uint, list []float64) []uint {
+	if f == nil {
+		return []uint{}
+	}
+
+	ch := make(chan map[int]uint)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]uint{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Uint64 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: uint64
+//	2. List
+//
+// Returns
+//	New List of type uint64
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Uint64(f func(float64) uint64, list []float64) []uint64 {
+	if f == nil {
+		return []uint64{}
+	}
+
+	ch := make(chan map[int]uint64)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint64, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]uint64{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint64, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Uint32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: uint32
+//	2. List
+//
+// Returns
+//	New List of type uint32
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Uint32(f func(float64) uint32, list []float64) []uint32 {
+	if f == nil {
+		return []uint32{}
+	}
+
+	ch := make(chan map[int]uint32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint32, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]uint32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint32, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Uint16 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: uint16
+//	2. List
+//
+// Returns
+//	New List of type uint16
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Uint16(f func(float64) uint16, list []float64) []uint16 {
+	if f == nil {
+		return []uint16{}
+	}
+
+	ch := make(chan map[int]uint16)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint16, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]uint16{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint16, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Uint8 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: uint8
+//	2. List
+//
+// Returns
+//	New List of type uint8
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Uint8(f func(float64) uint8, list []float64) []uint8 {
+	if f == nil {
+		return []uint8{}
+	}
+
+	ch := make(chan map[int]uint8)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]uint8, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]uint8{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]uint8, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Str applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: string
+//	2. List
+//
+// Returns
+//	New List of type string
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Str(f func(float64) string, list []float64) []string {
+	if f == nil {
+		return []string{}
+	}
+
+	ch := make(chan map[int]string)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]string, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]string{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]string, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Bool applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: bool
+//	2. List
+//
+// Returns
+//	New List of type bool
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Bool(f func(float64) bool, list []float64) []bool {
+	if f == nil {
+		return []bool{}
+	}
+
+	ch := make(chan map[int]bool)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]bool, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]bool{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]bool, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapFloat64Float32 applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: float64 output type: float32
+//	2. List
+//
+// Returns
+//	New List of type float32
+//	Empty list if all arguments are nil or either one is nil
+func PMapFloat64Float32(f func(float64) float32, list []float64) []float32 {
+	if f == nil {
+		return []float32{}
+	}
+
+	ch := make(chan map[int]float32)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]float32, i int, v float64) {
+			defer wg.Done()
+			ch <- map[int]float32{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]float32, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
