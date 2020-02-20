@@ -128,6 +128,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "DropWhilePtr",
+		codeTemplate:      basic.DropWhilePtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "dropwhileptr.go",
+
+		testTemplate:          basic.DropWhilePtrTest(),
+		testTemplateBool:      basic.DropWhilePtrBoolTest(),
+		generatedTestFileName: "dropwhileptr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -677,6 +688,54 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 	return int(*num)%2 == 0 && int(*num) % int(*divisibleBy) == 0
 }
 `
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func TestDropWhileStrPtr(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+
+	expectedNewList := []*string{&v3, &v4, &v5}
+	NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(DropWhileStrPtr(nil, nil)) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+
+	if len(DropWhileStrPtr(nil, []*string{})) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}`
+	s2 = `
+	func TestDropWhileStrPtr(t *testing.T) {
+		// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+	
+		var v2 string = "2"
+		var v3 string = "3"
+		var v4 string = "4"
+		var v5 string = "5"
+	
+		expectedNewList := []*string{&v3, &v4, &v5}
+		NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
+		if len(NewList) > 0 {
+			t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+		}
+	
+		if len(DropWhileStrPtr(nil, nil)) > 0 {
+			t.Errorf("DropWhileStrPtr failed.")
+		}
+	
+		if len(DropWhileStrPtr(nil, []*string{})) > 0 {
+			t.Errorf("DropWhileStrPtr failed.")
+		}
+	}`
 
 	code = strings.Replace(code, s1, s2, -1)
 	return code
