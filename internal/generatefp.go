@@ -139,6 +139,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "EveryPtr",
+		codeTemplate:      basic.EveryPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "everyptr.go",
+
+		testTemplate:          basic.EveryPtrTest(),
+		testTemplateBool:      basic.EveryPtrBoolTest(),
+		generatedTestFileName: "everyptr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -736,6 +747,66 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 			t.Errorf("DropWhileStrPtr failed.")
 		}
 	}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func TestEveryStrPtr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v8 string = "8"
+	var v10 string = "10"
+	list1 := []*string{&v8, &v2, &v10, &v4}
+	if !EveryStrPtr(isEvenStrPtr, list1) {
+		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
+	}
+
+	list2 := []*string{&v8, &v2, &v10, &v5, &v4}
+	if EveryStrPtr(isEvenStrPtr, list2) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, nil) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(nil, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+		t.Errorf(reflect.String.String())
+	}
+}`
+
+	s2 = `
+func TestEveryStrPtr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v4 string = "4"
+	var v8 string = "8"
+	var v10 string = "10"
+	list1 := []*string{&v8, &v2, &v10, &v4}
+	if !EveryStrPtr(isEvenStrPtr, list1) {
+		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, nil) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(nil, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+		t.Errorf(reflect.String.String())
+	}
+}
+`
 
 	code = strings.Replace(code, s1, s2, -1)
 	return code
