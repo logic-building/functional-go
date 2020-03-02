@@ -227,6 +227,21 @@ var fpCodeList = []fpCode{
 		generatedFileName:        "filtermapio.go",
 		generatedTestFileName:    "filtermapio_test.go",
 	},
+
+	fpCode{
+		function:                 "FilterMapIOPtr",
+		codeTemplate:             basic.FilterMapIOPtr(),
+		testTemplateIONumber:     basic.FilterMapIONumberPtrTest(),
+		testTemplateIOStrNumber:  basic.FilterMapIOStrNumberPtrTest(),
+		testTemplateIONumberStr:  basic.FilterMapIONumberStrPtrTest(),
+		testTemplateIONumberBool: basic.FilterMapIONumberBoolPtrTest(),
+		testTemplateIOStrBool:    basic.FilterMapIOStrBoolPtrTest(),
+		testTemplateIOBoolNumber: basic.FilterMapIOBoolNumberPtrTest(),
+		testTemplateIOBoolStr:    basic.FilterMapIOBoolStrPtrTest(),
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName:        "filtermapioptr.go",
+		generatedTestFileName:    "filtermapioptr_test.go",
+	},
 }
 
 var importTestTemplate = `
