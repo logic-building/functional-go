@@ -25,6 +25,11 @@ func TestDropWhile<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("DropWhile<FTYPE>Ptr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhile<FTYPE>Ptr(isEven<FTYPE>Ptr, []*<TYPE>{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhile<FTYPE>Ptr failed")
+	}
 }
 
 `

@@ -422,11 +422,11 @@ func TestFilterStrPtr(t *testing.T) {
 	var v4 string = "4"
 
 	// Test : even number in the list
-	expectedFilteredList := []*string{&v1, &v2, &v3, &v4}
+	expectedFilteredList := []*string{&v2, &v4}
 	filteredList := FilterStrPtr(isEvenStrPtr, []*string{&v1, &v2, &v3, &v4})
 
 	if *filteredList[0] != *expectedFilteredList[0] {
-		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", *expectedFilteredList[0], *filteredList[0])
 	}
 
 	if len(FilterStrPtr(nil, nil)) > 0 {
@@ -436,7 +436,11 @@ func TestFilterStrPtr(t *testing.T) {
 }
 
 func isEvenStrPtr(num *string) bool {
-	return true
+	if *num == "2" || *num == "4" || *num == "6" || *num == "8" || *num == "10" {
+		return true
+	} else {
+		return false
+	}
 }
 
 

@@ -150,6 +150,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "MaxPtr",
+		codeTemplate:      basic.MaxPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
+		generatedFileName: "maxptr.go",
+
+		testTemplate: basic.MaxPtrTest(),
+		//testTemplateBool:      basic.EveryPtrBoolTest(), // bool test is not required here
+		generatedTestFileName: "maxptr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -614,11 +625,11 @@ func isEvenDivisibleByStrPtr(num, divisibleBy *string) bool {
 	var v4 string = "4"
 
 	// Test : even number in the list
-	expectedFilteredList := []*string{&v1, &v2, &v3, &v4}
+	expectedFilteredList := []*string{&v2, &v4}
 	filteredList := FilterStrPtr(isEvenStrPtr, []*string{&v1, &v2, &v3, &v4})
 
 	if *filteredList[0] != *expectedFilteredList[0] {
-		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+		t.Errorf("MapFilter failed. Expected filtered list=%v, actual list=%v", *expectedFilteredList[0], *filteredList[0])
 	}
 
 	if len(FilterStrPtr(nil, nil)) > 0 {
@@ -628,7 +639,11 @@ func isEvenDivisibleByStrPtr(num, divisibleBy *string) bool {
 }
 
 func isEvenStrPtr(num *string) bool {
-	return true
+	if *num == "2" || *num == "4" || *num == "6" || *num == "8" || *num == "10" {
+		return true
+	} else {
+		return false
+	}
 }`
 	code = strings.Replace(code, s1, s2, -1)
 
@@ -752,6 +767,11 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 		t.Errorf("DropWhileStrPtr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileStrPtr(isEvenStrPtr, []*string{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileStrPtr failed")
+	}
 }`
 	s2 = `
 	func TestDropWhileStrPtr(t *testing.T) {
@@ -764,7 +784,7 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 	
 		expectedNewList := []*string{&v3, &v4, &v5}
 		NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
-		if len(NewList) > 0 {
+		if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
 			t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 		}
 	
@@ -774,6 +794,10 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 	
 		if len(DropWhileStrPtr(nil, []*string{})) > 0 {
 			t.Errorf("DropWhileStrPtr failed.")
+		}
+		NewList = DropWhileStrPtr(isEvenStrPtr, []*string{&v4})
+		if len(NewList) != 0 {
+			t.Errorf("DropWhileStrPtr failed")
 		}
 	}`
 
@@ -815,9 +839,7 @@ func TestEveryStrPtr(t *testing.T) {
 	// Test : every value in the list is even number
 	var v2 string = "2"
 	var v4 string = "4"
-	var v8 string = "8"
-	var v10 string = "10"
-	list1 := []*string{&v8, &v2, &v10, &v4}
+	list1 := []*string{&v2, &v4}
 	if !EveryStrPtr(isEvenStrPtr, list1) {
 		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
 	}
