@@ -179,6 +179,24 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "MergePtr",
+		codeTemplate:      basic.MergePtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "mergeptr.go",
+
+		testTemplate:           basic.MergeTestPtr(),
+		testTemplateNumberStr:  basic.MergeTestNumbersToStringPtr(),
+		testTemplateStrNumber:  basic.MergeTestStringToNumbersPtr(),
+		testTemplateStrBool:    basic.MergeTestStringToBoolPtr(),
+		testTemplateBoolStr:    basic.MergeTestBoolToStringPtr(),
+		testTemplateNumberBool: basic.MergeTestNumberToBoolPtr(),
+		testTemplateBoolNumber: basic.MergeTestBoolToNumberPtr(),
+		testTemplateBoolBool:   basic.MergeTestBoolToBoolPtr(),
+		testTemplateStrStr:     basic.MergeTestStrToStrPtr(),
+		generatedTestFileName:  "mergeptr_test.go",
+	},
+
+	fpCode{
 		function:          "Zip",
 		codeTemplate:      basic.Zip(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
