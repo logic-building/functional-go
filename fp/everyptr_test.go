@@ -320,9 +320,7 @@ func TestEveryStrPtr(t *testing.T) {
 	// Test : every value in the list is even number
 	var v2 string = "2"
 	var v4 string = "4"
-	var v8 string = "8"
-	var v10 string = "10"
-	list1 := []*string{&v8, &v2, &v10, &v4}
+	list1 := []*string{&v2, &v4}
 	if !EveryStrPtr(isEvenStrPtr, list1) {
 		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
 	}

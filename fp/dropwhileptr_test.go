@@ -27,6 +27,11 @@ func TestDropWhileIntPtr(t *testing.T) {
 		t.Errorf("DropWhileIntPtr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileIntPtr(isEvenIntPtr, []*int{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileIntPtr failed")
+	}
 }
 
 
@@ -51,6 +56,11 @@ func TestDropWhileInt64Ptr(t *testing.T) {
 	if len(DropWhileInt64Ptr(nil, []*int64{})) > 0 {
 		t.Errorf("DropWhileInt64Ptr failed.")
 		t.Errorf(reflect.String.String())
+	}
+
+	NewList = DropWhileInt64Ptr(isEvenInt64Ptr, []*int64{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileInt64Ptr failed")
 	}
 }
 
@@ -77,6 +87,11 @@ func TestDropWhileInt32Ptr(t *testing.T) {
 		t.Errorf("DropWhileInt32Ptr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileInt32Ptr(isEvenInt32Ptr, []*int32{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileInt32Ptr failed")
+	}
 }
 
 
@@ -101,6 +116,11 @@ func TestDropWhileInt16Ptr(t *testing.T) {
 	if len(DropWhileInt16Ptr(nil, []*int16{})) > 0 {
 		t.Errorf("DropWhileInt16Ptr failed.")
 		t.Errorf(reflect.String.String())
+	}
+
+	NewList = DropWhileInt16Ptr(isEvenInt16Ptr, []*int16{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileInt16Ptr failed")
 	}
 }
 
@@ -127,6 +147,11 @@ func TestDropWhileInt8Ptr(t *testing.T) {
 		t.Errorf("DropWhileInt8Ptr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileInt8Ptr(isEvenInt8Ptr, []*int8{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileInt8Ptr failed")
+	}
 }
 
 
@@ -151,6 +176,11 @@ func TestDropWhileUintPtr(t *testing.T) {
 	if len(DropWhileUintPtr(nil, []*uint{})) > 0 {
 		t.Errorf("DropWhileUintPtr failed.")
 		t.Errorf(reflect.String.String())
+	}
+
+	NewList = DropWhileUintPtr(isEvenUintPtr, []*uint{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileUintPtr failed")
 	}
 }
 
@@ -177,6 +207,11 @@ func TestDropWhileUint64Ptr(t *testing.T) {
 		t.Errorf("DropWhileUint64Ptr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileUint64Ptr(isEvenUint64Ptr, []*uint64{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileUint64Ptr failed")
+	}
 }
 
 
@@ -201,6 +236,11 @@ func TestDropWhileUint32Ptr(t *testing.T) {
 	if len(DropWhileUint32Ptr(nil, []*uint32{})) > 0 {
 		t.Errorf("DropWhileUint32Ptr failed.")
 		t.Errorf(reflect.String.String())
+	}
+
+	NewList = DropWhileUint32Ptr(isEvenUint32Ptr, []*uint32{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileUint32Ptr failed")
 	}
 }
 
@@ -227,6 +267,11 @@ func TestDropWhileUint16Ptr(t *testing.T) {
 		t.Errorf("DropWhileUint16Ptr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileUint16Ptr(isEvenUint16Ptr, []*uint16{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileUint16Ptr failed")
+	}
 }
 
 
@@ -252,6 +297,11 @@ func TestDropWhileUint8Ptr(t *testing.T) {
 		t.Errorf("DropWhileUint8Ptr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileUint8Ptr(isEvenUint8Ptr, []*uint8{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileUint8Ptr failed")
+	}
 }
 
 
@@ -266,7 +316,7 @@ func TestDropWhileUint8Ptr(t *testing.T) {
 	
 		expectedNewList := []*string{&v3, &v4, &v5}
 		NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
-		if len(NewList) > 0 {
+		if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
 			t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 		}
 	
@@ -276,6 +326,10 @@ func TestDropWhileUint8Ptr(t *testing.T) {
 	
 		if len(DropWhileStrPtr(nil, []*string{})) > 0 {
 			t.Errorf("DropWhileStrPtr failed.")
+		}
+		NewList = DropWhileStrPtr(isEvenStrPtr, []*string{&v4})
+		if len(NewList) != 0 {
+			t.Errorf("DropWhileStrPtr failed")
 		}
 	}
 
@@ -314,6 +368,11 @@ func TestDropWhileFloat32Ptr(t *testing.T) {
 		t.Errorf("DropWhileFloat32Ptr failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	NewList = DropWhileFloat32Ptr(isEvenFloat32Ptr, []*float32{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileFloat32Ptr failed")
+	}
 }
 
 
@@ -338,6 +397,11 @@ func TestDropWhileFloat64Ptr(t *testing.T) {
 	if len(DropWhileFloat64Ptr(nil, []*float64{})) > 0 {
 		t.Errorf("DropWhileFloat64Ptr failed.")
 		t.Errorf(reflect.String.String())
+	}
+
+	NewList = DropWhileFloat64Ptr(isEvenFloat64Ptr, []*float64{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileFloat64Ptr failed")
 	}
 }
 
