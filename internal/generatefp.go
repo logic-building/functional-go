@@ -161,6 +161,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "MinPtr",
+		codeTemplate:      basic.MinPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
+		generatedFileName: "minptr.go",
+
+		testTemplate: basic.MinPtrTest(),
+		//testTemplateBool:      basic.EveryPtrBoolTest(), // bool test is not required here
+		generatedTestFileName: "minptr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
