@@ -172,6 +172,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "MinMaxPtr",
+		codeTemplate:      basic.MinMaxPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
+		generatedFileName: "minmaxptr.go",
+
+		testTemplate: basic.MinMaxPtrTest(),
+		//testTemplateBool:      basic.EveryPtrBoolTest(), // bool test is not required here
+		generatedTestFileName: "minmaxptr_test.go",
+	},
+
+	fpCode{
 		function:          "Merge",
 		codeTemplate:      basic.Merge(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
