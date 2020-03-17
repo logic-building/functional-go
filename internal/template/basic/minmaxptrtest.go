@@ -16,6 +16,16 @@ func TestMinMax<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("MinMax<FTYPE>Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
 	}
+
+	min, max = MinMax<FTYPE>Ptr([]*<TYPE>{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMax<FTYPE>Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMax<FTYPE>Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMax<FTYPE>Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
 }
 `
 }

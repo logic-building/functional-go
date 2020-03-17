@@ -16,6 +16,16 @@ func TestMin<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("Min<FTYPE>Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
 	}
+
+	min = Min<FTYPE>Ptr([]*<TYPE>{})
+	if *min != 0 {
+		t.Errorf("Min<FTYPE>Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = Min<FTYPE>Ptr(nil)
+	if *min != 0 {
+		t.Errorf("Min<FTYPE>Ptr failed. Expected=0, actual=%v", *min)
+	}
 }
 `
 }

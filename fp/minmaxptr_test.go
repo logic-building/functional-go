@@ -18,6 +18,16 @@ func TestMinMaxIntPtr(t *testing.T) {
 		t.Errorf("MinMaxIntPtr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
 	}
+
+	min, max = MinMaxIntPtr([]*int{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxIntPtr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxIntPtr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxIntPtr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
 }
 
 func TestMinMaxInt64Ptr(t *testing.T) {
@@ -32,6 +42,16 @@ func TestMinMaxInt64Ptr(t *testing.T) {
 	if *min != 2 || *max != 10 {
 		t.Errorf("MinMaxInt64Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
+	}
+
+	min, max = MinMaxInt64Ptr([]*int64{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt64Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxInt64Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt64Ptr failed. Expected=0, actual=%v, %v", *min, *max)
 	}
 }
 
@@ -48,6 +68,16 @@ func TestMinMaxInt32Ptr(t *testing.T) {
 		t.Errorf("MinMaxInt32Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
 	}
+
+	min, max = MinMaxInt32Ptr([]*int32{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt32Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxInt32Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt32Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
 }
 
 func TestMinMaxInt16Ptr(t *testing.T) {
@@ -62,6 +92,16 @@ func TestMinMaxInt16Ptr(t *testing.T) {
 	if *min != 2 || *max != 10 {
 		t.Errorf("MinMaxInt16Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
+	}
+
+	min, max = MinMaxInt16Ptr([]*int16{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt16Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxInt16Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt16Ptr failed. Expected=0, actual=%v, %v", *min, *max)
 	}
 }
 
@@ -78,6 +118,16 @@ func TestMinMaxInt8Ptr(t *testing.T) {
 		t.Errorf("MinMaxInt8Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
 	}
+
+	min, max = MinMaxInt8Ptr([]*int8{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt8Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxInt8Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxInt8Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
 }
 
 func TestMinMaxUintPtr(t *testing.T) {
@@ -92,6 +142,16 @@ func TestMinMaxUintPtr(t *testing.T) {
 	if *min != 2 || *max != 10 {
 		t.Errorf("MinMaxUintPtr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
+	}
+
+	min, max = MinMaxUintPtr([]*uint{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUintPtr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxUintPtr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUintPtr failed. Expected=0, actual=%v, %v", *min, *max)
 	}
 }
 
@@ -108,6 +168,16 @@ func TestMinMaxUint64Ptr(t *testing.T) {
 		t.Errorf("MinMaxUint64Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
 	}
+
+	min, max = MinMaxUint64Ptr([]*uint64{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint64Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxUint64Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint64Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
 }
 
 func TestMinMaxUint32Ptr(t *testing.T) {
@@ -122,6 +192,16 @@ func TestMinMaxUint32Ptr(t *testing.T) {
 	if *min != 2 || *max != 10 {
 		t.Errorf("MinMaxUint32Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
+	}
+
+	min, max = MinMaxUint32Ptr([]*uint32{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint32Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxUint32Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint32Ptr failed. Expected=0, actual=%v, %v", *min, *max)
 	}
 }
 
@@ -138,6 +218,16 @@ func TestMinMaxUint16Ptr(t *testing.T) {
 		t.Errorf("MinMaxUint16Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
 	}
+
+	min, max = MinMaxUint16Ptr([]*uint16{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint16Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxUint16Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint16Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
 }
 
 func TestMinMaxUint8Ptr(t *testing.T) {
@@ -152,6 +242,16 @@ func TestMinMaxUint8Ptr(t *testing.T) {
 	if *min != 2 || *max != 10 {
 		t.Errorf("MinMaxUint8Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
+	}
+
+	min, max = MinMaxUint8Ptr([]*uint8{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint8Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxUint8Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxUint8Ptr failed. Expected=0, actual=%v, %v", *min, *max)
 	}
 }
 
@@ -168,6 +268,16 @@ func TestMinMaxFloat32Ptr(t *testing.T) {
 		t.Errorf("MinMaxFloat32Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
 	}
+
+	min, max = MinMaxFloat32Ptr([]*float32{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxFloat32Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxFloat32Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxFloat32Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
 }
 
 func TestMinMaxFloat64Ptr(t *testing.T) {
@@ -182,5 +292,15 @@ func TestMinMaxFloat64Ptr(t *testing.T) {
 	if *min != 2 || *max != 10 {
 		t.Errorf("MinMaxFloat64Ptr failed. Expected=2,10, actual=%v, %v", *min, *max)
 		t.Errorf(reflect.String.String())
+	}
+
+	min, max = MinMaxFloat64Ptr([]*float64{})
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxFloat64Ptr failed. Expected=0, actual=%v, %v", *min, *max)
+	}
+
+	min, max = MinMaxFloat64Ptr(nil)
+	if *min != 0 || *max != 0{
+		t.Errorf("MinMaxFloat64Ptr failed. Expected=0, actual=%v, %v", *min, *max)
 	}
 }
