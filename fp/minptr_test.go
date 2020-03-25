@@ -18,6 +18,16 @@ func TestMinIntPtr(t *testing.T) {
 		t.Errorf("MinIntPtr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
 	}
+
+	min = MinIntPtr([]*int{})
+	if *min != 0 {
+		t.Errorf("MinIntPtr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinIntPtr(nil)
+	if *min != 0 {
+		t.Errorf("MinIntPtr failed. Expected=0, actual=%v", *min)
+	}
 }
 
 func TestMinInt64Ptr(t *testing.T) {
@@ -32,6 +42,16 @@ func TestMinInt64Ptr(t *testing.T) {
 	if *min != 2 {
 		t.Errorf("MinInt64Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
+	}
+
+	min = MinInt64Ptr([]*int64{})
+	if *min != 0 {
+		t.Errorf("MinInt64Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinInt64Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinInt64Ptr failed. Expected=0, actual=%v", *min)
 	}
 }
 
@@ -48,6 +68,16 @@ func TestMinInt32Ptr(t *testing.T) {
 		t.Errorf("MinInt32Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
 	}
+
+	min = MinInt32Ptr([]*int32{})
+	if *min != 0 {
+		t.Errorf("MinInt32Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinInt32Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinInt32Ptr failed. Expected=0, actual=%v", *min)
+	}
 }
 
 func TestMinInt16Ptr(t *testing.T) {
@@ -62,6 +92,16 @@ func TestMinInt16Ptr(t *testing.T) {
 	if *min != 2 {
 		t.Errorf("MinInt16Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
+	}
+
+	min = MinInt16Ptr([]*int16{})
+	if *min != 0 {
+		t.Errorf("MinInt16Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinInt16Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinInt16Ptr failed. Expected=0, actual=%v", *min)
 	}
 }
 
@@ -78,6 +118,16 @@ func TestMinInt8Ptr(t *testing.T) {
 		t.Errorf("MinInt8Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
 	}
+
+	min = MinInt8Ptr([]*int8{})
+	if *min != 0 {
+		t.Errorf("MinInt8Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinInt8Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinInt8Ptr failed. Expected=0, actual=%v", *min)
+	}
 }
 
 func TestMinUintPtr(t *testing.T) {
@@ -92,6 +142,16 @@ func TestMinUintPtr(t *testing.T) {
 	if *min != 2 {
 		t.Errorf("MinUintPtr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
+	}
+
+	min = MinUintPtr([]*uint{})
+	if *min != 0 {
+		t.Errorf("MinUintPtr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinUintPtr(nil)
+	if *min != 0 {
+		t.Errorf("MinUintPtr failed. Expected=0, actual=%v", *min)
 	}
 }
 
@@ -108,6 +168,16 @@ func TestMinUint64Ptr(t *testing.T) {
 		t.Errorf("MinUint64Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
 	}
+
+	min = MinUint64Ptr([]*uint64{})
+	if *min != 0 {
+		t.Errorf("MinUint64Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinUint64Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinUint64Ptr failed. Expected=0, actual=%v", *min)
+	}
 }
 
 func TestMinUint32Ptr(t *testing.T) {
@@ -122,6 +192,16 @@ func TestMinUint32Ptr(t *testing.T) {
 	if *min != 2 {
 		t.Errorf("MinUint32Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
+	}
+
+	min = MinUint32Ptr([]*uint32{})
+	if *min != 0 {
+		t.Errorf("MinUint32Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinUint32Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinUint32Ptr failed. Expected=0, actual=%v", *min)
 	}
 }
 
@@ -138,6 +218,16 @@ func TestMinUint16Ptr(t *testing.T) {
 		t.Errorf("MinUint16Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
 	}
+
+	min = MinUint16Ptr([]*uint16{})
+	if *min != 0 {
+		t.Errorf("MinUint16Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinUint16Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinUint16Ptr failed. Expected=0, actual=%v", *min)
+	}
 }
 
 func TestMinUint8Ptr(t *testing.T) {
@@ -152,6 +242,16 @@ func TestMinUint8Ptr(t *testing.T) {
 	if *min != 2 {
 		t.Errorf("MinUint8Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
+	}
+
+	min = MinUint8Ptr([]*uint8{})
+	if *min != 0 {
+		t.Errorf("MinUint8Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinUint8Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinUint8Ptr failed. Expected=0, actual=%v", *min)
 	}
 }
 
@@ -168,6 +268,16 @@ func TestMinFloat32Ptr(t *testing.T) {
 		t.Errorf("MinFloat32Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
 	}
+
+	min = MinFloat32Ptr([]*float32{})
+	if *min != 0 {
+		t.Errorf("MinFloat32Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinFloat32Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinFloat32Ptr failed. Expected=0, actual=%v", *min)
+	}
 }
 
 func TestMinFloat64Ptr(t *testing.T) {
@@ -182,5 +292,15 @@ func TestMinFloat64Ptr(t *testing.T) {
 	if *min != 2 {
 		t.Errorf("MinFloat64Ptr failed. Expected=10, actual=%v", min)
 		t.Errorf(reflect.String.String())
+	}
+
+	min = MinFloat64Ptr([]*float64{})
+	if *min != 0 {
+		t.Errorf("MinFloat64Ptr failed. Expected=0, actual=%v", *min)
+	}
+
+	min = MinFloat64Ptr(nil)
+	if *min != 0 {
+		t.Errorf("MinFloat64Ptr failed. Expected=0, actual=%v", *min)
 	}
 }
