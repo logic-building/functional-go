@@ -53,12 +53,12 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "ReducePtr",
 		codeTemplate:      basic.ReducePtr(),
-		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
 		generatedFileName: "reduceptr.go",
 
-		//testTemplate:          basic.DropLastTest(),
-		//testTemplateBool:      basic.DropLastBoolTest(),
-		//generatedTestFileName: "droplast_test.go",
+		testTemplate: basic.ReducePtrTest(),
+		//testTemplateBool:      basic.DropLastBoolTest(), // Not required here
+		generatedTestFileName: "reduceptr_test.go",
 	},
 
 	fpCode{
@@ -1013,6 +1013,94 @@ func squareStrPtr(num *string) *string {
 	return &r
 }`
 
+	code = strings.Replace(code, s1, s2, -1)
+	s1 = `func TestReduceStrPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+
+	list := []*string{&v1, &v2, &v3, &v4, &v5}
+	var expected string = 15
+	actual := ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{&v1, &v2, &v3, &v4, &v5}
+	expected = 18
+	actual = ReduceStrPtr(plusStrPtr, list, 3)
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{&v1, &v2}
+	expected = 3
+	actual = ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceInt failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{&v1}
+	expected = 1
+	actual = ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{}
+	expected = 0
+	actual = ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+		t.Errorf(reflect.String.String())
+	}
+}`
+
+	s2 = `func TestReduceStrPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+
+	list := []*string{&v1, &v2, &v3, &v4, &v5}
+	var expected string = "12345"
+	actual := ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{&v1, &v2, &v3, &v4, &v5}
+	expected = "312345"
+	actual = ReduceStrPtr(plusStrPtr, list, "3")
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{&v1, &v2}
+	expected = "12"
+	actual = ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceInt failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{&v1}
+	expected = "1"
+	actual = ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+	}
+
+	list = []*string{}
+	expected = ""
+	actual = ReduceStrPtr(plusStrPtr, list)
+	if *actual != expected {
+		t.Errorf("ReduceStrPtr failed. actual=%v, expected=%v", *actual, expected)
+		t.Errorf(reflect.String.String())
+	}
+}`
 	code = strings.Replace(code, s1, s2, -1)
 	return code
 }

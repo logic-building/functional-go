@@ -14,7 +14,8 @@ func ReducePtr() string {
 //	single value.
 
 func Reduce<FTYPE>Ptr(f func(*<TYPE>, *<TYPE>) *<TYPE>, list []*<TYPE>, initializer ...<TYPE>) *<TYPE> {
-	var init *<TYPE>
+	var initVal <TYPE>
+	var init *<TYPE> = &initVal
 	lenList := len(list)
 
 	if initializer != nil {
