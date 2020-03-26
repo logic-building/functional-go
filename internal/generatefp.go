@@ -51,6 +51,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "ReducePtr",
+		codeTemplate:      basic.ReducePtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "reduceptr.go",
+
+		//testTemplate:          basic.DropLastTest(),
+		//testTemplateBool:      basic.DropLastBoolTest(),
+		//generatedTestFileName: "droplast_test.go",
+	},
+
+	fpCode{
 		function:          "DropLastPtr",
 		codeTemplate:      basic.DropLastPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
