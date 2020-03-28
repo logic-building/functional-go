@@ -273,3 +273,19 @@ func TestRemoveStr(t *testing.T) {
 		t.Errorf("RemoveStr failed.")
 	}
 }
+
+func TestRemoveBool(t *testing.T) {
+	var vt bool = true
+	var vf bool = false
+
+	expectedNewList := []bool{vt}
+	NewList := RemoveBool(func(v bool) bool { return v == false }, []bool{vt, vf, vf})
+
+	if NewList[0] != expectedNewList[0] {
+		t.Errorf("RemoveBool failed. Expected New list=%v, actual list=%v", expectedNewList[0], NewList[0])
+	}
+
+	if len(RemoveBoolPtr(nil, nil)) > 0 {
+		t.Errorf("RemoveBoolPtr failed.")
+	}
+}
