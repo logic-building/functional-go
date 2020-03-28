@@ -62,6 +62,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "SomePtr",
+		codeTemplate:      basic.SomePtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "someptr.go",
+
+		testTemplate:          basic.SomePtrTest(),
+		testTemplateBool:      basic.SomePtrTestBool(),
+		generatedTestFileName: "someptr_test.go",
+	},
+
+	fpCode{
 		function:          "RemovePtr",
 		codeTemplate:      basic.RemovePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
