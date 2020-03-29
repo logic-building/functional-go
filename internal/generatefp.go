@@ -292,6 +292,24 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "ZipPtr",
+		codeTemplate:      basic.ZipPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "zipptr.go",
+
+		testTemplate:           basic.ZIPNumberToNumberPtr(),
+		testTemplateNumberStr:  basic.ZIPNumberToStrPtr(),
+		testTemplateStrNumber:  basic.ZIPStrToNumberPtr(),
+		testTemplateStrBool:    basic.ZIPStrToBoolPtr(),
+		testTemplateBoolStr:    basic.ZIPBoolToStrPtr(),
+		testTemplateNumberBool: basic.ZIPNumberToBoolPtr(),
+		testTemplateBoolNumber: basic.ZIPBoolToNumberPtr(),
+		testTemplateBoolBool:   basic.ZIPBoolToBoolPtr(),
+		testTemplateStrStr:     basic.ZIPStrToStrPtr(),
+		generatedTestFileName:  "zipptr_test.go",
+	},
+
+	fpCode{
 		function:                 "PMapIO",
 		codeTemplate:             basic.PMapIO(),
 		testTemplateIONumber:     basic.PMapIONumber(),
