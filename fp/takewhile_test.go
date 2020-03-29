@@ -332,3 +332,30 @@ func TestTakeWhileStr(t *testing.T) {
 		t.Errorf("TakeWhileStr failed.")
 	}
 }
+
+func TestTakeWhileBool(t *testing.T) {
+	// Test : Take the numbers as long as condition match
+	var vt bool = true
+	var vf bool = false
+
+	expectedNewList := []bool{vt, vt, vf}
+	NewList := TakeWhileBool(func(v bool) bool { return v == true }, []bool{vt, vt, vf, vf, vf})
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("TakeWhileBool failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	expectedNewList = []bool{vt}
+	NewList = TakeWhileBool(func(v bool) bool { return v == true }, []bool{vt})
+
+	if NewList[0] != expectedNewList[0] {
+		t.Errorf("TakeWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(TakeWhileBoolPtr(nil, nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+
+	if len(TakeWhileBool(nil, []bool{})) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+}

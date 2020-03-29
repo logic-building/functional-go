@@ -389,3 +389,27 @@ func TakeWhileStr(f func(string) bool, list []string) []string {
 	}
 	return newList
 }
+
+// TakeWhileBool returns new list based on condition in the supplied function. It returns new list once condition fails.
+//
+// Takes 2 inputs:
+//	1. Function
+//	2. List
+//
+// Returns:
+//	New List.
+//	Empty list if all the parameters are nil or either of one parameter is nil
+
+func TakeWhileBool(f func(bool) bool, list []bool) []bool {
+	if f == nil {
+		return []bool{}
+	}
+	var newList []bool
+	for _, v := range list {
+		if !f(v) {
+			return newList
+		}
+		newList = append(newList, v)
+	}
+	return newList
+}

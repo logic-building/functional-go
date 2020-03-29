@@ -73,6 +73,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "TakeWhilePtr",
+		codeTemplate:      basic.TakeWhilePtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "takewhileptr.go",
+
+		testTemplate:          basic.TakeWhilePtrTest(),
+		testTemplateBool:      basic.TakeWhileTestBool(),
+		generatedTestFileName: "takewhileptr_test.go",
+	},
+
+	fpCode{
 		function:          "RemovePtr",
 		codeTemplate:      basic.RemovePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1327,5 +1338,18 @@ func squareStrPtr(num *string) *string {
 	}
 }`
 	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `partialIsEvenDivisibleBy := func(num *float32) bool { return *num % 10 == 0 }`
+	s2 = `partialIsEvenDivisibleBy := func(num *float32) bool { return int(*num) % 10 == 0 }`
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `partialIsEvenDivisibleBy := func(num *float64) bool { return *num % 10 == 0 }`
+	s2 = `partialIsEvenDivisibleBy := func(num *float64) bool { return int(*num) % 10 == 0 }`
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `partialIsEvenDivisibleBy := func(num *string) bool { return *num % 10 == 0 }`
+	s2 = `partialIsEvenDivisibleBy := func(num *string) bool { if *num == "40" { return true }; return false }`
+	code = strings.Replace(code, s1, s2, -1)
+
 	return code
 }
