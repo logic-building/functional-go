@@ -95,6 +95,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "RestPtr",
+		codeTemplate:      basic.RestPtr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "restptr.go",
+
+		testTemplate:          basic.RestPtrTest(),
+		testTemplateBool:      basic.RestPtrTestBool(),
+		generatedTestFileName: "restptr_test.go",
+	},
+
+	fpCode{
 		function:          "DropLastPtr",
 		codeTemplate:      basic.DropLastPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
