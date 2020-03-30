@@ -74,6 +74,10 @@ Note:
    A. fp.go               :  generated code
    B. employee            :  package name
    C. "Employee, Teacher" :  User defined data types
+   
+Note: Another option : -mapfun "true"
+   This allows to include function - merge,zip
+   Caution: It will complain at runtime if struct contains slice or array 
 
 3. Generate functional code
    go generate ./...
@@ -146,6 +150,9 @@ DistinctFloat64
 DistinctFloat32
 DistinctStr
 
+add Ptr at end for pointer versioon function
+eg. DistinctIntPtr
+
 Takes function as argument and apply it on each item in the list and return list
 MapInt
 MapInt64
@@ -183,6 +190,9 @@ PmapStr
 PMapStrInt64
 PMapInt64Str
 
+add Ptr at end for pointer versioon function
+eg. PMapInt64StrPtr
+
 Takes function as argument and apply it on each item in the list and return filtered list
 FilterInt
 FilterInt64
@@ -197,6 +207,9 @@ FilterUint8
 FilterFloat64
 FilterFloat32
 FilterStr
+
+add Ptr at end for pointer versioon function
+eg. FilterIntPtr
 
 Takes two functions as argument and apply them on each item in the list and return the filtered list
 FilterMapInt
@@ -215,6 +228,9 @@ FilterMapStr
     And also all basic combination such as
 FilterMapStrInt64
 FilterMapInt64Str
+
+add Ptr at end for pointer versioon function
+eg. FilterMapIntPtr
 
 Takes list as parameter and returns new list which includes all the items except 1st one.
     Input: list
@@ -237,6 +253,9 @@ RestUint8
 RestFloat64
 RestFloat32
 RestStr
+
+add Ptr at end for pointer versioon function
+eg. RestIntPtr
 
 
 Takes function as argument and apply it on each item in the list and return true/false. Returns false if 2nd argument is empty
@@ -268,6 +287,9 @@ EveryFloat64
 EveryFloat32
 EveryStr
 
+add Ptr at end for pointer versioon function
+eg. EveryIntPtr
+
 Takes a number and a list as arguments and returns true if number exists in the list else returns false
 ExistsInt
 ExistsInt64
@@ -282,6 +304,9 @@ ExistsUint8
 ExistsFloat64
 ExistsFloat32
 ExistsStr
+
+add Ptr at end for pointer versioon function
+eg. ExistsIntPtr
 
 Takes list as argument and return max number
 - Returns 0 if list is either empty or nil
@@ -298,6 +323,9 @@ MaxUint16
 MaxUint8
 MaxFloat64
 MaxFloat32
+
+add Ptr at end for pointer versioon function
+eg. MaxIntPtr
 
 Takes list as argument and return min number
 - Returns 0 if list is either empty or nil

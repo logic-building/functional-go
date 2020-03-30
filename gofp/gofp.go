@@ -73,7 +73,7 @@ var (
 	pkgName     = flag.String("pkg", "", "package name for generated files")
 	types       = flag.String("type", "", "user defined type")
 	imports     = flag.String("imports", "", "import statements for user defined types when structs are in different package")
-	mapFunction = flag.String("map-function", "", "this allows to create map function such as zip, merge.")
+	mapFunction = flag.String("mapfun", "", "this allows to create map function such as zip, merge.")
 )
 
 func main() {
@@ -175,6 +175,9 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		template = r.Replace(template)
 
 		template += template2.Map()
+		template = r.Replace(template)
+
+		template += template2.MapPtr()
 		template = r.Replace(template)
 
 		template += template2.Filter()

@@ -14,6 +14,17 @@ func Map(f func(Employer) Employer, list []Employer) []Employer {
 	return newList
 }
 
+func MapPtr(f func(*Employer) *Employer, list []*Employer) []*Employer {
+	if f == nil {
+		return []*Employer{}
+	}
+	newList := make([]*Employer, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 func Filter(f func(Employer) bool, list []Employer) []Employer {
 	if f == nil {
 		return []Employer{}
@@ -220,6 +231,17 @@ func MapEmployee(f func(employee.Employee) employee.Employee, list []employee.Em
 		return []employee.Employee{}
 	}
 	newList := make([]employee.Employee, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+func MapEmployeePtr(f func(*employee.Employee) *employee.Employee, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	newList := make([]*employee.Employee, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
