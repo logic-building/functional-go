@@ -464,6 +464,19 @@ func MapEmployerEmployee(f func(employer.Employer) employee.Employee, list []emp
 	return newList
 }
 
+// MapEmployerEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapEmployerEmployeePtr(f func(*employer.Employer) *employee.Employee, list []*employer.Employer) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	newList := make([]*employee.Employee, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapEmployerEmployee applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -534,6 +547,19 @@ func MapEmployerInt(f func(employer.Employer) int, list []employer.Employer) []i
 		return []int{}
 	}
 	newList := make([]int, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapEmployerInt takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapEmployerIntPtr(f func(*employer.Employer) *int, list []*employer.Employer) []*int {
+	if f == nil {
+		return []*int{}
+	}
+	newList := make([]*int, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -616,6 +642,19 @@ func MapEmployeeEmployer(f func(employee.Employee) employer.Employer, list []emp
 	return newList
 }
 
+// MapEmployeeEmployer takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapEmployeeEmployerPtr(f func(*employee.Employee) *employer.Employer, list []*employee.Employee) []*employer.Employer {
+	if f == nil {
+		return []*employer.Employer{}
+	}
+	newList := make([]*employer.Employer, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapEmployeeEmployer applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -686,6 +725,19 @@ func MapEmployeeInt(f func(employee.Employee) int, list []employee.Employee) []i
 		return []int{}
 	}
 	newList := make([]int, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapEmployeeInt takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapEmployeeIntPtr(f func(*employee.Employee) *int, list []*employee.Employee) []*int {
+	if f == nil {
+		return []*int{}
+	}
+	newList := make([]*int, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -768,6 +820,19 @@ func MapIntEmployer(f func(int) employer.Employer, list []int) []employer.Employ
 	return newList
 }
 
+// MapIntEmployer takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapIntEmployerPtr(f func(*int) *employer.Employer, list []*int) []*employer.Employer {
+	if f == nil {
+		return []*employer.Employer{}
+	}
+	newList := make([]*employer.Employer, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapIntEmployer applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -838,6 +903,19 @@ func MapIntEmployee(f func(int) employee.Employee, list []int) []employee.Employ
 		return []employee.Employee{}
 	}
 	newList := make([]employee.Employee, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapIntEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapIntEmployeePtr(f func(*int) *employee.Employee, list []*int) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	newList := make([]*employee.Employee, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
