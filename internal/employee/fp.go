@@ -462,6 +462,19 @@ func MapEmployeeTeacher(f func(Employee) Teacher, list []Employee) []Teacher {
 	return newList
 }
 
+// MapEmployeeTeacher takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapEmployeeTeacherPtr(f func(*Employee) *Teacher, list []*Employee) []*Teacher {
+	if f == nil {
+		return []*Teacher{}
+	}
+	newList := make([]*Teacher, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapEmployeeTeacher applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -532,6 +545,19 @@ func MapEmployeeInt(f func(Employee) int, list []Employee) []int {
 		return []int{}
 	}
 	newList := make([]int, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapEmployeeInt takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapEmployeeIntPtr(f func(*Employee) *int, list []*Employee) []*int {
+	if f == nil {
+		return []*int{}
+	}
+	newList := make([]*int, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -614,6 +640,19 @@ func MapEmployeeStr(f func(Employee) string, list []Employee) []string {
 	return newList
 }
 
+// MapEmployeeStr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapEmployeeStrPtr(f func(*Employee) *string, list []*Employee) []*string {
+	if f == nil {
+		return []*string{}
+	}
+	newList := make([]*string, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapEmployeeStr applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -684,6 +723,19 @@ func MapTeacherEmployee(f func(Teacher) Employee, list []Teacher) []Employee {
 		return []Employee{}
 	}
 	newList := make([]Employee, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapTeacherEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapTeacherEmployeePtr(f func(*Teacher) *Employee, list []*Teacher) []*Employee {
+	if f == nil {
+		return []*Employee{}
+	}
+	newList := make([]*Employee, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -766,6 +818,19 @@ func MapTeacherInt(f func(Teacher) int, list []Teacher) []int {
 	return newList
 }
 
+// MapTeacherInt takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapTeacherIntPtr(f func(*Teacher) *int, list []*Teacher) []*int {
+	if f == nil {
+		return []*int{}
+	}
+	newList := make([]*int, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapTeacherInt applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -836,6 +901,19 @@ func MapTeacherStr(f func(Teacher) string, list []Teacher) []string {
 		return []string{}
 	}
 	newList := make([]string, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapTeacherStr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapTeacherStrPtr(f func(*Teacher) *string, list []*Teacher) []*string {
+	if f == nil {
+		return []*string{}
+	}
+	newList := make([]*string, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -918,6 +996,19 @@ func MapIntEmployee(f func(int) Employee, list []int) []Employee {
 	return newList
 }
 
+// MapIntEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapIntEmployeePtr(f func(*int) *Employee, list []*int) []*Employee {
+	if f == nil {
+		return []*Employee{}
+	}
+	newList := make([]*Employee, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapIntEmployee applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -988,6 +1079,19 @@ func MapIntTeacher(f func(int) Teacher, list []int) []Teacher {
 		return []Teacher{}
 	}
 	newList := make([]Teacher, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapIntTeacher takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapIntTeacherPtr(f func(*int) *Teacher, list []*int) []*Teacher {
+	if f == nil {
+		return []*Teacher{}
+	}
+	newList := make([]*Teacher, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}
@@ -1070,6 +1174,19 @@ func MapStrEmployee(f func(string) Employee, list []string) []Employee {
 	return newList
 }
 
+// MapStrEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapStrEmployeePtr(f func(*string) *Employee, list []*string) []*Employee {
+	if f == nil {
+		return []*Employee{}
+	}
+	newList := make([]*Employee, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
 // PMapStrEmployee applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -1140,6 +1257,19 @@ func MapStrTeacher(f func(string) Teacher, list []string) []Teacher {
 		return []Teacher{}
 	}
 	newList := make([]Teacher, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}
+
+// MapStrTeacher takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
+func MapStrTeacherPtr(f func(*string) *Teacher, list []*string) []*Teacher {
+	if f == nil {
+		return []*Teacher{}
+	}
+	newList := make([]*Teacher, len(list))
 	for i, v := range list {
 		newList[i] = f(v)
 	}

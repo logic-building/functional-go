@@ -260,6 +260,9 @@ func generateFPCodeIO(pkg, dataTypes string) (string, error) {
 			template += basic.MapIO()
 			template = r.Replace(template)
 
+			template += basic.MapIOPtr()
+			template = r.Replace(template)
+
 			template += basic.PMapIO()
 			template = r.Replace(template)
 
