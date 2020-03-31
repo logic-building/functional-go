@@ -180,6 +180,19 @@ func FilterMapEmployer(fFilter func(employer.Employer) bool, fMap func(employer.
 	return newList
 }
 
+func FilterMapEmployerPtr(fFilter func(*employer.Employer) bool, fMap func(*employer.Employer) *employer.Employer, list []*employer.Employer) []*employer.Employer {
+	if fFilter == nil || fMap == nil {
+		return []*employer.Employer{}
+	}
+	var newList []*employer.Employer
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 func RestEmployer(l []employer.Employer) []employer.Employer {
 	if l == nil {
 		return []employer.Employer{}
@@ -407,6 +420,19 @@ func FilterMapEmployee(fFilter func(employee.Employee) bool, fMap func(employee.
 		return []employee.Employee{}
 	}
 	var newList []employee.Employee
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+func FilterMapEmployeePtr(fFilter func(*employee.Employee) bool, fMap func(*employee.Employee) *employee.Employee, list []*employee.Employee) []*employee.Employee {
+	if fFilter == nil || fMap == nil {
+		return []*employee.Employee{}
+	}
+	var newList []*employee.Employee
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))

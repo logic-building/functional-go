@@ -178,6 +178,19 @@ func FilterMap(fFilter func(Employee) bool, fMap func(Employee) Employee, list [
 	return newList
 }
 
+func FilterMapPtr(fFilter func(*Employee) bool, fMap func(*Employee) *Employee, list []*Employee) []*Employee {
+	if fFilter == nil || fMap == nil {
+		return []*Employee{}
+	}
+	var newList []*Employee
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
 func Rest(l []Employee) []Employee {
 	if l == nil {
 		return []Employee{}
@@ -405,6 +418,19 @@ func FilterMapTeacher(fFilter func(Teacher) bool, fMap func(Teacher) Teacher, li
 		return []Teacher{}
 	}
 	var newList []Teacher
+	for _, v := range list {
+		if fFilter(v) {
+			newList = append(newList, fMap(v))
+		}
+	}
+	return newList
+}
+
+func FilterMapTeacherPtr(fFilter func(*Teacher) bool, fMap func(*Teacher) *Teacher, list []*Teacher) []*Teacher {
+	if fFilter == nil || fMap == nil {
+		return []*Teacher{}
+	}
+	var newList []*Teacher
 	for _, v := range list {
 		if fFilter(v) {
 			newList = append(newList, fMap(v))
