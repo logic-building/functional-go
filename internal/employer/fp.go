@@ -113,6 +113,18 @@ func Every(f func(Employer) bool, list []Employer) bool {
 	return true
 }
 
+func EveryPtr(f func(*Employer) bool, list []*Employer) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+	for _, v := range list {
+		if !f(v) {
+			return false
+		}
+	}
+	return true
+}
+
 func DropWhile(f func(Employer) bool, list []Employer) []Employer {
 	if f == nil {
 		return []Employer{}
@@ -377,6 +389,18 @@ func SomeEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee)
 }
 
 func EveryEmployee(f func(employee.Employee) bool, list []employee.Employee) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+	for _, v := range list {
+		if !f(v) {
+			return false
+		}
+	}
+	return true
+}
+
+func EveryEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) bool {
 	if f == nil || len(list) == 0 {
 		return false
 	}

@@ -114,6 +114,18 @@ func EveryEmployer(f func(employer.Employer) bool, list []employer.Employer) boo
 	return true
 }
 
+func EveryEmployerPtr(f func(*employer.Employer) bool, list []*employer.Employer) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+	for _, v := range list {
+		if !f(v) {
+			return false
+		}
+	}
+	return true
+}
+
 func DropWhileEmployer(f func(employer.Employer) bool, list []employer.Employer) []employer.Employer {
 	if f == nil {
 		return []employer.Employer{}
@@ -378,6 +390,18 @@ func SomeEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee)
 }
 
 func EveryEmployee(f func(employee.Employee) bool, list []employee.Employee) bool {
+	if f == nil || len(list) == 0 {
+		return false
+	}
+	for _, v := range list {
+		if !f(v) {
+			return false
+		}
+	}
+	return true
+}
+
+func EveryEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) bool {
 	if f == nil || len(list) == 0 {
 		return false
 	}
