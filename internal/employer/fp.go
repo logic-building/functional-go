@@ -135,6 +135,20 @@ func TakeWhile(f func(Employer) bool, list []Employer) []Employer {
 	return newList
 }
 
+func TakeWhilePtr(f func(*Employer) bool, list []*Employer) []*Employer {
+	if f == nil {
+		return []*Employer{}
+	}
+	var newList []*Employer
+	for _, v := range list {
+		if !f(v) {
+			return newList
+		}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
 func PMap(f func(Employer) Employer, list []Employer) []Employer {
 	if f == nil {
 		return []Employer{}
@@ -374,6 +388,20 @@ func TakeWhileEmployee(f func(employee.Employee) bool, list []employee.Employee)
 		return []employee.Employee{}
 	}
 	var newList []employee.Employee
+	for _, v := range list {
+		if !f(v) {
+			return newList
+		}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
+func TakeWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	var newList []*employee.Employee
 	for _, v := range list {
 		if !f(v) {
 			return newList

@@ -136,6 +136,20 @@ func TakeWhileEmployer(f func(employer.Employer) bool, list []employer.Employer)
 	return newList
 }
 
+func TakeWhileEmployerPtr(f func(*employer.Employer) bool, list []*employer.Employer) []*employer.Employer {
+	if f == nil {
+		return []*employer.Employer{}
+	}
+	var newList []*employer.Employer
+	for _, v := range list {
+		if !f(v) {
+			return newList
+		}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
 func PMapEmployer(f func(employer.Employer) employer.Employer, list []employer.Employer) []employer.Employer {
 	if f == nil {
 		return []employer.Employer{}
@@ -375,6 +389,20 @@ func TakeWhileEmployee(f func(employee.Employee) bool, list []employee.Employee)
 		return []employee.Employee{}
 	}
 	var newList []employee.Employee
+	for _, v := range list {
+		if !f(v) {
+			return newList
+		}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
+func TakeWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	var newList []*employee.Employee
 	for _, v := range list {
 		if !f(v) {
 			return newList
