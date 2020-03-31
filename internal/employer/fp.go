@@ -146,6 +146,27 @@ func DropWhile(f func(Employer) bool, list []Employer) []Employer {
 	return newList
 }
 
+func DropWhilePtr(f func(*Employer) bool, list []*Employer) []*Employer {
+	if f == nil {
+		return []*Employer{}
+	}
+	var newList []*Employer
+	for i, v := range list {
+		if !f(v) {
+			listLen := len(list)
+			newList = make([]*Employer, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList
+		}
+	}
+	return newList
+}
+
 func TakeWhile(f func(Employer) bool, list []Employer) []Employer {
 	if f == nil {
 		return []Employer{}
@@ -421,6 +442,27 @@ func DropWhileEmployee(f func(employee.Employee) bool, list []employee.Employee)
 		if !f(v) {
 			listLen := len(list)
 			newList = make([]employee.Employee, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList
+		}
+	}
+	return newList
+}
+
+func DropWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	var newList []*employee.Employee
+	for i, v := range list {
+		if !f(v) {
+			listLen := len(list)
+			newList = make([]*employee.Employee, listLen-i)
 			j := 0
 			for i < listLen {
 				newList[j] = list[i]
