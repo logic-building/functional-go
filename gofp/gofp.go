@@ -231,6 +231,9 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		template += template2.Reduce()
 		template = r.Replace(template)
 
+		template += template2.ReducePtr()
+		template = r.Replace(template)
+
 		template += template2.DropLast()
 		template = r.Replace(template)
 	}
