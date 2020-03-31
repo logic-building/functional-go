@@ -19,7 +19,7 @@ go get -u github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.1.0"
+version = "8.3.0"
 ```
 
 ### Quick Start

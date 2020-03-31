@@ -201,6 +201,9 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		template += template2.Every()
 		template = r.Replace(template)
 
+		template += template2.EveryPtr()
+		template = r.Replace(template)
+
 		template += template2.DropWhile()
 		template = r.Replace(template)
 
