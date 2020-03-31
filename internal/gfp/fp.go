@@ -77,6 +77,18 @@ func SomeEmployer(f func(employer.Employer) bool, list []employer.Employer) bool
 	return false
 }
 
+func SomeEmployerPtr(f func(*employer.Employer) bool, list []*employer.Employer) bool {
+	if f == nil {
+		return false
+	}
+	for _, v := range list {
+		if f(v) {
+			return true
+		}
+	}
+	return false
+}
+
 func EveryEmployer(f func(employer.Employer) bool, list []employer.Employer) bool {
 	if f == nil || len(list) == 0 {
 		return false
@@ -289,6 +301,18 @@ func RemoveEmployee(f func(employee.Employee) bool, list []employee.Employee) []
 }
 
 func SomeEmployee(f func(employee.Employee) bool, list []employee.Employee) bool {
+	if f == nil {
+		return false
+	}
+	for _, v := range list {
+		if f(v) {
+			return true
+		}
+	}
+	return false
+}
+
+func SomeEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) bool {
 	if f == nil {
 		return false
 	}
