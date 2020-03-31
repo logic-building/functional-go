@@ -225,6 +225,39 @@ func PMap(f func(Employee) Employee, list []Employee) []Employee {
 	return newList
 }
 
+// PMapPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapPtr(f func(*Employee) *Employee, list []*Employee) []*Employee {
+	if f == nil {
+		return []*Employee{}
+	}
+
+	ch := make(chan map[int]*Employee)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Employee, i int, v *Employee) {
+			defer wg.Done()
+			ch <- map[int]*Employee{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 func FilterMap(fFilter func(Employee) bool, fMap func(Employee) Employee, list []Employee) []Employee {
 	if fFilter == nil || fMap == nil {
 		return []Employee{}
@@ -550,6 +583,39 @@ func PMapTeacher(f func(Teacher) Teacher, list []Teacher) []Teacher {
 	}()
 
 	newList := make([]Teacher, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapTeacherPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapTeacherPtr(f func(*Teacher) *Teacher, list []*Teacher) []*Teacher {
+	if f == nil {
+		return []*Teacher{}
+	}
+
+	ch := make(chan map[int]*Teacher)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Teacher, i int, v *Teacher) {
+			defer wg.Done()
+			ch <- map[int]*Teacher{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*Teacher, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
