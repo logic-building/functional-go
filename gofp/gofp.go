@@ -204,6 +204,9 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		template += template2.TakeWhile()
 		template = r.Replace(template)
 
+		template += template2.TakeWhilePtr()
+		template = r.Replace(template)
+
 		template += template2.Pmap()
 		template = r.Replace(template)
 

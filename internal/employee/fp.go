@@ -134,6 +134,20 @@ func TakeWhile(f func(Employee) bool, list []Employee) []Employee {
 	return newList
 }
 
+func TakeWhilePtr(f func(*Employee) bool, list []*Employee) []*Employee {
+	if f == nil {
+		return []*Employee{}
+	}
+	var newList []*Employee
+	for _, v := range list {
+		if !f(v) {
+			return newList
+		}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
 func PMap(f func(Employee) Employee, list []Employee) []Employee {
 	if f == nil {
 		return []Employee{}
@@ -373,6 +387,20 @@ func TakeWhileTeacher(f func(Teacher) bool, list []Teacher) []Teacher {
 		return []Teacher{}
 	}
 	var newList []Teacher
+	for _, v := range list {
+		if !f(v) {
+			return newList
+		}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
+func TakeWhileTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
+	if f == nil {
+		return []*Teacher{}
+	}
+	var newList []*Teacher
 	for _, v := range list {
 		if !f(v) {
 			return newList
