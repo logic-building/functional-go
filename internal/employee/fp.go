@@ -293,6 +293,31 @@ func Reduce(f func(Employee, Employee) Employee, list []Employee, initializer ..
 	return Reduce(f, list[1:], r)
 }
 
+func ReducePtr(f func(*Employee, *Employee) *Employee, list []*Employee, initializer ...Employee) *Employee {
+	var initVal Employee
+	var init *Employee = &initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = &initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0]
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init
+	}
+
+	r := f(init, list[0])
+	return ReducePtr(f, list[1:], *r)
+}
+
 // DropLast drops last item from the list and returns new list.
 // Returns empty list if there is only one item in the list or list empty
 func DropLast(list []Employee) []Employee {
@@ -599,6 +624,31 @@ func ReduceTeacher(f func(Teacher, Teacher) Teacher, list []Teacher, initializer
 	}
 	r := f(init, list[0])
 	return ReduceTeacher(f, list[1:], r)
+}
+
+func ReduceTeacherPtr(f func(*Teacher, *Teacher) *Teacher, list []*Teacher, initializer ...Teacher) *Teacher {
+	var initVal Teacher
+	var init *Teacher = &initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = &initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0]
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init
+	}
+
+	r := f(init, list[0])
+	return ReduceTeacherPtr(f, list[1:], *r)
 }
 
 // DropLastTeacher drops last item from the list and returns new list.
