@@ -227,6 +227,39 @@ func PMapEmployer(f func(employer.Employer) employer.Employer, list []employer.E
 	return newList
 }
 
+// PMapEmployerPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapEmployerPtr(f func(*employer.Employer) *employer.Employer, list []*employer.Employer) []*employer.Employer {
+	if f == nil {
+		return []*employer.Employer{}
+	}
+
+	ch := make(chan map[int]*employer.Employer)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employer.Employer, i int, v *employer.Employer) {
+			defer wg.Done()
+			ch <- map[int]*employer.Employer{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*employer.Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 func FilterMapEmployer(fFilter func(employer.Employer) bool, fMap func(employer.Employer) employer.Employer, list []employer.Employer) []employer.Employer {
 	if fFilter == nil || fMap == nil {
 		return []employer.Employer{}
@@ -552,6 +585,39 @@ func PMapEmployee(f func(employee.Employee) employee.Employee, list []employee.E
 	}()
 
 	newList := make([]employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapEmployeePtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapEmployeePtr(f func(*employee.Employee) *employee.Employee, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+
+	ch := make(chan map[int]*employee.Employee)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employee.Employee, i int, v *employee.Employee) {
+			defer wg.Done()
+			ch <- map[int]*employee.Employee{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*employee.Employee, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v

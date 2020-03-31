@@ -226,6 +226,39 @@ func PMap(f func(Employer) Employer, list []Employer) []Employer {
 	return newList
 }
 
+// PMapPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapPtr(f func(*Employer) *Employer, list []*Employer) []*Employer {
+	if f == nil {
+		return []*Employer{}
+	}
+
+	ch := make(chan map[int]*Employer)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Employer, i int, v *Employer) {
+			defer wg.Done()
+			ch <- map[int]*Employer{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
 func FilterMap(fFilter func(Employer) bool, fMap func(Employer) Employer, list []Employer) []Employer {
 	if fFilter == nil || fMap == nil {
 		return []Employer{}
@@ -551,6 +584,39 @@ func PMapEmployee(f func(employee.Employee) employee.Employee, list []employee.E
 	}()
 
 	newList := make([]employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapEmployeePtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapEmployeePtr(f func(*employee.Employee) *employee.Employee, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+
+	ch := make(chan map[int]*employee.Employee)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employee.Employee, i int, v *employee.Employee) {
+			defer wg.Done()
+			ch <- map[int]*employee.Employee{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*employee.Employee, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
