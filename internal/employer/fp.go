@@ -64,6 +64,19 @@ func Remove(f func(Employer) bool, list []Employer) []Employer {
 	return newList
 }
 
+func RemovePtr(f func(*Employer) bool, list []*Employer) []*Employer {
+	if f == nil {
+		return []*Employer{}
+	}
+	var newList []*Employer
+	for _, v := range list {
+		if !f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
 func Some(f func(Employer) bool, list []Employer) bool {
 	if f == nil {
 		return false
@@ -318,6 +331,19 @@ func RemoveEmployee(f func(employee.Employee) bool, list []employee.Employee) []
 		return []employee.Employee{}
 	}
 	var newList []employee.Employee
+	for _, v := range list {
+		if !f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}
+
+func RemoveEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+	var newList []*employee.Employee
 	for _, v := range list {
 		if !f(v) {
 			newList = append(newList, v)
