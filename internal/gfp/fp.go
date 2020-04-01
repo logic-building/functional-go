@@ -370,6 +370,23 @@ func DropLastEmployer(list []employer.Employer) []employer.Employer {
 	return newList
 }
 
+// DropLastEmployerPtr drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastEmployerPtr(list []*employer.Employer) []*employer.Employer {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []*employer.Employer{}
+	}
+
+	newList := make([]*employer.Employer, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
 func MapEmployee(f func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
 	if f == nil {
 		return []employee.Employee{}
@@ -729,6 +746,23 @@ func DropLastEmployee(list []employee.Employee) []employee.Employee {
 	}
 
 	newList := make([]employee.Employee, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// DropLastEmployeePtr drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastEmployeePtr(list []*employee.Employee) []*employee.Employee {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []*employee.Employee{}
+	}
+
+	newList := make([]*employee.Employee, listLen-1)
 
 	for i := 0; i < listLen-1; i++ {
 		newList[i] = list[i]
