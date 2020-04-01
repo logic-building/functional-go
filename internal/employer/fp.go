@@ -304,6 +304,27 @@ func Rest(l []Employer) []Employer {
 	return newList
 }
 
+
+// Rest removes 1st item of the list and return new list having rest of the items
+func RestPtr(l []*Employer) []*Employer {
+	if l == nil {
+		return []*Employer{}
+	}
+
+	len := len(l)
+	if len == 0 || len == 1 {
+		return []*Employer{}
+	}
+
+	newList := make([]*Employer, len-1)
+
+	for i, v := range l[1:] {
+		newList[i] = v
+	}
+
+	return newList
+}
+
 func Reduce(f func(Employer, Employer) Employer, list []Employer, initializer ...Employer) Employer {
 	var init Employer 
 	lenList := len(list)
@@ -679,6 +700,27 @@ func RestEmployee(l []employee.Employee) []employee.Employee {
 	}
 
 	newList := make([]employee.Employee, len-1)
+
+	for i, v := range l[1:] {
+		newList[i] = v
+	}
+
+	return newList
+}
+
+
+// RestEmployee removes 1st item of the list and return new list having rest of the items
+func RestEmployeePtr(l []*employee.Employee) []*employee.Employee {
+	if l == nil {
+		return []*employee.Employee{}
+	}
+
+	len := len(l)
+	if len == 0 || len == 1 {
+		return []*employee.Employee{}
+	}
+
+	newList := make([]*employee.Employee, len-1)
 
 	for i, v := range l[1:] {
 		newList[i] = v
