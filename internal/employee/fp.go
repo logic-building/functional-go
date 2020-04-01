@@ -368,6 +368,23 @@ func DropLast(list []Employee) []Employee {
 	return newList
 }
 
+// DropLastPtr drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastPtr(list []*Employee) []*Employee {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []*Employee{}
+	}
+
+	newList := make([]*Employee, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
 func MapTeacher(f func(Teacher) Teacher, list []Teacher) []Teacher {
 	if f == nil {
 		return []Teacher{}
@@ -727,6 +744,23 @@ func DropLastTeacher(list []Teacher) []Teacher {
 	}
 
 	newList := make([]Teacher, listLen-1)
+
+	for i := 0; i < listLen-1; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// DropLastTeacherPtr drops last item from the list and returns new list.
+// Returns empty list if there is only one item in the list or list empty
+func DropLastTeacherPtr(list []*Teacher) []*Teacher {
+	listLen := len(list)
+
+	if list == nil || listLen == 0 || listLen == 1 {
+		return []*Teacher{}
+	}
+
+	newList := make([]*Teacher, listLen-1)
 
 	for i := 0; i < listLen-1; i++ {
 		newList[i] = list[i]
