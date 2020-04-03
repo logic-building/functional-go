@@ -24,6 +24,27 @@ func MapPtr(f func(*Employee) *Employee, list []*Employee) []*Employee {
 	return newList
 }
 
+// MapPtrErr takes 2 arguments:
+//  1. A function input argument: Employee and return types (Employee, error)
+//  2. A list of type []*Employee
+
+// Returns:
+// 	([]*Employee, error)
+func MapPtrErr(f func(*Employee) (*Employee, error), list []*Employee) ([]*Employee, error) {
+	if f == nil {
+		return []*Employee{}, nil
+	}
+	newList := make([]*Employee, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
+}
+
 func Filter(f func(Employee) bool, list []Employee) []Employee {
 	if f == nil {
 		return []Employee{}
@@ -426,6 +447,27 @@ func MapTeacherPtr(f func(*Teacher) *Teacher, list []*Teacher) []*Teacher {
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapTeacherPtrErr takes 2 arguments:
+//  1. A function input argument: Teacher and return types (Teacher, error)
+//  2. A list of type []*Teacher
+
+// Returns:
+// 	([]*Teacher, error)
+func MapTeacherPtrErr(f func(*Teacher) (*Teacher, error), list []*Teacher) ([]*Teacher, error) {
+	if f == nil {
+		return []*Teacher{}, nil
+	}
+	newList := make([]*Teacher, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
 }
 
 func FilterTeacher(f func(Teacher) bool, list []Teacher) []Teacher {

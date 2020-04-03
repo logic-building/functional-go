@@ -1392,65 +1392,7 @@ func squareStrPtr(num *string) *string {
 	s2 = `partialIsEvenDivisibleBy := func(num *string) bool { if *num == "40" { return true }; return false }`
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `import (
-    _ "errors"
-	"reflect"
-	"testing"
-)
-
-func TestMapIntPtrErr(t *testing.T) {`
-	s2 = `import (
-    "errors"
-	"reflect"
-	"testing"
-)
-
-func TestMapIntPtrErr(t *testing.T) {`
-	code = strings.Replace(code, s1, s2, -1)
-
-	s1 = `func addStrPtrErr(num1, num2 *string) (*string, error) {
-	if *num1 < 1 {
-		return nil, errors.New("Negative value not allowed")
-	}
-    result := *num1 + *num2
-	return &result, nil
-}`
-	s2 = `func addStrPtrErr(num1, num2 *string) (*string, error) {
-	if *num1 == "0" {
-		return nil, errors.New("0 is not allowed")
-	}
-    result := *num1 + *num2
-	return &result, nil
-}`
-	code = strings.Replace(code, s1, s2, -1)
-
-	s1 = `func TestMapStrPtrErr(t *testing.T) {
-	var v1 string = "1"
-	var v2 string = "2"
-	var v3 string = "3"
-	var v5 string = "5"
-	var v6 string = "6"
-	var v7 string = "7"
-	var v8 string = "8"
-
-
-	// Test: add 5 to each item in the list
-	expectedSumList := []*string{&v6, &v7, &v8}`
-
-	s2 = `func TestMapStrPtrErr(t *testing.T) {
-	var v1 string = "1"
-	var v2 string = "2"
-	var v3 string = "3"
-	var v5 string = "5"
-	var v6 string = "51"
-	var v7 string = "52"
-	var v8 string = "53"
-
-
-	// Test: add 5 to each item in the list
-	expectedSumList := []*string{&v6, &v7, &v8}`
-
-	code = strings.Replace(code, s1, s2, -1)
+	code = basic.ReplaceActivityMapPtrErrTest(code)
 
 	return code
 }
