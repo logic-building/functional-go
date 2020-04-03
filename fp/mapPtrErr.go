@@ -1,7 +1,7 @@
 package fp
 
 // MapIntPtrErr takes 2 arguments:
-//  1. A function input argument: int and return types (int, error)
+//  1. A function input argument: *int and return types (*int, error)
 //  2. A list of type []*int
 
 // Returns:
@@ -22,7 +22,7 @@ func MapIntPtrErr(f func(*int) (*int, error), list []*int) ([]*int, error) {
 }
 
 // MapInt64PtrErr takes 2 arguments:
-//  1. A function input argument: int64 and return types (int64, error)
+//  1. A function input argument: *int64 and return types (*int64, error)
 //  2. A list of type []*int64
 
 // Returns:
@@ -43,7 +43,7 @@ func MapInt64PtrErr(f func(*int64) (*int64, error), list []*int64) ([]*int64, er
 }
 
 // MapInt32PtrErr takes 2 arguments:
-//  1. A function input argument: int32 and return types (int32, error)
+//  1. A function input argument: *int32 and return types (*int32, error)
 //  2. A list of type []*int32
 
 // Returns:
@@ -64,7 +64,7 @@ func MapInt32PtrErr(f func(*int32) (*int32, error), list []*int32) ([]*int32, er
 }
 
 // MapInt16PtrErr takes 2 arguments:
-//  1. A function input argument: int16 and return types (int16, error)
+//  1. A function input argument: *int16 and return types (*int16, error)
 //  2. A list of type []*int16
 
 // Returns:
@@ -85,7 +85,7 @@ func MapInt16PtrErr(f func(*int16) (*int16, error), list []*int16) ([]*int16, er
 }
 
 // MapInt8PtrErr takes 2 arguments:
-//  1. A function input argument: int8 and return types (int8, error)
+//  1. A function input argument: *int8 and return types (*int8, error)
 //  2. A list of type []*int8
 
 // Returns:
@@ -106,7 +106,7 @@ func MapInt8PtrErr(f func(*int8) (*int8, error), list []*int8) ([]*int8, error) 
 }
 
 // MapUintPtrErr takes 2 arguments:
-//  1. A function input argument: uint and return types (uint, error)
+//  1. A function input argument: *uint and return types (*uint, error)
 //  2. A list of type []*uint
 
 // Returns:
@@ -127,7 +127,7 @@ func MapUintPtrErr(f func(*uint) (*uint, error), list []*uint) ([]*uint, error) 
 }
 
 // MapUint64PtrErr takes 2 arguments:
-//  1. A function input argument: uint64 and return types (uint64, error)
+//  1. A function input argument: *uint64 and return types (*uint64, error)
 //  2. A list of type []*uint64
 
 // Returns:
@@ -148,7 +148,7 @@ func MapUint64PtrErr(f func(*uint64) (*uint64, error), list []*uint64) ([]*uint6
 }
 
 // MapUint32PtrErr takes 2 arguments:
-//  1. A function input argument: uint32 and return types (uint32, error)
+//  1. A function input argument: *uint32 and return types (*uint32, error)
 //  2. A list of type []*uint32
 
 // Returns:
@@ -169,7 +169,7 @@ func MapUint32PtrErr(f func(*uint32) (*uint32, error), list []*uint32) ([]*uint3
 }
 
 // MapUint16PtrErr takes 2 arguments:
-//  1. A function input argument: uint16 and return types (uint16, error)
+//  1. A function input argument: *uint16 and return types (*uint16, error)
 //  2. A list of type []*uint16
 
 // Returns:
@@ -190,7 +190,7 @@ func MapUint16PtrErr(f func(*uint16) (*uint16, error), list []*uint16) ([]*uint1
 }
 
 // MapUint8PtrErr takes 2 arguments:
-//  1. A function input argument: uint8 and return types (uint8, error)
+//  1. A function input argument: *uint8 and return types (*uint8, error)
 //  2. A list of type []*uint8
 
 // Returns:
@@ -211,7 +211,7 @@ func MapUint8PtrErr(f func(*uint8) (*uint8, error), list []*uint8) ([]*uint8, er
 }
 
 // MapStrPtrErr takes 2 arguments:
-//  1. A function input argument: string and return types (string, error)
+//  1. A function input argument: *string and return types (*string, error)
 //  2. A list of type []*string
 
 // Returns:
@@ -232,7 +232,7 @@ func MapStrPtrErr(f func(*string) (*string, error), list []*string) ([]*string, 
 }
 
 // MapBoolPtrErr takes 2 arguments:
-//  1. A function input argument: bool and return types (bool, error)
+//  1. A function input argument: *bool and return types (*bool, error)
 //  2. A list of type []*bool
 
 // Returns:
@@ -253,7 +253,7 @@ func MapBoolPtrErr(f func(*bool) (*bool, error), list []*bool) ([]*bool, error) 
 }
 
 // MapFloat32PtrErr takes 2 arguments:
-//  1. A function input argument: float32 and return types (float32, error)
+//  1. A function input argument: *float32 and return types (*float32, error)
 //  2. A list of type []*float32
 
 // Returns:
@@ -274,7 +274,7 @@ func MapFloat32PtrErr(f func(*float32) (*float32, error), list []*float32) ([]*f
 }
 
 // MapFloat64PtrErr takes 2 arguments:
-//  1. A function input argument: float64 and return types (float64, error)
+//  1. A function input argument: *float64 and return types (*float64, error)
 //  2. A list of type []*float64
 
 // Returns:

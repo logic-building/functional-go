@@ -139,6 +139,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "MapErr",
+		codeTemplate:      basic.MapErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "mapErr.go",
+
+		testTemplate:          basic.MapErrTest(),
+		testTemplateBool:      basic.MapErrBoolTest(),
+		generatedTestFileName: "mapErr_test.go",
+	},
+
+	fpCode{
 		function:          "PMapPtr",
 		codeTemplate:      basic.PMapPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1393,6 +1404,7 @@ func squareStrPtr(num *string) *string {
 	code = strings.Replace(code, s1, s2, -1)
 
 	code = basic.ReplaceActivityMapPtrErrTest(code)
+	code = basic.ReplaceActivityMapErrTest(code)
 
 	return code
 }

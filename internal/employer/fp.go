@@ -26,7 +26,7 @@ func MapPtr(f func(*Employer) *Employer, list []*Employer) []*Employer {
 }
 
 // MapPtrErr takes 2 arguments:
-//  1. A function input argument: Employer and return types (Employer, error)
+//  1. A function input argument: *Employer and return types (*Employer, error)
 //  2. A list of type []*Employer
 
 // Returns:
@@ -36,6 +36,27 @@ func MapPtrErr(f func(*Employer) (*Employer, error), list []*Employer) ([]*Emplo
 		return []*Employer{}, nil
 	}
 	newList := make([]*Employer, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
+}
+
+// MapErr takes 2 arguments:
+//  1. A function input argument: Employer and return types (Employer, error)
+//  2. A list of type []Employer
+
+// Returns:
+// 	([]Employer, error)
+func MapErr(f func(Employer) (Employer, error), list []Employer) ([]Employer, error) {
+	if f == nil {
+		return []Employer{}, nil
+	}
+	newList := make([]Employer, len(list))
 	for i, v := range list {
 		var err error
 		newList[i], err = f(v)
@@ -451,7 +472,7 @@ func MapEmployeePtr(f func(*employee.Employee) *employee.Employee, list []*emplo
 }
 
 // MapEmployeePtrErr takes 2 arguments:
-//  1. A function input argument: employee.Employee and return types (employee.Employee, error)
+//  1. A function input argument: *employee.Employee and return types (*employee.Employee, error)
 //  2. A list of type []*employee.Employee
 
 // Returns:
@@ -461,6 +482,27 @@ func MapEmployeePtrErr(f func(*employee.Employee) (*employee.Employee, error), l
 		return []*employee.Employee{}, nil
 	}
 	newList := make([]*employee.Employee, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
+}
+
+// MapEmployeeErr takes 2 arguments:
+//  1. A function input argument: employee.Employee and return types (employee.Employee, error)
+//  2. A list of type []employee.Employee
+
+// Returns:
+// 	([]employee.Employee, error)
+func MapEmployeeErr(f func(employee.Employee) (employee.Employee, error), list []employee.Employee) ([]employee.Employee, error) {
+	if f == nil {
+		return []employee.Employee{}, nil
+	}
+	newList := make([]employee.Employee, len(list))
 	for i, v := range list {
 		var err error
 		newList[i], err = f(v)

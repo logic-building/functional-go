@@ -25,7 +25,7 @@ func MapPtr(f func(*Employee) *Employee, list []*Employee) []*Employee {
 }
 
 // MapPtrErr takes 2 arguments:
-//  1. A function input argument: Employee and return types (Employee, error)
+//  1. A function input argument: *Employee and return types (*Employee, error)
 //  2. A list of type []*Employee
 
 // Returns:
@@ -35,6 +35,27 @@ func MapPtrErr(f func(*Employee) (*Employee, error), list []*Employee) ([]*Emplo
 		return []*Employee{}, nil
 	}
 	newList := make([]*Employee, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
+}
+
+// MapErr takes 2 arguments:
+//  1. A function input argument: Employee and return types (Employee, error)
+//  2. A list of type []Employee
+
+// Returns:
+// 	([]Employee, error)
+func MapErr(f func(Employee) (Employee, error), list []Employee) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+	newList := make([]Employee, len(list))
 	for i, v := range list {
 		var err error
 		newList[i], err = f(v)
@@ -450,7 +471,7 @@ func MapTeacherPtr(f func(*Teacher) *Teacher, list []*Teacher) []*Teacher {
 }
 
 // MapTeacherPtrErr takes 2 arguments:
-//  1. A function input argument: Teacher and return types (Teacher, error)
+//  1. A function input argument: *Teacher and return types (*Teacher, error)
 //  2. A list of type []*Teacher
 
 // Returns:
@@ -460,6 +481,27 @@ func MapTeacherPtrErr(f func(*Teacher) (*Teacher, error), list []*Teacher) ([]*T
 		return []*Teacher{}, nil
 	}
 	newList := make([]*Teacher, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
+}
+
+// MapTeacherErr takes 2 arguments:
+//  1. A function input argument: Teacher and return types (Teacher, error)
+//  2. A list of type []Teacher
+
+// Returns:
+// 	([]Teacher, error)
+func MapTeacherErr(f func(Teacher) (Teacher, error), list []Teacher) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+	newList := make([]Teacher, len(list))
 	for i, v := range list {
 		var err error
 		newList[i], err = f(v)
