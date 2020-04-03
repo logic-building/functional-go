@@ -172,6 +172,9 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		}
 		r := strings.NewReplacer("<PACKAGE>", pkg, "<TYPE>", t, "<CONDITIONAL_TYPE>", removeFirstPartOfDot(conditionalType))
 
+		// This template is used to use same function templated used for fp code for basic types
+		r2 := strings.NewReplacer("<PACKAGE>", pkg, "<TYPE>", t, "<FTYPE>", removeFirstPartOfDot(conditionalType))
+
 		template = r.Replace(template)
 
 		template += template2.Map()
@@ -179,6 +182,9 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 
 		template += template2.MapPtr()
 		template = r.Replace(template)
+
+		template += basic.MapPtrErr()
+		template = r2.Replace(template)
 
 		template += template2.Filter()
 		template = r.Replace(template)

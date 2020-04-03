@@ -26,6 +26,27 @@ func MapEmployerPtr(f func(*employer.Employer) *employer.Employer, list []*emplo
 	return newList
 }
 
+// MapEmployerPtrErr takes 2 arguments:
+//  1. A function input argument: employer.Employer and return types (employer.Employer, error)
+//  2. A list of type []*employer.Employer
+
+// Returns:
+// 	([]*employer.Employer, error)
+func MapEmployerPtrErr(f func(*employer.Employer) (*employer.Employer, error), list []*employer.Employer) ([]*employer.Employer, error) {
+	if f == nil {
+		return []*employer.Employer{}, nil
+	}
+	newList := make([]*employer.Employer, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
+}
+
 func FilterEmployer(f func(employer.Employer) bool, list []employer.Employer) []employer.Employer {
 	if f == nil {
 		return []employer.Employer{}
@@ -428,6 +449,27 @@ func MapEmployeePtr(f func(*employee.Employee) *employee.Employee, list []*emplo
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapEmployeePtrErr takes 2 arguments:
+//  1. A function input argument: employee.Employee and return types (employee.Employee, error)
+//  2. A list of type []*employee.Employee
+
+// Returns:
+// 	([]*employee.Employee, error)
+func MapEmployeePtrErr(f func(*employee.Employee) (*employee.Employee, error), list []*employee.Employee) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+	newList := make([]*employee.Employee, len(list))
+	for i, v := range list {
+		var err error
+		newList[i], err = f(v)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return newList, nil
 }
 
 func FilterEmployee(f func(employee.Employee) bool, list []employee.Employee) []employee.Employee {

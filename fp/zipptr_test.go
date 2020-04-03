@@ -1,6 +1,7 @@
 package fp
 
 import (
+    _ "errors"
 	"reflect"
 	"testing"
 )

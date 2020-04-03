@@ -128,6 +128,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "MapPtrErr",
+		codeTemplate:      basic.MapPtrErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "mapPtrErr.go",
+
+		testTemplate:          basic.MapPtrErrTest(),
+		testTemplateBool:      basic.MapPtrErrBoolTest(),
+		generatedTestFileName: "mapPtrErr_test.go",
+	},
+
+	fpCode{
 		function:          "PMapPtr",
 		codeTemplate:      basic.PMapPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -396,6 +407,7 @@ var fpCodeList = []fpCode{
 var importTestTemplate = `
 
 import (
+    _ "errors"
 	"reflect"
 	"testing"
 )
@@ -1379,6 +1391,8 @@ func squareStrPtr(num *string) *string {
 	s1 = `partialIsEvenDivisibleBy := func(num *string) bool { return *num % 10 == 0 }`
 	s2 = `partialIsEvenDivisibleBy := func(num *string) bool { if *num == "40" { return true }; return false }`
 	code = strings.Replace(code, s1, s2, -1)
+
+	code = basic.ReplaceActivityMapPtrErrTest(code)
 
 	return code
 }
