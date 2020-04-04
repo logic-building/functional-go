@@ -455,7 +455,7 @@ func TestFilterBoolPtr(t *testing.T) {
 		t.Errorf("FilterBoolPtr failed")
 	}
 
-	if len(MapBoolPtr(nil, nil)) > 0 {
+	if len(FilterBoolPtr(nil, nil)) > 0 {
 		t.Errorf("MapBoolPtr failed.")
 	}
 }

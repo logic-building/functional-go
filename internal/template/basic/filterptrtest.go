@@ -1,6 +1,8 @@
 package basic
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+import "strings"
+
+// Filter<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
 func FilterPtrTest() string {
 	return `
 func TestFilter<FTYPE>Ptr(t *testing.T) {
@@ -46,7 +48,7 @@ func isEvenDivisibleBy<FTYPE>Ptr(num, divisibleBy *<TYPE>) bool {
 `
 }
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// Filter<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
 func FilterPtrBoolTest() string {
 	return `
 func TestFilter<FTYPE>Ptr(t *testing.T) {
@@ -59,7 +61,7 @@ func TestFilter<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("Filter<FTYPE>Ptr failed")
 	}
 
-	if len(Map<FTYPE>Ptr(nil, nil)) > 0 {
+	if len(Filter<FTYPE>Ptr(nil, nil)) > 0 {
 		t.Errorf("Map<FTYPE>Ptr failed.")
 	}
 }
@@ -69,4 +71,148 @@ func true<FTYPE>Ptr(num1 *<TYPE>) bool {
 }
 
 `
+}
+
+// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+func FilterPtrErrTest() string {
+	return `
+func TestFilter<FTYPE>PtrErr(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+	var v4 <TYPE> = 4
+	var v0 <TYPE> = 0
+
+	// Test : even number in the list
+	expectedFilteredList := []*<TYPE>{&v2, &v4}
+	filteredList, _ := Filter<FTYPE>PtrErr(isEven<FTYPE>PtrErr, []*<TYPE>{&v1, &v2, &v3, &v4})
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
+		t.Errorf("MapFilterPtrErr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	r, _ := Filter<FTYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Filter<FTYPE>PtrErr failed.")
+	}
+
+	_, err := Filter<FTYPE>PtrErr(isEven<FTYPE>PtrErr, []*<TYPE>{&v0})
+	if err == nil {
+		t.Errorf("Filter<FTYPE>PtrErr failed.")
+	}
+}
+
+func isEven<FTYPE>PtrErr(num *<TYPE>) (bool, error) {
+	if *num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return *num%2 == 0, nil
+}
+
+`
+}
+
+// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+func FilterPtrErrBoolTest() string {
+	return `
+func TestFilter<FTYPE>PtrErr(t *testing.T) {
+	var vt <TYPE> = true
+	var vf <TYPE> = false
+
+	expectedSumList := []*<TYPE>{&vt}
+	
+	newList, _ := Filter<FTYPE>PtrErr(true<FTYPE>PtrErr, []*<TYPE>{&vt})
+	if *newList[0] != *expectedSumList[0]  {
+		t.Errorf("Filter<FTYPE>PtrErr failed")
+	}
+
+	r, _ := Filter<FTYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Filter<FTYPE>PtrErr failed.")
+	}
+
+	_, err := Filter<FTYPE>PtrErr(true<FTYPE>PtrErr, []*<TYPE>{&vf})
+	if err == nil {
+		t.Errorf("Filter<FTYPE>PtrErr failed.")
+	}
+}
+
+func true<FTYPE>PtrErr(num1 *<TYPE>) (bool, error) {
+	if *num1 == false {
+		return false, errors.New("False is not allowed")
+	}
+	return true, nil
+}
+
+`
+}
+
+func ReplaceActivityFilterPtrErrTest(code string) string {
+	s1 := `import (
+    _ "errors"
+	"reflect"
+	"testing"
+)
+
+func TestFilterIntPtrErr(t *testing.T) {`
+	s2 := `import (
+    "errors"
+	"testing"
+)
+
+func TestFilterIntPtrErr(t *testing.T) {`
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenStrPtrErr(num *string) (bool, error) {
+	if *num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return *num%2 == 0, nil
+}`
+
+	s2 = `func isEvenStrPtrErr(num *string) (bool, error) {
+	if *num == "0" {
+		return false, errors.New("Zero is not allowed")
+	} else if *num == "2" || *num == "4" {
+		return true, nil
+	}
+	return false, nil
+	
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenFloat32PtrErr(num *float32) (bool, error) {
+	if *num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return *num%2 == 0, nil
+}`
+
+	s2 = `func isEvenFloat32PtrErr(num *float32) (bool, error) {
+	if *num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return int(*num)%2 == 0, nil
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenFloat64PtrErr(num *float64) (bool, error) {
+	if *num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return *num%2 == 0, nil
+}`
+
+	s2 = `func isEvenFloat64PtrErr(num *float64) (bool, error) {
+	if *num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return int(*num)%2 == 0, nil
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	return code
 }
