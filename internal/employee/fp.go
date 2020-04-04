@@ -92,6 +92,29 @@ func FilterPtr(f func(*Employee) bool, list []*Employee) []*Employee {
 	return newList
 }
 
+// FilterPtr takes two arguments
+//  1. Funtion: takes 1 argument of type Employee and returns (bool, error)
+//  2. slice of type []*Employee
+
+// Returns: 
+//  new filtered list and error
+func FilterPtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Employee, error) {
+	if f == nil {
+		return []*Employee{}, nil
+	}
+	var newList []*Employee
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
 func Remove(f func(Employee) bool, list []Employee) []Employee {
 	if f == nil {
 		return []Employee{}
@@ -536,6 +559,29 @@ func FilterTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 		}
 	}
 	return newList
+}
+
+// FilterTeacherPtr takes two arguments
+//  1. Funtion: takes 1 argument of type Teacher and returns (bool, error)
+//  2. slice of type []*Teacher
+
+// Returns: 
+//  new filtered list and error
+func FilterTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]*Teacher, error) {
+	if f == nil {
+		return []*Teacher{}, nil
+	}
+	var newList []*Teacher
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
 }
 
 func RemoveTeacher(f func(Teacher) bool, list []Teacher) []Teacher {
