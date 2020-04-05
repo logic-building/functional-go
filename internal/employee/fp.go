@@ -92,7 +92,7 @@ func FilterPtr(f func(*Employee) bool, list []*Employee) []*Employee {
 	return newList
 }
 
-// FilterPtr takes two arguments
+// FilterPtrErr takes two arguments
 //  1. Funtion: takes 1 argument of type Employee and returns (bool, error)
 //  2. slice of type []*Employee
 
@@ -103,6 +103,29 @@ func FilterPtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Employe
 		return []*Employee{}, nil
 	}
 	var newList []*Employee
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
+// FilterErr takes two arguments
+//  1. Funtion: takes 1 argument of type Employee and returns (bool, error)
+//  2. slice of type []Employee
+
+// Returns: 
+//  new filtered list and error
+func FilterErr(f func(Employee) (bool, error), list []Employee) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+	var newList []Employee
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -561,7 +584,7 @@ func FilterTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 	return newList
 }
 
-// FilterTeacherPtr takes two arguments
+// FilterTeacherPtrErr takes two arguments
 //  1. Funtion: takes 1 argument of type Teacher and returns (bool, error)
 //  2. slice of type []*Teacher
 
@@ -572,6 +595,29 @@ func FilterTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]*Te
 		return []*Teacher{}, nil
 	}
 	var newList []*Teacher
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
+// FilterTeacherErr takes two arguments
+//  1. Funtion: takes 1 argument of type Teacher and returns (bool, error)
+//  2. slice of type []Teacher
+
+// Returns: 
+//  new filtered list and error
+func FilterTeacherErr(f func(Teacher) (bool, error), list []Teacher) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+	var newList []Teacher
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {

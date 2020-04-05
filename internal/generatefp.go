@@ -183,6 +183,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "FilterErr",
+		codeTemplate:      basic.FilterErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "filterErr.go",
+
+		testTemplate:          basic.FilterErrTest(),
+		testTemplateBool:      basic.FilterErrBoolTest(),
+		generatedTestFileName: "filterErr_test.go",
+	},
+
+	fpCode{
 		function:          "DistinctPtr",
 		codeTemplate:      basic.DistinctPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1418,6 +1429,7 @@ func squareStrPtr(num *string) *string {
 	code = basic.ReplaceActivityMapErrTest(code)
 
 	code = basic.ReplaceActivityFilterPtrErrTest(code)
+	code = basic.ReplaceActivityFilterErrTest(code)
 
 	return code
 }
