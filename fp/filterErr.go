@@ -1,16 +1,16 @@
 package fp
 
-// FilterIntPtrErr takes two arguments
+// FilterIntErr takes two arguments
 //  1. Funtion: takes 1 argument of type int and returns (bool, error)
-//  2. slice of type []*int
+//  2. slice of type []int
 
 // Returns: 
 //  new filtered list and error
-func FilterIntPtrErr(f func(*int) (bool, error), list []*int) ([]*int, error) {
+func FilterIntErr(f func(int) (bool, error), list []int) ([]int, error) {
 	if f == nil {
-		return []*int{}, nil
+		return []int{}, nil
 	}
-	var newList []*int
+	var newList []int
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -23,17 +23,17 @@ func FilterIntPtrErr(f func(*int) (bool, error), list []*int) ([]*int, error) {
 	return newList, nil
 }
 
-// FilterInt64PtrErr takes two arguments
+// FilterInt64Err takes two arguments
 //  1. Funtion: takes 1 argument of type int64 and returns (bool, error)
-//  2. slice of type []*int64
+//  2. slice of type []int64
 
 // Returns: 
 //  new filtered list and error
-func FilterInt64PtrErr(f func(*int64) (bool, error), list []*int64) ([]*int64, error) {
+func FilterInt64Err(f func(int64) (bool, error), list []int64) ([]int64, error) {
 	if f == nil {
-		return []*int64{}, nil
+		return []int64{}, nil
 	}
-	var newList []*int64
+	var newList []int64
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -46,17 +46,17 @@ func FilterInt64PtrErr(f func(*int64) (bool, error), list []*int64) ([]*int64, e
 	return newList, nil
 }
 
-// FilterInt32PtrErr takes two arguments
+// FilterInt32Err takes two arguments
 //  1. Funtion: takes 1 argument of type int32 and returns (bool, error)
-//  2. slice of type []*int32
+//  2. slice of type []int32
 
 // Returns: 
 //  new filtered list and error
-func FilterInt32PtrErr(f func(*int32) (bool, error), list []*int32) ([]*int32, error) {
+func FilterInt32Err(f func(int32) (bool, error), list []int32) ([]int32, error) {
 	if f == nil {
-		return []*int32{}, nil
+		return []int32{}, nil
 	}
-	var newList []*int32
+	var newList []int32
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -69,17 +69,17 @@ func FilterInt32PtrErr(f func(*int32) (bool, error), list []*int32) ([]*int32, e
 	return newList, nil
 }
 
-// FilterInt16PtrErr takes two arguments
+// FilterInt16Err takes two arguments
 //  1. Funtion: takes 1 argument of type int16 and returns (bool, error)
-//  2. slice of type []*int16
+//  2. slice of type []int16
 
 // Returns: 
 //  new filtered list and error
-func FilterInt16PtrErr(f func(*int16) (bool, error), list []*int16) ([]*int16, error) {
+func FilterInt16Err(f func(int16) (bool, error), list []int16) ([]int16, error) {
 	if f == nil {
-		return []*int16{}, nil
+		return []int16{}, nil
 	}
-	var newList []*int16
+	var newList []int16
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -92,17 +92,17 @@ func FilterInt16PtrErr(f func(*int16) (bool, error), list []*int16) ([]*int16, e
 	return newList, nil
 }
 
-// FilterInt8PtrErr takes two arguments
+// FilterInt8Err takes two arguments
 //  1. Funtion: takes 1 argument of type int8 and returns (bool, error)
-//  2. slice of type []*int8
+//  2. slice of type []int8
 
 // Returns: 
 //  new filtered list and error
-func FilterInt8PtrErr(f func(*int8) (bool, error), list []*int8) ([]*int8, error) {
+func FilterInt8Err(f func(int8) (bool, error), list []int8) ([]int8, error) {
 	if f == nil {
-		return []*int8{}, nil
+		return []int8{}, nil
 	}
-	var newList []*int8
+	var newList []int8
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -115,17 +115,17 @@ func FilterInt8PtrErr(f func(*int8) (bool, error), list []*int8) ([]*int8, error
 	return newList, nil
 }
 
-// FilterUintPtrErr takes two arguments
+// FilterUintErr takes two arguments
 //  1. Funtion: takes 1 argument of type uint and returns (bool, error)
-//  2. slice of type []*uint
+//  2. slice of type []uint
 
 // Returns: 
 //  new filtered list and error
-func FilterUintPtrErr(f func(*uint) (bool, error), list []*uint) ([]*uint, error) {
+func FilterUintErr(f func(uint) (bool, error), list []uint) ([]uint, error) {
 	if f == nil {
-		return []*uint{}, nil
+		return []uint{}, nil
 	}
-	var newList []*uint
+	var newList []uint
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -138,17 +138,17 @@ func FilterUintPtrErr(f func(*uint) (bool, error), list []*uint) ([]*uint, error
 	return newList, nil
 }
 
-// FilterUint64PtrErr takes two arguments
+// FilterUint64Err takes two arguments
 //  1. Funtion: takes 1 argument of type uint64 and returns (bool, error)
-//  2. slice of type []*uint64
+//  2. slice of type []uint64
 
 // Returns: 
 //  new filtered list and error
-func FilterUint64PtrErr(f func(*uint64) (bool, error), list []*uint64) ([]*uint64, error) {
+func FilterUint64Err(f func(uint64) (bool, error), list []uint64) ([]uint64, error) {
 	if f == nil {
-		return []*uint64{}, nil
+		return []uint64{}, nil
 	}
-	var newList []*uint64
+	var newList []uint64
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -161,17 +161,17 @@ func FilterUint64PtrErr(f func(*uint64) (bool, error), list []*uint64) ([]*uint6
 	return newList, nil
 }
 
-// FilterUint32PtrErr takes two arguments
+// FilterUint32Err takes two arguments
 //  1. Funtion: takes 1 argument of type uint32 and returns (bool, error)
-//  2. slice of type []*uint32
+//  2. slice of type []uint32
 
 // Returns: 
 //  new filtered list and error
-func FilterUint32PtrErr(f func(*uint32) (bool, error), list []*uint32) ([]*uint32, error) {
+func FilterUint32Err(f func(uint32) (bool, error), list []uint32) ([]uint32, error) {
 	if f == nil {
-		return []*uint32{}, nil
+		return []uint32{}, nil
 	}
-	var newList []*uint32
+	var newList []uint32
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -184,17 +184,17 @@ func FilterUint32PtrErr(f func(*uint32) (bool, error), list []*uint32) ([]*uint3
 	return newList, nil
 }
 
-// FilterUint16PtrErr takes two arguments
+// FilterUint16Err takes two arguments
 //  1. Funtion: takes 1 argument of type uint16 and returns (bool, error)
-//  2. slice of type []*uint16
+//  2. slice of type []uint16
 
 // Returns: 
 //  new filtered list and error
-func FilterUint16PtrErr(f func(*uint16) (bool, error), list []*uint16) ([]*uint16, error) {
+func FilterUint16Err(f func(uint16) (bool, error), list []uint16) ([]uint16, error) {
 	if f == nil {
-		return []*uint16{}, nil
+		return []uint16{}, nil
 	}
-	var newList []*uint16
+	var newList []uint16
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -207,17 +207,17 @@ func FilterUint16PtrErr(f func(*uint16) (bool, error), list []*uint16) ([]*uint1
 	return newList, nil
 }
 
-// FilterUint8PtrErr takes two arguments
+// FilterUint8Err takes two arguments
 //  1. Funtion: takes 1 argument of type uint8 and returns (bool, error)
-//  2. slice of type []*uint8
+//  2. slice of type []uint8
 
 // Returns: 
 //  new filtered list and error
-func FilterUint8PtrErr(f func(*uint8) (bool, error), list []*uint8) ([]*uint8, error) {
+func FilterUint8Err(f func(uint8) (bool, error), list []uint8) ([]uint8, error) {
 	if f == nil {
-		return []*uint8{}, nil
+		return []uint8{}, nil
 	}
-	var newList []*uint8
+	var newList []uint8
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -230,17 +230,17 @@ func FilterUint8PtrErr(f func(*uint8) (bool, error), list []*uint8) ([]*uint8, e
 	return newList, nil
 }
 
-// FilterStrPtrErr takes two arguments
+// FilterStrErr takes two arguments
 //  1. Funtion: takes 1 argument of type string and returns (bool, error)
-//  2. slice of type []*string
+//  2. slice of type []string
 
 // Returns: 
 //  new filtered list and error
-func FilterStrPtrErr(f func(*string) (bool, error), list []*string) ([]*string, error) {
+func FilterStrErr(f func(string) (bool, error), list []string) ([]string, error) {
 	if f == nil {
-		return []*string{}, nil
+		return []string{}, nil
 	}
-	var newList []*string
+	var newList []string
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -253,17 +253,17 @@ func FilterStrPtrErr(f func(*string) (bool, error), list []*string) ([]*string, 
 	return newList, nil
 }
 
-// FilterBoolPtrErr takes two arguments
+// FilterBoolErr takes two arguments
 //  1. Funtion: takes 1 argument of type bool and returns (bool, error)
-//  2. slice of type []*bool
+//  2. slice of type []bool
 
 // Returns: 
 //  new filtered list and error
-func FilterBoolPtrErr(f func(*bool) (bool, error), list []*bool) ([]*bool, error) {
+func FilterBoolErr(f func(bool) (bool, error), list []bool) ([]bool, error) {
 	if f == nil {
-		return []*bool{}, nil
+		return []bool{}, nil
 	}
-	var newList []*bool
+	var newList []bool
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -276,17 +276,17 @@ func FilterBoolPtrErr(f func(*bool) (bool, error), list []*bool) ([]*bool, error
 	return newList, nil
 }
 
-// FilterFloat32PtrErr takes two arguments
+// FilterFloat32Err takes two arguments
 //  1. Funtion: takes 1 argument of type float32 and returns (bool, error)
-//  2. slice of type []*float32
+//  2. slice of type []float32
 
 // Returns: 
 //  new filtered list and error
-func FilterFloat32PtrErr(f func(*float32) (bool, error), list []*float32) ([]*float32, error) {
+func FilterFloat32Err(f func(float32) (bool, error), list []float32) ([]float32, error) {
 	if f == nil {
-		return []*float32{}, nil
+		return []float32{}, nil
 	}
-	var newList []*float32
+	var newList []float32
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -299,17 +299,17 @@ func FilterFloat32PtrErr(f func(*float32) (bool, error), list []*float32) ([]*fl
 	return newList, nil
 }
 
-// FilterFloat64PtrErr takes two arguments
+// FilterFloat64Err takes two arguments
 //  1. Funtion: takes 1 argument of type float64 and returns (bool, error)
-//  2. slice of type []*float64
+//  2. slice of type []float64
 
 // Returns: 
 //  new filtered list and error
-func FilterFloat64PtrErr(f func(*float64) (bool, error), list []*float64) ([]*float64, error) {
+func FilterFloat64Err(f func(float64) (bool, error), list []float64) ([]float64, error) {
 	if f == nil {
-		return []*float64{}, nil
+		return []float64{}, nil
 	}
-	var newList []*float64
+	var newList []float64
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {

@@ -216,3 +216,147 @@ func TestFilterIntPtrErr(t *testing.T) {`
 
 	return code
 }
+
+// Filter<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+func FilterErrTest() string {
+	return `
+func TestFilter<FTYPE>Err(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+	var v4 <TYPE> = 4
+	var v0 <TYPE> = 0
+
+	// Test : even number in the list
+	expectedFilteredList := []<TYPE>{v2, v4}
+	filteredList, _ := Filter<FTYPE>Err(isEven<FTYPE>Err, []<TYPE>{v1, v2, v3, v4})
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("MapFilterErr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+
+	r, _ := Filter<FTYPE>Err(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Filter<FTYPE>Err failed.")
+	}
+
+	_, err := Filter<FTYPE>Err(isEven<FTYPE>Err, []<TYPE>{v0})
+	if err == nil {
+		t.Errorf("Filter<FTYPE>PtrErr failed.")
+	}
+}
+
+func isEven<FTYPE>Err(num <TYPE>) (bool, error) {
+	if num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return num%2 == 0, nil
+}
+
+`
+}
+
+// Filter<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+func FilterErrBoolTest() string {
+	return `
+func TestFilter<FTYPE>Err(t *testing.T) {
+	var vt <TYPE> = true
+	var vf <TYPE> = false
+
+	expectedSumList := []<TYPE>{vt}
+	
+	newList, _ := Filter<FTYPE>Err(true<FTYPE>Err, []<TYPE>{vt})
+	if newList[0] != expectedSumList[0]  {
+		t.Errorf("Filter<FTYPE>Err failed")
+	}
+
+	r, _ := Filter<FTYPE>Err(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Filter<FTYPE>Err failed.")
+	}
+
+	_, err := Filter<FTYPE>Err(true<FTYPE>Err, []<TYPE>{vf})
+	if err == nil {
+		t.Errorf("Filter<FTYPE>Err failed.")
+	}
+}
+
+func true<FTYPE>Err(num1 <TYPE>) (bool, error) {
+	if num1 == false {
+		return false, errors.New("False is not allowed")
+	}
+	return true, nil
+}
+
+`
+}
+
+func ReplaceActivityFilterErrTest(code string) string {
+	s1 := `import (
+    _ "errors"
+	"reflect"
+	"testing"
+)
+
+func TestFilterIntErr(t *testing.T) {`
+	s2 := `import (
+    "errors"
+	"testing"
+)
+
+func TestFilterIntErr(t *testing.T) {`
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenStrErr(num string) (bool, error) {
+	if num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return num%2 == 0, nil
+}`
+
+	s2 = `func isEvenStrErr(num string) (bool, error) {
+	if num == "0" {
+		return false, errors.New("Zero is not allowed")
+	} else if num == "2" || num == "4" {
+		return true, nil
+	}
+	return false, nil
+	
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenFloat32Err(num float32) (bool, error) {
+	if num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return num%2 == 0, nil
+}`
+
+	s2 = `func isEvenFloat32Err(num float32) (bool, error) {
+	if num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return int(num)%2 == 0, nil
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func isEvenFloat64Err(num float64) (bool, error) {
+	if num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return num%2 == 0, nil
+}`
+
+	s2 = `func isEvenFloat64Err(num float64) (bool, error) {
+	if num == 0 {
+		return false, errors.New("Zero is not allowed")
+	}
+	return int(num)%2 == 0, nil
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	return code
+}
