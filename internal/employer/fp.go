@@ -93,7 +93,7 @@ func FilterPtr(f func(*Employer) bool, list []*Employer) []*Employer {
 	return newList
 }
 
-// FilterPtr takes two arguments
+// FilterPtrErr takes two arguments
 //  1. Funtion: takes 1 argument of type Employer and returns (bool, error)
 //  2. slice of type []*Employer
 
@@ -104,6 +104,29 @@ func FilterPtrErr(f func(*Employer) (bool, error), list []*Employer) ([]*Employe
 		return []*Employer{}, nil
 	}
 	var newList []*Employer
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
+// FilterErr takes two arguments
+//  1. Funtion: takes 1 argument of type Employer and returns (bool, error)
+//  2. slice of type []Employer
+
+// Returns: 
+//  new filtered list and error
+func FilterErr(f func(Employer) (bool, error), list []Employer) ([]Employer, error) {
+	if f == nil {
+		return []Employer{}, nil
+	}
+	var newList []Employer
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
@@ -562,7 +585,7 @@ func FilterEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employe
 	return newList
 }
 
-// FilterEmployeePtr takes two arguments
+// FilterEmployeePtrErr takes two arguments
 //  1. Funtion: takes 1 argument of type employee.Employee and returns (bool, error)
 //  2. slice of type []*employee.Employee
 
@@ -573,6 +596,29 @@ func FilterEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*empl
 		return []*employee.Employee{}, nil
 	}
 	var newList []*employee.Employee
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
+// FilterEmployeeErr takes two arguments
+//  1. Funtion: takes 1 argument of type employee.Employee and returns (bool, error)
+//  2. slice of type []employee.Employee
+
+// Returns: 
+//  new filtered list and error
+func FilterEmployeeErr(f func(employee.Employee) (bool, error), list []employee.Employee) ([]employee.Employee, error) {
+	if f == nil {
+		return []employee.Employee{}, nil
+	}
+	var newList []employee.Employee
 	for _, v := range list {
 		r, err := f(v)
 		if err != nil {
