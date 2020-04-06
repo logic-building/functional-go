@@ -373,6 +373,37 @@ func FilterMapPtr(fFilter func(*Employer) bool, fMap func(*Employer) *Employer, 
 	return newList
 }
 
+// FilterMap filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input and returns (bool, error).
+//	2. Function: takes Employer as argument and returns (Employer, error)
+// 	3. Slice of type []*Employer
+//
+// Returns:
+//	New List ([]*Employer, error).
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
+func FilterMapPtrErr(fFilter func(*Employer) (bool, error), fMap func(*Employer) (*Employer, error), list []*Employer) ([]*Employer, error) {
+	if fFilter == nil || fMap == nil {
+		return []*Employer{}, nil
+	}
+	var newList []*Employer
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
 func Rest(l []Employer) []Employer {
 	if l == nil {
 		return []Employer{}
@@ -863,6 +894,37 @@ func FilterMapEmployeePtr(fFilter func(*employee.Employee) bool, fMap func(*empl
 		}
 	}
 	return newList
+}
+
+// FilterMapEmployee filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input and returns (bool, error).
+//	2. Function: takes employee.Employee as argument and returns (employee.Employee, error)
+// 	3. Slice of type []*employee.Employee
+//
+// Returns:
+//	New List ([]*employee.Employee, error).
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
+func FilterMapEmployeePtrErr(fFilter func(*employee.Employee) (bool, error), fMap func(*employee.Employee) (*employee.Employee, error), list []*employee.Employee) ([]*employee.Employee, error) {
+	if fFilter == nil || fMap == nil {
+		return []*employee.Employee{}, nil
+	}
+	var newList []*employee.Employee
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
 }
 
 func RestEmployee(l []employee.Employee) []employee.Employee {

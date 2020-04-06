@@ -372,6 +372,37 @@ func FilterMapPtr(fFilter func(*Employee) bool, fMap func(*Employee) *Employee, 
 	return newList
 }
 
+// FilterMap filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input and returns (bool, error).
+//	2. Function: takes Employee as argument and returns (Employee, error)
+// 	3. Slice of type []*Employee
+//
+// Returns:
+//	New List ([]*Employee, error).
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
+func FilterMapPtrErr(fFilter func(*Employee) (bool, error), fMap func(*Employee) (*Employee, error), list []*Employee) ([]*Employee, error) {
+	if fFilter == nil || fMap == nil {
+		return []*Employee{}, nil
+	}
+	var newList []*Employee
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
 func Rest(l []Employee) []Employee {
 	if l == nil {
 		return []Employee{}
@@ -862,6 +893,37 @@ func FilterMapTeacherPtr(fFilter func(*Teacher) bool, fMap func(*Teacher) *Teach
 		}
 	}
 	return newList
+}
+
+// FilterMapTeacher filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input and returns (bool, error).
+//	2. Function: takes Teacher as argument and returns (Teacher, error)
+// 	3. Slice of type []*Teacher
+//
+// Returns:
+//	New List ([]*Teacher, error).
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
+func FilterMapTeacherPtrErr(fFilter func(*Teacher) (bool, error), fMap func(*Teacher) (*Teacher, error), list []*Teacher) ([]*Teacher, error) {
+	if fFilter == nil || fMap == nil {
+		return []*Teacher{}, nil
+	}
+	var newList []*Teacher
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
 }
 
 func RestTeacher(l []Teacher) []Teacher {
