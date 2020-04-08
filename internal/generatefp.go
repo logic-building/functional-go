@@ -216,6 +216,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "FilterMapPtrErr",
+		codeTemplate:      basic.FilterMapPtrErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
+		generatedFileName: "filtermapptrerr.go",
+
+		testTemplate: basic.FilterMapPtrErrTest(),
+		//testTemplateBool:     bool is removed above so, bool function won't be generated.
+		generatedTestFileName: "filtermapptrerr_test.go",
+	},
+
+	fpCode{
 		function:          "ExistsPtr",
 		codeTemplate:      basic.ExistsPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -689,6 +700,7 @@ func modifyTestDataToStr2(code string) string {
 	code = strings.Replace(code, "var v8 string = 8", "var v8 string = \"8\"", -1)
 	code = strings.Replace(code, "var v9 string = 9", "var v9 string = \"9\"", -1)
 	code = strings.Replace(code, "var v10 string = 10", "var v10 string = \"10\"", -1)
+	code = strings.Replace(code, "var v16 string = 16", "var v16 string = \"16\"", -1)
 	code = strings.Replace(code, "var v20 string = 20", "var v20 string = \"20\"", -1)
 	code = strings.Replace(code, "var v40 string = 40", "var v40 string = \"40\"", -1)
 	code = strings.Replace(code, "var v80 string = 80", "var v80 string = \"80\"", -1)
@@ -1430,6 +1442,8 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityFilterPtrErrTest(code)
 	code = basic.ReplaceActivityFilterErrTest(code)
+
+	code = basic.ReplaceActivityFilterMapPtrErr(code)
 
 	return code
 }
