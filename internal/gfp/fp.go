@@ -374,10 +374,10 @@ func FilterMapEmployerPtr(fFilter func(*employer.Employer) bool, fMap func(*empl
 	return newList
 }
 
-// FilterMapEmployer filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapEmployerPtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes employer.Employer as argument and returns (employer.Employer, error)
+//	1. Function: takes one input(*employer.Employer) and returns (bool, error).
+//	2. Function: takes *employer.Employer as argument and returns (*employer.Employer, error)
 // 	3. Slice of type []*employer.Employer
 //
 // Returns:
@@ -389,6 +389,37 @@ func FilterMapEmployerPtrErr(fFilter func(*employer.Employer) (bool, error), fMa
 		return []*employer.Employer{}, nil
 	}
 	var newList []*employer.Employer
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
+// FilterMapEmployerErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input(employer.Employer) and returns (bool, error).
+//	2. Function: takes employer.Employer as argument and returns (employer.Employer, error)
+// 	3. Slice of type []employer.Employer
+//
+// Returns:
+//	New List ([]employer.Employer, error).
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
+func FilterMapEmployerErr(fFilter func(employer.Employer) (bool, error), fMap func(employer.Employer) (employer.Employer, error), list []employer.Employer) ([]employer.Employer, error) {
+	if fFilter == nil || fMap == nil {
+		return []employer.Employer{}, nil
+	}
+	var newList []employer.Employer
 	for _, v := range list {
 		r, err := fFilter(v)
 		if err != nil {
@@ -897,10 +928,10 @@ func FilterMapEmployeePtr(fFilter func(*employee.Employee) bool, fMap func(*empl
 	return newList
 }
 
-// FilterMapEmployee filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapEmployeePtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes employee.Employee as argument and returns (employee.Employee, error)
+//	1. Function: takes one input(*employee.Employee) and returns (bool, error).
+//	2. Function: takes *employee.Employee as argument and returns (*employee.Employee, error)
 // 	3. Slice of type []*employee.Employee
 //
 // Returns:
@@ -912,6 +943,37 @@ func FilterMapEmployeePtrErr(fFilter func(*employee.Employee) (bool, error), fMa
 		return []*employee.Employee{}, nil
 	}
 	var newList []*employee.Employee
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
+// FilterMapEmployeeErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// Takes 3 inputs
+//	1. Function: takes one input(employee.Employee) and returns (bool, error).
+//	2. Function: takes employee.Employee as argument and returns (employee.Employee, error)
+// 	3. Slice of type []employee.Employee
+//
+// Returns:
+//	New List ([]employee.Employee, error).
+//  Empty list if all there parameters are nil or either of parameter is nil
+//
+func FilterMapEmployeeErr(fFilter func(employee.Employee) (bool, error), fMap func(employee.Employee) (employee.Employee, error), list []employee.Employee) ([]employee.Employee, error) {
+	if fFilter == nil || fMap == nil {
+		return []employee.Employee{}, nil
+	}
+	var newList []employee.Employee
 	for _, v := range list {
 		r, err := fFilter(v)
 		if err != nil {
