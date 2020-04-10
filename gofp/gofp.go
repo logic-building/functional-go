@@ -246,6 +246,9 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		template += basic.FilterMapPtrErr()
 		template = r2.Replace(template)
 
+		template += basic.FilterMapErr()
+		template = r2.Replace(template)
+
 		template += template2.Rest()
 		template = r.Replace(template)
 

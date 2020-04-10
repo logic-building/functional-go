@@ -227,6 +227,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "FilterMapErr",
+		codeTemplate:      basic.FilterMapErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
+		generatedFileName: "filtermaperr.go",
+
+		testTemplate: basic.FilterMapErrTest(),
+		//testTemplateBool:     bool is removed above so, bool function won't be generated.
+		generatedTestFileName: "filtermaperr_test.go",
+	},
+
+	fpCode{
 		function:          "ExistsPtr",
 		codeTemplate:      basic.ExistsPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1444,6 +1455,7 @@ func squareStrPtr(num *string) *string {
 	code = basic.ReplaceActivityFilterErrTest(code)
 
 	code = basic.ReplaceActivityFilterMapPtrErr(code)
+	code = basic.ReplaceActivityFilterMapErr(code)
 
 	return code
 }

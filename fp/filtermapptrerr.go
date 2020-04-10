@@ -1,9 +1,9 @@
 package fp
 
-// FilterMapInt filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapIntPtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes int as argument and returns (int, error)
+//	1. Function: takes one input(*int) and returns (bool, error).
+//	2. Function: takes *int as argument and returns (*int, error)
 // 	3. Slice of type []*int
 //
 // Returns:
@@ -31,10 +31,10 @@ func FilterMapIntPtrErr(fFilter func(*int) (bool, error), fMap func(*int) (*int,
 	return newList, nil
 }
 
-// FilterMapInt64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt64PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes int64 as argument and returns (int64, error)
+//	1. Function: takes one input(*int64) and returns (bool, error).
+//	2. Function: takes *int64 as argument and returns (*int64, error)
 // 	3. Slice of type []*int64
 //
 // Returns:
@@ -62,10 +62,10 @@ func FilterMapInt64PtrErr(fFilter func(*int64) (bool, error), fMap func(*int64) 
 	return newList, nil
 }
 
-// FilterMapInt32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt32PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes int32 as argument and returns (int32, error)
+//	1. Function: takes one input(*int32) and returns (bool, error).
+//	2. Function: takes *int32 as argument and returns (*int32, error)
 // 	3. Slice of type []*int32
 //
 // Returns:
@@ -93,10 +93,10 @@ func FilterMapInt32PtrErr(fFilter func(*int32) (bool, error), fMap func(*int32) 
 	return newList, nil
 }
 
-// FilterMapInt16 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt16PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes int16 as argument and returns (int16, error)
+//	1. Function: takes one input(*int16) and returns (bool, error).
+//	2. Function: takes *int16 as argument and returns (*int16, error)
 // 	3. Slice of type []*int16
 //
 // Returns:
@@ -124,10 +124,10 @@ func FilterMapInt16PtrErr(fFilter func(*int16) (bool, error), fMap func(*int16) 
 	return newList, nil
 }
 
-// FilterMapInt8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapInt8PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes int8 as argument and returns (int8, error)
+//	1. Function: takes one input(*int8) and returns (bool, error).
+//	2. Function: takes *int8 as argument and returns (*int8, error)
 // 	3. Slice of type []*int8
 //
 // Returns:
@@ -155,10 +155,10 @@ func FilterMapInt8PtrErr(fFilter func(*int8) (bool, error), fMap func(*int8) (*i
 	return newList, nil
 }
 
-// FilterMapUint filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUintPtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes uint as argument and returns (uint, error)
+//	1. Function: takes one input(*uint) and returns (bool, error).
+//	2. Function: takes *uint as argument and returns (*uint, error)
 // 	3. Slice of type []*uint
 //
 // Returns:
@@ -186,10 +186,10 @@ func FilterMapUintPtrErr(fFilter func(*uint) (bool, error), fMap func(*uint) (*u
 	return newList, nil
 }
 
-// FilterMapUint64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint64PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes uint64 as argument and returns (uint64, error)
+//	1. Function: takes one input(*uint64) and returns (bool, error).
+//	2. Function: takes *uint64 as argument and returns (*uint64, error)
 // 	3. Slice of type []*uint64
 //
 // Returns:
@@ -217,10 +217,10 @@ func FilterMapUint64PtrErr(fFilter func(*uint64) (bool, error), fMap func(*uint6
 	return newList, nil
 }
 
-// FilterMapUint32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint32PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes uint32 as argument and returns (uint32, error)
+//	1. Function: takes one input(*uint32) and returns (bool, error).
+//	2. Function: takes *uint32 as argument and returns (*uint32, error)
 // 	3. Slice of type []*uint32
 //
 // Returns:
@@ -248,10 +248,10 @@ func FilterMapUint32PtrErr(fFilter func(*uint32) (bool, error), fMap func(*uint3
 	return newList, nil
 }
 
-// FilterMapUint16 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint16PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes uint16 as argument and returns (uint16, error)
+//	1. Function: takes one input(*uint16) and returns (bool, error).
+//	2. Function: takes *uint16 as argument and returns (*uint16, error)
 // 	3. Slice of type []*uint16
 //
 // Returns:
@@ -279,10 +279,10 @@ func FilterMapUint16PtrErr(fFilter func(*uint16) (bool, error), fMap func(*uint1
 	return newList, nil
 }
 
-// FilterMapUint8 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapUint8PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes uint8 as argument and returns (uint8, error)
+//	1. Function: takes one input(*uint8) and returns (bool, error).
+//	2. Function: takes *uint8 as argument and returns (*uint8, error)
 // 	3. Slice of type []*uint8
 //
 // Returns:
@@ -310,10 +310,10 @@ func FilterMapUint8PtrErr(fFilter func(*uint8) (bool, error), fMap func(*uint8) 
 	return newList, nil
 }
 
-// FilterMapStr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapStrPtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes string as argument and returns (string, error)
+//	1. Function: takes one input(*string) and returns (bool, error).
+//	2. Function: takes *string as argument and returns (*string, error)
 // 	3. Slice of type []*string
 //
 // Returns:
@@ -341,10 +341,10 @@ func FilterMapStrPtrErr(fFilter func(*string) (bool, error), fMap func(*string) 
 	return newList, nil
 }
 
-// FilterMapFloat32 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapFloat32PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes float32 as argument and returns (float32, error)
+//	1. Function: takes one input(*float32) and returns (bool, error).
+//	2. Function: takes *float32 as argument and returns (*float32, error)
 // 	3. Slice of type []*float32
 //
 // Returns:
@@ -372,10 +372,10 @@ func FilterMapFloat32PtrErr(fFilter func(*float32) (bool, error), fMap func(*flo
 	return newList, nil
 }
 
-// FilterMapFloat64 filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapFloat64PtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
-//	1. Function: takes one input and returns (bool, error).
-//	2. Function: takes float64 as argument and returns (float64, error)
+//	1. Function: takes one input(*float64) and returns (bool, error).
+//	2. Function: takes *float64 as argument and returns (*float64, error)
 // 	3. Slice of type []*float64
 //
 // Returns:
