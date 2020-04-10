@@ -457,6 +457,21 @@ var fpCodeList = []fpCode{
 		generatedFileName:        "filtermapioptr.go",
 		generatedTestFileName:    "filtermapioptr_test.go",
 	},
+
+	fpCode{
+		function:                 "FilterMapIOPtrErr",
+		codeTemplate:             basic.FilterMapIOPtrErr(),
+		testTemplateIONumber:     basic.FilterMapIONumberPtrErrTest(),
+		testTemplateIOStrNumber:  basic.FilterMapIOStrNumberPtrErrTest(),
+		testTemplateIONumberStr:  basic.FilterMapIONumberStrPtrErrTest(),
+		testTemplateIONumberBool: basic.FilterMapIONumberBoolPtrErrTest(),
+		testTemplateIOStrBool:    basic.FilterMapIOStrBoolPtrErrTest(),
+		testTemplateIOBoolNumber: basic.FilterMapIOBoolNumberPtrErrTest(),
+		testTemplateIOBoolStr:    basic.FilterMapIOBoolStrPtrErrTest(),
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName:        "filtermapioptrerr.go",
+		generatedTestFileName:    "filtermapioptrerr_test.go",
+	},
 }
 
 var importTestTemplate = `
@@ -1456,6 +1471,8 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityFilterMapPtrErr(code)
 	code = basic.ReplaceActivityFilterMapErr(code)
+
+	code = basic.ReplaceActivityFilterMapIOPtrErr(code)
 
 	return code
 }
