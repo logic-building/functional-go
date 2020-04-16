@@ -6716,7 +6716,7 @@ func TestFilterMapStrIntPtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrIntPtrErr failed")
 	}
-	_, err = FilterMapStrIntPtrErr(notOneStrIntStrPtrErr, someLogicStrIntStrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrIntPtrErr(notOneStrIntStrPtrErr, someLogicStrIntStrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrIntPtrErr failed")
 	}
@@ -6771,7 +6771,7 @@ func TestFilterMapStrInt64PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrInt64PtrErr failed")
 	}
-	_, err = FilterMapStrInt64PtrErr(notOneStrInt64StrPtrErr, someLogicStrInt64StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrInt64PtrErr(notOneStrInt64StrPtrErr, someLogicStrInt64StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrInt64PtrErr failed")
 	}
@@ -6826,7 +6826,7 @@ func TestFilterMapStrInt32PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrInt32PtrErr failed")
 	}
-	_, err = FilterMapStrInt32PtrErr(notOneStrInt32StrPtrErr, someLogicStrInt32StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrInt32PtrErr(notOneStrInt32StrPtrErr, someLogicStrInt32StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrInt32PtrErr failed")
 	}
@@ -6881,7 +6881,7 @@ func TestFilterMapStrInt16PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrInt16PtrErr failed")
 	}
-	_, err = FilterMapStrInt16PtrErr(notOneStrInt16StrPtrErr, someLogicStrInt16StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrInt16PtrErr(notOneStrInt16StrPtrErr, someLogicStrInt16StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrInt16PtrErr failed")
 	}
@@ -6936,7 +6936,7 @@ func TestFilterMapStrInt8PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrInt8PtrErr failed")
 	}
-	_, err = FilterMapStrInt8PtrErr(notOneStrInt8StrPtrErr, someLogicStrInt8StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrInt8PtrErr(notOneStrInt8StrPtrErr, someLogicStrInt8StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrInt8PtrErr failed")
 	}
@@ -6991,7 +6991,7 @@ func TestFilterMapStrUintPtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrUintPtrErr failed")
 	}
-	_, err = FilterMapStrUintPtrErr(notOneStrUintStrPtrErr, someLogicStrUintStrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrUintPtrErr(notOneStrUintStrPtrErr, someLogicStrUintStrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrUintPtrErr failed")
 	}
@@ -7046,7 +7046,7 @@ func TestFilterMapStrUint64PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrUint64PtrErr failed")
 	}
-	_, err = FilterMapStrUint64PtrErr(notOneStrUint64StrPtrErr, someLogicStrUint64StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrUint64PtrErr(notOneStrUint64StrPtrErr, someLogicStrUint64StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrUint64PtrErr failed")
 	}
@@ -7101,7 +7101,7 @@ func TestFilterMapStrUint32PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrUint32PtrErr failed")
 	}
-	_, err = FilterMapStrUint32PtrErr(notOneStrUint32StrPtrErr, someLogicStrUint32StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrUint32PtrErr(notOneStrUint32StrPtrErr, someLogicStrUint32StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrUint32PtrErr failed")
 	}
@@ -7156,7 +7156,7 @@ func TestFilterMapStrUint16PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrUint16PtrErr failed")
 	}
-	_, err = FilterMapStrUint16PtrErr(notOneStrUint16StrPtrErr, someLogicStrUint16StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrUint16PtrErr(notOneStrUint16StrPtrErr, someLogicStrUint16StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrUint16PtrErr failed")
 	}
@@ -7211,7 +7211,7 @@ func TestFilterMapStrUint8PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrUint8PtrErr failed")
 	}
-	_, err = FilterMapStrUint8PtrErr(notOneStrUint8StrPtrErr, someLogicStrUint8StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrUint8PtrErr(notOneStrUint8StrPtrErr, someLogicStrUint8StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrUint8PtrErr failed")
 	}
@@ -7325,7 +7325,7 @@ func TestFilterMapStrFloat32PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrFloat32PtrErr failed")
 	}
-	_, err = FilterMapStrFloat32PtrErr(notOneStrFloat32StrPtrErr, someLogicStrFloat32StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrFloat32PtrErr(notOneStrFloat32StrPtrErr, someLogicStrFloat32StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrFloat32PtrErr failed")
 	}
@@ -7380,7 +7380,7 @@ func TestFilterMapStrFloat64PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMapStrFloat64PtrErr failed")
 	}
-	_, err = FilterMapStrFloat64PtrErr(notOneStrFloat64StrPtrErr, someLogicStrFloat64StrPtrErr, []*string{&vTwo, &vThree})
+	_, err = FilterMapStrFloat64PtrErr(notOneStrFloat64StrPtrErr, someLogicStrFloat64StrPtrErr, []*string{&vThree})
 	if err == nil {
 		t.Errorf("FilterMapStrFloat64PtrErr failed")
 	}

@@ -382,7 +382,7 @@ func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("FilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
 	}
-	_, err = FilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(notOne<FINPUT_TYPE><FOUTPUT_TYPE>StrPtrErr, someLogic<FINPUT_TYPE><FOUTPUT_TYPE>StrPtrErr, []*<INPUT_TYPE>{&vTwo, &vThree})
+	_, err = FilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(notOne<FINPUT_TYPE><FOUTPUT_TYPE>StrPtrErr, someLogic<FINPUT_TYPE><FOUTPUT_TYPE>StrPtrErr, []*<INPUT_TYPE>{&vThree})
 	if err == nil {
 		t.Errorf("FilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
 	}
