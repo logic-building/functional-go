@@ -41,10 +41,16 @@ func EveryPtrBoolTest() string {
 	return `
 func TestEvery<FTYPE>Ptr(t *testing.T) {
 	var vt <TYPE> = true
+	var vf <TYPE> = false
 
 	// Test : every value in the list is either true or false
 	list1 := []*<TYPE>{&vt, &vt, &vt, &vt}
 	if !Every<FTYPE>Ptr(TruePtr, list1) {
+		t.Errorf("Every<FTYPE>Ptr failed. Expected=true, actual=false")
+	}
+
+	list1 = []*<TYPE>{&vt, &vt, &vt, &vf}
+	if Every<FTYPE>Ptr(TruePtr, list1) {
 		t.Errorf("Every<FTYPE>Ptr failed. Expected=true, actual=false")
 	}
 
@@ -54,8 +60,15 @@ func TestEvery<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("EveryBool failed. Expected=false, actual=true")
 	}
 
-	if EveryBool(True, nil) {
+	if EveryBoolPtr(TruePtr, nil) {
 		t.Errorf("EveryBool failed. Expected=false, actual=true")
+	}
+
+	if EveryBoolPtr(nil, []*bool{}) {
+		t.Errorf("Every<FTYPE>Ptr failed. Expected=false, actual=true")
+	}
+	if EveryBoolPtr(TruePtr, []*bool{}) {
+		t.Errorf("Every<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
 }
 

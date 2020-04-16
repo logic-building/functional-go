@@ -320,9 +320,15 @@ func TestEveryUint8Ptr(t *testing.T) {
 func TestEveryStrPtr(t *testing.T) {
 	// Test : every value in the list is even number
 	var v2 string = "2"
+	var v3 string = "3"
 	var v4 string = "4"
 	list1 := []*string{&v2, &v4}
 	if !EveryStrPtr(isEvenStrPtr, list1) {
+		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
+	}
+
+	list1 = []*string{&v2, &v4, &v3}
+	if EveryStrPtr(isEvenStrPtr, list1) {
 		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
 	}
 
@@ -343,10 +349,16 @@ func TestEveryStrPtr(t *testing.T) {
 
 func TestEveryBoolPtr(t *testing.T) {
 	var vt bool = true
+	var vf bool = false
 
 	// Test : every value in the list is either true or false
 	list1 := []*bool{&vt, &vt, &vt, &vt}
 	if !EveryBoolPtr(TruePtr, list1) {
+		t.Errorf("EveryBoolPtr failed. Expected=true, actual=false")
+	}
+
+	list1 = []*bool{&vt, &vt, &vt, &vf}
+	if EveryBoolPtr(TruePtr, list1) {
 		t.Errorf("EveryBoolPtr failed. Expected=true, actual=false")
 	}
 
@@ -356,8 +368,15 @@ func TestEveryBoolPtr(t *testing.T) {
 		t.Errorf("EveryBool failed. Expected=false, actual=true")
 	}
 
-	if EveryBool(True, nil) {
+	if EveryBoolPtr(TruePtr, nil) {
 		t.Errorf("EveryBool failed. Expected=false, actual=true")
+	}
+
+	if EveryBoolPtr(nil, []*bool{}) {
+		t.Errorf("EveryBoolPtr failed. Expected=false, actual=true")
+	}
+	if EveryBoolPtr(TruePtr, []*bool{}) {
+		t.Errorf("EveryBoolPtr failed. Expected=false, actual=true")
 	}
 }
 
