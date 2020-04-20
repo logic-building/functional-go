@@ -322,6 +322,9 @@ func generateFPCodeIO(pkg, dataTypes string) (string, error) {
 
 			template += basic.FilterMapIOPtrErr()
 			template = r.Replace(template)
+
+			template += basic.FilterMapIOErr()
+			template = r.Replace(template)
 		}
 	}
 
