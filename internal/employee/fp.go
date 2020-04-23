@@ -1230,6 +1230,36 @@ func FilterMapEmployeeTeacherPtrErr(fFilter func(*Employee) (bool, error), fMap 
 	return newList, nil
 }
 
+// FilterMapEmployeeTeacherErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - Employee and returns (bool, error).
+//	2. Function: takes Employee as argument and returns (Teacher, error)
+// 	3. List of type Employee
+//
+// Returns:
+//	New List of type Teacher, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapEmployeeTeacherErr(fFilter func(Employee) (bool, error), fMap func(Employee) (Teacher, error), list []Employee) ([]Teacher, error) {
+	if fFilter == nil || fMap == nil {
+		return []Teacher{}, nil
+	}
+	var newList []Teacher
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
 // MapEmployeeInt takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployeeInt(f func(Employee) int, list []Employee) []int {
@@ -1333,6 +1363,36 @@ func FilterMapEmployeeIntPtrErr(fFilter func(*Employee) (bool, error), fMap func
 		return []*int{}, nil
 	}
 	var newList []*int
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
+// FilterMapEmployeeIntErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - Employee and returns (bool, error).
+//	2. Function: takes Employee as argument and returns (int, error)
+// 	3. List of type Employee
+//
+// Returns:
+//	New List of type int, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapEmployeeIntErr(fFilter func(Employee) (bool, error), fMap func(Employee) (int, error), list []Employee) ([]int, error) {
+	if fFilter == nil || fMap == nil {
+		return []int{}, nil
+	}
+	var newList []int
 	for _, v := range list {
 		r, err := fFilter(v)
 		if err != nil {
@@ -1468,6 +1528,36 @@ func FilterMapEmployeeStrPtrErr(fFilter func(*Employee) (bool, error), fMap func
 	return newList, nil
 }
 
+// FilterMapEmployeeStrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - Employee and returns (bool, error).
+//	2. Function: takes Employee as argument and returns (string, error)
+// 	3. List of type Employee
+//
+// Returns:
+//	New List of type string, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapEmployeeStrErr(fFilter func(Employee) (bool, error), fMap func(Employee) (string, error), list []Employee) ([]string, error) {
+	if fFilter == nil || fMap == nil {
+		return []string{}, nil
+	}
+	var newList []string
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
 // MapTeacherEmployee takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapTeacherEmployee(f func(Teacher) Employee, list []Teacher) []Employee {
@@ -1571,6 +1661,36 @@ func FilterMapTeacherEmployeePtrErr(fFilter func(*Teacher) (bool, error), fMap f
 		return []*Employee{}, nil
 	}
 	var newList []*Employee
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
+// FilterMapTeacherEmployeeErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - Teacher and returns (bool, error).
+//	2. Function: takes Teacher as argument and returns (Employee, error)
+// 	3. List of type Teacher
+//
+// Returns:
+//	New List of type Employee, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapTeacherEmployeeErr(fFilter func(Teacher) (bool, error), fMap func(Teacher) (Employee, error), list []Teacher) ([]Employee, error) {
+	if fFilter == nil || fMap == nil {
+		return []Employee{}, nil
+	}
+	var newList []Employee
 	for _, v := range list {
 		r, err := fFilter(v)
 		if err != nil {
@@ -1706,6 +1826,36 @@ func FilterMapTeacherIntPtrErr(fFilter func(*Teacher) (bool, error), fMap func(*
 	return newList, nil
 }
 
+// FilterMapTeacherIntErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - Teacher and returns (bool, error).
+//	2. Function: takes Teacher as argument and returns (int, error)
+// 	3. List of type Teacher
+//
+// Returns:
+//	New List of type int, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapTeacherIntErr(fFilter func(Teacher) (bool, error), fMap func(Teacher) (int, error), list []Teacher) ([]int, error) {
+	if fFilter == nil || fMap == nil {
+		return []int{}, nil
+	}
+	var newList []int
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
 // MapTeacherStr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapTeacherStr(f func(Teacher) string, list []Teacher) []string {
@@ -1809,6 +1959,36 @@ func FilterMapTeacherStrPtrErr(fFilter func(*Teacher) (bool, error), fMap func(*
 		return []*string{}, nil
 	}
 	var newList []*string
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
+// FilterMapTeacherStrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - Teacher and returns (bool, error).
+//	2. Function: takes Teacher as argument and returns (string, error)
+// 	3. List of type Teacher
+//
+// Returns:
+//	New List of type string, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapTeacherStrErr(fFilter func(Teacher) (bool, error), fMap func(Teacher) (string, error), list []Teacher) ([]string, error) {
+	if fFilter == nil || fMap == nil {
+		return []string{}, nil
+	}
+	var newList []string
 	for _, v := range list {
 		r, err := fFilter(v)
 		if err != nil {
@@ -1944,6 +2124,36 @@ func FilterMapIntEmployeePtrErr(fFilter func(*int) (bool, error), fMap func(*int
 	return newList, nil
 }
 
+// FilterMapIntEmployeeErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - int and returns (bool, error).
+//	2. Function: takes int as argument and returns (Employee, error)
+// 	3. List of type int
+//
+// Returns:
+//	New List of type Employee, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapIntEmployeeErr(fFilter func(int) (bool, error), fMap func(int) (Employee, error), list []int) ([]Employee, error) {
+	if fFilter == nil || fMap == nil {
+		return []Employee{}, nil
+	}
+	var newList []Employee
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
 // MapIntTeacher takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapIntTeacher(f func(int) Teacher, list []int) []Teacher {
@@ -2047,6 +2257,36 @@ func FilterMapIntTeacherPtrErr(fFilter func(*int) (bool, error), fMap func(*int)
 		return []*Teacher{}, nil
 	}
 	var newList []*Teacher
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
+// FilterMapIntTeacherErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - int and returns (bool, error).
+//	2. Function: takes int as argument and returns (Teacher, error)
+// 	3. List of type int
+//
+// Returns:
+//	New List of type Teacher, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapIntTeacherErr(fFilter func(int) (bool, error), fMap func(int) (Teacher, error), list []int) ([]Teacher, error) {
+	if fFilter == nil || fMap == nil {
+		return []Teacher{}, nil
+	}
+	var newList []Teacher
 	for _, v := range list {
 		r, err := fFilter(v)
 		if err != nil {
@@ -2182,6 +2422,36 @@ func FilterMapStrEmployeePtrErr(fFilter func(*string) (bool, error), fMap func(*
 	return newList, nil
 }
 
+// FilterMapStrEmployeeErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - string and returns (bool, error).
+//	2. Function: takes string as argument and returns (Employee, error)
+// 	3. List of type string
+//
+// Returns:
+//	New List of type Employee, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapStrEmployeeErr(fFilter func(string) (bool, error), fMap func(string) (Employee, error), list []string) ([]Employee, error) {
+	if fFilter == nil || fMap == nil {
+		return []Employee{}, nil
+	}
+	var newList []Employee
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
 // MapStrTeacher takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapStrTeacher(f func(string) Teacher, list []string) []Teacher {
@@ -2285,6 +2555,36 @@ func FilterMapStrTeacherPtrErr(fFilter func(*string) (bool, error), fMap func(*s
 		return []*Teacher{}, nil
 	}
 	var newList []*Teacher
+	for _, v := range list {
+		r, err := fFilter(v)
+		if err != nil {
+			return nil, err
+		}
+		if r {
+			r, err := fMap(v)
+			if err != nil {
+				return nil, err
+			}
+			newList = append(newList, r)
+		}
+	}
+	return newList, nil
+}
+
+// FilterMapStrTeacherErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list, error
+// Takes 3 inputs
+//	1. Function: takes one input type - string and returns (bool, error).
+//	2. Function: takes string as argument and returns (Teacher, error)
+// 	3. List of type string
+//
+// Returns:
+//	New List of type Teacher, error
+//  Empty list if all there parameters are nil or either of parameter is nil
+func FilterMapStrTeacherErr(fFilter func(string) (bool, error), fMap func(string) (Teacher, error), list []string) ([]Teacher, error) {
+	if fFilter == nil || fMap == nil {
+		return []Teacher{}, nil
+	}
+	var newList []Teacher
 	for _, v := range list {
 		r, err := fFilter(v)
 		if err != nil {
