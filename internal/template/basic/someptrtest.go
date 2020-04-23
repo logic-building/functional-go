@@ -1,5 +1,7 @@
 package basic
 
+import "strings"
+
 // RemovePtrTest<FTYPE>Ptr
 func SomePtrTest() string {
 	return `
@@ -62,4 +64,105 @@ func TestSome<FTYPE>Ptr(t *testing.T) {
 }
 
 `
+}
+
+//************************SomePtrErr Function*******************
+// RemovePtrTest<FTYPE>Ptr
+func SomePtrErrTest() string {
+	return `
+func TestSome<FTYPE>PtrErr(t *testing.T) {
+	// Test : value exist in the list
+
+	var v0 <TYPE> = 0
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+	var v4 <TYPE> = 4
+	var v5 <TYPE> = 5
+	var v7 <TYPE> = 7
+	var v8 <TYPE> = 8
+	var v10 <TYPE> = 10
+
+	list1 := []*<TYPE>{&v8, &v2, &v10, &v4}
+	r, _ := Some<FTYPE>PtrErr(isEven<FTYPE>PtrErr, list1)
+	if !r {
+		t.Errorf("Some<FTYPE>PtrErr failed. Expected=true, actual=false")
+	}
+
+	list3 := []*<TYPE>{&v0, &v4}
+	_, err := Some<FTYPE>PtrErr(isEven<FTYPE>PtrErr, list3)
+	if err == nil {
+		t.Errorf("Some<FTYPE>PtrErr failed. Expected=true, actual=false")
+	}
+
+	list2 := []*<TYPE>{&v1, &v3, &v5, &v7}
+	r, _ = Some<FTYPE>PtrErr(isEven<FTYPE>PtrErr, list2)
+	if r {
+		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = Some<FTYPE>PtrErr(nil, nil)
+	if r {
+		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _=Some<FTYPE>PtrErr(isEven<FTYPE>PtrErr, []*<TYPE>{})
+	if r {
+		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
+	}
+}
+
+`
+}
+
+func SomePtrErrTestBool() string {
+	return `
+func TestSome<FTYPE>PtrErr(t *testing.T) {
+	// Test : value exist in the list
+
+	var vt <TYPE> = true
+	var vf <TYPE> = false
+
+	list1 := []*<TYPE>{&vt, &vf}
+	r, _ := Some<FTYPE>PtrErr(func(v *bool) (bool, error) { return *v == true, nil }, list1)
+	if !r {
+		t.Errorf("Some<FTYPE>PtrErr failed. Expected=true, actual=false")
+	}
+
+	r, _ = Some<FTYPE>PtrErr(nil, nil)
+	
+	if r{
+		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
+	}
+
+	r, _ = Some<FTYPE>PtrErr(func(v *bool) (bool, error) { return *v == true, nil }, []*<TYPE>{})
+	if  r {
+		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
+	}
+
+	_, err := Some<FTYPE>PtrErr(func(v *bool) (bool, error) { if *v == false { return false, errors.New("false is invalid in this test") }; return *v == true, nil }, []*<TYPE>{&vf})
+	if  err == nil {
+		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
+	}
+}
+
+`
+}
+
+func ReplaceActivitySomePtrErr(code string) string {
+	s1 := `import (
+    _ "errors"
+	"reflect"
+	"testing"
+)
+
+func TestSomeIntPtrErr(t *testing.T) {`
+	s2 := `import (
+    "errors"
+	"testing"
+)
+
+func TestSomeIntPtrErr(t *testing.T) {`
+
+	return strings.Replace(code, s1, s2, -1)
 }
