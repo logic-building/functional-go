@@ -73,6 +73,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "SomePtrErr",
+		codeTemplate:      basic.SomePtrErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "someptrerr.go",
+
+		testTemplate:          basic.SomePtrErrTest(),
+		testTemplateBool:      basic.SomePtrErrTestBool(),
+		generatedTestFileName: "someptrerr_test.go",
+	},
+
+	fpCode{
 		function:          "TakeWhilePtr",
 		codeTemplate:      basic.TakeWhilePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1495,6 +1506,8 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityFilterMapIOPtrErr(code)
 	code = basic.ReplaceActivityFilterMapIOErr(code)
+
+	code = basic.ReplaceActivitySomePtrErr(code)
 
 	return code
 }

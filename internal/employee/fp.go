@@ -188,6 +188,31 @@ func SomePtr(f func(*Employee) bool, list []*Employee) bool {
 	return false
 }
 
+// SomePtrErr finds item in the list based on supplied function.
+//
+// Takes 2 input:
+//	1. Function
+//	2. List
+//
+// Returns:
+//	(bool,err).
+//	True if condition satisfies, else false
+func SomePtrErr(f func(*Employee) (bool, error), list []*Employee) (bool, error) {
+	if f == nil {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if r {
+			return true, nil
+		}
+	}
+	return false, nil
+}
+
 func Every(f func(Employee) bool, list []Employee) bool {
 	if f == nil || len(list) == 0 {
 		return false
@@ -740,6 +765,31 @@ func SomeTeacherPtr(f func(*Teacher) bool, list []*Teacher) bool {
 		}
 	}
 	return false
+}
+
+// SomeTeacherPtrErr finds item in the list based on supplied function.
+//
+// Takes 2 input:
+//	1. Function
+//	2. List
+//
+// Returns:
+//	(bool,err).
+//	True if condition satisfies, else false
+func SomeTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) (bool, error) {
+	if f == nil {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if r {
+			return true, nil
+		}
+	}
+	return false, nil
 }
 
 func EveryTeacher(f func(Teacher) bool, list []Teacher) bool {
