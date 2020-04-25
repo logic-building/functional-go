@@ -304,6 +304,28 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "EveryPtrErr",
+		codeTemplate:      basic.EveryPtrErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "everyptrerr.go",
+
+		testTemplate:          basic.EveryPtrErrTest(),
+		testTemplateBool:      basic.EveryPtrErrBoolTest(),
+		generatedTestFileName: "everyptrerr_test.go",
+	},
+
+	fpCode{
+		function:          "EveryErr",
+		codeTemplate:      basic.EveryErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "everyerr.go",
+
+		testTemplate:          basic.EveryErrTest(),
+		testTemplateBool:      basic.EveryErrBoolTest(),
+		generatedTestFileName: "everyerr_test.go",
+	},
+
+	fpCode{
 		function:          "MaxPtr",
 		codeTemplate:      basic.MaxPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
@@ -1520,6 +1542,9 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivitySomePtrErr(code)
 	code = basic.ReplaceActivitySomeErr(code)
+
+	code = basic.ReplaceActivityEveryPtrErr(code)
+	code = basic.ReplaceActivityEveryErr(code)
 
 	return code
 }

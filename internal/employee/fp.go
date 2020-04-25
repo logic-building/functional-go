@@ -262,6 +262,42 @@ func EveryPtr(f func(*Employee) bool, list []*Employee) bool {
 	return true
 }
 
+// EveryPtrErr returns true if supplied function returns logical true for every item in the list
+
+func EveryPtrErr(f func(*Employee) (bool, error), list []*Employee) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
+}
+
+// EveryErr returns true if supplied function returns logical true for every item in the list
+
+func EveryErr(f func(Employee) (bool, error), list []Employee) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
+}
+
 func DropWhile(f func(Employee) bool, list []Employee) []Employee {
 	if f == nil {
 		return []Employee{}
@@ -864,6 +900,42 @@ func EveryTeacherPtr(f func(*Teacher) bool, list []*Teacher) bool {
 		}
 	}
 	return true
+}
+
+// EveryTeacherPtrErr returns true if supplied function returns logical true for every item in the list
+
+func EveryTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
+}
+
+// EveryTeacherErr returns true if supplied function returns logical true for every item in the list
+
+func EveryTeacherErr(f func(Teacher) (bool, error), list []Teacher) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
 }
 
 func DropWhileTeacher(f func(Teacher) bool, list []Teacher) []Teacher {

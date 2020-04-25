@@ -263,6 +263,42 @@ func EveryPtr(f func(*Employer) bool, list []*Employer) bool {
 	return true
 }
 
+// EveryPtrErr returns true if supplied function returns logical true for every item in the list
+
+func EveryPtrErr(f func(*Employer) (bool, error), list []*Employer) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
+}
+
+// EveryErr returns true if supplied function returns logical true for every item in the list
+
+func EveryErr(f func(Employer) (bool, error), list []Employer) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
+}
+
 func DropWhile(f func(Employer) bool, list []Employer) []Employer {
 	if f == nil {
 		return []Employer{}
@@ -865,6 +901,42 @@ func EveryEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee
 		}
 	}
 	return true
+}
+
+// EveryEmployeePtrErr returns true if supplied function returns logical true for every item in the list
+
+func EveryEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*employee.Employee) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
+}
+
+// EveryEmployeeErr returns true if supplied function returns logical true for every item in the list
+
+func EveryEmployeeErr(f func(employee.Employee) (bool, error), list []employee.Employee) (bool, error) {
+	if f == nil || len(list) == 0 {
+		return false, nil
+	}
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return false, err
+		}
+		if !r {
+			return false, nil
+		}
+	}
+	return true, nil
 }
 
 func DropWhileEmployee(f func(employee.Employee) bool, list []employee.Employee) []employee.Employee {
