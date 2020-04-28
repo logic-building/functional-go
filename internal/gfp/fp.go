@@ -440,6 +440,60 @@ func TakeWhileEmployerPtr(f func(*employer.Employer) bool, list []*employer.Empl
 	return newList
 }
 
+// TakeWhileEmployerPtrErr returns new list based on condition in the supplied function. It returns new list once condition fails.
+//
+// Takes 2 inputs:
+//	1. Function - 1 input of type *employer.Employer and returns ([]*employer.Employer, error)
+//	2. List
+//
+// Returns:
+//	New List, error.
+//	Empty list if all the parameters are nil or either of one parameter is nil
+func TakeWhileEmployerPtrErr(f func(*employer.Employer) (bool, error), list []*employer.Employer) ([]*employer.Employer, error) {
+	if f == nil {
+		return []*employer.Employer{}, nil
+	}
+	var newList []*employer.Employer
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			return newList, nil
+		}
+		newList = append(newList, v)
+	}
+	return newList, nil
+}
+
+// TakeWhileEmployerErr returns new list based on condition in the supplied function. It returns new list once condition fails.
+//
+// Takes 2 inputs:
+//	1. Function - 1 input of type employer.Employer and returns ([]employer.Employer, error)
+//	2. List
+//
+// Returns:
+//	New List, error.
+//	Empty list if all the parameters are nil or either of one parameter is nil
+func TakeWhileEmployerErr(f func(employer.Employer) (bool, error), list []employer.Employer) ([]employer.Employer, error) {
+	if f == nil {
+		return []employer.Employer{}, nil
+	}
+	var newList []employer.Employer
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			return newList, nil
+		}
+		newList = append(newList, v)
+	}
+	return newList, nil
+}
+
 func PMapEmployer(f func(employer.Employer) employer.Employer, list []employer.Employer) []employer.Employer {
 	if f == nil {
 		return []employer.Employer{}
@@ -1148,6 +1202,60 @@ func TakeWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Empl
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+// TakeWhileEmployeePtrErr returns new list based on condition in the supplied function. It returns new list once condition fails.
+//
+// Takes 2 inputs:
+//	1. Function - 1 input of type *employee.Employee and returns ([]*employee.Employee, error)
+//	2. List
+//
+// Returns:
+//	New List, error.
+//	Empty list if all the parameters are nil or either of one parameter is nil
+func TakeWhileEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*employee.Employee) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+	var newList []*employee.Employee
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			return newList, nil
+		}
+		newList = append(newList, v)
+	}
+	return newList, nil
+}
+
+// TakeWhileEmployeeErr returns new list based on condition in the supplied function. It returns new list once condition fails.
+//
+// Takes 2 inputs:
+//	1. Function - 1 input of type employee.Employee and returns ([]employee.Employee, error)
+//	2. List
+//
+// Returns:
+//	New List, error.
+//	Empty list if all the parameters are nil or either of one parameter is nil
+func TakeWhileEmployeeErr(f func(employee.Employee) (bool, error), list []employee.Employee) ([]employee.Employee, error) {
+	if f == nil {
+		return []employee.Employee{}, nil
+	}
+	var newList []employee.Employee
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			return newList, nil
+		}
+		newList = append(newList, v)
+	}
+	return newList, nil
 }
 
 func PMapEmployee(f func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
