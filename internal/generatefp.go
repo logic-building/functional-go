@@ -293,6 +293,28 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "DropWhilePtrErr",
+		codeTemplate:      basic.DropWhilePtrErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "dropwhileptrerr.go",
+
+		testTemplate:          basic.DropWhilePtrErrTest(),
+		testTemplateBool:      basic.DropWhilePtrErrBoolTest(),
+		generatedTestFileName: "dropwhileptrerr_test.go",
+	},
+
+	fpCode{
+		function:          "DropWhileErr",
+		codeTemplate:      basic.DropWhileErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "dropwhileerr.go",
+
+		testTemplate:          basic.DropWhileErrTest(),
+		testTemplateBool:      basic.DropWhileErrBoolTest(),
+		generatedTestFileName: "dropwhileerr_test.go",
+	},
+
+	fpCode{
 		function:          "EveryPtr",
 		codeTemplate:      basic.EveryPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1545,6 +1567,9 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityEveryPtrErr(code)
 	code = basic.ReplaceActivityEveryErr(code)
+
+	code = basic.ReplaceActivityDropWhilePtrErr(code)
+	code = basic.ReplaceActivityDropWhileErr(code)
 
 	return code
 }

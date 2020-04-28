@@ -341,6 +341,76 @@ func DropWhilePtr(f func(*Employer) bool, list []*Employer) []*Employer {
 	return newList
 }
 
+/// DropWhilePtrErr drops the items from the list as long as condition satisfies.
+//
+// Takes two inputs
+//	1. Function: takes one input and returns (boolean, error)
+//	2. list
+//
+// Returns:
+// 	New List, error
+//  Empty list if either one of arguments or both of them are nil
+
+func DropWhilePtrErr(f func(*Employer) (bool, error), list []*Employer) ([]*Employer, error) {
+	if f == nil {
+		return []*Employer{}, nil
+	}
+	var newList []*Employer
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			listLen := len(list)
+			newList = make([]*Employer, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList, nil
+		}
+	}
+	return newList, nil
+}
+
+/// DropWhileErr drops the items from the list as long as condition satisfies.
+//
+// Takes two inputs
+//	1. Function: takes one input and returns (boolean, error)
+//	2. list
+//
+// Returns:
+// 	New List, error
+//  Empty list if either one of arguments or both of them are nil
+
+func DropWhileErr(f func(Employer) (bool, error), list []Employer) ([]Employer, error) {
+	if f == nil {
+		return []Employer{}, nil
+	}
+	var newList []Employer
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			listLen := len(list)
+			newList = make([]Employer, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList, nil
+		}
+	}
+	return newList, nil
+}
+
 func TakeWhile(f func(Employer) bool, list []Employer) []Employer {
 	if f == nil {
 		return []Employer{}
@@ -979,6 +1049,76 @@ func DropWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Empl
 		}
 	}
 	return newList
+}
+
+/// DropWhileEmployeePtrErr drops the items from the list as long as condition satisfies.
+//
+// Takes two inputs
+//	1. Function: takes one input and returns (boolean, error)
+//	2. list
+//
+// Returns:
+// 	New List, error
+//  Empty list if either one of arguments or both of them are nil
+
+func DropWhileEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*employee.Employee) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+	var newList []*employee.Employee
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			listLen := len(list)
+			newList = make([]*employee.Employee, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList, nil
+		}
+	}
+	return newList, nil
+}
+
+/// DropWhileEmployeeErr drops the items from the list as long as condition satisfies.
+//
+// Takes two inputs
+//	1. Function: takes one input and returns (boolean, error)
+//	2. list
+//
+// Returns:
+// 	New List, error
+//  Empty list if either one of arguments or both of them are nil
+
+func DropWhileEmployeeErr(f func(employee.Employee) (bool, error), list []employee.Employee) ([]employee.Employee, error) {
+	if f == nil {
+		return []employee.Employee{}, nil
+	}
+	var newList []employee.Employee
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			listLen := len(list)
+			newList = make([]employee.Employee, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList, nil
+		}
+	}
+	return newList, nil
 }
 
 func TakeWhileEmployee(f func(employee.Employee) bool, list []employee.Employee) []employee.Employee {

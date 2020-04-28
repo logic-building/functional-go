@@ -237,6 +237,12 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		template += template2.DropWhilePtr()
 		template = r.Replace(template)
 
+		template += basic.DropWhilePtrErr()
+		template = r2.Replace(template)
+
+		template += basic.DropWhileErr()
+		template = r2.Replace(template)
+
 		template += template2.TakeWhile()
 		template = r.Replace(template)
 
