@@ -62,6 +62,28 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "ReducePtrErr",
+		codeTemplate:      basic.ReducePtrErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
+		generatedFileName: "reduceptrerr.go",
+
+		testTemplate: basic.ReducePtrErrTest(),
+		//testTemplateBool:      basic.DropLastBoolTest(), // Not required here
+		generatedTestFileName: "reduceptrerr_test.go",
+	},
+
+	fpCode{
+		function:          "ReduceErr",
+		codeTemplate:      basic.ReduceErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
+		generatedFileName: "reduceerr.go",
+
+		testTemplate: basic.ReduceErrTest(),
+		//testTemplateBool:      basic.DropLastBoolTest(), // Not required here
+		generatedTestFileName: "reduceerr_test.go",
+	},
+
+	fpCode{
 		function:          "SomePtr",
 		codeTemplate:      basic.SomePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1595,6 +1617,9 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityTakeWhilePtrErr(code)
 	code = basic.ReplaceActivityTakeWhileErr(code)
+
+	code = basic.ReplaceActivityReducePtrErr(code)
+	code = basic.ReplaceActivityReduceErr(code)
 
 	return code
 }

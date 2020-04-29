@@ -734,6 +734,82 @@ func ReduceEmployerPtr(f func(*employer.Employer, *employer.Employer) *employer.
 	return ReduceEmployerPtr(f, list[1:], *r)
 }
 
+// ReduceEmployerPtrErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (*employer.Employer, *employer.Employer)
+//	B. list of type []*employer.Employer
+// 	C. initializer (optional of type employer.Employer)
+//
+// Returns:
+//	single value, error: (*employer.Employer, error)
+
+func ReduceEmployerPtrErr(f func(*employer.Employer, *employer.Employer) (*employer.Employer, error), list []*employer.Employer, initializer ...employer.Employer) (*employer.Employer, error) {
+	var initVal employer.Employer
+	var init *employer.Employer = &initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = &initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return nil, err
+	}
+	return ReduceEmployerPtrErr(f, list[1:], *r)
+}
+
+// ReduceEmployerErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (employer.Employer, employer.Employer)
+//	B. list of type []employer.Employer
+// 	C. initializer (optional of type employer.Employer)
+//
+// Returns:
+//	single value, error: (employer.Employer, error)
+
+func ReduceEmployerErr(f func(employer.Employer, employer.Employer) (employer.Employer, error), list []employer.Employer, initializer ...employer.Employer) (employer.Employer, error) {
+	var initVal employer.Employer
+	var init employer.Employer = initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return r, err
+	}
+	return ReduceEmployerErr(f, list[1:], r)
+}
+
 // DropLastEmployer drops last item from the list and returns new list.
 // Returns empty list if there is only one item in the list or list empty
 func DropLastEmployer(list []employer.Employer) []employer.Employer {
@@ -1496,6 +1572,82 @@ func ReduceEmployeePtr(f func(*employee.Employee, *employee.Employee) *employee.
 
 	r := f(init, list[0])
 	return ReduceEmployeePtr(f, list[1:], *r)
+}
+
+// ReduceEmployeePtrErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (*employee.Employee, *employee.Employee)
+//	B. list of type []*employee.Employee
+// 	C. initializer (optional of type employee.Employee)
+//
+// Returns:
+//	single value, error: (*employee.Employee, error)
+
+func ReduceEmployeePtrErr(f func(*employee.Employee, *employee.Employee) (*employee.Employee, error), list []*employee.Employee, initializer ...employee.Employee) (*employee.Employee, error) {
+	var initVal employee.Employee
+	var init *employee.Employee = &initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = &initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return nil, err
+	}
+	return ReduceEmployeePtrErr(f, list[1:], *r)
+}
+
+// ReduceEmployeeErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (employee.Employee, employee.Employee)
+//	B. list of type []employee.Employee
+// 	C. initializer (optional of type employee.Employee)
+//
+// Returns:
+//	single value, error: (employee.Employee, error)
+
+func ReduceEmployeeErr(f func(employee.Employee, employee.Employee) (employee.Employee, error), list []employee.Employee, initializer ...employee.Employee) (employee.Employee, error) {
+	var initVal employee.Employee
+	var init employee.Employee = initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return r, err
+	}
+	return ReduceEmployeeErr(f, list[1:], r)
 }
 
 // DropLastEmployee drops last item from the list and returns new list.
