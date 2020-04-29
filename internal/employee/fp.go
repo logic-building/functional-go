@@ -732,6 +732,82 @@ func ReducePtr(f func(*Employee, *Employee) *Employee, list []*Employee, initial
 	return ReducePtr(f, list[1:], *r)
 }
 
+// ReducePtrErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (*Employee, *Employee)
+//	B. list of type []*Employee
+// 	C. initializer (optional of type Employee)
+//
+// Returns:
+//	single value, error: (*Employee, error)
+
+func ReducePtrErr(f func(*Employee, *Employee) (*Employee, error), list []*Employee, initializer ...Employee) (*Employee, error) {
+	var initVal Employee
+	var init *Employee = &initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = &initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return nil, err
+	}
+	return ReducePtrErr(f, list[1:], *r)
+}
+
+// ReduceErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (Employee, Employee)
+//	B. list of type []Employee
+// 	C. initializer (optional of type Employee)
+//
+// Returns:
+//	single value, error: (Employee, error)
+
+func ReduceErr(f func(Employee, Employee) (Employee, error), list []Employee, initializer ...Employee) (Employee, error) {
+	var initVal Employee
+	var init Employee = initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return r, err
+	}
+	return ReduceErr(f, list[1:], r)
+}
+
 // DropLast drops last item from the list and returns new list.
 // Returns empty list if there is only one item in the list or list empty
 func DropLast(list []Employee) []Employee {
@@ -1494,6 +1570,82 @@ func ReduceTeacherPtr(f func(*Teacher, *Teacher) *Teacher, list []*Teacher, init
 
 	r := f(init, list[0])
 	return ReduceTeacherPtr(f, list[1:], *r)
+}
+
+// ReduceTeacherPtrErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (*Teacher, *Teacher)
+//	B. list of type []*Teacher
+// 	C. initializer (optional of type Teacher)
+//
+// Returns:
+//	single value, error: (*Teacher, error)
+
+func ReduceTeacherPtrErr(f func(*Teacher, *Teacher) (*Teacher, error), list []*Teacher, initializer ...Teacher) (*Teacher, error) {
+	var initVal Teacher
+	var init *Teacher = &initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = &initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return nil, err
+	}
+	return ReduceTeacherPtrErr(f, list[1:], *r)
+}
+
+// ReduceTeacherErr reduces a list to a single value by combining elements via a supplied function
+//
+// Takes three inputs
+//	A. function - takes two arguments (Teacher, Teacher)
+//	B. list of type []Teacher
+// 	C. initializer (optional of type Teacher)
+//
+// Returns:
+//	single value, error: (Teacher, error)
+
+func ReduceTeacherErr(f func(Teacher, Teacher) (Teacher, error), list []Teacher, initializer ...Teacher) (Teacher, error) {
+	var initVal Teacher
+	var init Teacher = initVal
+	lenList := len(list)
+
+	if initializer != nil {
+		init = initializer[0]
+	} else if lenList > 0 {
+		init = list[0]
+		if lenList == 1 {
+			return list[0], nil
+		}
+		if lenList >= 2 {
+			list = list[1:]
+		}
+	}
+
+	if lenList == 0 {
+		return init, nil
+	}
+
+	r, err := f(init, list[0])
+	if err != nil {
+		return r, err
+	}
+	return ReduceTeacherErr(f, list[1:], r)
 }
 
 // DropLastTeacher drops last item from the list and returns new list.
