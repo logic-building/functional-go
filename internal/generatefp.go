@@ -106,6 +106,28 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "TakeWhilePtrErr",
+		codeTemplate:      basic.TakeWhilePtrErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "takewhileptrerr.go",
+
+		testTemplate:          basic.TakeWhilePtrErrTest(),
+		testTemplateBool:      basic.TakeWhilePtrErrTestBool(),
+		generatedTestFileName: "takewhileptrerr_test.go",
+	},
+
+	fpCode{
+		function:          "TakeWhileErr",
+		codeTemplate:      basic.TakeWhileErr(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "takewhileerr.go",
+
+		testTemplate:          basic.TakeWhileErrTest(),
+		testTemplateBool:      basic.TakeWhileErrTestBool(),
+		generatedTestFileName: "takewhileerr_test.go",
+	},
+
+	fpCode{
 		function:          "RemovePtr",
 		codeTemplate:      basic.RemovePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1570,6 +1592,9 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityDropWhilePtrErr(code)
 	code = basic.ReplaceActivityDropWhileErr(code)
+
+	code = basic.ReplaceActivityTakeWhilePtrErr(code)
+	code = basic.ReplaceActivityTakeWhileErr(code)
 
 	return code
 }
