@@ -36,7 +36,7 @@ func square(num int) int {
 ```
 #### Four variants of function 1 is given above and 3 are given below
 ##### MapInt, MapIntPtr, MapIntErr, MapIntPtrErr
-###MapIntPtr
+### MapIntPtr
 ```
 package main
 
@@ -66,7 +66,7 @@ output:
 */
 ```
 
-###MapIntErr
+### MapIntErr
 ```
 package main
 
@@ -95,7 +95,7 @@ output:
 */
 ```
 
-###MapIntPtrErr
+### MapIntPtrErr
 ```
 package main
 
