@@ -165,6 +165,58 @@ func RemovePtr(f func(*Employer) bool, list []*Employer) []*Employer {
 	return newList
 }
 
+// RemovePtrErr removes the items from the given list based on supplied function and returns new list
+//
+// Takes 2 inputs:
+//	1. Function: input type *Employer and return types(bool, error)
+//	2. List of type: []*Employer
+//
+// Returns:
+//	New list and error: ([]*Employer, error)
+//	Empty list if both of arguments are nil or either one is nil.
+func RemovePtrErr(f func(*Employer) (bool, error), list []*Employer) ([]*Employer, error) {
+	if f == nil {
+		return []*Employer{}, nil
+	}
+	var newList []*Employer
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
+// RemoveErr removes the items from the given list based on supplied function and returns new list
+//
+// Takes 2 inputs:
+//	1. Function: input type Employer and return types(bool, error)
+//	2. List of type: []Employer
+//
+// Returns:
+//	New list and error: ([]Employer, error)
+//	Empty list if both of arguments are nil or either one is nil.
+func RemoveErr(f func(Employer) (bool, error), list []Employer) ([]Employer, error) {
+	if f == nil {
+		return []Employer{}, nil
+	}
+	var newList []Employer
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
 func Some(f func(Employer) bool, list []Employer) bool {
 	if f == nil {
 		return false
@@ -1003,6 +1055,58 @@ func RemoveEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employe
 		}
 	}
 	return newList
+}
+
+// RemoveEmployeePtrErr removes the items from the given list based on supplied function and returns new list
+//
+// Takes 2 inputs:
+//	1. Function: input type *employee.Employee and return types(bool, error)
+//	2. List of type: []*employee.Employee
+//
+// Returns:
+//	New list and error: ([]*employee.Employee, error)
+//	Empty list if both of arguments are nil or either one is nil.
+func RemoveEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*employee.Employee) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+	var newList []*employee.Employee
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
+}
+
+// RemoveEmployeeErr removes the items from the given list based on supplied function and returns new list
+//
+// Takes 2 inputs:
+//	1. Function: input type employee.Employee and return types(bool, error)
+//	2. List of type: []employee.Employee
+//
+// Returns:
+//	New list and error: ([]employee.Employee, error)
+//	Empty list if both of arguments are nil or either one is nil.
+func RemoveEmployeeErr(f func(employee.Employee) (bool, error), list []employee.Employee) ([]employee.Employee, error) {
+	if f == nil {
+		return []employee.Employee{}, nil
+	}
+	var newList []employee.Employee
+	for _, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		if !r {
+			newList = append(newList, v)
+		}
+	}
+	return newList, nil
 }
 
 func SomeEmployee(f func(employee.Employee) bool, list []employee.Employee) bool {
