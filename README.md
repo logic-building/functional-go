@@ -19,7 +19,7 @@ go get -u github.com/logic-building/functional-go/set/
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.4.0"
+version = "8.5.0"
 ```
 
 ### Quick Start
@@ -33,6 +33,100 @@ func square(num int) int {
 	return num * num
 }
 
+```
+#### Four variants of function 1 is given above and 3 are given below
+##### MapInt, MapIntPtr, MapIntErr, MapIntPtrErr
+###MapIntPtr
+```
+package main
+
+import (
+	"fmt"
+	"github.com/logic-building/functional-go/fp"
+)
+
+var v1 int = 1
+var v2 int = 2
+var v3 int = 3
+var v4 int = 4
+
+func main() {
+	result := fp.MapIntPtr(square, []*int{&v1, &v2, &v3, &v4})
+	fmt.Println(*result[0], *result[1], *result[2], *result[3])
+}
+
+func square(num *int) *int {
+	r := *num * *num
+	return &r
+}
+
+/*
+output:
+1 4 9 16
+*/
+```
+
+###MapIntErr
+```
+package main
+
+import (
+	"errors"
+	"fmt"
+	"github.com/logic-building/functional-go/fp"
+)
+
+func main() {
+	result, _ := fp.MapIntErr(square, []int{1, 2, 3, 4})
+	fmt.Println(result[0], result[1], result[2], result[3])
+}
+
+func square(num int) (int, error) {
+	if num == -1 {
+		return 0, errors.New("-1 is not valid")
+	}
+	r := num * num
+	return r, nil
+}
+
+/*
+output:
+1 4 9 16
+*/
+```
+
+###MapIntPtrErr
+```
+package main
+
+import (
+	"errors"
+	"fmt"
+
+	"github.com/logic-building/functional-go/fp"
+)
+
+func main() {
+	var v1 int = 1
+	var v2 int = 2
+	var v3 int = 3
+	var v4 int = 4
+
+	result, _ := fp.MapIntPtrErr(square, []*int{&v1, &v2, &v3, &v4})
+	fmt.Println(*result[0], *result[1], *result[2], *result[3])
+}
+
+func square(num *int) (*int, error) {
+	if *num == -1 {
+		return nil, errors.New("-1 is not valid")
+	}
+	r := *num * *num
+	return &r, nil
+}
+/*
+output:
+1 4 9 16
+*/
 ```
 
 ####  Generate functional code locally in project for user defined data type
