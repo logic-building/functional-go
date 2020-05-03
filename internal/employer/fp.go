@@ -609,6 +609,100 @@ func PMapPtr(f func(*Employer) *Employer, list []*Employer) []*Employer {
 	return newList
 }
 
+// PMapPtrErr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapPtrErr(f func(*Employer) (*Employer, error), list []*Employer) ([]*Employer, error) {
+	if f == nil {
+		return []*Employer{}, nil
+	}
+
+	ch := make(chan map[int]*Employer, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Employer, i int, v *Employer) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*Employer{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
+// PMapErr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapErr(f func(Employer) (Employer, error), list []Employer) ([]Employer, error) {
+	if f == nil {
+		return []Employer{}, nil
+	}
+
+	ch := make(chan map[int]Employer, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]Employer, i int, v Employer) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]Employer{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 func FilterMap(fFilter func(Employer) bool, fMap func(Employer) Employer, list []Employer) []Employer {
 	if fFilter == nil || fMap == nil {
 		return []Employer{}
@@ -1499,6 +1593,100 @@ func PMapEmployeePtr(f func(*employee.Employee) *employee.Employee, list []*empl
 		}
 	}
 	return newList
+}
+
+// PMapEmployeePtrErr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapEmployeePtrErr(f func(*employee.Employee) (*employee.Employee, error), list []*employee.Employee) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+
+	ch := make(chan map[int]*employee.Employee, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employee.Employee, i int, v *employee.Employee) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*employee.Employee{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
+// PMapEmployeeErr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+func PMapEmployeeErr(f func(employee.Employee) (employee.Employee, error), list []employee.Employee) ([]employee.Employee, error) {
+	if f == nil {
+		return []employee.Employee{}, nil
+	}
+
+	ch := make(chan map[int]employee.Employee, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]employee.Employee, i int, v employee.Employee) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]employee.Employee{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
 }
 
 func FilterMapEmployee(fFilter func(employee.Employee) bool, fMap func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
