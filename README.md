@@ -9,9 +9,11 @@
 ```
 go get github.com/logic-building/functional-go/fp/
 go get github.com/logic-building/functional-go/set/
+go install github.com/logic-building/functional-go/gofp
 
 go get -u github.com/logic-building/functional-go/fp/
 go get -u github.com/logic-building/functional-go/set/
+go install github.com/logic-building/functional-go/gofp
 
 ```
 
