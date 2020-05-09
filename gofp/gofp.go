@@ -74,6 +74,9 @@ var (
 	types       = flag.String("type", "", "user defined type")
 	imports     = flag.String("imports", "", "import statements for user defined types when structs are in different package")
 	mapFunction = flag.String("mapfun", "", "this allows to create map function such as zip, merge.")
+	only        = flag.String("only", "", "includes list of function to be auto-generated")
+
+	onlyList []string
 )
 
 func main() {
@@ -100,6 +103,11 @@ func main() {
 		f, err := os.Create(*destination)
 		if err != nil {
 			log.Fatalf("Failed opening destination file: %v", err)
+		}
+
+		if *only != "" {
+			onlyList = strings.Split(*only, ",")
+			onlyList = fp.MapStr(strings.TrimSpace, onlyList)
 		}
 		generatedCode, err := generateFPCode(*pkgName, *types, *imports)
 		if err != nil {
@@ -177,137 +185,361 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 
 		template = r.Replace(template)
 
-		template += template2.Map()
-		template = r.Replace(template)
+		if len(onlyList) > 0 {
+			if fp.ExistsStrIgnoreCase("Map", onlyList) {
+				template += template2.Map()
+				template = r.Replace(template)
+			}
 
-		template += template2.MapPtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("MapPtr", onlyList) {
+				template += template2.MapPtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.MapPtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("MapPtrErr", onlyList) {
+				template += basic.MapPtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.MapErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("MapErr", onlyList) {
+				template += basic.MapErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.Filter()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("Filter", onlyList) {
+				template += template2.Filter()
+				template = r.Replace(template)
+			}
 
-		template += template2.FilterPtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("FilterPtr", onlyList) {
+				template += template2.FilterPtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.FilterPtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("FilterPtrErr", onlyList) {
+				template += basic.FilterPtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.FilterErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("FilterErr", onlyList) {
+				template += basic.FilterErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.Remove()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("Remove", onlyList) {
+				template += template2.Remove()
+				template = r.Replace(template)
+			}
 
-		template += template2.RemovePtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("RemovePtr", onlyList) {
+				template += template2.RemovePtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.RemovePtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("RemovePtrErr", onlyList) {
+				template += basic.RemovePtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.RemoveErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("RemoveErr", onlyList) {
+				template += basic.RemoveErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.Some()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("Some", onlyList) {
+				template += template2.Some()
+				template = r.Replace(template)
+			}
 
-		template += template2.SomePtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("SomePtr", onlyList) {
+				template += template2.SomePtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.SomePtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("SomePtrErr", onlyList) {
+				template += basic.SomePtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.SomeErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("SomeErr", onlyList) {
+				template += basic.SomeErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.Every()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("Every", onlyList) {
+				template += template2.Every()
+				template = r.Replace(template)
+			}
 
-		template += template2.EveryPtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("EveryPtr", onlyList) {
+				template += template2.EveryPtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.EveryPtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("EveryPtrErr", onlyList) {
+				template += basic.EveryPtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.EveryErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("EveryErr", onlyList) {
+				template += basic.EveryErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.DropWhile()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("DropWhile", onlyList) {
+				template += template2.DropWhile()
+				template = r.Replace(template)
+			}
 
-		template += template2.DropWhilePtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("DropWhilePtr", onlyList) {
+				template += template2.DropWhilePtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.DropWhilePtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("DropWhilePtrErr", onlyList) {
+				template += basic.DropWhilePtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.DropWhileErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("DropWhileErr", onlyList) {
+				template += basic.DropWhileErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.TakeWhile()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("TakeWhile", onlyList) {
+				template += template2.TakeWhile()
+				template = r.Replace(template)
+			}
 
-		template += template2.TakeWhilePtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("TakeWhilePtr", onlyList) {
+				template += template2.TakeWhilePtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.TakeWhilePtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("TakeWhilePtrErr", onlyList) {
+				template += basic.TakeWhilePtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.TakeWhileErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("TakeWhileErr", onlyList) {
+				template += basic.TakeWhileErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.Pmap()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("Pmap", onlyList) {
+				template += template2.Pmap()
+				template = r.Replace(template)
+			}
 
-		template += template2.PmapPtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("PmapPtr", onlyList) {
+				template += template2.PmapPtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.PMapPtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("PMapPtrErr", onlyList) {
+				template += basic.PMapPtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.PMapErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("PMapErr", onlyList) {
+				template += basic.PMapErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.FilterMap()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("FilterMap", onlyList) {
+				template += template2.FilterMap()
+				template = r.Replace(template)
+			}
 
-		template += template2.FilterMapPtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("FilterMapPtr", onlyList) {
+				template += template2.FilterMapPtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.FilterMapPtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("FilterMapPtrErr", onlyList) {
+				template += basic.FilterMapPtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.FilterMapErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("FilterMapErr", onlyList) {
+				template += basic.FilterMapErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.Rest()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("Rest", onlyList) {
+				template += template2.RestPtr()
+				template = r.Replace(template)
+			}
 
-		template += template2.RestPtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("RestPtr", onlyList) {
+				template += template2.RestPtr()
+				template = r.Replace(template)
+			}
 
-		template += template2.Reduce()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("Reduce", onlyList) {
+				template += template2.Reduce()
+				template = r.Replace(template)
+			}
 
-		template += template2.ReducePtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("ReducePtr", onlyList) {
+				template += template2.ReducePtr()
+				template = r.Replace(template)
+			}
 
-		template += basic.ReducePtrErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("ReducePtrErr", onlyList) {
+				template += basic.ReducePtrErr()
+				template = r2.Replace(template)
+			}
 
-		template += basic.ReduceErr()
-		template = r2.Replace(template)
+			if fp.ExistsStrIgnoreCase("ReduceErr", onlyList) {
+				template += basic.ReduceErr()
+				template = r2.Replace(template)
+			}
 
-		template += template2.DropLast()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("DropLast", onlyList) {
+				template += template2.DropLast()
+				template = r.Replace(template)
+			}
 
-		template += template2.DropLastPtr()
-		template = r.Replace(template)
+			if fp.ExistsStrIgnoreCase("DropLastPtr", onlyList) {
+				template += template2.DropLastPtr()
+				template = r.Replace(template)
+			}
+
+		} else {
+			template += template2.Map()
+			template = r.Replace(template)
+
+			template += template2.MapPtr()
+			template = r.Replace(template)
+
+			template += basic.MapPtrErr()
+			template = r2.Replace(template)
+
+			template += basic.MapErr()
+			template = r2.Replace(template)
+
+			template += template2.Filter()
+			template = r.Replace(template)
+
+			template += template2.FilterPtr()
+			template = r.Replace(template)
+
+			template += basic.FilterPtrErr()
+			template = r2.Replace(template)
+
+			template += basic.FilterErr()
+			template = r2.Replace(template)
+
+			template += template2.Remove()
+			template = r.Replace(template)
+
+			template += template2.RemovePtr()
+			template = r.Replace(template)
+
+			template += basic.RemovePtrErr()
+			template = r2.Replace(template)
+
+			template += basic.RemoveErr()
+			template = r2.Replace(template)
+
+			template += template2.Some()
+			template = r.Replace(template)
+
+			template += template2.SomePtr()
+			template = r.Replace(template)
+
+			template += basic.SomePtrErr()
+			template = r2.Replace(template)
+
+			template += basic.SomeErr()
+			template = r2.Replace(template)
+
+			template += template2.Every()
+			template = r.Replace(template)
+
+			template += template2.EveryPtr()
+			template = r.Replace(template)
+
+			template += basic.EveryPtrErr()
+			template = r2.Replace(template)
+
+			template += basic.EveryErr()
+			template = r2.Replace(template)
+
+			template += template2.DropWhile()
+			template = r.Replace(template)
+
+			template += template2.DropWhilePtr()
+			template = r.Replace(template)
+
+			template += basic.DropWhilePtrErr()
+			template = r2.Replace(template)
+
+			template += basic.DropWhileErr()
+			template = r2.Replace(template)
+
+			template += template2.TakeWhile()
+			template = r.Replace(template)
+
+			template += template2.TakeWhilePtr()
+			template = r.Replace(template)
+
+			template += basic.TakeWhilePtrErr()
+			template = r2.Replace(template)
+
+			template += basic.TakeWhileErr()
+			template = r2.Replace(template)
+
+			template += template2.Pmap()
+			template = r.Replace(template)
+
+			template += template2.PmapPtr()
+			template = r.Replace(template)
+
+			template += basic.PMapPtrErr()
+			template = r2.Replace(template)
+
+			template += basic.PMapErr()
+			template = r2.Replace(template)
+
+			template += template2.FilterMap()
+			template = r.Replace(template)
+
+			template += template2.FilterMapPtr()
+			template = r.Replace(template)
+
+			template += basic.FilterMapPtrErr()
+			template = r2.Replace(template)
+
+			template += basic.FilterMapErr()
+			template = r2.Replace(template)
+
+			template += template2.Rest()
+			template = r.Replace(template)
+
+			template += template2.RestPtr()
+			template = r.Replace(template)
+
+			template += template2.Reduce()
+			template = r.Replace(template)
+
+			template += template2.ReducePtr()
+			template = r.Replace(template)
+
+			template += basic.ReducePtrErr()
+			template = r2.Replace(template)
+
+			template += basic.ReduceErr()
+			template = r2.Replace(template)
+
+			template += template2.DropLast()
+			template = r.Replace(template)
+
+			template += template2.DropLastPtr()
+			template = r.Replace(template)
+		}
+
 	}
 	return template, nil
 }
@@ -350,23 +582,56 @@ func generateFPCodeIO(pkg, dataTypes string) (string, error) {
 			}
 
 			r := strings.NewReplacer("<FINPUT_TYPE>", removeFirstPartOfDot(fInputType), "<FOUTPUT_TYPE>", removeFirstPartOfDot(fOutputType), "<INPUT_TYPE>", inputType, "<OUTPUT_TYPE>", outputType)
-			template += basic.MapIO()
-			template = r.Replace(template)
 
-			template += basic.MapIOPtr()
-			template = r.Replace(template)
+			if len(onlyList) > 0 {
+				if fp.ExistsStrIgnoreCase("MapIO", onlyList) {
+					template += basic.MapIO()
+					template = r.Replace(template)
+				}
 
-			template += basic.PMapIO()
-			template = r.Replace(template)
+				if fp.ExistsStrIgnoreCase("MapIOPtr", onlyList) {
+					template += basic.MapIOPtr()
+					template = r.Replace(template)
+				}
 
-			template += basic.FilterMapIO()
-			template = r.Replace(template)
+				if fp.ExistsStrIgnoreCase("PMapIO", onlyList) {
+					template += basic.PMapIO()
+					template = r.Replace(template)
+				}
 
-			template += basic.FilterMapIOPtrErr()
-			template = r.Replace(template)
+				if fp.ExistsStrIgnoreCase("FilterMapIO", onlyList) {
+					template += basic.FilterMapIO()
+					template = r.Replace(template)
+				}
 
-			template += basic.FilterMapIOErr()
-			template = r.Replace(template)
+				if fp.ExistsStrIgnoreCase("FilterMapIOPtrErr", onlyList) {
+					template += basic.FilterMapIOPtrErr()
+					template = r.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("FilterMapIOErr", onlyList) {
+					template += basic.FilterMapIOErr()
+					template = r.Replace(template)
+				}
+			} else {
+				template += basic.MapIO()
+				template = r.Replace(template)
+
+				template += basic.MapIOPtr()
+				template = r.Replace(template)
+
+				template += basic.PMapIO()
+				template = r.Replace(template)
+
+				template += basic.FilterMapIO()
+				template = r.Replace(template)
+
+				template += basic.FilterMapIOPtrErr()
+				template = r.Replace(template)
+
+				template += basic.FilterMapIOErr()
+				template = r.Replace(template)
+			}
 		}
 	}
 
