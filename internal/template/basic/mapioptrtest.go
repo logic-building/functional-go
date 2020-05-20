@@ -1,5 +1,7 @@
 package basic
 
+import "strings"
+
 // MapIONumber is template to generate itself for different combination of data type.
 func MapIONumberPtrTest() string {
 	return `
@@ -221,4 +223,299 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 `
+}
+
+// MapIONumberPtrErr is template to generate itself for different combination of data type.
+func MapIONumberPtrErrTest() string {
+	return `
+func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
+	// Test : add 1 to the list
+	var vo2 <OUTPUT_TYPE> = 2
+	var vo3 <OUTPUT_TYPE> = 3
+
+	var vi1 <INPUT_TYPE> = 1
+	var vi2 <INPUT_TYPE> = 2
+	var vi3 <INPUT_TYPE> = 3
+
+
+	expectedList := []*<OUTPUT_TYPE>{&vo2, &vo3}
+	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi1, &vi2})
+
+	if *newList[0] != *expectedList[0] || *newList[1] != *expectedList[1] {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	r, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, []*<INPUT_TYPE>{})
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+
+	_, err := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi1, &vi2, &vi3})
+	if err == nil {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+`
+}
+
+// MapIOStrNumberPtrErr is template to generate itself for different combination of data type.
+func MapIOStrNumberPtrErrTest() string {
+	return `
+func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
+	// Test : someLogic
+	var vo10 <OUTPUT_TYPE> = 10
+
+	var vi10 <INPUT_TYPE> = "10"
+	var vi0 <INPUT_TYPE> = "0"
+
+	expectedList := []*<OUTPUT_TYPE>{&vo10}
+	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi10})
+
+	if *newList[0] != *expectedList[0] {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	r, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, []*<INPUT_TYPE>{})
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	_, err := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi10, &vi0})
+	if err == nil {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *<INPUT_TYPE>) (*<OUTPUT_TYPE>, error) {
+	if *num == "0" {
+		return nil, errors.New("0 is invalid for this test")
+	}
+	var r <OUTPUT_TYPE> = 0
+	if *num == "10" {
+		r = 10
+	}
+	return &r, nil
+}
+`
+}
+
+// MapIONumberStrPtrErr is template to generate itself for different combination of data type.
+func MapIONumberStrPtrErrTest() string {
+	return `
+func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
+	// Test : someLogic
+	var vo10 <OUTPUT_TYPE> = "10"
+	var vi10 <INPUT_TYPE> = 10
+	var vi0 <INPUT_TYPE> = 0
+
+	expectedList := []*<OUTPUT_TYPE>{&vo10}
+	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi10})
+
+	if *newList[0] != *expectedList[0] {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	r, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, []*<INPUT_TYPE>{})
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	_, err := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi10, &vi0})
+	if err == nil {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+
+func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *<INPUT_TYPE>) (*string, error) {
+	if *num == 0 {
+		return nil, errors.New("0 is invalid")
+	}
+	r := "0"
+	if *num == 10 {
+		r = string("10")
+	}
+	return &r, nil
+}
+`
+}
+
+// MapIONumberBool is template to generate itself for different combination of data type.
+func MapIONumberBoolPtrErrTest() string {
+	return `
+func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
+	// Test : someLogic
+	var vt <OUTPUT_TYPE> = true
+	var vf <OUTPUT_TYPE> = false
+
+	var v10 <INPUT_TYPE> = 10
+	var v0 <INPUT_TYPE> = 0
+	var v3 <INPUT_TYPE> = 3
+	
+	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}
+	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&v10, &v0})
+
+	if *newList[0] != *expectedList[0] && *newList[1] != *expectedList[1] {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>Err failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	r, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, []*<INPUT_TYPE>{})
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	_, err := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&v10, &v3})
+	if err == nil {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+`
+}
+
+// MapIOStrBool is template to generate itself for different combination of data type.
+func MapIOStrBoolPtrErrTest() string {
+	return `
+func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
+	// Test : someLogic
+	var vt <OUTPUT_TYPE> = true
+	var vf <OUTPUT_TYPE> = false
+
+	var v10 <INPUT_TYPE> = "10"
+	var v0 <INPUT_TYPE> = "0"
+	var v3 <INPUT_TYPE> = "3"
+
+	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}
+	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&v10, &v0})
+
+	if *newList[0] != *expectedList[0] && *newList[1] != *expectedList[1] {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	r, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, []*<INPUT_TYPE>{})
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	_, err := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&v10, &v0, &v3})
+	if err == nil {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+`
+}
+
+// MapIOBoolNumberPtrErr is template to generate itself for different combination of data type.
+func MapIOBoolNumberPtrErrTest() string {
+	return `
+func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
+	var vt <INPUT_TYPE> = true
+	var vf <INPUT_TYPE> = false
+
+	var v10 <OUTPUT_TYPE> = 10
+	var v0 <OUTPUT_TYPE> = 0
+	// Test : someLogic
+	expectedList := []*<OUTPUT_TYPE>{&v10, &v0}
+	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vt, &vt})
+
+	if *newList[0] != *expectedList[0] && *newList[1] != *expectedList[1] {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	r, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, []*<INPUT_TYPE>{})
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	_, err := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vt, &vf})
+	if err == nil {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+`
+}
+
+// MapIOBoolStr is template to generate itself for different combination of data type.
+func MapIOBoolStrPtrErrTest() string {
+	return `
+func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
+	var vt <INPUT_TYPE> = true
+	var vf <INPUT_TYPE> = false
+
+	var v10 <OUTPUT_TYPE> = "10"
+	var v0 <OUTPUT_TYPE> = "0"
+
+	// Test : someLogic
+	expectedList := []*<OUTPUT_TYPE>{&v10, &v0}
+	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vt, &vt})
+
+	if *newList[0] != *expectedList[0] && *newList[1] != *expectedList[1] {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed. expected=%v, actual=%v", expectedList, newList)
+	}
+
+	r, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(nil, []*<INPUT_TYPE>{})
+	if len(r) > 0 {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	_, err := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vt, &vf})
+	if err == nil {
+		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr failed")
+	}
+	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+}
+`
+}
+
+func ReplaceActivityMapIOPtrErr(code string) string {
+	s1 := `import (
+    _ "errors"
+	"reflect"
+	"testing"
+)
+
+func TestMapIntInt64PtrErr(t *testing.T) {`
+	s2 := `import (
+    "errors"
+	"reflect"
+	"testing"
+)
+
+func TestMapIntInt64PtrErr(t *testing.T) {`
+
+	code = strings.Replace(code, s1, s2, -1)
+	return code
 }

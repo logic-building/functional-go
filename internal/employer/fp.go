@@ -2019,6 +2019,23 @@ func MapEmployerEmployeePtr(f func(*Employer) *employee.Employee, list []*Employ
 	return newList
 }
 
+// MapEmployerEmployeePtrErr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list, error
+func MapEmployerEmployeePtrErr(f func(*Employer) (*employee.Employee, error), list []*Employer) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+	newList := make([]*employee.Employee, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
 // PMapEmployerEmployee applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2183,6 +2200,23 @@ func MapEmployerIntPtr(f func(*Employer) *int, list []*Employer) []*int {
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapEmployerIntPtrErr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list, error
+func MapEmployerIntPtrErr(f func(*Employer) (*int, error), list []*Employer) ([]*int, error) {
+	if f == nil {
+		return []*int{}, nil
+	}
+	newList := make([]*int, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // PMapEmployerInt applies the function(1st argument) on each item of the list and returns new list.
@@ -2351,6 +2385,23 @@ func MapEmployeeEmployerPtr(f func(*employee.Employee) *Employer, list []*employ
 	return newList
 }
 
+// MapEmployeeEmployerPtrErr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list, error
+func MapEmployeeEmployerPtrErr(f func(*employee.Employee) (*Employer, error), list []*employee.Employee) ([]*Employer, error) {
+	if f == nil {
+		return []*Employer{}, nil
+	}
+	newList := make([]*Employer, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
 // PMapEmployeeEmployer applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2515,6 +2566,23 @@ func MapEmployeeIntPtr(f func(*employee.Employee) *int, list []*employee.Employe
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapEmployeeIntPtrErr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list, error
+func MapEmployeeIntPtrErr(f func(*employee.Employee) (*int, error), list []*employee.Employee) ([]*int, error) {
+	if f == nil {
+		return []*int{}, nil
+	}
+	newList := make([]*int, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // PMapEmployeeInt applies the function(1st argument) on each item of the list and returns new list.
@@ -2683,6 +2751,23 @@ func MapIntEmployerPtr(f func(*int) *Employer, list []*int) []*Employer {
 	return newList
 }
 
+// MapIntEmployerPtrErr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list, error
+func MapIntEmployerPtrErr(f func(*int) (*Employer, error), list []*int) ([]*Employer, error) {
+	if f == nil {
+		return []*Employer{}, nil
+	}
+	newList := make([]*Employer, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
 // PMapIntEmployer applies the function(1st argument) on each item of the list and returns new list.
 // Run in parallel. no_of_goroutines = no_of_items_in_list
 //
@@ -2847,6 +2932,23 @@ func MapIntEmployeePtr(f func(*int) *employee.Employee, list []*int) []*employee
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapIntEmployeePtrErr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list, error
+func MapIntEmployeePtrErr(f func(*int) (*employee.Employee, error), list []*int) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+	newList := make([]*employee.Employee, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // PMapIntEmployee applies the function(1st argument) on each item of the list and returns new list.
