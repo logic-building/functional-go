@@ -1989,6 +1989,23 @@ func MapEmployeeTeacher(f func(Employee) Teacher, list []Employee) []Teacher {
 }
 
 // MapEmployeeTeacher takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapEmployeeTeacherErr(f func(Employee) (Teacher, error), list []Employee) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+	newList := make([]Teacher, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
+// MapEmployeeTeacher takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployeeTeacherPtr(f func(*Employee) *Teacher, list []*Employee) []*Teacher {
 	if f == nil {
@@ -2135,6 +2152,23 @@ func MapEmployeeInt(f func(Employee) int, list []Employee) []int {
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapEmployeeInt takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapEmployeeIntErr(f func(Employee) (int, error), list []Employee) ([]int, error) {
+	if f == nil {
+		return []int{}, nil
+	}
+	newList := make([]int, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // MapEmployeeInt takes two inputs -
@@ -2287,6 +2321,23 @@ func MapEmployeeStr(f func(Employee) string, list []Employee) []string {
 }
 
 // MapEmployeeStr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapEmployeeStrErr(f func(Employee) (string, error), list []Employee) ([]string, error) {
+	if f == nil {
+		return []string{}, nil
+	}
+	newList := make([]string, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
+// MapEmployeeStr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployeeStrPtr(f func(*Employee) *string, list []*Employee) []*string {
 	if f == nil {
@@ -2433,6 +2484,23 @@ func MapTeacherEmployee(f func(Teacher) Employee, list []Teacher) []Employee {
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapTeacherEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapTeacherEmployeeErr(f func(Teacher) (Employee, error), list []Teacher) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+	newList := make([]Employee, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // MapTeacherEmployee takes two inputs -
@@ -2585,6 +2653,23 @@ func MapTeacherInt(f func(Teacher) int, list []Teacher) []int {
 }
 
 // MapTeacherInt takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapTeacherIntErr(f func(Teacher) (int, error), list []Teacher) ([]int, error) {
+	if f == nil {
+		return []int{}, nil
+	}
+	newList := make([]int, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
+// MapTeacherInt takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapTeacherIntPtr(f func(*Teacher) *int, list []*Teacher) []*int {
 	if f == nil {
@@ -2731,6 +2816,23 @@ func MapTeacherStr(f func(Teacher) string, list []Teacher) []string {
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapTeacherStr takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapTeacherStrErr(f func(Teacher) (string, error), list []Teacher) ([]string, error) {
+	if f == nil {
+		return []string{}, nil
+	}
+	newList := make([]string, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // MapTeacherStr takes two inputs -
@@ -2883,6 +2985,23 @@ func MapIntEmployee(f func(int) Employee, list []int) []Employee {
 }
 
 // MapIntEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapIntEmployeeErr(f func(int) (Employee, error), list []int) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+	newList := make([]Employee, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
+// MapIntEmployee takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapIntEmployeePtr(f func(*int) *Employee, list []*int) []*Employee {
 	if f == nil {
@@ -3029,6 +3148,23 @@ func MapIntTeacher(f func(int) Teacher, list []int) []Teacher {
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapIntTeacher takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapIntTeacherErr(f func(int) (Teacher, error), list []int) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+	newList := make([]Teacher, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // MapIntTeacher takes two inputs -
@@ -3181,6 +3317,23 @@ func MapStrEmployee(f func(string) Employee, list []string) []Employee {
 }
 
 // MapStrEmployee takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapStrEmployeeErr(f func(string) (Employee, error), list []string) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+	newList := make([]Employee, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
+}
+
+// MapStrEmployee takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapStrEmployeePtr(f func(*string) *Employee, list []*string) []*Employee {
 	if f == nil {
@@ -3327,6 +3480,23 @@ func MapStrTeacher(f func(string) Teacher, list []string) []Teacher {
 		newList[i] = f(v)
 	}
 	return newList
+}
+
+// MapStrTeacher takes two inputs -
+// 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
+func MapStrTeacherErr(f func(string) (Teacher, error), list []string) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+	newList := make([]Teacher, len(list))
+	for i, v := range list {
+		r, err := f(v)
+		if err != nil {
+			return nil, err
+		}
+		newList[i] = r
+	}
+	return newList, nil
 }
 
 // MapStrTeacher takes two inputs -
