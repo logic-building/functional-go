@@ -571,6 +571,36 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:                 "PMapIOPtr",
+		codeTemplate:             basic.PMapIOPtr(),
+		testTemplateIONumber:     basic.PMapIONumberPtr(),
+		testTemplateIOStrNumber:  basic.PMapIOStrNumberPtr(),
+		testTemplateIONumberStr:  basic.PMapIONumberStrPtr(),
+		testTemplateIONumberBool: basic.PMapIONumberBoolPtr(),
+		testTemplateIOStrBool:    basic.PMapIOStrBoolPtr(),
+		testTemplateIOBoolNumber: basic.PMapIOBoolNumberPtr(),
+		testTemplateIOBoolStr:    basic.PMapIOBoolStrPtr(),
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName:        "pmapioptr.go",
+		generatedTestFileName:    "pmapioptr_test.go",
+	},
+
+	fpCode{
+		function:                 "PMapIOPtrErr",
+		codeTemplate:             basic.PMapIOPtrErr(),
+		testTemplateIONumber:     basic.PMapIONumberPtrErr(),
+		testTemplateIOStrNumber:  basic.PMapIOStrNumberPtrErr(),
+		testTemplateIONumberStr:  basic.PMapIONumberStrPtrErr(),
+		testTemplateIONumberBool: basic.PMapIONumberBoolPtrErr(),
+		testTemplateIOStrBool:    basic.PMapIOStrBoolPtrErr(),
+		testTemplateIOBoolNumber: basic.PMapIOBoolNumberPtrErr(),
+		testTemplateIOBoolStr:    basic.PMapIOBoolStrPtrErr(),
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName:        "pmapioptrerr.go",
+		generatedTestFileName:    "pmapioptrerr_test.go",
+	},
+
+	fpCode{
 		function:                 "MapIO",
 		codeTemplate:             basic.MapIO(),
 		testTemplateIONumber:     basic.MapIONumber(),
