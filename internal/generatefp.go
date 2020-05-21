@@ -554,6 +554,22 @@ var fpCodeList = []fpCode{
 		generatedFileName:        "pmapio.go",
 		generatedTestFileName:    "pmapio_test.go",
 	},
+
+	fpCode{
+		function:                 "PMapIOErr",
+		codeTemplate:             basic.PMapIOErr(),
+		testTemplateIONumber:     basic.PMapIONumberErr(),
+		testTemplateIOStrNumber:  basic.PMapIOStrNumberErr(),
+		testTemplateIONumberStr:  basic.PMapIONumberStrErr(),
+		testTemplateIONumberBool: basic.PMapIONumberBoolErr(),
+		testTemplateIOStrBool:    basic.PMapIOStrBoolErr(),
+		testTemplateIOBoolNumber: basic.PMapIOBoolNumberErr(),
+		testTemplateIOBoolStr:    basic.PMapIOBoolStrErr(),
+		dataTypes:                []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName:        "pmapioerr.go",
+		generatedTestFileName:    "pmapioerr_test.go",
+	},
+
 	fpCode{
 		function:                 "MapIO",
 		codeTemplate:             basic.MapIO(),
@@ -1705,5 +1721,7 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityMapIOErr(code)
 	code = basic.ReplaceActivityMapIOPtrErr(code)
+
+	code = basic.ReplaceActivityPMapIOErr(code)
 	return code
 }
