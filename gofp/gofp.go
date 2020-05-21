@@ -608,6 +608,11 @@ func generateFPCodeIO(pkg, dataTypes string) (string, error) {
 					template = r.Replace(template)
 				}
 
+				if fp.ExistsStrIgnoreCase("PMapIOErr", onlyList) {
+					template += basic.PMapIOErr()
+					template = r.Replace(template)
+				}
+
 				if fp.ExistsStrIgnoreCase("FilterMapIO", onlyList) {
 					template += basic.FilterMapIO()
 					template = r.Replace(template)
@@ -636,6 +641,9 @@ func generateFPCodeIO(pkg, dataTypes string) (string, error) {
 				template = r.Replace(template)
 
 				template += basic.PMapIO()
+				template = r.Replace(template)
+
+				template += basic.PMapIOErr()
 				template = r.Replace(template)
 
 				template += basic.FilterMapIO()

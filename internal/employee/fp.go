@@ -2076,6 +2076,61 @@ func PMapEmployeeTeacher(f func(Employee) Teacher, list []Employee) []Teacher {
 	return newList
 }
 
+// PMapEmployeeTeacherErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: Employee output type: (Teacher, error)
+//	2. List
+//
+// Returns
+//	New List of type (Teacher, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployeeTeacherErr(f func(Employee) (Teacher, error), list []Employee) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+
+	ch := make(chan map[int]Teacher, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]Teacher, i int, v Employee) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]Teacher{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]Teacher, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapEmployeeTeacher filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - Employee and returns true/false.
@@ -2257,6 +2312,61 @@ func PMapEmployeeInt(f func(Employee) int, list []Employee) []int {
 		}
 	}
 	return newList
+}
+
+// PMapEmployeeIntErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: Employee output type: (int, error)
+//	2. List
+//
+// Returns
+//	New List of type (int, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployeeIntErr(f func(Employee) (int, error), list []Employee) ([]int, error) {
+	if f == nil {
+		return []int{}, nil
+	}
+
+	ch := make(chan map[int]int, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int, i int, v Employee) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]int{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
 }
 
 // FilterMapEmployeeInt filters given list, then apply function(2nd argument) on each item in the list and returns a new list
@@ -2442,6 +2552,61 @@ func PMapEmployeeStr(f func(Employee) string, list []Employee) []string {
 	return newList
 }
 
+// PMapEmployeeStrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: Employee output type: (string, error)
+//	2. List
+//
+// Returns
+//	New List of type (string, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployeeStrErr(f func(Employee) (string, error), list []Employee) ([]string, error) {
+	if f == nil {
+		return []string{}, nil
+	}
+
+	ch := make(chan map[int]string, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]string, i int, v Employee) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]string{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]string, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapEmployeeStr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - Employee and returns true/false.
@@ -2623,6 +2788,61 @@ func PMapTeacherEmployee(f func(Teacher) Employee, list []Teacher) []Employee {
 		}
 	}
 	return newList
+}
+
+// PMapTeacherEmployeeErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: Teacher output type: (Employee, error)
+//	2. List
+//
+// Returns
+//	New List of type (Employee, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapTeacherEmployeeErr(f func(Teacher) (Employee, error), list []Teacher) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+
+	ch := make(chan map[int]Employee, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]Employee, i int, v Teacher) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]Employee{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
 }
 
 // FilterMapTeacherEmployee filters given list, then apply function(2nd argument) on each item in the list and returns a new list
@@ -2808,6 +3028,61 @@ func PMapTeacherInt(f func(Teacher) int, list []Teacher) []int {
 	return newList
 }
 
+// PMapTeacherIntErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: Teacher output type: (int, error)
+//	2. List
+//
+// Returns
+//	New List of type (int, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapTeacherIntErr(f func(Teacher) (int, error), list []Teacher) ([]int, error) {
+	if f == nil {
+		return []int{}, nil
+	}
+
+	ch := make(chan map[int]int, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]int, i int, v Teacher) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]int{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapTeacherInt filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - Teacher and returns true/false.
@@ -2989,6 +3264,61 @@ func PMapTeacherStr(f func(Teacher) string, list []Teacher) []string {
 		}
 	}
 	return newList
+}
+
+// PMapTeacherStrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: Teacher output type: (string, error)
+//	2. List
+//
+// Returns
+//	New List of type (string, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapTeacherStrErr(f func(Teacher) (string, error), list []Teacher) ([]string, error) {
+	if f == nil {
+		return []string{}, nil
+	}
+
+	ch := make(chan map[int]string, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]string, i int, v Teacher) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]string{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]string, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
 }
 
 // FilterMapTeacherStr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
@@ -3174,6 +3504,61 @@ func PMapIntEmployee(f func(int) Employee, list []int) []Employee {
 	return newList
 }
 
+// PMapIntEmployeeErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int output type: (Employee, error)
+//	2. List
+//
+// Returns
+//	New List of type (Employee, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntEmployeeErr(f func(int) (Employee, error), list []int) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+
+	ch := make(chan map[int]Employee, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]Employee, i int, v int) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]Employee{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapIntEmployee filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - int and returns true/false.
@@ -3355,6 +3740,61 @@ func PMapIntTeacher(f func(int) Teacher, list []int) []Teacher {
 		}
 	}
 	return newList
+}
+
+// PMapIntTeacherErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: int output type: (Teacher, error)
+//	2. List
+//
+// Returns
+//	New List of type (Teacher, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntTeacherErr(f func(int) (Teacher, error), list []int) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+
+	ch := make(chan map[int]Teacher, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]Teacher, i int, v int) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]Teacher{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]Teacher, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
 }
 
 // FilterMapIntTeacher filters given list, then apply function(2nd argument) on each item in the list and returns a new list
@@ -3540,6 +3980,61 @@ func PMapStrEmployee(f func(string) Employee, list []string) []Employee {
 	return newList
 }
 
+// PMapStrEmployeeErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: string output type: (Employee, error)
+//	2. List
+//
+// Returns
+//	New List of type (Employee, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapStrEmployeeErr(f func(string) (Employee, error), list []string) ([]Employee, error) {
+	if f == nil {
+		return []Employee{}, nil
+	}
+
+	ch := make(chan map[int]Employee, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]Employee, i int, v string) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]Employee{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapStrEmployee filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - string and returns true/false.
@@ -3721,6 +4216,61 @@ func PMapStrTeacher(f func(string) Teacher, list []string) []Teacher {
 		}
 	}
 	return newList
+}
+
+// PMapStrTeacherErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: string output type: (Teacher, error)
+//	2. List
+//
+// Returns
+//	New List of type (Teacher, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapStrTeacherErr(f func(string) (Teacher, error), list []string) ([]Teacher, error) {
+	if f == nil {
+		return []Teacher{}, nil
+	}
+
+	ch := make(chan map[int]Teacher, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]Teacher, i int, v string) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]Teacher{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]Teacher, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
 }
 
 // FilterMapStrTeacher filters given list, then apply function(2nd argument) on each item in the list and returns a new list
