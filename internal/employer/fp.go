@@ -2132,6 +2132,102 @@ func PMapEmployerEmployeeErr(f func(Employer) (employee.Employee, error), list [
 	return newList, nil
 }
 
+// PMapEmployerEmployeePtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *Employer output type: *employee.Employee
+//	2. List
+//
+// Returns
+//	New List of type *employee.Employee
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployerEmployeePtr(f func(*Employer) *employee.Employee, list []*Employer) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+
+	ch := make(chan map[int]*employee.Employee)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employee.Employee, i int, v *Employer) {
+			defer wg.Done()
+			ch <- map[int]*employee.Employee{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapEmployerEmployeePtrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *Employer output type: (*employee.Employee, error)
+//	2. List
+//
+// Returns
+//	New List of type (*employee.Employee, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployerEmployeePtrErr(f func(*Employer) (*employee.Employee, error), list []*Employer) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+
+	ch := make(chan map[int]*employee.Employee, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employee.Employee, i int, v *Employer) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*employee.Employee{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapEmployerEmployee filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - Employer and returns true/false.
@@ -2362,6 +2458,102 @@ func PMapEmployerIntErr(f func(Employer) (int, error), list []Employer) ([]int, 
 	}
 
 	newList := make([]int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
+// PMapEmployerIntPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *Employer output type: *int
+//	2. List
+//
+// Returns
+//	New List of type *int
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployerIntPtr(f func(*Employer) *int, list []*Employer) []*int {
+	if f == nil {
+		return []*int{}
+	}
+
+	ch := make(chan map[int]*int)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*int, i int, v *Employer) {
+			defer wg.Done()
+			ch <- map[int]*int{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapEmployerIntPtrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *Employer output type: (*int, error)
+//	2. List
+//
+// Returns
+//	New List of type (*int, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployerIntPtrErr(f func(*Employer) (*int, error), list []*Employer) ([]*int, error) {
+	if f == nil {
+		return []*int{}, nil
+	}
+
+	ch := make(chan map[int]*int, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*int, i int, v *Employer) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*int{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*int, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
@@ -2608,6 +2800,102 @@ func PMapEmployeeEmployerErr(f func(employee.Employee) (Employer, error), list [
 	return newList, nil
 }
 
+// PMapEmployeeEmployerPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *employee.Employee output type: *Employer
+//	2. List
+//
+// Returns
+//	New List of type *Employer
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployeeEmployerPtr(f func(*employee.Employee) *Employer, list []*employee.Employee) []*Employer {
+	if f == nil {
+		return []*Employer{}
+	}
+
+	ch := make(chan map[int]*Employer)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Employer, i int, v *employee.Employee) {
+			defer wg.Done()
+			ch <- map[int]*Employer{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapEmployeeEmployerPtrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *employee.Employee output type: (*Employer, error)
+//	2. List
+//
+// Returns
+//	New List of type (*Employer, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployeeEmployerPtrErr(f func(*employee.Employee) (*Employer, error), list []*employee.Employee) ([]*Employer, error) {
+	if f == nil {
+		return []*Employer{}, nil
+	}
+
+	ch := make(chan map[int]*Employer, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Employer, i int, v *employee.Employee) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*Employer{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapEmployeeEmployer filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - employee.Employee and returns true/false.
@@ -2838,6 +3126,102 @@ func PMapEmployeeIntErr(f func(employee.Employee) (int, error), list []employee.
 	}
 
 	newList := make([]int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
+// PMapEmployeeIntPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *employee.Employee output type: *int
+//	2. List
+//
+// Returns
+//	New List of type *int
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployeeIntPtr(f func(*employee.Employee) *int, list []*employee.Employee) []*int {
+	if f == nil {
+		return []*int{}
+	}
+
+	ch := make(chan map[int]*int)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*int, i int, v *employee.Employee) {
+			defer wg.Done()
+			ch <- map[int]*int{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*int, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapEmployeeIntPtrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *employee.Employee output type: (*int, error)
+//	2. List
+//
+// Returns
+//	New List of type (*int, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapEmployeeIntPtrErr(f func(*employee.Employee) (*int, error), list []*employee.Employee) ([]*int, error) {
+	if f == nil {
+		return []*int{}, nil
+	}
+
+	ch := make(chan map[int]*int, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*int, i int, v *employee.Employee) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*int{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*int, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
@@ -3084,6 +3468,102 @@ func PMapIntEmployerErr(f func(int) (Employer, error), list []int) ([]Employer, 
 	return newList, nil
 }
 
+// PMapIntEmployerPtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *int output type: *Employer
+//	2. List
+//
+// Returns
+//	New List of type *Employer
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntEmployerPtr(f func(*int) *Employer, list []*int) []*Employer {
+	if f == nil {
+		return []*Employer{}
+	}
+
+	ch := make(chan map[int]*Employer)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Employer, i int, v *int) {
+			defer wg.Done()
+			ch <- map[int]*Employer{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapIntEmployerPtrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *int output type: (*Employer, error)
+//	2. List
+//
+// Returns
+//	New List of type (*Employer, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntEmployerPtrErr(f func(*int) (*Employer, error), list []*int) ([]*Employer, error) {
+	if f == nil {
+		return []*Employer{}, nil
+	}
+
+	ch := make(chan map[int]*Employer, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*Employer, i int, v *int) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*Employer{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*Employer, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
 // FilterMapIntEmployer filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input type - int and returns true/false.
@@ -3314,6 +3794,102 @@ func PMapIntEmployeeErr(f func(int) (employee.Employee, error), list []int) ([]e
 	}
 
 	newList := make([]employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList, nil
+}
+
+// PMapIntEmployeePtr applies the function(1st argument) on each item of the list and returns new list.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *int output type: *employee.Employee
+//	2. List
+//
+// Returns
+//	New List of type *employee.Employee
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntEmployeePtr(f func(*int) *employee.Employee, list []*int) []*employee.Employee {
+	if f == nil {
+		return []*employee.Employee{}
+	}
+
+	ch := make(chan map[int]*employee.Employee)
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employee.Employee, i int, v *int) {
+			defer wg.Done()
+			ch <- map[int]*employee.Employee{i: f(v)}
+		}(&wg, ch, i, v)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	newList := make([]*employee.Employee, len(list))
+	for m := range ch {
+		for k, v := range m {
+			newList[k] = v
+		}
+	}
+	return newList
+}
+
+// PMapIntEmployeePtrErr applies the function(1st argument) on each item of the list and returns new list and error.
+// Run in parallel. no_of_goroutines = no_of_items_in_list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input type: *int output type: (*employee.Employee, error)
+//	2. List
+//
+// Returns
+//	New List of type (*employee.Employee, error)
+//	Empty list if all arguments are nil or either one is nil
+func PMapIntEmployeePtrErr(f func(*int) (*employee.Employee, error), list []*int) ([]*employee.Employee, error) {
+	if f == nil {
+		return []*employee.Employee{}, nil
+	}
+
+	ch := make(chan map[int]*employee.Employee, len(list))
+	errCh := make(chan error, len(list))
+	var wg sync.WaitGroup
+
+	for i, v := range list {
+		wg.Add(1)
+
+		go func(wg *sync.WaitGroup, ch chan map[int]*employee.Employee, i int, v *int) {
+			defer wg.Done()
+			if len(errCh) >= 1 {
+				return
+			}
+			r, err := f(v)
+			if err != nil {
+				errCh <- err
+				return
+			}
+			ch <- map[int]*employee.Employee{i: r}
+		}(&wg, ch, i, v)
+	}
+
+	wg.Wait()
+	close(ch)
+	close(errCh)
+	
+	for err := range errCh {
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	newList := make([]*employee.Employee, len(list))
 	for m := range ch {
 		for k, v := range m {
 			newList[k] = v
