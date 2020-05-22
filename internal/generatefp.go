@@ -541,6 +541,24 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Keys",
+		codeTemplate:      basic.Keys(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "keys.go",
+
+		testTemplate:           basic.KeysNumberToNumberTest(),
+		testTemplateNumberStr:  basic.KeysNumberToStrTest(),
+		testTemplateStrNumber:  basic.KeysStrToNumberTest(),
+		testTemplateStrBool:    basic.KeysStrToBoolTest(),
+		testTemplateBoolStr:    basic.KeysBoolToStrTest(),
+		testTemplateNumberBool: basic.KeysNumberToBoolTest(),
+		testTemplateBoolNumber: basic.KeysBoolToNumberTest(),
+		testTemplateBoolBool:   basic.KeysBoolToBoolTest(),
+		testTemplateStrStr:     basic.KeysStrToStrTest(),
+		generatedTestFileName:  "keys_test.go",
+	},
+
+	fpCode{
 		function:                 "PMapIO",
 		codeTemplate:             basic.PMapIO(),
 		testTemplateIONumber:     basic.PMapIONumber(),
