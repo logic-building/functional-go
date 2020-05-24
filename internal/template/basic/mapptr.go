@@ -6,7 +6,7 @@ func MapPtr() string {
 // Map<FTYPE>Ptr takes 2 arguments.
 //  1. A function input argument: <TYPE> and return type (<TYPE>)
 //  2. A list of type []*<TYPE>
-
+//
 // Returns:
 // 	([]*<TYPE>)
 func Map<FTYPE>Ptr(f func(*<TYPE>) *<TYPE>, list []*<TYPE>) []*<TYPE> {
@@ -28,7 +28,7 @@ func MapPtrErr() string {
 // Map<FTYPE>PtrErr takes 2 arguments:
 //  1. A function input argument: *<TYPE> and return types (*<TYPE>, error)
 //  2. A list of type []*<TYPE>
-
+//
 // Returns:
 // 	([]*<TYPE>, error)
 func Map<FTYPE>PtrErr(f func(*<TYPE>) (*<TYPE>, error), list []*<TYPE>) ([]*<TYPE>, error) {
@@ -54,7 +54,7 @@ func MapErr() string {
 // Map<FTYPE>Err takes 2 arguments:
 //  1. A function input argument: <TYPE> and return types (<TYPE>, error)
 //  2. A list of type []<TYPE>
-
+//
 // Returns:
 // 	([]<TYPE>, error)
 func Map<FTYPE>Err(f func(<TYPE>) (<TYPE>, error), list []<TYPE>) ([]<TYPE>, error) {

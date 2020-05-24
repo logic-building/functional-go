@@ -51,6 +51,50 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "SortInts",
+		codeTemplate:      basic.SortInts(),
+		dataTypes:         []string{"int"},
+		generatedFileName: "sortints.go",
+
+		testTemplate: basic.SortIntsTest(),
+		//testTemplateBool:      basic.DropLastBoolTest(),
+		generatedTestFileName: "sortints_test.go",
+	},
+
+	fpCode{
+		function:          "SortFloats",
+		codeTemplate:      basic.SortFloats64(),
+		dataTypes:         []string{"float64"},
+		generatedFileName: "sortfloats.go",
+
+		testTemplate: basic.SortFloats64Test(),
+		//testTemplateBool:      basic.DropLastBoolTest(),
+		generatedTestFileName: "sortfloats_test.go",
+	},
+
+	fpCode{
+		function:          "SortStrings",
+		codeTemplate:      basic.SortStrs(),
+		dataTypes:         []string{"string"},
+		generatedFileName: "sortstrs.go",
+
+		testTemplate: basic.SortStrsTest(),
+		//testTemplateBool:      basic.DropLastBoolTest(),
+		generatedTestFileName: "sortstrs_test.go",
+	},
+
+	fpCode{
+		function:          "Sort",
+		codeTemplate:      basic.Sort(),
+		dataTypes:         []string{"int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32"},
+		generatedFileName: "sort.go",
+
+		testTemplate: basic.SortTest(),
+		//testTemplateBool:      basic.DropLastBoolTest(),
+		generatedTestFileName: "sort_test.go",
+	},
+
+	fpCode{
 		function:          "ReducePtr",
 		codeTemplate:      basic.ReducePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
@@ -932,6 +976,10 @@ func generateFpCode(fpCodeList []fpCode) {
 		}
 
 		codeTemplate = modifyCodeData(codeTemplate)
+		switch {
+		case strings.Contains(codeTemplate, "Sort"):
+			codeTemplate = basic.ReplaceActivitySortingCode(codeTemplate)
+		}
 		writeToFile(codeTemplate, fmt.Sprintf("fp/%s", fpCode.generatedFileName))
 		if fpCode.generatedTestFileName != "" {
 			testTemplate = modifyTestDataToStr2(testTemplate)
@@ -962,6 +1010,15 @@ func modifyCodeData(code string) string {
 	code = strings.Replace(code, "Uint32sPtr", "Uints32Ptr", -1)
 	code = strings.Replace(code, "Uint16sPtr", "Uints16Ptr", -1)
 	code = strings.Replace(code, "Uint8sPtr", "Uints8Ptr", -1)
+
+	code = strings.Replace(code, "Int64s", "Ints64", -1)
+	code = strings.Replace(code, "Int32s", "Ints32", -1)
+	code = strings.Replace(code, "Int16s", "Ints16", -1)
+	code = strings.Replace(code, "Int8s", "Ints8", -1)
+	code = strings.Replace(code, "Unt64s", "Uints", -1)
+	code = strings.Replace(code, "Uint32s", "Uints32", -1)
+	code = strings.Replace(code, "Uint16s", "Uints16", -1)
+	code = strings.Replace(code, "Uint8s", "Uints8", -1)
 	return code
 }
 
