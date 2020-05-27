@@ -12,7 +12,6 @@ func ReducePtr() string {
 //
 // Returns:
 //	single value.
-
 func Reduce<FTYPE>Ptr(f func(*<TYPE>, *<TYPE>) *<TYPE>, list []*<TYPE>, initializer ...<TYPE>) *<TYPE> {
 	var initVal <TYPE>
 	var init *<TYPE> = &initVal
@@ -52,7 +51,6 @@ func ReducePtrErr() string {
 //
 // Returns:
 //	single value, error: (*<TYPE>, error)
-
 func Reduce<FTYPE>PtrErr(f func(*<TYPE>, *<TYPE>) (*<TYPE>, error), list []*<TYPE>, initializer ...<TYPE>) (*<TYPE>, error) {
 	var initVal <TYPE>
 	var init *<TYPE> = &initVal
@@ -95,7 +93,6 @@ func ReduceErr() string {
 //
 // Returns:
 //	single value, error: (<TYPE>, error)
-
 func Reduce<FTYPE>Err(f func(<TYPE>, <TYPE>) (<TYPE>, error), list []<TYPE>, initializer ...<TYPE>) (<TYPE>, error) {
 	var initVal <TYPE>
 	var init <TYPE> = initVal

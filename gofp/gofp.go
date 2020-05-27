@@ -75,11 +75,21 @@ var (
 	imports     = flag.String("imports", "", "import statements for user defined types when structs are in different package")
 	mapFunction = flag.String("mapfun", "", "this allows to create map function such as zip, merge.")
 	only        = flag.String("only", "", "includes list of function to be auto-generated")
+	sortStr     = flag.String("sort", "", "generate sorting functions for user defined type. format- <StructName>:<FieldName> eg. Employee:Name, Employee:Salary")
 
 	onlyList []string
 )
 
 func main() {
+	// when option is provided with operator(=), double quote is read too if provided. So trim it.
+	*destination = strings.Trim(*destination, "\"")
+	*pkgName = strings.Trim(*pkgName, "\"")
+	*types = strings.Trim(*types, "\"")
+	*imports = strings.Trim(*imports, "\"")
+	*mapFunction = strings.Trim(*mapFunction, "\"")
+	*only = strings.Trim(*only, "\"")
+	*sortStr = strings.Trim(*sortStr, "\"")
+
 	isAlreadyRun := runWithin(time.Second * 15)
 	defer func() {
 		if !isAlreadyRun {
@@ -96,6 +106,7 @@ func main() {
 	}
 
 	if len(*destination) > 0 {
+		os.Chmod(*destination, 0777)
 		if err := os.MkdirAll(filepath.Dir(*destination), os.ModePerm); err != nil {
 			log.Fatalf("Unable to create destination directory: %v", err)
 			usage()
@@ -106,6 +117,7 @@ func main() {
 		}
 
 		if *only != "" {
+			// when -sort option is provided with operator(=), double quote is read too if provided
 			onlyList = strings.Split(*only, ",")
 			onlyList = fp.MapStr(strings.TrimSpace, onlyList)
 		}
@@ -132,8 +144,20 @@ func main() {
 			generatedCodeII = ""
 		}
 
-		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII))
+		var sortingCode string
+		// Generate sort functions
+		if *sortStr != "" {
+			generatedCode = strings.Replace(generatedCode,
+				`import "sync" `,
+				`import "sort" 
+import "sync" `, -1)
+			sortingCode = generateSortMethods(*sortStr)
+		}
+
+		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII + sortingCode))
 		defer f.Close()
+
+		os.Chmod(*destination, 0444)
 	}
 
 	if !isAlreadyRun {
@@ -830,4 +854,37 @@ func runWithin(duration time.Duration) bool {
 		return runWithin(home+"\functional-go.txt", duration)
 	}
 	return runWithin("/tmp/functional-go.txt", duration)
+}
+
+func generateSortMethods(sortStr string) string {
+
+	if len(strings.TrimSpace(sortStr)) == 0 {
+		fmt.Println("-sort: value is empty. ignoring sort methods")
+		return ""
+	}
+
+	template := ""
+	sortedStrList := strings.Split(sortStr, ",")
+
+	for _, sortedStrItem := range sortedStrList {
+		sortedStrItem = strings.TrimSpace(sortedStrItem)
+		sortStrItemElements := strings.Split(sortedStrItem, ":")
+		if len(sortStrItemElements) != 2 {
+			fmt.Println("-sort: format is not valid. expected format for option -sort: <struct_name>:<field_name>. eg. -sort=\"Employee:Salary\"")
+			fmt.Println("ignoring sort methods")
+			return ""
+		}
+
+		structName := strings.TrimSpace(sortStrItemElements[0])
+		fieldName := strings.TrimSpace(sortStrItemElements[1])
+
+		fStructName := strings.Title(structName)
+		fFieldName := strings.Title(fieldName)
+
+		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+		template += template2.SortStruct()
+		template = r.Replace(template)
+	}
+
+	return template
 }

@@ -124,7 +124,7 @@ func TestDropInts64Ptr(t *testing.T) {
 
 	newList = DropInts64Ptr(nil, []*int64{&v1, &v4})
 	if *newList[0] != 1 || *newList[1] != 4 {
-		t.Errorf("DropInt64s failed. Expected list=%v, actual list=%v", expectedList, newList)
+		t.Errorf("DropInts64 failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
 
@@ -185,7 +185,7 @@ func TestDropInts32Ptr(t *testing.T) {
 
 	newList = DropInts32Ptr(nil, []*int32{&v1, &v4})
 	if *newList[0] != 1 || *newList[1] != 4 {
-		t.Errorf("DropInt32s failed. Expected list=%v, actual list=%v", expectedList, newList)
+		t.Errorf("DropInts32 failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
 
@@ -246,7 +246,7 @@ func TestDropInts16Ptr(t *testing.T) {
 
 	newList = DropInts16Ptr(nil, []*int16{&v1, &v4})
 	if *newList[0] != 1 || *newList[1] != 4 {
-		t.Errorf("DropInt16s failed. Expected list=%v, actual list=%v", expectedList, newList)
+		t.Errorf("DropInts16 failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
 
@@ -307,7 +307,7 @@ func TestDropInts8Ptr(t *testing.T) {
 
 	newList = DropInts8Ptr(nil, []*int8{&v1, &v4})
 	if *newList[0] != 1 || *newList[1] != 4 {
-		t.Errorf("DropInt8s failed. Expected list=%v, actual list=%v", expectedList, newList)
+		t.Errorf("DropInts8 failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
 
@@ -490,7 +490,7 @@ func TestDropUints32Ptr(t *testing.T) {
 
 	newList = DropUints32Ptr(nil, []*uint32{&v1, &v4})
 	if *newList[0] != 1 || *newList[1] != 4 {
-		t.Errorf("DropUint32s failed. Expected list=%v, actual list=%v", expectedList, newList)
+		t.Errorf("DropUints32 failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
 
@@ -551,7 +551,7 @@ func TestDropUints16Ptr(t *testing.T) {
 
 	newList = DropUints16Ptr(nil, []*uint16{&v1, &v4})
 	if *newList[0] != 1 || *newList[1] != 4 {
-		t.Errorf("DropUint16s failed. Expected list=%v, actual list=%v", expectedList, newList)
+		t.Errorf("DropUints16 failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
 
@@ -612,7 +612,7 @@ func TestDropUints8Ptr(t *testing.T) {
 
 	newList = DropUints8Ptr(nil, []*uint8{&v1, &v4})
 	if *newList[0] != 1 || *newList[1] != 4 {
-		t.Errorf("DropUint8s failed. Expected list=%v, actual list=%v", expectedList, newList)
+		t.Errorf("DropUints8 failed. Expected list=%v, actual list=%v", expectedList, newList)
 	}
 }
 

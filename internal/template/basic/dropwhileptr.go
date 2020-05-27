@@ -12,7 +12,6 @@ func DropWhilePtr() string {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhile<FTYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) []*<TYPE> {
 	if f == nil {
 		return []*<TYPE>{}
@@ -48,7 +47,6 @@ func DropWhilePtrErr() string {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhile<FTYPE>PtrErr(f func(*<TYPE>) (bool, error), list []*<TYPE>) ([]*<TYPE>, error) {
 	if f == nil {
 		return []*<TYPE>{}, nil
@@ -88,7 +86,6 @@ func DropWhileErr() string {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhile<FTYPE>Err(f func(<TYPE>) (bool, error), list []<TYPE>) ([]<TYPE>, error) {
 	if f == nil {
 		return []<TYPE>{}, nil
