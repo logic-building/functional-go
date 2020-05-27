@@ -28,7 +28,7 @@ func MapPtr(f func(*Employee) *Employee, list []*Employee) []*Employee {
 // MapPtrErr takes 2 arguments:
 //  1. A function input argument: *Employee and return types (*Employee, error)
 //  2. A list of type []*Employee
-
+//
 // Returns:
 // 	([]*Employee, error)
 func MapPtrErr(f func(*Employee) (*Employee, error), list []*Employee) ([]*Employee, error) {
@@ -49,7 +49,7 @@ func MapPtrErr(f func(*Employee) (*Employee, error), list []*Employee) ([]*Emplo
 // MapErr takes 2 arguments:
 //  1. A function input argument: Employee and return types (Employee, error)
 //  2. A list of type []Employee
-
+//
 // Returns:
 // 	([]Employee, error)
 func MapErr(f func(Employee) (Employee, error), list []Employee) ([]Employee, error) {
@@ -96,7 +96,7 @@ func FilterPtr(f func(*Employee) bool, list []*Employee) []*Employee {
 // FilterPtrErr takes two arguments
 //  1. Funtion: takes 1 argument of type Employee and returns (bool, error)
 //  2. slice of type []*Employee
-
+//
 // Returns: 
 //  new filtered list and error
 func FilterPtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Employee, error) {
@@ -119,7 +119,7 @@ func FilterPtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Employe
 // FilterErr takes two arguments
 //  1. Funtion: takes 1 argument of type Employee and returns (bool, error)
 //  2. slice of type []Employee
-
+//
 // Returns: 
 //  new filtered list and error
 func FilterErr(f func(Employee) (bool, error), list []Employee) ([]Employee, error) {
@@ -402,7 +402,6 @@ func DropWhilePtr(f func(*Employee) bool, list []*Employee) []*Employee {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhilePtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Employee, error) {
 	if f == nil {
 		return []*Employee{}, nil
@@ -437,7 +436,6 @@ func DropWhilePtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Empl
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileErr(f func(Employee) (bool, error), list []Employee) ([]Employee, error) {
 	if f == nil {
 		return []Employee{}, nil
@@ -738,7 +736,6 @@ func FilterMapPtr(fFilter func(*Employee) bool, fMap func(*Employee) *Employee, 
 // Returns:
 //	New List ([]*Employee, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapPtrErr(fFilter func(*Employee) (bool, error), fMap func(*Employee) (*Employee, error), list []*Employee) ([]*Employee, error) {
 	if fFilter == nil || fMap == nil {
 		return []*Employee{}, nil
@@ -888,7 +885,6 @@ func ReducePtr(f func(*Employee, *Employee) *Employee, list []*Employee, initial
 //
 // Returns:
 //	single value, error: (*Employee, error)
-
 func ReducePtrErr(f func(*Employee, *Employee) (*Employee, error), list []*Employee, initializer ...Employee) (*Employee, error) {
 	var initVal Employee
 	var init *Employee = &initVal
@@ -926,7 +922,6 @@ func ReducePtrErr(f func(*Employee, *Employee) (*Employee, error), list []*Emplo
 //
 // Returns:
 //	single value, error: (Employee, error)
-
 func ReduceErr(f func(Employee, Employee) (Employee, error), list []Employee, initializer ...Employee) (Employee, error) {
 	var initVal Employee
 	var init Employee = initVal
@@ -1014,7 +1009,7 @@ func MapTeacherPtr(f func(*Teacher) *Teacher, list []*Teacher) []*Teacher {
 // MapTeacherPtrErr takes 2 arguments:
 //  1. A function input argument: *Teacher and return types (*Teacher, error)
 //  2. A list of type []*Teacher
-
+//
 // Returns:
 // 	([]*Teacher, error)
 func MapTeacherPtrErr(f func(*Teacher) (*Teacher, error), list []*Teacher) ([]*Teacher, error) {
@@ -1035,7 +1030,7 @@ func MapTeacherPtrErr(f func(*Teacher) (*Teacher, error), list []*Teacher) ([]*T
 // MapTeacherErr takes 2 arguments:
 //  1. A function input argument: Teacher and return types (Teacher, error)
 //  2. A list of type []Teacher
-
+//
 // Returns:
 // 	([]Teacher, error)
 func MapTeacherErr(f func(Teacher) (Teacher, error), list []Teacher) ([]Teacher, error) {
@@ -1082,7 +1077,7 @@ func FilterTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 // FilterTeacherPtrErr takes two arguments
 //  1. Funtion: takes 1 argument of type Teacher and returns (bool, error)
 //  2. slice of type []*Teacher
-
+//
 // Returns: 
 //  new filtered list and error
 func FilterTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]*Teacher, error) {
@@ -1105,7 +1100,7 @@ func FilterTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]*Te
 // FilterTeacherErr takes two arguments
 //  1. Funtion: takes 1 argument of type Teacher and returns (bool, error)
 //  2. slice of type []Teacher
-
+//
 // Returns: 
 //  new filtered list and error
 func FilterTeacherErr(f func(Teacher) (bool, error), list []Teacher) ([]Teacher, error) {
@@ -1388,7 +1383,6 @@ func DropWhileTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]*Teacher, error) {
 	if f == nil {
 		return []*Teacher{}, nil
@@ -1423,7 +1417,6 @@ func DropWhileTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileTeacherErr(f func(Teacher) (bool, error), list []Teacher) ([]Teacher, error) {
 	if f == nil {
 		return []Teacher{}, nil
@@ -1724,7 +1717,6 @@ func FilterMapTeacherPtr(fFilter func(*Teacher) bool, fMap func(*Teacher) *Teach
 // Returns:
 //	New List ([]*Teacher, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapTeacherPtrErr(fFilter func(*Teacher) (bool, error), fMap func(*Teacher) (*Teacher, error), list []*Teacher) ([]*Teacher, error) {
 	if fFilter == nil || fMap == nil {
 		return []*Teacher{}, nil
@@ -1874,7 +1866,6 @@ func ReduceTeacherPtr(f func(*Teacher, *Teacher) *Teacher, list []*Teacher, init
 //
 // Returns:
 //	single value, error: (*Teacher, error)
-
 func ReduceTeacherPtrErr(f func(*Teacher, *Teacher) (*Teacher, error), list []*Teacher, initializer ...Teacher) (*Teacher, error) {
 	var initVal Teacher
 	var init *Teacher = &initVal
@@ -1912,7 +1903,6 @@ func ReduceTeacherPtrErr(f func(*Teacher, *Teacher) (*Teacher, error), list []*T
 //
 // Returns:
 //	single value, error: (Teacher, error)
-
 func ReduceTeacherErr(f func(Teacher, Teacher) (Teacher, error), list []Teacher, initializer ...Teacher) (Teacher, error) {
 	var initVal Teacher
 	var init Teacher = initVal

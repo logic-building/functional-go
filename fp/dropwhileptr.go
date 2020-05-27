@@ -9,7 +9,6 @@ package fp
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileIntPtr(f func(*int) bool, list []*int) []*int {
 	if f == nil {
 		return []*int{}
@@ -40,7 +39,6 @@ func DropWhileIntPtr(f func(*int) bool, list []*int) []*int {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt64Ptr(f func(*int64) bool, list []*int64) []*int64 {
 	if f == nil {
 		return []*int64{}
@@ -71,7 +69,6 @@ func DropWhileInt64Ptr(f func(*int64) bool, list []*int64) []*int64 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt32Ptr(f func(*int32) bool, list []*int32) []*int32 {
 	if f == nil {
 		return []*int32{}
@@ -102,7 +99,6 @@ func DropWhileInt32Ptr(f func(*int32) bool, list []*int32) []*int32 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt16Ptr(f func(*int16) bool, list []*int16) []*int16 {
 	if f == nil {
 		return []*int16{}
@@ -133,7 +129,6 @@ func DropWhileInt16Ptr(f func(*int16) bool, list []*int16) []*int16 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt8Ptr(f func(*int8) bool, list []*int8) []*int8 {
 	if f == nil {
 		return []*int8{}
@@ -164,7 +159,6 @@ func DropWhileInt8Ptr(f func(*int8) bool, list []*int8) []*int8 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUintPtr(f func(*uint) bool, list []*uint) []*uint {
 	if f == nil {
 		return []*uint{}
@@ -195,7 +189,6 @@ func DropWhileUintPtr(f func(*uint) bool, list []*uint) []*uint {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint64Ptr(f func(*uint64) bool, list []*uint64) []*uint64 {
 	if f == nil {
 		return []*uint64{}
@@ -226,7 +219,6 @@ func DropWhileUint64Ptr(f func(*uint64) bool, list []*uint64) []*uint64 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint32Ptr(f func(*uint32) bool, list []*uint32) []*uint32 {
 	if f == nil {
 		return []*uint32{}
@@ -257,7 +249,6 @@ func DropWhileUint32Ptr(f func(*uint32) bool, list []*uint32) []*uint32 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint16Ptr(f func(*uint16) bool, list []*uint16) []*uint16 {
 	if f == nil {
 		return []*uint16{}
@@ -288,7 +279,6 @@ func DropWhileUint16Ptr(f func(*uint16) bool, list []*uint16) []*uint16 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint8Ptr(f func(*uint8) bool, list []*uint8) []*uint8 {
 	if f == nil {
 		return []*uint8{}
@@ -319,7 +309,6 @@ func DropWhileUint8Ptr(f func(*uint8) bool, list []*uint8) []*uint8 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileStrPtr(f func(*string) bool, list []*string) []*string {
 	if f == nil {
 		return []*string{}
@@ -350,7 +339,6 @@ func DropWhileStrPtr(f func(*string) bool, list []*string) []*string {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileBoolPtr(f func(*bool) bool, list []*bool) []*bool {
 	if f == nil {
 		return []*bool{}
@@ -381,7 +369,6 @@ func DropWhileBoolPtr(f func(*bool) bool, list []*bool) []*bool {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
 	if f == nil {
 		return []*float32{}
@@ -412,7 +399,6 @@ func DropWhileFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
 // Returns:
 // 	New List.
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileFloat64Ptr(f func(*float64) bool, list []*float64) []*float64 {
 	if f == nil {
 		return []*float64{}

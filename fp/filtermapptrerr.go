@@ -9,7 +9,6 @@ package fp
 // Returns:
 //	New List ([]*int, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapIntPtrErr(fFilter func(*int) (bool, error), fMap func(*int) (*int, error), list []*int) ([]*int, error) {
 	if fFilter == nil || fMap == nil {
 		return []*int{}, nil
@@ -40,7 +39,6 @@ func FilterMapIntPtrErr(fFilter func(*int) (bool, error), fMap func(*int) (*int,
 // Returns:
 //	New List ([]*int64, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapInt64PtrErr(fFilter func(*int64) (bool, error), fMap func(*int64) (*int64, error), list []*int64) ([]*int64, error) {
 	if fFilter == nil || fMap == nil {
 		return []*int64{}, nil
@@ -71,7 +69,6 @@ func FilterMapInt64PtrErr(fFilter func(*int64) (bool, error), fMap func(*int64) 
 // Returns:
 //	New List ([]*int32, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapInt32PtrErr(fFilter func(*int32) (bool, error), fMap func(*int32) (*int32, error), list []*int32) ([]*int32, error) {
 	if fFilter == nil || fMap == nil {
 		return []*int32{}, nil
@@ -102,7 +99,6 @@ func FilterMapInt32PtrErr(fFilter func(*int32) (bool, error), fMap func(*int32) 
 // Returns:
 //	New List ([]*int16, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapInt16PtrErr(fFilter func(*int16) (bool, error), fMap func(*int16) (*int16, error), list []*int16) ([]*int16, error) {
 	if fFilter == nil || fMap == nil {
 		return []*int16{}, nil
@@ -133,7 +129,6 @@ func FilterMapInt16PtrErr(fFilter func(*int16) (bool, error), fMap func(*int16) 
 // Returns:
 //	New List ([]*int8, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapInt8PtrErr(fFilter func(*int8) (bool, error), fMap func(*int8) (*int8, error), list []*int8) ([]*int8, error) {
 	if fFilter == nil || fMap == nil {
 		return []*int8{}, nil
@@ -164,7 +159,6 @@ func FilterMapInt8PtrErr(fFilter func(*int8) (bool, error), fMap func(*int8) (*i
 // Returns:
 //	New List ([]*uint, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapUintPtrErr(fFilter func(*uint) (bool, error), fMap func(*uint) (*uint, error), list []*uint) ([]*uint, error) {
 	if fFilter == nil || fMap == nil {
 		return []*uint{}, nil
@@ -195,7 +189,6 @@ func FilterMapUintPtrErr(fFilter func(*uint) (bool, error), fMap func(*uint) (*u
 // Returns:
 //	New List ([]*uint64, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapUint64PtrErr(fFilter func(*uint64) (bool, error), fMap func(*uint64) (*uint64, error), list []*uint64) ([]*uint64, error) {
 	if fFilter == nil || fMap == nil {
 		return []*uint64{}, nil
@@ -226,7 +219,6 @@ func FilterMapUint64PtrErr(fFilter func(*uint64) (bool, error), fMap func(*uint6
 // Returns:
 //	New List ([]*uint32, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapUint32PtrErr(fFilter func(*uint32) (bool, error), fMap func(*uint32) (*uint32, error), list []*uint32) ([]*uint32, error) {
 	if fFilter == nil || fMap == nil {
 		return []*uint32{}, nil
@@ -257,7 +249,6 @@ func FilterMapUint32PtrErr(fFilter func(*uint32) (bool, error), fMap func(*uint3
 // Returns:
 //	New List ([]*uint16, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapUint16PtrErr(fFilter func(*uint16) (bool, error), fMap func(*uint16) (*uint16, error), list []*uint16) ([]*uint16, error) {
 	if fFilter == nil || fMap == nil {
 		return []*uint16{}, nil
@@ -288,7 +279,6 @@ func FilterMapUint16PtrErr(fFilter func(*uint16) (bool, error), fMap func(*uint1
 // Returns:
 //	New List ([]*uint8, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapUint8PtrErr(fFilter func(*uint8) (bool, error), fMap func(*uint8) (*uint8, error), list []*uint8) ([]*uint8, error) {
 	if fFilter == nil || fMap == nil {
 		return []*uint8{}, nil
@@ -319,7 +309,6 @@ func FilterMapUint8PtrErr(fFilter func(*uint8) (bool, error), fMap func(*uint8) 
 // Returns:
 //	New List ([]*string, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapStrPtrErr(fFilter func(*string) (bool, error), fMap func(*string) (*string, error), list []*string) ([]*string, error) {
 	if fFilter == nil || fMap == nil {
 		return []*string{}, nil
@@ -350,7 +339,6 @@ func FilterMapStrPtrErr(fFilter func(*string) (bool, error), fMap func(*string) 
 // Returns:
 //	New List ([]*float32, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapFloat32PtrErr(fFilter func(*float32) (bool, error), fMap func(*float32) (*float32, error), list []*float32) ([]*float32, error) {
 	if fFilter == nil || fMap == nil {
 		return []*float32{}, nil
@@ -381,7 +369,6 @@ func FilterMapFloat32PtrErr(fFilter func(*float32) (bool, error), fMap func(*flo
 // Returns:
 //	New List ([]*float64, error).
 //  Empty list if all there parameters are nil or either of parameter is nil
-//
 func FilterMapFloat64PtrErr(fFilter func(*float64) (bool, error), fMap func(*float64) (*float64, error), list []*float64) ([]*float64, error) {
 	if fFilter == nil || fMap == nil {
 		return []*float64{}, nil

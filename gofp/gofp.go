@@ -430,6 +430,11 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 				template = r.Replace(template)
 			}
 
+			if fp.ExistsStrIgnoreCase("Reverse", onlyList) {
+				template += basic.Reverse()
+				template = r2.Replace(template)
+			}
+
 		} else {
 			template += template2.Map()
 			template = r.Replace(template)

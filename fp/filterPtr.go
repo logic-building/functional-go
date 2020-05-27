@@ -3,7 +3,7 @@ package fp
 // FilterIntPtr takes two arguments
 //  1. Funtion: takes 1 argument of type int and returns bool
 //  2. slice of type []*int
-
+//
 // Returns: 
 //  new filtered list
 func FilterIntPtr(f func(*int) bool, list []*int) []*int {
@@ -22,7 +22,7 @@ func FilterIntPtr(f func(*int) bool, list []*int) []*int {
 // FilterInt64Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type int64 and returns bool
 //  2. slice of type []*int64
-
+//
 // Returns: 
 //  new filtered list
 func FilterInt64Ptr(f func(*int64) bool, list []*int64) []*int64 {
@@ -41,7 +41,7 @@ func FilterInt64Ptr(f func(*int64) bool, list []*int64) []*int64 {
 // FilterInt32Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type int32 and returns bool
 //  2. slice of type []*int32
-
+//
 // Returns: 
 //  new filtered list
 func FilterInt32Ptr(f func(*int32) bool, list []*int32) []*int32 {
@@ -60,7 +60,7 @@ func FilterInt32Ptr(f func(*int32) bool, list []*int32) []*int32 {
 // FilterInt16Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type int16 and returns bool
 //  2. slice of type []*int16
-
+//
 // Returns: 
 //  new filtered list
 func FilterInt16Ptr(f func(*int16) bool, list []*int16) []*int16 {
@@ -79,7 +79,7 @@ func FilterInt16Ptr(f func(*int16) bool, list []*int16) []*int16 {
 // FilterInt8Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type int8 and returns bool
 //  2. slice of type []*int8
-
+//
 // Returns: 
 //  new filtered list
 func FilterInt8Ptr(f func(*int8) bool, list []*int8) []*int8 {
@@ -98,7 +98,7 @@ func FilterInt8Ptr(f func(*int8) bool, list []*int8) []*int8 {
 // FilterUintPtr takes two arguments
 //  1. Funtion: takes 1 argument of type uint and returns bool
 //  2. slice of type []*uint
-
+//
 // Returns: 
 //  new filtered list
 func FilterUintPtr(f func(*uint) bool, list []*uint) []*uint {
@@ -117,7 +117,7 @@ func FilterUintPtr(f func(*uint) bool, list []*uint) []*uint {
 // FilterUint64Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type uint64 and returns bool
 //  2. slice of type []*uint64
-
+//
 // Returns: 
 //  new filtered list
 func FilterUint64Ptr(f func(*uint64) bool, list []*uint64) []*uint64 {
@@ -136,7 +136,7 @@ func FilterUint64Ptr(f func(*uint64) bool, list []*uint64) []*uint64 {
 // FilterUint32Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type uint32 and returns bool
 //  2. slice of type []*uint32
-
+//
 // Returns: 
 //  new filtered list
 func FilterUint32Ptr(f func(*uint32) bool, list []*uint32) []*uint32 {
@@ -155,7 +155,7 @@ func FilterUint32Ptr(f func(*uint32) bool, list []*uint32) []*uint32 {
 // FilterUint16Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type uint16 and returns bool
 //  2. slice of type []*uint16
-
+//
 // Returns: 
 //  new filtered list
 func FilterUint16Ptr(f func(*uint16) bool, list []*uint16) []*uint16 {
@@ -174,7 +174,7 @@ func FilterUint16Ptr(f func(*uint16) bool, list []*uint16) []*uint16 {
 // FilterUint8Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type uint8 and returns bool
 //  2. slice of type []*uint8
-
+//
 // Returns: 
 //  new filtered list
 func FilterUint8Ptr(f func(*uint8) bool, list []*uint8) []*uint8 {
@@ -193,7 +193,7 @@ func FilterUint8Ptr(f func(*uint8) bool, list []*uint8) []*uint8 {
 // FilterStrPtr takes two arguments
 //  1. Funtion: takes 1 argument of type string and returns bool
 //  2. slice of type []*string
-
+//
 // Returns: 
 //  new filtered list
 func FilterStrPtr(f func(*string) bool, list []*string) []*string {
@@ -212,7 +212,7 @@ func FilterStrPtr(f func(*string) bool, list []*string) []*string {
 // FilterBoolPtr takes two arguments
 //  1. Funtion: takes 1 argument of type bool and returns bool
 //  2. slice of type []*bool
-
+//
 // Returns: 
 //  new filtered list
 func FilterBoolPtr(f func(*bool) bool, list []*bool) []*bool {
@@ -231,7 +231,7 @@ func FilterBoolPtr(f func(*bool) bool, list []*bool) []*bool {
 // FilterFloat32Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type float32 and returns bool
 //  2. slice of type []*float32
-
+//
 // Returns: 
 //  new filtered list
 func FilterFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
@@ -250,7 +250,7 @@ func FilterFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
 // FilterFloat64Ptr takes two arguments
 //  1. Funtion: takes 1 argument of type float64 and returns bool
 //  2. slice of type []*float64
-
+//
 // Returns: 
 //  new filtered list
 func FilterFloat64Ptr(f func(*float64) bool, list []*float64) []*float64 {

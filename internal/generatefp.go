@@ -51,6 +51,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Reverse",
+		codeTemplate:      basic.Reverse(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "reverse.go",
+
+		testTemplate:          basic.ReverseTest(),
+		testTemplateBool:      basic.ReverseBoolTest(),
+		generatedTestFileName: "reverse_test.go",
+	},
+
+	fpCode{
 		function:          "SortInts",
 		codeTemplate:      basic.SortInts(),
 		dataTypes:         []string{"int"},

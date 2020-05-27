@@ -1,6 +1,6 @@
 package fp
 
-// MinMaxInt returns min and max items from the list.
+// MinMaxIntPtr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxIntPtr(list []*int) (*int, *int) {
 	var zero int = 0 
@@ -22,7 +22,7 @@ func MinMaxIntPtr(list []*int) (*int, *int) {
 }
 
 
-// MinMaxInt64 returns min and max items from the list.
+// MinMaxInt64Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxInt64Ptr(list []*int64) (*int64, *int64) {
 	var zero int64 = 0 
@@ -44,7 +44,7 @@ func MinMaxInt64Ptr(list []*int64) (*int64, *int64) {
 }
 
 
-// MinMaxInt32 returns min and max items from the list.
+// MinMaxInt32Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxInt32Ptr(list []*int32) (*int32, *int32) {
 	var zero int32 = 0 
@@ -66,7 +66,7 @@ func MinMaxInt32Ptr(list []*int32) (*int32, *int32) {
 }
 
 
-// MinMaxInt16 returns min and max items from the list.
+// MinMaxInt16Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxInt16Ptr(list []*int16) (*int16, *int16) {
 	var zero int16 = 0 
@@ -88,7 +88,7 @@ func MinMaxInt16Ptr(list []*int16) (*int16, *int16) {
 }
 
 
-// MinMaxInt8 returns min and max items from the list.
+// MinMaxInt8Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxInt8Ptr(list []*int8) (*int8, *int8) {
 	var zero int8 = 0 
@@ -110,7 +110,7 @@ func MinMaxInt8Ptr(list []*int8) (*int8, *int8) {
 }
 
 
-// MinMaxUint returns min and max items from the list.
+// MinMaxUintPtr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxUintPtr(list []*uint) (*uint, *uint) {
 	var zero uint = 0 
@@ -132,7 +132,7 @@ func MinMaxUintPtr(list []*uint) (*uint, *uint) {
 }
 
 
-// MinMaxUint64 returns min and max items from the list.
+// MinMaxUint64Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxUint64Ptr(list []*uint64) (*uint64, *uint64) {
 	var zero uint64 = 0 
@@ -154,7 +154,7 @@ func MinMaxUint64Ptr(list []*uint64) (*uint64, *uint64) {
 }
 
 
-// MinMaxUint32 returns min and max items from the list.
+// MinMaxUint32Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxUint32Ptr(list []*uint32) (*uint32, *uint32) {
 	var zero uint32 = 0 
@@ -176,7 +176,7 @@ func MinMaxUint32Ptr(list []*uint32) (*uint32, *uint32) {
 }
 
 
-// MinMaxUint16 returns min and max items from the list.
+// MinMaxUint16Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxUint16Ptr(list []*uint16) (*uint16, *uint16) {
 	var zero uint16 = 0 
@@ -198,7 +198,7 @@ func MinMaxUint16Ptr(list []*uint16) (*uint16, *uint16) {
 }
 
 
-// MinMaxUint8 returns min and max items from the list.
+// MinMaxUint8Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxUint8Ptr(list []*uint8) (*uint8, *uint8) {
 	var zero uint8 = 0 
@@ -220,7 +220,7 @@ func MinMaxUint8Ptr(list []*uint8) (*uint8, *uint8) {
 }
 
 
-// MinMaxFloat32 returns min and max items from the list.
+// MinMaxFloat32Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxFloat32Ptr(list []*float32) (*float32, *float32) {
 	var zero float32 = 0 
@@ -242,7 +242,7 @@ func MinMaxFloat32Ptr(list []*float32) (*float32, *float32) {
 }
 
 
-// MinMaxFloat64 returns min and max items from the list.
+// MinMaxFloat64Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMaxFloat64Ptr(list []*float64) (*float64, *float64) {
 	var zero float64 = 0 
