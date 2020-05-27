@@ -985,6 +985,59 @@ func DropLastEmployerPtr(list []*employer.Employer) []*employer.Employer {
 	return newList
 }
 
+// ReverseEmployers reverse the list
+func ReverseEmployers(list []employer.Employer) []employer.Employer {
+	newList := make([]employer.Employer, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// ReverseEmployersPtr reverse the list
+func ReverseEmployersPtr(list []*employer.Employer) []*employer.Employer {
+	newList := make([]*employer.Employer, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// TakeEmployer returns n items in the list
+func TakeEmployer(n int, list []employer.Employer) []employer.Employer {
+	if n < 0 {
+		return []employer.Employer{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]employer.Employer, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// TakeEmployerPtr returns n items in the list
+func TakeEmployerPtr(n int, list []*employer.Employer) []*employer.Employer {
+	if n < 0 {
+		return []*employer.Employer{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]*employer.Employer, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	 }
+	return newList
+}
 func MapEmployee(f func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
 	if f == nil {
 		return []employee.Employee{}
@@ -1966,6 +2019,59 @@ func DropLastEmployeePtr(list []*employee.Employee) []*employee.Employee {
 	return newList
 }
 
+// ReverseEmployees reverse the list
+func ReverseEmployees(list []employee.Employee) []employee.Employee {
+	newList := make([]employee.Employee, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// ReverseEmployeesPtr reverse the list
+func ReverseEmployeesPtr(list []*employee.Employee) []*employee.Employee {
+	newList := make([]*employee.Employee, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// TakeEmployee returns n items in the list
+func TakeEmployee(n int, list []employee.Employee) []employee.Employee {
+	if n < 0 {
+		return []employee.Employee{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]employee.Employee, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// TakeEmployeePtr returns n items in the list
+func TakeEmployeePtr(n int, list []*employee.Employee) []*employee.Employee {
+	if n < 0 {
+		return []*employee.Employee{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]*employee.Employee, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	 }
+	return newList
+}
 
 // MapEmployerEmployee takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list

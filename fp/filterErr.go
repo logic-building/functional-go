@@ -4,7 +4,7 @@ package fp
 //  1. Funtion: takes 1 argument of type int and returns (bool, error)
 //  2. slice of type []int
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterIntErr(f func(int) (bool, error), list []int) ([]int, error) {
 	if f == nil {
@@ -27,7 +27,7 @@ func FilterIntErr(f func(int) (bool, error), list []int) ([]int, error) {
 //  1. Funtion: takes 1 argument of type int64 and returns (bool, error)
 //  2. slice of type []int64
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterInt64Err(f func(int64) (bool, error), list []int64) ([]int64, error) {
 	if f == nil {
@@ -50,7 +50,7 @@ func FilterInt64Err(f func(int64) (bool, error), list []int64) ([]int64, error) 
 //  1. Funtion: takes 1 argument of type int32 and returns (bool, error)
 //  2. slice of type []int32
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterInt32Err(f func(int32) (bool, error), list []int32) ([]int32, error) {
 	if f == nil {
@@ -73,7 +73,7 @@ func FilterInt32Err(f func(int32) (bool, error), list []int32) ([]int32, error) 
 //  1. Funtion: takes 1 argument of type int16 and returns (bool, error)
 //  2. slice of type []int16
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterInt16Err(f func(int16) (bool, error), list []int16) ([]int16, error) {
 	if f == nil {
@@ -96,7 +96,7 @@ func FilterInt16Err(f func(int16) (bool, error), list []int16) ([]int16, error) 
 //  1. Funtion: takes 1 argument of type int8 and returns (bool, error)
 //  2. slice of type []int8
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterInt8Err(f func(int8) (bool, error), list []int8) ([]int8, error) {
 	if f == nil {
@@ -119,7 +119,7 @@ func FilterInt8Err(f func(int8) (bool, error), list []int8) ([]int8, error) {
 //  1. Funtion: takes 1 argument of type uint and returns (bool, error)
 //  2. slice of type []uint
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterUintErr(f func(uint) (bool, error), list []uint) ([]uint, error) {
 	if f == nil {
@@ -142,7 +142,7 @@ func FilterUintErr(f func(uint) (bool, error), list []uint) ([]uint, error) {
 //  1. Funtion: takes 1 argument of type uint64 and returns (bool, error)
 //  2. slice of type []uint64
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterUint64Err(f func(uint64) (bool, error), list []uint64) ([]uint64, error) {
 	if f == nil {
@@ -165,7 +165,7 @@ func FilterUint64Err(f func(uint64) (bool, error), list []uint64) ([]uint64, err
 //  1. Funtion: takes 1 argument of type uint32 and returns (bool, error)
 //  2. slice of type []uint32
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterUint32Err(f func(uint32) (bool, error), list []uint32) ([]uint32, error) {
 	if f == nil {
@@ -188,7 +188,7 @@ func FilterUint32Err(f func(uint32) (bool, error), list []uint32) ([]uint32, err
 //  1. Funtion: takes 1 argument of type uint16 and returns (bool, error)
 //  2. slice of type []uint16
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterUint16Err(f func(uint16) (bool, error), list []uint16) ([]uint16, error) {
 	if f == nil {
@@ -211,7 +211,7 @@ func FilterUint16Err(f func(uint16) (bool, error), list []uint16) ([]uint16, err
 //  1. Funtion: takes 1 argument of type uint8 and returns (bool, error)
 //  2. slice of type []uint8
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterUint8Err(f func(uint8) (bool, error), list []uint8) ([]uint8, error) {
 	if f == nil {
@@ -234,7 +234,7 @@ func FilterUint8Err(f func(uint8) (bool, error), list []uint8) ([]uint8, error) 
 //  1. Funtion: takes 1 argument of type string and returns (bool, error)
 //  2. slice of type []string
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterStrErr(f func(string) (bool, error), list []string) ([]string, error) {
 	if f == nil {
@@ -257,7 +257,7 @@ func FilterStrErr(f func(string) (bool, error), list []string) ([]string, error)
 //  1. Funtion: takes 1 argument of type bool and returns (bool, error)
 //  2. slice of type []bool
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterBoolErr(f func(bool) (bool, error), list []bool) ([]bool, error) {
 	if f == nil {
@@ -280,7 +280,7 @@ func FilterBoolErr(f func(bool) (bool, error), list []bool) ([]bool, error) {
 //  1. Funtion: takes 1 argument of type float32 and returns (bool, error)
 //  2. slice of type []float32
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterFloat32Err(f func(float32) (bool, error), list []float32) ([]float32, error) {
 	if f == nil {
@@ -303,7 +303,7 @@ func FilterFloat32Err(f func(float32) (bool, error), list []float32) ([]float32,
 //  1. Funtion: takes 1 argument of type float64 and returns (bool, error)
 //  2. slice of type []float64
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterFloat64Err(f func(float64) (bool, error), list []float64) ([]float64, error) {
 	if f == nil {

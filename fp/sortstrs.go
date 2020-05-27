@@ -1,6 +1,7 @@
 package fp
 
 import "sort"
+
 func SortStrs(list []string) []string {
 	if len(list) == 0 {
 		return []string{}

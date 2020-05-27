@@ -156,7 +156,7 @@ func ReplaceActivityFilterPtrErrTest(code string) string {
 
 func TestFilterIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 

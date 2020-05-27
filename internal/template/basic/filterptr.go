@@ -59,7 +59,7 @@ func FilterErr() string {
 //  1. Funtion: takes 1 argument of type <TYPE> and returns (bool, error)
 //  2. slice of type []<TYPE>
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func Filter<FTYPE>Err(f func(<TYPE>) (bool, error), list []<TYPE>) ([]<TYPE>, error) {
 	if f == nil {
