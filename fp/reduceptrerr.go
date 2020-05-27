@@ -9,7 +9,6 @@ package fp
 //
 // Returns:
 //	single value, error: (*int, error)
-
 func ReduceIntPtrErr(f func(*int, *int) (*int, error), list []*int, initializer ...int) (*int, error) {
 	var initVal int
 	var init *int = &initVal
@@ -47,7 +46,6 @@ func ReduceIntPtrErr(f func(*int, *int) (*int, error), list []*int, initializer 
 //
 // Returns:
 //	single value, error: (*int64, error)
-
 func ReduceInt64PtrErr(f func(*int64, *int64) (*int64, error), list []*int64, initializer ...int64) (*int64, error) {
 	var initVal int64
 	var init *int64 = &initVal
@@ -85,7 +83,6 @@ func ReduceInt64PtrErr(f func(*int64, *int64) (*int64, error), list []*int64, in
 //
 // Returns:
 //	single value, error: (*int32, error)
-
 func ReduceInt32PtrErr(f func(*int32, *int32) (*int32, error), list []*int32, initializer ...int32) (*int32, error) {
 	var initVal int32
 	var init *int32 = &initVal
@@ -123,7 +120,6 @@ func ReduceInt32PtrErr(f func(*int32, *int32) (*int32, error), list []*int32, in
 //
 // Returns:
 //	single value, error: (*int16, error)
-
 func ReduceInt16PtrErr(f func(*int16, *int16) (*int16, error), list []*int16, initializer ...int16) (*int16, error) {
 	var initVal int16
 	var init *int16 = &initVal
@@ -161,7 +157,6 @@ func ReduceInt16PtrErr(f func(*int16, *int16) (*int16, error), list []*int16, in
 //
 // Returns:
 //	single value, error: (*int8, error)
-
 func ReduceInt8PtrErr(f func(*int8, *int8) (*int8, error), list []*int8, initializer ...int8) (*int8, error) {
 	var initVal int8
 	var init *int8 = &initVal
@@ -199,7 +194,6 @@ func ReduceInt8PtrErr(f func(*int8, *int8) (*int8, error), list []*int8, initial
 //
 // Returns:
 //	single value, error: (*uint, error)
-
 func ReduceUintPtrErr(f func(*uint, *uint) (*uint, error), list []*uint, initializer ...uint) (*uint, error) {
 	var initVal uint
 	var init *uint = &initVal
@@ -237,7 +231,6 @@ func ReduceUintPtrErr(f func(*uint, *uint) (*uint, error), list []*uint, initial
 //
 // Returns:
 //	single value, error: (*uint64, error)
-
 func ReduceUint64PtrErr(f func(*uint64, *uint64) (*uint64, error), list []*uint64, initializer ...uint64) (*uint64, error) {
 	var initVal uint64
 	var init *uint64 = &initVal
@@ -275,7 +268,6 @@ func ReduceUint64PtrErr(f func(*uint64, *uint64) (*uint64, error), list []*uint6
 //
 // Returns:
 //	single value, error: (*uint32, error)
-
 func ReduceUint32PtrErr(f func(*uint32, *uint32) (*uint32, error), list []*uint32, initializer ...uint32) (*uint32, error) {
 	var initVal uint32
 	var init *uint32 = &initVal
@@ -313,7 +305,6 @@ func ReduceUint32PtrErr(f func(*uint32, *uint32) (*uint32, error), list []*uint3
 //
 // Returns:
 //	single value, error: (*uint16, error)
-
 func ReduceUint16PtrErr(f func(*uint16, *uint16) (*uint16, error), list []*uint16, initializer ...uint16) (*uint16, error) {
 	var initVal uint16
 	var init *uint16 = &initVal
@@ -351,7 +342,6 @@ func ReduceUint16PtrErr(f func(*uint16, *uint16) (*uint16, error), list []*uint1
 //
 // Returns:
 //	single value, error: (*uint8, error)
-
 func ReduceUint8PtrErr(f func(*uint8, *uint8) (*uint8, error), list []*uint8, initializer ...uint8) (*uint8, error) {
 	var initVal uint8
 	var init *uint8 = &initVal
@@ -389,7 +379,6 @@ func ReduceUint8PtrErr(f func(*uint8, *uint8) (*uint8, error), list []*uint8, in
 //
 // Returns:
 //	single value, error: (*string, error)
-
 func ReduceStrPtrErr(f func(*string, *string) (*string, error), list []*string, initializer ...string) (*string, error) {
 	var initVal string
 	var init *string = &initVal
@@ -427,7 +416,6 @@ func ReduceStrPtrErr(f func(*string, *string) (*string, error), list []*string, 
 //
 // Returns:
 //	single value, error: (*float32, error)
-
 func ReduceFloat32PtrErr(f func(*float32, *float32) (*float32, error), list []*float32, initializer ...float32) (*float32, error) {
 	var initVal float32
 	var init *float32 = &initVal
@@ -465,7 +453,6 @@ func ReduceFloat32PtrErr(f func(*float32, *float32) (*float32, error), list []*f
 //
 // Returns:
 //	single value, error: (*float64, error)
-
 func ReduceFloat64PtrErr(f func(*float64, *float64) (*float64, error), list []*float64, initializer ...float64) (*float64, error) {
 	var initVal float64
 	var init *float64 = &initVal

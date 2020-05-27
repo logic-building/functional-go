@@ -9,7 +9,6 @@ package fp
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileIntErr(f func(int) (bool, error), list []int) ([]int, error) {
 	if f == nil {
 		return []int{}, nil
@@ -44,7 +43,6 @@ func DropWhileIntErr(f func(int) (bool, error), list []int) ([]int, error) {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt64Err(f func(int64) (bool, error), list []int64) ([]int64, error) {
 	if f == nil {
 		return []int64{}, nil
@@ -79,7 +77,6 @@ func DropWhileInt64Err(f func(int64) (bool, error), list []int64) ([]int64, erro
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt32Err(f func(int32) (bool, error), list []int32) ([]int32, error) {
 	if f == nil {
 		return []int32{}, nil
@@ -114,7 +111,6 @@ func DropWhileInt32Err(f func(int32) (bool, error), list []int32) ([]int32, erro
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt16Err(f func(int16) (bool, error), list []int16) ([]int16, error) {
 	if f == nil {
 		return []int16{}, nil
@@ -149,7 +145,6 @@ func DropWhileInt16Err(f func(int16) (bool, error), list []int16) ([]int16, erro
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileInt8Err(f func(int8) (bool, error), list []int8) ([]int8, error) {
 	if f == nil {
 		return []int8{}, nil
@@ -184,7 +179,6 @@ func DropWhileInt8Err(f func(int8) (bool, error), list []int8) ([]int8, error) {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUintErr(f func(uint) (bool, error), list []uint) ([]uint, error) {
 	if f == nil {
 		return []uint{}, nil
@@ -219,7 +213,6 @@ func DropWhileUintErr(f func(uint) (bool, error), list []uint) ([]uint, error) {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint64Err(f func(uint64) (bool, error), list []uint64) ([]uint64, error) {
 	if f == nil {
 		return []uint64{}, nil
@@ -254,7 +247,6 @@ func DropWhileUint64Err(f func(uint64) (bool, error), list []uint64) ([]uint64, 
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint32Err(f func(uint32) (bool, error), list []uint32) ([]uint32, error) {
 	if f == nil {
 		return []uint32{}, nil
@@ -289,7 +281,6 @@ func DropWhileUint32Err(f func(uint32) (bool, error), list []uint32) ([]uint32, 
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint16Err(f func(uint16) (bool, error), list []uint16) ([]uint16, error) {
 	if f == nil {
 		return []uint16{}, nil
@@ -324,7 +315,6 @@ func DropWhileUint16Err(f func(uint16) (bool, error), list []uint16) ([]uint16, 
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileUint8Err(f func(uint8) (bool, error), list []uint8) ([]uint8, error) {
 	if f == nil {
 		return []uint8{}, nil
@@ -359,7 +349,6 @@ func DropWhileUint8Err(f func(uint8) (bool, error), list []uint8) ([]uint8, erro
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileStrErr(f func(string) (bool, error), list []string) ([]string, error) {
 	if f == nil {
 		return []string{}, nil
@@ -394,7 +383,6 @@ func DropWhileStrErr(f func(string) (bool, error), list []string) ([]string, err
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileBoolErr(f func(bool) (bool, error), list []bool) ([]bool, error) {
 	if f == nil {
 		return []bool{}, nil
@@ -429,7 +417,6 @@ func DropWhileBoolErr(f func(bool) (bool, error), list []bool) ([]bool, error) {
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileFloat32Err(f func(float32) (bool, error), list []float32) ([]float32, error) {
 	if f == nil {
 		return []float32{}, nil
@@ -464,7 +451,6 @@ func DropWhileFloat32Err(f func(float32) (bool, error), list []float32) ([]float
 // Returns:
 // 	New List, error
 //  Empty list if either one of arguments or both of them are nil
-
 func DropWhileFloat64Err(f func(float64) (bool, error), list []float64) ([]float64, error) {
 	if f == nil {
 		return []float64{}, nil

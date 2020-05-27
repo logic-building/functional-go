@@ -1,6 +1,6 @@
 package fp
 
-// ZipInt takes two inputs: first list of type: []int, second list of type: []int.
+// ZipIntPtr takes two inputs: first list of type: []int, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[int]int
 func ZipIntPtr(list1 []*int, list2 []*int) map[*int]*int {
 	newMap := make(map[*int]*int)
@@ -24,7 +24,7 @@ func ZipIntPtr(list1 []*int, list2 []*int) map[*int]*int {
 	return newMap
 }
 
-// ZipIntInt64 takes two inputs: first list of type: []int, second list of type: []int64.
+// ZipIntInt64Ptr takes two inputs: first list of type: []int, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[int]int64
 func ZipIntInt64Ptr(list1 []*int, list2 []*int64) map[*int]*int64 {
 	newMap := make(map[*int]*int64)
@@ -48,7 +48,7 @@ func ZipIntInt64Ptr(list1 []*int, list2 []*int64) map[*int]*int64 {
 	return newMap
 }
 
-// ZipIntInt32 takes two inputs: first list of type: []int, second list of type: []int32.
+// ZipIntInt32Ptr takes two inputs: first list of type: []int, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[int]int32
 func ZipIntInt32Ptr(list1 []*int, list2 []*int32) map[*int]*int32 {
 	newMap := make(map[*int]*int32)
@@ -72,7 +72,7 @@ func ZipIntInt32Ptr(list1 []*int, list2 []*int32) map[*int]*int32 {
 	return newMap
 }
 
-// ZipIntInt16 takes two inputs: first list of type: []int, second list of type: []int16.
+// ZipIntInt16Ptr takes two inputs: first list of type: []int, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[int]int16
 func ZipIntInt16Ptr(list1 []*int, list2 []*int16) map[*int]*int16 {
 	newMap := make(map[*int]*int16)
@@ -96,7 +96,7 @@ func ZipIntInt16Ptr(list1 []*int, list2 []*int16) map[*int]*int16 {
 	return newMap
 }
 
-// ZipIntInt8 takes two inputs: first list of type: []int, second list of type: []int8.
+// ZipIntInt8Ptr takes two inputs: first list of type: []int, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[int]int8
 func ZipIntInt8Ptr(list1 []*int, list2 []*int8) map[*int]*int8 {
 	newMap := make(map[*int]*int8)
@@ -120,7 +120,7 @@ func ZipIntInt8Ptr(list1 []*int, list2 []*int8) map[*int]*int8 {
 	return newMap
 }
 
-// ZipIntUint takes two inputs: first list of type: []int, second list of type: []uint.
+// ZipIntUintPtr takes two inputs: first list of type: []int, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[int]uint
 func ZipIntUintPtr(list1 []*int, list2 []*uint) map[*int]*uint {
 	newMap := make(map[*int]*uint)
@@ -144,7 +144,7 @@ func ZipIntUintPtr(list1 []*int, list2 []*uint) map[*int]*uint {
 	return newMap
 }
 
-// ZipIntUint64 takes two inputs: first list of type: []int, second list of type: []uint64.
+// ZipIntUint64Ptr takes two inputs: first list of type: []int, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[int]uint64
 func ZipIntUint64Ptr(list1 []*int, list2 []*uint64) map[*int]*uint64 {
 	newMap := make(map[*int]*uint64)
@@ -168,7 +168,7 @@ func ZipIntUint64Ptr(list1 []*int, list2 []*uint64) map[*int]*uint64 {
 	return newMap
 }
 
-// ZipIntUint32 takes two inputs: first list of type: []int, second list of type: []uint32.
+// ZipIntUint32Ptr takes two inputs: first list of type: []int, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[int]uint32
 func ZipIntUint32Ptr(list1 []*int, list2 []*uint32) map[*int]*uint32 {
 	newMap := make(map[*int]*uint32)
@@ -192,7 +192,7 @@ func ZipIntUint32Ptr(list1 []*int, list2 []*uint32) map[*int]*uint32 {
 	return newMap
 }
 
-// ZipIntUint16 takes two inputs: first list of type: []int, second list of type: []uint16.
+// ZipIntUint16Ptr takes two inputs: first list of type: []int, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[int]uint16
 func ZipIntUint16Ptr(list1 []*int, list2 []*uint16) map[*int]*uint16 {
 	newMap := make(map[*int]*uint16)
@@ -216,7 +216,7 @@ func ZipIntUint16Ptr(list1 []*int, list2 []*uint16) map[*int]*uint16 {
 	return newMap
 }
 
-// ZipIntUint8 takes two inputs: first list of type: []int, second list of type: []uint8.
+// ZipIntUint8Ptr takes two inputs: first list of type: []int, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[int]uint8
 func ZipIntUint8Ptr(list1 []*int, list2 []*uint8) map[*int]*uint8 {
 	newMap := make(map[*int]*uint8)
@@ -240,7 +240,7 @@ func ZipIntUint8Ptr(list1 []*int, list2 []*uint8) map[*int]*uint8 {
 	return newMap
 }
 
-// ZipIntStr takes two inputs: first list of type: []int, second list of type: []string.
+// ZipIntStrPtr takes two inputs: first list of type: []int, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[int]string
 func ZipIntStrPtr(list1 []*int, list2 []*string) map[*int]*string {
 	newMap := make(map[*int]*string)
@@ -264,7 +264,7 @@ func ZipIntStrPtr(list1 []*int, list2 []*string) map[*int]*string {
 	return newMap
 }
 
-// ZipIntBool takes two inputs: first list of type: []int, second list of type: []bool.
+// ZipIntBoolPtr takes two inputs: first list of type: []int, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[int]bool
 func ZipIntBoolPtr(list1 []*int, list2 []*bool) map[*int]*bool {
 	newMap := make(map[*int]*bool)
@@ -288,7 +288,7 @@ func ZipIntBoolPtr(list1 []*int, list2 []*bool) map[*int]*bool {
 	return newMap
 }
 
-// ZipIntFloat32 takes two inputs: first list of type: []int, second list of type: []float32.
+// ZipIntFloat32Ptr takes two inputs: first list of type: []int, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[int]float32
 func ZipIntFloat32Ptr(list1 []*int, list2 []*float32) map[*int]*float32 {
 	newMap := make(map[*int]*float32)
@@ -312,7 +312,7 @@ func ZipIntFloat32Ptr(list1 []*int, list2 []*float32) map[*int]*float32 {
 	return newMap
 }
 
-// ZipIntFloat64 takes two inputs: first list of type: []int, second list of type: []float64.
+// ZipIntFloat64Ptr takes two inputs: first list of type: []int, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[int]float64
 func ZipIntFloat64Ptr(list1 []*int, list2 []*float64) map[*int]*float64 {
 	newMap := make(map[*int]*float64)
@@ -336,7 +336,7 @@ func ZipIntFloat64Ptr(list1 []*int, list2 []*float64) map[*int]*float64 {
 	return newMap
 }
 
-// ZipInt64Int takes two inputs: first list of type: []int64, second list of type: []int.
+// ZipInt64IntPtr takes two inputs: first list of type: []int64, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[int64]int
 func ZipInt64IntPtr(list1 []*int64, list2 []*int) map[*int64]*int {
 	newMap := make(map[*int64]*int)
@@ -360,7 +360,7 @@ func ZipInt64IntPtr(list1 []*int64, list2 []*int) map[*int64]*int {
 	return newMap
 }
 
-// ZipInt64 takes two inputs: first list of type: []int64, second list of type: []int64.
+// ZipInt64Ptr takes two inputs: first list of type: []int64, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[int64]int64
 func ZipInt64Ptr(list1 []*int64, list2 []*int64) map[*int64]*int64 {
 	newMap := make(map[*int64]*int64)
@@ -384,7 +384,7 @@ func ZipInt64Ptr(list1 []*int64, list2 []*int64) map[*int64]*int64 {
 	return newMap
 }
 
-// ZipInt64Int32 takes two inputs: first list of type: []int64, second list of type: []int32.
+// ZipInt64Int32Ptr takes two inputs: first list of type: []int64, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[int64]int32
 func ZipInt64Int32Ptr(list1 []*int64, list2 []*int32) map[*int64]*int32 {
 	newMap := make(map[*int64]*int32)
@@ -408,7 +408,7 @@ func ZipInt64Int32Ptr(list1 []*int64, list2 []*int32) map[*int64]*int32 {
 	return newMap
 }
 
-// ZipInt64Int16 takes two inputs: first list of type: []int64, second list of type: []int16.
+// ZipInt64Int16Ptr takes two inputs: first list of type: []int64, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[int64]int16
 func ZipInt64Int16Ptr(list1 []*int64, list2 []*int16) map[*int64]*int16 {
 	newMap := make(map[*int64]*int16)
@@ -432,7 +432,7 @@ func ZipInt64Int16Ptr(list1 []*int64, list2 []*int16) map[*int64]*int16 {
 	return newMap
 }
 
-// ZipInt64Int8 takes two inputs: first list of type: []int64, second list of type: []int8.
+// ZipInt64Int8Ptr takes two inputs: first list of type: []int64, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[int64]int8
 func ZipInt64Int8Ptr(list1 []*int64, list2 []*int8) map[*int64]*int8 {
 	newMap := make(map[*int64]*int8)
@@ -456,7 +456,7 @@ func ZipInt64Int8Ptr(list1 []*int64, list2 []*int8) map[*int64]*int8 {
 	return newMap
 }
 
-// ZipInt64Uint takes two inputs: first list of type: []int64, second list of type: []uint.
+// ZipInt64UintPtr takes two inputs: first list of type: []int64, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[int64]uint
 func ZipInt64UintPtr(list1 []*int64, list2 []*uint) map[*int64]*uint {
 	newMap := make(map[*int64]*uint)
@@ -480,7 +480,7 @@ func ZipInt64UintPtr(list1 []*int64, list2 []*uint) map[*int64]*uint {
 	return newMap
 }
 
-// ZipInt64Uint64 takes two inputs: first list of type: []int64, second list of type: []uint64.
+// ZipInt64Uint64Ptr takes two inputs: first list of type: []int64, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[int64]uint64
 func ZipInt64Uint64Ptr(list1 []*int64, list2 []*uint64) map[*int64]*uint64 {
 	newMap := make(map[*int64]*uint64)
@@ -504,7 +504,7 @@ func ZipInt64Uint64Ptr(list1 []*int64, list2 []*uint64) map[*int64]*uint64 {
 	return newMap
 }
 
-// ZipInt64Uint32 takes two inputs: first list of type: []int64, second list of type: []uint32.
+// ZipInt64Uint32Ptr takes two inputs: first list of type: []int64, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[int64]uint32
 func ZipInt64Uint32Ptr(list1 []*int64, list2 []*uint32) map[*int64]*uint32 {
 	newMap := make(map[*int64]*uint32)
@@ -528,7 +528,7 @@ func ZipInt64Uint32Ptr(list1 []*int64, list2 []*uint32) map[*int64]*uint32 {
 	return newMap
 }
 
-// ZipInt64Uint16 takes two inputs: first list of type: []int64, second list of type: []uint16.
+// ZipInt64Uint16Ptr takes two inputs: first list of type: []int64, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[int64]uint16
 func ZipInt64Uint16Ptr(list1 []*int64, list2 []*uint16) map[*int64]*uint16 {
 	newMap := make(map[*int64]*uint16)
@@ -552,7 +552,7 @@ func ZipInt64Uint16Ptr(list1 []*int64, list2 []*uint16) map[*int64]*uint16 {
 	return newMap
 }
 
-// ZipInt64Uint8 takes two inputs: first list of type: []int64, second list of type: []uint8.
+// ZipInt64Uint8Ptr takes two inputs: first list of type: []int64, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[int64]uint8
 func ZipInt64Uint8Ptr(list1 []*int64, list2 []*uint8) map[*int64]*uint8 {
 	newMap := make(map[*int64]*uint8)
@@ -576,7 +576,7 @@ func ZipInt64Uint8Ptr(list1 []*int64, list2 []*uint8) map[*int64]*uint8 {
 	return newMap
 }
 
-// ZipInt64Str takes two inputs: first list of type: []int64, second list of type: []string.
+// ZipInt64StrPtr takes two inputs: first list of type: []int64, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[int64]string
 func ZipInt64StrPtr(list1 []*int64, list2 []*string) map[*int64]*string {
 	newMap := make(map[*int64]*string)
@@ -600,7 +600,7 @@ func ZipInt64StrPtr(list1 []*int64, list2 []*string) map[*int64]*string {
 	return newMap
 }
 
-// ZipInt64Bool takes two inputs: first list of type: []int64, second list of type: []bool.
+// ZipInt64BoolPtr takes two inputs: first list of type: []int64, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[int64]bool
 func ZipInt64BoolPtr(list1 []*int64, list2 []*bool) map[*int64]*bool {
 	newMap := make(map[*int64]*bool)
@@ -624,7 +624,7 @@ func ZipInt64BoolPtr(list1 []*int64, list2 []*bool) map[*int64]*bool {
 	return newMap
 }
 
-// ZipInt64Float32 takes two inputs: first list of type: []int64, second list of type: []float32.
+// ZipInt64Float32Ptr takes two inputs: first list of type: []int64, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[int64]float32
 func ZipInt64Float32Ptr(list1 []*int64, list2 []*float32) map[*int64]*float32 {
 	newMap := make(map[*int64]*float32)
@@ -648,7 +648,7 @@ func ZipInt64Float32Ptr(list1 []*int64, list2 []*float32) map[*int64]*float32 {
 	return newMap
 }
 
-// ZipInt64Float64 takes two inputs: first list of type: []int64, second list of type: []float64.
+// ZipInt64Float64Ptr takes two inputs: first list of type: []int64, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[int64]float64
 func ZipInt64Float64Ptr(list1 []*int64, list2 []*float64) map[*int64]*float64 {
 	newMap := make(map[*int64]*float64)
@@ -672,7 +672,7 @@ func ZipInt64Float64Ptr(list1 []*int64, list2 []*float64) map[*int64]*float64 {
 	return newMap
 }
 
-// ZipInt32Int takes two inputs: first list of type: []int32, second list of type: []int.
+// ZipInt32IntPtr takes two inputs: first list of type: []int32, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[int32]int
 func ZipInt32IntPtr(list1 []*int32, list2 []*int) map[*int32]*int {
 	newMap := make(map[*int32]*int)
@@ -696,7 +696,7 @@ func ZipInt32IntPtr(list1 []*int32, list2 []*int) map[*int32]*int {
 	return newMap
 }
 
-// ZipInt32Int64 takes two inputs: first list of type: []int32, second list of type: []int64.
+// ZipInt32Int64Ptr takes two inputs: first list of type: []int32, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[int32]int64
 func ZipInt32Int64Ptr(list1 []*int32, list2 []*int64) map[*int32]*int64 {
 	newMap := make(map[*int32]*int64)
@@ -720,7 +720,7 @@ func ZipInt32Int64Ptr(list1 []*int32, list2 []*int64) map[*int32]*int64 {
 	return newMap
 }
 
-// ZipInt32 takes two inputs: first list of type: []int32, second list of type: []int32.
+// ZipInt32Ptr takes two inputs: first list of type: []int32, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[int32]int32
 func ZipInt32Ptr(list1 []*int32, list2 []*int32) map[*int32]*int32 {
 	newMap := make(map[*int32]*int32)
@@ -744,7 +744,7 @@ func ZipInt32Ptr(list1 []*int32, list2 []*int32) map[*int32]*int32 {
 	return newMap
 }
 
-// ZipInt32Int16 takes two inputs: first list of type: []int32, second list of type: []int16.
+// ZipInt32Int16Ptr takes two inputs: first list of type: []int32, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[int32]int16
 func ZipInt32Int16Ptr(list1 []*int32, list2 []*int16) map[*int32]*int16 {
 	newMap := make(map[*int32]*int16)
@@ -768,7 +768,7 @@ func ZipInt32Int16Ptr(list1 []*int32, list2 []*int16) map[*int32]*int16 {
 	return newMap
 }
 
-// ZipInt32Int8 takes two inputs: first list of type: []int32, second list of type: []int8.
+// ZipInt32Int8Ptr takes two inputs: first list of type: []int32, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[int32]int8
 func ZipInt32Int8Ptr(list1 []*int32, list2 []*int8) map[*int32]*int8 {
 	newMap := make(map[*int32]*int8)
@@ -792,7 +792,7 @@ func ZipInt32Int8Ptr(list1 []*int32, list2 []*int8) map[*int32]*int8 {
 	return newMap
 }
 
-// ZipInt32Uint takes two inputs: first list of type: []int32, second list of type: []uint.
+// ZipInt32UintPtr takes two inputs: first list of type: []int32, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[int32]uint
 func ZipInt32UintPtr(list1 []*int32, list2 []*uint) map[*int32]*uint {
 	newMap := make(map[*int32]*uint)
@@ -816,7 +816,7 @@ func ZipInt32UintPtr(list1 []*int32, list2 []*uint) map[*int32]*uint {
 	return newMap
 }
 
-// ZipInt32Uint64 takes two inputs: first list of type: []int32, second list of type: []uint64.
+// ZipInt32Uint64Ptr takes two inputs: first list of type: []int32, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[int32]uint64
 func ZipInt32Uint64Ptr(list1 []*int32, list2 []*uint64) map[*int32]*uint64 {
 	newMap := make(map[*int32]*uint64)
@@ -840,7 +840,7 @@ func ZipInt32Uint64Ptr(list1 []*int32, list2 []*uint64) map[*int32]*uint64 {
 	return newMap
 }
 
-// ZipInt32Uint32 takes two inputs: first list of type: []int32, second list of type: []uint32.
+// ZipInt32Uint32Ptr takes two inputs: first list of type: []int32, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[int32]uint32
 func ZipInt32Uint32Ptr(list1 []*int32, list2 []*uint32) map[*int32]*uint32 {
 	newMap := make(map[*int32]*uint32)
@@ -864,7 +864,7 @@ func ZipInt32Uint32Ptr(list1 []*int32, list2 []*uint32) map[*int32]*uint32 {
 	return newMap
 }
 
-// ZipInt32Uint16 takes two inputs: first list of type: []int32, second list of type: []uint16.
+// ZipInt32Uint16Ptr takes two inputs: first list of type: []int32, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[int32]uint16
 func ZipInt32Uint16Ptr(list1 []*int32, list2 []*uint16) map[*int32]*uint16 {
 	newMap := make(map[*int32]*uint16)
@@ -888,7 +888,7 @@ func ZipInt32Uint16Ptr(list1 []*int32, list2 []*uint16) map[*int32]*uint16 {
 	return newMap
 }
 
-// ZipInt32Uint8 takes two inputs: first list of type: []int32, second list of type: []uint8.
+// ZipInt32Uint8Ptr takes two inputs: first list of type: []int32, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[int32]uint8
 func ZipInt32Uint8Ptr(list1 []*int32, list2 []*uint8) map[*int32]*uint8 {
 	newMap := make(map[*int32]*uint8)
@@ -912,7 +912,7 @@ func ZipInt32Uint8Ptr(list1 []*int32, list2 []*uint8) map[*int32]*uint8 {
 	return newMap
 }
 
-// ZipInt32Str takes two inputs: first list of type: []int32, second list of type: []string.
+// ZipInt32StrPtr takes two inputs: first list of type: []int32, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[int32]string
 func ZipInt32StrPtr(list1 []*int32, list2 []*string) map[*int32]*string {
 	newMap := make(map[*int32]*string)
@@ -936,7 +936,7 @@ func ZipInt32StrPtr(list1 []*int32, list2 []*string) map[*int32]*string {
 	return newMap
 }
 
-// ZipInt32Bool takes two inputs: first list of type: []int32, second list of type: []bool.
+// ZipInt32BoolPtr takes two inputs: first list of type: []int32, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[int32]bool
 func ZipInt32BoolPtr(list1 []*int32, list2 []*bool) map[*int32]*bool {
 	newMap := make(map[*int32]*bool)
@@ -960,7 +960,7 @@ func ZipInt32BoolPtr(list1 []*int32, list2 []*bool) map[*int32]*bool {
 	return newMap
 }
 
-// ZipInt32Float32 takes two inputs: first list of type: []int32, second list of type: []float32.
+// ZipInt32Float32Ptr takes two inputs: first list of type: []int32, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[int32]float32
 func ZipInt32Float32Ptr(list1 []*int32, list2 []*float32) map[*int32]*float32 {
 	newMap := make(map[*int32]*float32)
@@ -984,7 +984,7 @@ func ZipInt32Float32Ptr(list1 []*int32, list2 []*float32) map[*int32]*float32 {
 	return newMap
 }
 
-// ZipInt32Float64 takes two inputs: first list of type: []int32, second list of type: []float64.
+// ZipInt32Float64Ptr takes two inputs: first list of type: []int32, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[int32]float64
 func ZipInt32Float64Ptr(list1 []*int32, list2 []*float64) map[*int32]*float64 {
 	newMap := make(map[*int32]*float64)
@@ -1008,7 +1008,7 @@ func ZipInt32Float64Ptr(list1 []*int32, list2 []*float64) map[*int32]*float64 {
 	return newMap
 }
 
-// ZipInt16Int takes two inputs: first list of type: []int16, second list of type: []int.
+// ZipInt16IntPtr takes two inputs: first list of type: []int16, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[int16]int
 func ZipInt16IntPtr(list1 []*int16, list2 []*int) map[*int16]*int {
 	newMap := make(map[*int16]*int)
@@ -1032,7 +1032,7 @@ func ZipInt16IntPtr(list1 []*int16, list2 []*int) map[*int16]*int {
 	return newMap
 }
 
-// ZipInt16Int64 takes two inputs: first list of type: []int16, second list of type: []int64.
+// ZipInt16Int64Ptr takes two inputs: first list of type: []int16, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[int16]int64
 func ZipInt16Int64Ptr(list1 []*int16, list2 []*int64) map[*int16]*int64 {
 	newMap := make(map[*int16]*int64)
@@ -1056,7 +1056,7 @@ func ZipInt16Int64Ptr(list1 []*int16, list2 []*int64) map[*int16]*int64 {
 	return newMap
 }
 
-// ZipInt16Int32 takes two inputs: first list of type: []int16, second list of type: []int32.
+// ZipInt16Int32Ptr takes two inputs: first list of type: []int16, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[int16]int32
 func ZipInt16Int32Ptr(list1 []*int16, list2 []*int32) map[*int16]*int32 {
 	newMap := make(map[*int16]*int32)
@@ -1080,7 +1080,7 @@ func ZipInt16Int32Ptr(list1 []*int16, list2 []*int32) map[*int16]*int32 {
 	return newMap
 }
 
-// ZipInt16 takes two inputs: first list of type: []int16, second list of type: []int16.
+// ZipInt16Ptr takes two inputs: first list of type: []int16, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[int16]int16
 func ZipInt16Ptr(list1 []*int16, list2 []*int16) map[*int16]*int16 {
 	newMap := make(map[*int16]*int16)
@@ -1104,7 +1104,7 @@ func ZipInt16Ptr(list1 []*int16, list2 []*int16) map[*int16]*int16 {
 	return newMap
 }
 
-// ZipInt16Int8 takes two inputs: first list of type: []int16, second list of type: []int8.
+// ZipInt16Int8Ptr takes two inputs: first list of type: []int16, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[int16]int8
 func ZipInt16Int8Ptr(list1 []*int16, list2 []*int8) map[*int16]*int8 {
 	newMap := make(map[*int16]*int8)
@@ -1128,7 +1128,7 @@ func ZipInt16Int8Ptr(list1 []*int16, list2 []*int8) map[*int16]*int8 {
 	return newMap
 }
 
-// ZipInt16Uint takes two inputs: first list of type: []int16, second list of type: []uint.
+// ZipInt16UintPtr takes two inputs: first list of type: []int16, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[int16]uint
 func ZipInt16UintPtr(list1 []*int16, list2 []*uint) map[*int16]*uint {
 	newMap := make(map[*int16]*uint)
@@ -1152,7 +1152,7 @@ func ZipInt16UintPtr(list1 []*int16, list2 []*uint) map[*int16]*uint {
 	return newMap
 }
 
-// ZipInt16Uint64 takes two inputs: first list of type: []int16, second list of type: []uint64.
+// ZipInt16Uint64Ptr takes two inputs: first list of type: []int16, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[int16]uint64
 func ZipInt16Uint64Ptr(list1 []*int16, list2 []*uint64) map[*int16]*uint64 {
 	newMap := make(map[*int16]*uint64)
@@ -1176,7 +1176,7 @@ func ZipInt16Uint64Ptr(list1 []*int16, list2 []*uint64) map[*int16]*uint64 {
 	return newMap
 }
 
-// ZipInt16Uint32 takes two inputs: first list of type: []int16, second list of type: []uint32.
+// ZipInt16Uint32Ptr takes two inputs: first list of type: []int16, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[int16]uint32
 func ZipInt16Uint32Ptr(list1 []*int16, list2 []*uint32) map[*int16]*uint32 {
 	newMap := make(map[*int16]*uint32)
@@ -1200,7 +1200,7 @@ func ZipInt16Uint32Ptr(list1 []*int16, list2 []*uint32) map[*int16]*uint32 {
 	return newMap
 }
 
-// ZipInt16Uint16 takes two inputs: first list of type: []int16, second list of type: []uint16.
+// ZipInt16Uint16Ptr takes two inputs: first list of type: []int16, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[int16]uint16
 func ZipInt16Uint16Ptr(list1 []*int16, list2 []*uint16) map[*int16]*uint16 {
 	newMap := make(map[*int16]*uint16)
@@ -1224,7 +1224,7 @@ func ZipInt16Uint16Ptr(list1 []*int16, list2 []*uint16) map[*int16]*uint16 {
 	return newMap
 }
 
-// ZipInt16Uint8 takes two inputs: first list of type: []int16, second list of type: []uint8.
+// ZipInt16Uint8Ptr takes two inputs: first list of type: []int16, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[int16]uint8
 func ZipInt16Uint8Ptr(list1 []*int16, list2 []*uint8) map[*int16]*uint8 {
 	newMap := make(map[*int16]*uint8)
@@ -1248,7 +1248,7 @@ func ZipInt16Uint8Ptr(list1 []*int16, list2 []*uint8) map[*int16]*uint8 {
 	return newMap
 }
 
-// ZipInt16Str takes two inputs: first list of type: []int16, second list of type: []string.
+// ZipInt16StrPtr takes two inputs: first list of type: []int16, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[int16]string
 func ZipInt16StrPtr(list1 []*int16, list2 []*string) map[*int16]*string {
 	newMap := make(map[*int16]*string)
@@ -1272,7 +1272,7 @@ func ZipInt16StrPtr(list1 []*int16, list2 []*string) map[*int16]*string {
 	return newMap
 }
 
-// ZipInt16Bool takes two inputs: first list of type: []int16, second list of type: []bool.
+// ZipInt16BoolPtr takes two inputs: first list of type: []int16, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[int16]bool
 func ZipInt16BoolPtr(list1 []*int16, list2 []*bool) map[*int16]*bool {
 	newMap := make(map[*int16]*bool)
@@ -1296,7 +1296,7 @@ func ZipInt16BoolPtr(list1 []*int16, list2 []*bool) map[*int16]*bool {
 	return newMap
 }
 
-// ZipInt16Float32 takes two inputs: first list of type: []int16, second list of type: []float32.
+// ZipInt16Float32Ptr takes two inputs: first list of type: []int16, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[int16]float32
 func ZipInt16Float32Ptr(list1 []*int16, list2 []*float32) map[*int16]*float32 {
 	newMap := make(map[*int16]*float32)
@@ -1320,7 +1320,7 @@ func ZipInt16Float32Ptr(list1 []*int16, list2 []*float32) map[*int16]*float32 {
 	return newMap
 }
 
-// ZipInt16Float64 takes two inputs: first list of type: []int16, second list of type: []float64.
+// ZipInt16Float64Ptr takes two inputs: first list of type: []int16, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[int16]float64
 func ZipInt16Float64Ptr(list1 []*int16, list2 []*float64) map[*int16]*float64 {
 	newMap := make(map[*int16]*float64)
@@ -1344,7 +1344,7 @@ func ZipInt16Float64Ptr(list1 []*int16, list2 []*float64) map[*int16]*float64 {
 	return newMap
 }
 
-// ZipInt8Int takes two inputs: first list of type: []int8, second list of type: []int.
+// ZipInt8IntPtr takes two inputs: first list of type: []int8, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[int8]int
 func ZipInt8IntPtr(list1 []*int8, list2 []*int) map[*int8]*int {
 	newMap := make(map[*int8]*int)
@@ -1368,7 +1368,7 @@ func ZipInt8IntPtr(list1 []*int8, list2 []*int) map[*int8]*int {
 	return newMap
 }
 
-// ZipInt8Int64 takes two inputs: first list of type: []int8, second list of type: []int64.
+// ZipInt8Int64Ptr takes two inputs: first list of type: []int8, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[int8]int64
 func ZipInt8Int64Ptr(list1 []*int8, list2 []*int64) map[*int8]*int64 {
 	newMap := make(map[*int8]*int64)
@@ -1392,7 +1392,7 @@ func ZipInt8Int64Ptr(list1 []*int8, list2 []*int64) map[*int8]*int64 {
 	return newMap
 }
 
-// ZipInt8Int32 takes two inputs: first list of type: []int8, second list of type: []int32.
+// ZipInt8Int32Ptr takes two inputs: first list of type: []int8, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[int8]int32
 func ZipInt8Int32Ptr(list1 []*int8, list2 []*int32) map[*int8]*int32 {
 	newMap := make(map[*int8]*int32)
@@ -1416,7 +1416,7 @@ func ZipInt8Int32Ptr(list1 []*int8, list2 []*int32) map[*int8]*int32 {
 	return newMap
 }
 
-// ZipInt8Int16 takes two inputs: first list of type: []int8, second list of type: []int16.
+// ZipInt8Int16Ptr takes two inputs: first list of type: []int8, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[int8]int16
 func ZipInt8Int16Ptr(list1 []*int8, list2 []*int16) map[*int8]*int16 {
 	newMap := make(map[*int8]*int16)
@@ -1440,7 +1440,7 @@ func ZipInt8Int16Ptr(list1 []*int8, list2 []*int16) map[*int8]*int16 {
 	return newMap
 }
 
-// ZipInt8 takes two inputs: first list of type: []int8, second list of type: []int8.
+// ZipInt8Ptr takes two inputs: first list of type: []int8, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[int8]int8
 func ZipInt8Ptr(list1 []*int8, list2 []*int8) map[*int8]*int8 {
 	newMap := make(map[*int8]*int8)
@@ -1464,7 +1464,7 @@ func ZipInt8Ptr(list1 []*int8, list2 []*int8) map[*int8]*int8 {
 	return newMap
 }
 
-// ZipInt8Uint takes two inputs: first list of type: []int8, second list of type: []uint.
+// ZipInt8UintPtr takes two inputs: first list of type: []int8, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[int8]uint
 func ZipInt8UintPtr(list1 []*int8, list2 []*uint) map[*int8]*uint {
 	newMap := make(map[*int8]*uint)
@@ -1488,7 +1488,7 @@ func ZipInt8UintPtr(list1 []*int8, list2 []*uint) map[*int8]*uint {
 	return newMap
 }
 
-// ZipInt8Uint64 takes two inputs: first list of type: []int8, second list of type: []uint64.
+// ZipInt8Uint64Ptr takes two inputs: first list of type: []int8, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[int8]uint64
 func ZipInt8Uint64Ptr(list1 []*int8, list2 []*uint64) map[*int8]*uint64 {
 	newMap := make(map[*int8]*uint64)
@@ -1512,7 +1512,7 @@ func ZipInt8Uint64Ptr(list1 []*int8, list2 []*uint64) map[*int8]*uint64 {
 	return newMap
 }
 
-// ZipInt8Uint32 takes two inputs: first list of type: []int8, second list of type: []uint32.
+// ZipInt8Uint32Ptr takes two inputs: first list of type: []int8, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[int8]uint32
 func ZipInt8Uint32Ptr(list1 []*int8, list2 []*uint32) map[*int8]*uint32 {
 	newMap := make(map[*int8]*uint32)
@@ -1536,7 +1536,7 @@ func ZipInt8Uint32Ptr(list1 []*int8, list2 []*uint32) map[*int8]*uint32 {
 	return newMap
 }
 
-// ZipInt8Uint16 takes two inputs: first list of type: []int8, second list of type: []uint16.
+// ZipInt8Uint16Ptr takes two inputs: first list of type: []int8, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[int8]uint16
 func ZipInt8Uint16Ptr(list1 []*int8, list2 []*uint16) map[*int8]*uint16 {
 	newMap := make(map[*int8]*uint16)
@@ -1560,7 +1560,7 @@ func ZipInt8Uint16Ptr(list1 []*int8, list2 []*uint16) map[*int8]*uint16 {
 	return newMap
 }
 
-// ZipInt8Uint8 takes two inputs: first list of type: []int8, second list of type: []uint8.
+// ZipInt8Uint8Ptr takes two inputs: first list of type: []int8, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[int8]uint8
 func ZipInt8Uint8Ptr(list1 []*int8, list2 []*uint8) map[*int8]*uint8 {
 	newMap := make(map[*int8]*uint8)
@@ -1584,7 +1584,7 @@ func ZipInt8Uint8Ptr(list1 []*int8, list2 []*uint8) map[*int8]*uint8 {
 	return newMap
 }
 
-// ZipInt8Str takes two inputs: first list of type: []int8, second list of type: []string.
+// ZipInt8StrPtr takes two inputs: first list of type: []int8, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[int8]string
 func ZipInt8StrPtr(list1 []*int8, list2 []*string) map[*int8]*string {
 	newMap := make(map[*int8]*string)
@@ -1608,7 +1608,7 @@ func ZipInt8StrPtr(list1 []*int8, list2 []*string) map[*int8]*string {
 	return newMap
 }
 
-// ZipInt8Bool takes two inputs: first list of type: []int8, second list of type: []bool.
+// ZipInt8BoolPtr takes two inputs: first list of type: []int8, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[int8]bool
 func ZipInt8BoolPtr(list1 []*int8, list2 []*bool) map[*int8]*bool {
 	newMap := make(map[*int8]*bool)
@@ -1632,7 +1632,7 @@ func ZipInt8BoolPtr(list1 []*int8, list2 []*bool) map[*int8]*bool {
 	return newMap
 }
 
-// ZipInt8Float32 takes two inputs: first list of type: []int8, second list of type: []float32.
+// ZipInt8Float32Ptr takes two inputs: first list of type: []int8, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[int8]float32
 func ZipInt8Float32Ptr(list1 []*int8, list2 []*float32) map[*int8]*float32 {
 	newMap := make(map[*int8]*float32)
@@ -1656,7 +1656,7 @@ func ZipInt8Float32Ptr(list1 []*int8, list2 []*float32) map[*int8]*float32 {
 	return newMap
 }
 
-// ZipInt8Float64 takes two inputs: first list of type: []int8, second list of type: []float64.
+// ZipInt8Float64Ptr takes two inputs: first list of type: []int8, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[int8]float64
 func ZipInt8Float64Ptr(list1 []*int8, list2 []*float64) map[*int8]*float64 {
 	newMap := make(map[*int8]*float64)
@@ -1680,7 +1680,7 @@ func ZipInt8Float64Ptr(list1 []*int8, list2 []*float64) map[*int8]*float64 {
 	return newMap
 }
 
-// ZipUintInt takes two inputs: first list of type: []uint, second list of type: []int.
+// ZipUintIntPtr takes two inputs: first list of type: []uint, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[uint]int
 func ZipUintIntPtr(list1 []*uint, list2 []*int) map[*uint]*int {
 	newMap := make(map[*uint]*int)
@@ -1704,7 +1704,7 @@ func ZipUintIntPtr(list1 []*uint, list2 []*int) map[*uint]*int {
 	return newMap
 }
 
-// ZipUintInt64 takes two inputs: first list of type: []uint, second list of type: []int64.
+// ZipUintInt64Ptr takes two inputs: first list of type: []uint, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[uint]int64
 func ZipUintInt64Ptr(list1 []*uint, list2 []*int64) map[*uint]*int64 {
 	newMap := make(map[*uint]*int64)
@@ -1728,7 +1728,7 @@ func ZipUintInt64Ptr(list1 []*uint, list2 []*int64) map[*uint]*int64 {
 	return newMap
 }
 
-// ZipUintInt32 takes two inputs: first list of type: []uint, second list of type: []int32.
+// ZipUintInt32Ptr takes two inputs: first list of type: []uint, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[uint]int32
 func ZipUintInt32Ptr(list1 []*uint, list2 []*int32) map[*uint]*int32 {
 	newMap := make(map[*uint]*int32)
@@ -1752,7 +1752,7 @@ func ZipUintInt32Ptr(list1 []*uint, list2 []*int32) map[*uint]*int32 {
 	return newMap
 }
 
-// ZipUintInt16 takes two inputs: first list of type: []uint, second list of type: []int16.
+// ZipUintInt16Ptr takes two inputs: first list of type: []uint, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[uint]int16
 func ZipUintInt16Ptr(list1 []*uint, list2 []*int16) map[*uint]*int16 {
 	newMap := make(map[*uint]*int16)
@@ -1776,7 +1776,7 @@ func ZipUintInt16Ptr(list1 []*uint, list2 []*int16) map[*uint]*int16 {
 	return newMap
 }
 
-// ZipUintInt8 takes two inputs: first list of type: []uint, second list of type: []int8.
+// ZipUintInt8Ptr takes two inputs: first list of type: []uint, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[uint]int8
 func ZipUintInt8Ptr(list1 []*uint, list2 []*int8) map[*uint]*int8 {
 	newMap := make(map[*uint]*int8)
@@ -1800,7 +1800,7 @@ func ZipUintInt8Ptr(list1 []*uint, list2 []*int8) map[*uint]*int8 {
 	return newMap
 }
 
-// ZipUint takes two inputs: first list of type: []uint, second list of type: []uint.
+// ZipUintPtr takes two inputs: first list of type: []uint, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[uint]uint
 func ZipUintPtr(list1 []*uint, list2 []*uint) map[*uint]*uint {
 	newMap := make(map[*uint]*uint)
@@ -1824,7 +1824,7 @@ func ZipUintPtr(list1 []*uint, list2 []*uint) map[*uint]*uint {
 	return newMap
 }
 
-// ZipUintUint64 takes two inputs: first list of type: []uint, second list of type: []uint64.
+// ZipUintUint64Ptr takes two inputs: first list of type: []uint, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[uint]uint64
 func ZipUintUint64Ptr(list1 []*uint, list2 []*uint64) map[*uint]*uint64 {
 	newMap := make(map[*uint]*uint64)
@@ -1848,7 +1848,7 @@ func ZipUintUint64Ptr(list1 []*uint, list2 []*uint64) map[*uint]*uint64 {
 	return newMap
 }
 
-// ZipUintUint32 takes two inputs: first list of type: []uint, second list of type: []uint32.
+// ZipUintUint32Ptr takes two inputs: first list of type: []uint, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[uint]uint32
 func ZipUintUint32Ptr(list1 []*uint, list2 []*uint32) map[*uint]*uint32 {
 	newMap := make(map[*uint]*uint32)
@@ -1872,7 +1872,7 @@ func ZipUintUint32Ptr(list1 []*uint, list2 []*uint32) map[*uint]*uint32 {
 	return newMap
 }
 
-// ZipUintUint16 takes two inputs: first list of type: []uint, second list of type: []uint16.
+// ZipUintUint16Ptr takes two inputs: first list of type: []uint, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[uint]uint16
 func ZipUintUint16Ptr(list1 []*uint, list2 []*uint16) map[*uint]*uint16 {
 	newMap := make(map[*uint]*uint16)
@@ -1896,7 +1896,7 @@ func ZipUintUint16Ptr(list1 []*uint, list2 []*uint16) map[*uint]*uint16 {
 	return newMap
 }
 
-// ZipUintUint8 takes two inputs: first list of type: []uint, second list of type: []uint8.
+// ZipUintUint8Ptr takes two inputs: first list of type: []uint, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[uint]uint8
 func ZipUintUint8Ptr(list1 []*uint, list2 []*uint8) map[*uint]*uint8 {
 	newMap := make(map[*uint]*uint8)
@@ -1920,7 +1920,7 @@ func ZipUintUint8Ptr(list1 []*uint, list2 []*uint8) map[*uint]*uint8 {
 	return newMap
 }
 
-// ZipUintStr takes two inputs: first list of type: []uint, second list of type: []string.
+// ZipUintStrPtr takes two inputs: first list of type: []uint, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[uint]string
 func ZipUintStrPtr(list1 []*uint, list2 []*string) map[*uint]*string {
 	newMap := make(map[*uint]*string)
@@ -1944,7 +1944,7 @@ func ZipUintStrPtr(list1 []*uint, list2 []*string) map[*uint]*string {
 	return newMap
 }
 
-// ZipUintBool takes two inputs: first list of type: []uint, second list of type: []bool.
+// ZipUintBoolPtr takes two inputs: first list of type: []uint, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[uint]bool
 func ZipUintBoolPtr(list1 []*uint, list2 []*bool) map[*uint]*bool {
 	newMap := make(map[*uint]*bool)
@@ -1968,7 +1968,7 @@ func ZipUintBoolPtr(list1 []*uint, list2 []*bool) map[*uint]*bool {
 	return newMap
 }
 
-// ZipUintFloat32 takes two inputs: first list of type: []uint, second list of type: []float32.
+// ZipUintFloat32Ptr takes two inputs: first list of type: []uint, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[uint]float32
 func ZipUintFloat32Ptr(list1 []*uint, list2 []*float32) map[*uint]*float32 {
 	newMap := make(map[*uint]*float32)
@@ -1992,7 +1992,7 @@ func ZipUintFloat32Ptr(list1 []*uint, list2 []*float32) map[*uint]*float32 {
 	return newMap
 }
 
-// ZipUintFloat64 takes two inputs: first list of type: []uint, second list of type: []float64.
+// ZipUintFloat64Ptr takes two inputs: first list of type: []uint, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[uint]float64
 func ZipUintFloat64Ptr(list1 []*uint, list2 []*float64) map[*uint]*float64 {
 	newMap := make(map[*uint]*float64)
@@ -2016,7 +2016,7 @@ func ZipUintFloat64Ptr(list1 []*uint, list2 []*float64) map[*uint]*float64 {
 	return newMap
 }
 
-// ZipUint64Int takes two inputs: first list of type: []uint64, second list of type: []int.
+// ZipUint64IntPtr takes two inputs: first list of type: []uint64, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[uint64]int
 func ZipUint64IntPtr(list1 []*uint64, list2 []*int) map[*uint64]*int {
 	newMap := make(map[*uint64]*int)
@@ -2040,7 +2040,7 @@ func ZipUint64IntPtr(list1 []*uint64, list2 []*int) map[*uint64]*int {
 	return newMap
 }
 
-// ZipUint64Int64 takes two inputs: first list of type: []uint64, second list of type: []int64.
+// ZipUint64Int64Ptr takes two inputs: first list of type: []uint64, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[uint64]int64
 func ZipUint64Int64Ptr(list1 []*uint64, list2 []*int64) map[*uint64]*int64 {
 	newMap := make(map[*uint64]*int64)
@@ -2064,7 +2064,7 @@ func ZipUint64Int64Ptr(list1 []*uint64, list2 []*int64) map[*uint64]*int64 {
 	return newMap
 }
 
-// ZipUint64Int32 takes two inputs: first list of type: []uint64, second list of type: []int32.
+// ZipUint64Int32Ptr takes two inputs: first list of type: []uint64, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[uint64]int32
 func ZipUint64Int32Ptr(list1 []*uint64, list2 []*int32) map[*uint64]*int32 {
 	newMap := make(map[*uint64]*int32)
@@ -2088,7 +2088,7 @@ func ZipUint64Int32Ptr(list1 []*uint64, list2 []*int32) map[*uint64]*int32 {
 	return newMap
 }
 
-// ZipUint64Int16 takes two inputs: first list of type: []uint64, second list of type: []int16.
+// ZipUint64Int16Ptr takes two inputs: first list of type: []uint64, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[uint64]int16
 func ZipUint64Int16Ptr(list1 []*uint64, list2 []*int16) map[*uint64]*int16 {
 	newMap := make(map[*uint64]*int16)
@@ -2112,7 +2112,7 @@ func ZipUint64Int16Ptr(list1 []*uint64, list2 []*int16) map[*uint64]*int16 {
 	return newMap
 }
 
-// ZipUint64Int8 takes two inputs: first list of type: []uint64, second list of type: []int8.
+// ZipUint64Int8Ptr takes two inputs: first list of type: []uint64, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[uint64]int8
 func ZipUint64Int8Ptr(list1 []*uint64, list2 []*int8) map[*uint64]*int8 {
 	newMap := make(map[*uint64]*int8)
@@ -2136,7 +2136,7 @@ func ZipUint64Int8Ptr(list1 []*uint64, list2 []*int8) map[*uint64]*int8 {
 	return newMap
 }
 
-// ZipUint64Uint takes two inputs: first list of type: []uint64, second list of type: []uint.
+// ZipUint64UintPtr takes two inputs: first list of type: []uint64, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[uint64]uint
 func ZipUint64UintPtr(list1 []*uint64, list2 []*uint) map[*uint64]*uint {
 	newMap := make(map[*uint64]*uint)
@@ -2160,7 +2160,7 @@ func ZipUint64UintPtr(list1 []*uint64, list2 []*uint) map[*uint64]*uint {
 	return newMap
 }
 
-// ZipUint64 takes two inputs: first list of type: []uint64, second list of type: []uint64.
+// ZipUint64Ptr takes two inputs: first list of type: []uint64, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[uint64]uint64
 func ZipUint64Ptr(list1 []*uint64, list2 []*uint64) map[*uint64]*uint64 {
 	newMap := make(map[*uint64]*uint64)
@@ -2184,7 +2184,7 @@ func ZipUint64Ptr(list1 []*uint64, list2 []*uint64) map[*uint64]*uint64 {
 	return newMap
 }
 
-// ZipUint64Uint32 takes two inputs: first list of type: []uint64, second list of type: []uint32.
+// ZipUint64Uint32Ptr takes two inputs: first list of type: []uint64, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[uint64]uint32
 func ZipUint64Uint32Ptr(list1 []*uint64, list2 []*uint32) map[*uint64]*uint32 {
 	newMap := make(map[*uint64]*uint32)
@@ -2208,7 +2208,7 @@ func ZipUint64Uint32Ptr(list1 []*uint64, list2 []*uint32) map[*uint64]*uint32 {
 	return newMap
 }
 
-// ZipUint64Uint16 takes two inputs: first list of type: []uint64, second list of type: []uint16.
+// ZipUint64Uint16Ptr takes two inputs: first list of type: []uint64, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[uint64]uint16
 func ZipUint64Uint16Ptr(list1 []*uint64, list2 []*uint16) map[*uint64]*uint16 {
 	newMap := make(map[*uint64]*uint16)
@@ -2232,7 +2232,7 @@ func ZipUint64Uint16Ptr(list1 []*uint64, list2 []*uint16) map[*uint64]*uint16 {
 	return newMap
 }
 
-// ZipUint64Uint8 takes two inputs: first list of type: []uint64, second list of type: []uint8.
+// ZipUint64Uint8Ptr takes two inputs: first list of type: []uint64, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[uint64]uint8
 func ZipUint64Uint8Ptr(list1 []*uint64, list2 []*uint8) map[*uint64]*uint8 {
 	newMap := make(map[*uint64]*uint8)
@@ -2256,7 +2256,7 @@ func ZipUint64Uint8Ptr(list1 []*uint64, list2 []*uint8) map[*uint64]*uint8 {
 	return newMap
 }
 
-// ZipUint64Str takes two inputs: first list of type: []uint64, second list of type: []string.
+// ZipUint64StrPtr takes two inputs: first list of type: []uint64, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[uint64]string
 func ZipUint64StrPtr(list1 []*uint64, list2 []*string) map[*uint64]*string {
 	newMap := make(map[*uint64]*string)
@@ -2280,7 +2280,7 @@ func ZipUint64StrPtr(list1 []*uint64, list2 []*string) map[*uint64]*string {
 	return newMap
 }
 
-// ZipUint64Bool takes two inputs: first list of type: []uint64, second list of type: []bool.
+// ZipUint64BoolPtr takes two inputs: first list of type: []uint64, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[uint64]bool
 func ZipUint64BoolPtr(list1 []*uint64, list2 []*bool) map[*uint64]*bool {
 	newMap := make(map[*uint64]*bool)
@@ -2304,7 +2304,7 @@ func ZipUint64BoolPtr(list1 []*uint64, list2 []*bool) map[*uint64]*bool {
 	return newMap
 }
 
-// ZipUint64Float32 takes two inputs: first list of type: []uint64, second list of type: []float32.
+// ZipUint64Float32Ptr takes two inputs: first list of type: []uint64, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[uint64]float32
 func ZipUint64Float32Ptr(list1 []*uint64, list2 []*float32) map[*uint64]*float32 {
 	newMap := make(map[*uint64]*float32)
@@ -2328,7 +2328,7 @@ func ZipUint64Float32Ptr(list1 []*uint64, list2 []*float32) map[*uint64]*float32
 	return newMap
 }
 
-// ZipUint64Float64 takes two inputs: first list of type: []uint64, second list of type: []float64.
+// ZipUint64Float64Ptr takes two inputs: first list of type: []uint64, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[uint64]float64
 func ZipUint64Float64Ptr(list1 []*uint64, list2 []*float64) map[*uint64]*float64 {
 	newMap := make(map[*uint64]*float64)
@@ -2352,7 +2352,7 @@ func ZipUint64Float64Ptr(list1 []*uint64, list2 []*float64) map[*uint64]*float64
 	return newMap
 }
 
-// ZipUint32Int takes two inputs: first list of type: []uint32, second list of type: []int.
+// ZipUint32IntPtr takes two inputs: first list of type: []uint32, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[uint32]int
 func ZipUint32IntPtr(list1 []*uint32, list2 []*int) map[*uint32]*int {
 	newMap := make(map[*uint32]*int)
@@ -2376,7 +2376,7 @@ func ZipUint32IntPtr(list1 []*uint32, list2 []*int) map[*uint32]*int {
 	return newMap
 }
 
-// ZipUint32Int64 takes two inputs: first list of type: []uint32, second list of type: []int64.
+// ZipUint32Int64Ptr takes two inputs: first list of type: []uint32, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[uint32]int64
 func ZipUint32Int64Ptr(list1 []*uint32, list2 []*int64) map[*uint32]*int64 {
 	newMap := make(map[*uint32]*int64)
@@ -2400,7 +2400,7 @@ func ZipUint32Int64Ptr(list1 []*uint32, list2 []*int64) map[*uint32]*int64 {
 	return newMap
 }
 
-// ZipUint32Int32 takes two inputs: first list of type: []uint32, second list of type: []int32.
+// ZipUint32Int32Ptr takes two inputs: first list of type: []uint32, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[uint32]int32
 func ZipUint32Int32Ptr(list1 []*uint32, list2 []*int32) map[*uint32]*int32 {
 	newMap := make(map[*uint32]*int32)
@@ -2424,7 +2424,7 @@ func ZipUint32Int32Ptr(list1 []*uint32, list2 []*int32) map[*uint32]*int32 {
 	return newMap
 }
 
-// ZipUint32Int16 takes two inputs: first list of type: []uint32, second list of type: []int16.
+// ZipUint32Int16Ptr takes two inputs: first list of type: []uint32, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[uint32]int16
 func ZipUint32Int16Ptr(list1 []*uint32, list2 []*int16) map[*uint32]*int16 {
 	newMap := make(map[*uint32]*int16)
@@ -2448,7 +2448,7 @@ func ZipUint32Int16Ptr(list1 []*uint32, list2 []*int16) map[*uint32]*int16 {
 	return newMap
 }
 
-// ZipUint32Int8 takes two inputs: first list of type: []uint32, second list of type: []int8.
+// ZipUint32Int8Ptr takes two inputs: first list of type: []uint32, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[uint32]int8
 func ZipUint32Int8Ptr(list1 []*uint32, list2 []*int8) map[*uint32]*int8 {
 	newMap := make(map[*uint32]*int8)
@@ -2472,7 +2472,7 @@ func ZipUint32Int8Ptr(list1 []*uint32, list2 []*int8) map[*uint32]*int8 {
 	return newMap
 }
 
-// ZipUint32Uint takes two inputs: first list of type: []uint32, second list of type: []uint.
+// ZipUint32UintPtr takes two inputs: first list of type: []uint32, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[uint32]uint
 func ZipUint32UintPtr(list1 []*uint32, list2 []*uint) map[*uint32]*uint {
 	newMap := make(map[*uint32]*uint)
@@ -2496,7 +2496,7 @@ func ZipUint32UintPtr(list1 []*uint32, list2 []*uint) map[*uint32]*uint {
 	return newMap
 }
 
-// ZipUint32Uint64 takes two inputs: first list of type: []uint32, second list of type: []uint64.
+// ZipUint32Uint64Ptr takes two inputs: first list of type: []uint32, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[uint32]uint64
 func ZipUint32Uint64Ptr(list1 []*uint32, list2 []*uint64) map[*uint32]*uint64 {
 	newMap := make(map[*uint32]*uint64)
@@ -2520,7 +2520,7 @@ func ZipUint32Uint64Ptr(list1 []*uint32, list2 []*uint64) map[*uint32]*uint64 {
 	return newMap
 }
 
-// ZipUint32 takes two inputs: first list of type: []uint32, second list of type: []uint32.
+// ZipUint32Ptr takes two inputs: first list of type: []uint32, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[uint32]uint32
 func ZipUint32Ptr(list1 []*uint32, list2 []*uint32) map[*uint32]*uint32 {
 	newMap := make(map[*uint32]*uint32)
@@ -2544,7 +2544,7 @@ func ZipUint32Ptr(list1 []*uint32, list2 []*uint32) map[*uint32]*uint32 {
 	return newMap
 }
 
-// ZipUint32Uint16 takes two inputs: first list of type: []uint32, second list of type: []uint16.
+// ZipUint32Uint16Ptr takes two inputs: first list of type: []uint32, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[uint32]uint16
 func ZipUint32Uint16Ptr(list1 []*uint32, list2 []*uint16) map[*uint32]*uint16 {
 	newMap := make(map[*uint32]*uint16)
@@ -2568,7 +2568,7 @@ func ZipUint32Uint16Ptr(list1 []*uint32, list2 []*uint16) map[*uint32]*uint16 {
 	return newMap
 }
 
-// ZipUint32Uint8 takes two inputs: first list of type: []uint32, second list of type: []uint8.
+// ZipUint32Uint8Ptr takes two inputs: first list of type: []uint32, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[uint32]uint8
 func ZipUint32Uint8Ptr(list1 []*uint32, list2 []*uint8) map[*uint32]*uint8 {
 	newMap := make(map[*uint32]*uint8)
@@ -2592,7 +2592,7 @@ func ZipUint32Uint8Ptr(list1 []*uint32, list2 []*uint8) map[*uint32]*uint8 {
 	return newMap
 }
 
-// ZipUint32Str takes two inputs: first list of type: []uint32, second list of type: []string.
+// ZipUint32StrPtr takes two inputs: first list of type: []uint32, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[uint32]string
 func ZipUint32StrPtr(list1 []*uint32, list2 []*string) map[*uint32]*string {
 	newMap := make(map[*uint32]*string)
@@ -2616,7 +2616,7 @@ func ZipUint32StrPtr(list1 []*uint32, list2 []*string) map[*uint32]*string {
 	return newMap
 }
 
-// ZipUint32Bool takes two inputs: first list of type: []uint32, second list of type: []bool.
+// ZipUint32BoolPtr takes two inputs: first list of type: []uint32, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[uint32]bool
 func ZipUint32BoolPtr(list1 []*uint32, list2 []*bool) map[*uint32]*bool {
 	newMap := make(map[*uint32]*bool)
@@ -2640,7 +2640,7 @@ func ZipUint32BoolPtr(list1 []*uint32, list2 []*bool) map[*uint32]*bool {
 	return newMap
 }
 
-// ZipUint32Float32 takes two inputs: first list of type: []uint32, second list of type: []float32.
+// ZipUint32Float32Ptr takes two inputs: first list of type: []uint32, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[uint32]float32
 func ZipUint32Float32Ptr(list1 []*uint32, list2 []*float32) map[*uint32]*float32 {
 	newMap := make(map[*uint32]*float32)
@@ -2664,7 +2664,7 @@ func ZipUint32Float32Ptr(list1 []*uint32, list2 []*float32) map[*uint32]*float32
 	return newMap
 }
 
-// ZipUint32Float64 takes two inputs: first list of type: []uint32, second list of type: []float64.
+// ZipUint32Float64Ptr takes two inputs: first list of type: []uint32, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[uint32]float64
 func ZipUint32Float64Ptr(list1 []*uint32, list2 []*float64) map[*uint32]*float64 {
 	newMap := make(map[*uint32]*float64)
@@ -2688,7 +2688,7 @@ func ZipUint32Float64Ptr(list1 []*uint32, list2 []*float64) map[*uint32]*float64
 	return newMap
 }
 
-// ZipUint16Int takes two inputs: first list of type: []uint16, second list of type: []int.
+// ZipUint16IntPtr takes two inputs: first list of type: []uint16, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[uint16]int
 func ZipUint16IntPtr(list1 []*uint16, list2 []*int) map[*uint16]*int {
 	newMap := make(map[*uint16]*int)
@@ -2712,7 +2712,7 @@ func ZipUint16IntPtr(list1 []*uint16, list2 []*int) map[*uint16]*int {
 	return newMap
 }
 
-// ZipUint16Int64 takes two inputs: first list of type: []uint16, second list of type: []int64.
+// ZipUint16Int64Ptr takes two inputs: first list of type: []uint16, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[uint16]int64
 func ZipUint16Int64Ptr(list1 []*uint16, list2 []*int64) map[*uint16]*int64 {
 	newMap := make(map[*uint16]*int64)
@@ -2736,7 +2736,7 @@ func ZipUint16Int64Ptr(list1 []*uint16, list2 []*int64) map[*uint16]*int64 {
 	return newMap
 }
 
-// ZipUint16Int32 takes two inputs: first list of type: []uint16, second list of type: []int32.
+// ZipUint16Int32Ptr takes two inputs: first list of type: []uint16, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[uint16]int32
 func ZipUint16Int32Ptr(list1 []*uint16, list2 []*int32) map[*uint16]*int32 {
 	newMap := make(map[*uint16]*int32)
@@ -2760,7 +2760,7 @@ func ZipUint16Int32Ptr(list1 []*uint16, list2 []*int32) map[*uint16]*int32 {
 	return newMap
 }
 
-// ZipUint16Int16 takes two inputs: first list of type: []uint16, second list of type: []int16.
+// ZipUint16Int16Ptr takes two inputs: first list of type: []uint16, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[uint16]int16
 func ZipUint16Int16Ptr(list1 []*uint16, list2 []*int16) map[*uint16]*int16 {
 	newMap := make(map[*uint16]*int16)
@@ -2784,7 +2784,7 @@ func ZipUint16Int16Ptr(list1 []*uint16, list2 []*int16) map[*uint16]*int16 {
 	return newMap
 }
 
-// ZipUint16Int8 takes two inputs: first list of type: []uint16, second list of type: []int8.
+// ZipUint16Int8Ptr takes two inputs: first list of type: []uint16, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[uint16]int8
 func ZipUint16Int8Ptr(list1 []*uint16, list2 []*int8) map[*uint16]*int8 {
 	newMap := make(map[*uint16]*int8)
@@ -2808,7 +2808,7 @@ func ZipUint16Int8Ptr(list1 []*uint16, list2 []*int8) map[*uint16]*int8 {
 	return newMap
 }
 
-// ZipUint16Uint takes two inputs: first list of type: []uint16, second list of type: []uint.
+// ZipUint16UintPtr takes two inputs: first list of type: []uint16, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[uint16]uint
 func ZipUint16UintPtr(list1 []*uint16, list2 []*uint) map[*uint16]*uint {
 	newMap := make(map[*uint16]*uint)
@@ -2832,7 +2832,7 @@ func ZipUint16UintPtr(list1 []*uint16, list2 []*uint) map[*uint16]*uint {
 	return newMap
 }
 
-// ZipUint16Uint64 takes two inputs: first list of type: []uint16, second list of type: []uint64.
+// ZipUint16Uint64Ptr takes two inputs: first list of type: []uint16, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[uint16]uint64
 func ZipUint16Uint64Ptr(list1 []*uint16, list2 []*uint64) map[*uint16]*uint64 {
 	newMap := make(map[*uint16]*uint64)
@@ -2856,7 +2856,7 @@ func ZipUint16Uint64Ptr(list1 []*uint16, list2 []*uint64) map[*uint16]*uint64 {
 	return newMap
 }
 
-// ZipUint16Uint32 takes two inputs: first list of type: []uint16, second list of type: []uint32.
+// ZipUint16Uint32Ptr takes two inputs: first list of type: []uint16, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[uint16]uint32
 func ZipUint16Uint32Ptr(list1 []*uint16, list2 []*uint32) map[*uint16]*uint32 {
 	newMap := make(map[*uint16]*uint32)
@@ -2880,7 +2880,7 @@ func ZipUint16Uint32Ptr(list1 []*uint16, list2 []*uint32) map[*uint16]*uint32 {
 	return newMap
 }
 
-// ZipUint16 takes two inputs: first list of type: []uint16, second list of type: []uint16.
+// ZipUint16Ptr takes two inputs: first list of type: []uint16, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[uint16]uint16
 func ZipUint16Ptr(list1 []*uint16, list2 []*uint16) map[*uint16]*uint16 {
 	newMap := make(map[*uint16]*uint16)
@@ -2904,7 +2904,7 @@ func ZipUint16Ptr(list1 []*uint16, list2 []*uint16) map[*uint16]*uint16 {
 	return newMap
 }
 
-// ZipUint16Uint8 takes two inputs: first list of type: []uint16, second list of type: []uint8.
+// ZipUint16Uint8Ptr takes two inputs: first list of type: []uint16, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[uint16]uint8
 func ZipUint16Uint8Ptr(list1 []*uint16, list2 []*uint8) map[*uint16]*uint8 {
 	newMap := make(map[*uint16]*uint8)
@@ -2928,7 +2928,7 @@ func ZipUint16Uint8Ptr(list1 []*uint16, list2 []*uint8) map[*uint16]*uint8 {
 	return newMap
 }
 
-// ZipUint16Str takes two inputs: first list of type: []uint16, second list of type: []string.
+// ZipUint16StrPtr takes two inputs: first list of type: []uint16, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[uint16]string
 func ZipUint16StrPtr(list1 []*uint16, list2 []*string) map[*uint16]*string {
 	newMap := make(map[*uint16]*string)
@@ -2952,7 +2952,7 @@ func ZipUint16StrPtr(list1 []*uint16, list2 []*string) map[*uint16]*string {
 	return newMap
 }
 
-// ZipUint16Bool takes two inputs: first list of type: []uint16, second list of type: []bool.
+// ZipUint16BoolPtr takes two inputs: first list of type: []uint16, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[uint16]bool
 func ZipUint16BoolPtr(list1 []*uint16, list2 []*bool) map[*uint16]*bool {
 	newMap := make(map[*uint16]*bool)
@@ -2976,7 +2976,7 @@ func ZipUint16BoolPtr(list1 []*uint16, list2 []*bool) map[*uint16]*bool {
 	return newMap
 }
 
-// ZipUint16Float32 takes two inputs: first list of type: []uint16, second list of type: []float32.
+// ZipUint16Float32Ptr takes two inputs: first list of type: []uint16, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[uint16]float32
 func ZipUint16Float32Ptr(list1 []*uint16, list2 []*float32) map[*uint16]*float32 {
 	newMap := make(map[*uint16]*float32)
@@ -3000,7 +3000,7 @@ func ZipUint16Float32Ptr(list1 []*uint16, list2 []*float32) map[*uint16]*float32
 	return newMap
 }
 
-// ZipUint16Float64 takes two inputs: first list of type: []uint16, second list of type: []float64.
+// ZipUint16Float64Ptr takes two inputs: first list of type: []uint16, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[uint16]float64
 func ZipUint16Float64Ptr(list1 []*uint16, list2 []*float64) map[*uint16]*float64 {
 	newMap := make(map[*uint16]*float64)
@@ -3024,7 +3024,7 @@ func ZipUint16Float64Ptr(list1 []*uint16, list2 []*float64) map[*uint16]*float64
 	return newMap
 }
 
-// ZipUint8Int takes two inputs: first list of type: []uint8, second list of type: []int.
+// ZipUint8IntPtr takes two inputs: first list of type: []uint8, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[uint8]int
 func ZipUint8IntPtr(list1 []*uint8, list2 []*int) map[*uint8]*int {
 	newMap := make(map[*uint8]*int)
@@ -3048,7 +3048,7 @@ func ZipUint8IntPtr(list1 []*uint8, list2 []*int) map[*uint8]*int {
 	return newMap
 }
 
-// ZipUint8Int64 takes two inputs: first list of type: []uint8, second list of type: []int64.
+// ZipUint8Int64Ptr takes two inputs: first list of type: []uint8, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[uint8]int64
 func ZipUint8Int64Ptr(list1 []*uint8, list2 []*int64) map[*uint8]*int64 {
 	newMap := make(map[*uint8]*int64)
@@ -3072,7 +3072,7 @@ func ZipUint8Int64Ptr(list1 []*uint8, list2 []*int64) map[*uint8]*int64 {
 	return newMap
 }
 
-// ZipUint8Int32 takes two inputs: first list of type: []uint8, second list of type: []int32.
+// ZipUint8Int32Ptr takes two inputs: first list of type: []uint8, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[uint8]int32
 func ZipUint8Int32Ptr(list1 []*uint8, list2 []*int32) map[*uint8]*int32 {
 	newMap := make(map[*uint8]*int32)
@@ -3096,7 +3096,7 @@ func ZipUint8Int32Ptr(list1 []*uint8, list2 []*int32) map[*uint8]*int32 {
 	return newMap
 }
 
-// ZipUint8Int16 takes two inputs: first list of type: []uint8, second list of type: []int16.
+// ZipUint8Int16Ptr takes two inputs: first list of type: []uint8, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[uint8]int16
 func ZipUint8Int16Ptr(list1 []*uint8, list2 []*int16) map[*uint8]*int16 {
 	newMap := make(map[*uint8]*int16)
@@ -3120,7 +3120,7 @@ func ZipUint8Int16Ptr(list1 []*uint8, list2 []*int16) map[*uint8]*int16 {
 	return newMap
 }
 
-// ZipUint8Int8 takes two inputs: first list of type: []uint8, second list of type: []int8.
+// ZipUint8Int8Ptr takes two inputs: first list of type: []uint8, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[uint8]int8
 func ZipUint8Int8Ptr(list1 []*uint8, list2 []*int8) map[*uint8]*int8 {
 	newMap := make(map[*uint8]*int8)
@@ -3144,7 +3144,7 @@ func ZipUint8Int8Ptr(list1 []*uint8, list2 []*int8) map[*uint8]*int8 {
 	return newMap
 }
 
-// ZipUint8Uint takes two inputs: first list of type: []uint8, second list of type: []uint.
+// ZipUint8UintPtr takes two inputs: first list of type: []uint8, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[uint8]uint
 func ZipUint8UintPtr(list1 []*uint8, list2 []*uint) map[*uint8]*uint {
 	newMap := make(map[*uint8]*uint)
@@ -3168,7 +3168,7 @@ func ZipUint8UintPtr(list1 []*uint8, list2 []*uint) map[*uint8]*uint {
 	return newMap
 }
 
-// ZipUint8Uint64 takes two inputs: first list of type: []uint8, second list of type: []uint64.
+// ZipUint8Uint64Ptr takes two inputs: first list of type: []uint8, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[uint8]uint64
 func ZipUint8Uint64Ptr(list1 []*uint8, list2 []*uint64) map[*uint8]*uint64 {
 	newMap := make(map[*uint8]*uint64)
@@ -3192,7 +3192,7 @@ func ZipUint8Uint64Ptr(list1 []*uint8, list2 []*uint64) map[*uint8]*uint64 {
 	return newMap
 }
 
-// ZipUint8Uint32 takes two inputs: first list of type: []uint8, second list of type: []uint32.
+// ZipUint8Uint32Ptr takes two inputs: first list of type: []uint8, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[uint8]uint32
 func ZipUint8Uint32Ptr(list1 []*uint8, list2 []*uint32) map[*uint8]*uint32 {
 	newMap := make(map[*uint8]*uint32)
@@ -3216,7 +3216,7 @@ func ZipUint8Uint32Ptr(list1 []*uint8, list2 []*uint32) map[*uint8]*uint32 {
 	return newMap
 }
 
-// ZipUint8Uint16 takes two inputs: first list of type: []uint8, second list of type: []uint16.
+// ZipUint8Uint16Ptr takes two inputs: first list of type: []uint8, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[uint8]uint16
 func ZipUint8Uint16Ptr(list1 []*uint8, list2 []*uint16) map[*uint8]*uint16 {
 	newMap := make(map[*uint8]*uint16)
@@ -3240,7 +3240,7 @@ func ZipUint8Uint16Ptr(list1 []*uint8, list2 []*uint16) map[*uint8]*uint16 {
 	return newMap
 }
 
-// ZipUint8 takes two inputs: first list of type: []uint8, second list of type: []uint8.
+// ZipUint8Ptr takes two inputs: first list of type: []uint8, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[uint8]uint8
 func ZipUint8Ptr(list1 []*uint8, list2 []*uint8) map[*uint8]*uint8 {
 	newMap := make(map[*uint8]*uint8)
@@ -3264,7 +3264,7 @@ func ZipUint8Ptr(list1 []*uint8, list2 []*uint8) map[*uint8]*uint8 {
 	return newMap
 }
 
-// ZipUint8Str takes two inputs: first list of type: []uint8, second list of type: []string.
+// ZipUint8StrPtr takes two inputs: first list of type: []uint8, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[uint8]string
 func ZipUint8StrPtr(list1 []*uint8, list2 []*string) map[*uint8]*string {
 	newMap := make(map[*uint8]*string)
@@ -3288,7 +3288,7 @@ func ZipUint8StrPtr(list1 []*uint8, list2 []*string) map[*uint8]*string {
 	return newMap
 }
 
-// ZipUint8Bool takes two inputs: first list of type: []uint8, second list of type: []bool.
+// ZipUint8BoolPtr takes two inputs: first list of type: []uint8, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[uint8]bool
 func ZipUint8BoolPtr(list1 []*uint8, list2 []*bool) map[*uint8]*bool {
 	newMap := make(map[*uint8]*bool)
@@ -3312,7 +3312,7 @@ func ZipUint8BoolPtr(list1 []*uint8, list2 []*bool) map[*uint8]*bool {
 	return newMap
 }
 
-// ZipUint8Float32 takes two inputs: first list of type: []uint8, second list of type: []float32.
+// ZipUint8Float32Ptr takes two inputs: first list of type: []uint8, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[uint8]float32
 func ZipUint8Float32Ptr(list1 []*uint8, list2 []*float32) map[*uint8]*float32 {
 	newMap := make(map[*uint8]*float32)
@@ -3336,7 +3336,7 @@ func ZipUint8Float32Ptr(list1 []*uint8, list2 []*float32) map[*uint8]*float32 {
 	return newMap
 }
 
-// ZipUint8Float64 takes two inputs: first list of type: []uint8, second list of type: []float64.
+// ZipUint8Float64Ptr takes two inputs: first list of type: []uint8, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[uint8]float64
 func ZipUint8Float64Ptr(list1 []*uint8, list2 []*float64) map[*uint8]*float64 {
 	newMap := make(map[*uint8]*float64)
@@ -3360,7 +3360,7 @@ func ZipUint8Float64Ptr(list1 []*uint8, list2 []*float64) map[*uint8]*float64 {
 	return newMap
 }
 
-// ZipStrInt takes two inputs: first list of type: []string, second list of type: []int.
+// ZipStrIntPtr takes two inputs: first list of type: []string, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[string]int
 func ZipStrIntPtr(list1 []*string, list2 []*int) map[*string]*int {
 	newMap := make(map[*string]*int)
@@ -3384,7 +3384,7 @@ func ZipStrIntPtr(list1 []*string, list2 []*int) map[*string]*int {
 	return newMap
 }
 
-// ZipStrInt64 takes two inputs: first list of type: []string, second list of type: []int64.
+// ZipStrInt64Ptr takes two inputs: first list of type: []string, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[string]int64
 func ZipStrInt64Ptr(list1 []*string, list2 []*int64) map[*string]*int64 {
 	newMap := make(map[*string]*int64)
@@ -3408,7 +3408,7 @@ func ZipStrInt64Ptr(list1 []*string, list2 []*int64) map[*string]*int64 {
 	return newMap
 }
 
-// ZipStrInt32 takes two inputs: first list of type: []string, second list of type: []int32.
+// ZipStrInt32Ptr takes two inputs: first list of type: []string, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[string]int32
 func ZipStrInt32Ptr(list1 []*string, list2 []*int32) map[*string]*int32 {
 	newMap := make(map[*string]*int32)
@@ -3432,7 +3432,7 @@ func ZipStrInt32Ptr(list1 []*string, list2 []*int32) map[*string]*int32 {
 	return newMap
 }
 
-// ZipStrInt16 takes two inputs: first list of type: []string, second list of type: []int16.
+// ZipStrInt16Ptr takes two inputs: first list of type: []string, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[string]int16
 func ZipStrInt16Ptr(list1 []*string, list2 []*int16) map[*string]*int16 {
 	newMap := make(map[*string]*int16)
@@ -3456,7 +3456,7 @@ func ZipStrInt16Ptr(list1 []*string, list2 []*int16) map[*string]*int16 {
 	return newMap
 }
 
-// ZipStrInt8 takes two inputs: first list of type: []string, second list of type: []int8.
+// ZipStrInt8Ptr takes two inputs: first list of type: []string, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[string]int8
 func ZipStrInt8Ptr(list1 []*string, list2 []*int8) map[*string]*int8 {
 	newMap := make(map[*string]*int8)
@@ -3480,7 +3480,7 @@ func ZipStrInt8Ptr(list1 []*string, list2 []*int8) map[*string]*int8 {
 	return newMap
 }
 
-// ZipStrUint takes two inputs: first list of type: []string, second list of type: []uint.
+// ZipStrUintPtr takes two inputs: first list of type: []string, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[string]uint
 func ZipStrUintPtr(list1 []*string, list2 []*uint) map[*string]*uint {
 	newMap := make(map[*string]*uint)
@@ -3504,7 +3504,7 @@ func ZipStrUintPtr(list1 []*string, list2 []*uint) map[*string]*uint {
 	return newMap
 }
 
-// ZipStrUint64 takes two inputs: first list of type: []string, second list of type: []uint64.
+// ZipStrUint64Ptr takes two inputs: first list of type: []string, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[string]uint64
 func ZipStrUint64Ptr(list1 []*string, list2 []*uint64) map[*string]*uint64 {
 	newMap := make(map[*string]*uint64)
@@ -3528,7 +3528,7 @@ func ZipStrUint64Ptr(list1 []*string, list2 []*uint64) map[*string]*uint64 {
 	return newMap
 }
 
-// ZipStrUint32 takes two inputs: first list of type: []string, second list of type: []uint32.
+// ZipStrUint32Ptr takes two inputs: first list of type: []string, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[string]uint32
 func ZipStrUint32Ptr(list1 []*string, list2 []*uint32) map[*string]*uint32 {
 	newMap := make(map[*string]*uint32)
@@ -3552,7 +3552,7 @@ func ZipStrUint32Ptr(list1 []*string, list2 []*uint32) map[*string]*uint32 {
 	return newMap
 }
 
-// ZipStrUint16 takes two inputs: first list of type: []string, second list of type: []uint16.
+// ZipStrUint16Ptr takes two inputs: first list of type: []string, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[string]uint16
 func ZipStrUint16Ptr(list1 []*string, list2 []*uint16) map[*string]*uint16 {
 	newMap := make(map[*string]*uint16)
@@ -3576,7 +3576,7 @@ func ZipStrUint16Ptr(list1 []*string, list2 []*uint16) map[*string]*uint16 {
 	return newMap
 }
 
-// ZipStrUint8 takes two inputs: first list of type: []string, second list of type: []uint8.
+// ZipStrUint8Ptr takes two inputs: first list of type: []string, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[string]uint8
 func ZipStrUint8Ptr(list1 []*string, list2 []*uint8) map[*string]*uint8 {
 	newMap := make(map[*string]*uint8)
@@ -3600,7 +3600,7 @@ func ZipStrUint8Ptr(list1 []*string, list2 []*uint8) map[*string]*uint8 {
 	return newMap
 }
 
-// ZipStr takes two inputs: first list of type: []string, second list of type: []string.
+// ZipStrPtr takes two inputs: first list of type: []string, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[string]string
 func ZipStrPtr(list1 []*string, list2 []*string) map[*string]*string {
 	newMap := make(map[*string]*string)
@@ -3624,7 +3624,7 @@ func ZipStrPtr(list1 []*string, list2 []*string) map[*string]*string {
 	return newMap
 }
 
-// ZipStrBool takes two inputs: first list of type: []string, second list of type: []bool.
+// ZipStrBoolPtr takes two inputs: first list of type: []string, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[string]bool
 func ZipStrBoolPtr(list1 []*string, list2 []*bool) map[*string]*bool {
 	newMap := make(map[*string]*bool)
@@ -3648,7 +3648,7 @@ func ZipStrBoolPtr(list1 []*string, list2 []*bool) map[*string]*bool {
 	return newMap
 }
 
-// ZipStrFloat32 takes two inputs: first list of type: []string, second list of type: []float32.
+// ZipStrFloat32Ptr takes two inputs: first list of type: []string, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[string]float32
 func ZipStrFloat32Ptr(list1 []*string, list2 []*float32) map[*string]*float32 {
 	newMap := make(map[*string]*float32)
@@ -3672,7 +3672,7 @@ func ZipStrFloat32Ptr(list1 []*string, list2 []*float32) map[*string]*float32 {
 	return newMap
 }
 
-// ZipStrFloat64 takes two inputs: first list of type: []string, second list of type: []float64.
+// ZipStrFloat64Ptr takes two inputs: first list of type: []string, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[string]float64
 func ZipStrFloat64Ptr(list1 []*string, list2 []*float64) map[*string]*float64 {
 	newMap := make(map[*string]*float64)
@@ -3696,7 +3696,7 @@ func ZipStrFloat64Ptr(list1 []*string, list2 []*float64) map[*string]*float64 {
 	return newMap
 }
 
-// ZipBoolInt takes two inputs: first list of type: []bool, second list of type: []int.
+// ZipBoolIntPtr takes two inputs: first list of type: []bool, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[bool]int
 func ZipBoolIntPtr(list1 []*bool, list2 []*int) map[*bool]*int {
 	newMap := make(map[*bool]*int)
@@ -3720,7 +3720,7 @@ func ZipBoolIntPtr(list1 []*bool, list2 []*int) map[*bool]*int {
 	return newMap
 }
 
-// ZipBoolInt64 takes two inputs: first list of type: []bool, second list of type: []int64.
+// ZipBoolInt64Ptr takes two inputs: first list of type: []bool, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[bool]int64
 func ZipBoolInt64Ptr(list1 []*bool, list2 []*int64) map[*bool]*int64 {
 	newMap := make(map[*bool]*int64)
@@ -3744,7 +3744,7 @@ func ZipBoolInt64Ptr(list1 []*bool, list2 []*int64) map[*bool]*int64 {
 	return newMap
 }
 
-// ZipBoolInt32 takes two inputs: first list of type: []bool, second list of type: []int32.
+// ZipBoolInt32Ptr takes two inputs: first list of type: []bool, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[bool]int32
 func ZipBoolInt32Ptr(list1 []*bool, list2 []*int32) map[*bool]*int32 {
 	newMap := make(map[*bool]*int32)
@@ -3768,7 +3768,7 @@ func ZipBoolInt32Ptr(list1 []*bool, list2 []*int32) map[*bool]*int32 {
 	return newMap
 }
 
-// ZipBoolInt16 takes two inputs: first list of type: []bool, second list of type: []int16.
+// ZipBoolInt16Ptr takes two inputs: first list of type: []bool, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[bool]int16
 func ZipBoolInt16Ptr(list1 []*bool, list2 []*int16) map[*bool]*int16 {
 	newMap := make(map[*bool]*int16)
@@ -3792,7 +3792,7 @@ func ZipBoolInt16Ptr(list1 []*bool, list2 []*int16) map[*bool]*int16 {
 	return newMap
 }
 
-// ZipBoolInt8 takes two inputs: first list of type: []bool, second list of type: []int8.
+// ZipBoolInt8Ptr takes two inputs: first list of type: []bool, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[bool]int8
 func ZipBoolInt8Ptr(list1 []*bool, list2 []*int8) map[*bool]*int8 {
 	newMap := make(map[*bool]*int8)
@@ -3816,7 +3816,7 @@ func ZipBoolInt8Ptr(list1 []*bool, list2 []*int8) map[*bool]*int8 {
 	return newMap
 }
 
-// ZipBoolUint takes two inputs: first list of type: []bool, second list of type: []uint.
+// ZipBoolUintPtr takes two inputs: first list of type: []bool, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[bool]uint
 func ZipBoolUintPtr(list1 []*bool, list2 []*uint) map[*bool]*uint {
 	newMap := make(map[*bool]*uint)
@@ -3840,7 +3840,7 @@ func ZipBoolUintPtr(list1 []*bool, list2 []*uint) map[*bool]*uint {
 	return newMap
 }
 
-// ZipBoolUint64 takes two inputs: first list of type: []bool, second list of type: []uint64.
+// ZipBoolUint64Ptr takes two inputs: first list of type: []bool, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[bool]uint64
 func ZipBoolUint64Ptr(list1 []*bool, list2 []*uint64) map[*bool]*uint64 {
 	newMap := make(map[*bool]*uint64)
@@ -3864,7 +3864,7 @@ func ZipBoolUint64Ptr(list1 []*bool, list2 []*uint64) map[*bool]*uint64 {
 	return newMap
 }
 
-// ZipBoolUint32 takes two inputs: first list of type: []bool, second list of type: []uint32.
+// ZipBoolUint32Ptr takes two inputs: first list of type: []bool, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[bool]uint32
 func ZipBoolUint32Ptr(list1 []*bool, list2 []*uint32) map[*bool]*uint32 {
 	newMap := make(map[*bool]*uint32)
@@ -3888,7 +3888,7 @@ func ZipBoolUint32Ptr(list1 []*bool, list2 []*uint32) map[*bool]*uint32 {
 	return newMap
 }
 
-// ZipBoolUint16 takes two inputs: first list of type: []bool, second list of type: []uint16.
+// ZipBoolUint16Ptr takes two inputs: first list of type: []bool, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[bool]uint16
 func ZipBoolUint16Ptr(list1 []*bool, list2 []*uint16) map[*bool]*uint16 {
 	newMap := make(map[*bool]*uint16)
@@ -3912,7 +3912,7 @@ func ZipBoolUint16Ptr(list1 []*bool, list2 []*uint16) map[*bool]*uint16 {
 	return newMap
 }
 
-// ZipBoolUint8 takes two inputs: first list of type: []bool, second list of type: []uint8.
+// ZipBoolUint8Ptr takes two inputs: first list of type: []bool, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[bool]uint8
 func ZipBoolUint8Ptr(list1 []*bool, list2 []*uint8) map[*bool]*uint8 {
 	newMap := make(map[*bool]*uint8)
@@ -3936,7 +3936,7 @@ func ZipBoolUint8Ptr(list1 []*bool, list2 []*uint8) map[*bool]*uint8 {
 	return newMap
 }
 
-// ZipBoolStr takes two inputs: first list of type: []bool, second list of type: []string.
+// ZipBoolStrPtr takes two inputs: first list of type: []bool, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[bool]string
 func ZipBoolStrPtr(list1 []*bool, list2 []*string) map[*bool]*string {
 	newMap := make(map[*bool]*string)
@@ -3960,7 +3960,7 @@ func ZipBoolStrPtr(list1 []*bool, list2 []*string) map[*bool]*string {
 	return newMap
 }
 
-// ZipBool takes two inputs: first list of type: []bool, second list of type: []bool.
+// ZipBoolPtr takes two inputs: first list of type: []bool, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[bool]bool
 func ZipBoolPtr(list1 []*bool, list2 []*bool) map[*bool]*bool {
 	newMap := make(map[*bool]*bool)
@@ -3984,7 +3984,7 @@ func ZipBoolPtr(list1 []*bool, list2 []*bool) map[*bool]*bool {
 	return newMap
 }
 
-// ZipBoolFloat32 takes two inputs: first list of type: []bool, second list of type: []float32.
+// ZipBoolFloat32Ptr takes two inputs: first list of type: []bool, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[bool]float32
 func ZipBoolFloat32Ptr(list1 []*bool, list2 []*float32) map[*bool]*float32 {
 	newMap := make(map[*bool]*float32)
@@ -4008,7 +4008,7 @@ func ZipBoolFloat32Ptr(list1 []*bool, list2 []*float32) map[*bool]*float32 {
 	return newMap
 }
 
-// ZipBoolFloat64 takes two inputs: first list of type: []bool, second list of type: []float64.
+// ZipBoolFloat64Ptr takes two inputs: first list of type: []bool, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[bool]float64
 func ZipBoolFloat64Ptr(list1 []*bool, list2 []*float64) map[*bool]*float64 {
 	newMap := make(map[*bool]*float64)
@@ -4032,7 +4032,7 @@ func ZipBoolFloat64Ptr(list1 []*bool, list2 []*float64) map[*bool]*float64 {
 	return newMap
 }
 
-// ZipFloat32Int takes two inputs: first list of type: []float32, second list of type: []int.
+// ZipFloat32IntPtr takes two inputs: first list of type: []float32, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[float32]int
 func ZipFloat32IntPtr(list1 []*float32, list2 []*int) map[*float32]*int {
 	newMap := make(map[*float32]*int)
@@ -4056,7 +4056,7 @@ func ZipFloat32IntPtr(list1 []*float32, list2 []*int) map[*float32]*int {
 	return newMap
 }
 
-// ZipFloat32Int64 takes two inputs: first list of type: []float32, second list of type: []int64.
+// ZipFloat32Int64Ptr takes two inputs: first list of type: []float32, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[float32]int64
 func ZipFloat32Int64Ptr(list1 []*float32, list2 []*int64) map[*float32]*int64 {
 	newMap := make(map[*float32]*int64)
@@ -4080,7 +4080,7 @@ func ZipFloat32Int64Ptr(list1 []*float32, list2 []*int64) map[*float32]*int64 {
 	return newMap
 }
 
-// ZipFloat32Int32 takes two inputs: first list of type: []float32, second list of type: []int32.
+// ZipFloat32Int32Ptr takes two inputs: first list of type: []float32, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[float32]int32
 func ZipFloat32Int32Ptr(list1 []*float32, list2 []*int32) map[*float32]*int32 {
 	newMap := make(map[*float32]*int32)
@@ -4104,7 +4104,7 @@ func ZipFloat32Int32Ptr(list1 []*float32, list2 []*int32) map[*float32]*int32 {
 	return newMap
 }
 
-// ZipFloat32Int16 takes two inputs: first list of type: []float32, second list of type: []int16.
+// ZipFloat32Int16Ptr takes two inputs: first list of type: []float32, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[float32]int16
 func ZipFloat32Int16Ptr(list1 []*float32, list2 []*int16) map[*float32]*int16 {
 	newMap := make(map[*float32]*int16)
@@ -4128,7 +4128,7 @@ func ZipFloat32Int16Ptr(list1 []*float32, list2 []*int16) map[*float32]*int16 {
 	return newMap
 }
 
-// ZipFloat32Int8 takes two inputs: first list of type: []float32, second list of type: []int8.
+// ZipFloat32Int8Ptr takes two inputs: first list of type: []float32, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[float32]int8
 func ZipFloat32Int8Ptr(list1 []*float32, list2 []*int8) map[*float32]*int8 {
 	newMap := make(map[*float32]*int8)
@@ -4152,7 +4152,7 @@ func ZipFloat32Int8Ptr(list1 []*float32, list2 []*int8) map[*float32]*int8 {
 	return newMap
 }
 
-// ZipFloat32Uint takes two inputs: first list of type: []float32, second list of type: []uint.
+// ZipFloat32UintPtr takes two inputs: first list of type: []float32, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[float32]uint
 func ZipFloat32UintPtr(list1 []*float32, list2 []*uint) map[*float32]*uint {
 	newMap := make(map[*float32]*uint)
@@ -4176,7 +4176,7 @@ func ZipFloat32UintPtr(list1 []*float32, list2 []*uint) map[*float32]*uint {
 	return newMap
 }
 
-// ZipFloat32Uint64 takes two inputs: first list of type: []float32, second list of type: []uint64.
+// ZipFloat32Uint64Ptr takes two inputs: first list of type: []float32, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[float32]uint64
 func ZipFloat32Uint64Ptr(list1 []*float32, list2 []*uint64) map[*float32]*uint64 {
 	newMap := make(map[*float32]*uint64)
@@ -4200,7 +4200,7 @@ func ZipFloat32Uint64Ptr(list1 []*float32, list2 []*uint64) map[*float32]*uint64
 	return newMap
 }
 
-// ZipFloat32Uint32 takes two inputs: first list of type: []float32, second list of type: []uint32.
+// ZipFloat32Uint32Ptr takes two inputs: first list of type: []float32, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[float32]uint32
 func ZipFloat32Uint32Ptr(list1 []*float32, list2 []*uint32) map[*float32]*uint32 {
 	newMap := make(map[*float32]*uint32)
@@ -4224,7 +4224,7 @@ func ZipFloat32Uint32Ptr(list1 []*float32, list2 []*uint32) map[*float32]*uint32
 	return newMap
 }
 
-// ZipFloat32Uint16 takes two inputs: first list of type: []float32, second list of type: []uint16.
+// ZipFloat32Uint16Ptr takes two inputs: first list of type: []float32, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[float32]uint16
 func ZipFloat32Uint16Ptr(list1 []*float32, list2 []*uint16) map[*float32]*uint16 {
 	newMap := make(map[*float32]*uint16)
@@ -4248,7 +4248,7 @@ func ZipFloat32Uint16Ptr(list1 []*float32, list2 []*uint16) map[*float32]*uint16
 	return newMap
 }
 
-// ZipFloat32Uint8 takes two inputs: first list of type: []float32, second list of type: []uint8.
+// ZipFloat32Uint8Ptr takes two inputs: first list of type: []float32, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[float32]uint8
 func ZipFloat32Uint8Ptr(list1 []*float32, list2 []*uint8) map[*float32]*uint8 {
 	newMap := make(map[*float32]*uint8)
@@ -4272,7 +4272,7 @@ func ZipFloat32Uint8Ptr(list1 []*float32, list2 []*uint8) map[*float32]*uint8 {
 	return newMap
 }
 
-// ZipFloat32Str takes two inputs: first list of type: []float32, second list of type: []string.
+// ZipFloat32StrPtr takes two inputs: first list of type: []float32, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[float32]string
 func ZipFloat32StrPtr(list1 []*float32, list2 []*string) map[*float32]*string {
 	newMap := make(map[*float32]*string)
@@ -4296,7 +4296,7 @@ func ZipFloat32StrPtr(list1 []*float32, list2 []*string) map[*float32]*string {
 	return newMap
 }
 
-// ZipFloat32Bool takes two inputs: first list of type: []float32, second list of type: []bool.
+// ZipFloat32BoolPtr takes two inputs: first list of type: []float32, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[float32]bool
 func ZipFloat32BoolPtr(list1 []*float32, list2 []*bool) map[*float32]*bool {
 	newMap := make(map[*float32]*bool)
@@ -4320,7 +4320,7 @@ func ZipFloat32BoolPtr(list1 []*float32, list2 []*bool) map[*float32]*bool {
 	return newMap
 }
 
-// ZipFloat32 takes two inputs: first list of type: []float32, second list of type: []float32.
+// ZipFloat32Ptr takes two inputs: first list of type: []float32, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[float32]float32
 func ZipFloat32Ptr(list1 []*float32, list2 []*float32) map[*float32]*float32 {
 	newMap := make(map[*float32]*float32)
@@ -4344,7 +4344,7 @@ func ZipFloat32Ptr(list1 []*float32, list2 []*float32) map[*float32]*float32 {
 	return newMap
 }
 
-// ZipFloat32Float64 takes two inputs: first list of type: []float32, second list of type: []float64.
+// ZipFloat32Float64Ptr takes two inputs: first list of type: []float32, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[float32]float64
 func ZipFloat32Float64Ptr(list1 []*float32, list2 []*float64) map[*float32]*float64 {
 	newMap := make(map[*float32]*float64)
@@ -4368,7 +4368,7 @@ func ZipFloat32Float64Ptr(list1 []*float32, list2 []*float64) map[*float32]*floa
 	return newMap
 }
 
-// ZipFloat64Int takes two inputs: first list of type: []float64, second list of type: []int.
+// ZipFloat64IntPtr takes two inputs: first list of type: []float64, second list of type: []int.
 // Then it merges two list and returns a new map of type: map[float64]int
 func ZipFloat64IntPtr(list1 []*float64, list2 []*int) map[*float64]*int {
 	newMap := make(map[*float64]*int)
@@ -4392,7 +4392,7 @@ func ZipFloat64IntPtr(list1 []*float64, list2 []*int) map[*float64]*int {
 	return newMap
 }
 
-// ZipFloat64Int64 takes two inputs: first list of type: []float64, second list of type: []int64.
+// ZipFloat64Int64Ptr takes two inputs: first list of type: []float64, second list of type: []int64.
 // Then it merges two list and returns a new map of type: map[float64]int64
 func ZipFloat64Int64Ptr(list1 []*float64, list2 []*int64) map[*float64]*int64 {
 	newMap := make(map[*float64]*int64)
@@ -4416,7 +4416,7 @@ func ZipFloat64Int64Ptr(list1 []*float64, list2 []*int64) map[*float64]*int64 {
 	return newMap
 }
 
-// ZipFloat64Int32 takes two inputs: first list of type: []float64, second list of type: []int32.
+// ZipFloat64Int32Ptr takes two inputs: first list of type: []float64, second list of type: []int32.
 // Then it merges two list and returns a new map of type: map[float64]int32
 func ZipFloat64Int32Ptr(list1 []*float64, list2 []*int32) map[*float64]*int32 {
 	newMap := make(map[*float64]*int32)
@@ -4440,7 +4440,7 @@ func ZipFloat64Int32Ptr(list1 []*float64, list2 []*int32) map[*float64]*int32 {
 	return newMap
 }
 
-// ZipFloat64Int16 takes two inputs: first list of type: []float64, second list of type: []int16.
+// ZipFloat64Int16Ptr takes two inputs: first list of type: []float64, second list of type: []int16.
 // Then it merges two list and returns a new map of type: map[float64]int16
 func ZipFloat64Int16Ptr(list1 []*float64, list2 []*int16) map[*float64]*int16 {
 	newMap := make(map[*float64]*int16)
@@ -4464,7 +4464,7 @@ func ZipFloat64Int16Ptr(list1 []*float64, list2 []*int16) map[*float64]*int16 {
 	return newMap
 }
 
-// ZipFloat64Int8 takes two inputs: first list of type: []float64, second list of type: []int8.
+// ZipFloat64Int8Ptr takes two inputs: first list of type: []float64, second list of type: []int8.
 // Then it merges two list and returns a new map of type: map[float64]int8
 func ZipFloat64Int8Ptr(list1 []*float64, list2 []*int8) map[*float64]*int8 {
 	newMap := make(map[*float64]*int8)
@@ -4488,7 +4488,7 @@ func ZipFloat64Int8Ptr(list1 []*float64, list2 []*int8) map[*float64]*int8 {
 	return newMap
 }
 
-// ZipFloat64Uint takes two inputs: first list of type: []float64, second list of type: []uint.
+// ZipFloat64UintPtr takes two inputs: first list of type: []float64, second list of type: []uint.
 // Then it merges two list and returns a new map of type: map[float64]uint
 func ZipFloat64UintPtr(list1 []*float64, list2 []*uint) map[*float64]*uint {
 	newMap := make(map[*float64]*uint)
@@ -4512,7 +4512,7 @@ func ZipFloat64UintPtr(list1 []*float64, list2 []*uint) map[*float64]*uint {
 	return newMap
 }
 
-// ZipFloat64Uint64 takes two inputs: first list of type: []float64, second list of type: []uint64.
+// ZipFloat64Uint64Ptr takes two inputs: first list of type: []float64, second list of type: []uint64.
 // Then it merges two list and returns a new map of type: map[float64]uint64
 func ZipFloat64Uint64Ptr(list1 []*float64, list2 []*uint64) map[*float64]*uint64 {
 	newMap := make(map[*float64]*uint64)
@@ -4536,7 +4536,7 @@ func ZipFloat64Uint64Ptr(list1 []*float64, list2 []*uint64) map[*float64]*uint64
 	return newMap
 }
 
-// ZipFloat64Uint32 takes two inputs: first list of type: []float64, second list of type: []uint32.
+// ZipFloat64Uint32Ptr takes two inputs: first list of type: []float64, second list of type: []uint32.
 // Then it merges two list and returns a new map of type: map[float64]uint32
 func ZipFloat64Uint32Ptr(list1 []*float64, list2 []*uint32) map[*float64]*uint32 {
 	newMap := make(map[*float64]*uint32)
@@ -4560,7 +4560,7 @@ func ZipFloat64Uint32Ptr(list1 []*float64, list2 []*uint32) map[*float64]*uint32
 	return newMap
 }
 
-// ZipFloat64Uint16 takes two inputs: first list of type: []float64, second list of type: []uint16.
+// ZipFloat64Uint16Ptr takes two inputs: first list of type: []float64, second list of type: []uint16.
 // Then it merges two list and returns a new map of type: map[float64]uint16
 func ZipFloat64Uint16Ptr(list1 []*float64, list2 []*uint16) map[*float64]*uint16 {
 	newMap := make(map[*float64]*uint16)
@@ -4584,7 +4584,7 @@ func ZipFloat64Uint16Ptr(list1 []*float64, list2 []*uint16) map[*float64]*uint16
 	return newMap
 }
 
-// ZipFloat64Uint8 takes two inputs: first list of type: []float64, second list of type: []uint8.
+// ZipFloat64Uint8Ptr takes two inputs: first list of type: []float64, second list of type: []uint8.
 // Then it merges two list and returns a new map of type: map[float64]uint8
 func ZipFloat64Uint8Ptr(list1 []*float64, list2 []*uint8) map[*float64]*uint8 {
 	newMap := make(map[*float64]*uint8)
@@ -4608,7 +4608,7 @@ func ZipFloat64Uint8Ptr(list1 []*float64, list2 []*uint8) map[*float64]*uint8 {
 	return newMap
 }
 
-// ZipFloat64Str takes two inputs: first list of type: []float64, second list of type: []string.
+// ZipFloat64StrPtr takes two inputs: first list of type: []float64, second list of type: []string.
 // Then it merges two list and returns a new map of type: map[float64]string
 func ZipFloat64StrPtr(list1 []*float64, list2 []*string) map[*float64]*string {
 	newMap := make(map[*float64]*string)
@@ -4632,7 +4632,7 @@ func ZipFloat64StrPtr(list1 []*float64, list2 []*string) map[*float64]*string {
 	return newMap
 }
 
-// ZipFloat64Bool takes two inputs: first list of type: []float64, second list of type: []bool.
+// ZipFloat64BoolPtr takes two inputs: first list of type: []float64, second list of type: []bool.
 // Then it merges two list and returns a new map of type: map[float64]bool
 func ZipFloat64BoolPtr(list1 []*float64, list2 []*bool) map[*float64]*bool {
 	newMap := make(map[*float64]*bool)
@@ -4656,7 +4656,7 @@ func ZipFloat64BoolPtr(list1 []*float64, list2 []*bool) map[*float64]*bool {
 	return newMap
 }
 
-// ZipFloat64Float32 takes two inputs: first list of type: []float64, second list of type: []float32.
+// ZipFloat64Float32Ptr takes two inputs: first list of type: []float64, second list of type: []float32.
 // Then it merges two list and returns a new map of type: map[float64]float32
 func ZipFloat64Float32Ptr(list1 []*float64, list2 []*float32) map[*float64]*float32 {
 	newMap := make(map[*float64]*float32)
@@ -4680,7 +4680,7 @@ func ZipFloat64Float32Ptr(list1 []*float64, list2 []*float32) map[*float64]*floa
 	return newMap
 }
 
-// ZipFloat64 takes two inputs: first list of type: []float64, second list of type: []float64.
+// ZipFloat64Ptr takes two inputs: first list of type: []float64, second list of type: []float64.
 // Then it merges two list and returns a new map of type: map[float64]float64
 func ZipFloat64Ptr(list1 []*float64, list2 []*float64) map[*float64]*float64 {
 	newMap := make(map[*float64]*float64)
