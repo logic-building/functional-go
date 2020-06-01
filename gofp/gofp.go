@@ -435,6 +435,11 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 				template = r2.Replace(template)
 			}
 
+			if fp.ExistsStrIgnoreCase("Take", onlyList) {
+				template += basic.Take()
+				template = r2.Replace(template)
+			}
+
 		} else {
 			template += template2.Map()
 			template = r.Replace(template)
@@ -567,6 +572,12 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 
 			template += template2.DropLastPtr()
 			template = r.Replace(template)
+
+			template += basic.Reverse()
+			template = r2.Replace(template)
+
+			template += basic.Take()
+			template = r2.Replace(template)
 		}
 
 	}

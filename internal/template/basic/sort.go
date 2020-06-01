@@ -204,7 +204,8 @@ func SortFloats64DescPtr(list []*float64) []*float64 {
 }
 
 func SortStrs() string {
-	return `func SortStrs(list []string) []string {
+	return `
+func SortStrs(list []string) []string {
 	if len(list) == 0 {
 		return []string{}
 	}

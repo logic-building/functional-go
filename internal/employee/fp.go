@@ -984,6 +984,59 @@ func DropLastPtr(list []*Employee) []*Employee {
 	return newList
 }
 
+// Reverses reverse the list
+func Reverses(list []Employee) []Employee {
+	newList := make([]Employee, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// ReversesPtr reverse the list
+func ReversesPtr(list []*Employee) []*Employee {
+	newList := make([]*Employee, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// Take returns n items in the list
+func Take(n int, list []Employee) []Employee {
+	if n < 0 {
+		return []Employee{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]Employee, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// TakePtr returns n items in the list
+func TakePtr(n int, list []*Employee) []*Employee {
+	if n < 0 {
+		return []*Employee{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]*Employee, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	 }
+	return newList
+}
 func MapTeacher(f func(Teacher) Teacher, list []Teacher) []Teacher {
 	if f == nil {
 		return []Teacher{}
@@ -1965,6 +2018,59 @@ func DropLastTeacherPtr(list []*Teacher) []*Teacher {
 	return newList
 }
 
+// ReverseTeachers reverse the list
+func ReverseTeachers(list []Teacher) []Teacher {
+	newList := make([]Teacher, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// ReverseTeachersPtr reverse the list
+func ReverseTeachersPtr(list []*Teacher) []*Teacher {
+	newList := make([]*Teacher, len(list))
+	for i := 0; i < len(list); i++ {
+		newList[i] = list[len(list)-(i+1)]
+	}
+	return newList
+}
+
+// TakeTeacher returns n items in the list
+func TakeTeacher(n int, list []Teacher) []Teacher {
+	if n < 0 {
+		return []Teacher{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]Teacher, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	}
+	return newList
+}
+
+// TakeTeacherPtr returns n items in the list
+func TakeTeacherPtr(n int, list []*Teacher) []*Teacher {
+	if n < 0 {
+		return []*Teacher{}
+	}
+
+	newListLen := len(list)
+
+	if n < newListLen {
+		newListLen = n
+	}
+	newList := make([]*Teacher, newListLen)
+	for i := 0; i < newListLen; i++ {
+		newList[i] = list[i]
+	 }
+	return newList
+}
 
 // MapEmployeeTeacher takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
