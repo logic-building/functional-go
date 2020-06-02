@@ -235,31 +235,33 @@ Ex.
 ### All Standard FP Function
 ```
 1. Distinct<Type>
-1. Drop<Type>
-1. DropWhile<Type>
-1. Every<Type>
-1. Exists<Type>
-1. Filter<Type>
-1. FilterMap<Type>
-1. FilterMap<InputType><OutputType>
-1. Keys<Type>
-1. Map<Type>
-1. Map<InputType><OutputType>
-1. Max<Type>
-1. Merge<Type>
-1. Min<Type>
-1. MinMax<Type>
-1. PMap<Type>
-1. PMap<InputType><OutputType>
-1. Range<Type>
-1. Remove<Type>
-1. Reduce<Type>
-1. Rest<Type>
-1. Reverse<Type>
-1. Some<Type>
-1. Sort<Type>s
-1. TakeWhile<Type>
-1. Zip<Type>
+2. Drop<Type>
+3. DropWhile<Type>
+4. Every<Type>
+5. Exists<Type>
+6. Filter<Type>
+7. FilterMap<Type>
+8. FilterMap<InputType><OutputType>
+9. Keys<Type>
+10. Map<Type>
+11. Map<InputType><OutputType>
+12. Max<Type>
+13. Merge<Type>
+14. Merge<Type1><Type2>
+15. Min<Type>
+16. MinMax<Type>
+17. PMap<Type>
+18. PMap<InputType><OutputType>
+19. Range<Type>
+20. Remove<Type>
+21. Reduce<Type>
+22. Rest<Type>
+23. Reverse<Type>
+24. Some<Type>
+25. Sort<Type>s
+26. TakeWhile<Type>
+27. Zip<Type>
+28. Zip<Type1><Type2>
 ```
 
 ### Contains functions
