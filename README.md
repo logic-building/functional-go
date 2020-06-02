@@ -21,7 +21,7 @@ go install github.com/logic-building/functional-go/gofp
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.7.2"
+version = "8.8.0"
 ```
 
 ### Quick Start
@@ -174,6 +174,10 @@ Note:
 Note: Another option : -mapfun "true"
    This allows to include function - merge,zip
    Caution: It will complain at runtime if struct contains slice or array 
+   
+Note: Another option: -sort go generate sorting related methods
+Ex. 
+//go:generate gofp -destination fp.go -pkg employee -type "Employee" -sort "Employee:Name, Employee:Salary"
 
 3. Generate functional code
    go generate ./...
@@ -228,6 +232,35 @@ Note: Another option : -mapfun "true"
 
 ```
 
+### All Standard FP Function
+```
+1. Distinct<Type>
+1. Drop<Type>
+1. DropWhile<Type>
+1. Every<Type>
+1. Exists<Type>
+1. Filter<Type>
+1. FilterMap<Type>
+1. FilterMap<InputType><OutputType>
+1. Keys<Type>
+1. Map<Type>
+1. Map<InputType><OutputType>
+1. Max<Type>
+1. Merge<Type>
+1. Min<Type>
+1. MinMax<Type>
+1. PMap<Type>
+1. PMap<InputType><OutputType>
+1. Range<Type>
+1. Remove<Type>
+1. Reduce<Type>
+1. Rest<Type>
+1. Reverse<Type>
+1. Some<Type>
+1. Sort<Type>s
+1. TakeWhile<Type>
+1. Zip<Type>
+```
 
 ### Contains functions
 ```
