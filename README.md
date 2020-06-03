@@ -259,9 +259,10 @@ Ex.
 23. Reverse<Type>
 24. Some<Type>
 25. Sort<Type>s
-26. TakeWhile<Type>
-27. Zip<Type>
-28. Zip<Type1><Type2>
+26. Take<Type>
+27. TakeWhile<Type>
+28. Zip<Type>
+29. Zip<Type1><Type2>
 ```
 
 ### Contains functions
