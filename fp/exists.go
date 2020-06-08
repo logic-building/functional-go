@@ -212,3 +212,13 @@ func ExistsStrIgnoreCase(str string, list []string) bool {
 	}
 	return false
 }
+
+// ExistsBoolPtr checks if given item exists in the list
+func ExistsBool(num bool, list []bool) bool {
+	for _, v := range list {
+		if v == num {
+			return true
+		}
+	}
+	return false
+}

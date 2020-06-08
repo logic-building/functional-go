@@ -1,6 +1,8 @@
 package fp
 
 import "sort"
+
+// SortInts return new sorted list
 func SortInts(list []int) []int {
 	if len(list) == 0 {
 		return []int{}
@@ -13,6 +15,7 @@ func SortInts(list []int) []int {
 	return newList
 }
 
+// SortIntsPtr return new sorted list
 func SortIntsPtr(list []*int) []*int {
 	if len(list) == 0 {
 		return []*int{}
@@ -31,6 +34,7 @@ func SortIntsPtr(list []*int) []*int {
 	return newListPtr
 }
 
+// SortIntsDesc return new sorted list
 func SortIntsDesc(list []int) []int {
 	if len(list) == 0 {
 		return []int{}
@@ -43,6 +47,7 @@ func SortIntsDesc(list []int) []int {
 	return newList
 }
 
+// SortIntsDescPtr return new sorted list
 func SortIntsDescPtr(list []*int) []*int {
 	if len(list) == 0 {
 		return []*int{}

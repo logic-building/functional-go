@@ -1,6 +1,8 @@
 package fp
 
 import "sort"
+
+// SortFloats64 return new sorted list
 func SortFloats64(list []float64) []float64 {
 	if len(list) == 0 {
 		return []float64{}
@@ -13,6 +15,7 @@ func SortFloats64(list []float64) []float64 {
 	return newList
 }
 
+// SortFloats64Ptr return new sorted list
 func SortFloats64Ptr(list []*float64) []*float64 {
 	if len(list) == 0 {
 		return []*float64{}
@@ -31,6 +34,7 @@ func SortFloats64Ptr(list []*float64) []*float64 {
 	return newListPtr
 }
 
+// SortFloats64Desc return new sorted list
 func SortFloats64Desc(list []float64) []float64 {
 	if len(list) == 0 {
 		return []float64{}
@@ -43,6 +47,7 @@ func SortFloats64Desc(list []float64) []float64 {
 	return newList
 }
 
+// SortFloats64DescPtr return new sorted list
 func SortFloats64DescPtr(list []*float64) []*float64 {
 	if len(list) == 0 {
 		return []*float64{}

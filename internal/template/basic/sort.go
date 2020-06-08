@@ -10,6 +10,7 @@ func (a <TYPE>1) Len() int           { return len(a) }
 func (a <TYPE>1) Less(i, j int) bool { return a[i] < a[j] }
 func (a <TYPE>1) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
+// Sort<FTYPE>s return new sorted list
 func Sort<FTYPE>s(list []<TYPE>) []<TYPE> {
 	if len(list) == 0 {
 		return []<TYPE>{}
@@ -22,6 +23,7 @@ func Sort<FTYPE>s(list []<TYPE>) []<TYPE> {
 	return newList
 }
 
+// Sort<FTYPE>sPtr return new sorted list
 func Sort<FTYPE>sPtr(list []*<TYPE>) []*<TYPE> {
 	if len(list) == 0 {
 		return []*<TYPE>{}
@@ -46,6 +48,7 @@ func (a <TYPE>2) Len() int           { return len(a) }
 func (a <TYPE>2) Less(i, j int) bool { return a[i] > a[j] }
 func (a <TYPE>2) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
+// Sort<FTYPE>sDesc return new sorted list
 func Sort<FTYPE>sDesc(list []<TYPE>) []<TYPE> {
 	if len(list) == 0 {
 		return []<TYPE>{}
@@ -58,6 +61,7 @@ func Sort<FTYPE>sDesc(list []<TYPE>) []<TYPE> {
 	return newList
 }
 
+// Sort<FTYPE>sDescPtr return new sorted list
 func Sort<FTYPE>sDescPtr(list []*<TYPE>) []*<TYPE> {
 	if len(list) == 0 {
 		return []*<TYPE>{}
@@ -78,7 +82,9 @@ func Sort<FTYPE>sDescPtr(list []*<TYPE>) []*<TYPE> {
 }
 
 func SortInts() string {
-	return `func SortInts(list []int) []int {
+	return `
+// SortInts return new sorted list
+func SortInts(list []int) []int {
 	if len(list) == 0 {
 		return []int{}
 	}
@@ -90,6 +96,7 @@ func SortInts() string {
 	return newList
 }
 
+// SortIntsPtr return new sorted list
 func SortIntsPtr(list []*int) []*int {
 	if len(list) == 0 {
 		return []*int{}
@@ -108,6 +115,7 @@ func SortIntsPtr(list []*int) []*int {
 	return newListPtr
 }
 
+// SortIntsDesc return new sorted list
 func SortIntsDesc(list []int) []int {
 	if len(list) == 0 {
 		return []int{}
@@ -120,6 +128,7 @@ func SortIntsDesc(list []int) []int {
 	return newList
 }
 
+// SortIntsDescPtr return new sorted list
 func SortIntsDescPtr(list []*int) []*int {
 	if len(list) == 0 {
 		return []*int{}
@@ -141,7 +150,9 @@ func SortIntsDescPtr(list []*int) []*int {
 }
 
 func SortFloats64() string {
-	return `func SortFloats64(list []float64) []float64 {
+	return `
+// SortFloats64 return new sorted list
+func SortFloats64(list []float64) []float64 {
 	if len(list) == 0 {
 		return []float64{}
 	}
@@ -153,6 +164,7 @@ func SortFloats64() string {
 	return newList
 }
 
+// SortFloats64Ptr return new sorted list
 func SortFloats64Ptr(list []*float64) []*float64 {
 	if len(list) == 0 {
 		return []*float64{}
@@ -171,6 +183,7 @@ func SortFloats64Ptr(list []*float64) []*float64 {
 	return newListPtr
 }
 
+// SortFloats64Desc return new sorted list
 func SortFloats64Desc(list []float64) []float64 {
 	if len(list) == 0 {
 		return []float64{}
@@ -183,6 +196,7 @@ func SortFloats64Desc(list []float64) []float64 {
 	return newList
 }
 
+// SortFloats64DescPtr return new sorted list
 func SortFloats64DescPtr(list []*float64) []*float64 {
 	if len(list) == 0 {
 		return []*float64{}
@@ -205,6 +219,7 @@ func SortFloats64DescPtr(list []*float64) []*float64 {
 
 func SortStrs() string {
 	return `
+// SortStrs return new sorted list
 func SortStrs(list []string) []string {
 	if len(list) == 0 {
 		return []string{}
@@ -217,6 +232,7 @@ func SortStrs(list []string) []string {
 	return newList
 }
 
+// SortStrsPtr return new sorted list
 func SortStrsPtr(list []*string) []*string {
 	if len(list) == 0 {
 		return []*string{}
@@ -235,6 +251,7 @@ func SortStrsPtr(list []*string) []*string {
 	return newListPtr
 }
 
+// SortStrsDesc return new sorted list
 func SortStrsDesc(list []string) []string {
 	if len(list) == 0 {
 		return []string{}
@@ -247,6 +264,7 @@ func SortStrsDesc(list []string) []string {
 	return newList
 }
 
+// SortStrsDescPtr return new sorted list
 func SortStrsDescPtr(list []*string) []*string {
 	if len(list) == 0 {
 		return []*string{}

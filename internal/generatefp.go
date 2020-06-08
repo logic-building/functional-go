@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/logic-building/functional-go/internal/template/basic"
 	"log"
 	"os"
 	"strings"
+
+	"github.com/logic-building/functional-go/internal/template/basic"
 )
 
 type fpCode struct {
@@ -48,6 +49,17 @@ var fpCodeList = []fpCode{
 		testTemplate:          basic.DropLastTest(),
 		testTemplateBool:      basic.DropLastBoolTest(),
 		generatedTestFileName: "droplast_test.go",
+	},
+
+	fpCode{
+		function:          "Union",
+		codeTemplate:      basic.Union(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "union.go",
+
+		testTemplate:          basic.UnionTest(),
+		testTemplateBool:      basic.UnionBoolTest(),
+		generatedTestFileName: "union_test.go",
 	},
 
 	fpCode{

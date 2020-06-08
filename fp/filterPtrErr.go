@@ -1,7 +1,7 @@
 package fp
 
 // FilterIntPtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type int and returns (bool, error)
+//  1. Function: takes 1 argument of type int and returns (bool, error)
 //  2. slice of type []*int
 //
 // Returns: 
@@ -24,7 +24,7 @@ func FilterIntPtrErr(f func(*int) (bool, error), list []*int) ([]*int, error) {
 }
 
 // FilterInt64PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type int64 and returns (bool, error)
+//  1. Function: takes 1 argument of type int64 and returns (bool, error)
 //  2. slice of type []*int64
 //
 // Returns: 
@@ -47,7 +47,7 @@ func FilterInt64PtrErr(f func(*int64) (bool, error), list []*int64) ([]*int64, e
 }
 
 // FilterInt32PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type int32 and returns (bool, error)
+//  1. Function: takes 1 argument of type int32 and returns (bool, error)
 //  2. slice of type []*int32
 //
 // Returns: 
@@ -70,7 +70,7 @@ func FilterInt32PtrErr(f func(*int32) (bool, error), list []*int32) ([]*int32, e
 }
 
 // FilterInt16PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type int16 and returns (bool, error)
+//  1. Function: takes 1 argument of type int16 and returns (bool, error)
 //  2. slice of type []*int16
 //
 // Returns: 
@@ -93,7 +93,7 @@ func FilterInt16PtrErr(f func(*int16) (bool, error), list []*int16) ([]*int16, e
 }
 
 // FilterInt8PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type int8 and returns (bool, error)
+//  1. Function: takes 1 argument of type int8 and returns (bool, error)
 //  2. slice of type []*int8
 //
 // Returns: 
@@ -116,7 +116,7 @@ func FilterInt8PtrErr(f func(*int8) (bool, error), list []*int8) ([]*int8, error
 }
 
 // FilterUintPtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type uint and returns (bool, error)
+//  1. Function: takes 1 argument of type uint and returns (bool, error)
 //  2. slice of type []*uint
 //
 // Returns: 
@@ -139,7 +139,7 @@ func FilterUintPtrErr(f func(*uint) (bool, error), list []*uint) ([]*uint, error
 }
 
 // FilterUint64PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type uint64 and returns (bool, error)
+//  1. Function: takes 1 argument of type uint64 and returns (bool, error)
 //  2. slice of type []*uint64
 //
 // Returns: 
@@ -162,7 +162,7 @@ func FilterUint64PtrErr(f func(*uint64) (bool, error), list []*uint64) ([]*uint6
 }
 
 // FilterUint32PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type uint32 and returns (bool, error)
+//  1. Function: takes 1 argument of type uint32 and returns (bool, error)
 //  2. slice of type []*uint32
 //
 // Returns: 
@@ -185,7 +185,7 @@ func FilterUint32PtrErr(f func(*uint32) (bool, error), list []*uint32) ([]*uint3
 }
 
 // FilterUint16PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type uint16 and returns (bool, error)
+//  1. Function: takes 1 argument of type uint16 and returns (bool, error)
 //  2. slice of type []*uint16
 //
 // Returns: 
@@ -208,7 +208,7 @@ func FilterUint16PtrErr(f func(*uint16) (bool, error), list []*uint16) ([]*uint1
 }
 
 // FilterUint8PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type uint8 and returns (bool, error)
+//  1. Function: takes 1 argument of type uint8 and returns (bool, error)
 //  2. slice of type []*uint8
 //
 // Returns: 
@@ -231,7 +231,7 @@ func FilterUint8PtrErr(f func(*uint8) (bool, error), list []*uint8) ([]*uint8, e
 }
 
 // FilterStrPtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type string and returns (bool, error)
+//  1. Function: takes 1 argument of type string and returns (bool, error)
 //  2. slice of type []*string
 //
 // Returns: 
@@ -254,7 +254,7 @@ func FilterStrPtrErr(f func(*string) (bool, error), list []*string) ([]*string, 
 }
 
 // FilterBoolPtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type bool and returns (bool, error)
+//  1. Function: takes 1 argument of type bool and returns (bool, error)
 //  2. slice of type []*bool
 //
 // Returns: 
@@ -277,7 +277,7 @@ func FilterBoolPtrErr(f func(*bool) (bool, error), list []*bool) ([]*bool, error
 }
 
 // FilterFloat32PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type float32 and returns (bool, error)
+//  1. Function: takes 1 argument of type float32 and returns (bool, error)
 //  2. slice of type []*float32
 //
 // Returns: 
@@ -300,7 +300,7 @@ func FilterFloat32PtrErr(f func(*float32) (bool, error), list []*float32) ([]*fl
 }
 
 // FilterFloat64PtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type float64 and returns (bool, error)
+//  1. Function: takes 1 argument of type float64 and returns (bool, error)
 //  2. slice of type []*float64
 //
 // Returns: 

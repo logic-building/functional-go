@@ -94,7 +94,7 @@ func FilterPtr(f func(*Employee) bool, list []*Employee) []*Employee {
 }
 
 // FilterPtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type Employee and returns (bool, error)
+//  1. Function: takes 1 argument of type Employee and returns (bool, error)
 //  2. slice of type []*Employee
 //
 // Returns: 
@@ -117,10 +117,10 @@ func FilterPtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Employe
 }
 
 // FilterErr takes two arguments
-//  1. Funtion: takes 1 argument of type Employee and returns (bool, error)
+//  1. Function: takes 1 argument of type Employee and returns (bool, error)
 //  2. slice of type []Employee
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterErr(f func(Employee) (bool, error), list []Employee) ([]Employee, error) {
 	if f == nil {
@@ -1128,7 +1128,7 @@ func FilterTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 }
 
 // FilterTeacherPtrErr takes two arguments
-//  1. Funtion: takes 1 argument of type Teacher and returns (bool, error)
+//  1. Function: takes 1 argument of type Teacher and returns (bool, error)
 //  2. slice of type []*Teacher
 //
 // Returns: 
@@ -1151,10 +1151,10 @@ func FilterTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]*Te
 }
 
 // FilterTeacherErr takes two arguments
-//  1. Funtion: takes 1 argument of type Teacher and returns (bool, error)
+//  1. Function: takes 1 argument of type Teacher and returns (bool, error)
 //  2. slice of type []Teacher
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterTeacherErr(f func(Teacher) (bool, error), list []Teacher) ([]Teacher, error) {
 	if f == nil {
