@@ -2,6 +2,7 @@ package fp
 
 import "sort"
 
+// SortStrs return new sorted list
 func SortStrs(list []string) []string {
 	if len(list) == 0 {
 		return []string{}
@@ -14,6 +15,7 @@ func SortStrs(list []string) []string {
 	return newList
 }
 
+// SortStrsPtr return new sorted list
 func SortStrsPtr(list []*string) []*string {
 	if len(list) == 0 {
 		return []*string{}
@@ -32,6 +34,7 @@ func SortStrsPtr(list []*string) []*string {
 	return newListPtr
 }
 
+// SortStrsDesc return new sorted list
 func SortStrsDesc(list []string) []string {
 	if len(list) == 0 {
 		return []string{}
@@ -44,6 +47,7 @@ func SortStrsDesc(list []string) []string {
 	return newList
 }
 
+// SortStrsDescPtr return new sorted list
 func SortStrsDescPtr(list []*string) []*string {
 	if len(list) == 0 {
 		return []*string{}
