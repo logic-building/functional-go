@@ -11,7 +11,7 @@ func UnionInt(arrList ...[]int) []int {
 
 	resultArr := make([]int, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -45,7 +45,7 @@ func UnionInt64(arrList ...[]int64) []int64 {
 
 	resultArr := make([]int64, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -79,7 +79,7 @@ func UnionInt32(arrList ...[]int32) []int32 {
 
 	resultArr := make([]int32, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -113,7 +113,7 @@ func UnionInt16(arrList ...[]int16) []int16 {
 
 	resultArr := make([]int16, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -147,7 +147,7 @@ func UnionInt8(arrList ...[]int8) []int8 {
 
 	resultArr := make([]int8, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -181,7 +181,7 @@ func UnionUint(arrList ...[]uint) []uint {
 
 	resultArr := make([]uint, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -215,7 +215,7 @@ func UnionUint64(arrList ...[]uint64) []uint64 {
 
 	resultArr := make([]uint64, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -249,7 +249,7 @@ func UnionUint32(arrList ...[]uint32) []uint32 {
 
 	resultArr := make([]uint32, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -283,7 +283,7 @@ func UnionUint16(arrList ...[]uint16) []uint16 {
 
 	resultArr := make([]uint16, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -317,7 +317,7 @@ func UnionUint8(arrList ...[]uint8) []uint8 {
 
 	resultArr := make([]uint8, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -351,7 +351,7 @@ func UnionStr(arrList ...[]string) []string {
 
 	resultArr := make([]string, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -385,7 +385,7 @@ func UnionBool(arrList ...[]bool) []bool {
 
 	resultArr := make([]bool, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -419,7 +419,7 @@ func UnionFloat32(arrList ...[]float32) []float32 {
 
 	resultArr := make([]float32, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}
@@ -453,7 +453,7 @@ func UnionFloat64(arrList ...[]float64) []float64 {
 
 	resultArr := make([]float64, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}

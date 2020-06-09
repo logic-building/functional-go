@@ -9,7 +9,7 @@ import (
 func TestTakeInt(t *testing.T) {
 	var v8 int = 8
 	var v2 int = 2
-	var v0 int = 0
+	var v0 int 
 
 	expected := []int{v8, v2, v8}
 	list := []int{v8, v2, v8, v0, v2, v0}
@@ -28,7 +28,7 @@ func TestTakeInt(t *testing.T) {
 func TestTakeIntPtr(t *testing.T) {
 	var v8 int = 8
 	var v2 int = 2
-	var v0 int = 0
+	var v0 int
 
 	expected := []*int{&v8, &v2, &v8}
 	list := []*int{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -46,7 +46,7 @@ func TestTakeIntPtr(t *testing.T) {
 func TestTakeInt64(t *testing.T) {
 	var v8 int64 = 8
 	var v2 int64 = 2
-	var v0 int64 = 0
+	var v0 int64 
 
 	expected := []int64{v8, v2, v8}
 	list := []int64{v8, v2, v8, v0, v2, v0}
@@ -65,7 +65,7 @@ func TestTakeInt64(t *testing.T) {
 func TestTakeInt64Ptr(t *testing.T) {
 	var v8 int64 = 8
 	var v2 int64 = 2
-	var v0 int64 = 0
+	var v0 int64
 
 	expected := []*int64{&v8, &v2, &v8}
 	list := []*int64{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -83,7 +83,7 @@ func TestTakeInt64Ptr(t *testing.T) {
 func TestTakeInt32(t *testing.T) {
 	var v8 int32 = 8
 	var v2 int32 = 2
-	var v0 int32 = 0
+	var v0 int32 
 
 	expected := []int32{v8, v2, v8}
 	list := []int32{v8, v2, v8, v0, v2, v0}
@@ -102,7 +102,7 @@ func TestTakeInt32(t *testing.T) {
 func TestTakeInt32Ptr(t *testing.T) {
 	var v8 int32 = 8
 	var v2 int32 = 2
-	var v0 int32 = 0
+	var v0 int32
 
 	expected := []*int32{&v8, &v2, &v8}
 	list := []*int32{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -120,7 +120,7 @@ func TestTakeInt32Ptr(t *testing.T) {
 func TestTakeInt16(t *testing.T) {
 	var v8 int16 = 8
 	var v2 int16 = 2
-	var v0 int16 = 0
+	var v0 int16 
 
 	expected := []int16{v8, v2, v8}
 	list := []int16{v8, v2, v8, v0, v2, v0}
@@ -139,7 +139,7 @@ func TestTakeInt16(t *testing.T) {
 func TestTakeInt16Ptr(t *testing.T) {
 	var v8 int16 = 8
 	var v2 int16 = 2
-	var v0 int16 = 0
+	var v0 int16
 
 	expected := []*int16{&v8, &v2, &v8}
 	list := []*int16{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -157,7 +157,7 @@ func TestTakeInt16Ptr(t *testing.T) {
 func TestTakeInt8(t *testing.T) {
 	var v8 int8 = 8
 	var v2 int8 = 2
-	var v0 int8 = 0
+	var v0 int8 
 
 	expected := []int8{v8, v2, v8}
 	list := []int8{v8, v2, v8, v0, v2, v0}
@@ -176,7 +176,7 @@ func TestTakeInt8(t *testing.T) {
 func TestTakeInt8Ptr(t *testing.T) {
 	var v8 int8 = 8
 	var v2 int8 = 2
-	var v0 int8 = 0
+	var v0 int8
 
 	expected := []*int8{&v8, &v2, &v8}
 	list := []*int8{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -194,7 +194,7 @@ func TestTakeInt8Ptr(t *testing.T) {
 func TestTakeUint(t *testing.T) {
 	var v8 uint = 8
 	var v2 uint = 2
-	var v0 uint = 0
+	var v0 uint 
 
 	expected := []uint{v8, v2, v8}
 	list := []uint{v8, v2, v8, v0, v2, v0}
@@ -213,7 +213,7 @@ func TestTakeUint(t *testing.T) {
 func TestTakeUintPtr(t *testing.T) {
 	var v8 uint = 8
 	var v2 uint = 2
-	var v0 uint = 0
+	var v0 uint
 
 	expected := []*uint{&v8, &v2, &v8}
 	list := []*uint{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -231,7 +231,7 @@ func TestTakeUintPtr(t *testing.T) {
 func TestTakeUint64(t *testing.T) {
 	var v8 uint64 = 8
 	var v2 uint64 = 2
-	var v0 uint64 = 0
+	var v0 uint64 
 
 	expected := []uint64{v8, v2, v8}
 	list := []uint64{v8, v2, v8, v0, v2, v0}
@@ -250,7 +250,7 @@ func TestTakeUint64(t *testing.T) {
 func TestTakeUint64Ptr(t *testing.T) {
 	var v8 uint64 = 8
 	var v2 uint64 = 2
-	var v0 uint64 = 0
+	var v0 uint64
 
 	expected := []*uint64{&v8, &v2, &v8}
 	list := []*uint64{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -268,7 +268,7 @@ func TestTakeUint64Ptr(t *testing.T) {
 func TestTakeUint32(t *testing.T) {
 	var v8 uint32 = 8
 	var v2 uint32 = 2
-	var v0 uint32 = 0
+	var v0 uint32 
 
 	expected := []uint32{v8, v2, v8}
 	list := []uint32{v8, v2, v8, v0, v2, v0}
@@ -287,7 +287,7 @@ func TestTakeUint32(t *testing.T) {
 func TestTakeUint32Ptr(t *testing.T) {
 	var v8 uint32 = 8
 	var v2 uint32 = 2
-	var v0 uint32 = 0
+	var v0 uint32
 
 	expected := []*uint32{&v8, &v2, &v8}
 	list := []*uint32{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -305,7 +305,7 @@ func TestTakeUint32Ptr(t *testing.T) {
 func TestTakeUint16(t *testing.T) {
 	var v8 uint16 = 8
 	var v2 uint16 = 2
-	var v0 uint16 = 0
+	var v0 uint16 
 
 	expected := []uint16{v8, v2, v8}
 	list := []uint16{v8, v2, v8, v0, v2, v0}
@@ -324,7 +324,7 @@ func TestTakeUint16(t *testing.T) {
 func TestTakeUint16Ptr(t *testing.T) {
 	var v8 uint16 = 8
 	var v2 uint16 = 2
-	var v0 uint16 = 0
+	var v0 uint16
 
 	expected := []*uint16{&v8, &v2, &v8}
 	list := []*uint16{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -342,7 +342,7 @@ func TestTakeUint16Ptr(t *testing.T) {
 func TestTakeUint8(t *testing.T) {
 	var v8 uint8 = 8
 	var v2 uint8 = 2
-	var v0 uint8 = 0
+	var v0 uint8 
 
 	expected := []uint8{v8, v2, v8}
 	list := []uint8{v8, v2, v8, v0, v2, v0}
@@ -361,7 +361,7 @@ func TestTakeUint8(t *testing.T) {
 func TestTakeUint8Ptr(t *testing.T) {
 	var v8 uint8 = 8
 	var v2 uint8 = 2
-	var v0 uint8 = 0
+	var v0 uint8
 
 	expected := []*uint8{&v8, &v2, &v8}
 	list := []*uint8{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -379,7 +379,7 @@ func TestTakeUint8Ptr(t *testing.T) {
 func TestTakeStr(t *testing.T) {
 	var v8 string = "8"
 	var v2 string = "2"
-	var v0 string = "0"
+	var v0 string 
 
 	expected := []string{v8, v2, v8}
 	list := []string{v8, v2, v8, v0, v2, v0}
@@ -398,7 +398,7 @@ func TestTakeStr(t *testing.T) {
 func TestTakeStrPtr(t *testing.T) {
 	var v8 string = "8"
 	var v2 string = "2"
-	var v0 string = "0"
+	var v0 string
 
 	expected := []*string{&v8, &v2, &v8}
 	list := []*string{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -451,7 +451,7 @@ func TestTakeBoolPtr(t *testing.T) {
 func TestTakeFloat32(t *testing.T) {
 	var v8 float32 = 8
 	var v2 float32 = 2
-	var v0 float32 = 0
+	var v0 float32 
 
 	expected := []float32{v8, v2, v8}
 	list := []float32{v8, v2, v8, v0, v2, v0}
@@ -470,7 +470,7 @@ func TestTakeFloat32(t *testing.T) {
 func TestTakeFloat32Ptr(t *testing.T) {
 	var v8 float32 = 8
 	var v2 float32 = 2
-	var v0 float32 = 0
+	var v0 float32
 
 	expected := []*float32{&v8, &v2, &v8}
 	list := []*float32{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -488,7 +488,7 @@ func TestTakeFloat32Ptr(t *testing.T) {
 func TestTakeFloat64(t *testing.T) {
 	var v8 float64 = 8
 	var v2 float64 = 2
-	var v0 float64 = 0
+	var v0 float64 
 
 	expected := []float64{v8, v2, v8}
 	list := []float64{v8, v2, v8, v0, v2, v0}
@@ -507,7 +507,7 @@ func TestTakeFloat64(t *testing.T) {
 func TestTakeFloat64Ptr(t *testing.T) {
 	var v8 float64 = 8
 	var v2 float64 = 2
-	var v0 float64 = 0
+	var v0 float64
 
 	expected := []*float64{&v8, &v2, &v8}
 	list := []*float64{&v8, &v2, &v8, &v0, &v2, &v0}

@@ -14,7 +14,7 @@ func Union<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 
 	resultArr := make([]<TYPE>, len(resultMap))
 	i := 0
-	for k, _ := range resultMap {
+	for k := range resultMap {
 		resultArr[i] = k
 		i++
 	}

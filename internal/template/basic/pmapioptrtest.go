@@ -293,7 +293,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 <OUTPUT_TYPE> = "10"
 	var vi10 <INPUT_TYPE> = 10
-	var vi0 <INPUT_TYPE> = 0
+	var vi0 <INPUT_TYPE>
 
 	expectedList := []*<OUTPUT_TYPE>{&vo10}
 	newList, _ := PMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi10})
@@ -329,7 +329,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	var vf <OUTPUT_TYPE> = false
 
 	var v10 <INPUT_TYPE> = 10
-	var v0 <INPUT_TYPE> = 0
+	var v0 <INPUT_TYPE> 
 	var v3 <INPUT_TYPE> = 3
 
 	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}

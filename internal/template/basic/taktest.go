@@ -1,12 +1,12 @@
 package basic
 
-// Take template.
+// TakeTest template.
 func TakeTest() string {
 	return `
 func TestTake<FTYPE>(t *testing.T) {
 	var v8 <TYPE> = 8
 	var v2 <TYPE> = 2
-	var v0 <TYPE> = 0
+	var v0 <TYPE> 
 
 	expected := []<TYPE>{v8, v2, v8}
 	list := []<TYPE>{v8, v2, v8, v0, v2, v0}
@@ -25,7 +25,7 @@ func TestTake<FTYPE>(t *testing.T) {
 func TestTake<FTYPE>Ptr(t *testing.T) {
 	var v8 <TYPE> = 8
 	var v2 <TYPE> = 2
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	expected := []*<TYPE>{&v8, &v2, &v8}
 	list := []*<TYPE>{&v8, &v2, &v8, &v0, &v2, &v0}
@@ -42,7 +42,7 @@ func TestTake<FTYPE>Ptr(t *testing.T) {
 }`
 }
 
-// TakeBoolPtr removes duplicates.
+// TakeBoolTest removes duplicates.
 func TakeBoolTest() string {
 	return `
 func TestTake<FTYPE>(t *testing.T) {

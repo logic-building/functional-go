@@ -1,6 +1,6 @@
 package basic
 
-// PMapIO is template to generate itself for different combination of data type.
+// PMapIOPtr is template to generate itself for different combination of data type.
 func PMapIOPtr() string {
 	return `
 // PMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr applies the function(1st argument) on each item of the list and returns new list.

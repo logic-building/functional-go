@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MapPtrTest applies the function(1st argument) on each item of the list and returns new list
 func MapPtrTest() string {
 	return `
 func TestMap<FTYPE>Ptr(t *testing.T) {
@@ -39,7 +39,7 @@ func add<FTYPE>Ptr(num1, num2 *<TYPE>) *<TYPE> {
 `
 }
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MapPtrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func MapPtrBoolTest() string {
 	return `
 func TestMap<FTYPE>Ptr(t *testing.T) {
@@ -70,7 +70,7 @@ func inverse<FTYPE>Ptr(num1 *<TYPE>) *<TYPE> {
 `
 }
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MapPtrErrTest applies the function(1st argument) on each item of the list and returns new list
 func MapPtrErrTest() string {
 	return `
 func TestMap<FTYPE>PtrErr(t *testing.T) {
@@ -130,7 +130,7 @@ func add<FTYPE>PtrErr(num1, num2 *<TYPE>) (*<TYPE>, error) {
 `
 }
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MapPtrErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func MapPtrErrBoolTest() string {
 	return `
 func TestMap<FTYPE>PtrErr(t *testing.T) {

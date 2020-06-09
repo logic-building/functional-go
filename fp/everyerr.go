@@ -1,7 +1,6 @@
 package fp
 
 // EveryIntErr returns true if supplied function returns logical true for every item in the list
-
 func EveryIntErr(f func(int) (bool, error), list []int) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -19,7 +18,6 @@ func EveryIntErr(f func(int) (bool, error), list []int) (bool, error) {
 }
 
 // EveryInt64Err returns true if supplied function returns logical true for every item in the list
-
 func EveryInt64Err(f func(int64) (bool, error), list []int64) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -37,7 +35,6 @@ func EveryInt64Err(f func(int64) (bool, error), list []int64) (bool, error) {
 }
 
 // EveryInt32Err returns true if supplied function returns logical true for every item in the list
-
 func EveryInt32Err(f func(int32) (bool, error), list []int32) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -55,7 +52,6 @@ func EveryInt32Err(f func(int32) (bool, error), list []int32) (bool, error) {
 }
 
 // EveryInt16Err returns true if supplied function returns logical true for every item in the list
-
 func EveryInt16Err(f func(int16) (bool, error), list []int16) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -73,7 +69,6 @@ func EveryInt16Err(f func(int16) (bool, error), list []int16) (bool, error) {
 }
 
 // EveryInt8Err returns true if supplied function returns logical true for every item in the list
-
 func EveryInt8Err(f func(int8) (bool, error), list []int8) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -91,7 +86,6 @@ func EveryInt8Err(f func(int8) (bool, error), list []int8) (bool, error) {
 }
 
 // EveryUintErr returns true if supplied function returns logical true for every item in the list
-
 func EveryUintErr(f func(uint) (bool, error), list []uint) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -109,7 +103,6 @@ func EveryUintErr(f func(uint) (bool, error), list []uint) (bool, error) {
 }
 
 // EveryUint64Err returns true if supplied function returns logical true for every item in the list
-
 func EveryUint64Err(f func(uint64) (bool, error), list []uint64) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -127,7 +120,6 @@ func EveryUint64Err(f func(uint64) (bool, error), list []uint64) (bool, error) {
 }
 
 // EveryUint32Err returns true if supplied function returns logical true for every item in the list
-
 func EveryUint32Err(f func(uint32) (bool, error), list []uint32) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -145,7 +137,6 @@ func EveryUint32Err(f func(uint32) (bool, error), list []uint32) (bool, error) {
 }
 
 // EveryUint16Err returns true if supplied function returns logical true for every item in the list
-
 func EveryUint16Err(f func(uint16) (bool, error), list []uint16) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -163,7 +154,6 @@ func EveryUint16Err(f func(uint16) (bool, error), list []uint16) (bool, error) {
 }
 
 // EveryUint8Err returns true if supplied function returns logical true for every item in the list
-
 func EveryUint8Err(f func(uint8) (bool, error), list []uint8) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -181,7 +171,6 @@ func EveryUint8Err(f func(uint8) (bool, error), list []uint8) (bool, error) {
 }
 
 // EveryStrErr returns true if supplied function returns logical true for every item in the list
-
 func EveryStrErr(f func(string) (bool, error), list []string) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -199,7 +188,6 @@ func EveryStrErr(f func(string) (bool, error), list []string) (bool, error) {
 }
 
 // EveryBoolErr returns true if supplied function returns logical true for every item in the list
-
 func EveryBoolErr(f func(bool) (bool, error), list []bool) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -217,7 +205,6 @@ func EveryBoolErr(f func(bool) (bool, error), list []bool) (bool, error) {
 }
 
 // EveryFloat32Err returns true if supplied function returns logical true for every item in the list
-
 func EveryFloat32Err(f func(float32) (bool, error), list []float32) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -235,7 +222,6 @@ func EveryFloat32Err(f func(float32) (bool, error), list []float32) (bool, error
 }
 
 // EveryFloat64Err returns true if supplied function returns logical true for every item in the list
-
 func EveryFloat64Err(f func(float64) (bool, error), list []float64) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil

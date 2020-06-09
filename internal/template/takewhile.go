@@ -19,7 +19,7 @@ func TakeWhile<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
 `
 }
 
-// TakeWhile is template to generate function(TakeWhile) for user defined data type
+// TakeWhilePtr is template to generate function(TakeWhile) for user defined data type
 func TakeWhilePtr() string {
 	return `
 func TakeWhile<CONDITIONAL_TYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) []*<TYPE> {
