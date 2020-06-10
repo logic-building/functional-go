@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// MapIONumber is template to generate itself for different combination of data type.
+// MapIONumberPtrTest is template to generate itself for different combination of data type.
 func MapIONumberPtrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -35,7 +35,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// MapIOStrNumberPtr is template to generate itself for different combination of data type.
+// MapIOStrNumberPtrTest is template to generate itself for different combination of data type.
 func MapIOStrNumberPtrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -71,7 +71,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *<INPUT_TYPE>) *<OUTPUT_TYPE> {
 `
 }
 
-// MapIONumberStr is template to generate itself for different combination of data type.
+// MapIONumberStrPtrTest is template to generate itself for different combination of data type.
 func MapIONumberStrPtrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -106,7 +106,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *<INPUT_TYPE>) *string {
 `
 }
 
-// MapIONumberBool is template to generate itself for different combination of data type.
+// MapIONumberBoolPtrTest is template to generate itself for different combination of data type.
 func MapIONumberBoolPtrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -115,7 +115,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	var vf <OUTPUT_TYPE> = false
 
 	var v10 <INPUT_TYPE> = 10
-	var v0 <INPUT_TYPE> = 0
+	var v0 <INPUT_TYPE>
 	
 	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr, []*<INPUT_TYPE>{&v10, &v0})
@@ -136,7 +136,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// MapIOStrBool is template to generate itself for different combination of data type.
+// MapIOStrBoolPtrTestPtr is template to generate itself for different combination of data type.
 func MapIOStrBoolPtrTestPtr() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -166,7 +166,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// MapIOBoolNumber is template to generate itself for different combination of data type.
+// MapIOBoolNumberPtrTest is template to generate itself for different combination of data type.
 func MapIOBoolNumberPtrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -174,7 +174,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	var vf <INPUT_TYPE> = false
 
 	var v10 <OUTPUT_TYPE> = 10
-	var v0 <OUTPUT_TYPE> = 0
+	var v0 <OUTPUT_TYPE> 
 	// Test : someLogic
 	expectedList := []*<OUTPUT_TYPE>{&v10, &v0}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr, []*<INPUT_TYPE>{&vt, &vf})
@@ -195,7 +195,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// MapIOBoolStr is template to generate itself for different combination of data type.
+// MapIOBoolStrPtrTest is template to generate itself for different combination of data type.
 func MapIOBoolStrPtrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -225,7 +225,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// MapIONumberPtrErr is template to generate itself for different combination of data type.
+// MapIONumberPtrErrTest is template to generate itself for different combination of data type.
 func MapIONumberPtrErrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -264,7 +264,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 `
 }
 
-// MapIOStrNumberPtrErr is template to generate itself for different combination of data type.
+// MapIOStrNumberPtrErrTest is template to generate itself for different combination of data type.
 func MapIOStrNumberPtrErrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -310,14 +310,14 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *<INPUT_TYPE>) (*<OUTPUT_TYP
 `
 }
 
-// MapIONumberStrPtrErr is template to generate itself for different combination of data type.
+// MapIONumberStrPtrErrTest is template to generate itself for different combination of data type.
 func MapIONumberStrPtrErrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 <OUTPUT_TYPE> = "10"
 	var vi10 <INPUT_TYPE> = 10
-	var vi0 <INPUT_TYPE> = 0
+	var vi0 <INPUT_TYPE> 
 
 	expectedList := []*<OUTPUT_TYPE>{&vo10}
 	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi10})
@@ -355,7 +355,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *<INPUT_TYPE>) (*string, err
 `
 }
 
-// MapIONumberBool is template to generate itself for different combination of data type.
+// MapIONumberBoolPtrErrTest is template to generate itself for different combination of data type.
 func MapIONumberBoolPtrErrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -364,7 +364,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	var vf <OUTPUT_TYPE> = false
 
 	var v10 <INPUT_TYPE> = 10
-	var v0 <INPUT_TYPE> = 0
+	var v0 <INPUT_TYPE> 
 	var v3 <INPUT_TYPE> = 3
 	
 	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}
@@ -392,7 +392,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 `
 }
 
-// MapIOStrBool is template to generate itself for different combination of data type.
+// MapIOStrBoolPtrErrTest is template to generate itself for different combination of data type.
 func MapIOStrBoolPtrErrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -429,7 +429,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 `
 }
 
-// MapIOBoolNumberPtrErr is template to generate itself for different combination of data type.
+// MapIOBoolNumberPtrErrTest is template to generate itself for different combination of data type.
 func MapIOBoolNumberPtrErrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -437,7 +437,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	var vf <INPUT_TYPE> = false
 
 	var v10 <OUTPUT_TYPE> = 10
-	var v0 <OUTPUT_TYPE> = 0
+	var v0 <OUTPUT_TYPE> 
 	// Test : someLogic
 	expectedList := []*<OUTPUT_TYPE>{&v10, &v0}
 	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vt, &vt})
@@ -464,7 +464,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 `
 }
 
-// MapIOBoolStr is template to generate itself for different combination of data type.
+// MapIOBoolStrPtrErrTest is template to generate itself for different combination of data type.
 func MapIOBoolStrPtrErrTest() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {

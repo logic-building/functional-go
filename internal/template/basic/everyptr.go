@@ -18,11 +18,10 @@ func Every<FTYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) bool {
 `
 }
 
-// EveryPtrErr.
+// EveryPtrErr
 func EveryPtrErr() string {
 	return `
 // Every<FTYPE>PtrErr returns true if supplied function returns logical true for every item in the list
-
 func Every<FTYPE>PtrErr(f func(*<TYPE>) (bool, error), list []*<TYPE>) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -41,11 +40,10 @@ func Every<FTYPE>PtrErr(f func(*<TYPE>) (bool, error), list []*<TYPE>) (bool, er
 `
 }
 
-// EveryErr.
+// EveryErr
 func EveryErr() string {
 	return `
 // Every<FTYPE>Err returns true if supplied function returns logical true for every item in the list
-
 func Every<FTYPE>Err(f func(<TYPE>) (bool, error), list []<TYPE>) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil

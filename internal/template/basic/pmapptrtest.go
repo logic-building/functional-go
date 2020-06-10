@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// PMap<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// PMapPtrTest applies the function(1st argument) on each item of the list and returns new list
 func PMapPtrTest() string {
 	return `
 func TestPmap<FTYPE>Ptr(t *testing.T) {
@@ -52,7 +52,7 @@ func square<FTYPE>Ptr(num *<TYPE>) *<TYPE> {
 `
 }
 
-// PMap<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// PMapPtrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func PMapPtrBoolTest() string {
 	return `
 func TestPMap<FTYPE>Ptr(t *testing.T) {
@@ -75,7 +75,8 @@ func TestPMap<FTYPE>Ptr(t *testing.T) {
 }
 
 // ************PMapPtrErr*************************
-// PMap<FTYPE>PtrErr applies the function(1st argument) on each item of the list and returns new list
+
+// PMapPtrErrTest applies the function(1st argument) on each item of the list and returns new list
 func PMapPtrErrTest() string {
 	return `
 func TestPmap<FTYPE>PtrErr(t *testing.T) {
@@ -88,7 +89,7 @@ func TestPmap<FTYPE>PtrErr(t *testing.T) {
 	var v7 <TYPE> = 7
 	var v8 <TYPE> = 8
 	var v9 <TYPE> = 9
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	expectedSquareList := []*<TYPE>{&v1, &v4, &v9}
 	squareList, _ := PMap<FTYPE>PtrErr(square<FTYPE>PtrErr, []*<TYPE>{&v1, &v2, &v3})
@@ -137,7 +138,7 @@ func square<FTYPE>PtrErr(num *<TYPE>) (*<TYPE>, error) {
 `
 }
 
-// PMap<FTYPE>PtrErr applies the function(1st argument) on each item of the list and returns new list
+// PMapPtrErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func PMapPtrErrBoolTest() string {
 	return `
 func TestPMap<FTYPE>PtrErr(t *testing.T) {
@@ -192,7 +193,7 @@ func TestPmapIntPtrErr(t *testing.T) {`
 	var v7 string = "7"
 	var v8 string = "8"
 	var v9 string = "9"
-	var v0 string = "0"
+	var v0 string
 
 	expectedSquareList := []*string{&v1, &v4, &v9}
 	squareList, _ := PMapStrPtrErr(squareStrPtrErr, []*string{&v1, &v2, &v3})
@@ -313,7 +314,7 @@ func TestPmap<FTYPE>Err(t *testing.T) {
 	var v7 <TYPE> = 7
 	var v8 <TYPE> = 8
 	var v9 <TYPE> = 9
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	expectedSquareList := []<TYPE>{v1, v4, v9}
 	squareList, _ := PMap<FTYPE>Err(square<FTYPE>Err, []<TYPE>{v1, v2, v3})
@@ -417,7 +418,7 @@ func TestPmapIntErr(t *testing.T) {`
 	var v7 string = "7"
 	var v8 string = "8"
 	var v9 string = "9"
-	var v0 string = "0"
+	var v0 string
 
 	expectedSquareList := []string{v1, v4, v9}
 	squareList, _ := PMapStrErr(squareStrErr, []string{v1, v2, v3})

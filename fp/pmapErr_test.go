@@ -15,7 +15,7 @@ func TestPmapIntErr(t *testing.T) {
 	var v7 int = 7
 	var v8 int = 8
 	var v9 int = 9
-	var v0 int = 0
+	var v0 int
 
 	expectedSquareList := []int{v1, v4, v9}
 	squareList, _ := PMapIntErr(squareIntErr, []int{v1, v2, v3})
@@ -72,7 +72,7 @@ func TestPmapInt64Err(t *testing.T) {
 	var v7 int64 = 7
 	var v8 int64 = 8
 	var v9 int64 = 9
-	var v0 int64 = 0
+	var v0 int64
 
 	expectedSquareList := []int64{v1, v4, v9}
 	squareList, _ := PMapInt64Err(squareInt64Err, []int64{v1, v2, v3})
@@ -129,7 +129,7 @@ func TestPmapInt32Err(t *testing.T) {
 	var v7 int32 = 7
 	var v8 int32 = 8
 	var v9 int32 = 9
-	var v0 int32 = 0
+	var v0 int32
 
 	expectedSquareList := []int32{v1, v4, v9}
 	squareList, _ := PMapInt32Err(squareInt32Err, []int32{v1, v2, v3})
@@ -186,7 +186,7 @@ func TestPmapInt16Err(t *testing.T) {
 	var v7 int16 = 7
 	var v8 int16 = 8
 	var v9 int16 = 9
-	var v0 int16 = 0
+	var v0 int16
 
 	expectedSquareList := []int16{v1, v4, v9}
 	squareList, _ := PMapInt16Err(squareInt16Err, []int16{v1, v2, v3})
@@ -243,7 +243,7 @@ func TestPmapInt8Err(t *testing.T) {
 	var v7 int8 = 7
 	var v8 int8 = 8
 	var v9 int8 = 9
-	var v0 int8 = 0
+	var v0 int8
 
 	expectedSquareList := []int8{v1, v4, v9}
 	squareList, _ := PMapInt8Err(squareInt8Err, []int8{v1, v2, v3})
@@ -300,7 +300,7 @@ func TestPmapUintErr(t *testing.T) {
 	var v7 uint = 7
 	var v8 uint = 8
 	var v9 uint = 9
-	var v0 uint = 0
+	var v0 uint
 
 	expectedSquareList := []uint{v1, v4, v9}
 	squareList, _ := PMapUintErr(squareUintErr, []uint{v1, v2, v3})
@@ -357,7 +357,7 @@ func TestPmapUint64Err(t *testing.T) {
 	var v7 uint64 = 7
 	var v8 uint64 = 8
 	var v9 uint64 = 9
-	var v0 uint64 = 0
+	var v0 uint64
 
 	expectedSquareList := []uint64{v1, v4, v9}
 	squareList, _ := PMapUint64Err(squareUint64Err, []uint64{v1, v2, v3})
@@ -414,7 +414,7 @@ func TestPmapUint32Err(t *testing.T) {
 	var v7 uint32 = 7
 	var v8 uint32 = 8
 	var v9 uint32 = 9
-	var v0 uint32 = 0
+	var v0 uint32
 
 	expectedSquareList := []uint32{v1, v4, v9}
 	squareList, _ := PMapUint32Err(squareUint32Err, []uint32{v1, v2, v3})
@@ -471,7 +471,7 @@ func TestPmapUint16Err(t *testing.T) {
 	var v7 uint16 = 7
 	var v8 uint16 = 8
 	var v9 uint16 = 9
-	var v0 uint16 = 0
+	var v0 uint16
 
 	expectedSquareList := []uint16{v1, v4, v9}
 	squareList, _ := PMapUint16Err(squareUint16Err, []uint16{v1, v2, v3})
@@ -528,7 +528,7 @@ func TestPmapUint8Err(t *testing.T) {
 	var v7 uint8 = 7
 	var v8 uint8 = 8
 	var v9 uint8 = 9
-	var v0 uint8 = 0
+	var v0 uint8
 
 	expectedSquareList := []uint8{v1, v4, v9}
 	squareList, _ := PMapUint8Err(squareUint8Err, []uint8{v1, v2, v3})
@@ -668,7 +668,7 @@ func TestPmapFloat32Err(t *testing.T) {
 	var v7 float32 = 7
 	var v8 float32 = 8
 	var v9 float32 = 9
-	var v0 float32 = 0
+	var v0 float32
 
 	expectedSquareList := []float32{v1, v4, v9}
 	squareList, _ := PMapFloat32Err(squareFloat32Err, []float32{v1, v2, v3})
@@ -725,7 +725,7 @@ func TestPmapFloat64Err(t *testing.T) {
 	var v7 float64 = 7
 	var v8 float64 = 8
 	var v9 float64 = 9
-	var v0 float64 = 0
+	var v0 float64
 
 	expectedSquareList := []float64{v1, v4, v9}
 	squareList, _ := PMapFloat64Err(squareFloat64Err, []float64{v1, v2, v3})

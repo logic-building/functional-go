@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// Drop returns a new list after dropping the given item
+// DropWhilePtrTest returns a new list after dropping the given item
 func DropWhilePtrTest() string {
 	return `
 func TestDropWhile<FTYPE>Ptr(t *testing.T) {
@@ -37,7 +37,7 @@ func TestDropWhile<FTYPE>Ptr(t *testing.T) {
 `
 }
 
-// DistinctBoolPtr removes duplicates.
+// DropWhilePtrBoolTest removes duplicates.
 func DropWhilePtrBoolTest() string {
 	return `
 func TestDropWhile<FTYPE>Ptr(t *testing.T) {
@@ -55,7 +55,8 @@ func TestDropWhile<FTYPE>Ptr(t *testing.T) {
 }
 
 //**********DropWhilePtrErrTest************************
-// Drop returns a new list after dropping the given item
+
+// DropWhilePtrErrTest returns a new list after dropping the given item
 func DropWhilePtrErrTest() string {
 	return `
 func TestDropWhile<FTYPE>PtrErr(t *testing.T) {
@@ -162,7 +163,8 @@ func TestDropWhileIntPtrErr(t *testing.T) {`
 }
 
 //**********DropWhileErrTest************************
-// Drop returns a new list after dropping the given item
+
+// DropWhileErrTest returns a new list after dropping the given item
 func DropWhileErrTest() string {
 	return `
 func TestDropWhile<FTYPE>Err(t *testing.T) {

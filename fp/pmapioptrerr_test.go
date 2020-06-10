@@ -298,7 +298,7 @@ func TestPmapIntStrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int = 10
-	var vi0 int = 0
+	var vi0 int
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapIntStrPtrErr(someLogicIntStrPtrErr, []*int{&vi10})
@@ -329,7 +329,7 @@ func TestPmapIntBoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int = 10
-	var v0 int = 0
+	var v0 int 
 	var v3 int = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -712,7 +712,7 @@ func TestPmapInt64StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int64 = 10
-	var vi0 int64 = 0
+	var vi0 int64
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapInt64StrPtrErr(someLogicInt64StrPtrErr, []*int64{&vi10})
@@ -743,7 +743,7 @@ func TestPmapInt64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int64 = 10
-	var v0 int64 = 0
+	var v0 int64 
 	var v3 int64 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -1126,7 +1126,7 @@ func TestPmapInt32StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int32 = 10
-	var vi0 int32 = 0
+	var vi0 int32
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapInt32StrPtrErr(someLogicInt32StrPtrErr, []*int32{&vi10})
@@ -1157,7 +1157,7 @@ func TestPmapInt32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int32 = 10
-	var v0 int32 = 0
+	var v0 int32 
 	var v3 int32 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -1540,7 +1540,7 @@ func TestPmapInt16StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int16 = 10
-	var vi0 int16 = 0
+	var vi0 int16
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapInt16StrPtrErr(someLogicInt16StrPtrErr, []*int16{&vi10})
@@ -1571,7 +1571,7 @@ func TestPmapInt16BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int16 = 10
-	var v0 int16 = 0
+	var v0 int16 
 	var v3 int16 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -1954,7 +1954,7 @@ func TestPmapInt8StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int8 = 10
-	var vi0 int8 = 0
+	var vi0 int8
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapInt8StrPtrErr(someLogicInt8StrPtrErr, []*int8{&vi10})
@@ -1985,7 +1985,7 @@ func TestPmapInt8BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int8 = 10
-	var v0 int8 = 0
+	var v0 int8 
 	var v3 int8 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -2368,7 +2368,7 @@ func TestPmapUintStrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint = 10
-	var vi0 uint = 0
+	var vi0 uint
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapUintStrPtrErr(someLogicUintStrPtrErr, []*uint{&vi10})
@@ -2399,7 +2399,7 @@ func TestPmapUintBoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint = 10
-	var v0 uint = 0
+	var v0 uint 
 	var v3 uint = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -2782,7 +2782,7 @@ func TestPmapUint64StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint64 = 10
-	var vi0 uint64 = 0
+	var vi0 uint64
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapUint64StrPtrErr(someLogicUint64StrPtrErr, []*uint64{&vi10})
@@ -2813,7 +2813,7 @@ func TestPmapUint64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint64 = 10
-	var v0 uint64 = 0
+	var v0 uint64 
 	var v3 uint64 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -3196,7 +3196,7 @@ func TestPmapUint32StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint32 = 10
-	var vi0 uint32 = 0
+	var vi0 uint32
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapUint32StrPtrErr(someLogicUint32StrPtrErr, []*uint32{&vi10})
@@ -3227,7 +3227,7 @@ func TestPmapUint32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint32 = 10
-	var v0 uint32 = 0
+	var v0 uint32 
 	var v3 uint32 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -3610,7 +3610,7 @@ func TestPmapUint16StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint16 = 10
-	var vi0 uint16 = 0
+	var vi0 uint16
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapUint16StrPtrErr(someLogicUint16StrPtrErr, []*uint16{&vi10})
@@ -3641,7 +3641,7 @@ func TestPmapUint16BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint16 = 10
-	var v0 uint16 = 0
+	var v0 uint16 
 	var v3 uint16 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -4024,7 +4024,7 @@ func TestPmapUint8StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint8 = 10
-	var vi0 uint8 = 0
+	var vi0 uint8
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapUint8StrPtrErr(someLogicUint8StrPtrErr, []*uint8{&vi10})
@@ -4055,7 +4055,7 @@ func TestPmapUint8BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint8 = 10
-	var v0 uint8 = 0
+	var v0 uint8 
 	var v3 uint8 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -5291,7 +5291,7 @@ func TestPmapFloat32StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 float32 = 10
-	var vi0 float32 = 0
+	var vi0 float32
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapFloat32StrPtrErr(someLogicFloat32StrPtrErr, []*float32{&vi10})
@@ -5322,7 +5322,7 @@ func TestPmapFloat32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float32 = 10
-	var v0 float32 = 0
+	var v0 float32 
 	var v3 float32 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -5705,7 +5705,7 @@ func TestPmapFloat64StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 float64 = 10
-	var vi0 float64 = 0
+	var vi0 float64
 
 	expectedList := []*string{&vo10}
 	newList, _ := PMapFloat64StrPtrErr(someLogicFloat64StrPtrErr, []*float64{&vi10})
@@ -5736,7 +5736,7 @@ func TestPmapFloat64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float64 = 10
-	var v0 float64 = 0
+	var v0 float64 
 	var v3 float64 = 3
 
 	expectedList := []*bool{&vt, &vf}

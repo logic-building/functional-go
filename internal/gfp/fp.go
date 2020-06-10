@@ -317,7 +317,6 @@ func EveryEmployerPtr(f func(*employer.Employer) bool, list []*employer.Employer
 }
 
 // EveryEmployerPtrErr returns true if supplied function returns logical true for every item in the list
-
 func EveryEmployerPtrErr(f func(*employer.Employer) (bool, error), list []*employer.Employer) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -335,7 +334,6 @@ func EveryEmployerPtrErr(f func(*employer.Employer) (bool, error), list []*emplo
 }
 
 // EveryEmployerErr returns true if supplied function returns logical true for every item in the list
-
 func EveryEmployerErr(f func(employer.Employer) (bool, error), list []employer.Employer) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -1351,7 +1349,6 @@ func EveryEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee
 }
 
 // EveryEmployeePtrErr returns true if supplied function returns logical true for every item in the list
-
 func EveryEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*employee.Employee) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil
@@ -1369,7 +1366,6 @@ func EveryEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*emplo
 }
 
 // EveryEmployeeErr returns true if supplied function returns logical true for every item in the list
-
 func EveryEmployeeErr(f func(employee.Employee) (bool, error), list []employee.Employee) (bool, error) {
 	if f == nil || len(list) == 0 {
 		return false, nil

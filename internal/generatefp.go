@@ -63,6 +63,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Intersection",
+		codeTemplate:      basic.Intersection(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "intersection.go",
+
+		testTemplate:          basic.IntersectionTest(),
+		testTemplateBool:      basic.IntersectionBoolTest(),
+		generatedTestFileName: "intersection_test.go",
+	},
+
+	fpCode{
 		function:          "Take",
 		codeTemplate:      basic.Take(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1071,6 +1082,7 @@ func modifyTestDataToStr(code string) string {
 }
 
 func modifyTestDataToStr2(code string) string {
+	code = strings.Replace(code, "var v0 string = 0", "var v0 string = \"0\"", -1)
 	code = strings.Replace(code, "var v0 string = 0", "var v0 string = \"0\"", -1)
 	code = strings.Replace(code, "var v1 string = 1", "var v1 string = \"1\"", -1)
 	code = strings.Replace(code, "var v2 string = 2", "var v2 string = \"2\"", -1)

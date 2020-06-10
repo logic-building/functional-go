@@ -1,6 +1,6 @@
 package basic
 
-// MapIO is template to generate function(Map) for user defined data type
+// MapIOPtr is template to generate function(Map) for user defined data type
 func MapIOPtr() string {
 	return `
 // Map<FINPUT_TYPE><FOUTPUT_TYPE> takes two inputs -

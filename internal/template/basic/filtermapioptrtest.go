@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// FilterMapIONumber is template to generate itself for different combination of data type.
+// FilterMapIONumberPtrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberPtrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -40,7 +40,7 @@ func plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *<INPUT_TYPE>) *<OUTPUT_TYPE> {
 `
 }
 
-// FilterMapIOStrNumberPtr is template to generate itself for different combination of data type.
+// FilterMapIOStrNumberPtrTest is template to generate itself for different combination of data type.
 func FilterMapIOStrNumberPtrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -81,7 +81,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>StrPtr(num *string) *<OUTPUT_TYPE> {
 `
 }
 
-// FilterMapIONumberStrPtr is template to generate itself for different combination of data type.
+// FilterMapIONumberStrPtrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberStrPtrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -120,7 +120,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>NumPtr(num *<INPUT_TYPE>) *<OUTPUT_TYPE
 `
 }
 
-// FilterMapIONumberBool is template to generate itself for different combination of data type.
+// FilterMapIONumberBoolPtrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberBoolPtrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -159,7 +159,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *<INPUT_TYPE>) *bool {
 `
 }
 
-// FilterMapIOStrBoolPtr is template to generate itself for different combination of data type.
+// FilterMapIOStrBoolPtrTest is template to generate itself for different combination of data type.
 func FilterMapIOStrBoolPtrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -204,7 +204,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *<INPUT_TYPE>) *bool {
 `
 }
 
-// FilterMapIOBoolNumberPtr is template to generate itself for different combination of data type.
+// FilterMapIOBoolNumberPtrTest is template to generate itself for different combination of data type.
 func FilterMapIOBoolNumberPtrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -248,7 +248,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *bool) *<OUTPUT_TYPE> {
 `
 }
 
-// FilterMapIOBoolStrPtr is template to generate itself for different combination of data type.
+// FilterMapIOBoolStrPtrTest is template to generate itself for different combination of data type.
 func FilterMapIOBoolStrPtrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -292,7 +292,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *bool) *<OUTPUT_TYPE> {
 }
 
 //**********************************Err***********************************
-// FilterMapIONumberPtrErr is template to generate itself for different combination of data type.
+// FilterMapIONumberPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberPtrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -348,7 +348,7 @@ func plusOne<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *<INPUT_TYPE>) (*<OUTPUT_TYPE>
 `
 }
 
-// FilterMapIOStrNumberPtrErr is template to generate itself for different combination of data type.
+// FilterMapIOStrNumberPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIOStrNumberPtrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -408,7 +408,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>StrPtrErr(num *string) (*<OUTPUT_TYPE>,
 `
 }
 
-// FilterMapIONumberStrPtrErr is template to generate itself for different combination of data type.
+// FilterMapIONumberStrPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberStrPtrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -467,7 +467,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>NumPtrErr(num *<INPUT_TYPE>) (*<OUTPUT_
 `
 }
 
-// FilterMapIONumberBool is template to generate itself for different combination of data type.
+// FilterMapIONumberBoolPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberBoolPtrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -525,7 +525,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *<INPUT_TYPE>) (*bool, error
 `
 }
 
-// FilterMapIOStrBoolPtr is template to generate itself for different combination of data type.
+// FilterMapIOStrBoolPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIOStrBoolPtrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -589,7 +589,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *<INPUT_TYPE>) (*bool, error
 `
 }
 
-// FilterMapIOBoolNumberPtr is template to generate itself for different combination of data type.
+// FilterMapIOBoolNumberPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIOBoolNumberPtrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -656,7 +656,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *bool) (*<OUTPUT_TYPE>, erro
 `
 }
 
-// FilterMapIOBoolStrPtrErr is template to generate itself for different combination of data type.
+// FilterMapIOBoolStrPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIOBoolStrPtrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {

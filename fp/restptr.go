@@ -1,7 +1,7 @@
 package fp
 
 
-// RestInt removes 1st item of the list and return new list having rest of the items
+// RestIntPtr removes 1st item of the list and return new list having rest of the items
 func RestIntPtr(l []*int) []*int {
 	if l == nil {
 		return []*int{}
@@ -22,7 +22,7 @@ func RestIntPtr(l []*int) []*int {
 }
 
 
-// RestInt64 removes 1st item of the list and return new list having rest of the items
+// RestInt64Ptr removes 1st item of the list and return new list having rest of the items
 func RestInt64Ptr(l []*int64) []*int64 {
 	if l == nil {
 		return []*int64{}
@@ -43,7 +43,7 @@ func RestInt64Ptr(l []*int64) []*int64 {
 }
 
 
-// RestInt32 removes 1st item of the list and return new list having rest of the items
+// RestInt32Ptr removes 1st item of the list and return new list having rest of the items
 func RestInt32Ptr(l []*int32) []*int32 {
 	if l == nil {
 		return []*int32{}
@@ -64,7 +64,7 @@ func RestInt32Ptr(l []*int32) []*int32 {
 }
 
 
-// RestInt16 removes 1st item of the list and return new list having rest of the items
+// RestInt16Ptr removes 1st item of the list and return new list having rest of the items
 func RestInt16Ptr(l []*int16) []*int16 {
 	if l == nil {
 		return []*int16{}
@@ -85,7 +85,7 @@ func RestInt16Ptr(l []*int16) []*int16 {
 }
 
 
-// RestInt8 removes 1st item of the list and return new list having rest of the items
+// RestInt8Ptr removes 1st item of the list and return new list having rest of the items
 func RestInt8Ptr(l []*int8) []*int8 {
 	if l == nil {
 		return []*int8{}
@@ -106,7 +106,7 @@ func RestInt8Ptr(l []*int8) []*int8 {
 }
 
 
-// RestUint removes 1st item of the list and return new list having rest of the items
+// RestUintPtr removes 1st item of the list and return new list having rest of the items
 func RestUintPtr(l []*uint) []*uint {
 	if l == nil {
 		return []*uint{}
@@ -127,7 +127,7 @@ func RestUintPtr(l []*uint) []*uint {
 }
 
 
-// RestUint64 removes 1st item of the list and return new list having rest of the items
+// RestUint64Ptr removes 1st item of the list and return new list having rest of the items
 func RestUint64Ptr(l []*uint64) []*uint64 {
 	if l == nil {
 		return []*uint64{}
@@ -148,7 +148,7 @@ func RestUint64Ptr(l []*uint64) []*uint64 {
 }
 
 
-// RestUint32 removes 1st item of the list and return new list having rest of the items
+// RestUint32Ptr removes 1st item of the list and return new list having rest of the items
 func RestUint32Ptr(l []*uint32) []*uint32 {
 	if l == nil {
 		return []*uint32{}
@@ -169,7 +169,7 @@ func RestUint32Ptr(l []*uint32) []*uint32 {
 }
 
 
-// RestUint16 removes 1st item of the list and return new list having rest of the items
+// RestUint16Ptr removes 1st item of the list and return new list having rest of the items
 func RestUint16Ptr(l []*uint16) []*uint16 {
 	if l == nil {
 		return []*uint16{}
@@ -190,7 +190,7 @@ func RestUint16Ptr(l []*uint16) []*uint16 {
 }
 
 
-// RestUint8 removes 1st item of the list and return new list having rest of the items
+// RestUint8Ptr removes 1st item of the list and return new list having rest of the items
 func RestUint8Ptr(l []*uint8) []*uint8 {
 	if l == nil {
 		return []*uint8{}
@@ -211,7 +211,7 @@ func RestUint8Ptr(l []*uint8) []*uint8 {
 }
 
 
-// RestStr removes 1st item of the list and return new list having rest of the items
+// RestStrPtr removes 1st item of the list and return new list having rest of the items
 func RestStrPtr(l []*string) []*string {
 	if l == nil {
 		return []*string{}
@@ -232,7 +232,7 @@ func RestStrPtr(l []*string) []*string {
 }
 
 
-// RestBool removes 1st item of the list and return new list having rest of the items
+// RestBoolPtr removes 1st item of the list and return new list having rest of the items
 func RestBoolPtr(l []*bool) []*bool {
 	if l == nil {
 		return []*bool{}
@@ -253,7 +253,7 @@ func RestBoolPtr(l []*bool) []*bool {
 }
 
 
-// RestFloat32 removes 1st item of the list and return new list having rest of the items
+// RestFloat32Ptr removes 1st item of the list and return new list having rest of the items
 func RestFloat32Ptr(l []*float32) []*float32 {
 	if l == nil {
 		return []*float32{}
@@ -274,7 +274,7 @@ func RestFloat32Ptr(l []*float32) []*float32 {
 }
 
 
-// RestFloat64 removes 1st item of the list and return new list having rest of the items
+// RestFloat64Ptr removes 1st item of the list and return new list having rest of the items
 func RestFloat64Ptr(l []*float64) []*float64 {
 	if l == nil {
 		return []*float64{}

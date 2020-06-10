@@ -1,6 +1,6 @@
 package basic
 
-// Some is template to generate function(Some) for user defined data type
+// SomePtr is template to generate function(Some) for user defined data type
 func SomePtr() string {
 	return `
 // Some<FTYPE>Ptr finds item in the list based on supplied function.
@@ -26,7 +26,7 @@ func Some<FTYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) bool {
 `
 }
 
-// Some is template to generate function(Some) for user defined data type
+// SomePtrErr is template to generate function(Some) for user defined data type
 func SomePtrErr() string {
 	return `
 // Some<FTYPE>PtrErr finds item in the list based on supplied function.
@@ -56,7 +56,7 @@ func Some<FTYPE>PtrErr(f func(*<TYPE>) (bool, error), list []*<TYPE>) (bool, err
 `
 }
 
-// Some is template to generate function(Some) for user defined data type
+// SomeErr is template to generate function(Some) for user defined data type
 func SomeErr() string {
 	return `
 // Some<FTYPE>Err finds item in the list based on supplied function.
