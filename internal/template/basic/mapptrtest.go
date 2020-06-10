@@ -170,6 +170,7 @@ func inverse<FTYPE>PtrErr(num1 *<TYPE>) (*<TYPE>, error) {
 `
 }
 
+// ReplaceActivityMapPtrErrTest
 func ReplaceActivityMapPtrErrTest(code string) string {
 	s1 := `import (
     _ "errors"
@@ -233,7 +234,7 @@ func TestMapIntPtrErr(t *testing.T) {`
 	return code
 }
 
-// Map<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+// MapErrTest applies the function(1st argument) on each item of the list and returns new list
 func MapErrTest() string {
 	return `
 func TestMap<FTYPE>Err(t *testing.T) {
@@ -293,7 +294,7 @@ func add<FTYPE>Err(num1, num2 <TYPE>) (<TYPE>, error) {
 `
 }
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MapErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func MapErrBoolTest() string {
 	return `
 func TestMap<FTYPE>Err(t *testing.T) {
@@ -333,6 +334,7 @@ func inverse<FTYPE>Err(num1 <TYPE>) (<TYPE>, error) {
 `
 }
 
+// ReplaceActivityMapErrTest
 func ReplaceActivityMapErrTest(code string) string {
 	s1 := `import (
     _ "errors"

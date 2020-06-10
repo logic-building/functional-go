@@ -98,7 +98,7 @@ func TestDropWhile<FTYPE>PtrErr(t *testing.T) {
 `
 }
 
-// DropWhilePtrErrBoolTest
+// DropWhilePtrErrBoolTest is template
 func DropWhilePtrErrBoolTest() string {
 	return `
 func TestDropWhile<FTYPE>PtrErr(t *testing.T) {
@@ -144,6 +144,7 @@ func isTrueBoolPtrErr2(v *bool) (bool, error) {
 `
 }
 
+// ReplaceActivityDropWhilePtrErr replaces ...
 func ReplaceActivityDropWhilePtrErr(code string) string {
 	s1 := `import (
     _ "errors"
@@ -206,7 +207,7 @@ func TestDropWhile<FTYPE>Err(t *testing.T) {
 `
 }
 
-// DropWhileErrBoolTest
+// DropWhileErrBoolTest is template
 func DropWhileErrBoolTest() string {
 	return `
 func TestDropWhile<FTYPE>Err(t *testing.T) {
@@ -252,6 +253,7 @@ func isTrueBoolErr2(v bool) (bool, error) {
 `
 }
 
+// ReplaceActivityDropWhileErr replaces ...
 func ReplaceActivityDropWhileErr(code string) string {
 	s1 := `import (
     _ "errors"

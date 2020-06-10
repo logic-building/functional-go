@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-// FilterMap<FTYPE>Err
+// FilterMapErrTest is template
 func FilterMapErrTest() string {
 	return `
 func TestFilterMap<FTYPE>Err(t *testing.T) {
@@ -57,6 +57,7 @@ func multiplyBy2<FTYPE>Err(num <TYPE>) (<TYPE>, error) {
 `
 }
 
+// ReplaceActivityFilterMapErr replaces ...
 func ReplaceActivityFilterMapErr(code string) string {
 	s1 := `_ "errors"
 	"reflect"
@@ -131,5 +132,4 @@ func TestFilterMapIntErr(t *testing.T) {`
 	code = strings.Replace(code, s1, s2, -1)
 
 	return code
-
 }

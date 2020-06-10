@@ -1,6 +1,6 @@
 package basic
 
-// KeysTest is template
+// KeysNumberToNumberTest is template
 func KeysNumberToNumberTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -14,7 +14,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysNumberToStrTest is template
 func KeysNumberToStrTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -28,7 +28,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysStrToNumberTest is template
 func KeysStrToNumberTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -42,7 +42,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysStrToBoolTest is template
 func KeysStrToBoolTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -56,7 +56,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysBoolToStrTest is template
 func KeysBoolToStrTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -70,7 +70,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysNumberToBoolTest is template
 func KeysNumberToBoolTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -84,7 +84,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysBoolToNumberTest is template
 func KeysBoolToNumberTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -98,7 +98,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysBoolToBoolTest is template
 func KeysBoolToBoolTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
@@ -112,7 +112,7 @@ func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {
 `
 }
 
-// KeysTest is template
+// KeysStrToStrTest is template
 func KeysStrToStrTest() string {
 	return `
 func TestKeys<FINPUT_TYPE1><FINPUT_TYPE2>(t *testing.T) {

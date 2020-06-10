@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// Every<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// EveryPtrTest applies the function(1st argument) on each item of the list and returns new list
 func EveryPtrTest() string {
 	return `
 func TestEvery<FTYPE>Ptr(t *testing.T) {
@@ -38,7 +38,7 @@ func TestEvery<FTYPE>Ptr(t *testing.T) {
 `
 }
 
-// Every<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// EveryPtrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func EveryPtrBoolTest() string {
 	return `
 func TestEvery<FTYPE>Ptr(t *testing.T) {
@@ -81,7 +81,8 @@ func TruePtr(val *bool) bool {
 }
 
 //*************EveryPtrErr******************
-// Every<FTYPE>PtrErr applies the function(1st argument) on each item of the list and returns new list
+
+// EveryPtrErrTest applies the function(1st argument) on each item of the list and returns new list
 func EveryPtrErrTest() string {
 	return `
 func TestEvery<FTYPE>PtrErr(t *testing.T) {
@@ -130,7 +131,7 @@ func TestEvery<FTYPE>PtrErr(t *testing.T) {
 `
 }
 
-// Every<FTYPE>PtrErr applies the function(1st argument) on each item of the list and returns new list
+// EveryPtrErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func EveryPtrErrBoolTest() string {
 	return `
 func TestEvery<FTYPE>PtrErr(t *testing.T) {
@@ -197,6 +198,7 @@ func TruePtrErr2(val *bool) (bool, error) {
 `
 }
 
+// ReplaceActivityEveryPtrErr replaces ...
 func ReplaceActivityEveryPtrErr(code string) string {
 	s1 := `import (
     _ "errors"
@@ -216,7 +218,8 @@ func TestEveryIntPtrErr(t *testing.T) {`
 }
 
 //*************EveryErr******************
-// Every<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+
+// EveryErrTest applies the function(1st argument) on each item of the list and returns new list
 func EveryErrTest() string {
 	return `
 func TestEvery<FTYPE>Err(t *testing.T) {
@@ -265,7 +268,7 @@ func TestEvery<FTYPE>Err(t *testing.T) {
 `
 }
 
-// Every<FTYPE>PtrErr applies the function(1st argument) on each item of the list and returns new list
+// EveryErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func EveryErrBoolTest() string {
 	return `
 func TestEvery<FTYPE>Err(t *testing.T) {
@@ -332,6 +335,7 @@ func TrueErr2(val bool) (bool, error) {
 `
 }
 
+// ReplaceActivityEveryErr replaces ...
 func ReplaceActivityEveryErr(code string) string {
 	s1 := `import (
     _ "errors"

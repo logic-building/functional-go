@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// FilterMap<FTYPE>Ptr
+// FilterMapPtrTest is template
 func FilterMapPtrTest() string {
 	return `
 func TestFilterMap<FTYPE>Ptr(t *testing.T) {
@@ -37,7 +37,7 @@ func multiplyBy2<FTYPE>Ptr(num *<TYPE>) *<TYPE> {
 `
 }
 
-// FilterMapPtrBool
+// FilterMapPtrBoolTest is template
 func FilterMapPtrBoolTest() string {
 	return `
 func TestFilterMap<FTYPE>Ptr(t *testing.T) {
@@ -67,7 +67,7 @@ func returnSame<FTYPE>Ptr(num *<TYPE>) *<TYPE> {
 `
 }
 
-// FilterMap<FTYPE>PtrErr
+// FilterMapPtrErrTest is template
 func FilterMapPtrErrTest() string {
 	return `
 func TestFilterMap<FTYPE>PtrErr(t *testing.T) {
@@ -120,6 +120,7 @@ func multiplyBy2<FTYPE>PtrErr(num *<TYPE>) (*<TYPE>, error) {
 `
 }
 
+// ReplaceActivityFilterMapPtrErr replaces ...
 func ReplaceActivityFilterMapPtrErr(code string) string {
 	s1 := `_ "errors"
 	"reflect"
@@ -194,5 +195,4 @@ func TestFilterMapIntPtrErr(t *testing.T) {`
 	code = strings.Replace(code, s1, s2, -1)
 
 	return code
-
 }

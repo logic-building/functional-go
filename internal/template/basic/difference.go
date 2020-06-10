@@ -1,10 +1,10 @@
 package basic
 
-// Intersection is template.
-func Intersection() string {
+// Intersection<FTYPE> is template.
+func Difference() string {
 	return `
-// Intersection<FTYPE> return a set that is the intersection of the input sets
-func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
+// Difference<FTYPE> returns a set that is the first set without elements of the remaining sets
+func Difference<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 	if arrList == nil {
 		return []<TYPE>{}
 	}
@@ -38,7 +38,7 @@ func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 				}
 			}
 		}
-		if matchCount == len(arrList)-1 {
+		if matchCount == 0 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
@@ -49,8 +49,8 @@ func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 	return newList
 }
 
-// IntersectionIntPtr return a set that is the intersection of the input sets
-func Intersection<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
+// Difference<FTYPE>Ptr returns a set that is the first set without elements of the remaining sets
+func Difference<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 	if arrList == nil {
 		return []*<TYPE>{}
 	}
@@ -84,7 +84,7 @@ func Intersection<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 				}
 			}
 		}
-		if matchCount == len(arrList)-1 {
+		if matchCount == 0 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])

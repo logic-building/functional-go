@@ -1,6 +1,6 @@
 package basic
 
-// Drop returns a new list after dropping the given item
+// DropPtr returns a new list after dropping the given item
 func DropPtr() string {
 	return `
 // Drop<FTYPE> returns a new list after dropping the given item

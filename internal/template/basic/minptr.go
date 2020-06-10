@@ -1,6 +1,6 @@
 package basic
 
-// Min<FTYPE>Ptr returns max in the list
+// MinPtr is template
 func MinPtr() string {
 	return `
 // MinInt returns min item from the list.

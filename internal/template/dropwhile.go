@@ -26,7 +26,7 @@ func DropWhile<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
 `
 }
 
-// DropWhile is template to generate function(DropWhhile) for user defined data type
+// DropWhilePtr is template to generate function(DropWhhile) for user defined data type
 func DropWhilePtr() string {
 	return `
 func DropWhile<CONDITIONAL_TYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) []*<TYPE> {

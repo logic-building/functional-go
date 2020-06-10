@@ -2,6 +2,7 @@ package basic
 
 import "strings"
 
+// Sort
 func Sort() string {
 	return `
 type <TYPE>1 []<TYPE>
@@ -81,6 +82,7 @@ func Sort<FTYPE>sDescPtr(list []*<TYPE>) []*<TYPE> {
 }`
 }
 
+// SortInts
 func SortInts() string {
 	return `
 // SortInts return new sorted list
@@ -149,6 +151,7 @@ func SortIntsDescPtr(list []*int) []*int {
 }`
 }
 
+// SortFloats64
 func SortFloats64() string {
 	return `
 // SortFloats64 return new sorted list
@@ -217,6 +220,7 @@ func SortFloats64DescPtr(list []*float64) []*float64 {
 }`
 }
 
+// SortStrs
 func SortStrs() string {
 	return `
 // SortStrs return new sorted list
@@ -285,6 +289,7 @@ func SortStrsDescPtr(list []*string) []*string {
 }`
 }
 
+// ReplaceActivitySortingCode
 func ReplaceActivitySortingCode(code string) string {
 	s1 := `package fp`
 	s2 := `package fp

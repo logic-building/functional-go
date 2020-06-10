@@ -1,6 +1,6 @@
 package basic
 
-// FilterMapIntErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int

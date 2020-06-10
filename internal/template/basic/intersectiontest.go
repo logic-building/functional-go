@@ -1,6 +1,6 @@
 package basic
 
-// UnionTest is template.
+// IntersectionTest is template.
 func IntersectionTest() string {
 	return `
 func TestIntersection<FTYPE>(t *testing.T) {
@@ -50,7 +50,7 @@ func TestIntersection<FTYPE>(t *testing.T) {
 `
 }
 
-// IntersectionBoolPtr is template.
+// IntersectionBoolTest is template.
 func IntersectionBoolTest() string {
 	return `
 func TestIntersection<FTYPE>(t *testing.T) {

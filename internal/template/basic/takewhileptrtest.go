@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// TakeWhilePtrTest<FTYPE>Ptr
+// TakeWhilePtrTest is template
 func TakeWhilePtrTest() string {
 	return `
 func TestTakeWhile<FTYPE>Ptr(t *testing.T) {
@@ -41,6 +41,7 @@ func TestTakeWhile<FTYPE>Ptr(t *testing.T) {
 `
 }
 
+// TakeWhileTestBool is template
 func TakeWhileTestBool() string {
 	return `
 func TestTakeWhile<FTYPE>Ptr(t *testing.T) {
@@ -76,7 +77,8 @@ func TestTakeWhile<FTYPE>Ptr(t *testing.T) {
 }
 
 //**********************TakeWhile<TYPE>PtrErr******************
-// TakeWhilePtrTest<FTYPE>Ptr
+
+// TakeWhilePtrErrTest is template
 func TakeWhilePtrErrTest() string {
 	return `
 func TestTakeWhile<FTYPE>PtrErr(t *testing.T) {
@@ -122,6 +124,7 @@ func TestTakeWhile<FTYPE>PtrErr(t *testing.T) {
 `
 }
 
+// TakeWhilePtrErrTestBool is template
 func TakeWhilePtrErrTestBool() string {
 	return `
 func TestTakeWhile<FTYPE>PtrErr(t *testing.T) {
@@ -163,6 +166,7 @@ func TestTakeWhile<FTYPE>PtrErr(t *testing.T) {
 `
 }
 
+// ReplaceActivityTakeWhilePtrErr replaces ...
 func ReplaceActivityTakeWhilePtrErr(code string) string {
 	s1 := `import (
     _ "errors"
@@ -207,7 +211,8 @@ func TestTakeWhileIntPtrErr(t *testing.T) {`
 }
 
 //**********************TakeWhile<TYPE>Err******************
-// TakeWhileErrTest<FTYPE>
+
+// TakeWhileErrTest is template
 func TakeWhileErrTest() string {
 	return `
 func TestTakeWhile<FTYPE>Err(t *testing.T) {
@@ -253,6 +258,7 @@ func TestTakeWhile<FTYPE>Err(t *testing.T) {
 `
 }
 
+// TakeWhileErrTestBool is template
 func TakeWhileErrTestBool() string {
 	return `
 func TestTakeWhile<FTYPE>Err(t *testing.T) {
@@ -294,6 +300,7 @@ func TestTakeWhile<FTYPE>Err(t *testing.T) {
 `
 }
 
+// ReplaceActivityTakeWhileErr replaces ...
 func ReplaceActivityTakeWhileErr(code string) string {
 	s1 := `import (
     _ "errors"

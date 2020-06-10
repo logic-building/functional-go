@@ -1,5 +1,6 @@
 package template
 
+// SortStruct
 func SortStruct() string {
 	return `
 type by<FFIELD_NAME> []<STRUCT_NAME>

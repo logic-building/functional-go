@@ -166,6 +166,7 @@ func TestPMap<FTYPE>PtrErr(t *testing.T) {
 `
 }
 
+// ReplaceActivityPMapPtrErr replaces ...
 func ReplaceActivityPMapPtrErr(code string) string {
 	s1 := `import (
     _ "errors"
@@ -301,7 +302,8 @@ func squareStrPtrErr(num *string) (*string, error) {
 }
 
 // ************PMapErr*************************
-// PMap<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+
+// PMapErrTest applies the function(1st argument) on each item of the list and returns new list
 func PMapErrTest() string {
 	return `
 func TestPmap<FTYPE>Err(t *testing.T) {
@@ -363,7 +365,7 @@ func square<FTYPE>Err(num <TYPE>) (<TYPE>, error) {
 `
 }
 
-// PMap<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+// PMapErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func PMapErrBoolTest() string {
 	return `
 func TestPMap<FTYPE>Err(t *testing.T) {
@@ -391,6 +393,7 @@ func TestPMap<FTYPE>Err(t *testing.T) {
 `
 }
 
+// ReplaceActivityPMapErr replaces ...
 func ReplaceActivityPMapErr(code string) string {
 	s1 := `import (
     _ "errors"

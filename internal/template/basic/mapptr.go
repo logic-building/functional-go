@@ -1,6 +1,6 @@
 package basic
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MapPtr applies the function(1st argument) on each item of the list and returns new list
 func MapPtr() string {
 	return `
 // Map<FTYPE>Ptr takes 2 arguments.
@@ -22,7 +22,7 @@ func Map<FTYPE>Ptr(f func(*<TYPE>) *<TYPE>, list []*<TYPE>) []*<TYPE> {
 `
 }
 
-// Map<FTYPE>PtrErr applies the function(1st argument) on each item of the list and returns new list
+// MapPtrErr applies the function(1st argument) on each item of the list and returns new list
 func MapPtrErr() string {
 	return `
 // Map<FTYPE>PtrErr takes 2 arguments:
@@ -48,7 +48,7 @@ func Map<FTYPE>PtrErr(f func(*<TYPE>) (*<TYPE>, error), list []*<TYPE>) ([]*<TYP
 `
 }
 
-// Map<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+// MapErr applies the function(1st argument) on each item of the list and returns new list
 func MapErr() string {
 	return `
 // Map<FTYPE>Err takes 2 arguments:

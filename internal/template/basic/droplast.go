@@ -22,7 +22,7 @@ func DropLast<FTYPE>(list []<TYPE>) []<TYPE> {
 `
 }
 
-// DropLast is template to generate itself for different combination of data type.
+// DropLastPtr is template to generate itself for different combination of data type.
 func DropLastPtr() string {
 	return `
 // DropLast<FTYPE>Ptr drops last item from the list and returns new list.

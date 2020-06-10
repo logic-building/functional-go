@@ -1,6 +1,6 @@
 package fp
 
-/// DropWhileIntPtr drops the items from the list as long as condition satisfies.
+// DropWhileIntPtr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -30,7 +30,7 @@ func DropWhileIntPtr(f func(*int) bool, list []*int) []*int {
 	return newList
 }
 
-/// DropWhileInt64Ptr drops the items from the list as long as condition satisfies.
+// DropWhileInt64Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -60,7 +60,7 @@ func DropWhileInt64Ptr(f func(*int64) bool, list []*int64) []*int64 {
 	return newList
 }
 
-/// DropWhileInt32Ptr drops the items from the list as long as condition satisfies.
+// DropWhileInt32Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -90,7 +90,7 @@ func DropWhileInt32Ptr(f func(*int32) bool, list []*int32) []*int32 {
 	return newList
 }
 
-/// DropWhileInt16Ptr drops the items from the list as long as condition satisfies.
+// DropWhileInt16Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -120,7 +120,7 @@ func DropWhileInt16Ptr(f func(*int16) bool, list []*int16) []*int16 {
 	return newList
 }
 
-/// DropWhileInt8Ptr drops the items from the list as long as condition satisfies.
+// DropWhileInt8Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -150,7 +150,7 @@ func DropWhileInt8Ptr(f func(*int8) bool, list []*int8) []*int8 {
 	return newList
 }
 
-/// DropWhileUintPtr drops the items from the list as long as condition satisfies.
+// DropWhileUintPtr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -180,7 +180,7 @@ func DropWhileUintPtr(f func(*uint) bool, list []*uint) []*uint {
 	return newList
 }
 
-/// DropWhileUint64Ptr drops the items from the list as long as condition satisfies.
+// DropWhileUint64Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -210,7 +210,7 @@ func DropWhileUint64Ptr(f func(*uint64) bool, list []*uint64) []*uint64 {
 	return newList
 }
 
-/// DropWhileUint32Ptr drops the items from the list as long as condition satisfies.
+// DropWhileUint32Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -240,7 +240,7 @@ func DropWhileUint32Ptr(f func(*uint32) bool, list []*uint32) []*uint32 {
 	return newList
 }
 
-/// DropWhileUint16Ptr drops the items from the list as long as condition satisfies.
+// DropWhileUint16Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -270,7 +270,7 @@ func DropWhileUint16Ptr(f func(*uint16) bool, list []*uint16) []*uint16 {
 	return newList
 }
 
-/// DropWhileUint8Ptr drops the items from the list as long as condition satisfies.
+// DropWhileUint8Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -300,7 +300,7 @@ func DropWhileUint8Ptr(f func(*uint8) bool, list []*uint8) []*uint8 {
 	return newList
 }
 
-/// DropWhileStrPtr drops the items from the list as long as condition satisfies.
+// DropWhileStrPtr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -330,7 +330,7 @@ func DropWhileStrPtr(f func(*string) bool, list []*string) []*string {
 	return newList
 }
 
-/// DropWhileBoolPtr drops the items from the list as long as condition satisfies.
+// DropWhileBoolPtr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -360,7 +360,7 @@ func DropWhileBoolPtr(f func(*bool) bool, list []*bool) []*bool {
 	return newList
 }
 
-/// DropWhileFloat32Ptr drops the items from the list as long as condition satisfies.
+// DropWhileFloat32Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -390,7 +390,7 @@ func DropWhileFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
 	return newList
 }
 
-/// DropWhileFloat64Ptr drops the items from the list as long as condition satisfies.
+// DropWhileFloat64Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean

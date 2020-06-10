@@ -292,6 +292,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *bool) *<OUTPUT_TYPE> {
 }
 
 //**********************************Err***********************************
+
 // FilterMapIONumberPtrErrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberPtrErrTest() string {
 	return `
@@ -721,6 +722,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *bool) (*<OUTPUT_TYPE>, erro
 `
 }
 
+// ReplaceActivityFilterMapIOPtrErr replaces ...
 func ReplaceActivityFilterMapIOPtrErr(code string) string {
 	s1 := `_ "errors"
 	"reflect"

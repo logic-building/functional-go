@@ -74,6 +74,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Difference",
+		codeTemplate:      basic.Difference(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "difference.go",
+
+		testTemplate:          basic.DifferenceTest(),
+		testTemplateBool:      basic.DifferenceBoolTest(),
+		generatedTestFileName: "difference_test.go",
+	},
+
+	fpCode{
 		function:          "Take",
 		codeTemplate:      basic.Take(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},

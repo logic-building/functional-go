@@ -1,6 +1,6 @@
 package basic
 
-// Merge is template to generate itself for different combination of data type.
+// MergePtr is template to generate itself for different combination of data type.
 func MergePtr() string {
 	return `
 // Merge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr takes two inputs: map[<INPUT_TYPE1>]<INPUT_TYPE2> and map[<INPUT_TYPE1>]<INPUT_TYPE2> and merge two maps and returns a new map[<INPUT_TYPE1>]<INPUT_TYPE2>.

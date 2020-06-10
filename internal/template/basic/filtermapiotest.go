@@ -192,7 +192,8 @@ func notOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) bool {
 }
 
 //**********************************Err***********************************
-// FilterMapIONumberErr is template to generate itself for different combination of data type.
+
+// FilterMapIONumberErrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -248,7 +249,7 @@ func plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err(num <INPUT_TYPE>) (<OUTPUT_TYPE>, err
 `
 }
 
-// FilterMapIOStrNumberErr is template to generate itself for different combination of data type.
+// FilterMapIOStrNumberErrTest is template to generate itself for different combination of data type.
 func FilterMapIOStrNumberErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -308,7 +309,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>StrErr(num string) (<OUTPUT_TYPE>, erro
 `
 }
 
-// FilterMapIONumberStrErr is template to generate itself for different combination of data type.
+// FilterMapIONumberStrErrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberStrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -367,7 +368,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>NumErr(num <INPUT_TYPE>) (<OUTPUT_TYPE>
 `
 }
 
-// FilterMapIONumberBool is template to generate itself for different combination of data type.
+// FilterMapIONumberBoolErrTest is template to generate itself for different combination of data type.
 func FilterMapIONumberBoolErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -425,7 +426,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num <INPUT_TYPE>) (bool, error) {
 `
 }
 
-// FilterMapIOStrBoolErr is template to generate itself for different combination of data type.
+// FilterMapIOStrBoolErrTest is template to generate itself for different combination of data type.
 func FilterMapIOStrBoolErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -489,7 +490,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num <INPUT_TYPE>) (bool, error) {
 `
 }
 
-// FilterMapIOBoolNumberPtr is template to generate itself for different combination of data type.
+// FilterMapIOBoolNumberErrTest is template to generate itself for different combination of data type.
 func FilterMapIOBoolNumberErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -556,7 +557,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num bool) (<OUTPUT_TYPE>, error) {
 `
 }
 
-// FilterMapIOBoolStrErr is template to generate itself for different combination of data type.
+// FilterMapIOBoolStrErrTest is template to generate itself for different combination of data type.
 func FilterMapIOBoolStrErrTest() string {
 	return `
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -621,6 +622,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num bool) (<OUTPUT_TYPE>, error) {
 `
 }
 
+// ReplaceActivityFilterMapIOErr replaces ...
 func ReplaceActivityFilterMapIOErr(code string) string {
 	s1 := `_ "errors"
 	"reflect"

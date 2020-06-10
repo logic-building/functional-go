@@ -391,7 +391,7 @@ func DropWhilePtr(f func(*Employee) bool, list []*Employee) []*Employee {
 	return newList
 }
 
-/// DropWhilePtrErr drops the items from the list as long as condition satisfies.
+// DropWhilePtrErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
@@ -425,7 +425,7 @@ func DropWhilePtrErr(f func(*Employee) (bool, error), list []*Employee) ([]*Empl
 	return newList, nil
 }
 
-/// DropWhileErr drops the items from the list as long as condition satisfies.
+// DropWhileErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
@@ -1423,7 +1423,7 @@ func DropWhileTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 	return newList
 }
 
-/// DropWhileTeacherPtrErr drops the items from the list as long as condition satisfies.
+// DropWhileTeacherPtrErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
@@ -1457,7 +1457,7 @@ func DropWhileTeacherPtrErr(f func(*Teacher) (bool, error), list []*Teacher) ([]
 	return newList, nil
 }
 
-/// DropWhileTeacherErr drops the items from the list as long as condition satisfies.
+// DropWhileTeacherErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
