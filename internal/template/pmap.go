@@ -1,6 +1,6 @@
 package template
 
-// PMap is template to generate function(Pmap) for user defined data type
+// Pmap is template to generate function(Pmap) for user defined data type
 func Pmap() string {
 	return `
 func PMap<CONDITIONAL_TYPE>(f func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {
@@ -36,7 +36,7 @@ func PMap<CONDITIONAL_TYPE>(f func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {
 `
 }
 
-// PMapPtr is template to generate function(Pmap) for user defined data type
+// PmapPtr is template to generate function(Pmap) for user defined data type
 func PmapPtr() string {
 	return `
 // PMap<CONDITIONAL_TYPE>Ptr applies the function(1st argument) on each item of the list and returns new list.

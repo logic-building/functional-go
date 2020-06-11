@@ -18,7 +18,7 @@ func Remove<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
 `
 }
 
-// Remove is template to generate function(Remove) for user defined data type
+// RemovePtr is template to generate function(Remove) for user defined data type
 func RemovePtr() string {
 	return `
 func Remove<CONDITIONAL_TYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) []*<TYPE> {

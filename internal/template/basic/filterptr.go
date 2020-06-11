@@ -4,7 +4,7 @@ package basic
 func FilterPtr() string {
 	return `
 // Filter<FTYPE>Ptr takes two arguments
-//  1. Funtion: takes 1 argument of type <TYPE> and returns bool
+//  1. Function: takes 1 argument of type <TYPE> and returns bool
 //  2. slice of type []*<TYPE>
 //
 // Returns: 

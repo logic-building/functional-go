@@ -1,5 +1,6 @@
 package basic
 
+// SortTest is template
 func SortTest() string {
 	return `
 func TestSort<FTYPE>(t *testing.T) {
@@ -89,6 +90,7 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 }`
 }
 
+// SortIntsTest is template
 func SortIntsTest() string {
 	return `
 func TestSort<FTYPE>(t *testing.T) {
@@ -169,6 +171,7 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 }`
 }
 
+// SortFloats64Test is template
 func SortFloats64Test() string {
 	return `
 func TestSort<FTYPE>(t *testing.T) {
@@ -251,6 +254,7 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 }`
 }
 
+// SortStrsTest is template
 func SortStrsTest() string {
 	return `
 func TestSort<FTYPE>(t *testing.T) {

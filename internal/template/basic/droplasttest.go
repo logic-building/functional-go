@@ -84,7 +84,7 @@ func TestDropLast<FTYPE>(t *testing.T) {
 `
 }
 
-// DropLastTest is template to generate itself for different combination of data type.
+// DropLastPtrTest is template to generate itself for different combination of data type.
 func DropLastPtrTest() string {
 	return `
 func TestDropLast<FTYPE>Ptr(t *testing.T) {
@@ -132,7 +132,7 @@ func TestDropLast<FTYPE>Ptr(t *testing.T) {
 `
 }
 
-// DropLastBoolTest is template to generate itself for different combination of data type.
+// DropLastPtrBoolTest is template to generate itself for different combination of data type.
 func DropLastPtrBoolTest() string {
 	return `
 func TestDropLast<FTYPE>Ptr(t *testing.T) {

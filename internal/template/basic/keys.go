@@ -1,6 +1,6 @@
 package basic
 
-// DropLast is template to generate itself for different combination of data type.
+// Keys is template to generate itself for different combination of data type.
 func Keys() string {
 	return `
 // Keys<FINPUT_TYPE1><FINPUT_TYPE2> returns a slice of map's keys

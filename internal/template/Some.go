@@ -17,7 +17,7 @@ func Some<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) bool {
 `
 }
 
-// Some is template to generate function(Some) for user defined data type
+// SomePtr is template to generate function(Some) for user defined data type
 func SomePtr() string {
 	return `
 func Some<CONDITIONAL_TYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) bool {

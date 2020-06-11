@@ -1,6 +1,6 @@
 package basic
 
-// FilterInt filters list based on function passed as 1st argument
+// FilterMapIOPtr is template
 func FilterMapIOPtr() string {
 	return `
 // FilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr filters given list, then apply function(2nd argument) on each item in the list and returns a new list

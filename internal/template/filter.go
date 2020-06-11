@@ -18,7 +18,7 @@ func Filter<CONDITIONAL_TYPE>(f func(<TYPE>) bool, list []<TYPE>) []<TYPE> {
 `
 }
 
-// Filter is template to generate function(Filter) for user defined data type
+// FilterPtr is template to generate function(Filter) for user defined data type
 func FilterPtr() string {
 	return `
 func Filter<CONDITIONAL_TYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) []*<TYPE> {

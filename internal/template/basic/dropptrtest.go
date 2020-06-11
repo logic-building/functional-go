@@ -1,6 +1,6 @@
 package basic
 
-// Drop returns a new list after dropping the given item
+// DropPtrTest returns a new list after dropping the given item
 func DropPtrTest() string {
 	return `
 func TestDrop<FTYPE>Ptr(t *testing.T) {
@@ -66,7 +66,7 @@ func TestDrop<FTYPE>sPtr(t *testing.T) {
 `
 }
 
-// DistinctBoolPtr removes duplicates.
+// DropPtrBoolTest is template
 func DropPtrBoolTest() string {
 	return `
 func TestDrop<FTYPE>Ptr(t *testing.T) {

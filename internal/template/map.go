@@ -16,6 +16,7 @@ func Map<CONDITIONAL_TYPE>(f func(<TYPE>) <TYPE>, list []<TYPE>) []<TYPE> {
 `
 }
 
+// MapPtr is template
 func MapPtr() string {
 	return `
 func Map<CONDITIONAL_TYPE>Ptr(f func(*<TYPE>) *<TYPE>, list []*<TYPE>) []*<TYPE> {

@@ -170,7 +170,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 `
 }
 
-// MapIONumber is template to generate itself for different combination of data type.
+// MapIONumberErr is template to generate itself for different combination of data type.
 func MapIONumberErr() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -201,7 +201,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 `
 }
 
-// MapIOStrNumber is template to generate itself for different combination of data type.
+// MapIOStrNumberErr is template to generate itself for different combination of data type.
 func MapIOStrNumberErr() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -242,7 +242,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num <INPUT_TYPE>) (<OUTPUT_TYPE>, e
 `
 }
 
-// MapIONumberStr is template to generate itself for different combination of data type.
+// MapIONumberStrErr is template to generate itself for different combination of data type.
 func MapIONumberStrErr() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -379,7 +379,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 `
 }
 
-// MapIOBoolStr is template to generate itself for different combination of data type.
+// MapIOBoolStrErr is template to generate itself for different combination of data type.
 func MapIOBoolStrErr() string {
 	return `
 func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
@@ -409,6 +409,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 `
 }
 
+// ReplaceActivityMapIOErr replaces ...
 func ReplaceActivityMapIOErr(code string) string {
 	s1 := `import (
     _ "errors"

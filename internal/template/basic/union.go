@@ -1,6 +1,6 @@
 package basic
 
-// Union<FTYPE> is template.
+// Union is template.
 func Union() string {
 	return `
 // Union<FTYPE> return a set that is the union of the input sets

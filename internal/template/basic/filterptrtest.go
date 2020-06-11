@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// Filter<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// FilterPtrTest applies the function(1st argument) on each item of the list and returns new list
 func FilterPtrTest() string {
 	return `
 func TestFilter<FTYPE>Ptr(t *testing.T) {
@@ -48,7 +48,7 @@ func isEvenDivisibleBy<FTYPE>Ptr(num, divisibleBy *<TYPE>) bool {
 `
 }
 
-// Filter<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// FilterPtrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func FilterPtrBoolTest() string {
 	return `
 func TestFilter<FTYPE>Ptr(t *testing.T) {
@@ -73,7 +73,7 @@ func true<FTYPE>Ptr(num1 *<TYPE>) bool {
 `
 }
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// FilterPtrErrTest applies the function(1st argument) on each item of the list and returns new list
 func FilterPtrErrTest() string {
 	return `
 func TestFilter<FTYPE>PtrErr(t *testing.T) {
@@ -112,7 +112,7 @@ func isEven<FTYPE>PtrErr(num *<TYPE>) (bool, error) {
 `
 }
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// FilterPtrErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func FilterPtrErrBoolTest() string {
 	return `
 func TestFilter<FTYPE>PtrErr(t *testing.T) {
@@ -147,6 +147,7 @@ func true<FTYPE>PtrErr(num1 *<TYPE>) (bool, error) {
 `
 }
 
+// ReplaceActivityFilterPtrErrTest
 func ReplaceActivityFilterPtrErrTest(code string) string {
 	s1 := `import (
     _ "errors"
@@ -217,7 +218,7 @@ func TestFilterIntPtrErr(t *testing.T) {`
 	return code
 }
 
-// Filter<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+// FilterErrTest applies the function(1st argument) on each item of the list and returns new list
 func FilterErrTest() string {
 	return `
 func TestFilter<FTYPE>Err(t *testing.T) {
@@ -256,7 +257,7 @@ func isEven<FTYPE>Err(num <TYPE>) (bool, error) {
 `
 }
 
-// Filter<FTYPE>Err applies the function(1st argument) on each item of the list and returns new list
+// FilterErrBoolTest applies the function(1st argument) on each item of the list and returns new list
 func FilterErrBoolTest() string {
 	return `
 func TestFilter<FTYPE>Err(t *testing.T) {
@@ -291,6 +292,7 @@ func true<FTYPE>Err(num1 <TYPE>) (bool, error) {
 `
 }
 
+// ReplaceActivityFilterErrTest
 func ReplaceActivityFilterErrTest(code string) string {
 	s1 := `import (
     _ "errors"

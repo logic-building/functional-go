@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// RemovePtrTest<FTYPE>Ptr
+// SomePtrTest is template
 func SomePtrTest() string {
 	return `
 func TestSome<FTYPE>Ptr(t *testing.T) {
@@ -40,6 +40,7 @@ func TestSome<FTYPE>Ptr(t *testing.T) {
 `
 }
 
+// SomePtrTestBool is template
 func SomePtrTestBool() string {
 	return `
 func TestSome<FTYPE>Ptr(t *testing.T) {
@@ -67,7 +68,8 @@ func TestSome<FTYPE>Ptr(t *testing.T) {
 }
 
 //************************SomePtrErr Function*******************
-// RemovePtrTest<FTYPE>Ptr
+
+// SomePtrErrTest is template
 func SomePtrErrTest() string {
 	return `
 func TestSome<FTYPE>PtrErr(t *testing.T) {
@@ -115,6 +117,7 @@ func TestSome<FTYPE>PtrErr(t *testing.T) {
 `
 }
 
+// SomePtrErrTestBool is template
 func SomePtrErrTestBool() string {
 	return `
 func TestSome<FTYPE>PtrErr(t *testing.T) {
@@ -149,6 +152,7 @@ func TestSome<FTYPE>PtrErr(t *testing.T) {
 `
 }
 
+// ReplaceActivitySomePtrErr replaces ...
 func ReplaceActivitySomePtrErr(code string) string {
 	s1 := `import (
     _ "errors"
@@ -168,7 +172,8 @@ func TestSomeIntPtrErr(t *testing.T) {`
 }
 
 //************************SomeErr Function*******************
-// SomeErrTest
+
+// SomeErrTest is template
 func SomeErrTest() string {
 	return `
 func TestSome<FTYPE>Err(t *testing.T) {
@@ -216,6 +221,7 @@ func TestSome<FTYPE>Err(t *testing.T) {
 `
 }
 
+// SomeErrTestBool is template
 func SomeErrTestBool() string {
 	return `
 func TestSome<FTYPE>Err(t *testing.T) {
@@ -250,6 +256,7 @@ func TestSome<FTYPE>Err(t *testing.T) {
 `
 }
 
+// ReplaceActivitySomeErr replaces ...
 func ReplaceActivitySomeErr(code string) string {
 	s1 := `import (
     _ "errors"

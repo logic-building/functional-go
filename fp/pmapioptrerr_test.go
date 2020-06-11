@@ -4902,7 +4902,6 @@ func TestPmapBoolStrPtrErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolFloat32PtrErr(t *testing.T) {
 	// Test : someLogic
 	var vt bool = true

@@ -1,6 +1,6 @@
 package basic
 
-// EveryPtr
+// EveryPtr is template
 func EveryPtr() string {
 	return `
 // Every<FTYPE>Ptr returns true if supplied function returns logical true for every item in the list
@@ -18,7 +18,7 @@ func Every<FTYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) bool {
 `
 }
 
-// EveryPtrErr
+// EveryPtrErr is template
 func EveryPtrErr() string {
 	return `
 // Every<FTYPE>PtrErr returns true if supplied function returns logical true for every item in the list
@@ -40,7 +40,7 @@ func Every<FTYPE>PtrErr(f func(*<TYPE>) (bool, error), list []*<TYPE>) (bool, er
 `
 }
 
-// EveryErr
+// EveryErr is template
 func EveryErr() string {
 	return `
 // Every<FTYPE>Err returns true if supplied function returns logical true for every item in the list

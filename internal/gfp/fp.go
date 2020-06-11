@@ -392,7 +392,7 @@ func DropWhileEmployerPtr(f func(*employer.Employer) bool, list []*employer.Empl
 	return newList
 }
 
-/// DropWhileEmployerPtrErr drops the items from the list as long as condition satisfies.
+// DropWhileEmployerPtrErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
@@ -426,7 +426,7 @@ func DropWhileEmployerPtrErr(f func(*employer.Employer) (bool, error), list []*e
 	return newList, nil
 }
 
-/// DropWhileEmployerErr drops the items from the list as long as condition satisfies.
+// DropWhileEmployerErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
@@ -1424,7 +1424,7 @@ func DropWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Empl
 	return newList
 }
 
-/// DropWhileEmployeePtrErr drops the items from the list as long as condition satisfies.
+// DropWhileEmployeePtrErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
@@ -1458,7 +1458,7 @@ func DropWhileEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*e
 	return newList, nil
 }
 
-/// DropWhileEmployeeErr drops the items from the list as long as condition satisfies.
+// DropWhileEmployeeErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)

@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// Reduce<FTYPE>Ptr reduces a list to a single value by combining elements via a supplied function
+// ReducePtrTest reduces a list to a single value by combining elements via a supplied function
 func ReducePtrTest() string {
 	return `
 func TestReduce<FTYPE>Ptr(t *testing.T) {
@@ -58,7 +58,8 @@ func plus<FTYPE>Ptr(num1, num2 *<TYPE>) *<TYPE> {
 }
 
 // **********Reduce<FTYPE>PtrErr*************
-// Reduce<FTYPE>PtrErr reduces a list to a single value by combining elements via a supplied function
+
+// ReducePtrErrTest reduces a list to a single value by combining elements via a supplied function
 func ReducePtrErrTest() string {
 	return `
 func TestReduce<FTYPE>PtrErr(t *testing.T) {
@@ -122,6 +123,7 @@ func plus<FTYPE>PtrErr(num1, num2 *<TYPE>) (*<TYPE>, error) {
 `
 }
 
+// ReplaceActivityReducePtrErr replaces ...
 func ReplaceActivityReducePtrErr(code string) string {
 	s1 := `import (
     _ "errors"

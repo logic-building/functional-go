@@ -1,6 +1,6 @@
 package basic
 
-// DistinctInt removes duplicates.
+// DistinctPtr is template.
 func DistinctPtr() string {
 	return `
 // Distinct<FTYPE>Ptr removes duplicates.

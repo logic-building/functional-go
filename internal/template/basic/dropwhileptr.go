@@ -1,9 +1,9 @@
 package basic
 
-// Drop returns a new list after dropping the given item
+// DropWhilePtr returns a new list after dropping the given item
 func DropWhilePtr() string {
 	return `
-/// DropWhile<FTYPE>Ptr drops the items from the list as long as condition satisfies.
+// DropWhile<FTYPE>Ptr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns boolean
@@ -35,10 +35,10 @@ func DropWhile<FTYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) []*<TYPE> {
 `
 }
 
-// DropWhile returns a new list after dropping the given item
+// DropWhilePtrErr returns a new list after dropping the given item
 func DropWhilePtrErr() string {
 	return `
-/// DropWhile<FTYPE>PtrErr drops the items from the list as long as condition satisfies.
+// DropWhile<FTYPE>PtrErr drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)
@@ -74,10 +74,10 @@ func DropWhile<FTYPE>PtrErr(f func(*<TYPE>) (bool, error), list []*<TYPE>) ([]*<
 `
 }
 
-// DropWhile returns a new list after dropping the given item
+// DropWhileErr returns a new list after dropping the given item
 func DropWhileErr() string {
 	return `
-/// DropWhile<FTYPE>Err drops the items from the list as long as condition satisfies.
+// DropWhile<FTYPE>Err drops the items from the list as long as condition satisfies.
 //
 // Takes two inputs
 //	1. Function: takes one input and returns (boolean, error)

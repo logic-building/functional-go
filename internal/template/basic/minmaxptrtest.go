@@ -1,6 +1,6 @@
 package basic
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MinMaxPtrTest is template
 func MinMaxPtrTest() string {
 	return `
 func TestMinMax<FTYPE>Ptr(t *testing.T) {

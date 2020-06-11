@@ -1,6 +1,6 @@
 package basic
 
-// Reduce<FTYPE> reduces a list to a single value by combining elements via a supplied function
+// ReducePtr reduces a list to a single value by combining elements via a supplied function
 func ReducePtr() string {
 	return `
 // Reduce<FTYPE> reduces a list to a single value by combining elements via a supplied function
@@ -39,7 +39,7 @@ func Reduce<FTYPE>Ptr(f func(*<TYPE>, *<TYPE>) *<TYPE>, list []*<TYPE>, initiali
 `
 }
 
-// Reduce<FTYPE>PtrErr reduces a list to a single value by combining elements via a supplied function
+// ReducePtrErr reduces a list to a single value by combining elements via a supplied function
 func ReducePtrErr() string {
 	return `
 // Reduce<FTYPE>PtrErr reduces a list to a single value by combining elements via a supplied function
@@ -81,7 +81,7 @@ func Reduce<FTYPE>PtrErr(f func(*<TYPE>, *<TYPE>) (*<TYPE>, error), list []*<TYP
 `
 }
 
-// Reduce<FTYPE>Err reduces a list to a single value by combining elements via a supplied function
+// ReduceErr reduces a list to a single value by combining elements via a supplied function
 func ReduceErr() string {
 	return `
 // Reduce<FTYPE>Err reduces a list to a single value by combining elements via a supplied function

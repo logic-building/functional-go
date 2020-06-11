@@ -1,6 +1,6 @@
 package basic
 
-// DistinctInt removes duplicates.
+// DistinctPtrTest is template
 func DistinctPtrTest() string {
 	return `
 func TestDistinct<FTYPE>Ptr(t *testing.T) {
@@ -40,7 +40,7 @@ func TestDistinct<FTYPE>Ptr(t *testing.T) {
 `
 }
 
-// DistinctBoolPtr removes duplicates.
+// DistinctPtrBoolTest is template
 func DistinctPtrBoolTest() string {
 	return `
 func TestDistinct<FTYPE>Ptr(t *testing.T) {

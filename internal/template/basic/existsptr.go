@@ -1,6 +1,6 @@
 package basic
 
-// Drop returns a new list after dropping the given item
+// ExistsPtr is template
 func ExistsPtr() string {
 	return `
 // Exists<FTYPE>Ptr checks if given item exists in the list

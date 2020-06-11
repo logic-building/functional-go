@@ -1,6 +1,6 @@
 package basic
 
-// RemovePtrTest<FTYPE>Ptr
+// RestPtrTest is template
 func RestPtrTest() string {
 	return `
 func TestRest<FTYPE>Ptr(t *testing.T) {
@@ -42,6 +42,7 @@ func TestRest<FTYPE>Ptr(t *testing.T) {
 `
 }
 
+// RestPtrTestBool is template
 func RestPtrTestBool() string {
 	return `
 func TestRest<FTYPE>Ptr(t *testing.T) {

@@ -1,6 +1,6 @@
 package basic
 
-// Map<FTYPE>Ptr applies the function(1st argument) on each item of the list and returns new list
+// MinPtrTest applies the function(1st argument) on each item of the list and returns new list
 func MinPtrTest() string {
 	return `
 func TestMin<FTYPE>Ptr(t *testing.T) {

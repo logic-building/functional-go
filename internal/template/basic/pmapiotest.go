@@ -428,6 +428,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 `
 }
 
+// ReplaceActivityPMapIOErr replaces ...
 func ReplaceActivityPMapIOErr(code string) string {
 	//	s1 := `import (
 	//    _ "errors"

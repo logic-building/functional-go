@@ -1,6 +1,6 @@
 package basic
 
-// PMapIONumber is template to generate itself for different combination of data type.
+// PMapIONumberPtr is template to generate itself for different combination of data type.
 func PMapIONumberPtr() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -90,7 +90,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// PMapIONumberBool is template to generate itself for different combination of data type.
+// PMapIONumberBoolPtr is template to generate itself for different combination of data type.
 func PMapIONumberBoolPtr() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -120,7 +120,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// PMapIOStrBool is template to generate itself for different combination of data type.
+// PMapIOStrBoolPtr is template to generate itself for different combination of data type.
 func PMapIOStrBoolPtr() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -151,7 +151,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 `
 }
 
-// PMapIOBoolNumber is template to generate itself for different combination of data type.
+// PMapIOBoolNumberPtr is template to generate itself for different combination of data type.
 func PMapIOBoolNumberPtr() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
@@ -209,11 +209,10 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
-// PMapIONumberErr is template to generate itself for different combination of data type.
+// PMapIONumberPtrErr is template to generate itself for different combination of data type.
 func PMapIONumberPtrErr() string {
 	return `
 func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
@@ -466,10 +465,10 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
+// ReplaceActivityPMapIOPtrErr
 func ReplaceActivityPMapIOPtrErr(code string) string {
 	//	s1 := `import (
 	//    _ "errors"

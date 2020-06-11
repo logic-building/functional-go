@@ -1,6 +1,6 @@
 package basic
 
-// MergeTest is template to generate itself for different combination of data type.
+// MergeTestPtr is template to generate itself for different combination of data type.
 func MergeTestPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -75,7 +75,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestNumbersToString is template to generate itself for different combination of data type.
+// MergeTestNumbersToStringPtr is template to generate itself for different combination of data type.
 func MergeTestNumbersToStringPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -149,7 +149,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestStringToNumbers is template to generate itself for different combination of data type.
+// MergeTestStringToNumbersPtr is template to generate itself for different combination of data type.
 func MergeTestStringToNumbersPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -224,7 +224,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestStringToBool is template to generate itself for different combination of data type.
+// MergeTestStringToBoolPtr is template to generate itself for different combination of data type.
 func MergeTestStringToBoolPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -300,7 +300,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestBoolToString is template to generate itself for different combination of data type.
+// MergeTestBoolToStringPtr is template to generate itself for different combination of data type.
 func MergeTestBoolToStringPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -371,7 +371,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestNumberToBool is template to generate itself for different combination of data type.
+// MergeTestNumberToBoolPtr is template to generate itself for different combination of data type.
 func MergeTestNumberToBoolPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -444,7 +444,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestBoolToNumber is template to generate itself for different combination of data type.
+// MergeTestBoolToNumberPtr is template to generate itself for different combination of data type.
 func MergeTestBoolToNumberPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -513,7 +513,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestBoolToBool is template to generate itself for different combination of data type.
+// MergeTestBoolToBoolPtr is template to generate itself for different combination of data type.
 func MergeTestBoolToBoolPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
@@ -580,7 +580,7 @@ func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 `
 }
 
-// MergeTestStrToStr is template to generate itself for different combination of data type.
+// MergeTestStrToStrPtr is template to generate itself for different combination of data type.
 func MergeTestStrToStrPtr() string {
 	return `
 func TestMerge<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {

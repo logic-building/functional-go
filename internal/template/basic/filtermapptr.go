@@ -1,6 +1,6 @@
 package basic
 
-// FilterMap<FTYPE> filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapPtr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
@@ -35,7 +35,7 @@ func FilterMap<FTYPE>Ptr(fFilter func(*<TYPE>) bool, fMap func(*<TYPE>) *<TYPE>,
 `
 }
 
-// FilterMapIntPtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMapPtrErr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns true/false.
 //	2. Function: takes int as argument and returns int
