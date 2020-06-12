@@ -468,7 +468,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 `
 }
 
-// ReplaceActivityPMapIOPtrErr
+// ReplaceActivityPMapIOPtrErr replaces ...
 func ReplaceActivityPMapIOPtrErr(code string) string {
 	//	s1 := `import (
 	//    _ "errors"

@@ -85,6 +85,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Subset",
+		codeTemplate:      basic.Subset(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "subset.go",
+
+		testTemplate:          basic.SubsetTest(),
+		testTemplateBool:      basic.SubsetBoolTest(),
+		generatedTestFileName: "subset_test.go",
+	},
+
+	fpCode{
 		function:          "Take",
 		codeTemplate:      basic.Take(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},

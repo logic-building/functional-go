@@ -7,7 +7,7 @@ func FilterPtr() string {
 //  1. Function: takes 1 argument of type <TYPE> and returns bool
 //  2. slice of type []*<TYPE>
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func Filter<FTYPE>Ptr(f func(*<TYPE>) bool, list []*<TYPE>) []*<TYPE> {
 	if f == nil {
@@ -31,7 +31,7 @@ func FilterPtrErr() string {
 //  1. Function: takes 1 argument of type <TYPE> and returns (bool, error)
 //  2. slice of type []*<TYPE>
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func Filter<FTYPE>PtrErr(f func(*<TYPE>) (bool, error), list []*<TYPE>) ([]*<TYPE>, error) {
 	if f == nil {

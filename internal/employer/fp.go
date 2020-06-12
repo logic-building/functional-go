@@ -98,7 +98,7 @@ func FilterPtr(f func(*Employer) bool, list []*Employer) []*Employer {
 //  1. Function: takes 1 argument of type Employer and returns (bool, error)
 //  2. slice of type []*Employer
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterPtrErr(f func(*Employer) (bool, error), list []*Employer) ([]*Employer, error) {
 	if f == nil {
@@ -1033,7 +1033,7 @@ func TakePtr(n int, list []*Employer) []*Employer {
 	newList := make([]*Employer, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 func MapEmployee(f func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
@@ -1130,7 +1130,7 @@ func FilterEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employe
 //  1. Function: takes 1 argument of type employee.Employee and returns (bool, error)
 //  2. slice of type []*employee.Employee
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*employee.Employee) ([]*employee.Employee, error) {
 	if f == nil {
@@ -2065,7 +2065,7 @@ func TakeEmployeePtr(n int, list []*employee.Employee) []*employee.Employee {
 	newList := make([]*employee.Employee, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 
@@ -4080,6 +4080,7 @@ func (a byId) Len() int           { return len(a) }
 func (a byId) Less(i, j int) bool { return a[i].Id < a[j].Id }
 func (a byId) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
+// SortEmployerById sort structs
 func SortEmployerById(list []Employer) []Employer {
 	if len(list) == 0 {
 		return []Employer{}
@@ -4092,6 +4093,7 @@ func SortEmployerById(list []Employer) []Employer {
 	return newList
 }
 
+// SortEmployerByIdPtr sorts structs
 func SortEmployerByIdPtr(list []*Employer) []*Employer {
 	if len(list) == 0 {
 		return []*Employer{}
@@ -4116,6 +4118,7 @@ func (a byIdDesc) Len() int           { return len(a) }
 func (a byIdDesc) Less(i, j int) bool { return a[i].Id > a[j].Id }
 func (a byIdDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
+// SortEmployerByIdDesc sorts structs
 func SortEmployerByIdDesc(list []Employer) []Employer {
 	if len(list) == 0 {
 		return []Employer{}
@@ -4128,6 +4131,7 @@ func SortEmployerByIdDesc(list []Employer) []Employer {
 	return newList
 }
 
+// SortEmployerByIdDescPtr sorts structs
 func SortEmployerByIdDescPtr(list []*Employer) []*Employer {
 	if len(list) == 0 {
 		return []*Employer{}

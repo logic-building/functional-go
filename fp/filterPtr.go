@@ -4,7 +4,7 @@ package fp
 //  1. Function: takes 1 argument of type int and returns bool
 //  2. slice of type []*int
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterIntPtr(f func(*int) bool, list []*int) []*int {
 	if f == nil {
@@ -23,7 +23,7 @@ func FilterIntPtr(f func(*int) bool, list []*int) []*int {
 //  1. Function: takes 1 argument of type int64 and returns bool
 //  2. slice of type []*int64
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterInt64Ptr(f func(*int64) bool, list []*int64) []*int64 {
 	if f == nil {
@@ -42,7 +42,7 @@ func FilterInt64Ptr(f func(*int64) bool, list []*int64) []*int64 {
 //  1. Function: takes 1 argument of type int32 and returns bool
 //  2. slice of type []*int32
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterInt32Ptr(f func(*int32) bool, list []*int32) []*int32 {
 	if f == nil {
@@ -61,7 +61,7 @@ func FilterInt32Ptr(f func(*int32) bool, list []*int32) []*int32 {
 //  1. Function: takes 1 argument of type int16 and returns bool
 //  2. slice of type []*int16
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterInt16Ptr(f func(*int16) bool, list []*int16) []*int16 {
 	if f == nil {
@@ -80,7 +80,7 @@ func FilterInt16Ptr(f func(*int16) bool, list []*int16) []*int16 {
 //  1. Function: takes 1 argument of type int8 and returns bool
 //  2. slice of type []*int8
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterInt8Ptr(f func(*int8) bool, list []*int8) []*int8 {
 	if f == nil {
@@ -99,7 +99,7 @@ func FilterInt8Ptr(f func(*int8) bool, list []*int8) []*int8 {
 //  1. Function: takes 1 argument of type uint and returns bool
 //  2. slice of type []*uint
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterUintPtr(f func(*uint) bool, list []*uint) []*uint {
 	if f == nil {
@@ -118,7 +118,7 @@ func FilterUintPtr(f func(*uint) bool, list []*uint) []*uint {
 //  1. Function: takes 1 argument of type uint64 and returns bool
 //  2. slice of type []*uint64
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterUint64Ptr(f func(*uint64) bool, list []*uint64) []*uint64 {
 	if f == nil {
@@ -137,7 +137,7 @@ func FilterUint64Ptr(f func(*uint64) bool, list []*uint64) []*uint64 {
 //  1. Function: takes 1 argument of type uint32 and returns bool
 //  2. slice of type []*uint32
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterUint32Ptr(f func(*uint32) bool, list []*uint32) []*uint32 {
 	if f == nil {
@@ -156,7 +156,7 @@ func FilterUint32Ptr(f func(*uint32) bool, list []*uint32) []*uint32 {
 //  1. Function: takes 1 argument of type uint16 and returns bool
 //  2. slice of type []*uint16
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterUint16Ptr(f func(*uint16) bool, list []*uint16) []*uint16 {
 	if f == nil {
@@ -175,7 +175,7 @@ func FilterUint16Ptr(f func(*uint16) bool, list []*uint16) []*uint16 {
 //  1. Function: takes 1 argument of type uint8 and returns bool
 //  2. slice of type []*uint8
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterUint8Ptr(f func(*uint8) bool, list []*uint8) []*uint8 {
 	if f == nil {
@@ -194,7 +194,7 @@ func FilterUint8Ptr(f func(*uint8) bool, list []*uint8) []*uint8 {
 //  1. Function: takes 1 argument of type string and returns bool
 //  2. slice of type []*string
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterStrPtr(f func(*string) bool, list []*string) []*string {
 	if f == nil {
@@ -213,7 +213,7 @@ func FilterStrPtr(f func(*string) bool, list []*string) []*string {
 //  1. Function: takes 1 argument of type bool and returns bool
 //  2. slice of type []*bool
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterBoolPtr(f func(*bool) bool, list []*bool) []*bool {
 	if f == nil {
@@ -232,7 +232,7 @@ func FilterBoolPtr(f func(*bool) bool, list []*bool) []*bool {
 //  1. Function: takes 1 argument of type float32 and returns bool
 //  2. slice of type []*float32
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
 	if f == nil {
@@ -251,7 +251,7 @@ func FilterFloat32Ptr(f func(*float32) bool, list []*float32) []*float32 {
 //  1. Function: takes 1 argument of type float64 and returns bool
 //  2. slice of type []*float64
 //
-// Returns: 
+// Returns:
 //  new filtered list
 func FilterFloat64Ptr(f func(*float64) bool, list []*float64) []*float64 {
 	if f == nil {

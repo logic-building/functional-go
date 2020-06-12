@@ -1,9 +1,10 @@
 package basic
 
-// Intersection<FTYPE> is template.
+// Difference is template.
 func Difference() string {
 	return `
 // Difference<FTYPE> returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func Difference<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 	if arrList == nil {
 		return []<TYPE>{}
@@ -50,6 +51,7 @@ func Difference<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 }
 
 // Difference<FTYPE>Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func Difference<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 	if arrList == nil {
 		return []*<TYPE>{}

@@ -4,6 +4,7 @@ package basic
 func Union() string {
 	return `
 // Union<FTYPE> return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
 func Union<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 	resultMap := make(map[<TYPE>]bool)
 	for _, arr := range arrList {
@@ -22,6 +23,7 @@ func Union<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 }
 
 // Union<FTYPE>Ptr return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
 func Union<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 	resultMap := make(map[<TYPE>]bool)
 	var resultArr []*<TYPE>

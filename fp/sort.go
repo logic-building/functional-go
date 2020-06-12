@@ -77,6 +77,7 @@ func SortInts64DescPtr(list []*int64) []*int64 {
 
 	return newListPtr
 }
+
 type int321 []int32
 
 func (a int321) Len() int           { return len(a) }
@@ -152,6 +153,7 @@ func SortInts32DescPtr(list []*int32) []*int32 {
 
 	return newListPtr
 }
+
 type int161 []int16
 
 func (a int161) Len() int           { return len(a) }
@@ -227,6 +229,7 @@ func SortInts16DescPtr(list []*int16) []*int16 {
 
 	return newListPtr
 }
+
 type int81 []int8
 
 func (a int81) Len() int           { return len(a) }
@@ -302,6 +305,7 @@ func SortInts8DescPtr(list []*int8) []*int8 {
 
 	return newListPtr
 }
+
 type uint1 []uint
 
 func (a uint1) Len() int           { return len(a) }
@@ -377,6 +381,7 @@ func SortUintsDescPtr(list []*uint) []*uint {
 
 	return newListPtr
 }
+
 type uint641 []uint64
 
 func (a uint641) Len() int           { return len(a) }
@@ -452,6 +457,7 @@ func SortUint64sDescPtr(list []*uint64) []*uint64 {
 
 	return newListPtr
 }
+
 type uint321 []uint32
 
 func (a uint321) Len() int           { return len(a) }
@@ -527,6 +533,7 @@ func SortUints32DescPtr(list []*uint32) []*uint32 {
 
 	return newListPtr
 }
+
 type uint161 []uint16
 
 func (a uint161) Len() int           { return len(a) }
@@ -602,6 +609,7 @@ func SortUints16DescPtr(list []*uint16) []*uint16 {
 
 	return newListPtr
 }
+
 type uint81 []uint8
 
 func (a uint81) Len() int           { return len(a) }
@@ -677,6 +685,7 @@ func SortUints8DescPtr(list []*uint8) []*uint8 {
 
 	return newListPtr
 }
+
 type float321 []float32
 
 func (a float321) Len() int           { return len(a) }

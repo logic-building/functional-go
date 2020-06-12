@@ -32,7 +32,7 @@ func TakeIntPtr(n int, list []*int) []*int {
 	newList := make([]*int, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeInt64 returns n items in the list
@@ -67,7 +67,7 @@ func TakeInt64Ptr(n int, list []*int64) []*int64 {
 	newList := make([]*int64, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeInt32 returns n items in the list
@@ -102,7 +102,7 @@ func TakeInt32Ptr(n int, list []*int32) []*int32 {
 	newList := make([]*int32, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeInt16 returns n items in the list
@@ -137,7 +137,7 @@ func TakeInt16Ptr(n int, list []*int16) []*int16 {
 	newList := make([]*int16, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeInt8 returns n items in the list
@@ -172,7 +172,7 @@ func TakeInt8Ptr(n int, list []*int8) []*int8 {
 	newList := make([]*int8, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeUint returns n items in the list
@@ -207,7 +207,7 @@ func TakeUintPtr(n int, list []*uint) []*uint {
 	newList := make([]*uint, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeUint64 returns n items in the list
@@ -242,7 +242,7 @@ func TakeUint64Ptr(n int, list []*uint64) []*uint64 {
 	newList := make([]*uint64, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeUint32 returns n items in the list
@@ -277,7 +277,7 @@ func TakeUint32Ptr(n int, list []*uint32) []*uint32 {
 	newList := make([]*uint32, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeUint16 returns n items in the list
@@ -312,7 +312,7 @@ func TakeUint16Ptr(n int, list []*uint16) []*uint16 {
 	newList := make([]*uint16, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeUint8 returns n items in the list
@@ -347,7 +347,7 @@ func TakeUint8Ptr(n int, list []*uint8) []*uint8 {
 	newList := make([]*uint8, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeStr returns n items in the list
@@ -382,7 +382,7 @@ func TakeStrPtr(n int, list []*string) []*string {
 	newList := make([]*string, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeBool returns n items in the list
@@ -417,7 +417,7 @@ func TakeBoolPtr(n int, list []*bool) []*bool {
 	newList := make([]*bool, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeFloat32 returns n items in the list
@@ -452,7 +452,7 @@ func TakeFloat32Ptr(n int, list []*float32) []*float32 {
 	newList := make([]*float32, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 // TakeFloat64 returns n items in the list
@@ -487,6 +487,6 @@ func TakeFloat64Ptr(n int, list []*float64) []*float64 {
 	newList := make([]*float64, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }

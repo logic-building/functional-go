@@ -208,7 +208,7 @@ func ReplaceActivityEveryPtrErr(code string) string {
 
 func TestEveryIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
@@ -345,7 +345,7 @@ func ReplaceActivityEveryErr(code string) string {
 
 func TestEveryIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
