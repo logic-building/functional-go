@@ -1,23 +1,24 @@
 package basic
 
-// Subset is template.
-func Subset() string {
+// Superset is template.
+func Superset() string {
 	return `
-// Subset<FTYPE> returns true or false by checking if set1 is a subset of set2
+// Subset<FTYPE> returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func Subset<FTYPE>(list1, list2 []<TYPE>) bool {
+func Superset<FTYPE>(list1, list2 []<TYPE>) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[<TYPE>]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -30,21 +31,22 @@ func Subset<FTYPE>(list1, list2 []<TYPE>) bool {
 	return true
 }
 
-// Subset<FTYPE>Ptr returns true or false by checking if set1 is a subset of set2
+// Superset<FTYPE>Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func Subset<FTYPE>Ptr(list1, list2 []*<TYPE>) bool {
+func Superset<FTYPE>Ptr(list1, list2 []*<TYPE>) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[<TYPE>]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}

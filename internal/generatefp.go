@@ -96,6 +96,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Superset",
+		codeTemplate:      basic.Superset(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "superset.go",
+
+		testTemplate:          basic.SupersetTest(),
+		testTemplateBool:      basic.SupersetBoolTest(),
+		generatedTestFileName: "superset_test.go",
+	},
+
+	fpCode{
 		function:          "Take",
 		codeTemplate:      basic.Take(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -853,7 +864,7 @@ var fpCodeList = []fpCode{
 var importTestTemplate = `
 
 import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )

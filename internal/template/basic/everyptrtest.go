@@ -201,7 +201,7 @@ func TruePtrErr2(val *bool) (bool, error) {
 // ReplaceActivityEveryPtrErr replaces ...
 func ReplaceActivityEveryPtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
@@ -338,7 +338,7 @@ func TrueErr2(val bool) (bool, error) {
 // ReplaceActivityEveryErr replaces ...
 func ReplaceActivityEveryErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )

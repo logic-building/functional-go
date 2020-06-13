@@ -412,14 +412,14 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 // ReplaceActivityMapIOErr replaces ...
 func ReplaceActivityMapIOErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestMapIntInt64Err(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"reflect"
 	"testing"
 )

@@ -502,14 +502,14 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 
 func ReplaceActivityMapIOPtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestMapIntInt64PtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"reflect"
 	"testing"
 )

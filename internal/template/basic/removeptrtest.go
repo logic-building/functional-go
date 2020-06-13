@@ -146,14 +146,14 @@ func TestRemove<FTYPE>PtrErr(t *testing.T) {
 // ReplaceActivityRemovePtrErr is template
 func ReplaceActivityRemovePtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestRemoveIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
@@ -303,14 +303,14 @@ func TestRemove<FTYPE>Err(t *testing.T) {
 // ReplaceActivityRemoveErr replaces ...
 func ReplaceActivityRemoveErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestRemoveIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 

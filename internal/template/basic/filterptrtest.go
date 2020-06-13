@@ -150,7 +150,7 @@ func true<FTYPE>PtrErr(num1 *<TYPE>) (bool, error) {
 // ReplaceActivityFilterPtrErrTest is template
 func ReplaceActivityFilterPtrErrTest(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
@@ -295,14 +295,14 @@ func true<FTYPE>Err(num1 <TYPE>) (bool, error) {
 // ReplaceActivityFilterErrTest replaces ...
 func ReplaceActivityFilterErrTest(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestFilterIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 

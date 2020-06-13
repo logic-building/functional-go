@@ -169,14 +169,14 @@ func TestPMap<FTYPE>PtrErr(t *testing.T) {
 // ReplaceActivityPMapPtrErr replaces ...
 func ReplaceActivityPMapPtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestPmapIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
@@ -396,14 +396,14 @@ func TestPMap<FTYPE>Err(t *testing.T) {
 // ReplaceActivityPMapErr replaces ...
 func ReplaceActivityPMapErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestPmapIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
