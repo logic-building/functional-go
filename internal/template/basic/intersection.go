@@ -4,6 +4,7 @@ package basic
 func Intersection() string {
 	return `
 // Intersection<FTYPE> return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 	if arrList == nil {
 		return []<TYPE>{}
@@ -50,6 +51,7 @@ func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func Intersection<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 	if arrList == nil {
 		return []*<TYPE>{}

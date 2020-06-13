@@ -1,6 +1,7 @@
 package fp
 
 // DifferenceInt returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt(arrList ...[]int) []int {
 	if arrList == nil {
 		return []int{}
@@ -47,6 +48,7 @@ func DifferenceInt(arrList ...[]int) []int {
 }
 
 // DifferenceIntPtr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceIntPtr(arrList ...[]*int) []*int {
 	if arrList == nil {
 		return []*int{}
@@ -93,6 +95,7 @@ func DifferenceIntPtr(arrList ...[]*int) []*int {
 }
 
 // DifferenceInt64 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt64(arrList ...[]int64) []int64 {
 	if arrList == nil {
 		return []int64{}
@@ -139,6 +142,7 @@ func DifferenceInt64(arrList ...[]int64) []int64 {
 }
 
 // DifferenceInt64Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt64Ptr(arrList ...[]*int64) []*int64 {
 	if arrList == nil {
 		return []*int64{}
@@ -185,6 +189,7 @@ func DifferenceInt64Ptr(arrList ...[]*int64) []*int64 {
 }
 
 // DifferenceInt32 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt32(arrList ...[]int32) []int32 {
 	if arrList == nil {
 		return []int32{}
@@ -231,6 +236,7 @@ func DifferenceInt32(arrList ...[]int32) []int32 {
 }
 
 // DifferenceInt32Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt32Ptr(arrList ...[]*int32) []*int32 {
 	if arrList == nil {
 		return []*int32{}
@@ -277,6 +283,7 @@ func DifferenceInt32Ptr(arrList ...[]*int32) []*int32 {
 }
 
 // DifferenceInt16 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt16(arrList ...[]int16) []int16 {
 	if arrList == nil {
 		return []int16{}
@@ -323,6 +330,7 @@ func DifferenceInt16(arrList ...[]int16) []int16 {
 }
 
 // DifferenceInt16Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt16Ptr(arrList ...[]*int16) []*int16 {
 	if arrList == nil {
 		return []*int16{}
@@ -369,6 +377,7 @@ func DifferenceInt16Ptr(arrList ...[]*int16) []*int16 {
 }
 
 // DifferenceInt8 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt8(arrList ...[]int8) []int8 {
 	if arrList == nil {
 		return []int8{}
@@ -415,6 +424,7 @@ func DifferenceInt8(arrList ...[]int8) []int8 {
 }
 
 // DifferenceInt8Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceInt8Ptr(arrList ...[]*int8) []*int8 {
 	if arrList == nil {
 		return []*int8{}
@@ -461,6 +471,7 @@ func DifferenceInt8Ptr(arrList ...[]*int8) []*int8 {
 }
 
 // DifferenceUint returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint(arrList ...[]uint) []uint {
 	if arrList == nil {
 		return []uint{}
@@ -507,6 +518,7 @@ func DifferenceUint(arrList ...[]uint) []uint {
 }
 
 // DifferenceUintPtr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUintPtr(arrList ...[]*uint) []*uint {
 	if arrList == nil {
 		return []*uint{}
@@ -553,6 +565,7 @@ func DifferenceUintPtr(arrList ...[]*uint) []*uint {
 }
 
 // DifferenceUint64 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint64(arrList ...[]uint64) []uint64 {
 	if arrList == nil {
 		return []uint64{}
@@ -599,6 +612,7 @@ func DifferenceUint64(arrList ...[]uint64) []uint64 {
 }
 
 // DifferenceUint64Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint64Ptr(arrList ...[]*uint64) []*uint64 {
 	if arrList == nil {
 		return []*uint64{}
@@ -645,6 +659,7 @@ func DifferenceUint64Ptr(arrList ...[]*uint64) []*uint64 {
 }
 
 // DifferenceUint32 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint32(arrList ...[]uint32) []uint32 {
 	if arrList == nil {
 		return []uint32{}
@@ -691,6 +706,7 @@ func DifferenceUint32(arrList ...[]uint32) []uint32 {
 }
 
 // DifferenceUint32Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint32Ptr(arrList ...[]*uint32) []*uint32 {
 	if arrList == nil {
 		return []*uint32{}
@@ -737,6 +753,7 @@ func DifferenceUint32Ptr(arrList ...[]*uint32) []*uint32 {
 }
 
 // DifferenceUint16 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint16(arrList ...[]uint16) []uint16 {
 	if arrList == nil {
 		return []uint16{}
@@ -783,6 +800,7 @@ func DifferenceUint16(arrList ...[]uint16) []uint16 {
 }
 
 // DifferenceUint16Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint16Ptr(arrList ...[]*uint16) []*uint16 {
 	if arrList == nil {
 		return []*uint16{}
@@ -829,6 +847,7 @@ func DifferenceUint16Ptr(arrList ...[]*uint16) []*uint16 {
 }
 
 // DifferenceUint8 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint8(arrList ...[]uint8) []uint8 {
 	if arrList == nil {
 		return []uint8{}
@@ -875,6 +894,7 @@ func DifferenceUint8(arrList ...[]uint8) []uint8 {
 }
 
 // DifferenceUint8Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceUint8Ptr(arrList ...[]*uint8) []*uint8 {
 	if arrList == nil {
 		return []*uint8{}
@@ -921,6 +941,7 @@ func DifferenceUint8Ptr(arrList ...[]*uint8) []*uint8 {
 }
 
 // DifferenceStr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceStr(arrList ...[]string) []string {
 	if arrList == nil {
 		return []string{}
@@ -967,6 +988,7 @@ func DifferenceStr(arrList ...[]string) []string {
 }
 
 // DifferenceStrPtr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceStrPtr(arrList ...[]*string) []*string {
 	if arrList == nil {
 		return []*string{}
@@ -1013,6 +1035,7 @@ func DifferenceStrPtr(arrList ...[]*string) []*string {
 }
 
 // DifferenceBool returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceBool(arrList ...[]bool) []bool {
 	if arrList == nil {
 		return []bool{}
@@ -1059,6 +1082,7 @@ func DifferenceBool(arrList ...[]bool) []bool {
 }
 
 // DifferenceBoolPtr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceBoolPtr(arrList ...[]*bool) []*bool {
 	if arrList == nil {
 		return []*bool{}
@@ -1105,6 +1129,7 @@ func DifferenceBoolPtr(arrList ...[]*bool) []*bool {
 }
 
 // DifferenceFloat32 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceFloat32(arrList ...[]float32) []float32 {
 	if arrList == nil {
 		return []float32{}
@@ -1151,6 +1176,7 @@ func DifferenceFloat32(arrList ...[]float32) []float32 {
 }
 
 // DifferenceFloat32Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceFloat32Ptr(arrList ...[]*float32) []*float32 {
 	if arrList == nil {
 		return []*float32{}
@@ -1197,6 +1223,7 @@ func DifferenceFloat32Ptr(arrList ...[]*float32) []*float32 {
 }
 
 // DifferenceFloat64 returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceFloat64(arrList ...[]float64) []float64 {
 	if arrList == nil {
 		return []float64{}
@@ -1243,6 +1270,7 @@ func DifferenceFloat64(arrList ...[]float64) []float64 {
 }
 
 // DifferenceFloat64Ptr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
 func DifferenceFloat64Ptr(arrList ...[]*float64) []*float64 {
 	if arrList == nil {
 		return []*float64{}

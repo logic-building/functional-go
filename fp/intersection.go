@@ -1,6 +1,7 @@
 package fp
 
 // IntersectionInt return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt(arrList ...[]int) []int {
 	if arrList == nil {
 		return []int{}
@@ -47,6 +48,7 @@ func IntersectionInt(arrList ...[]int) []int {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionIntPtr(arrList ...[]*int) []*int {
 	if arrList == nil {
 		return []*int{}
@@ -93,6 +95,7 @@ func IntersectionIntPtr(arrList ...[]*int) []*int {
 }
 
 // IntersectionInt64 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt64(arrList ...[]int64) []int64 {
 	if arrList == nil {
 		return []int64{}
@@ -139,6 +142,7 @@ func IntersectionInt64(arrList ...[]int64) []int64 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt64Ptr(arrList ...[]*int64) []*int64 {
 	if arrList == nil {
 		return []*int64{}
@@ -185,6 +189,7 @@ func IntersectionInt64Ptr(arrList ...[]*int64) []*int64 {
 }
 
 // IntersectionInt32 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt32(arrList ...[]int32) []int32 {
 	if arrList == nil {
 		return []int32{}
@@ -231,6 +236,7 @@ func IntersectionInt32(arrList ...[]int32) []int32 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt32Ptr(arrList ...[]*int32) []*int32 {
 	if arrList == nil {
 		return []*int32{}
@@ -277,6 +283,7 @@ func IntersectionInt32Ptr(arrList ...[]*int32) []*int32 {
 }
 
 // IntersectionInt16 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt16(arrList ...[]int16) []int16 {
 	if arrList == nil {
 		return []int16{}
@@ -323,6 +330,7 @@ func IntersectionInt16(arrList ...[]int16) []int16 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt16Ptr(arrList ...[]*int16) []*int16 {
 	if arrList == nil {
 		return []*int16{}
@@ -369,6 +377,7 @@ func IntersectionInt16Ptr(arrList ...[]*int16) []*int16 {
 }
 
 // IntersectionInt8 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt8(arrList ...[]int8) []int8 {
 	if arrList == nil {
 		return []int8{}
@@ -415,6 +424,7 @@ func IntersectionInt8(arrList ...[]int8) []int8 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionInt8Ptr(arrList ...[]*int8) []*int8 {
 	if arrList == nil {
 		return []*int8{}
@@ -461,6 +471,7 @@ func IntersectionInt8Ptr(arrList ...[]*int8) []*int8 {
 }
 
 // IntersectionUint return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint(arrList ...[]uint) []uint {
 	if arrList == nil {
 		return []uint{}
@@ -507,6 +518,7 @@ func IntersectionUint(arrList ...[]uint) []uint {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUintPtr(arrList ...[]*uint) []*uint {
 	if arrList == nil {
 		return []*uint{}
@@ -553,6 +565,7 @@ func IntersectionUintPtr(arrList ...[]*uint) []*uint {
 }
 
 // IntersectionUint64 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint64(arrList ...[]uint64) []uint64 {
 	if arrList == nil {
 		return []uint64{}
@@ -599,6 +612,7 @@ func IntersectionUint64(arrList ...[]uint64) []uint64 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint64Ptr(arrList ...[]*uint64) []*uint64 {
 	if arrList == nil {
 		return []*uint64{}
@@ -645,6 +659,7 @@ func IntersectionUint64Ptr(arrList ...[]*uint64) []*uint64 {
 }
 
 // IntersectionUint32 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint32(arrList ...[]uint32) []uint32 {
 	if arrList == nil {
 		return []uint32{}
@@ -691,6 +706,7 @@ func IntersectionUint32(arrList ...[]uint32) []uint32 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint32Ptr(arrList ...[]*uint32) []*uint32 {
 	if arrList == nil {
 		return []*uint32{}
@@ -737,6 +753,7 @@ func IntersectionUint32Ptr(arrList ...[]*uint32) []*uint32 {
 }
 
 // IntersectionUint16 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint16(arrList ...[]uint16) []uint16 {
 	if arrList == nil {
 		return []uint16{}
@@ -783,6 +800,7 @@ func IntersectionUint16(arrList ...[]uint16) []uint16 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint16Ptr(arrList ...[]*uint16) []*uint16 {
 	if arrList == nil {
 		return []*uint16{}
@@ -829,6 +847,7 @@ func IntersectionUint16Ptr(arrList ...[]*uint16) []*uint16 {
 }
 
 // IntersectionUint8 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint8(arrList ...[]uint8) []uint8 {
 	if arrList == nil {
 		return []uint8{}
@@ -875,6 +894,7 @@ func IntersectionUint8(arrList ...[]uint8) []uint8 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionUint8Ptr(arrList ...[]*uint8) []*uint8 {
 	if arrList == nil {
 		return []*uint8{}
@@ -921,6 +941,7 @@ func IntersectionUint8Ptr(arrList ...[]*uint8) []*uint8 {
 }
 
 // IntersectionStr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionStr(arrList ...[]string) []string {
 	if arrList == nil {
 		return []string{}
@@ -967,6 +988,7 @@ func IntersectionStr(arrList ...[]string) []string {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionStrPtr(arrList ...[]*string) []*string {
 	if arrList == nil {
 		return []*string{}
@@ -1013,6 +1035,7 @@ func IntersectionStrPtr(arrList ...[]*string) []*string {
 }
 
 // IntersectionBool return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionBool(arrList ...[]bool) []bool {
 	if arrList == nil {
 		return []bool{}
@@ -1059,6 +1082,7 @@ func IntersectionBool(arrList ...[]bool) []bool {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionBoolPtr(arrList ...[]*bool) []*bool {
 	if arrList == nil {
 		return []*bool{}
@@ -1105,6 +1129,7 @@ func IntersectionBoolPtr(arrList ...[]*bool) []*bool {
 }
 
 // IntersectionFloat32 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionFloat32(arrList ...[]float32) []float32 {
 	if arrList == nil {
 		return []float32{}
@@ -1151,6 +1176,7 @@ func IntersectionFloat32(arrList ...[]float32) []float32 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionFloat32Ptr(arrList ...[]*float32) []*float32 {
 	if arrList == nil {
 		return []*float32{}
@@ -1197,6 +1223,7 @@ func IntersectionFloat32Ptr(arrList ...[]*float32) []*float32 {
 }
 
 // IntersectionFloat64 return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionFloat64(arrList ...[]float64) []float64 {
 	if arrList == nil {
 		return []float64{}
@@ -1243,6 +1270,7 @@ func IntersectionFloat64(arrList ...[]float64) []float64 {
 }
 
 // IntersectionIntPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
 func IntersectionFloat64Ptr(arrList ...[]*float64) []*float64 {
 	if arrList == nil {
 		return []*float64{}

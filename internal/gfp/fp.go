@@ -98,7 +98,7 @@ func FilterEmployerPtr(f func(*employer.Employer) bool, list []*employer.Employe
 //  1. Function: takes 1 argument of type employer.Employer and returns (bool, error)
 //  2. slice of type []*employer.Employer
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterEmployerPtrErr(f func(*employer.Employer) (bool, error), list []*employer.Employer) ([]*employer.Employer, error) {
 	if f == nil {
@@ -1033,7 +1033,7 @@ func TakeEmployerPtr(n int, list []*employer.Employer) []*employer.Employer {
 	newList := make([]*employer.Employer, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 func MapEmployee(f func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
@@ -1130,7 +1130,7 @@ func FilterEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employe
 //  1. Function: takes 1 argument of type employee.Employee and returns (bool, error)
 //  2. slice of type []*employee.Employee
 //
-// Returns: 
+// Returns:
 //  new filtered list and error
 func FilterEmployeePtrErr(f func(*employee.Employee) (bool, error), list []*employee.Employee) ([]*employee.Employee, error) {
 	if f == nil {
@@ -2065,7 +2065,7 @@ func TakeEmployeePtr(n int, list []*employee.Employee) []*employee.Employee {
 	newList := make([]*employee.Employee, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }
 

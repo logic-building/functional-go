@@ -35,7 +35,7 @@ func Take<FTYPE>Ptr(n int, list []*<TYPE>) []*<TYPE> {
 	newList := make([]*<TYPE>, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
-	 }
+	}
 	return newList
 }`
 }

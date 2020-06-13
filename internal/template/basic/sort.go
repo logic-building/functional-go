@@ -2,7 +2,7 @@ package basic
 
 import "strings"
 
-// Sort
+// Sort is template
 func Sort() string {
 	return `
 type <TYPE>1 []<TYPE>
@@ -79,10 +79,11 @@ func Sort<FTYPE>sDescPtr(list []*<TYPE>) []*<TYPE> {
 	}
 
 	return newListPtr
-}`
+}
+`
 }
 
-// SortInts
+// SortInts is template
 func SortInts() string {
 	return `
 // SortInts return new sorted list
@@ -148,10 +149,11 @@ func SortIntsDescPtr(list []*int) []*int {
 	}
 	
 	return newListPtr
-}`
+}
+`
 }
 
-// SortFloats64
+// SortFloats64 is template
 func SortFloats64() string {
 	return `
 // SortFloats64 return new sorted list
@@ -217,10 +219,11 @@ func SortFloats64DescPtr(list []*float64) []*float64 {
 	}
 
 	return newListPtr
-}`
+}
+`
 }
 
-// SortStrs
+// SortStrs is template
 func SortStrs() string {
 	return `
 // SortStrs return new sorted list
@@ -286,10 +289,11 @@ func SortStrsDescPtr(list []*string) []*string {
 	}
 
 	return newListPtr
-}`
+}
+`
 }
 
-// ReplaceActivitySortingCode
+// ReplaceActivitySortingCode  replaces ...
 func ReplaceActivitySortingCode(code string) string {
 	s1 := `package fp`
 	s2 := `package fp
