@@ -27,7 +27,7 @@ func TestDifferenceInt(t *testing.T) {
 	list1 := []int{v8, v2, v1, v1, v2, v8}
 	list2 := []int{v8}
 	actual = DifferenceInt(list1, list2)
-	if len(actual) != 2 || !ExistsInt(v2, actual) || !ExistsInt(v1, actual){
+	if len(actual) != 2 || !ExistsInt(v2, actual) || !ExistsInt(v1, actual) {
 		t.Errorf("DifferenceInt failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -72,7 +72,7 @@ func TestDifferenceInt64(t *testing.T) {
 	list1 := []int64{v8, v2, v1, v1, v2, v8}
 	list2 := []int64{v8}
 	actual = DifferenceInt64(list1, list2)
-	if len(actual) != 2 || !ExistsInt64(v2, actual) || !ExistsInt64(v1, actual){
+	if len(actual) != 2 || !ExistsInt64(v2, actual) || !ExistsInt64(v1, actual) {
 		t.Errorf("DifferenceInt64 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -117,7 +117,7 @@ func TestDifferenceInt32(t *testing.T) {
 	list1 := []int32{v8, v2, v1, v1, v2, v8}
 	list2 := []int32{v8}
 	actual = DifferenceInt32(list1, list2)
-	if len(actual) != 2 || !ExistsInt32(v2, actual) || !ExistsInt32(v1, actual){
+	if len(actual) != 2 || !ExistsInt32(v2, actual) || !ExistsInt32(v1, actual) {
 		t.Errorf("DifferenceInt32 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -162,7 +162,7 @@ func TestDifferenceInt16(t *testing.T) {
 	list1 := []int16{v8, v2, v1, v1, v2, v8}
 	list2 := []int16{v8}
 	actual = DifferenceInt16(list1, list2)
-	if len(actual) != 2 || !ExistsInt16(v2, actual) || !ExistsInt16(v1, actual){
+	if len(actual) != 2 || !ExistsInt16(v2, actual) || !ExistsInt16(v1, actual) {
 		t.Errorf("DifferenceInt16 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -207,7 +207,7 @@ func TestDifferenceInt8(t *testing.T) {
 	list1 := []int8{v8, v2, v1, v1, v2, v8}
 	list2 := []int8{v8}
 	actual = DifferenceInt8(list1, list2)
-	if len(actual) != 2 || !ExistsInt8(v2, actual) || !ExistsInt8(v1, actual){
+	if len(actual) != 2 || !ExistsInt8(v2, actual) || !ExistsInt8(v1, actual) {
 		t.Errorf("DifferenceInt8 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -252,7 +252,7 @@ func TestDifferenceUint(t *testing.T) {
 	list1 := []uint{v8, v2, v1, v1, v2, v8}
 	list2 := []uint{v8}
 	actual = DifferenceUint(list1, list2)
-	if len(actual) != 2 || !ExistsUint(v2, actual) || !ExistsUint(v1, actual){
+	if len(actual) != 2 || !ExistsUint(v2, actual) || !ExistsUint(v1, actual) {
 		t.Errorf("DifferenceUint failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -297,7 +297,7 @@ func TestDifferenceUint64(t *testing.T) {
 	list1 := []uint64{v8, v2, v1, v1, v2, v8}
 	list2 := []uint64{v8}
 	actual = DifferenceUint64(list1, list2)
-	if len(actual) != 2 || !ExistsUint64(v2, actual) || !ExistsUint64(v1, actual){
+	if len(actual) != 2 || !ExistsUint64(v2, actual) || !ExistsUint64(v1, actual) {
 		t.Errorf("DifferenceUint64 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -342,7 +342,7 @@ func TestDifferenceUint32(t *testing.T) {
 	list1 := []uint32{v8, v2, v1, v1, v2, v8}
 	list2 := []uint32{v8}
 	actual = DifferenceUint32(list1, list2)
-	if len(actual) != 2 || !ExistsUint32(v2, actual) || !ExistsUint32(v1, actual){
+	if len(actual) != 2 || !ExistsUint32(v2, actual) || !ExistsUint32(v1, actual) {
 		t.Errorf("DifferenceUint32 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -387,7 +387,7 @@ func TestDifferenceUint16(t *testing.T) {
 	list1 := []uint16{v8, v2, v1, v1, v2, v8}
 	list2 := []uint16{v8}
 	actual = DifferenceUint16(list1, list2)
-	if len(actual) != 2 || !ExistsUint16(v2, actual) || !ExistsUint16(v1, actual){
+	if len(actual) != 2 || !ExistsUint16(v2, actual) || !ExistsUint16(v1, actual) {
 		t.Errorf("DifferenceUint16 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -432,7 +432,7 @@ func TestDifferenceUint8(t *testing.T) {
 	list1 := []uint8{v8, v2, v1, v1, v2, v8}
 	list2 := []uint8{v8}
 	actual = DifferenceUint8(list1, list2)
-	if len(actual) != 2 || !ExistsUint8(v2, actual) || !ExistsUint8(v1, actual){
+	if len(actual) != 2 || !ExistsUint8(v2, actual) || !ExistsUint8(v1, actual) {
 		t.Errorf("DifferenceUint8 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -477,7 +477,7 @@ func TestDifferenceStr(t *testing.T) {
 	list1 := []string{v8, v2, v1, v1, v2, v8}
 	list2 := []string{v8}
 	actual = DifferenceStr(list1, list2)
-	if len(actual) != 2 || !ExistsStr(v2, actual) || !ExistsStr(v1, actual){
+	if len(actual) != 2 || !ExistsStr(v2, actual) || !ExistsStr(v1, actual) {
 		t.Errorf("DifferenceStr failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -567,7 +567,7 @@ func TestDifferenceFloat32(t *testing.T) {
 	list1 := []float32{v8, v2, v1, v1, v2, v8}
 	list2 := []float32{v8}
 	actual = DifferenceFloat32(list1, list2)
-	if len(actual) != 2 || !ExistsFloat32(v2, actual) || !ExistsFloat32(v1, actual){
+	if len(actual) != 2 || !ExistsFloat32(v2, actual) || !ExistsFloat32(v1, actual) {
 		t.Errorf("DifferenceFloat32 failed. Expected=%v, actual=%v", expected, actual)
 	}
 
@@ -612,7 +612,7 @@ func TestDifferenceFloat64(t *testing.T) {
 	list1 := []float64{v8, v2, v1, v1, v2, v8}
 	list2 := []float64{v8}
 	actual = DifferenceFloat64(list1, list2)
-	if len(actual) != 2 || !ExistsFloat64(v2, actual) || !ExistsFloat64(v1, actual){
+	if len(actual) != 2 || !ExistsFloat64(v2, actual) || !ExistsFloat64(v1, actual) {
 		t.Errorf("DifferenceFloat64 failed. Expected=%v, actual=%v", expected, actual)
 	}
 

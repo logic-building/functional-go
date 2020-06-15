@@ -3,7 +3,7 @@ package basic
 // Superset is template.
 func Superset() string {
 	return `
-// Subset<FTYPE> returns true or false by checking if set1 is a superset of set2
+// Superset<FTYPE> returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func Superset<FTYPE>(list1, list2 []<TYPE>) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {

@@ -27,7 +27,7 @@ func TestTakeWhileIntPtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*int{&v40}
-	partialIsEvenDivisibleBy := func(num *int) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *int) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileIntPtrErr(partialIsEvenDivisibleBy, []*int{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -68,7 +68,7 @@ func TestTakeWhileInt64PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*int64{&v40}
-	partialIsEvenDivisibleBy := func(num *int64) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *int64) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileInt64PtrErr(partialIsEvenDivisibleBy, []*int64{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -109,7 +109,7 @@ func TestTakeWhileInt32PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*int32{&v40}
-	partialIsEvenDivisibleBy := func(num *int32) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *int32) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileInt32PtrErr(partialIsEvenDivisibleBy, []*int32{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -150,7 +150,7 @@ func TestTakeWhileInt16PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*int16{&v40}
-	partialIsEvenDivisibleBy := func(num *int16) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *int16) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileInt16PtrErr(partialIsEvenDivisibleBy, []*int16{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -191,7 +191,7 @@ func TestTakeWhileInt8PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*int8{&v40}
-	partialIsEvenDivisibleBy := func(num *int8) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *int8) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileInt8PtrErr(partialIsEvenDivisibleBy, []*int8{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -232,7 +232,7 @@ func TestTakeWhileUintPtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*uint{&v40}
-	partialIsEvenDivisibleBy := func(num *uint) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *uint) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileUintPtrErr(partialIsEvenDivisibleBy, []*uint{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -273,7 +273,7 @@ func TestTakeWhileUint64PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*uint64{&v40}
-	partialIsEvenDivisibleBy := func(num *uint64) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *uint64) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileUint64PtrErr(partialIsEvenDivisibleBy, []*uint64{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -314,7 +314,7 @@ func TestTakeWhileUint32PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*uint32{&v40}
-	partialIsEvenDivisibleBy := func(num *uint32) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *uint32) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileUint32PtrErr(partialIsEvenDivisibleBy, []*uint32{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -355,7 +355,7 @@ func TestTakeWhileUint16PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*uint16{&v40}
-	partialIsEvenDivisibleBy := func(num *uint16) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *uint16) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileUint16PtrErr(partialIsEvenDivisibleBy, []*uint16{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -396,7 +396,7 @@ func TestTakeWhileUint8PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*uint8{&v40}
-	partialIsEvenDivisibleBy := func(num *uint8) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *uint8) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileUint8PtrErr(partialIsEvenDivisibleBy, []*uint8{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {

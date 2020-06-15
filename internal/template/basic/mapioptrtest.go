@@ -500,6 +500,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 `
 }
 
+// ReplaceActivityMapIOPtrErr replaces ...
 func ReplaceActivityMapIOPtrErr(code string) string {
 	s1 := `import (
 	_ "errors"

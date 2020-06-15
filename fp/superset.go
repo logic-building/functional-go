@@ -1,6 +1,6 @@
 package fp
 
-// SubsetInt returns true or false by checking if set1 is a superset of set2
+// SupersetInt returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetInt(list1, list2 []int) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -56,7 +56,7 @@ func SupersetIntPtr(list1, list2 []*int) bool {
 	return true
 }
 
-// SubsetInt64 returns true or false by checking if set1 is a superset of set2
+// SupersetInt64 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetInt64(list1, list2 []int64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -112,7 +112,7 @@ func SupersetInt64Ptr(list1, list2 []*int64) bool {
 	return true
 }
 
-// SubsetInt32 returns true or false by checking if set1 is a superset of set2
+// SupersetInt32 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetInt32(list1, list2 []int32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -168,7 +168,7 @@ func SupersetInt32Ptr(list1, list2 []*int32) bool {
 	return true
 }
 
-// SubsetInt16 returns true or false by checking if set1 is a superset of set2
+// SupersetInt16 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetInt16(list1, list2 []int16) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -224,7 +224,7 @@ func SupersetInt16Ptr(list1, list2 []*int16) bool {
 	return true
 }
 
-// SubsetInt8 returns true or false by checking if set1 is a superset of set2
+// SupersetInt8 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetInt8(list1, list2 []int8) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -280,7 +280,7 @@ func SupersetInt8Ptr(list1, list2 []*int8) bool {
 	return true
 }
 
-// SubsetUint returns true or false by checking if set1 is a superset of set2
+// SupersetUint returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetUint(list1, list2 []uint) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -336,7 +336,7 @@ func SupersetUintPtr(list1, list2 []*uint) bool {
 	return true
 }
 
-// SubsetUint64 returns true or false by checking if set1 is a superset of set2
+// SupersetUint64 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetUint64(list1, list2 []uint64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -392,7 +392,7 @@ func SupersetUint64Ptr(list1, list2 []*uint64) bool {
 	return true
 }
 
-// SubsetUint32 returns true or false by checking if set1 is a superset of set2
+// SupersetUint32 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetUint32(list1, list2 []uint32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -448,7 +448,7 @@ func SupersetUint32Ptr(list1, list2 []*uint32) bool {
 	return true
 }
 
-// SubsetUint16 returns true or false by checking if set1 is a superset of set2
+// SupersetUint16 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetUint16(list1, list2 []uint16) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -504,7 +504,7 @@ func SupersetUint16Ptr(list1, list2 []*uint16) bool {
 	return true
 }
 
-// SubsetUint8 returns true or false by checking if set1 is a superset of set2
+// SupersetUint8 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetUint8(list1, list2 []uint8) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -560,7 +560,7 @@ func SupersetUint8Ptr(list1, list2 []*uint8) bool {
 	return true
 }
 
-// SubsetStr returns true or false by checking if set1 is a superset of set2
+// SupersetStr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetStr(list1, list2 []string) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -616,7 +616,7 @@ func SupersetStrPtr(list1, list2 []*string) bool {
 	return true
 }
 
-// SubsetBool returns true or false by checking if set1 is a superset of set2
+// SupersetBool returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetBool(list1, list2 []bool) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -672,7 +672,7 @@ func SupersetBoolPtr(list1, list2 []*bool) bool {
 	return true
 }
 
-// SubsetFloat32 returns true or false by checking if set1 is a superset of set2
+// SupersetFloat32 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetFloat32(list1, list2 []float32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
@@ -728,7 +728,7 @@ func SupersetFloat32Ptr(list1, list2 []*float32) bool {
 	return true
 }
 
-// SubsetFloat64 returns true or false by checking if set1 is a superset of set2
+// SupersetFloat64 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
 func SupersetFloat64(list1, list2 []float64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
