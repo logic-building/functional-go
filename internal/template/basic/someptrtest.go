@@ -155,14 +155,14 @@ func TestSome<FTYPE>PtrErr(t *testing.T) {
 // ReplaceActivitySomePtrErr replaces ...
 func ReplaceActivitySomePtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestSomeIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
@@ -259,7 +259,7 @@ func TestSome<FTYPE>Err(t *testing.T) {
 // ReplaceActivitySomeErr replaces ...
 func ReplaceActivitySomeErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )

@@ -147,14 +147,14 @@ func isTrueBoolPtrErr2(v *bool) (bool, error) {
 // ReplaceActivityDropWhilePtrErr replaces ...
 func ReplaceActivityDropWhilePtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestDropWhileIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
@@ -256,14 +256,14 @@ func isTrueBoolErr2(v bool) (bool, error) {
 // ReplaceActivityDropWhileErr replaces ...
 func ReplaceActivityDropWhileErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestDropWhileIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 

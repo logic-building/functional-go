@@ -173,14 +173,14 @@ func inverse<FTYPE>PtrErr(num1 *<TYPE>) (*<TYPE>, error) {
 // ReplaceActivityMapPtrErrTest
 func ReplaceActivityMapPtrErrTest(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestMapIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"reflect"
 	"testing"
 )
@@ -337,14 +337,14 @@ func inverse<FTYPE>Err(num1 <TYPE>) (<TYPE>, error) {
 // ReplaceActivityMapErrTest
 func ReplaceActivityMapErrTest(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestMapIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"reflect"
 	"testing"
 )

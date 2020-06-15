@@ -126,14 +126,14 @@ func plus<FTYPE>PtrErr(num1, num2 *<TYPE>) (*<TYPE>, error) {
 // ReplaceActivityReducePtrErr replaces ...
 func ReplaceActivityReducePtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestReduceIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
@@ -328,14 +328,14 @@ func plus<FTYPE>Err(num1, num2 <TYPE>) (<TYPE>, error) {
 
 func ReplaceActivityReduceErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestReduceIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 

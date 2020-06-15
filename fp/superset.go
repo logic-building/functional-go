@@ -1,20 +1,21 @@
 package fp
 
-// SubsetInt returns true or false by checking if set1 is a subset of set2
+// SubsetInt returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt(list1, list2 []int) bool {
+func SupersetInt(list1, list2 []int) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -27,21 +28,22 @@ func SubsetInt(list1, list2 []int) bool {
 	return true
 }
 
-// SubsetIntPtr returns true or false by checking if set1 is a subset of set2
+// SupersetIntPtr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetIntPtr(list1, list2 []*int) bool {
+func SupersetIntPtr(list1, list2 []*int) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -54,21 +56,22 @@ func SubsetIntPtr(list1, list2 []*int) bool {
 	return true
 }
 
-// SubsetInt64 returns true or false by checking if set1 is a subset of set2
+// SubsetInt64 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt64(list1, list2 []int64) bool {
+func SupersetInt64(list1, list2 []int64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int64]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -81,21 +84,22 @@ func SubsetInt64(list1, list2 []int64) bool {
 	return true
 }
 
-// SubsetInt64Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetInt64Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt64Ptr(list1, list2 []*int64) bool {
+func SupersetInt64Ptr(list1, list2 []*int64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int64]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -108,21 +112,22 @@ func SubsetInt64Ptr(list1, list2 []*int64) bool {
 	return true
 }
 
-// SubsetInt32 returns true or false by checking if set1 is a subset of set2
+// SubsetInt32 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt32(list1, list2 []int32) bool {
+func SupersetInt32(list1, list2 []int32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int32]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -135,21 +140,22 @@ func SubsetInt32(list1, list2 []int32) bool {
 	return true
 }
 
-// SubsetInt32Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetInt32Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt32Ptr(list1, list2 []*int32) bool {
+func SupersetInt32Ptr(list1, list2 []*int32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int32]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -162,21 +168,22 @@ func SubsetInt32Ptr(list1, list2 []*int32) bool {
 	return true
 }
 
-// SubsetInt16 returns true or false by checking if set1 is a subset of set2
+// SubsetInt16 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt16(list1, list2 []int16) bool {
+func SupersetInt16(list1, list2 []int16) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int16]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -189,21 +196,22 @@ func SubsetInt16(list1, list2 []int16) bool {
 	return true
 }
 
-// SubsetInt16Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetInt16Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt16Ptr(list1, list2 []*int16) bool {
+func SupersetInt16Ptr(list1, list2 []*int16) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int16]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -216,21 +224,22 @@ func SubsetInt16Ptr(list1, list2 []*int16) bool {
 	return true
 }
 
-// SubsetInt8 returns true or false by checking if set1 is a subset of set2
+// SubsetInt8 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt8(list1, list2 []int8) bool {
+func SupersetInt8(list1, list2 []int8) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int8]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -243,21 +252,22 @@ func SubsetInt8(list1, list2 []int8) bool {
 	return true
 }
 
-// SubsetInt8Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetInt8Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetInt8Ptr(list1, list2 []*int8) bool {
+func SupersetInt8Ptr(list1, list2 []*int8) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[int8]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -270,21 +280,22 @@ func SubsetInt8Ptr(list1, list2 []*int8) bool {
 	return true
 }
 
-// SubsetUint returns true or false by checking if set1 is a subset of set2
+// SubsetUint returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint(list1, list2 []uint) bool {
+func SupersetUint(list1, list2 []uint) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -297,21 +308,22 @@ func SubsetUint(list1, list2 []uint) bool {
 	return true
 }
 
-// SubsetUintPtr returns true or false by checking if set1 is a subset of set2
+// SupersetUintPtr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUintPtr(list1, list2 []*uint) bool {
+func SupersetUintPtr(list1, list2 []*uint) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -324,21 +336,22 @@ func SubsetUintPtr(list1, list2 []*uint) bool {
 	return true
 }
 
-// SubsetUint64 returns true or false by checking if set1 is a subset of set2
+// SubsetUint64 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint64(list1, list2 []uint64) bool {
+func SupersetUint64(list1, list2 []uint64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint64]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -351,21 +364,22 @@ func SubsetUint64(list1, list2 []uint64) bool {
 	return true
 }
 
-// SubsetUint64Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetUint64Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint64Ptr(list1, list2 []*uint64) bool {
+func SupersetUint64Ptr(list1, list2 []*uint64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint64]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -378,21 +392,22 @@ func SubsetUint64Ptr(list1, list2 []*uint64) bool {
 	return true
 }
 
-// SubsetUint32 returns true or false by checking if set1 is a subset of set2
+// SubsetUint32 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint32(list1, list2 []uint32) bool {
+func SupersetUint32(list1, list2 []uint32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint32]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -405,21 +420,22 @@ func SubsetUint32(list1, list2 []uint32) bool {
 	return true
 }
 
-// SubsetUint32Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetUint32Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint32Ptr(list1, list2 []*uint32) bool {
+func SupersetUint32Ptr(list1, list2 []*uint32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint32]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -432,21 +448,22 @@ func SubsetUint32Ptr(list1, list2 []*uint32) bool {
 	return true
 }
 
-// SubsetUint16 returns true or false by checking if set1 is a subset of set2
+// SubsetUint16 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint16(list1, list2 []uint16) bool {
+func SupersetUint16(list1, list2 []uint16) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint16]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -459,21 +476,22 @@ func SubsetUint16(list1, list2 []uint16) bool {
 	return true
 }
 
-// SubsetUint16Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetUint16Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint16Ptr(list1, list2 []*uint16) bool {
+func SupersetUint16Ptr(list1, list2 []*uint16) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint16]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -486,21 +504,22 @@ func SubsetUint16Ptr(list1, list2 []*uint16) bool {
 	return true
 }
 
-// SubsetUint8 returns true or false by checking if set1 is a subset of set2
+// SubsetUint8 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint8(list1, list2 []uint8) bool {
+func SupersetUint8(list1, list2 []uint8) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint8]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -513,21 +532,22 @@ func SubsetUint8(list1, list2 []uint8) bool {
 	return true
 }
 
-// SubsetUint8Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetUint8Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetUint8Ptr(list1, list2 []*uint8) bool {
+func SupersetUint8Ptr(list1, list2 []*uint8) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[uint8]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -540,21 +560,22 @@ func SubsetUint8Ptr(list1, list2 []*uint8) bool {
 	return true
 }
 
-// SubsetStr returns true or false by checking if set1 is a subset of set2
+// SubsetStr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetStr(list1, list2 []string) bool {
+func SupersetStr(list1, list2 []string) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[string]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -567,21 +588,22 @@ func SubsetStr(list1, list2 []string) bool {
 	return true
 }
 
-// SubsetStrPtr returns true or false by checking if set1 is a subset of set2
+// SupersetStrPtr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetStrPtr(list1, list2 []*string) bool {
+func SupersetStrPtr(list1, list2 []*string) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[string]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -594,21 +616,22 @@ func SubsetStrPtr(list1, list2 []*string) bool {
 	return true
 }
 
-// SubsetBool returns true or false by checking if set1 is a subset of set2
+// SubsetBool returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetBool(list1, list2 []bool) bool {
+func SupersetBool(list1, list2 []bool) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[bool]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -621,21 +644,22 @@ func SubsetBool(list1, list2 []bool) bool {
 	return true
 }
 
-// SubsetBoolPtr returns true or false by checking if set1 is a subset of set2
+// SupersetBoolPtr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetBoolPtr(list1, list2 []*bool) bool {
+func SupersetBoolPtr(list1, list2 []*bool) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[bool]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -648,21 +672,22 @@ func SubsetBoolPtr(list1, list2 []*bool) bool {
 	return true
 }
 
-// SubsetFloat32 returns true or false by checking if set1 is a subset of set2
+// SubsetFloat32 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetFloat32(list1, list2 []float32) bool {
+func SupersetFloat32(list1, list2 []float32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[float32]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -675,21 +700,22 @@ func SubsetFloat32(list1, list2 []float32) bool {
 	return true
 }
 
-// SubsetFloat32Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetFloat32Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetFloat32Ptr(list1, list2 []*float32) bool {
+func SupersetFloat32Ptr(list1, list2 []*float32) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[float32]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -702,21 +728,22 @@ func SubsetFloat32Ptr(list1, list2 []*float32) bool {
 	return true
 }
 
-// SubsetFloat64 returns true or false by checking if set1 is a subset of set2
+// SubsetFloat64 returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetFloat64(list1, list2 []float64) bool {
+func SupersetFloat64(list1, list2 []float64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[float64]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}
@@ -729,21 +756,22 @@ func SubsetFloat64(list1, list2 []float64) bool {
 	return true
 }
 
-// SubsetFloat64Ptr returns true or false by checking if set1 is a subset of set2
+// SupersetFloat64Ptr returns true or false by checking if set1 is a superset of set2
 // repeated value within list parameter will be ignored
-func SubsetFloat64Ptr(list1, list2 []*float64) bool {
+func SupersetFloat64Ptr(list1, list2 []*float64) bool {
 	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
 		return false
 	}
 
 	resultMap := make(map[float64]bool)
-	for i := 0; i < len(list1); i++ {
-		_, ok := resultMap[*list1[i]]
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
-			for j := 0; j < len(list2); j++ {
-				if list1[i] == list2[j] {
+			resultMap[*list2[i]] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i] == list1[j] {
 					found = true
 					break
 				}

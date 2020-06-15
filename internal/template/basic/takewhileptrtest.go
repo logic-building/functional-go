@@ -169,14 +169,14 @@ func TestTakeWhile<FTYPE>PtrErr(t *testing.T) {
 // ReplaceActivityTakeWhilePtrErr replaces ...
 func ReplaceActivityTakeWhilePtrErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestTakeWhileIntPtrErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
@@ -303,14 +303,14 @@ func TestTakeWhile<FTYPE>Err(t *testing.T) {
 // ReplaceActivityTakeWhileErr replaces ...
 func ReplaceActivityTakeWhileErr(code string) string {
 	s1 := `import (
-    _ "errors"
+	_ "errors"
 	"reflect"
 	"testing"
 )
 
 func TestTakeWhileIntErr(t *testing.T) {`
 	s2 := `import (
-    "errors"
+	"errors"
 	"testing"
 )
 
