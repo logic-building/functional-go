@@ -76,11 +76,11 @@ func TestSortInt64DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotredint64s failed")
 		}
@@ -161,11 +161,11 @@ func TestSortInt32DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotredint32s failed")
 		}
@@ -246,11 +246,11 @@ func TestSortInt16DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotredint16s failed")
 		}
@@ -331,11 +331,11 @@ func TestSortInt8DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotredint8s failed")
 		}
@@ -416,11 +416,11 @@ func TestSortUintDescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotreduints failed")
 		}
@@ -501,11 +501,11 @@ func TestSortUint64DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotreduint64s failed")
 		}
@@ -586,11 +586,11 @@ func TestSortUint32DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotreduint32s failed")
 		}
@@ -671,11 +671,11 @@ func TestSortUint16DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotreduint16s failed")
 		}
@@ -756,11 +756,11 @@ func TestSortUint8DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotreduint8s failed")
 		}
@@ -841,11 +841,11 @@ func TestSortFloat32DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotredfloat32s failed")
 		}

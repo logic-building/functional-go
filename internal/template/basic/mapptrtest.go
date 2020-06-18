@@ -170,7 +170,7 @@ func inverse<FTYPE>PtrErr(num1 *<TYPE>) (*<TYPE>, error) {
 `
 }
 
-// ReplaceActivityMapPtrErrTest
+// ReplaceActivityMapPtrErrTest replaces ...
 func ReplaceActivityMapPtrErrTest(code string) string {
 	s1 := `import (
 	_ "errors"
@@ -334,7 +334,7 @@ func inverse<FTYPE>Err(num1 <TYPE>) (<TYPE>, error) {
 `
 }
 
-// ReplaceActivityMapErrTest
+// ReplaceActivityMapErrTest replaces ...
 func ReplaceActivityMapErrTest(code string) string {
 	s1 := `import (
 	_ "errors"

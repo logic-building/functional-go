@@ -103,7 +103,7 @@ func TestTakeWhile<FTYPE>PtrErr(t *testing.T) {
 	}
 
 	expectedNewList = []*<TYPE>{&v40}
-	partialIsEvenDivisibleBy := func(num *<TYPE>) (bool, error) { return *num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num *<TYPE>) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhile<FTYPE>PtrErr(partialIsEvenDivisibleBy, []*<TYPE>{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -184,7 +184,7 @@ func TestTakeWhileIntPtrErr(t *testing.T) {`
 
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `partialIsEvenDivisibleBy := func(num *string) (bool, error) { return *num % 10 == 0, nil }
+	s1 = `partialIsEvenDivisibleBy := func(num *string) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileStrPtrErr(partialIsEvenDivisibleBy, []*string{&v40})`
 
 	s2 = `partialIsEvenDivisibleBy := func(num *string) (bool, error) { if *num == "40" { return true, nil}; return false, nil }
@@ -192,7 +192,7 @@ func TestTakeWhileIntPtrErr(t *testing.T) {`
 
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `partialIsEvenDivisibleBy := func(num *float64) (bool, error) { return *num % 10 == 0, nil }
+	s1 = `partialIsEvenDivisibleBy := func(num *float64) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileFloat64PtrErr(partialIsEvenDivisibleBy, []*float64{&v40})`
 
 	s2 = `partialIsEvenDivisibleBy := func(num *float64) (bool, error) { return int(*num)%10 == 0, nil }
@@ -200,7 +200,7 @@ func TestTakeWhileIntPtrErr(t *testing.T) {`
 
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `partialIsEvenDivisibleBy := func(num *float32) (bool, error) { return *num % 10 == 0, nil }
+	s1 = `partialIsEvenDivisibleBy := func(num *float32) (bool, error) { return *num%10 == 0, nil }
 	NewList, _ = TakeWhileFloat32PtrErr(partialIsEvenDivisibleBy, []*float32{&v40})`
 
 	s2 = `partialIsEvenDivisibleBy := func(num *float32) (bool, error) { return int(*num)%10 == 0, nil }

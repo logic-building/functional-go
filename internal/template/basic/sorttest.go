@@ -73,11 +73,11 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotred<TYPE>s failed")
 		}
@@ -121,11 +121,11 @@ func TestSort<FTYPE>Ptr(t *testing.T) {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotred<TYPE>s failed")
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 		}
 	}
@@ -202,11 +202,11 @@ func TestSort<FTYPE>Ptr(t *testing.T) {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotred<TYPE>s failed")
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 		}
 	}
@@ -285,11 +285,11 @@ func TestSort<FTYPE>Ptr(t *testing.T) {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotred<TYPE>s failed")
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 		}
 	}
@@ -328,11 +328,11 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotred<TYPE>s failed")
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 		}
 	}

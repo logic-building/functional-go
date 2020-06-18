@@ -262,7 +262,8 @@ func plusStrPtrErr(num1, num2 *string) (*string, error) {
 }
 
 // **********Reduce<FTYPE>Err*************
-// Reduce<FTYPE>PtrErr reduces a list to a single value by combining elements via a supplied function
+
+// ReduceErrTest reduces a list to a single value by combining elements via a supplied function
 func ReduceErrTest() string {
 	return `
 func TestReduce<FTYPE>Err(t *testing.T) {
@@ -326,6 +327,7 @@ func plus<FTYPE>Err(num1, num2 <TYPE>) (<TYPE>, error) {
 `
 }
 
+// ReplaceActivityReduceErr replaces ...
 func ReplaceActivityReduceErr(code string) string {
 	s1 := `import (
 	_ "errors"

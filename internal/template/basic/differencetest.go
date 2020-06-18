@@ -24,7 +24,7 @@ func TestDifference<FTYPE>(t *testing.T) {
 	list1 := []<TYPE>{v8, v2, v1, v1, v2, v8}
 	list2 := []<TYPE>{v8}
 	actual = Difference<FTYPE>(list1, list2)
-	if len(actual) != 2 || !Exists<FTYPE>(v2, actual) || !Exists<FTYPE>(v1, actual){
+	if len(actual) != 2 || !Exists<FTYPE>(v2, actual) || !Exists<FTYPE>(v1, actual) {
 		t.Errorf("Difference<FTYPE> failed. Expected=%v, actual=%v", expected, actual)
 	}
 

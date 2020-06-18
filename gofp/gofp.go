@@ -60,12 +60,13 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/logic-building/functional-go/fp"
-	template2 "github.com/logic-building/functional-go/internal/template"
-	"github.com/logic-building/functional-go/internal/template/basic"
 	"math/rand"
 	"runtime"
 	"time"
+
+	"github.com/logic-building/functional-go/fp"
+	template2 "github.com/logic-building/functional-go/internal/template"
+	"github.com/logic-building/functional-go/internal/template/basic"
 )
 
 var (
@@ -76,6 +77,7 @@ var (
 	mapFunction = flag.String("mapfun", "", "this allows to create map function such as zip, merge.")
 	only        = flag.String("only", "", "includes list of function to be auto-generated")
 	sortStr     = flag.String("sort", "", "generate sorting functions for user defined type. format- <StructName>:<FieldName> eg. Employee:Name, Employee:Salary")
+	setStr      = flag.String("set", "", "generate 'set' functions(union, intersection, difference, subset, superset) for user defined type. format- <StructName>:<FieldName> eg. Employee:Name, Employee:Salary")
 
 	onlyList []string
 )
@@ -89,6 +91,7 @@ func main() {
 	*mapFunction = strings.Trim(*mapFunction, "\"")
 	*only = strings.Trim(*only, "\"")
 	*sortStr = strings.Trim(*sortStr, "\"")
+	*setStr = strings.Trim(*setStr, "\"")
 
 	isAlreadyRun := runWithin(time.Second * 15)
 	defer func() {
@@ -144,6 +147,12 @@ func main() {
 			generatedCodeII = ""
 		}
 
+		var setCode string
+
+		if *setStr != "" {
+			setCode = generateSetMethods(*setStr)
+		}
+
 		var sortingCode string
 		// Generate sort functions
 		if *sortStr != "" {
@@ -154,7 +163,7 @@ import "sync" `, -1)
 			sortingCode = generateSortMethods(*sortStr)
 		}
 
-		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII + sortingCode))
+		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII + sortingCode + setCode))
 		defer f.Close()
 
 		os.Chmod(*destination, 0444)
@@ -899,6 +908,40 @@ func generateSortMethods(sortStr string) string {
 
 		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 		template += template2.SortStruct()
+		template = r.Replace(template)
+	}
+
+	return template
+}
+
+func generateSetMethods(setStr string) string {
+
+	if len(strings.TrimSpace(setStr)) == 0 {
+		fmt.Println("-set: value is empty. ignoring set methods")
+		return ""
+	}
+
+	template := ""
+	sortedStrList := strings.Split(setStr, ",")
+
+	for _, sortedStrItem := range sortedStrList {
+		sortedStrItem = strings.TrimSpace(sortedStrItem)
+		sortStrItemElements := strings.Split(sortedStrItem, ":")
+		if len(sortStrItemElements) != 3 {
+			fmt.Println("-set: format is not valid. expected format for option -sort: <struct_name>:<field_name>:<field_type>. eg. -set=\"Employee:Salary:float64\"")
+			fmt.Println("ignoring set methods")
+			return ""
+		}
+
+		structName := strings.TrimSpace(sortStrItemElements[0])
+		fieldName := strings.TrimSpace(sortStrItemElements[1])
+		fieldType := strings.TrimSpace(sortStrItemElements[2])
+
+		fStructName := strings.Title(structName)
+		fFieldName := strings.Title(fieldName)
+
+		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName, "<FIELD_TYPE>", fieldType)
+		template += template2.SetStruct()
 		template = r.Replace(template)
 	}
 

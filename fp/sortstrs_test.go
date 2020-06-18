@@ -34,11 +34,11 @@ func TestSortStrPtr(t *testing.T) {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotredstrings failed")
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 		}
 	}
@@ -77,11 +77,11 @@ func TestSortStrDescPtr(t *testing.T) {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotredstrings failed")
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 		}
 	}
