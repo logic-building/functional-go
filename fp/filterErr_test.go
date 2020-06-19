@@ -38,7 +38,6 @@ func isEvenIntErr(num int) (bool, error) {
 	return num%2 == 0, nil
 }
 
-
 func TestFilterInt64Err(t *testing.T) {
 	var v1 int64 = 1
 	var v2 int64 = 2
@@ -71,7 +70,6 @@ func isEvenInt64Err(num int64) (bool, error) {
 	}
 	return num%2 == 0, nil
 }
-
 
 func TestFilterInt32Err(t *testing.T) {
 	var v1 int32 = 1
@@ -106,7 +104,6 @@ func isEvenInt32Err(num int32) (bool, error) {
 	return num%2 == 0, nil
 }
 
-
 func TestFilterInt16Err(t *testing.T) {
 	var v1 int16 = 1
 	var v2 int16 = 2
@@ -139,7 +136,6 @@ func isEvenInt16Err(num int16) (bool, error) {
 	}
 	return num%2 == 0, nil
 }
-
 
 func TestFilterInt8Err(t *testing.T) {
 	var v1 int8 = 1
@@ -174,7 +170,6 @@ func isEvenInt8Err(num int8) (bool, error) {
 	return num%2 == 0, nil
 }
 
-
 func TestFilterUintErr(t *testing.T) {
 	var v1 uint = 1
 	var v2 uint = 2
@@ -207,7 +202,6 @@ func isEvenUintErr(num uint) (bool, error) {
 	}
 	return num%2 == 0, nil
 }
-
 
 func TestFilterUint64Err(t *testing.T) {
 	var v1 uint64 = 1
@@ -242,7 +236,6 @@ func isEvenUint64Err(num uint64) (bool, error) {
 	return num%2 == 0, nil
 }
 
-
 func TestFilterUint32Err(t *testing.T) {
 	var v1 uint32 = 1
 	var v2 uint32 = 2
@@ -275,7 +268,6 @@ func isEvenUint32Err(num uint32) (bool, error) {
 	}
 	return num%2 == 0, nil
 }
-
 
 func TestFilterUint16Err(t *testing.T) {
 	var v1 uint16 = 1
@@ -310,7 +302,6 @@ func isEvenUint16Err(num uint16) (bool, error) {
 	return num%2 == 0, nil
 }
 
-
 func TestFilterUint8Err(t *testing.T) {
 	var v1 uint8 = 1
 	var v2 uint8 = 2
@@ -343,7 +334,6 @@ func isEvenUint8Err(num uint8) (bool, error) {
 	}
 	return num%2 == 0, nil
 }
-
 
 func TestFilterStrErr(t *testing.T) {
 	var v1 string = "1"
@@ -378,18 +368,17 @@ func isEvenStrErr(num string) (bool, error) {
 		return true, nil
 	}
 	return false, nil
-	
-}
 
+}
 
 func TestFilterBoolErr(t *testing.T) {
 	var vt bool = true
 	var vf bool = false
 
 	expectedSumList := []bool{vt}
-	
+
 	newList, _ := FilterBoolErr(trueBoolErr, []bool{vt})
-	if newList[0] != expectedSumList[0]  {
+	if newList[0] != expectedSumList[0] {
 		t.Errorf("FilterBoolErr failed")
 	}
 
@@ -410,7 +399,6 @@ func trueBoolErr(num1 bool) (bool, error) {
 	}
 	return true, nil
 }
-
 
 func TestFilterFloat32Err(t *testing.T) {
 	var v1 float32 = 1
@@ -445,7 +433,6 @@ func isEvenFloat32Err(num float32) (bool, error) {
 	return int(num)%2 == 0, nil
 }
 
-
 func TestFilterFloat64Err(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
@@ -478,4 +465,3 @@ func isEvenFloat64Err(num float64) (bool, error) {
 	}
 	return int(num)%2 == 0, nil
 }
-

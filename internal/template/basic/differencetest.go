@@ -82,14 +82,14 @@ func TestDifference<FTYPE>(t *testing.T) {
 	if len(actualPtr) != 0 {
 		t.Errorf("Difference<FTYPE>Ptr failed.")
 	}
-	
+
 	expectedPtr := []*<TYPE>{&v8, &v2, &v1}
 	actualPtr = Difference<FTYPE>Ptr(expectedPtr)
 	
 	if len(actualPtr) != 2 || !Exists<FTYPE>Ptr(&v8, actualPtr) || !Exists<FTYPE>Ptr(&v1, actualPtr) {
 		t.Errorf("Difference<FTYPE>Ptr failed. Expected=%v, actual=%v", expectedPtr, actualPtr)
 	}
-	
+
 	list1Ptr := []*<TYPE>{&v8, &v2, &v1, &v1, &v2, &v8}
 	list2Ptr := []*<TYPE>{&v1}
 	actualPtr = Difference<FTYPE>Ptr(list1Ptr, list2Ptr)

@@ -29,7 +29,6 @@ func TestSortIntPtr(t *testing.T) {
 
 	expectedList := []*int{&v1, &v2, &v3, &v4, &v5}
 	sortedList := SortIntsPtr([]*int{&v5, &v1, &v4, &v2, &v3})
-
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotredints failed")

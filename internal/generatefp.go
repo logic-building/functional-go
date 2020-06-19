@@ -52,6 +52,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Set",
+		codeTemplate:      basic.Set(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "set.go",
+
+		testTemplate:          basic.SetTest(),
+		testTemplateBool:      basic.SetBoolTest(),
+		generatedTestFileName: "set_test.go",
+	},
+
+	fpCode{
 		function:          "Union",
 		codeTemplate:      basic.Union(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1353,127 +1364,9 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 `
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `func TestDropWhileStrPtr(t *testing.T) {
-	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+	code = basic.ReplaceActivityDropWhilePtr(code)
 
-	var v2 string = "2"
-	var v3 string = "3"
-	var v4 string = "4"
-	var v5 string = "5"
-
-	expectedNewList := []*string{&v3, &v4, &v5}
-	NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
-	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
-		t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
-	}
-
-	if len(DropWhileStrPtr(nil, nil)) > 0 {
-		t.Errorf("DropWhileStrPtr failed.")
-	}
-
-	if len(DropWhileStrPtr(nil, []*string{})) > 0 {
-		t.Errorf("DropWhileStrPtr failed.")
-		t.Errorf(reflect.String.String())
-	}
-
-	NewList = DropWhileStrPtr(isEvenStrPtr, []*string{&v4})
-	if len(NewList) != 0 {
-		t.Errorf("DropWhileStrPtr failed")
-	}
-}`
-	s2 = `
-	func TestDropWhileStrPtr(t *testing.T) {
-		// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
-	
-		var v2 string = "2"
-		var v3 string = "3"
-		var v4 string = "4"
-		var v5 string = "5"
-	
-		expectedNewList := []*string{&v3, &v4, &v5}
-		NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
-		if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
-			t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
-		}
-	
-		if len(DropWhileStrPtr(nil, nil)) > 0 {
-			t.Errorf("DropWhileStrPtr failed.")
-		}
-	
-		if len(DropWhileStrPtr(nil, []*string{})) > 0 {
-			t.Errorf("DropWhileStrPtr failed.")
-		}
-		NewList = DropWhileStrPtr(isEvenStrPtr, []*string{&v4})
-		if len(NewList) != 0 {
-			t.Errorf("DropWhileStrPtr failed")
-		}
-	}`
-
-	code = strings.Replace(code, s1, s2, -1)
-
-	s1 = `func TestEveryStrPtr(t *testing.T) {
-	// Test : every value in the list is even number
-	var v2 string = "2"
-	var v4 string = "4"
-	var v5 string = "5"
-	var v8 string = "8"
-	var v10 string = "10"
-	list1 := []*string{&v8, &v2, &v10, &v4}
-	if !EveryStrPtr(isEvenStrPtr, list1) {
-		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
-	}
-
-	list2 := []*string{&v8, &v2, &v10, &v5, &v4}
-	if EveryStrPtr(isEvenStrPtr, list2) {
-		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
-	}
-
-	if EveryStrPtr(isEvenStrPtr, nil) {
-		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
-	}
-
-	if EveryStrPtr(isEvenStrPtr, []*string{}) {
-		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
-	}
-
-	if EveryStrPtr(nil, []*string{}) {
-		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
-		t.Errorf(reflect.String.String())
-	}
-}`
-
-	s2 = `
-func TestEveryStrPtr(t *testing.T) {
-	// Test : every value in the list is even number
-	var v2 string = "2"
-	var v3 string = "3"
-	var v4 string = "4"
-	list1 := []*string{&v2, &v4}
-	if !EveryStrPtr(isEvenStrPtr, list1) {
-		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
-	}
-
-	list1 = []*string{&v2, &v4, &v3}
-	if EveryStrPtr(isEvenStrPtr, list1) {
-		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
-	}
-
-	if EveryStrPtr(isEvenStrPtr, nil) {
-		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
-	}
-
-	if EveryStrPtr(isEvenStrPtr, []*string{}) {
-		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
-	}
-
-	if EveryStrPtr(nil, []*string{}) {
-		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
-		t.Errorf(reflect.String.String())
-	}
-}
-`
-
-	code = strings.Replace(code, s1, s2, -1)
+	code = basic.ReplaceActivityEveryPtrTest(code)
 
 	s1 = `func TestPmapStrPtr(t *testing.T) {
 	// Test : square the list

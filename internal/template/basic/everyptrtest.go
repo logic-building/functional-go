@@ -56,7 +56,6 @@ func TestEvery<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("Every<FTYPE>Ptr failed. Expected=true, actual=false")
 	}
 
-	
 	list1 = []*bool{}
 	if Every<FTYPE>Ptr(TruePtr, list1) {
 		t.Errorf("EveryBool failed. Expected=false, actual=true")
@@ -78,6 +77,71 @@ func TruePtr(val *bool) bool {
 	return *val == true
 }
 `
+}
+
+// ReplaceActivityEveryPtrTest replaces ...
+func ReplaceActivityEveryPtrTest(code string) string {
+	s1 := `func TestEveryStrPtr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v8 string = "8"
+	var v10 string = "10"
+	list1 := []*string{&v8, &v2, &v10, &v4}
+	if !EveryStrPtr(isEvenStrPtr, list1) {
+		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
+	}
+
+	list2 := []*string{&v8, &v2, &v10, &v5, &v4}
+	if EveryStrPtr(isEvenStrPtr, list2) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, nil) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(nil, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+		t.Errorf(reflect.String.String())
+	}
+}`
+	s2 := `func TestEveryStrPtr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	list1 := []*string{&v2, &v4}
+	if !EveryStrPtr(isEvenStrPtr, list1) {
+		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
+	}
+
+	list1 = []*string{&v2, &v4, &v3}
+	if EveryStrPtr(isEvenStrPtr, list1) {
+		t.Errorf("EveryStrPtr failed. Expected=true, actual=false")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, nil) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(isEvenStrPtr, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+
+	if EveryStrPtr(nil, []*string{}) {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+		t.Errorf(reflect.String.String())
+	}
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+	return code
 }
 
 //*************EveryPtrErr******************

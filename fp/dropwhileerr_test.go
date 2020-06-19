@@ -41,7 +41,6 @@ func TestDropWhileIntErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileInt64Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -77,7 +76,6 @@ func TestDropWhileInt64Err(t *testing.T) {
 		t.Errorf("DropWhileInt64Err failed")
 	}
 }
-
 
 func TestDropWhileInt32Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -115,7 +113,6 @@ func TestDropWhileInt32Err(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileInt16Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -151,7 +148,6 @@ func TestDropWhileInt16Err(t *testing.T) {
 		t.Errorf("DropWhileInt16Err failed")
 	}
 }
-
 
 func TestDropWhileInt8Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -189,7 +185,6 @@ func TestDropWhileInt8Err(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUintErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -225,7 +220,6 @@ func TestDropWhileUintErr(t *testing.T) {
 		t.Errorf("DropWhileUintErr failed")
 	}
 }
-
 
 func TestDropWhileUint64Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -263,7 +257,6 @@ func TestDropWhileUint64Err(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUint32Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -299,7 +292,6 @@ func TestDropWhileUint32Err(t *testing.T) {
 		t.Errorf("DropWhileUint32Err failed")
 	}
 }
-
 
 func TestDropWhileUint16Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -337,7 +329,6 @@ func TestDropWhileUint16Err(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUint8Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -374,7 +365,6 @@ func TestDropWhileUint8Err(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileStrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -410,7 +400,6 @@ func TestDropWhileStrErr(t *testing.T) {
 		t.Errorf("DropWhileStrErr failed")
 	}
 }
-
 
 func TestDropWhileBoolErr(t *testing.T) {
 	var vt bool = true
@@ -489,7 +478,6 @@ func TestDropWhileFloat32Err(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileFloat64Err(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -525,4 +513,3 @@ func TestDropWhileFloat64Err(t *testing.T) {
 		t.Errorf("DropWhileFloat64Err failed")
 	}
 }
-

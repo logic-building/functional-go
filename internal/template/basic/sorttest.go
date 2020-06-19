@@ -26,15 +26,15 @@ func TestSort<FTYPE>Ptr(t *testing.T) {
 
 	expectedList := []*<TYPE>{&v1, &v2, &v3, &v4, &v5}
 	sortedList := Sort<FTYPE>sPtr([]*<TYPE>{&v5, &v1, &v4, &v2, &v3})
-	
+
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
-				t.Errorf("expected item: %v", *val) 
+				t.Errorf("expected item: %v", *val)
 			}
 
 			for _, val := range sortedList {
-				t.Errorf("sorted item: %v", *val) 
+				t.Errorf("sorted item: %v", *val)
 			}
 			t.Errorf("Sotred<TYPE>s failed")
 		}
@@ -69,7 +69,7 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 
 	expectedList := []*<TYPE>{&v5, &v4, &v3, &v2, &v1}
 	sortedList := Sort<FTYPE>sDescPtr([]*<TYPE>{&v5, &v1, &v4, &v2, &v3})
-	
+
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			for _, val := range expectedList {
@@ -87,7 +87,8 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 	if len(sortedList) > 0 {
 		t.Errorf("Sotred<TYPE>sDescPtr failed")
 	}
-}`
+}
+`
 }
 
 // SortIntsTest is template
@@ -116,7 +117,6 @@ func TestSort<FTYPE>Ptr(t *testing.T) {
 
 	expectedList := []*<TYPE>{&v1, &v2, &v3, &v4, &v5}
 	sortedList := SortIntsPtr([]*<TYPE>{&v5, &v1, &v4, &v2, &v3})
-
 	for i, val := range sortedList {
 		if *val != *expectedList[i] {
 			t.Errorf("Sotred<TYPE>s failed")
@@ -168,7 +168,8 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 	if len(sortedList) > 0 {
 		t.Errorf("SortIntsDescPtr failed")
 	}
-}`
+}
+`
 }
 
 // SortFloats64Test is template
@@ -251,7 +252,8 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 	if len(sortedList) > 0 {
 		t.Errorf("SortFloats64DescPtr failed")
 	}
-}`
+}
+`
 }
 
 // SortStrsTest is template
@@ -340,5 +342,6 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 	if len(sortedList) > 0 {
 		t.Errorf("SortStrsDescPtr failed")
 	}
-}`
+}
+`
 }
