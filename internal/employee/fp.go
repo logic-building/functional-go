@@ -5890,6 +5890,42 @@ func SupersetEmployeeByNamePtr(list1, list2 []*Employee) bool {
 	}
 	return true
 }
+
+// SetEmployeeByName returns a set of the distinct elements of coll.
+func SetEmployeeByName(list []Employee) []Employee {
+	if list == nil || len(list) == 0 {
+		return []Employee{}
+	}
+
+	resultMap := make(map[string]bool)
+	newList := []Employee{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Name]
+		if !ok {
+			resultMap[list[i].Name] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+
+// SetEmployeeByNamePtr returns a set of the distinct elements of coll.
+func SetEmployeeByNamePtr(list []*Employee) []*Employee {
+	if list == nil || len(list) == 0 {
+		return []*Employee{}
+	}
+
+	resultMap := make(map[string]bool)
+	newList := []*Employee{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Name]
+		if !ok {
+			resultMap[list[i].Name] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
 // UnionEmployeeBySalary return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func UnionEmployeeBySalary(arrList ...[]Employee) []Employee {
@@ -6220,4 +6256,40 @@ func SupersetEmployeeBySalaryPtr(list1, list2 []*Employee) bool {
 		}
 	}
 	return true
+}
+
+// SetEmployeeBySalary returns a set of the distinct elements of coll.
+func SetEmployeeBySalary(list []Employee) []Employee {
+	if list == nil || len(list) == 0 {
+		return []Employee{}
+	}
+
+	resultMap := make(map[float64]bool)
+	newList := []Employee{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Salary]
+		if !ok {
+			resultMap[list[i].Salary] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+
+// SetEmployeeBySalaryPtr returns a set of the distinct elements of coll.
+func SetEmployeeBySalaryPtr(list []*Employee) []*Employee {
+	if list == nil || len(list) == 0 {
+		return []*Employee{}
+	}
+
+	resultMap := make(map[float64]bool)
+	newList := []*Employee{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Salary]
+		if !ok {
+			resultMap[list[i].Salary] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
 }

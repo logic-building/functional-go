@@ -35,7 +35,6 @@ func TestDropWhileIntPtr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileInt64Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -64,7 +63,6 @@ func TestDropWhileInt64Ptr(t *testing.T) {
 		t.Errorf("DropWhileInt64Ptr failed")
 	}
 }
-
 
 func TestDropWhileInt32Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -95,7 +93,6 @@ func TestDropWhileInt32Ptr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileInt16Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -124,7 +121,6 @@ func TestDropWhileInt16Ptr(t *testing.T) {
 		t.Errorf("DropWhileInt16Ptr failed")
 	}
 }
-
 
 func TestDropWhileInt8Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -155,7 +151,6 @@ func TestDropWhileInt8Ptr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUintPtr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -184,7 +179,6 @@ func TestDropWhileUintPtr(t *testing.T) {
 		t.Errorf("DropWhileUintPtr failed")
 	}
 }
-
 
 func TestDropWhileUint64Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -215,7 +209,6 @@ func TestDropWhileUint64Ptr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUint32Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -244,7 +237,6 @@ func TestDropWhileUint32Ptr(t *testing.T) {
 		t.Errorf("DropWhileUint32Ptr failed")
 	}
 }
-
 
 func TestDropWhileUint16Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -275,7 +267,6 @@ func TestDropWhileUint16Ptr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUint8Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -305,35 +296,32 @@ func TestDropWhileUint8Ptr(t *testing.T) {
 	}
 }
 
+func TestDropWhileStrPtr(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
 
-	func TestDropWhileStrPtr(t *testing.T) {
-		// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
-	
-		var v2 string = "2"
-		var v3 string = "3"
-		var v4 string = "4"
-		var v5 string = "5"
-	
-		expectedNewList := []*string{&v3, &v4, &v5}
-		NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
-		if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
-			t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
-		}
-	
-		if len(DropWhileStrPtr(nil, nil)) > 0 {
-			t.Errorf("DropWhileStrPtr failed.")
-		}
-	
-		if len(DropWhileStrPtr(nil, []*string{})) > 0 {
-			t.Errorf("DropWhileStrPtr failed.")
-		}
-		NewList = DropWhileStrPtr(isEvenStrPtr, []*string{&v4})
-		if len(NewList) != 0 {
-			t.Errorf("DropWhileStrPtr failed")
-		}
+	expectedNewList := []*string{&v3, &v4, &v5}
+	NewList := DropWhileStrPtr(isEvenStrPtr, []*string{&v4, &v2, &v3, &v4, &v5})
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhileStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 
+	if len(DropWhileStrPtr(nil, nil)) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+
+	if len(DropWhileStrPtr(nil, []*string{})) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+	NewList = DropWhileStrPtr(isEvenStrPtr, []*string{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileStrPtr failed")
+	}
+}
 
 func TestDropWhileBoolPtr(t *testing.T) {
 	var vt bool = true
@@ -345,7 +333,6 @@ func TestDropWhileBoolPtr(t *testing.T) {
 		t.Errorf("DropWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 }
-
 
 func TestDropWhileFloat32Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -376,7 +363,6 @@ func TestDropWhileFloat32Ptr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileFloat64Ptr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -405,4 +391,3 @@ func TestDropWhileFloat64Ptr(t *testing.T) {
 		t.Errorf("DropWhileFloat64Ptr failed")
 	}
 }
-

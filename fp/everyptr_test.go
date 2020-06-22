@@ -316,7 +316,6 @@ func TestEveryUint8Ptr(t *testing.T) {
 	}
 }
 
-
 func TestEveryStrPtr(t *testing.T) {
 	// Test : every value in the list is even number
 	var v2 string = "2"
@@ -346,7 +345,6 @@ func TestEveryStrPtr(t *testing.T) {
 	}
 }
 
-
 func TestEveryBoolPtr(t *testing.T) {
 	var vt bool = true
 	var vf bool = false
@@ -362,7 +360,6 @@ func TestEveryBoolPtr(t *testing.T) {
 		t.Errorf("EveryBoolPtr failed. Expected=true, actual=false")
 	}
 
-	
 	list1 = []*bool{}
 	if EveryBoolPtr(TruePtr, list1) {
 		t.Errorf("EveryBool failed. Expected=false, actual=true")

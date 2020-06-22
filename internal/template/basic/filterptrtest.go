@@ -253,7 +253,6 @@ func isEven<FTYPE>Err(num <TYPE>) (bool, error) {
 	}
 	return num%2 == 0, nil
 }
-
 `
 }
 
@@ -265,9 +264,9 @@ func TestFilter<FTYPE>Err(t *testing.T) {
 	var vf <TYPE> = false
 
 	expectedSumList := []<TYPE>{vt}
-	
+
 	newList, _ := Filter<FTYPE>Err(true<FTYPE>Err, []<TYPE>{vt})
-	if newList[0] != expectedSumList[0]  {
+	if newList[0] != expectedSumList[0] {
 		t.Errorf("Filter<FTYPE>Err failed")
 	}
 
@@ -288,7 +287,6 @@ func true<FTYPE>Err(num1 <TYPE>) (bool, error) {
 	}
 	return true, nil
 }
-
 `
 }
 
@@ -323,7 +321,7 @@ func TestFilterIntErr(t *testing.T) {`
 		return true, nil
 	}
 	return false, nil
-	
+
 }`
 
 	code = strings.Replace(code, s1, s2, -1)

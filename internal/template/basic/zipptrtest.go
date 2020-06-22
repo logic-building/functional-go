@@ -111,7 +111,6 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 	var v30 <INPUT_TYPE2> = "30"
 	var v40 <INPUT_TYPE2> = "40"
 
-
 	list1 := []*<INPUT_TYPE1>{&v1, &v2, &v3, &v4}
 	list2 := []*<INPUT_TYPE2>{&v10, &v20, &v30, &v40}
 
@@ -400,7 +399,6 @@ func TestZip<FINPUT_TYPE1><FINPUT_TYPE2>Ptr(t *testing.T) {
 
 	var vt <INPUT_TYPE2> = true
 	var vf <INPUT_TYPE2> = false
-
 
 	list1 := []*<INPUT_TYPE1>{&v1, &v2, &v3, &v4}
 	list2 := []*<INPUT_TYPE2>{&vt, &vt, &vf, &vt}

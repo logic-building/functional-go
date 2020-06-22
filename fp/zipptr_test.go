@@ -937,7 +937,6 @@ func TestZipIntStrPtr(t *testing.T) {
 	var v30 string = "30"
 	var v40 string = "40"
 
-
 	list1 := []*int{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
 
@@ -2223,7 +2222,6 @@ func TestZipInt64StrPtr(t *testing.T) {
 	var v20 string = "20"
 	var v30 string = "30"
 	var v40 string = "40"
-
 
 	list1 := []*int64{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
@@ -3511,7 +3509,6 @@ func TestZipInt32StrPtr(t *testing.T) {
 	var v30 string = "30"
 	var v40 string = "40"
 
-
 	list1 := []*int32{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
 
@@ -4797,7 +4794,6 @@ func TestZipInt16StrPtr(t *testing.T) {
 	var v20 string = "20"
 	var v30 string = "30"
 	var v40 string = "40"
-
 
 	list1 := []*int16{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
@@ -6085,7 +6081,6 @@ func TestZipInt8StrPtr(t *testing.T) {
 	var v30 string = "30"
 	var v40 string = "40"
 
-
 	list1 := []*int8{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
 
@@ -7371,7 +7366,6 @@ func TestZipUintStrPtr(t *testing.T) {
 	var v20 string = "20"
 	var v30 string = "30"
 	var v40 string = "40"
-
 
 	list1 := []*uint{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
@@ -8659,7 +8653,6 @@ func TestZipUint64StrPtr(t *testing.T) {
 	var v30 string = "30"
 	var v40 string = "40"
 
-
 	list1 := []*uint64{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
 
@@ -9945,7 +9938,6 @@ func TestZipUint32StrPtr(t *testing.T) {
 	var v20 string = "20"
 	var v30 string = "30"
 	var v40 string = "40"
-
 
 	list1 := []*uint32{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
@@ -11233,7 +11225,6 @@ func TestZipUint16StrPtr(t *testing.T) {
 	var v30 string = "30"
 	var v40 string = "40"
 
-
 	list1 := []*uint16{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
 
@@ -12519,7 +12510,6 @@ func TestZipUint8StrPtr(t *testing.T) {
 	var v20 string = "20"
 	var v30 string = "30"
 	var v40 string = "40"
-
 
 	list1 := []*uint8{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
@@ -13896,7 +13886,6 @@ func TestZipStrBoolPtr(t *testing.T) {
 
 	var vt bool = true
 	var vf bool = false
-
 
 	list1 := []*string{&v1, &v2, &v3, &v4}
 	list2 := []*bool{&vt, &vt, &vf, &vt}
@@ -16349,7 +16338,6 @@ func TestZipFloat32StrPtr(t *testing.T) {
 	var v30 string = "30"
 	var v40 string = "40"
 
-
 	list1 := []*float32{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}
 
@@ -17635,7 +17623,6 @@ func TestZipFloat64StrPtr(t *testing.T) {
 	var v20 string = "20"
 	var v30 string = "30"
 	var v40 string = "40"
-
 
 	list1 := []*float64{&v1, &v2, &v3, &v4}
 	list2 := []*string{&v10, &v20, &v30, &v40}

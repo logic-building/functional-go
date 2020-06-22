@@ -30,7 +30,7 @@ func SortIntsPtr(list []*int) []*int {
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]
 	}
-	
+
 	return newListPtr
 }
 
@@ -63,6 +63,6 @@ func SortIntsDescPtr(list []*int) []*int {
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]
 	}
-	
+
 	return newListPtr
 }

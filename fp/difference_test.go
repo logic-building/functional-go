@@ -530,14 +530,14 @@ func TestDifferenceBool(t *testing.T) {
 	if len(actualPtr) != 0 {
 		t.Errorf("DifferenceBoolPtr failed.")
 	}
-	
+
 	expectedPtr := []*bool{&v8, &v2, &v1}
 	actualPtr = DifferenceBoolPtr(expectedPtr)
 	
 	if len(actualPtr) != 2 || !ExistsBoolPtr(&v8, actualPtr) || !ExistsBoolPtr(&v1, actualPtr) {
 		t.Errorf("DifferenceBoolPtr failed. Expected=%v, actual=%v", expectedPtr, actualPtr)
 	}
-	
+
 	list1Ptr := []*bool{&v8, &v2, &v1, &v1, &v2, &v8}
 	list2Ptr := []*bool{&v1}
 	actualPtr = DifferenceBoolPtr(list1Ptr, list2Ptr)

@@ -41,7 +41,6 @@ func TestDropWhileIntPtrErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileInt64PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -77,7 +76,6 @@ func TestDropWhileInt64PtrErr(t *testing.T) {
 		t.Errorf("DropWhileInt64PtrErr failed")
 	}
 }
-
 
 func TestDropWhileInt32PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -115,7 +113,6 @@ func TestDropWhileInt32PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileInt16PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -151,7 +148,6 @@ func TestDropWhileInt16PtrErr(t *testing.T) {
 		t.Errorf("DropWhileInt16PtrErr failed")
 	}
 }
-
 
 func TestDropWhileInt8PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -189,7 +185,6 @@ func TestDropWhileInt8PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUintPtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -225,7 +220,6 @@ func TestDropWhileUintPtrErr(t *testing.T) {
 		t.Errorf("DropWhileUintPtrErr failed")
 	}
 }
-
 
 func TestDropWhileUint64PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -263,7 +257,6 @@ func TestDropWhileUint64PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUint32PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -299,7 +292,6 @@ func TestDropWhileUint32PtrErr(t *testing.T) {
 		t.Errorf("DropWhileUint32PtrErr failed")
 	}
 }
-
 
 func TestDropWhileUint16PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
@@ -337,7 +329,6 @@ func TestDropWhileUint16PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileUint8PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -374,7 +365,6 @@ func TestDropWhileUint8PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileStrPtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -410,7 +400,6 @@ func TestDropWhileStrPtrErr(t *testing.T) {
 		t.Errorf("DropWhileStrPtrErr failed")
 	}
 }
-
 
 func TestDropWhileBoolPtrErr(t *testing.T) {
 	var vt bool = true
@@ -489,7 +478,6 @@ func TestDropWhileFloat32PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestDropWhileFloat64PtrErr(t *testing.T) {
 	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
 
@@ -525,4 +513,3 @@ func TestDropWhileFloat64PtrErr(t *testing.T) {
 		t.Errorf("DropWhileFloat64PtrErr failed")
 	}
 }
-

@@ -333,5 +333,41 @@ func Superset<FSTRUCT_NAME>By<FFIELD_NAME>Ptr(list1, list2 []*<STRUCT_NAME>) boo
 		}
 	}
 	return true
+}
+
+// Set<FSTRUCT_NAME>By<FFIELD_NAME> returns a set of the distinct elements of coll.
+func Set<FSTRUCT_NAME>By<FFIELD_NAME>(list []<STRUCT_NAME>) []<STRUCT_NAME> {
+	if list == nil || len(list) == 0 {
+		return []<STRUCT_NAME>{}
+	}
+
+	resultMap := make(map[<FIELD_TYPE>]bool)
+	newList := []<STRUCT_NAME>{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].<FIELD_NAME>]
+		if !ok {
+			resultMap[list[i].<FIELD_NAME>] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+
+// Set<FSTRUCT_NAME>By<FFIELD_NAME>Ptr returns a set of the distinct elements of coll.
+func Set<FSTRUCT_NAME>By<FFIELD_NAME>Ptr(list []*<STRUCT_NAME>) []*<STRUCT_NAME> {
+	if list == nil || len(list) == 0 {
+		return []*<STRUCT_NAME>{}
+	}
+
+	resultMap := make(map[<FIELD_TYPE>]bool)
+	newList := []*<STRUCT_NAME>{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].<FIELD_NAME>]
+		if !ok {
+			resultMap[list[i].<FIELD_NAME>] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
 }`
 }
