@@ -21,7 +21,7 @@ func TestTakeWhile<FTYPE>Ptr(t *testing.T) {
 	}
 
 	expectedNewList = []*<TYPE>{&v40}
-	partialIsEvenDivisibleBy := func(num *<TYPE>) bool { return *num % 10 == 0 }
+	partialIsEvenDivisibleBy := func(num *<TYPE>) bool { return *num%10 == 0 }
 	NewList = TakeWhile<FTYPE>Ptr(partialIsEvenDivisibleBy, []*<TYPE>{&v40})
 	
 	if *NewList[0] != *expectedNewList[0] {
@@ -237,7 +237,7 @@ func TestTakeWhile<FTYPE>Err(t *testing.T) {
 	}
 
 	expectedNewList = []<TYPE>{v40}
-	partialIsEvenDivisibleBy := func(num <TYPE>) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num <TYPE>) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhile<FTYPE>Err(partialIsEvenDivisibleBy, []<TYPE>{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -318,7 +318,7 @@ func TestTakeWhileIntErr(t *testing.T) {`
 
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `partialIsEvenDivisibleBy := func(num string) (bool, error) { return num % 10 == 0, nil }
+	s1 = `partialIsEvenDivisibleBy := func(num string) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileStrErr(partialIsEvenDivisibleBy, []string{v40})`
 
 	s2 = `partialIsEvenDivisibleBy := func(num string) (bool, error) { if num == "40" { return true, nil}; return false, nil }
@@ -326,7 +326,7 @@ func TestTakeWhileIntErr(t *testing.T) {`
 
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `partialIsEvenDivisibleBy := func(num float64) (bool, error) { return num % 10 == 0, nil }
+	s1 = `partialIsEvenDivisibleBy := func(num float64) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileFloat64Err(partialIsEvenDivisibleBy, []float64{v40})`
 
 	s2 = `partialIsEvenDivisibleBy := func(num float64) (bool, error) { return int(num)%10 == 0, nil }
@@ -334,7 +334,7 @@ func TestTakeWhileIntErr(t *testing.T) {`
 
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `partialIsEvenDivisibleBy := func(num float32) (bool, error) { return num % 10 == 0, nil }
+	s1 = `partialIsEvenDivisibleBy := func(num float32) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileFloat32Err(partialIsEvenDivisibleBy, []float32{v40})`
 
 	s2 = `partialIsEvenDivisibleBy := func(num float32) (bool, error) { return int(num)%10 == 0, nil }

@@ -24,8 +24,8 @@ func TestRemoveIntPtr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*int{&v1, &v3}
-	partialIsEven := func(num *int) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *int) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveIntPtr(partialIsEven, []*int{&v20, &v1, &v3, &v40})
 
@@ -38,7 +38,6 @@ func TestRemoveIntPtr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveInt64Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -58,8 +57,8 @@ func TestRemoveInt64Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*int64{&v1, &v3}
-	partialIsEven := func(num *int64) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *int64) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveInt64Ptr(partialIsEven, []*int64{&v20, &v1, &v3, &v40})
 
@@ -72,7 +71,6 @@ func TestRemoveInt64Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveInt32Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -92,8 +90,8 @@ func TestRemoveInt32Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*int32{&v1, &v3}
-	partialIsEven := func(num *int32) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *int32) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveInt32Ptr(partialIsEven, []*int32{&v20, &v1, &v3, &v40})
 
@@ -106,7 +104,6 @@ func TestRemoveInt32Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveInt16Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -126,8 +123,8 @@ func TestRemoveInt16Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*int16{&v1, &v3}
-	partialIsEven := func(num *int16) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *int16) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveInt16Ptr(partialIsEven, []*int16{&v20, &v1, &v3, &v40})
 
@@ -140,7 +137,6 @@ func TestRemoveInt16Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveInt8Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -160,8 +156,8 @@ func TestRemoveInt8Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*int8{&v1, &v3}
-	partialIsEven := func(num *int8) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *int8) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveInt8Ptr(partialIsEven, []*int8{&v20, &v1, &v3, &v40})
 
@@ -174,7 +170,6 @@ func TestRemoveInt8Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveUintPtr(t *testing.T) {
 	// Test : even number in the list
@@ -194,8 +189,8 @@ func TestRemoveUintPtr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*uint{&v1, &v3}
-	partialIsEven := func(num *uint) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *uint) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveUintPtr(partialIsEven, []*uint{&v20, &v1, &v3, &v40})
 
@@ -208,7 +203,6 @@ func TestRemoveUintPtr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveUint64Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -228,8 +222,8 @@ func TestRemoveUint64Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*uint64{&v1, &v3}
-	partialIsEven := func(num *uint64) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *uint64) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveUint64Ptr(partialIsEven, []*uint64{&v20, &v1, &v3, &v40})
 
@@ -242,7 +236,6 @@ func TestRemoveUint64Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveUint32Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -262,8 +255,8 @@ func TestRemoveUint32Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*uint32{&v1, &v3}
-	partialIsEven := func(num *uint32) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *uint32) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveUint32Ptr(partialIsEven, []*uint32{&v20, &v1, &v3, &v40})
 
@@ -276,7 +269,6 @@ func TestRemoveUint32Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveUint16Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -296,8 +288,8 @@ func TestRemoveUint16Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*uint16{&v1, &v3}
-	partialIsEven := func(num *uint16) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *uint16) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveUint16Ptr(partialIsEven, []*uint16{&v20, &v1, &v3, &v40})
 
@@ -310,7 +302,6 @@ func TestRemoveUint16Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveUint8Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -330,8 +321,8 @@ func TestRemoveUint8Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*uint8{&v1, &v3}
-	partialIsEven := func(num *uint8) bool { 
-		return *num % 10 == 0 
+	partialIsEven := func(num *uint8) bool {
+		return *num%10 == 0
 	}
 	NewList = RemoveUint8Ptr(partialIsEven, []*uint8{&v20, &v1, &v3, &v40})
 
@@ -344,7 +335,6 @@ func TestRemoveUint8Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveStrPtr(t *testing.T) {
 	// Test : even number in the list
@@ -364,11 +354,11 @@ func TestRemoveStrPtr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*string{&v1, &v3}
-	partialIsEven := func(num *string) bool { 
+	partialIsEven := func(num *string) bool {
 		if *num == "10" || *num == "20" {
 			return true
 		}
-		return false 
+		return false
 	}
 	NewList = RemoveStrPtr(partialIsEven, []*string{&v20, &v1, &v3, &v40})
 
@@ -382,16 +372,15 @@ func TestRemoveStrPtr(t *testing.T) {
 	}
 }
 
-
 func TestRemoveBoolPtr(t *testing.T) {
 	// Test : even number in the list
 	var vt bool = true
 	var vf bool = false
-	
-	expectedNewList := []*bool{&vt}
-	NewList := RemoveBoolPtr(func(v *bool) bool { return *v == false} , []*bool{&vt, &vf, &vf})
 
-	if *NewList[0] != *expectedNewList[0]  {
+	expectedNewList := []*bool{&vt}
+	NewList := RemoveBoolPtr(func(v *bool) bool { return *v == false }, []*bool{&vt, &vf, &vf})
+
+	if *NewList[0] != *expectedNewList[0] {
 		t.Errorf("RemoveBool failed. Expected New list=%v, actual list=%v", *expectedNewList[0], *NewList[0])
 	}
 
@@ -400,7 +389,6 @@ func TestRemoveBoolPtr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveFloat32Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -420,8 +408,8 @@ func TestRemoveFloat32Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*float32{&v1, &v3}
-	partialIsEven := func(num *float32) bool { 
-		return int(*num) % 10 == 0 
+	partialIsEven := func(num *float32) bool {
+		return int(*num)%10 == 0
 	}
 	NewList = RemoveFloat32Ptr(partialIsEven, []*float32{&v20, &v1, &v3, &v40})
 
@@ -434,7 +422,6 @@ func TestRemoveFloat32Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 
 func TestRemoveFloat64Ptr(t *testing.T) {
 	// Test : even number in the list
@@ -454,8 +441,8 @@ func TestRemoveFloat64Ptr(t *testing.T) {
 
 	// Test: Remove all even numbers divisible by 10 in the list
 	expectedNewList = []*float64{&v1, &v3}
-	partialIsEven := func(num *float64) bool { 
-		return int(*num) % 10 == 0 
+	partialIsEven := func(num *float64) bool {
+		return int(*num)%10 == 0
 	}
 	NewList = RemoveFloat64Ptr(partialIsEven, []*float64{&v20, &v1, &v3, &v40})
 
@@ -468,4 +455,3 @@ func TestRemoveFloat64Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-

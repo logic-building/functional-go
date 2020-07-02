@@ -27,7 +27,7 @@ func TestRemoveIntPtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveIntPtrErr(partialIsEven, []*int{&v20, &v1, &v3, &v40})
 
@@ -40,12 +40,16 @@ func TestRemoveIntPtrErr(t *testing.T) {
 		t.Errorf("RemoveIntPtr failed.")
 	}
 
-	_, err := RemoveIntPtrErr(func(v *int) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*int{&v20, &v1, &v3, &v40})
+	_, err := RemoveIntPtrErr(func(v *int) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*int{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveIntPtrErr failed.")
 	}
 }
-
 
 func TestRemoveInt64PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -69,7 +73,7 @@ func TestRemoveInt64PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveInt64PtrErr(partialIsEven, []*int64{&v20, &v1, &v3, &v40})
 
@@ -82,12 +86,16 @@ func TestRemoveInt64PtrErr(t *testing.T) {
 		t.Errorf("RemoveInt64Ptr failed.")
 	}
 
-	_, err := RemoveInt64PtrErr(func(v *int64) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*int64{&v20, &v1, &v3, &v40})
+	_, err := RemoveInt64PtrErr(func(v *int64) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*int64{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveInt64PtrErr failed.")
 	}
 }
-
 
 func TestRemoveInt32PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -111,7 +119,7 @@ func TestRemoveInt32PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveInt32PtrErr(partialIsEven, []*int32{&v20, &v1, &v3, &v40})
 
@@ -124,12 +132,16 @@ func TestRemoveInt32PtrErr(t *testing.T) {
 		t.Errorf("RemoveInt32Ptr failed.")
 	}
 
-	_, err := RemoveInt32PtrErr(func(v *int32) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*int32{&v20, &v1, &v3, &v40})
+	_, err := RemoveInt32PtrErr(func(v *int32) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*int32{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveInt32PtrErr failed.")
 	}
 }
-
 
 func TestRemoveInt16PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -153,7 +165,7 @@ func TestRemoveInt16PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveInt16PtrErr(partialIsEven, []*int16{&v20, &v1, &v3, &v40})
 
@@ -166,12 +178,16 @@ func TestRemoveInt16PtrErr(t *testing.T) {
 		t.Errorf("RemoveInt16Ptr failed.")
 	}
 
-	_, err := RemoveInt16PtrErr(func(v *int16) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*int16{&v20, &v1, &v3, &v40})
+	_, err := RemoveInt16PtrErr(func(v *int16) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*int16{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveInt16PtrErr failed.")
 	}
 }
-
 
 func TestRemoveInt8PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -195,7 +211,7 @@ func TestRemoveInt8PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveInt8PtrErr(partialIsEven, []*int8{&v20, &v1, &v3, &v40})
 
@@ -208,12 +224,16 @@ func TestRemoveInt8PtrErr(t *testing.T) {
 		t.Errorf("RemoveInt8Ptr failed.")
 	}
 
-	_, err := RemoveInt8PtrErr(func(v *int8) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*int8{&v20, &v1, &v3, &v40})
+	_, err := RemoveInt8PtrErr(func(v *int8) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*int8{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveInt8PtrErr failed.")
 	}
 }
-
 
 func TestRemoveUintPtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -237,7 +257,7 @@ func TestRemoveUintPtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveUintPtrErr(partialIsEven, []*uint{&v20, &v1, &v3, &v40})
 
@@ -250,12 +270,16 @@ func TestRemoveUintPtrErr(t *testing.T) {
 		t.Errorf("RemoveUintPtr failed.")
 	}
 
-	_, err := RemoveUintPtrErr(func(v *uint) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*uint{&v20, &v1, &v3, &v40})
+	_, err := RemoveUintPtrErr(func(v *uint) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*uint{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveUintPtrErr failed.")
 	}
 }
-
 
 func TestRemoveUint64PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -279,7 +303,7 @@ func TestRemoveUint64PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveUint64PtrErr(partialIsEven, []*uint64{&v20, &v1, &v3, &v40})
 
@@ -292,12 +316,16 @@ func TestRemoveUint64PtrErr(t *testing.T) {
 		t.Errorf("RemoveUint64Ptr failed.")
 	}
 
-	_, err := RemoveUint64PtrErr(func(v *uint64) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*uint64{&v20, &v1, &v3, &v40})
+	_, err := RemoveUint64PtrErr(func(v *uint64) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*uint64{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveUint64PtrErr failed.")
 	}
 }
-
 
 func TestRemoveUint32PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -321,7 +349,7 @@ func TestRemoveUint32PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveUint32PtrErr(partialIsEven, []*uint32{&v20, &v1, &v3, &v40})
 
@@ -334,12 +362,16 @@ func TestRemoveUint32PtrErr(t *testing.T) {
 		t.Errorf("RemoveUint32Ptr failed.")
 	}
 
-	_, err := RemoveUint32PtrErr(func(v *uint32) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*uint32{&v20, &v1, &v3, &v40})
+	_, err := RemoveUint32PtrErr(func(v *uint32) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*uint32{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveUint32PtrErr failed.")
 	}
 }
-
 
 func TestRemoveUint16PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -363,7 +395,7 @@ func TestRemoveUint16PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveUint16PtrErr(partialIsEven, []*uint16{&v20, &v1, &v3, &v40})
 
@@ -376,12 +408,16 @@ func TestRemoveUint16PtrErr(t *testing.T) {
 		t.Errorf("RemoveUint16Ptr failed.")
 	}
 
-	_, err := RemoveUint16PtrErr(func(v *uint16) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*uint16{&v20, &v1, &v3, &v40})
+	_, err := RemoveUint16PtrErr(func(v *uint16) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*uint16{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveUint16PtrErr failed.")
 	}
 }
-
 
 func TestRemoveUint8PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -405,7 +441,7 @@ func TestRemoveUint8PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return *num % 10 == 0, nil 
+		return *num%10 == 0, nil
 	}
 	NewList, _ = RemoveUint8PtrErr(partialIsEven, []*uint8{&v20, &v1, &v3, &v40})
 
@@ -418,12 +454,16 @@ func TestRemoveUint8PtrErr(t *testing.T) {
 		t.Errorf("RemoveUint8Ptr failed.")
 	}
 
-	_, err := RemoveUint8PtrErr(func(v *uint8) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*uint8{&v20, &v1, &v3, &v40})
+	_, err := RemoveUint8PtrErr(func(v *uint8) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*uint8{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveUint8PtrErr failed.")
 	}
 }
-
 
 func TestRemoveStrPtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -450,7 +490,7 @@ func TestRemoveStrPtrErr(t *testing.T) {
 		if *num == "20" || *num == "40" {
 			return true, nil
 		}
-		return false, nil 
+		return false, nil
 	}
 	NewList, _ = RemoveStrPtrErr(partialIsEven, []*string{&v20, &v1, &v3, &v40})
 
@@ -463,26 +503,35 @@ func TestRemoveStrPtrErr(t *testing.T) {
 		t.Errorf("RemoveStrPtr failed.")
 	}
 
-	_, err := RemoveStrPtrErr(func(v *string) (bool, error) {if *v == "20" { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*string{&v20, &v1, &v3, &v40})
+	_, err := RemoveStrPtrErr(func(v *string) (bool, error) {
+		if *v == "20" {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*string{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveStrPtrErr failed.")
 	}
 }
 
-
 func TestRemoveBoolPtrErr(t *testing.T) {
 	// Test : even number in the list
 	var vt bool = true
 	var vf bool = false
-	
-	expectedNewList := []*bool{&vt}
-	NewList, _ := RemoveBoolPtrErr(func(v *bool) (bool, error) { return *v == false, nil} , []*bool{&vt, &vf, &vf})
 
-	if *NewList[0] != *expectedNewList[0]  {
+	expectedNewList := []*bool{&vt}
+	NewList, _ := RemoveBoolPtrErr(func(v *bool) (bool, error) { return *v == false, nil }, []*bool{&vt, &vf, &vf})
+
+	if *NewList[0] != *expectedNewList[0] {
 		t.Errorf("RemoveBoolPtrErr failed. Expected New list=%v, actual list=%v", *expectedNewList[0], *NewList[0])
 	}
 
-	_, err := RemoveBoolPtrErr(func(v *bool) (bool, error) { if *v == false {return false, errors.New("false is invalid in this test")}; return true, nil} , []*bool{&vt, &vf, &vf})
+	_, err := RemoveBoolPtrErr(func(v *bool) (bool, error) {
+		if *v == false {
+			return false, errors.New("false is invalid in this test")
+		}
+		return true, nil
+	}, []*bool{&vt, &vf, &vf})
 	if err == nil {
 		t.Errorf("RemoveBoolPtrErr failed.")
 	}
@@ -492,7 +541,6 @@ func TestRemoveBoolPtrErr(t *testing.T) {
 		t.Errorf("RemoveBoolPtrErr failed.")
 	}
 }
-
 
 func TestRemoveFloat32PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -516,7 +564,7 @@ func TestRemoveFloat32PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return int(*num) % 10 == 0, nil 
+		return int(*num)%10 == 0, nil
 	}
 	NewList, _ = RemoveFloat32PtrErr(partialIsEven, []*float32{&v20, &v1, &v3, &v40})
 
@@ -529,12 +577,16 @@ func TestRemoveFloat32PtrErr(t *testing.T) {
 		t.Errorf("RemoveFloat32Ptr failed.")
 	}
 
-	_, err := RemoveFloat32PtrErr(func(v *float32) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*float32{&v20, &v1, &v3, &v40})
+	_, err := RemoveFloat32PtrErr(func(v *float32) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*float32{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveFloat32PtrErr failed.")
 	}
 }
-
 
 func TestRemoveFloat64PtrErr(t *testing.T) {
 	// Test : even number in the list
@@ -558,7 +610,7 @@ func TestRemoveFloat64PtrErr(t *testing.T) {
 		if *num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return int(*num) % 10 == 0, nil 
+		return int(*num)%10 == 0, nil
 	}
 	NewList, _ = RemoveFloat64PtrErr(partialIsEven, []*float64{&v20, &v1, &v3, &v40})
 
@@ -571,9 +623,13 @@ func TestRemoveFloat64PtrErr(t *testing.T) {
 		t.Errorf("RemoveFloat64Ptr failed.")
 	}
 
-	_, err := RemoveFloat64PtrErr(func(v *float64) (bool, error) {if *v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []*float64{&v20, &v1, &v3, &v40})
+	_, err := RemoveFloat64PtrErr(func(v *float64) (bool, error) {
+		if *v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []*float64{&v20, &v1, &v3, &v40})
 	if err == nil {
 		t.Errorf("RemoveFloat64PtrErr failed.")
 	}
 }
-
