@@ -53,6 +53,7 @@ Note:
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"log"
@@ -150,7 +151,7 @@ func main() {
 		var setCode string
 
 		if *setStr != "" {
-			setCode = generateSetMethods(*setStr)
+			setCode = generateSetMethods(*setStr, nil)
 		}
 
 		var sortingCode string
@@ -160,7 +161,27 @@ func main() {
 				`import "sync" `,
 				`import "sort" 
 import "sync" `, -1)
-			sortingCode = generateSortMethods(*sortStr)
+			sortingCode = generateSortMethods(*sortStr, nil)
+		}
+
+		// Generate set and sort functions for all the types of struct
+		if *sortStr == "" || *setStr == "" {
+			structToFieldsMap := findStructNamesAndFieldsGivenInGoGenerate()
+
+			// 2nd condition is ignoring auto generation of sort functions for `all fp in 1 place strategy"
+			// Can be done in future : change the logic to find struct name(employee.Teacher) current logic is not checking .
+			if *sortStr == "" && strings.Index(*types, ".") < 0 {
+				generatedCode = strings.Replace(generatedCode,
+					`import "sync" `,
+					`import "sort" 
+import "sync" `, -1)
+				sortingCode = generateSortMethods(*sortStr, structToFieldsMap)
+
+			}
+
+			if *setStr == "" {
+				setCode = generateSetMethods(*setStr, structToFieldsMap)
+			}
 		}
 
 		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII + sortingCode + setCode))
@@ -172,7 +193,6 @@ import "sync" `, -1)
 	if !isAlreadyRun {
 		fmt.Println("Functional code generation is successful.")
 	}
-
 }
 
 // When imports are passed, Remove 1st part of "." in <FOUTPUT_TYPE> and <FINPUT_TYPE>
@@ -807,8 +827,8 @@ func quoteForTheDay() string {
 		"Love is the greatest power on earth",
 		"When you wish good for others, good things come back to you. This is the Law of Nature",
 		"If you can win over your mind, you can win over the whole world",
-		"Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate. only love cna do that",
-		"Silence says so mcuh. Just listen",
+		"Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate. only love can do that",
+		"Silence says so much. Just listen",
 		"The greatest gift human can give to himself and others are tolerance and forgiveness",
 		"The practice of devotion involves replacing desires for the world with the desires for God",
 		"The wealth of divine love is the only true wealth. Every other form of wealth simply enhances one's pride",
@@ -819,7 +839,7 @@ func quoteForTheDay() string {
 		"If you have to choose between being kind and being right choose being kind and you will always be right",
 		"Silence & Smile are two powerful tools.Smile is the way to solve many problems & Silence is the way to avoid many problems",
 		"Don't get upset with people and situations, because both are powerless without your reaction",
-		"Most of the people are in lack of knowledge.Don't hate people.Love people and understand people are under influence of ignorance. Always do righteously.",
+		"Most of the people are in lack of knowledge.Don't hate them.Love them and understand that they are under influence of ignorance. Always do righteously.",
 		"Every way and means that leads our mind to God is Devotion",
 		"The Only Purpose of Our Human Life is to Attain God",
 		"Meditation. Because some questions can't be answered by Google!",
@@ -832,10 +852,23 @@ func quoteForTheDay() string {
 		"If you can establish your relationship with God, that ultimate satisfaction that you have been searching for since innumerable lifetimes, will eventually be attained",
 		"The Joy of the mind is the measure of its strength",
 		"When you come to a point where you have no need to impress anybody, your freedom will begin",
-		"Ritualistic worship, chanting and meditation are done with the body, voice and the mind: they excel each other in the ascending order",
+		"Ritualistic worship, chanting and meditation are done with the body, voice and the mind: they excel each other in the ascending order - Ramana Maharshi",
 		"Uttering the sacred word, either in a loud or low tone is preferable to chants in praise of the Supreme. Mental contemplation is superior to both",
 		"When one learns to turn the mind away from material allurements and renounces the desires of the senses, such a person comes in touch with the inner bliss of the soul",
 		"When we decide that God is ours and the whole world is His, then our consciousness transforms from seeking self-enjoyment to serving the Lord with everything that we have",
+		"If you want to change the world, go home and love your family - Mother Teresa",
+		"Every time you smile at someone, it is an action of love, a gift to that person, a beautiful thing. - Mother Teresa",
+		"No color, no religion, no nationality should come between us, we are all children of God. - Mother Teresa",
+		"In this life, we cannot always do great things. But we can do small things with great love. - Mother Teresa",
+		`Lord, make an instrument of the peace,
+    Where there is hatred, let me show love;
+    Where there is injury, pardon;
+    Where there is doubt, faith;
+    Where there is despair, hope;
+    Where there is darkness, light;
+    Where there is sadness, Joy.
+`,
+		"A generous heart, kind speech, and a life of service and compassion are the things which renew humanity, Buddha",
 	}
 
 	s := rand.NewSource(time.Now().Unix())
@@ -881,69 +914,225 @@ func runWithin(duration time.Duration) bool {
 	return runWithin("/tmp/functional-go.txt", duration)
 }
 
-func generateSortMethods(sortStr string) string {
+func generateSortMethods(sortStr string, allFields map[string][]string) string {
+	if allFields != nil {
+		template := ""
+		for structName, fieldsAndTypes := range allFields {
+			if len(fieldsAndTypes) > 0 {
+				for _, fieldType := range fieldsAndTypes {
 
-	if len(strings.TrimSpace(sortStr)) == 0 {
-		fmt.Println("-sort: value is empty. ignoring sort methods")
-		return ""
-	}
+					fieldName := strings.Split(fieldType, " ")[0]
 
-	template := ""
-	sortedStrList := strings.Split(sortStr, ",")
+					fStructName := strings.Title(structName)
+					fFieldName := strings.Title(fieldName)
 
-	for _, sortedStrItem := range sortedStrList {
-		sortedStrItem = strings.TrimSpace(sortedStrItem)
-		sortStrItemElements := strings.Split(sortedStrItem, ":")
-		if len(sortStrItemElements) != 2 {
-			fmt.Println("-sort: format is not valid. expected format for option -sort: <struct_name>:<field_name>. eg. -sort=\"Employee:Salary\"")
-			fmt.Println("ignoring sort methods")
+					r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+					template += template2.SortStruct()
+					template = r.Replace(template)
+
+				}
+			}
+		}
+		return template
+	} else {
+		if len(strings.TrimSpace(sortStr)) == 0 {
+			fmt.Println("-sort: value is empty. ignoring sort methods")
 			return ""
 		}
 
-		structName := strings.TrimSpace(sortStrItemElements[0])
-		fieldName := strings.TrimSpace(sortStrItemElements[1])
+		template := ""
+		sortedStrList := strings.Split(sortStr, ",")
 
-		fStructName := strings.Title(structName)
-		fFieldName := strings.Title(fieldName)
+		for _, sortedStrItem := range sortedStrList {
+			sortedStrItem = strings.TrimSpace(sortedStrItem)
+			sortStrItemElements := strings.Split(sortedStrItem, ":")
+			if len(sortStrItemElements) != 2 {
+				fmt.Println("-sort: format is not valid. expected format for option -sort: <struct_name>:<field_name>. eg. -sort=\"Employee:Salary\"")
+				fmt.Println("ignoring sort methods")
+				return ""
+			}
 
-		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
-		template += template2.SortStruct()
-		template = r.Replace(template)
+			structName := strings.TrimSpace(sortStrItemElements[0])
+			fieldName := strings.TrimSpace(sortStrItemElements[1])
+
+			fStructName := strings.Title(structName)
+			fFieldName := strings.Title(fieldName)
+
+			r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+			template += template2.SortStruct()
+			template = r.Replace(template)
+		}
+
+		return template
 	}
-
-	return template
 }
 
-func generateSetMethods(setStr string) string {
+func generateSetMethods(setStr string, allFields map[string][]string) string {
 
-	if len(strings.TrimSpace(setStr)) == 0 {
-		fmt.Println("-set: value is empty. ignoring set methods")
-		return ""
-	}
+	if allFields != nil {
+		template := ""
+		for structName, fieldsAndTypes := range allFields {
+			if len(fieldsAndTypes) > 0 {
+				for _, fieldType := range fieldsAndTypes {
 
-	template := ""
-	sortedStrList := strings.Split(setStr, ",")
+					fieldName := strings.Split(fieldType, " ")[0]
+					fieldType := strings.Split(fieldType, " ")[1]
 
-	for _, sortedStrItem := range sortedStrList {
-		sortedStrItem = strings.TrimSpace(sortedStrItem)
-		sortStrItemElements := strings.Split(sortedStrItem, ":")
-		if len(sortStrItemElements) != 3 {
-			fmt.Println("-set: format is not valid. expected format for option -sort: <struct_name>:<field_name>:<field_type>. eg. -set=\"Employee:Salary:float64\"")
-			fmt.Println("ignoring set methods")
+					fStructName := strings.Title(structName)
+					fFieldName := strings.Title(fieldName)
+
+					r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName, "<FIELD_TYPE>", fieldType)
+					template += template2.SetStruct()
+					template = r.Replace(template)
+
+				}
+			}
+		}
+		return template
+
+	} else {
+		if len(strings.TrimSpace(setStr)) == 0 {
+			fmt.Println("-set: value is empty. ignoring set methods")
 			return ""
 		}
 
-		structName := strings.TrimSpace(sortStrItemElements[0])
-		fieldName := strings.TrimSpace(sortStrItemElements[1])
-		fieldType := strings.TrimSpace(sortStrItemElements[2])
+		template := ""
+		sortedStrList := strings.Split(setStr, ",")
 
-		fStructName := strings.Title(structName)
-		fFieldName := strings.Title(fieldName)
+		for _, sortedStrItem := range sortedStrList {
+			sortedStrItem = strings.TrimSpace(sortedStrItem)
+			sortStrItemElements := strings.Split(sortedStrItem, ":")
+			if len(sortStrItemElements) != 3 {
+				fmt.Println("-set: format is not valid. expected format for option -sort: <struct_name>:<field_name>:<field_type>. eg. -set=\"Employee:Salary:float64\"")
+				fmt.Println("ignoring set methods")
+				return ""
+			}
 
-		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName, "<FIELD_TYPE>", fieldType)
-		template += template2.SetStruct()
-		template = r.Replace(template)
+			structName := strings.TrimSpace(sortStrItemElements[0])
+			fieldName := strings.TrimSpace(sortStrItemElements[1])
+			fieldType := strings.TrimSpace(sortStrItemElements[2])
+
+			fStructName := strings.Title(structName)
+			fFieldName := strings.Title(fieldName)
+
+			r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName, "<FIELD_TYPE>", fieldType)
+			template += template2.SetStruct()
+			template = r.Replace(template)
+		}
+
+		return template
+	}
+}
+
+func ListDir(dirName string) ([]string, error) {
+	var files []string
+
+	root := dirName
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		files = append(files, path)
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return files, nil
+}
+
+func findStructNamesAndFieldsGivenInGoGenerate() map[string][]string {
+	allTypesInGoGenerate := strings.Split(*types, ",")
+
+	isUserDefinedType := func(dataType string) bool {
+		switch strings.ToLower(strings.TrimSpace(dataType)) {
+		case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "bool":
+			return false
+		}
+		return true
+	}
+	userDefinedTypesInGoGenerate := fp.MapStr(strings.TrimSpace, fp.FilterStr(isUserDefinedType, allTypesInGoGenerate))
+
+	structToFieldsMap := make(map[string][]string, len(userDefinedTypesInGoGenerate))
+	structToFieldsMapIndex := 0
+
+	path, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+	}
+	files, err := ListDir(path)
+	if err != nil {
+		fmt.Printf("\n error scanning current folder=%v, error=%v. sort and set methods will be skipped", path, err)
+		return nil
 	}
 
-	return template
+	onlyGoFiles := fp.FilterStr(func(str string) bool {
+		return strings.Contains(str, ".go")
+	}, files)
+
+	totalStructCount := 0
+	for _, fileStr := range onlyGoFiles {
+
+		if totalStructCount == len(userDefinedTypesInGoGenerate) {
+			break
+		}
+
+		file, err := os.Open(fileStr)
+		if err != nil {
+			fmt.Printf("\n error reading file=%s to generate sort and set methods. skipping set and sort functions", fileStr)
+			return nil
+		}
+		defer file.Close()
+
+		scanner := bufio.NewScanner(file)
+		packageFound := false
+		startCollectingStructInfo := false
+		var structFields []string
+
+		for scanner.Scan() {
+			txtLine := scanner.Text()
+			if len(txtLine) > 0 && strings.Contains(txtLine, *pkgName) {
+				packageFound = true
+			}
+			// reading lines of file of package mentioned in go:generate
+			if packageFound {
+
+				words := strings.Fields(txtLine)
+
+				// Found struct
+				if len(words) == 4 && strings.Contains(words[0], "type") && fp.ExistsStr(words[1], userDefinedTypesInGoGenerate) && strings.Contains(words[2], "struct") && strings.Contains(words[3], "{") {
+					startCollectingStructInfo = true
+					totalStructCount++
+				}
+
+				if startCollectingStructInfo && strings.TrimSpace(txtLine) == "}" {
+					startCollectingStructInfo = false
+
+					newStructFieldsArr := make([]string, len(structFields))
+					for i, v := range structFields {
+						newStructFieldsArr[i] = v
+					}
+					structToFieldsMap[userDefinedTypesInGoGenerate[structToFieldsMapIndex]] = newStructFieldsArr
+					structToFieldsMapIndex++
+					structFields = make([]string, 0)
+				}
+
+				if startCollectingStructInfo {
+					if len(words) >= 2 {
+						field := strings.TrimSpace(words[0])
+						dataType := strings.TrimSpace(words[1])
+
+						switch dataType {
+						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "time.Time":
+							structFields = append(structFields, field+" "+dataType)
+						}
+					}
+				}
+			}
+		}
+
+		if err := scanner.Err(); err != nil {
+			fmt.Printf("\n error scanning data from file %s. skipping generation of sort and set functions", fileStr)
+			return nil
+		}
+	}
+
+	return structToFieldsMap
 }

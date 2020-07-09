@@ -5409,11 +5409,11 @@ func FilterMapStrTeacherErr(fFilter func(string) (bool, error), fMap func(string
 }
 
 
-type byName []Employee
+type byNameEmployee []Employee
 
-func (a byName) Len() int           { return len(a) }
-func (a byName) Less(i, j int) bool { return a[i].Name < a[j].Name }
-func (a byName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byNameEmployee) Len() int           { return len(a) }
+func (a byNameEmployee) Less(i, j int) bool { return a[i].Name < a[j].Name }
+func (a byNameEmployee) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 // SortEmployeeByName sort structs
 func SortEmployeeByName(list []Employee) []Employee {
@@ -5424,7 +5424,7 @@ func SortEmployeeByName(list []Employee) []Employee {
 	for i, item := range list {
 		newList[i] = item
 	}
-	sort.Sort(byName(newList))
+	sort.Sort(byNameEmployee(newList))
 	return newList
 }
 
@@ -5439,7 +5439,7 @@ func SortEmployeeByNamePtr(list []*Employee) []*Employee {
 	for i, item := range list {
 		newList[i] = *item
 	}
-	sort.Sort(byName(newList))
+	sort.Sort(byNameEmployee(newList))
 
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]
@@ -5447,11 +5447,11 @@ func SortEmployeeByNamePtr(list []*Employee) []*Employee {
 	return newListPtr
 }
 
-type byNameDesc []Employee
+type byNameEmployeeDesc []Employee
 
-func (a byNameDesc) Len() int           { return len(a) }
-func (a byNameDesc) Less(i, j int) bool { return a[i].Name > a[j].Name }
-func (a byNameDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byNameEmployeeDesc) Len() int           { return len(a) }
+func (a byNameEmployeeDesc) Less(i, j int) bool { return a[i].Name > a[j].Name }
+func (a byNameEmployeeDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 // SortEmployeeByNameDesc sorts structs
 func SortEmployeeByNameDesc(list []Employee) []Employee {
@@ -5462,7 +5462,7 @@ func SortEmployeeByNameDesc(list []Employee) []Employee {
 	for i, item := range list {
 		newList[i] = item
 	}
-	sort.Sort(byNameDesc(newList))
+	sort.Sort(byNameEmployeeDesc(newList))
 	return newList
 }
 
@@ -5477,18 +5477,18 @@ func SortEmployeeByNameDescPtr(list []*Employee) []*Employee {
 	for i, item := range list {
 		newList[i] = *item
 	}
-	sort.Sort(byNameDesc(newList))
+	sort.Sort(byNameEmployeeDesc(newList))
 
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]
 	}
 	return newListPtr
 }
-type bySalary []Employee
+type bySalaryEmployee []Employee
 
-func (a bySalary) Len() int           { return len(a) }
-func (a bySalary) Less(i, j int) bool { return a[i].Salary < a[j].Salary }
-func (a bySalary) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a bySalaryEmployee) Len() int           { return len(a) }
+func (a bySalaryEmployee) Less(i, j int) bool { return a[i].Salary < a[j].Salary }
+func (a bySalaryEmployee) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 // SortEmployeeBySalary sort structs
 func SortEmployeeBySalary(list []Employee) []Employee {
@@ -5499,7 +5499,7 @@ func SortEmployeeBySalary(list []Employee) []Employee {
 	for i, item := range list {
 		newList[i] = item
 	}
-	sort.Sort(bySalary(newList))
+	sort.Sort(bySalaryEmployee(newList))
 	return newList
 }
 
@@ -5514,7 +5514,7 @@ func SortEmployeeBySalaryPtr(list []*Employee) []*Employee {
 	for i, item := range list {
 		newList[i] = *item
 	}
-	sort.Sort(bySalary(newList))
+	sort.Sort(bySalaryEmployee(newList))
 
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]
@@ -5522,11 +5522,11 @@ func SortEmployeeBySalaryPtr(list []*Employee) []*Employee {
 	return newListPtr
 }
 
-type bySalaryDesc []Employee
+type bySalaryEmployeeDesc []Employee
 
-func (a bySalaryDesc) Len() int           { return len(a) }
-func (a bySalaryDesc) Less(i, j int) bool { return a[i].Salary > a[j].Salary }
-func (a bySalaryDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a bySalaryEmployeeDesc) Len() int           { return len(a) }
+func (a bySalaryEmployeeDesc) Less(i, j int) bool { return a[i].Salary > a[j].Salary }
+func (a bySalaryEmployeeDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 // SortEmployeeBySalaryDesc sorts structs
 func SortEmployeeBySalaryDesc(list []Employee) []Employee {
@@ -5537,7 +5537,7 @@ func SortEmployeeBySalaryDesc(list []Employee) []Employee {
 	for i, item := range list {
 		newList[i] = item
 	}
-	sort.Sort(bySalaryDesc(newList))
+	sort.Sort(bySalaryEmployeeDesc(newList))
 	return newList
 }
 
@@ -5552,7 +5552,7 @@ func SortEmployeeBySalaryDescPtr(list []*Employee) []*Employee {
 	for i, item := range list {
 		newList[i] = *item
 	}
-	sort.Sort(bySalaryDesc(newList))
+	sort.Sort(bySalaryEmployeeDesc(newList))
 
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]

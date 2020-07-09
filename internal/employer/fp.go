@@ -4074,11 +4074,11 @@ func FilterMapIntEmployeeErr(fFilter func(int) (bool, error), fMap func(int) (em
 }
 
 
-type byId []Employer
+type byIdEmployer []Employer
 
-func (a byId) Len() int           { return len(a) }
-func (a byId) Less(i, j int) bool { return a[i].Id < a[j].Id }
-func (a byId) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byIdEmployer) Len() int           { return len(a) }
+func (a byIdEmployer) Less(i, j int) bool { return a[i].Id < a[j].Id }
+func (a byIdEmployer) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 // SortEmployerById sort structs
 func SortEmployerById(list []Employer) []Employer {
@@ -4089,7 +4089,7 @@ func SortEmployerById(list []Employer) []Employer {
 	for i, item := range list {
 		newList[i] = item
 	}
-	sort.Sort(byId(newList))
+	sort.Sort(byIdEmployer(newList))
 	return newList
 }
 
@@ -4104,7 +4104,7 @@ func SortEmployerByIdPtr(list []*Employer) []*Employer {
 	for i, item := range list {
 		newList[i] = *item
 	}
-	sort.Sort(byId(newList))
+	sort.Sort(byIdEmployer(newList))
 
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]
@@ -4112,11 +4112,11 @@ func SortEmployerByIdPtr(list []*Employer) []*Employer {
 	return newListPtr
 }
 
-type byIdDesc []Employer
+type byIdEmployerDesc []Employer
 
-func (a byIdDesc) Len() int           { return len(a) }
-func (a byIdDesc) Less(i, j int) bool { return a[i].Id > a[j].Id }
-func (a byIdDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byIdEmployerDesc) Len() int           { return len(a) }
+func (a byIdEmployerDesc) Less(i, j int) bool { return a[i].Id > a[j].Id }
+func (a byIdEmployerDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 // SortEmployerByIdDesc sorts structs
 func SortEmployerByIdDesc(list []Employer) []Employer {
@@ -4127,7 +4127,7 @@ func SortEmployerByIdDesc(list []Employer) []Employer {
 	for i, item := range list {
 		newList[i] = item
 	}
-	sort.Sort(byIdDesc(newList))
+	sort.Sort(byIdEmployerDesc(newList))
 	return newList
 }
 
@@ -4142,10 +4142,744 @@ func SortEmployerByIdDescPtr(list []*Employer) []*Employer {
 	for i, item := range list {
 		newList[i] = *item
 	}
-	sort.Sort(byIdDesc(newList))
+	sort.Sort(byIdEmployerDesc(newList))
 
 	for i := 0; i < len(newList); i++ {
 		newListPtr[i] = &newList[i]
 	}
 	return newListPtr
+}
+// UnionEmployerById return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func UnionEmployerById(arrList ...[]Employer) []Employer {
+	resultMap := make(map[int]bool)
+	var resultArr []Employer
+	for _, arr := range arrList {
+		for _, v := range arr {
+			_, ok := resultMap[v.Id]
+			if !ok {
+				resultMap[v.Id] = true
+				resultArr = append(resultArr, v)
+			}
+		}
+	}
+	return resultArr
+}
+
+// Union<FTYPE>Ptr return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func UnionEmployerByIdPtr(arrList ...[]*Employer) []*Employer {
+	resultMap := make(map[int]bool)
+	var resultArr []*Employer
+	for _, arr := range arrList {
+		for _, v := range arr {
+			_, ok := resultMap[v.Id]
+			if !ok {
+				resultMap[v.Id] = true
+				resultArr = append(resultArr, v)
+			}
+		}
+	}
+	return resultArr
+}
+
+// IntersectionEmployerById return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
+func IntersectionEmployerById(arrList ...[]Employer) []Employer {
+	if arrList == nil {
+		return []Employer{}
+	}
+
+	resultMap := make(map[int]bool)
+	if len(arrList) == 1 {
+		var newList []Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Id] = true
+			}
+		}
+		return newList
+	}
+
+	var newList []Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Id == v.Id {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == len(arrList)-1 {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Id] = true
+			}
+		}
+	}
+	return newList
+}
+
+// IntersectionEmployerByIdPtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
+func IntersectionEmployerByIdPtr(arrList ...[]*Employer) []*Employer {
+	if arrList == nil {
+		return []*Employer{}
+	}
+
+	resultMap := make(map[int]bool)
+	if len(arrList) == 1 {
+		var newList []*Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				resultMap[arrList[0][i].Id] = true
+				newList = append(newList, arrList[0][i])
+			}
+		}
+		return newList
+	}
+
+	var newList []*Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Id == v.Id {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == len(arrList)-1 {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Id] = true
+			}
+		}
+	}
+	return newList
+}
+
+// DifferenceEmployerById returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
+func DifferenceEmployerById(arrList ...[]Employer) []Employer {
+	if arrList == nil {
+		return []Employer{}
+	}
+
+	resultMap := make(map[int]bool)
+	if len(arrList) == 1 {
+		var newList []Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Id] = true
+			}
+		}
+		return newList
+	}
+
+	var newList []Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Id == v.Id {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == 0 {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Id] = true
+			}
+		}
+	}
+	return newList
+}
+
+// DifferenceEmployerByIdPtr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
+func DifferenceEmployerByIdPtr(arrList ...[]*Employer) []*Employer {
+	if arrList == nil {
+		return []*Employer{}
+	}
+
+	resultMap := make(map[int]bool)
+	if len(arrList) == 1 {
+		var newList []*Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				resultMap[arrList[0][i].Id] = true
+				newList = append(newList, arrList[0][i])
+			}
+		}
+		return newList
+	}
+
+	var newList []*Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Id == v.Id {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == 0 {
+			_, ok := resultMap[arrList[0][i].Id]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Id] = true
+			}
+		}
+	}
+	return newList
+}
+
+// SubsetEmployerById returns true or false by checking if set1 is a subset of set2
+// repeated value within list parameter will be ignored
+func SubsetEmployerById(list1, list2 []Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[int]bool)
+	for i := 0; i < len(list1); i++ {
+		_, ok := resultMap[list1[i].Id]
+		if !ok {
+			found := false
+			resultMap[list1[i].Id] = true
+			for j := 0; j < len(list2); j++ {
+				if list1[i].Id == list2[j].Id {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SubsetEmployerByIdPtr returns true or false by checking if set1 is a subset of set2
+// repeated value within list parameter will be ignored
+func SubsetEmployerByIdPtr(list1, list2 []*Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[int]bool)
+	for i := 0; i < len(list1); i++ {
+		_, ok := resultMap[list1[i].Id]
+		if !ok {
+			found := false
+			resultMap[list1[i].Id] = true
+			for j := 0; j < len(list2); j++ {
+				if list1[i].Id == list2[j].Id {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SupersetEmployerById returns true or false by checking if set1 is a superset of set2
+// repeated value within list parameter will be ignored
+func SupersetEmployerById(list1, list2 []Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[int]bool)
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i].Id]
+		if !ok {
+			found := false
+			resultMap[list2[i].Id] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i].Id == list1[j].Id {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SupersetEmployerByIdPtr returns true or false by checking if set1 is a superset of set2
+// repeated value within list parameter will be ignored
+func SupersetEmployerByIdPtr(list1, list2 []*Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[int]bool)
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i].Id]
+		if !ok {
+			found := false
+			resultMap[list2[i].Id] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i].Id == list1[j].Id {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SetEmployerById returns a set of the distinct elements of coll.
+func SetEmployerById(list []Employer) []Employer {
+	if list == nil || len(list) == 0 {
+		return []Employer{}
+	}
+
+	resultMap := make(map[int]bool)
+	newList := []Employer{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Id]
+		if !ok {
+			resultMap[list[i].Id] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+
+// SetEmployerByIdPtr returns a set of the distinct elements of coll.
+func SetEmployerByIdPtr(list []*Employer) []*Employer {
+	if list == nil || len(list) == 0 {
+		return []*Employer{}
+	}
+
+	resultMap := make(map[int]bool)
+	newList := []*Employer{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Id]
+		if !ok {
+			resultMap[list[i].Id] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+// UnionEmployerByName return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func UnionEmployerByName(arrList ...[]Employer) []Employer {
+	resultMap := make(map[string]bool)
+	var resultArr []Employer
+	for _, arr := range arrList {
+		for _, v := range arr {
+			_, ok := resultMap[v.Name]
+			if !ok {
+				resultMap[v.Name] = true
+				resultArr = append(resultArr, v)
+			}
+		}
+	}
+	return resultArr
+}
+
+// Union<FTYPE>Ptr return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func UnionEmployerByNamePtr(arrList ...[]*Employer) []*Employer {
+	resultMap := make(map[string]bool)
+	var resultArr []*Employer
+	for _, arr := range arrList {
+		for _, v := range arr {
+			_, ok := resultMap[v.Name]
+			if !ok {
+				resultMap[v.Name] = true
+				resultArr = append(resultArr, v)
+			}
+		}
+	}
+	return resultArr
+}
+
+// IntersectionEmployerByName return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
+func IntersectionEmployerByName(arrList ...[]Employer) []Employer {
+	if arrList == nil {
+		return []Employer{}
+	}
+
+	resultMap := make(map[string]bool)
+	if len(arrList) == 1 {
+		var newList []Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Name] = true
+			}
+		}
+		return newList
+	}
+
+	var newList []Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Name == v.Name {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == len(arrList)-1 {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Name] = true
+			}
+		}
+	}
+	return newList
+}
+
+// IntersectionEmployerByNamePtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
+func IntersectionEmployerByNamePtr(arrList ...[]*Employer) []*Employer {
+	if arrList == nil {
+		return []*Employer{}
+	}
+
+	resultMap := make(map[string]bool)
+	if len(arrList) == 1 {
+		var newList []*Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				resultMap[arrList[0][i].Name] = true
+				newList = append(newList, arrList[0][i])
+			}
+		}
+		return newList
+	}
+
+	var newList []*Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Name == v.Name {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == len(arrList)-1 {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Name] = true
+			}
+		}
+	}
+	return newList
+}
+
+// DifferenceEmployerByName returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
+func DifferenceEmployerByName(arrList ...[]Employer) []Employer {
+	if arrList == nil {
+		return []Employer{}
+	}
+
+	resultMap := make(map[string]bool)
+	if len(arrList) == 1 {
+		var newList []Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Name] = true
+			}
+		}
+		return newList
+	}
+
+	var newList []Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Name == v.Name {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == 0 {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Name] = true
+			}
+		}
+	}
+	return newList
+}
+
+// DifferenceEmployerByNamePtr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
+func DifferenceEmployerByNamePtr(arrList ...[]*Employer) []*Employer {
+	if arrList == nil {
+		return []*Employer{}
+	}
+
+	resultMap := make(map[string]bool)
+	if len(arrList) == 1 {
+		var newList []*Employer
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				resultMap[arrList[0][i].Name] = true
+				newList = append(newList, arrList[0][i])
+			}
+		}
+		return newList
+	}
+
+	var newList []*Employer
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].Name == v.Name {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == 0 {
+			_, ok := resultMap[arrList[0][i].Name]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].Name] = true
+			}
+		}
+	}
+	return newList
+}
+
+// SubsetEmployerByName returns true or false by checking if set1 is a subset of set2
+// repeated value within list parameter will be ignored
+func SubsetEmployerByName(list1, list2 []Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[string]bool)
+	for i := 0; i < len(list1); i++ {
+		_, ok := resultMap[list1[i].Name]
+		if !ok {
+			found := false
+			resultMap[list1[i].Name] = true
+			for j := 0; j < len(list2); j++ {
+				if list1[i].Name == list2[j].Name {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SubsetEmployerByNamePtr returns true or false by checking if set1 is a subset of set2
+// repeated value within list parameter will be ignored
+func SubsetEmployerByNamePtr(list1, list2 []*Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[string]bool)
+	for i := 0; i < len(list1); i++ {
+		_, ok := resultMap[list1[i].Name]
+		if !ok {
+			found := false
+			resultMap[list1[i].Name] = true
+			for j := 0; j < len(list2); j++ {
+				if list1[i].Name == list2[j].Name {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SupersetEmployerByName returns true or false by checking if set1 is a superset of set2
+// repeated value within list parameter will be ignored
+func SupersetEmployerByName(list1, list2 []Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[string]bool)
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i].Name]
+		if !ok {
+			found := false
+			resultMap[list2[i].Name] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i].Name == list1[j].Name {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SupersetEmployerByNamePtr returns true or false by checking if set1 is a superset of set2
+// repeated value within list parameter will be ignored
+func SupersetEmployerByNamePtr(list1, list2 []*Employer) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[string]bool)
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i].Name]
+		if !ok {
+			found := false
+			resultMap[list2[i].Name] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i].Name == list1[j].Name {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SetEmployerByName returns a set of the distinct elements of coll.
+func SetEmployerByName(list []Employer) []Employer {
+	if list == nil || len(list) == 0 {
+		return []Employer{}
+	}
+
+	resultMap := make(map[string]bool)
+	newList := []Employer{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Name]
+		if !ok {
+			resultMap[list[i].Name] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+
+// SetEmployerByNamePtr returns a set of the distinct elements of coll.
+func SetEmployerByNamePtr(list []*Employer) []*Employer {
+	if list == nil || len(list) == 0 {
+		return []*Employer{}
+	}
+
+	resultMap := make(map[string]bool)
+	newList := []*Employer{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].Name]
+		if !ok {
+			resultMap[list[i].Name] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
 }
