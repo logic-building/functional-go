@@ -3,7 +3,6 @@ package basic
 // RestPtr removes 1st item of the list and return new list having rest of the items
 func RestPtr() string {
 	return `
-
 // Rest<FTYPE>Ptr removes 1st item of the list and return new list having rest of the items
 func Rest<FTYPE>Ptr(l []*<TYPE>) []*<TYPE> {
 	if l == nil {

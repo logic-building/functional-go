@@ -41,7 +41,7 @@ func PMapIntInt64Err(f func(int) (int64, error), list []int) ([]int64, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -96,7 +96,7 @@ func PMapIntInt32Err(f func(int) (int32, error), list []int) ([]int32, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -151,7 +151,7 @@ func PMapIntInt16Err(f func(int) (int16, error), list []int) ([]int16, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -206,7 +206,7 @@ func PMapIntInt8Err(f func(int) (int8, error), list []int) ([]int8, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -261,7 +261,7 @@ func PMapIntUintErr(f func(int) (uint, error), list []int) ([]uint, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -316,7 +316,7 @@ func PMapIntUint64Err(f func(int) (uint64, error), list []int) ([]uint64, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -371,7 +371,7 @@ func PMapIntUint32Err(f func(int) (uint32, error), list []int) ([]uint32, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -426,7 +426,7 @@ func PMapIntUint16Err(f func(int) (uint16, error), list []int) ([]uint16, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -481,7 +481,7 @@ func PMapIntUint8Err(f func(int) (uint8, error), list []int) ([]uint8, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -536,7 +536,7 @@ func PMapIntStrErr(f func(int) (string, error), list []int) ([]string, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -591,7 +591,7 @@ func PMapIntBoolErr(f func(int) (bool, error), list []int) ([]bool, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -646,7 +646,7 @@ func PMapIntFloat32Err(f func(int) (float32, error), list []int) ([]float32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -701,7 +701,7 @@ func PMapIntFloat64Err(f func(int) (float64, error), list []int) ([]float64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -756,7 +756,7 @@ func PMapInt64IntErr(f func(int64) (int, error), list []int64) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -811,7 +811,7 @@ func PMapInt64Int32Err(f func(int64) (int32, error), list []int64) ([]int32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -866,7 +866,7 @@ func PMapInt64Int16Err(f func(int64) (int16, error), list []int64) ([]int16, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -921,7 +921,7 @@ func PMapInt64Int8Err(f func(int64) (int8, error), list []int64) ([]int8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -976,7 +976,7 @@ func PMapInt64UintErr(f func(int64) (uint, error), list []int64) ([]uint, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1031,7 +1031,7 @@ func PMapInt64Uint64Err(f func(int64) (uint64, error), list []int64) ([]uint64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1086,7 +1086,7 @@ func PMapInt64Uint32Err(f func(int64) (uint32, error), list []int64) ([]uint32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1141,7 +1141,7 @@ func PMapInt64Uint16Err(f func(int64) (uint16, error), list []int64) ([]uint16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1196,7 +1196,7 @@ func PMapInt64Uint8Err(f func(int64) (uint8, error), list []int64) ([]uint8, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1251,7 +1251,7 @@ func PMapInt64StrErr(f func(int64) (string, error), list []int64) ([]string, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1306,7 +1306,7 @@ func PMapInt64BoolErr(f func(int64) (bool, error), list []int64) ([]bool, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1361,7 +1361,7 @@ func PMapInt64Float32Err(f func(int64) (float32, error), list []int64) ([]float3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1416,7 +1416,7 @@ func PMapInt64Float64Err(f func(int64) (float64, error), list []int64) ([]float6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1471,7 +1471,7 @@ func PMapInt32IntErr(f func(int32) (int, error), list []int32) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1526,7 +1526,7 @@ func PMapInt32Int64Err(f func(int32) (int64, error), list []int32) ([]int64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1581,7 +1581,7 @@ func PMapInt32Int16Err(f func(int32) (int16, error), list []int32) ([]int16, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1636,7 +1636,7 @@ func PMapInt32Int8Err(f func(int32) (int8, error), list []int32) ([]int8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1691,7 +1691,7 @@ func PMapInt32UintErr(f func(int32) (uint, error), list []int32) ([]uint, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1746,7 +1746,7 @@ func PMapInt32Uint64Err(f func(int32) (uint64, error), list []int32) ([]uint64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1801,7 +1801,7 @@ func PMapInt32Uint32Err(f func(int32) (uint32, error), list []int32) ([]uint32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1856,7 +1856,7 @@ func PMapInt32Uint16Err(f func(int32) (uint16, error), list []int32) ([]uint16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1911,7 +1911,7 @@ func PMapInt32Uint8Err(f func(int32) (uint8, error), list []int32) ([]uint8, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -1966,7 +1966,7 @@ func PMapInt32StrErr(f func(int32) (string, error), list []int32) ([]string, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2021,7 +2021,7 @@ func PMapInt32BoolErr(f func(int32) (bool, error), list []int32) ([]bool, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2076,7 +2076,7 @@ func PMapInt32Float32Err(f func(int32) (float32, error), list []int32) ([]float3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2131,7 +2131,7 @@ func PMapInt32Float64Err(f func(int32) (float64, error), list []int32) ([]float6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2186,7 +2186,7 @@ func PMapInt16IntErr(f func(int16) (int, error), list []int16) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2241,7 +2241,7 @@ func PMapInt16Int64Err(f func(int16) (int64, error), list []int16) ([]int64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2296,7 +2296,7 @@ func PMapInt16Int32Err(f func(int16) (int32, error), list []int16) ([]int32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2351,7 +2351,7 @@ func PMapInt16Int8Err(f func(int16) (int8, error), list []int16) ([]int8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2406,7 +2406,7 @@ func PMapInt16UintErr(f func(int16) (uint, error), list []int16) ([]uint, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2461,7 +2461,7 @@ func PMapInt16Uint64Err(f func(int16) (uint64, error), list []int16) ([]uint64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2516,7 +2516,7 @@ func PMapInt16Uint32Err(f func(int16) (uint32, error), list []int16) ([]uint32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2571,7 +2571,7 @@ func PMapInt16Uint16Err(f func(int16) (uint16, error), list []int16) ([]uint16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2626,7 +2626,7 @@ func PMapInt16Uint8Err(f func(int16) (uint8, error), list []int16) ([]uint8, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2681,7 +2681,7 @@ func PMapInt16StrErr(f func(int16) (string, error), list []int16) ([]string, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2736,7 +2736,7 @@ func PMapInt16BoolErr(f func(int16) (bool, error), list []int16) ([]bool, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2791,7 +2791,7 @@ func PMapInt16Float32Err(f func(int16) (float32, error), list []int16) ([]float3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2846,7 +2846,7 @@ func PMapInt16Float64Err(f func(int16) (float64, error), list []int16) ([]float6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2901,7 +2901,7 @@ func PMapInt8IntErr(f func(int8) (int, error), list []int8) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2956,7 +2956,7 @@ func PMapInt8Int64Err(f func(int8) (int64, error), list []int8) ([]int64, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3011,7 +3011,7 @@ func PMapInt8Int32Err(f func(int8) (int32, error), list []int8) ([]int32, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3066,7 +3066,7 @@ func PMapInt8Int16Err(f func(int8) (int16, error), list []int8) ([]int16, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3121,7 +3121,7 @@ func PMapInt8UintErr(f func(int8) (uint, error), list []int8) ([]uint, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3176,7 +3176,7 @@ func PMapInt8Uint64Err(f func(int8) (uint64, error), list []int8) ([]uint64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3231,7 +3231,7 @@ func PMapInt8Uint32Err(f func(int8) (uint32, error), list []int8) ([]uint32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3286,7 +3286,7 @@ func PMapInt8Uint16Err(f func(int8) (uint16, error), list []int8) ([]uint16, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3341,7 +3341,7 @@ func PMapInt8Uint8Err(f func(int8) (uint8, error), list []int8) ([]uint8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3396,7 +3396,7 @@ func PMapInt8StrErr(f func(int8) (string, error), list []int8) ([]string, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3451,7 +3451,7 @@ func PMapInt8BoolErr(f func(int8) (bool, error), list []int8) ([]bool, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3506,7 +3506,7 @@ func PMapInt8Float32Err(f func(int8) (float32, error), list []int8) ([]float32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3561,7 +3561,7 @@ func PMapInt8Float64Err(f func(int8) (float64, error), list []int8) ([]float64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3616,7 +3616,7 @@ func PMapUintIntErr(f func(uint) (int, error), list []uint) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3671,7 +3671,7 @@ func PMapUintInt64Err(f func(uint) (int64, error), list []uint) ([]int64, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3726,7 +3726,7 @@ func PMapUintInt32Err(f func(uint) (int32, error), list []uint) ([]int32, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3781,7 +3781,7 @@ func PMapUintInt16Err(f func(uint) (int16, error), list []uint) ([]int16, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3836,7 +3836,7 @@ func PMapUintInt8Err(f func(uint) (int8, error), list []uint) ([]int8, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3891,7 +3891,7 @@ func PMapUintUint64Err(f func(uint) (uint64, error), list []uint) ([]uint64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3946,7 +3946,7 @@ func PMapUintUint32Err(f func(uint) (uint32, error), list []uint) ([]uint32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4001,7 +4001,7 @@ func PMapUintUint16Err(f func(uint) (uint16, error), list []uint) ([]uint16, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4056,7 +4056,7 @@ func PMapUintUint8Err(f func(uint) (uint8, error), list []uint) ([]uint8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4111,7 +4111,7 @@ func PMapUintStrErr(f func(uint) (string, error), list []uint) ([]string, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4166,7 +4166,7 @@ func PMapUintBoolErr(f func(uint) (bool, error), list []uint) ([]bool, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4221,7 +4221,7 @@ func PMapUintFloat32Err(f func(uint) (float32, error), list []uint) ([]float32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4276,7 +4276,7 @@ func PMapUintFloat64Err(f func(uint) (float64, error), list []uint) ([]float64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4331,7 +4331,7 @@ func PMapUint64IntErr(f func(uint64) (int, error), list []uint64) ([]int, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4386,7 +4386,7 @@ func PMapUint64Int64Err(f func(uint64) (int64, error), list []uint64) ([]int64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4441,7 +4441,7 @@ func PMapUint64Int32Err(f func(uint64) (int32, error), list []uint64) ([]int32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4496,7 +4496,7 @@ func PMapUint64Int16Err(f func(uint64) (int16, error), list []uint64) ([]int16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4551,7 +4551,7 @@ func PMapUint64Int8Err(f func(uint64) (int8, error), list []uint64) ([]int8, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4606,7 +4606,7 @@ func PMapUint64UintErr(f func(uint64) (uint, error), list []uint64) ([]uint, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4661,7 +4661,7 @@ func PMapUint64Uint32Err(f func(uint64) (uint32, error), list []uint64) ([]uint3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4716,7 +4716,7 @@ func PMapUint64Uint16Err(f func(uint64) (uint16, error), list []uint64) ([]uint1
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4771,7 +4771,7 @@ func PMapUint64Uint8Err(f func(uint64) (uint8, error), list []uint64) ([]uint8, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4826,7 +4826,7 @@ func PMapUint64StrErr(f func(uint64) (string, error), list []uint64) ([]string, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4881,7 +4881,7 @@ func PMapUint64BoolErr(f func(uint64) (bool, error), list []uint64) ([]bool, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4936,7 +4936,7 @@ func PMapUint64Float32Err(f func(uint64) (float32, error), list []uint64) ([]flo
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4991,7 +4991,7 @@ func PMapUint64Float64Err(f func(uint64) (float64, error), list []uint64) ([]flo
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5046,7 +5046,7 @@ func PMapUint32IntErr(f func(uint32) (int, error), list []uint32) ([]int, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5101,7 +5101,7 @@ func PMapUint32Int64Err(f func(uint32) (int64, error), list []uint32) ([]int64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5156,7 +5156,7 @@ func PMapUint32Int32Err(f func(uint32) (int32, error), list []uint32) ([]int32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5211,7 +5211,7 @@ func PMapUint32Int16Err(f func(uint32) (int16, error), list []uint32) ([]int16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5266,7 +5266,7 @@ func PMapUint32Int8Err(f func(uint32) (int8, error), list []uint32) ([]int8, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5321,7 +5321,7 @@ func PMapUint32UintErr(f func(uint32) (uint, error), list []uint32) ([]uint, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5376,7 +5376,7 @@ func PMapUint32Uint64Err(f func(uint32) (uint64, error), list []uint32) ([]uint6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5431,7 +5431,7 @@ func PMapUint32Uint16Err(f func(uint32) (uint16, error), list []uint32) ([]uint1
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5486,7 +5486,7 @@ func PMapUint32Uint8Err(f func(uint32) (uint8, error), list []uint32) ([]uint8, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5541,7 +5541,7 @@ func PMapUint32StrErr(f func(uint32) (string, error), list []uint32) ([]string, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5596,7 +5596,7 @@ func PMapUint32BoolErr(f func(uint32) (bool, error), list []uint32) ([]bool, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5651,7 +5651,7 @@ func PMapUint32Float32Err(f func(uint32) (float32, error), list []uint32) ([]flo
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5706,7 +5706,7 @@ func PMapUint32Float64Err(f func(uint32) (float64, error), list []uint32) ([]flo
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5761,7 +5761,7 @@ func PMapUint16IntErr(f func(uint16) (int, error), list []uint16) ([]int, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5816,7 +5816,7 @@ func PMapUint16Int64Err(f func(uint16) (int64, error), list []uint16) ([]int64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5871,7 +5871,7 @@ func PMapUint16Int32Err(f func(uint16) (int32, error), list []uint16) ([]int32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5926,7 +5926,7 @@ func PMapUint16Int16Err(f func(uint16) (int16, error), list []uint16) ([]int16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5981,7 +5981,7 @@ func PMapUint16Int8Err(f func(uint16) (int8, error), list []uint16) ([]int8, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6036,7 +6036,7 @@ func PMapUint16UintErr(f func(uint16) (uint, error), list []uint16) ([]uint, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6091,7 +6091,7 @@ func PMapUint16Uint64Err(f func(uint16) (uint64, error), list []uint16) ([]uint6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6146,7 +6146,7 @@ func PMapUint16Uint32Err(f func(uint16) (uint32, error), list []uint16) ([]uint3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6201,7 +6201,7 @@ func PMapUint16Uint8Err(f func(uint16) (uint8, error), list []uint16) ([]uint8, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6256,7 +6256,7 @@ func PMapUint16StrErr(f func(uint16) (string, error), list []uint16) ([]string, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6311,7 +6311,7 @@ func PMapUint16BoolErr(f func(uint16) (bool, error), list []uint16) ([]bool, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6366,7 +6366,7 @@ func PMapUint16Float32Err(f func(uint16) (float32, error), list []uint16) ([]flo
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6421,7 +6421,7 @@ func PMapUint16Float64Err(f func(uint16) (float64, error), list []uint16) ([]flo
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6476,7 +6476,7 @@ func PMapUint8IntErr(f func(uint8) (int, error), list []uint8) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6531,7 +6531,7 @@ func PMapUint8Int64Err(f func(uint8) (int64, error), list []uint8) ([]int64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6586,7 +6586,7 @@ func PMapUint8Int32Err(f func(uint8) (int32, error), list []uint8) ([]int32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6641,7 +6641,7 @@ func PMapUint8Int16Err(f func(uint8) (int16, error), list []uint8) ([]int16, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6696,7 +6696,7 @@ func PMapUint8Int8Err(f func(uint8) (int8, error), list []uint8) ([]int8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6751,7 +6751,7 @@ func PMapUint8UintErr(f func(uint8) (uint, error), list []uint8) ([]uint, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6806,7 +6806,7 @@ func PMapUint8Uint64Err(f func(uint8) (uint64, error), list []uint8) ([]uint64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6861,7 +6861,7 @@ func PMapUint8Uint32Err(f func(uint8) (uint32, error), list []uint8) ([]uint32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6916,7 +6916,7 @@ func PMapUint8Uint16Err(f func(uint8) (uint16, error), list []uint8) ([]uint16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -6971,7 +6971,7 @@ func PMapUint8StrErr(f func(uint8) (string, error), list []uint8) ([]string, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7026,7 +7026,7 @@ func PMapUint8BoolErr(f func(uint8) (bool, error), list []uint8) ([]bool, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7081,7 +7081,7 @@ func PMapUint8Float32Err(f func(uint8) (float32, error), list []uint8) ([]float3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7136,7 +7136,7 @@ func PMapUint8Float64Err(f func(uint8) (float64, error), list []uint8) ([]float6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7191,7 +7191,7 @@ func PMapStrIntErr(f func(string) (int, error), list []string) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7246,7 +7246,7 @@ func PMapStrInt64Err(f func(string) (int64, error), list []string) ([]int64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7301,7 +7301,7 @@ func PMapStrInt32Err(f func(string) (int32, error), list []string) ([]int32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7356,7 +7356,7 @@ func PMapStrInt16Err(f func(string) (int16, error), list []string) ([]int16, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7411,7 +7411,7 @@ func PMapStrInt8Err(f func(string) (int8, error), list []string) ([]int8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7466,7 +7466,7 @@ func PMapStrUintErr(f func(string) (uint, error), list []string) ([]uint, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7521,7 +7521,7 @@ func PMapStrUint64Err(f func(string) (uint64, error), list []string) ([]uint64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7576,7 +7576,7 @@ func PMapStrUint32Err(f func(string) (uint32, error), list []string) ([]uint32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7631,7 +7631,7 @@ func PMapStrUint16Err(f func(string) (uint16, error), list []string) ([]uint16, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7686,7 +7686,7 @@ func PMapStrUint8Err(f func(string) (uint8, error), list []string) ([]uint8, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7741,7 +7741,7 @@ func PMapStrBoolErr(f func(string) (bool, error), list []string) ([]bool, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7796,7 +7796,7 @@ func PMapStrFloat32Err(f func(string) (float32, error), list []string) ([]float3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7851,7 +7851,7 @@ func PMapStrFloat64Err(f func(string) (float64, error), list []string) ([]float6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7906,7 +7906,7 @@ func PMapBoolIntErr(f func(bool) (int, error), list []bool) ([]int, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -7961,7 +7961,7 @@ func PMapBoolInt64Err(f func(bool) (int64, error), list []bool) ([]int64, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8016,7 +8016,7 @@ func PMapBoolInt32Err(f func(bool) (int32, error), list []bool) ([]int32, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8071,7 +8071,7 @@ func PMapBoolInt16Err(f func(bool) (int16, error), list []bool) ([]int16, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8126,7 +8126,7 @@ func PMapBoolInt8Err(f func(bool) (int8, error), list []bool) ([]int8, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8181,7 +8181,7 @@ func PMapBoolUintErr(f func(bool) (uint, error), list []bool) ([]uint, error) {
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8236,7 +8236,7 @@ func PMapBoolUint64Err(f func(bool) (uint64, error), list []bool) ([]uint64, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8291,7 +8291,7 @@ func PMapBoolUint32Err(f func(bool) (uint32, error), list []bool) ([]uint32, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8346,7 +8346,7 @@ func PMapBoolUint16Err(f func(bool) (uint16, error), list []bool) ([]uint16, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8401,7 +8401,7 @@ func PMapBoolUint8Err(f func(bool) (uint8, error), list []bool) ([]uint8, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8456,7 +8456,7 @@ func PMapBoolStrErr(f func(bool) (string, error), list []bool) ([]string, error)
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8511,7 +8511,7 @@ func PMapBoolFloat32Err(f func(bool) (float32, error), list []bool) ([]float32, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8566,7 +8566,7 @@ func PMapBoolFloat64Err(f func(bool) (float64, error), list []bool) ([]float64, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8621,7 +8621,7 @@ func PMapFloat32IntErr(f func(float32) (int, error), list []float32) ([]int, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8676,7 +8676,7 @@ func PMapFloat32Int64Err(f func(float32) (int64, error), list []float32) ([]int6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8731,7 +8731,7 @@ func PMapFloat32Int32Err(f func(float32) (int32, error), list []float32) ([]int3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8786,7 +8786,7 @@ func PMapFloat32Int16Err(f func(float32) (int16, error), list []float32) ([]int1
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8841,7 +8841,7 @@ func PMapFloat32Int8Err(f func(float32) (int8, error), list []float32) ([]int8, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8896,7 +8896,7 @@ func PMapFloat32UintErr(f func(float32) (uint, error), list []float32) ([]uint, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -8951,7 +8951,7 @@ func PMapFloat32Uint64Err(f func(float32) (uint64, error), list []float32) ([]ui
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9006,7 +9006,7 @@ func PMapFloat32Uint32Err(f func(float32) (uint32, error), list []float32) ([]ui
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9061,7 +9061,7 @@ func PMapFloat32Uint16Err(f func(float32) (uint16, error), list []float32) ([]ui
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9116,7 +9116,7 @@ func PMapFloat32Uint8Err(f func(float32) (uint8, error), list []float32) ([]uint
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9171,7 +9171,7 @@ func PMapFloat32StrErr(f func(float32) (string, error), list []float32) ([]strin
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9226,7 +9226,7 @@ func PMapFloat32BoolErr(f func(float32) (bool, error), list []float32) ([]bool, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9281,7 +9281,7 @@ func PMapFloat32Float64Err(f func(float32) (float64, error), list []float32) ([]
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9336,7 +9336,7 @@ func PMapFloat64IntErr(f func(float64) (int, error), list []float64) ([]int, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9391,7 +9391,7 @@ func PMapFloat64Int64Err(f func(float64) (int64, error), list []float64) ([]int6
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9446,7 +9446,7 @@ func PMapFloat64Int32Err(f func(float64) (int32, error), list []float64) ([]int3
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9501,7 +9501,7 @@ func PMapFloat64Int16Err(f func(float64) (int16, error), list []float64) ([]int1
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9556,7 +9556,7 @@ func PMapFloat64Int8Err(f func(float64) (int8, error), list []float64) ([]int8, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9611,7 +9611,7 @@ func PMapFloat64UintErr(f func(float64) (uint, error), list []float64) ([]uint, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9666,7 +9666,7 @@ func PMapFloat64Uint64Err(f func(float64) (uint64, error), list []float64) ([]ui
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9721,7 +9721,7 @@ func PMapFloat64Uint32Err(f func(float64) (uint32, error), list []float64) ([]ui
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9776,7 +9776,7 @@ func PMapFloat64Uint16Err(f func(float64) (uint16, error), list []float64) ([]ui
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9831,7 +9831,7 @@ func PMapFloat64Uint8Err(f func(float64) (uint8, error), list []float64) ([]uint
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9886,7 +9886,7 @@ func PMapFloat64StrErr(f func(float64) (string, error), list []float64) ([]strin
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9941,7 +9941,7 @@ func PMapFloat64BoolErr(f func(float64) (bool, error), list []float64) ([]bool, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -9996,7 +9996,7 @@ func PMapFloat64Float32Err(f func(float64) (float32, error), list []float64) ([]
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err

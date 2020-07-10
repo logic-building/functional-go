@@ -28,8 +28,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 `
 }
 
@@ -58,7 +56,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
@@ -86,7 +83,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
@@ -147,7 +143,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
@@ -178,7 +173,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
@@ -353,7 +347,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
@@ -391,7 +384,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
@@ -428,7 +420,6 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	}
 	reflect.TypeOf("Ram") // Leaving it here to make use of import reflect
 }
-
 `
 }
 
@@ -466,26 +457,4 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 `
-}
-
-// ReplaceActivityPMapIOPtrErr replaces ...
-func ReplaceActivityPMapIOPtrErr(code string) string {
-	//	s1 := `import (
-	//    _ "errors"
-	//	"reflect"
-	//	"testing"
-	//)
-	//
-	//func TestPmapIntInt64Err(t *testing.T) {`
-	//
-	//	s2 := `import (
-	//    "errors"
-	//	"reflect"
-	//	"testing"
-	//)
-	//
-	//func TestPmapIntInt64Err(t *testing.T) {`
-	//
-	//	code = strings.Replace(code, s1, s2, -1)
-	return code
 }

@@ -18,12 +18,17 @@ func TestSet<FTYPE>(t *testing.T) {
 
 	actual = Set<FTYPE>(nil)
 	if len(actual) != 0 {
-		t.Errorf("Union<FTYPE> failed")
+		t.Errorf("Set<FTYPE> failed")
 	}
 
 	actualPtr2 := Set<FTYPE>([]<TYPE>{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("Union<FTYPE> failed")
+		t.Errorf("Set<FTYPE> failed")
+	}
+
+	actualPtr3 := Set<FTYPE>Ptr([]*<TYPE>{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("Set<FTYPE>Ptr failed")
 	}
 
 	listPtr := []*<TYPE>{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -47,18 +52,23 @@ func TestSet<FTYPE>(t *testing.T) {
 	list := []<TYPE>{v8, v2, v1, v1, v2, v8}
 	actual := Set<FTYPE>(list)
 	if len(actual) != 2 || !Exists<FTYPE>(v8, actual) || !Exists<FTYPE>(v2, actual) || !Exists<FTYPE>(v1, actual) {
-		t.Errorf("Union<FTYPE> failed. Expected=%v, actual=%v", expected, actual)
+		t.Errorf("Set<FTYPE> failed. Expected=%v, actual=%v", expected, actual)
 		t.Errorf(reflect.String.String())
 	}
 
 	actual = Set<FTYPE>(nil)
 	if len(actual) != 0 {
-		t.Errorf("Union<FTYPE> failed")
+		t.Errorf("Set<FTYPE> failed")
 	}
 
 	actualPtr2 := Set<FTYPE>([]<TYPE>{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("Union<FTYPE> failed")
+		t.Errorf("Set<FTYPE> failed")
+	}
+
+	actualPtr3 := Set<FTYPE>Ptr([]*<TYPE>{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("Set<FTYPE> failed")
 	}
 
 	listPtr := []*<TYPE>{&v8, &v2, &v1, &v1, &v2, &v8}
