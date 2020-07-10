@@ -162,6 +162,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Odd",
+		codeTemplate:      basic.Odd(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8"},
+		generatedFileName: "odd.go",
+
+		testTemplate: basic.OddTest(),
+		//testTemplateBool:      basic.SupersetBoolTest(),
+		generatedTestFileName: "odd_test.go",
+	},
+
+	fpCode{
 		function:          "Take",
 		codeTemplate:      basic.Take(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},

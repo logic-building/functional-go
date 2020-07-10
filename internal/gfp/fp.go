@@ -2209,7 +2209,7 @@ func PMapEmployerEmployeeErr(f func(employer.Employer) (employee.Employee, error
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2543,7 +2543,7 @@ func PMapEmployerIntErr(f func(employer.Employer) (int, error), list []employer.
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2877,7 +2877,7 @@ func PMapEmployeeEmployerErr(f func(employee.Employee) (employer.Employer, error
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3211,7 +3211,7 @@ func PMapEmployeeIntErr(f func(employee.Employee) (int, error), list []employee.
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3545,7 +3545,7 @@ func PMapIntEmployerErr(f func(int) (employer.Employer, error), list []int) ([]e
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3879,7 +3879,7 @@ func PMapIntEmployeeErr(f func(int) (employee.Employee, error), list []int) ([]e
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
