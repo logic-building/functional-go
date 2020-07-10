@@ -151,6 +151,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Even",
+		codeTemplate:      basic.Even(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8"},
+		generatedFileName: "even.go",
+
+		testTemplate: basic.EvenTest(),
+		//testTemplateBool:      basic.SupersetBoolTest(),
+		generatedTestFileName: "even_test.go",
+	},
+
+	fpCode{
 		function:          "Take",
 		codeTemplate:      basic.Take(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
