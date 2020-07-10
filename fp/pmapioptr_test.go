@@ -32,8 +32,6 @@ func TestPmapIntInt64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapIntInt32Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int32 = 2
@@ -59,8 +57,6 @@ func TestPmapIntInt32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapIntInt16Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -88,8 +84,6 @@ func TestPmapIntInt16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapIntInt8Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int8 = 2
@@ -115,8 +109,6 @@ func TestPmapIntInt8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapIntUintPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -144,8 +136,6 @@ func TestPmapIntUintPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapIntUint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint64 = 2
@@ -171,8 +161,6 @@ func TestPmapIntUint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapIntUint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -200,8 +188,6 @@ func TestPmapIntUint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapIntUint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -227,8 +213,6 @@ func TestPmapIntUint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapIntUint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -256,8 +240,6 @@ func TestPmapIntUint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapIntStrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -279,7 +261,6 @@ func TestPmapIntStrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapIntBoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -332,8 +313,6 @@ func TestPmapIntFloat32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapIntFloat64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -359,8 +338,6 @@ func TestPmapIntFloat64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt64IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -388,8 +365,6 @@ func TestPmapInt64IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt64Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int32 = 2
@@ -415,8 +390,6 @@ func TestPmapInt64Int32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt64Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -444,8 +417,6 @@ func TestPmapInt64Int16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt64Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int8 = 2
@@ -471,8 +442,6 @@ func TestPmapInt64Int8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt64UintPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -500,8 +469,6 @@ func TestPmapInt64UintPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt64Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint64 = 2
@@ -527,8 +494,6 @@ func TestPmapInt64Uint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt64Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -556,8 +521,6 @@ func TestPmapInt64Uint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt64Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -583,8 +546,6 @@ func TestPmapInt64Uint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt64Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -612,8 +573,6 @@ func TestPmapInt64Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt64StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -635,7 +594,6 @@ func TestPmapInt64StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapInt64BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -688,8 +646,6 @@ func TestPmapInt64Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt64Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -715,8 +671,6 @@ func TestPmapInt64Float64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt32IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -744,8 +698,6 @@ func TestPmapInt32IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt32Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -771,8 +723,6 @@ func TestPmapInt32Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt32Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -800,8 +750,6 @@ func TestPmapInt32Int16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt32Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int8 = 2
@@ -827,8 +775,6 @@ func TestPmapInt32Int8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt32UintPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -856,8 +802,6 @@ func TestPmapInt32UintPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt32Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint64 = 2
@@ -883,8 +827,6 @@ func TestPmapInt32Uint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt32Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -912,8 +854,6 @@ func TestPmapInt32Uint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt32Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -939,8 +879,6 @@ func TestPmapInt32Uint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt32Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -968,8 +906,6 @@ func TestPmapInt32Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt32StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -991,7 +927,6 @@ func TestPmapInt32StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapInt32BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -1044,8 +979,6 @@ func TestPmapInt32Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt32Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -1071,8 +1004,6 @@ func TestPmapInt32Float64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt16IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1100,8 +1031,6 @@ func TestPmapInt16IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt16Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -1127,8 +1056,6 @@ func TestPmapInt16Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt16Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1156,8 +1083,6 @@ func TestPmapInt16Int32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt16Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int8 = 2
@@ -1183,8 +1108,6 @@ func TestPmapInt16Int8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt16UintPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1212,8 +1135,6 @@ func TestPmapInt16UintPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt16Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint64 = 2
@@ -1239,8 +1160,6 @@ func TestPmapInt16Uint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt16Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1268,8 +1187,6 @@ func TestPmapInt16Uint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt16Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -1295,8 +1212,6 @@ func TestPmapInt16Uint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt16Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1324,8 +1239,6 @@ func TestPmapInt16Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt16StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -1347,7 +1260,6 @@ func TestPmapInt16StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapInt16BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -1400,8 +1312,6 @@ func TestPmapInt16Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt16Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -1427,8 +1337,6 @@ func TestPmapInt16Float64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt8IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1456,8 +1364,6 @@ func TestPmapInt8IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt8Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -1483,8 +1389,6 @@ func TestPmapInt8Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt8Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1512,8 +1416,6 @@ func TestPmapInt8Int32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt8Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int16 = 2
@@ -1539,8 +1441,6 @@ func TestPmapInt8Int16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt8UintPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1568,8 +1468,6 @@ func TestPmapInt8UintPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt8Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint64 = 2
@@ -1595,8 +1493,6 @@ func TestPmapInt8Uint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt8Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1624,8 +1520,6 @@ func TestPmapInt8Uint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt8Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -1651,8 +1545,6 @@ func TestPmapInt8Uint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapInt8Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1680,8 +1572,6 @@ func TestPmapInt8Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt8StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -1703,7 +1593,6 @@ func TestPmapInt8StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapInt8BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -1756,8 +1645,6 @@ func TestPmapInt8Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapInt8Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -1783,8 +1670,6 @@ func TestPmapInt8Float64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUintIntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1812,8 +1697,6 @@ func TestPmapUintIntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUintInt64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -1839,8 +1722,6 @@ func TestPmapUintInt64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUintInt32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1868,8 +1749,6 @@ func TestPmapUintInt32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUintInt16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int16 = 2
@@ -1895,8 +1774,6 @@ func TestPmapUintInt16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUintInt8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1924,8 +1801,6 @@ func TestPmapUintInt8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUintUint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint64 = 2
@@ -1951,8 +1826,6 @@ func TestPmapUintUint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUintUint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -1980,8 +1853,6 @@ func TestPmapUintUint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUintUint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -2007,8 +1878,6 @@ func TestPmapUintUint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUintUint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2036,8 +1905,6 @@ func TestPmapUintUint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUintStrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -2059,7 +1926,6 @@ func TestPmapUintStrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUintBoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -2112,8 +1978,6 @@ func TestPmapUintFloat32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUintFloat64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -2139,8 +2003,6 @@ func TestPmapUintFloat64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint64IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2168,8 +2030,6 @@ func TestPmapUint64IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint64Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -2195,8 +2055,6 @@ func TestPmapUint64Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint64Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2224,8 +2082,6 @@ func TestPmapUint64Int32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint64Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int16 = 2
@@ -2251,8 +2107,6 @@ func TestPmapUint64Int16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint64Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2280,8 +2134,6 @@ func TestPmapUint64Int8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint64UintPtr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint = 2
@@ -2307,8 +2159,6 @@ func TestPmapUint64UintPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint64Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2336,8 +2186,6 @@ func TestPmapUint64Uint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint64Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -2363,8 +2211,6 @@ func TestPmapUint64Uint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint64Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2392,8 +2238,6 @@ func TestPmapUint64Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint64StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -2415,7 +2259,6 @@ func TestPmapUint64StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUint64BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -2468,8 +2311,6 @@ func TestPmapUint64Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint64Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -2495,8 +2336,6 @@ func TestPmapUint64Float64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint32IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2524,8 +2363,6 @@ func TestPmapUint32IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint32Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -2551,8 +2388,6 @@ func TestPmapUint32Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint32Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2580,8 +2415,6 @@ func TestPmapUint32Int32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint32Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int16 = 2
@@ -2607,8 +2440,6 @@ func TestPmapUint32Int16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint32Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2636,8 +2467,6 @@ func TestPmapUint32Int8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint32UintPtr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint = 2
@@ -2663,8 +2492,6 @@ func TestPmapUint32UintPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint32Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2692,8 +2519,6 @@ func TestPmapUint32Uint64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint32Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -2719,8 +2544,6 @@ func TestPmapUint32Uint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint32Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2748,8 +2571,6 @@ func TestPmapUint32Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint32StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -2771,7 +2592,6 @@ func TestPmapUint32StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUint32BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -2824,8 +2644,6 @@ func TestPmapUint32Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint32Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -2851,8 +2669,6 @@ func TestPmapUint32Float64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint16IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2880,8 +2696,6 @@ func TestPmapUint16IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint16Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -2907,8 +2721,6 @@ func TestPmapUint16Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint16Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2936,8 +2748,6 @@ func TestPmapUint16Int32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint16Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int16 = 2
@@ -2963,8 +2773,6 @@ func TestPmapUint16Int16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint16Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -2992,8 +2800,6 @@ func TestPmapUint16Int8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint16UintPtr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint = 2
@@ -3019,8 +2825,6 @@ func TestPmapUint16UintPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint16Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -3048,8 +2852,6 @@ func TestPmapUint16Uint64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint16Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint32 = 2
@@ -3075,8 +2877,6 @@ func TestPmapUint16Uint32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint16Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -3104,8 +2904,6 @@ func TestPmapUint16Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint16StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -3127,7 +2925,6 @@ func TestPmapUint16StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUint16BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -3180,8 +2977,6 @@ func TestPmapUint16Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint16Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -3207,8 +3002,6 @@ func TestPmapUint16Float64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint8IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -3236,8 +3029,6 @@ func TestPmapUint8IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint8Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -3263,8 +3054,6 @@ func TestPmapUint8Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint8Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -3292,8 +3081,6 @@ func TestPmapUint8Int32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint8Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int16 = 2
@@ -3319,8 +3106,6 @@ func TestPmapUint8Int16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint8Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -3348,8 +3133,6 @@ func TestPmapUint8Int8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint8UintPtr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint = 2
@@ -3375,8 +3158,6 @@ func TestPmapUint8UintPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint8Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -3404,8 +3185,6 @@ func TestPmapUint8Uint64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint8Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint32 = 2
@@ -3431,8 +3210,6 @@ func TestPmapUint8Uint32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapUint8Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -3460,8 +3237,6 @@ func TestPmapUint8Uint16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint8StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -3483,7 +3258,6 @@ func TestPmapUint8StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUint8BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -3536,8 +3310,6 @@ func TestPmapUint8Float32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapUint8Float64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 float64 = 2
@@ -3564,8 +3336,6 @@ func TestPmapUint8Float64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapStrIntPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 int = 10
@@ -3588,7 +3358,6 @@ func TestPmapStrIntPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapStrInt64Ptr(t *testing.T) {
 	// Test : someLogic
@@ -3613,7 +3382,6 @@ func TestPmapStrInt64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrInt32Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 int32 = 10
@@ -3636,7 +3404,6 @@ func TestPmapStrInt32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapStrInt16Ptr(t *testing.T) {
 	// Test : someLogic
@@ -3661,7 +3428,6 @@ func TestPmapStrInt16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrInt8Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 int8 = 10
@@ -3684,7 +3450,6 @@ func TestPmapStrInt8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapStrUintPtr(t *testing.T) {
 	// Test : someLogic
@@ -3709,7 +3474,6 @@ func TestPmapStrUintPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrUint64Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 uint64 = 10
@@ -3732,7 +3496,6 @@ func TestPmapStrUint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapStrUint32Ptr(t *testing.T) {
 	// Test : someLogic
@@ -3757,7 +3520,6 @@ func TestPmapStrUint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrUint16Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 uint16 = 10
@@ -3781,7 +3543,6 @@ func TestPmapStrUint16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrUint8Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 uint8 = 10
@@ -3804,7 +3565,6 @@ func TestPmapStrUint8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapStrBoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -3831,7 +3591,6 @@ func TestPmapStrBoolPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrFloat32Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 float32 = 10
@@ -3855,7 +3614,6 @@ func TestPmapStrFloat32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrFloat64Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 float64 = 10
@@ -3878,7 +3636,6 @@ func TestPmapStrFloat64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolIntPtr(t *testing.T) {
 	// Test : someLogic
@@ -3905,7 +3662,6 @@ func TestPmapBoolIntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolInt64Ptr(t *testing.T) {
 	// Test : someLogic
 	var vt bool = true
@@ -3930,7 +3686,6 @@ func TestPmapBoolInt64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolInt32Ptr(t *testing.T) {
 	// Test : someLogic
@@ -3957,7 +3712,6 @@ func TestPmapBoolInt32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolInt16Ptr(t *testing.T) {
 	// Test : someLogic
 	var vt bool = true
@@ -3982,7 +3736,6 @@ func TestPmapBoolInt16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolInt8Ptr(t *testing.T) {
 	// Test : someLogic
@@ -4009,7 +3762,6 @@ func TestPmapBoolInt8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolUintPtr(t *testing.T) {
 	// Test : someLogic
 	var vt bool = true
@@ -4034,7 +3786,6 @@ func TestPmapBoolUintPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolUint64Ptr(t *testing.T) {
 	// Test : someLogic
@@ -4061,7 +3812,6 @@ func TestPmapBoolUint64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolUint32Ptr(t *testing.T) {
 	// Test : someLogic
 	var vt bool = true
@@ -4086,7 +3836,6 @@ func TestPmapBoolUint32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolUint16Ptr(t *testing.T) {
 	// Test : someLogic
@@ -4113,7 +3862,6 @@ func TestPmapBoolUint16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolUint8Ptr(t *testing.T) {
 	// Test : someLogic
 	var vt bool = true
@@ -4138,7 +3886,6 @@ func TestPmapBoolUint8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolStrPtr(t *testing.T) {
 	// Test : someLogic
@@ -4190,7 +3937,6 @@ func TestPmapBoolFloat32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolFloat64Ptr(t *testing.T) {
 	// Test : someLogic
 	var vt bool = true
@@ -4215,7 +3961,6 @@ func TestPmapBoolFloat64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapFloat32IntPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4243,8 +3988,6 @@ func TestPmapFloat32IntPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat32Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int64 = 2
@@ -4270,8 +4013,6 @@ func TestPmapFloat32Int64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat32Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4299,8 +4040,6 @@ func TestPmapFloat32Int32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat32Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int16 = 2
@@ -4326,8 +4065,6 @@ func TestPmapFloat32Int16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat32Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4355,8 +4092,6 @@ func TestPmapFloat32Int8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat32UintPtr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint = 2
@@ -4382,8 +4117,6 @@ func TestPmapFloat32UintPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat32Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4411,8 +4144,6 @@ func TestPmapFloat32Uint64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat32Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint32 = 2
@@ -4438,8 +4169,6 @@ func TestPmapFloat32Uint32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat32Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4467,8 +4196,6 @@ func TestPmapFloat32Uint16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat32Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint8 = 2
@@ -4495,8 +4222,6 @@ func TestPmapFloat32Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat32StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -4518,7 +4243,6 @@ func TestPmapFloat32StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapFloat32BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -4571,8 +4295,6 @@ func TestPmapFloat32Float64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat64IntPtr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int = 2
@@ -4598,8 +4320,6 @@ func TestPmapFloat64IntPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat64Int64Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4627,8 +4347,6 @@ func TestPmapFloat64Int64Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat64Int32Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int32 = 2
@@ -4654,8 +4372,6 @@ func TestPmapFloat64Int32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat64Int16Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4683,8 +4399,6 @@ func TestPmapFloat64Int16Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat64Int8Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 int8 = 2
@@ -4710,8 +4424,6 @@ func TestPmapFloat64Int8Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat64UintPtr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4739,8 +4451,6 @@ func TestPmapFloat64UintPtr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat64Uint64Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint64 = 2
@@ -4766,8 +4476,6 @@ func TestPmapFloat64Uint64Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat64Uint32Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4795,8 +4503,6 @@ func TestPmapFloat64Uint32Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat64Uint16Ptr(t *testing.T) {
 	// Test : add 1 to the list
 	var vo2 uint16 = 2
@@ -4822,8 +4528,6 @@ func TestPmapFloat64Uint16Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-
 
 func TestPmapFloat64Uint8Ptr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4851,8 +4555,6 @@ func TestPmapFloat64Uint8Ptr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
-
 func TestPmapFloat64StrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
@@ -4874,7 +4576,6 @@ func TestPmapFloat64StrPtr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapFloat64BoolPtr(t *testing.T) {
 	// Test : someLogic
@@ -4926,5 +4627,3 @@ func TestPmapFloat64Float32Ptr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
-

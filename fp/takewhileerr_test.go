@@ -27,7 +27,7 @@ func TestTakeWhileIntErr(t *testing.T) {
 	}
 
 	expectedNewList = []int{v40}
-	partialIsEvenDivisibleBy := func(num int) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num int) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileIntErr(partialIsEvenDivisibleBy, []int{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -68,7 +68,7 @@ func TestTakeWhileInt64Err(t *testing.T) {
 	}
 
 	expectedNewList = []int64{v40}
-	partialIsEvenDivisibleBy := func(num int64) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num int64) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileInt64Err(partialIsEvenDivisibleBy, []int64{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -109,7 +109,7 @@ func TestTakeWhileInt32Err(t *testing.T) {
 	}
 
 	expectedNewList = []int32{v40}
-	partialIsEvenDivisibleBy := func(num int32) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num int32) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileInt32Err(partialIsEvenDivisibleBy, []int32{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -150,7 +150,7 @@ func TestTakeWhileInt16Err(t *testing.T) {
 	}
 
 	expectedNewList = []int16{v40}
-	partialIsEvenDivisibleBy := func(num int16) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num int16) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileInt16Err(partialIsEvenDivisibleBy, []int16{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -191,7 +191,7 @@ func TestTakeWhileInt8Err(t *testing.T) {
 	}
 
 	expectedNewList = []int8{v40}
-	partialIsEvenDivisibleBy := func(num int8) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num int8) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileInt8Err(partialIsEvenDivisibleBy, []int8{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -232,7 +232,7 @@ func TestTakeWhileUintErr(t *testing.T) {
 	}
 
 	expectedNewList = []uint{v40}
-	partialIsEvenDivisibleBy := func(num uint) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num uint) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileUintErr(partialIsEvenDivisibleBy, []uint{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -273,7 +273,7 @@ func TestTakeWhileUint64Err(t *testing.T) {
 	}
 
 	expectedNewList = []uint64{v40}
-	partialIsEvenDivisibleBy := func(num uint64) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num uint64) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileUint64Err(partialIsEvenDivisibleBy, []uint64{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -314,7 +314,7 @@ func TestTakeWhileUint32Err(t *testing.T) {
 	}
 
 	expectedNewList = []uint32{v40}
-	partialIsEvenDivisibleBy := func(num uint32) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num uint32) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileUint32Err(partialIsEvenDivisibleBy, []uint32{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -355,7 +355,7 @@ func TestTakeWhileUint16Err(t *testing.T) {
 	}
 
 	expectedNewList = []uint16{v40}
-	partialIsEvenDivisibleBy := func(num uint16) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num uint16) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileUint16Err(partialIsEvenDivisibleBy, []uint16{v40})
 	
 	if NewList[0] != expectedNewList[0] {
@@ -396,7 +396,7 @@ func TestTakeWhileUint8Err(t *testing.T) {
 	}
 
 	expectedNewList = []uint8{v40}
-	partialIsEvenDivisibleBy := func(num uint8) (bool, error) { return num % 10 == 0, nil }
+	partialIsEvenDivisibleBy := func(num uint8) (bool, error) { return num%10 == 0, nil }
 	NewList, _ = TakeWhileUint8Err(partialIsEvenDivisibleBy, []uint8{v40})
 	
 	if NewList[0] != expectedNewList[0] {

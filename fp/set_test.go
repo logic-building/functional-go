@@ -21,12 +21,17 @@ func TestSetInt(t *testing.T) {
 
 	actual = SetInt(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionInt failed")
+		t.Errorf("SetInt failed")
 	}
 
 	actualPtr2 := SetInt([]int{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionInt failed")
+		t.Errorf("SetInt failed")
+	}
+
+	actualPtr3 := SetIntPtr([]*int{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetIntPtr failed")
 	}
 
 	listPtr := []*int{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -51,12 +56,17 @@ func TestSetInt64(t *testing.T) {
 
 	actual = SetInt64(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionInt64 failed")
+		t.Errorf("SetInt64 failed")
 	}
 
 	actualPtr2 := SetInt64([]int64{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionInt64 failed")
+		t.Errorf("SetInt64 failed")
+	}
+
+	actualPtr3 := SetInt64Ptr([]*int64{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetInt64Ptr failed")
 	}
 
 	listPtr := []*int64{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -81,12 +91,17 @@ func TestSetInt32(t *testing.T) {
 
 	actual = SetInt32(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionInt32 failed")
+		t.Errorf("SetInt32 failed")
 	}
 
 	actualPtr2 := SetInt32([]int32{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionInt32 failed")
+		t.Errorf("SetInt32 failed")
+	}
+
+	actualPtr3 := SetInt32Ptr([]*int32{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetInt32Ptr failed")
 	}
 
 	listPtr := []*int32{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -111,12 +126,17 @@ func TestSetInt16(t *testing.T) {
 
 	actual = SetInt16(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionInt16 failed")
+		t.Errorf("SetInt16 failed")
 	}
 
 	actualPtr2 := SetInt16([]int16{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionInt16 failed")
+		t.Errorf("SetInt16 failed")
+	}
+
+	actualPtr3 := SetInt16Ptr([]*int16{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetInt16Ptr failed")
 	}
 
 	listPtr := []*int16{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -141,12 +161,17 @@ func TestSetInt8(t *testing.T) {
 
 	actual = SetInt8(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionInt8 failed")
+		t.Errorf("SetInt8 failed")
 	}
 
 	actualPtr2 := SetInt8([]int8{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionInt8 failed")
+		t.Errorf("SetInt8 failed")
+	}
+
+	actualPtr3 := SetInt8Ptr([]*int8{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetInt8Ptr failed")
 	}
 
 	listPtr := []*int8{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -171,12 +196,17 @@ func TestSetUint(t *testing.T) {
 
 	actual = SetUint(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionUint failed")
+		t.Errorf("SetUint failed")
 	}
 
 	actualPtr2 := SetUint([]uint{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionUint failed")
+		t.Errorf("SetUint failed")
+	}
+
+	actualPtr3 := SetUintPtr([]*uint{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetUintPtr failed")
 	}
 
 	listPtr := []*uint{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -201,12 +231,17 @@ func TestSetUint64(t *testing.T) {
 
 	actual = SetUint64(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionUint64 failed")
+		t.Errorf("SetUint64 failed")
 	}
 
 	actualPtr2 := SetUint64([]uint64{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionUint64 failed")
+		t.Errorf("SetUint64 failed")
+	}
+
+	actualPtr3 := SetUint64Ptr([]*uint64{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetUint64Ptr failed")
 	}
 
 	listPtr := []*uint64{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -231,12 +266,17 @@ func TestSetUint32(t *testing.T) {
 
 	actual = SetUint32(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionUint32 failed")
+		t.Errorf("SetUint32 failed")
 	}
 
 	actualPtr2 := SetUint32([]uint32{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionUint32 failed")
+		t.Errorf("SetUint32 failed")
+	}
+
+	actualPtr3 := SetUint32Ptr([]*uint32{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetUint32Ptr failed")
 	}
 
 	listPtr := []*uint32{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -261,12 +301,17 @@ func TestSetUint16(t *testing.T) {
 
 	actual = SetUint16(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionUint16 failed")
+		t.Errorf("SetUint16 failed")
 	}
 
 	actualPtr2 := SetUint16([]uint16{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionUint16 failed")
+		t.Errorf("SetUint16 failed")
+	}
+
+	actualPtr3 := SetUint16Ptr([]*uint16{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetUint16Ptr failed")
 	}
 
 	listPtr := []*uint16{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -291,12 +336,17 @@ func TestSetUint8(t *testing.T) {
 
 	actual = SetUint8(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionUint8 failed")
+		t.Errorf("SetUint8 failed")
 	}
 
 	actualPtr2 := SetUint8([]uint8{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionUint8 failed")
+		t.Errorf("SetUint8 failed")
+	}
+
+	actualPtr3 := SetUint8Ptr([]*uint8{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetUint8Ptr failed")
 	}
 
 	listPtr := []*uint8{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -321,12 +371,17 @@ func TestSetStr(t *testing.T) {
 
 	actual = SetStr(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionStr failed")
+		t.Errorf("SetStr failed")
 	}
 
 	actualPtr2 := SetStr([]string{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionStr failed")
+		t.Errorf("SetStr failed")
+	}
+
+	actualPtr3 := SetStrPtr([]*string{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetStrPtr failed")
 	}
 
 	listPtr := []*string{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -345,18 +400,23 @@ func TestSetBool(t *testing.T) {
 	list := []bool{v8, v2, v1, v1, v2, v8}
 	actual := SetBool(list)
 	if len(actual) != 2 || !ExistsBool(v8, actual) || !ExistsBool(v2, actual) || !ExistsBool(v1, actual) {
-		t.Errorf("UnionBool failed. Expected=%v, actual=%v", expected, actual)
+		t.Errorf("SetBool failed. Expected=%v, actual=%v", expected, actual)
 		t.Errorf(reflect.String.String())
 	}
 
 	actual = SetBool(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionBool failed")
+		t.Errorf("SetBool failed")
 	}
 
 	actualPtr2 := SetBool([]bool{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionBool failed")
+		t.Errorf("SetBool failed")
+	}
+
+	actualPtr3 := SetBoolPtr([]*bool{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetBool failed")
 	}
 
 	listPtr := []*bool{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -381,12 +441,17 @@ func TestSetFloat32(t *testing.T) {
 
 	actual = SetFloat32(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionFloat32 failed")
+		t.Errorf("SetFloat32 failed")
 	}
 
 	actualPtr2 := SetFloat32([]float32{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionFloat32 failed")
+		t.Errorf("SetFloat32 failed")
+	}
+
+	actualPtr3 := SetFloat32Ptr([]*float32{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetFloat32Ptr failed")
 	}
 
 	listPtr := []*float32{&v8, &v2, &v1, &v1, &v2, &v8}
@@ -411,12 +476,17 @@ func TestSetFloat64(t *testing.T) {
 
 	actual = SetFloat64(nil)
 	if len(actual) != 0 {
-		t.Errorf("UnionFloat64 failed")
+		t.Errorf("SetFloat64 failed")
 	}
 
 	actualPtr2 := SetFloat64([]float64{})
 	if len(actualPtr2) != 0 {
-		t.Errorf("UnionFloat64 failed")
+		t.Errorf("SetFloat64 failed")
+	}
+
+	actualPtr3 := SetFloat64Ptr([]*float64{})
+	if len(actualPtr3) != 0 {
+		t.Errorf("SetFloat64Ptr failed")
 	}
 
 	listPtr := []*float64{&v8, &v2, &v1, &v1, &v2, &v8}

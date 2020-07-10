@@ -2208,7 +2208,7 @@ func PMapEmployeeTeacherErr(f func(Employee) (Teacher, error), list []Employee) 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2542,7 +2542,7 @@ func PMapEmployeeIntErr(f func(Employee) (int, error), list []Employee) ([]int, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -2876,7 +2876,7 @@ func PMapEmployeeStrErr(f func(Employee) (string, error), list []Employee) ([]st
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3210,7 +3210,7 @@ func PMapTeacherEmployeeErr(f func(Teacher) (Employee, error), list []Teacher) (
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3544,7 +3544,7 @@ func PMapTeacherIntErr(f func(Teacher) (int, error), list []Teacher) ([]int, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -3878,7 +3878,7 @@ func PMapTeacherStrErr(f func(Teacher) (string, error), list []Teacher) ([]strin
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4212,7 +4212,7 @@ func PMapIntEmployeeErr(f func(int) (Employee, error), list []int) ([]Employee, 
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4546,7 +4546,7 @@ func PMapIntTeacherErr(f func(int) (Teacher, error), list []int) ([]Teacher, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -4880,7 +4880,7 @@ func PMapStrEmployeeErr(f func(string) (Employee, error), list []string) ([]Empl
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err
@@ -5214,7 +5214,7 @@ func PMapStrTeacherErr(f func(string) (Teacher, error), list []string) ([]Teache
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err

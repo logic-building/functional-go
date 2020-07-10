@@ -88,7 +88,7 @@ func PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(f func(<INPUT_TYPE>) (<OUTPUT_TYPE>, err
 	wg.Wait()
 	close(ch)
 	close(errCh)
-	
+
 	for err := range errCh {
 		if err != nil {
 			return nil, err

@@ -27,7 +27,7 @@ func TestRemoveIntErr(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveIntErr(partialIsEven, []int{v20, v1, v3, v40})
 
@@ -45,7 +45,6 @@ func TestRemoveIntErr(t *testing.T) {
 		t.Errorf("RemoveIntErr failed.")
 	}
 }
-
 
 func TestRemoveInt64Err(t *testing.T) {
 	// Test : even number in the list
@@ -69,7 +68,7 @@ func TestRemoveInt64Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveInt64Err(partialIsEven, []int64{v20, v1, v3, v40})
 
@@ -87,7 +86,6 @@ func TestRemoveInt64Err(t *testing.T) {
 		t.Errorf("RemoveInt64Err failed.")
 	}
 }
-
 
 func TestRemoveInt32Err(t *testing.T) {
 	// Test : even number in the list
@@ -111,7 +109,7 @@ func TestRemoveInt32Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveInt32Err(partialIsEven, []int32{v20, v1, v3, v40})
 
@@ -129,7 +127,6 @@ func TestRemoveInt32Err(t *testing.T) {
 		t.Errorf("RemoveInt32Err failed.")
 	}
 }
-
 
 func TestRemoveInt16Err(t *testing.T) {
 	// Test : even number in the list
@@ -153,7 +150,7 @@ func TestRemoveInt16Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveInt16Err(partialIsEven, []int16{v20, v1, v3, v40})
 
@@ -171,7 +168,6 @@ func TestRemoveInt16Err(t *testing.T) {
 		t.Errorf("RemoveInt16Err failed.")
 	}
 }
-
 
 func TestRemoveInt8Err(t *testing.T) {
 	// Test : even number in the list
@@ -195,7 +191,7 @@ func TestRemoveInt8Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveInt8Err(partialIsEven, []int8{v20, v1, v3, v40})
 
@@ -213,7 +209,6 @@ func TestRemoveInt8Err(t *testing.T) {
 		t.Errorf("RemoveInt8Err failed.")
 	}
 }
-
 
 func TestRemoveUintErr(t *testing.T) {
 	// Test : even number in the list
@@ -237,7 +232,7 @@ func TestRemoveUintErr(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveUintErr(partialIsEven, []uint{v20, v1, v3, v40})
 
@@ -255,7 +250,6 @@ func TestRemoveUintErr(t *testing.T) {
 		t.Errorf("RemoveUintErr failed.")
 	}
 }
-
 
 func TestRemoveUint64Err(t *testing.T) {
 	// Test : even number in the list
@@ -279,7 +273,7 @@ func TestRemoveUint64Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveUint64Err(partialIsEven, []uint64{v20, v1, v3, v40})
 
@@ -297,7 +291,6 @@ func TestRemoveUint64Err(t *testing.T) {
 		t.Errorf("RemoveUint64Err failed.")
 	}
 }
-
 
 func TestRemoveUint32Err(t *testing.T) {
 	// Test : even number in the list
@@ -321,7 +314,7 @@ func TestRemoveUint32Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveUint32Err(partialIsEven, []uint32{v20, v1, v3, v40})
 
@@ -339,7 +332,6 @@ func TestRemoveUint32Err(t *testing.T) {
 		t.Errorf("RemoveUint32Err failed.")
 	}
 }
-
 
 func TestRemoveUint16Err(t *testing.T) {
 	// Test : even number in the list
@@ -363,7 +355,7 @@ func TestRemoveUint16Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveUint16Err(partialIsEven, []uint16{v20, v1, v3, v40})
 
@@ -381,7 +373,6 @@ func TestRemoveUint16Err(t *testing.T) {
 		t.Errorf("RemoveUint16Err failed.")
 	}
 }
-
 
 func TestRemoveUint8Err(t *testing.T) {
 	// Test : even number in the list
@@ -405,7 +396,7 @@ func TestRemoveUint8Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num % 10 == 0, nil 
+		return num%10 == 0, nil 
 	}
 	NewList, _ = RemoveUint8Err(partialIsEven, []uint8{v20, v1, v3, v40})
 
@@ -423,7 +414,6 @@ func TestRemoveUint8Err(t *testing.T) {
 		t.Errorf("RemoveUint8Err failed.")
 	}
 }
-
 
 func TestRemoveStrErr(t *testing.T) {
 	// Test : even number in the list
@@ -469,20 +459,19 @@ func TestRemoveStrErr(t *testing.T) {
 	}
 }
 
-
 func TestRemoveBoolErr(t *testing.T) {
 	// Test : even number in the list
 	var vt bool = true
 	var vf bool = false
 	
 	expectedNewList := []bool{vt}
-	NewList, _ := RemoveBoolErr(func(v bool) (bool, error) { return v == false, nil} , []bool{vt, vf, vf})
+	NewList, _ := RemoveBoolErr(func(v bool) (bool, error) { return v == false, nil } , []bool{vt, vf, vf})
 
 	if NewList[0] != expectedNewList[0]  {
 		t.Errorf("RemoveBoolErr failed. Expected New list=%v, actual list=%v", expectedNewList[0], NewList[0])
 	}
 
-	_, err := RemoveBoolErr(func(v bool) (bool, error) { if v == false {return false, errors.New("false is invalid in this test")}; return true, nil} , []bool{vt, vf, vf})
+	_, err := RemoveBoolErr(func(v bool) (bool, error) { if v == false {return false, errors.New("false is invalid in this test")}; return true, nil } , []bool{vt, vf, vf})
 	if err == nil {
 		t.Errorf("RemoveBoolErr failed.")
 	}
@@ -492,7 +481,6 @@ func TestRemoveBoolErr(t *testing.T) {
 		t.Errorf("RemoveBoolErr failed.")
 	}
 }
-
 
 func TestRemoveFloat32Err(t *testing.T) {
 	// Test : even number in the list
@@ -535,7 +523,6 @@ func TestRemoveFloat32Err(t *testing.T) {
 	}
 }
 
-
 func TestRemoveFloat64Err(t *testing.T) {
 	// Test : even number in the list
 	var v1 float64 = 1
@@ -576,4 +563,3 @@ func TestRemoveFloat64Err(t *testing.T) {
 		t.Errorf("RemoveFloat64Err failed.")
 	}
 }
-
