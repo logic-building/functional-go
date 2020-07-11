@@ -119,55 +119,55 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Zero",
-		codeTemplate:      basic.ZeroWht(),
+		codeTemplate:      basic.ZeroP(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
 		generatedFileName: "zero.go",
 
-		testTemplate: basic.ZeroWhtTest(),
+		testTemplate: basic.ZeroPTest(),
 		//testTemplateBool:      basic.SupersetBoolTest(),
 		generatedTestFileName: "zero_test.go",
 	},
 
 	fpCode{
-		function:          "PosWht",
-		codeTemplate:      basic.PosWht(),
+		function:          "PosP",
+		codeTemplate:      basic.PosP(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "float32", "float64"},
 		generatedFileName: "pos.go",
 
-		testTemplate: basic.PosWhtTest(),
+		testTemplate: basic.PosPTest(),
 		//testTemplateBool:      basic.SupersetBoolTest(),
 		generatedTestFileName: "pos_test.go",
 	},
 
 	fpCode{
-		function:          "NegWht",
-		codeTemplate:      basic.NegWht(),
+		function:          "NegP",
+		codeTemplate:      basic.NegP(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "float32", "float64"},
 		generatedFileName: "neg.go",
 
-		testTemplate: basic.NegWhtTest(),
+		testTemplate: basic.NegPTest(),
 		//testTemplateBool:      basic.SupersetBoolTest(),
 		generatedTestFileName: "neg_test.go",
 	},
 
 	fpCode{
-		function:          "Even",
-		codeTemplate:      basic.Even(),
+		function:          "EvenP",
+		codeTemplate:      basic.EvenP(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8"},
 		generatedFileName: "even.go",
 
-		testTemplate: basic.EvenTest(),
+		testTemplate: basic.EvenPTest(),
 		//testTemplateBool:      basic.SupersetBoolTest(),
 		generatedTestFileName: "even_test.go",
 	},
 
 	fpCode{
-		function:          "OddWht",
-		codeTemplate:      basic.OddWht(),
+		function:          "OddP",
+		codeTemplate:      basic.OddP(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8"},
 		generatedFileName: "odd.go",
 
-		testTemplate: basic.OddTest(),
+		testTemplate: basic.OddPTest(),
 		//testTemplateBool:      basic.SupersetBoolTest(),
 		generatedTestFileName: "odd_test.go",
 	},

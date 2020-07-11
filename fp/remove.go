@@ -377,7 +377,7 @@ func RemoveStr(f func(string) bool, list []string) []string {
 	return newList
 }
 
-// RemoveBoolPtr removes the items from the given list based on supplied function and returns new list
+// RemoveBool removes the items from the given list based on supplied function and returns new list
 //
 // Takes 2 inputs:
 //	1. Function

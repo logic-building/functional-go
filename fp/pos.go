@@ -1,111 +1,111 @@
 package fp
 
-// PosIntWht Returns true if num is greater than zero, else false
-func PosIntWht(v int) bool {
+// PosIntP Returns true if num is greater than zero, else false
+func PosIntP(v int) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosIntWhtPtr Returns true if num is greater than zero, else false
-func PosIntWhtPtr(v *int) bool {
+// PosIntPPtr Returns true if num is greater than zero, else false
+func PosIntPPtr(v *int) bool {
 	if *v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt64Wht Returns true if num is greater than zero, else false
-func PosInt64Wht(v int64) bool {
+// PosInt64P Returns true if num is greater than zero, else false
+func PosInt64P(v int64) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt64WhtPtr Returns true if num is greater than zero, else false
-func PosInt64WhtPtr(v *int64) bool {
+// PosInt64PPtr Returns true if num is greater than zero, else false
+func PosInt64PPtr(v *int64) bool {
 	if *v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt32Wht Returns true if num is greater than zero, else false
-func PosInt32Wht(v int32) bool {
+// PosInt32P Returns true if num is greater than zero, else false
+func PosInt32P(v int32) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt32WhtPtr Returns true if num is greater than zero, else false
-func PosInt32WhtPtr(v *int32) bool {
+// PosInt32PPtr Returns true if num is greater than zero, else false
+func PosInt32PPtr(v *int32) bool {
 	if *v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt16Wht Returns true if num is greater than zero, else false
-func PosInt16Wht(v int16) bool {
+// PosInt16P Returns true if num is greater than zero, else false
+func PosInt16P(v int16) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt16WhtPtr Returns true if num is greater than zero, else false
-func PosInt16WhtPtr(v *int16) bool {
+// PosInt16PPtr Returns true if num is greater than zero, else false
+func PosInt16PPtr(v *int16) bool {
 	if *v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt8Wht Returns true if num is greater than zero, else false
-func PosInt8Wht(v int8) bool {
+// PosInt8P Returns true if num is greater than zero, else false
+func PosInt8P(v int8) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosInt8WhtPtr Returns true if num is greater than zero, else false
-func PosInt8WhtPtr(v *int8) bool {
+// PosInt8PPtr Returns true if num is greater than zero, else false
+func PosInt8PPtr(v *int8) bool {
 	if *v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosFloat32Wht Returns true if num is greater than zero, else false
-func PosFloat32Wht(v float32) bool {
+// PosFloat32P Returns true if num is greater than zero, else false
+func PosFloat32P(v float32) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosFloat32WhtPtr Returns true if num is greater than zero, else false
-func PosFloat32WhtPtr(v *float32) bool {
+// PosFloat32PPtr Returns true if num is greater than zero, else false
+func PosFloat32PPtr(v *float32) bool {
 	if *v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosFloat64Wht Returns true if num is greater than zero, else false
-func PosFloat64Wht(v float64) bool {
+// PosFloat64P Returns true if num is greater than zero, else false
+func PosFloat64P(v float64) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosFloat64WhtPtr Returns true if num is greater than zero, else false
-func PosFloat64WhtPtr(v *float64) bool {
+// PosFloat64PPtr Returns true if num is greater than zero, else false
+func PosFloat64PPtr(v *float64) bool {
 	if *v > 0 {
 		return true
 	}

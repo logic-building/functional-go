@@ -1,24 +1,24 @@
 package basic
 
-// EvenTest is template to generate itself for different combination of data type.
-func EvenTest() string {
+// EvenPTest is template to generate itself for different combination of data type.
+func EvenPTest() string {
 	return `
 func TestEven<FTYPE>(t *testing.T) {
-	r := Even<FTYPE>(10)
+	r := Even<FTYPE>P(10)
 	if !r {
-		t.Errorf("Even<FTYPE> failed. Expected=true, actual=false")
+		t.Errorf("Even<FTYPE>P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = Even<FTYPE>(1)
+	r = Even<FTYPE>P(1)
 	if r {
-		t.Errorf("Even<FTYPE> failed. Expected=false, actual=true")
+		t.Errorf("Even<FTYPE>P failed. Expected=false, actual=true")
 	}
 
 	var two <TYPE> = 2
-	rPtr := Even<FTYPE>Ptr(&two)
+	rPtr := Even<FTYPE>PPtr(&two)
 	if !rPtr {
-		t.Errorf("Even<FTYPE>Ptr failed. Expected=true, actual=false")
+		t.Errorf("Even<FTYPE>PPtr failed. Expected=true, actual=false")
 	}
 }
 `

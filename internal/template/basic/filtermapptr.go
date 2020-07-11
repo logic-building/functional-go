@@ -11,7 +11,7 @@ package basic
 //  Empty list if all there parameters are nil or either of parameter is nil
 func FilterMapPtr() string {
 	return `
-// FilterMap<FTYPE> filters given list, then apply function(2nd argument) on each item in the list and returns a new list
+// FilterMap<FTYPE>Ptr filters given list, then apply function(2nd argument) on each item in the list and returns a new list
 // Takes 3 inputs
 //	1. Function: takes one input and returns (bool).
 //	2. Function: takes <TYPE> as argument and returns (<TYPE>)

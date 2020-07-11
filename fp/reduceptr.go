@@ -1,6 +1,6 @@
 package fp
 
-// ReduceInt reduces a list to a single value by combining elements via a supplied function
+// ReduceIntPtr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -34,7 +34,7 @@ func ReduceIntPtr(f func(*int, *int) *int, list []*int, initializer ...int) *int
 	return ReduceIntPtr(f, list[1:], *r)
 }
 
-// ReduceInt64 reduces a list to a single value by combining elements via a supplied function
+// ReduceInt64Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -68,7 +68,7 @@ func ReduceInt64Ptr(f func(*int64, *int64) *int64, list []*int64, initializer ..
 	return ReduceInt64Ptr(f, list[1:], *r)
 }
 
-// ReduceInt32 reduces a list to a single value by combining elements via a supplied function
+// ReduceInt32Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -102,7 +102,7 @@ func ReduceInt32Ptr(f func(*int32, *int32) *int32, list []*int32, initializer ..
 	return ReduceInt32Ptr(f, list[1:], *r)
 }
 
-// ReduceInt16 reduces a list to a single value by combining elements via a supplied function
+// ReduceInt16Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -136,7 +136,7 @@ func ReduceInt16Ptr(f func(*int16, *int16) *int16, list []*int16, initializer ..
 	return ReduceInt16Ptr(f, list[1:], *r)
 }
 
-// ReduceInt8 reduces a list to a single value by combining elements via a supplied function
+// ReduceInt8Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -170,7 +170,7 @@ func ReduceInt8Ptr(f func(*int8, *int8) *int8, list []*int8, initializer ...int8
 	return ReduceInt8Ptr(f, list[1:], *r)
 }
 
-// ReduceUint reduces a list to a single value by combining elements via a supplied function
+// ReduceUintPtr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -204,7 +204,7 @@ func ReduceUintPtr(f func(*uint, *uint) *uint, list []*uint, initializer ...uint
 	return ReduceUintPtr(f, list[1:], *r)
 }
 
-// ReduceUint64 reduces a list to a single value by combining elements via a supplied function
+// ReduceUint64Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -238,7 +238,7 @@ func ReduceUint64Ptr(f func(*uint64, *uint64) *uint64, list []*uint64, initializ
 	return ReduceUint64Ptr(f, list[1:], *r)
 }
 
-// ReduceUint32 reduces a list to a single value by combining elements via a supplied function
+// ReduceUint32Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -272,7 +272,7 @@ func ReduceUint32Ptr(f func(*uint32, *uint32) *uint32, list []*uint32, initializ
 	return ReduceUint32Ptr(f, list[1:], *r)
 }
 
-// ReduceUint16 reduces a list to a single value by combining elements via a supplied function
+// ReduceUint16Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -306,7 +306,7 @@ func ReduceUint16Ptr(f func(*uint16, *uint16) *uint16, list []*uint16, initializ
 	return ReduceUint16Ptr(f, list[1:], *r)
 }
 
-// ReduceUint8 reduces a list to a single value by combining elements via a supplied function
+// ReduceUint8Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -340,7 +340,7 @@ func ReduceUint8Ptr(f func(*uint8, *uint8) *uint8, list []*uint8, initializer ..
 	return ReduceUint8Ptr(f, list[1:], *r)
 }
 
-// ReduceStr reduces a list to a single value by combining elements via a supplied function
+// ReduceStrPtr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -374,7 +374,7 @@ func ReduceStrPtr(f func(*string, *string) *string, list []*string, initializer 
 	return ReduceStrPtr(f, list[1:], *r)
 }
 
-// ReduceFloat32 reduces a list to a single value by combining elements via a supplied function
+// ReduceFloat32Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments
@@ -408,7 +408,7 @@ func ReduceFloat32Ptr(f func(*float32, *float32) *float32, list []*float32, init
 	return ReduceFloat32Ptr(f, list[1:], *r)
 }
 
-// ReduceFloat64 reduces a list to a single value by combining elements via a supplied function
+// ReduceFloat64Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments

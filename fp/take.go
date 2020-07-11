@@ -35,6 +35,7 @@ func TakeIntPtr(n int, list []*int) []*int {
 	}
 	return newList
 }
+
 // TakeInt64 returns n items in the list
 func TakeInt64(n int, list []int64) []int64 {
 	if n < 0 {
@@ -70,6 +71,7 @@ func TakeInt64Ptr(n int, list []*int64) []*int64 {
 	}
 	return newList
 }
+
 // TakeInt32 returns n items in the list
 func TakeInt32(n int, list []int32) []int32 {
 	if n < 0 {
@@ -105,6 +107,7 @@ func TakeInt32Ptr(n int, list []*int32) []*int32 {
 	}
 	return newList
 }
+
 // TakeInt16 returns n items in the list
 func TakeInt16(n int, list []int16) []int16 {
 	if n < 0 {
@@ -140,6 +143,7 @@ func TakeInt16Ptr(n int, list []*int16) []*int16 {
 	}
 	return newList
 }
+
 // TakeInt8 returns n items in the list
 func TakeInt8(n int, list []int8) []int8 {
 	if n < 0 {
@@ -175,6 +179,7 @@ func TakeInt8Ptr(n int, list []*int8) []*int8 {
 	}
 	return newList
 }
+
 // TakeUint returns n items in the list
 func TakeUint(n int, list []uint) []uint {
 	if n < 0 {
@@ -210,6 +215,7 @@ func TakeUintPtr(n int, list []*uint) []*uint {
 	}
 	return newList
 }
+
 // TakeUint64 returns n items in the list
 func TakeUint64(n int, list []uint64) []uint64 {
 	if n < 0 {
@@ -245,6 +251,7 @@ func TakeUint64Ptr(n int, list []*uint64) []*uint64 {
 	}
 	return newList
 }
+
 // TakeUint32 returns n items in the list
 func TakeUint32(n int, list []uint32) []uint32 {
 	if n < 0 {
@@ -280,6 +287,7 @@ func TakeUint32Ptr(n int, list []*uint32) []*uint32 {
 	}
 	return newList
 }
+
 // TakeUint16 returns n items in the list
 func TakeUint16(n int, list []uint16) []uint16 {
 	if n < 0 {
@@ -315,6 +323,7 @@ func TakeUint16Ptr(n int, list []*uint16) []*uint16 {
 	}
 	return newList
 }
+
 // TakeUint8 returns n items in the list
 func TakeUint8(n int, list []uint8) []uint8 {
 	if n < 0 {
@@ -350,6 +359,7 @@ func TakeUint8Ptr(n int, list []*uint8) []*uint8 {
 	}
 	return newList
 }
+
 // TakeStr returns n items in the list
 func TakeStr(n int, list []string) []string {
 	if n < 0 {
@@ -385,6 +395,7 @@ func TakeStrPtr(n int, list []*string) []*string {
 	}
 	return newList
 }
+
 // TakeBool returns n items in the list
 func TakeBool(n int, list []bool) []bool {
 	if n < 0 {
@@ -420,6 +431,7 @@ func TakeBoolPtr(n int, list []*bool) []*bool {
 	}
 	return newList
 }
+
 // TakeFloat32 returns n items in the list
 func TakeFloat32(n int, list []float32) []float32 {
 	if n < 0 {
@@ -455,6 +467,7 @@ func TakeFloat32Ptr(n int, list []*float32) []*float32 {
 	}
 	return newList
 }
+
 // TakeFloat64 returns n items in the list
 func TakeFloat64(n int, list []float64) []float64 {
 	if n < 0 {

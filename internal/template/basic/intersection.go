@@ -50,7 +50,7 @@ func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 	return newList
 }
 
-// IntersectionIntPtr return a set that is the intersection of the input sets
+// Intersection<FTYPE>Ptr return a set that is the intersection of the input sets
 // repeated value within list parameter will be ignored
 func Intersection<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 	if arrList == nil {

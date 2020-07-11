@@ -399,7 +399,6 @@ func TakeWhileStr(f func(string) bool, list []string) []string {
 // Returns:
 //	New List.
 //	Empty list if all the parameters are nil or either of one parameter is nil
-
 func TakeWhileBool(f func(bool) bool, list []bool) []bool {
 	if f == nil {
 		return []bool{}

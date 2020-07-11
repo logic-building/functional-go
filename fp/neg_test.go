@@ -6,177 +6,177 @@ import (
 	"testing"
 )
 
-func TestNegIntWht(t *testing.T) {
-	r := NegIntWht(-1)
+func TestNegIntP(t *testing.T) {
+	r := NegIntP(-1)
 	if !r {
-		t.Errorf("NegIntWht failed. Expected=true, actual=false")
+		t.Errorf("NegIntP failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = NegIntWht(1)
+	r = NegIntP(1)
 	if r {
-		t.Errorf("NegIntWht failed. Expected=false, actual=true")
+		t.Errorf("NegIntP failed. Expected=false, actual=true")
 	}
 
 	var zero int
 	var one int = -1
-	rPtr := NegIntWhtPtr(&one)
+	rPtr := NegIntPPtr(&one)
 	if !rPtr {
-		t.Errorf("NegIntWhtPtr failed. Expected=true, actual=false")
+		t.Errorf("NegIntPPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = NegIntWhtPtr(&zero)
+	rPtr = NegIntPPtr(&zero)
 	if rPtr {
-		t.Errorf("NegIntWhtPtr failed. Expected=false, actual=true")
+		t.Errorf("NegIntPPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestNegInt64Wht(t *testing.T) {
-	r := NegInt64Wht(-1)
+func TestNegInt64P(t *testing.T) {
+	r := NegInt64P(-1)
 	if !r {
-		t.Errorf("NegInt64Wht failed. Expected=true, actual=false")
+		t.Errorf("NegInt64P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = NegInt64Wht(1)
+	r = NegInt64P(1)
 	if r {
-		t.Errorf("NegInt64Wht failed. Expected=false, actual=true")
+		t.Errorf("NegInt64P failed. Expected=false, actual=true")
 	}
 
 	var zero int64
 	var one int64 = -1
-	rPtr := NegInt64WhtPtr(&one)
+	rPtr := NegInt64PPtr(&one)
 	if !rPtr {
-		t.Errorf("NegInt64WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("NegInt64PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = NegInt64WhtPtr(&zero)
+	rPtr = NegInt64PPtr(&zero)
 	if rPtr {
-		t.Errorf("NegInt64WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("NegInt64PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestNegInt32Wht(t *testing.T) {
-	r := NegInt32Wht(-1)
+func TestNegInt32P(t *testing.T) {
+	r := NegInt32P(-1)
 	if !r {
-		t.Errorf("NegInt32Wht failed. Expected=true, actual=false")
+		t.Errorf("NegInt32P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = NegInt32Wht(1)
+	r = NegInt32P(1)
 	if r {
-		t.Errorf("NegInt32Wht failed. Expected=false, actual=true")
+		t.Errorf("NegInt32P failed. Expected=false, actual=true")
 	}
 
 	var zero int32
 	var one int32 = -1
-	rPtr := NegInt32WhtPtr(&one)
+	rPtr := NegInt32PPtr(&one)
 	if !rPtr {
-		t.Errorf("NegInt32WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("NegInt32PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = NegInt32WhtPtr(&zero)
+	rPtr = NegInt32PPtr(&zero)
 	if rPtr {
-		t.Errorf("NegInt32WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("NegInt32PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestNegInt16Wht(t *testing.T) {
-	r := NegInt16Wht(-1)
+func TestNegInt16P(t *testing.T) {
+	r := NegInt16P(-1)
 	if !r {
-		t.Errorf("NegInt16Wht failed. Expected=true, actual=false")
+		t.Errorf("NegInt16P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = NegInt16Wht(1)
+	r = NegInt16P(1)
 	if r {
-		t.Errorf("NegInt16Wht failed. Expected=false, actual=true")
+		t.Errorf("NegInt16P failed. Expected=false, actual=true")
 	}
 
 	var zero int16
 	var one int16 = -1
-	rPtr := NegInt16WhtPtr(&one)
+	rPtr := NegInt16PPtr(&one)
 	if !rPtr {
-		t.Errorf("NegInt16WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("NegInt16PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = NegInt16WhtPtr(&zero)
+	rPtr = NegInt16PPtr(&zero)
 	if rPtr {
-		t.Errorf("NegInt16WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("NegInt16PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestNegInt8Wht(t *testing.T) {
-	r := NegInt8Wht(-1)
+func TestNegInt8P(t *testing.T) {
+	r := NegInt8P(-1)
 	if !r {
-		t.Errorf("NegInt8Wht failed. Expected=true, actual=false")
+		t.Errorf("NegInt8P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = NegInt8Wht(1)
+	r = NegInt8P(1)
 	if r {
-		t.Errorf("NegInt8Wht failed. Expected=false, actual=true")
+		t.Errorf("NegInt8P failed. Expected=false, actual=true")
 	}
 
 	var zero int8
 	var one int8 = -1
-	rPtr := NegInt8WhtPtr(&one)
+	rPtr := NegInt8PPtr(&one)
 	if !rPtr {
-		t.Errorf("NegInt8WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("NegInt8PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = NegInt8WhtPtr(&zero)
+	rPtr = NegInt8PPtr(&zero)
 	if rPtr {
-		t.Errorf("NegInt8WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("NegInt8PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestNegFloat32Wht(t *testing.T) {
-	r := NegFloat32Wht(-1)
+func TestNegFloat32P(t *testing.T) {
+	r := NegFloat32P(-1)
 	if !r {
-		t.Errorf("NegFloat32Wht failed. Expected=true, actual=false")
+		t.Errorf("NegFloat32P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = NegFloat32Wht(1)
+	r = NegFloat32P(1)
 	if r {
-		t.Errorf("NegFloat32Wht failed. Expected=false, actual=true")
+		t.Errorf("NegFloat32P failed. Expected=false, actual=true")
 	}
 
 	var zero float32
 	var one float32 = -1
-	rPtr := NegFloat32WhtPtr(&one)
+	rPtr := NegFloat32PPtr(&one)
 	if !rPtr {
-		t.Errorf("NegFloat32WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("NegFloat32PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = NegFloat32WhtPtr(&zero)
+	rPtr = NegFloat32PPtr(&zero)
 	if rPtr {
-		t.Errorf("NegFloat32WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("NegFloat32PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestNegFloat64Wht(t *testing.T) {
-	r := NegFloat64Wht(-1)
+func TestNegFloat64P(t *testing.T) {
+	r := NegFloat64P(-1)
 	if !r {
-		t.Errorf("NegFloat64Wht failed. Expected=true, actual=false")
+		t.Errorf("NegFloat64P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = NegFloat64Wht(1)
+	r = NegFloat64P(1)
 	if r {
-		t.Errorf("NegFloat64Wht failed. Expected=false, actual=true")
+		t.Errorf("NegFloat64P failed. Expected=false, actual=true")
 	}
 
 	var zero float64
 	var one float64 = -1
-	rPtr := NegFloat64WhtPtr(&one)
+	rPtr := NegFloat64PPtr(&one)
 	if !rPtr {
-		t.Errorf("NegFloat64WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("NegFloat64PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = NegFloat64WhtPtr(&zero)
+	rPtr = NegFloat64PPtr(&zero)
 	if rPtr {
-		t.Errorf("NegFloat64WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("NegFloat64PPtr failed. Expected=false, actual=true")
 	}
 }

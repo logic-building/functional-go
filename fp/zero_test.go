@@ -6,302 +6,302 @@ import (
 	"testing"
 )
 
-func TestZeroIntWht(t *testing.T) {
-	r := ZeroIntWht(0)
+func TestZeroIntP(t *testing.T) {
+	r := ZeroIntP(0)
 	if !r {
-		t.Errorf("ZeroIntWht failed. Expected=true, actual=false")
+		t.Errorf("ZeroIntP failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroIntWht(1)
+	r = ZeroIntP(1)
 	if r {
-		t.Errorf("ZeroIntWht failed. Expected=false, actual=true")
+		t.Errorf("ZeroIntP failed. Expected=false, actual=true")
 	}
 
 	var zero int
 	var one int = 1
-	rPtr := ZeroIntWhtPtr(&zero)
+	rPtr := ZeroIntPPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroIntWhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroIntPPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroIntWhtPtr(&one)
+	rPtr = ZeroIntPPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroIntWhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroIntPPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroInt64Wht(t *testing.T) {
-	r := ZeroInt64Wht(0)
+func TestZeroInt64P(t *testing.T) {
+	r := ZeroInt64P(0)
 	if !r {
-		t.Errorf("ZeroInt64Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt64P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroInt64Wht(1)
+	r = ZeroInt64P(1)
 	if r {
-		t.Errorf("ZeroInt64Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt64P failed. Expected=false, actual=true")
 	}
 
 	var zero int64
 	var one int64 = 1
-	rPtr := ZeroInt64WhtPtr(&zero)
+	rPtr := ZeroInt64PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroInt64WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt64PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroInt64WhtPtr(&one)
+	rPtr = ZeroInt64PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroInt64WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt64PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroInt32Wht(t *testing.T) {
-	r := ZeroInt32Wht(0)
+func TestZeroInt32P(t *testing.T) {
+	r := ZeroInt32P(0)
 	if !r {
-		t.Errorf("ZeroInt32Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt32P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroInt32Wht(1)
+	r = ZeroInt32P(1)
 	if r {
-		t.Errorf("ZeroInt32Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt32P failed. Expected=false, actual=true")
 	}
 
 	var zero int32
 	var one int32 = 1
-	rPtr := ZeroInt32WhtPtr(&zero)
+	rPtr := ZeroInt32PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroInt32WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt32PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroInt32WhtPtr(&one)
+	rPtr = ZeroInt32PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroInt32WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt32PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroInt16Wht(t *testing.T) {
-	r := ZeroInt16Wht(0)
+func TestZeroInt16P(t *testing.T) {
+	r := ZeroInt16P(0)
 	if !r {
-		t.Errorf("ZeroInt16Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt16P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroInt16Wht(1)
+	r = ZeroInt16P(1)
 	if r {
-		t.Errorf("ZeroInt16Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt16P failed. Expected=false, actual=true")
 	}
 
 	var zero int16
 	var one int16 = 1
-	rPtr := ZeroInt16WhtPtr(&zero)
+	rPtr := ZeroInt16PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroInt16WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt16PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroInt16WhtPtr(&one)
+	rPtr = ZeroInt16PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroInt16WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt16PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroInt8Wht(t *testing.T) {
-	r := ZeroInt8Wht(0)
+func TestZeroInt8P(t *testing.T) {
+	r := ZeroInt8P(0)
 	if !r {
-		t.Errorf("ZeroInt8Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt8P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroInt8Wht(1)
+	r = ZeroInt8P(1)
 	if r {
-		t.Errorf("ZeroInt8Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt8P failed. Expected=false, actual=true")
 	}
 
 	var zero int8
 	var one int8 = 1
-	rPtr := ZeroInt8WhtPtr(&zero)
+	rPtr := ZeroInt8PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroInt8WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroInt8PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroInt8WhtPtr(&one)
+	rPtr = ZeroInt8PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroInt8WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroInt8PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroUintWht(t *testing.T) {
-	r := ZeroUintWht(0)
+func TestZeroUintP(t *testing.T) {
+	r := ZeroUintP(0)
 	if !r {
-		t.Errorf("ZeroUintWht failed. Expected=true, actual=false")
+		t.Errorf("ZeroUintP failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroUintWht(1)
+	r = ZeroUintP(1)
 	if r {
-		t.Errorf("ZeroUintWht failed. Expected=false, actual=true")
+		t.Errorf("ZeroUintP failed. Expected=false, actual=true")
 	}
 
 	var zero uint
 	var one uint = 1
-	rPtr := ZeroUintWhtPtr(&zero)
+	rPtr := ZeroUintPPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroUintWhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroUintPPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroUintWhtPtr(&one)
+	rPtr = ZeroUintPPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroUintWhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroUintPPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroUint64Wht(t *testing.T) {
-	r := ZeroUint64Wht(0)
+func TestZeroUint64P(t *testing.T) {
+	r := ZeroUint64P(0)
 	if !r {
-		t.Errorf("ZeroUint64Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint64P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroUint64Wht(1)
+	r = ZeroUint64P(1)
 	if r {
-		t.Errorf("ZeroUint64Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint64P failed. Expected=false, actual=true")
 	}
 
 	var zero uint64
 	var one uint64 = 1
-	rPtr := ZeroUint64WhtPtr(&zero)
+	rPtr := ZeroUint64PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroUint64WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint64PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroUint64WhtPtr(&one)
+	rPtr = ZeroUint64PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroUint64WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint64PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroUint32Wht(t *testing.T) {
-	r := ZeroUint32Wht(0)
+func TestZeroUint32P(t *testing.T) {
+	r := ZeroUint32P(0)
 	if !r {
-		t.Errorf("ZeroUint32Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint32P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroUint32Wht(1)
+	r = ZeroUint32P(1)
 	if r {
-		t.Errorf("ZeroUint32Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint32P failed. Expected=false, actual=true")
 	}
 
 	var zero uint32
 	var one uint32 = 1
-	rPtr := ZeroUint32WhtPtr(&zero)
+	rPtr := ZeroUint32PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroUint32WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint32PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroUint32WhtPtr(&one)
+	rPtr = ZeroUint32PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroUint32WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint32PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroUint16Wht(t *testing.T) {
-	r := ZeroUint16Wht(0)
+func TestZeroUint16P(t *testing.T) {
+	r := ZeroUint16P(0)
 	if !r {
-		t.Errorf("ZeroUint16Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint16P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroUint16Wht(1)
+	r = ZeroUint16P(1)
 	if r {
-		t.Errorf("ZeroUint16Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint16P failed. Expected=false, actual=true")
 	}
 
 	var zero uint16
 	var one uint16 = 1
-	rPtr := ZeroUint16WhtPtr(&zero)
+	rPtr := ZeroUint16PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroUint16WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint16PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroUint16WhtPtr(&one)
+	rPtr = ZeroUint16PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroUint16WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint16PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroUint8Wht(t *testing.T) {
-	r := ZeroUint8Wht(0)
+func TestZeroUint8P(t *testing.T) {
+	r := ZeroUint8P(0)
 	if !r {
-		t.Errorf("ZeroUint8Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint8P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroUint8Wht(1)
+	r = ZeroUint8P(1)
 	if r {
-		t.Errorf("ZeroUint8Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint8P failed. Expected=false, actual=true")
 	}
 
 	var zero uint8
 	var one uint8 = 1
-	rPtr := ZeroUint8WhtPtr(&zero)
+	rPtr := ZeroUint8PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroUint8WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroUint8PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroUint8WhtPtr(&one)
+	rPtr = ZeroUint8PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroUint8WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroUint8PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroFloat32Wht(t *testing.T) {
-	r := ZeroFloat32Wht(0)
+func TestZeroFloat32P(t *testing.T) {
+	r := ZeroFloat32P(0)
 	if !r {
-		t.Errorf("ZeroFloat32Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroFloat32P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroFloat32Wht(1)
+	r = ZeroFloat32P(1)
 	if r {
-		t.Errorf("ZeroFloat32Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroFloat32P failed. Expected=false, actual=true")
 	}
 
 	var zero float32
 	var one float32 = 1
-	rPtr := ZeroFloat32WhtPtr(&zero)
+	rPtr := ZeroFloat32PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroFloat32WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroFloat32PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroFloat32WhtPtr(&one)
+	rPtr = ZeroFloat32PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroFloat32WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroFloat32PPtr failed. Expected=false, actual=true")
 	}
 }
 
-func TestZeroFloat64Wht(t *testing.T) {
-	r := ZeroFloat64Wht(0)
+func TestZeroFloat64P(t *testing.T) {
+	r := ZeroFloat64P(0)
 	if !r {
-		t.Errorf("ZeroFloat64Wht failed. Expected=true, actual=false")
+		t.Errorf("ZeroFloat64P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = ZeroFloat64Wht(1)
+	r = ZeroFloat64P(1)
 	if r {
-		t.Errorf("ZeroFloat64Wht failed. Expected=false, actual=true")
+		t.Errorf("ZeroFloat64P failed. Expected=false, actual=true")
 	}
 
 	var zero float64
 	var one float64 = 1
-	rPtr := ZeroFloat64WhtPtr(&zero)
+	rPtr := ZeroFloat64PPtr(&zero)
 	if !rPtr {
-		t.Errorf("ZeroFloat64WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("ZeroFloat64PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = ZeroFloat64WhtPtr(&one)
+	rPtr = ZeroFloat64PPtr(&one)
 	if rPtr {
-		t.Errorf("ZeroFloat64WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("ZeroFloat64PPtr failed. Expected=false, actual=true")
 	}
 }

@@ -3,7 +3,7 @@ package basic
 // ReducePtr reduces a list to a single value by combining elements via a supplied function
 func ReducePtr() string {
 	return `
-// Reduce<FTYPE> reduces a list to a single value by combining elements via a supplied function
+// Reduce<FTYPE>Ptr reduces a list to a single value by combining elements via a supplied function
 //
 // Takes three inputs
 //	A. function - takes two arguments

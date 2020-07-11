@@ -1,111 +1,111 @@
 package fp
 
-// NegIntWht Returns true if num is less than zero, else false
-func NegIntWht(v int) bool {
+// NegIntP Returns true if num is less than zero, else false
+func NegIntP(v int) bool {
 	if v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegIntWhtPtr Returns true if num is less than zero, else false
-func NegIntWhtPtr(v *int) bool {
+// NegIntPPtr Returns true if num is less than zero, else false
+func NegIntPPtr(v *int) bool {
 	if *v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt64Wht Returns true if num is less than zero, else false
-func NegInt64Wht(v int64) bool {
+// NegInt64P Returns true if num is less than zero, else false
+func NegInt64P(v int64) bool {
 	if v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt64WhtPtr Returns true if num is less than zero, else false
-func NegInt64WhtPtr(v *int64) bool {
+// NegInt64PPtr Returns true if num is less than zero, else false
+func NegInt64PPtr(v *int64) bool {
 	if *v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt32Wht Returns true if num is less than zero, else false
-func NegInt32Wht(v int32) bool {
+// NegInt32P Returns true if num is less than zero, else false
+func NegInt32P(v int32) bool {
 	if v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt32WhtPtr Returns true if num is less than zero, else false
-func NegInt32WhtPtr(v *int32) bool {
+// NegInt32PPtr Returns true if num is less than zero, else false
+func NegInt32PPtr(v *int32) bool {
 	if *v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt16Wht Returns true if num is less than zero, else false
-func NegInt16Wht(v int16) bool {
+// NegInt16P Returns true if num is less than zero, else false
+func NegInt16P(v int16) bool {
 	if v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt16WhtPtr Returns true if num is less than zero, else false
-func NegInt16WhtPtr(v *int16) bool {
+// NegInt16PPtr Returns true if num is less than zero, else false
+func NegInt16PPtr(v *int16) bool {
 	if *v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt8Wht Returns true if num is less than zero, else false
-func NegInt8Wht(v int8) bool {
+// NegInt8P Returns true if num is less than zero, else false
+func NegInt8P(v int8) bool {
 	if v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegInt8WhtPtr Returns true if num is less than zero, else false
-func NegInt8WhtPtr(v *int8) bool {
+// NegInt8PPtr Returns true if num is less than zero, else false
+func NegInt8PPtr(v *int8) bool {
 	if *v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegFloat32Wht Returns true if num is less than zero, else false
-func NegFloat32Wht(v float32) bool {
+// NegFloat32P Returns true if num is less than zero, else false
+func NegFloat32P(v float32) bool {
 	if v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegFloat32WhtPtr Returns true if num is less than zero, else false
-func NegFloat32WhtPtr(v *float32) bool {
+// NegFloat32PPtr Returns true if num is less than zero, else false
+func NegFloat32PPtr(v *float32) bool {
 	if *v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegFloat64Wht Returns true if num is less than zero, else false
-func NegFloat64Wht(v float64) bool {
+// NegFloat64P Returns true if num is less than zero, else false
+func NegFloat64P(v float64) bool {
 	if v < 0 {
 		return true
 	}
 	return false
 }
 
-// NegFloat64WhtPtr Returns true if num is less than zero, else false
-func NegFloat64WhtPtr(v *float64) bool {
+// NegFloat64PPtr Returns true if num is less than zero, else false
+func NegFloat64PPtr(v *float64) bool {
 	if *v < 0 {
 		return true
 	}

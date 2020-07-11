@@ -1,30 +1,30 @@
 package basic
 
-// NegWhtTest is template to generate itself for different combination of data type.
-func NegWhtTest() string {
+// NegPTest is template to generate itself for different combination of data type.
+func NegPTest() string {
 	return `
-func TestNeg<FTYPE>Wht(t *testing.T) {
-	r := Neg<FTYPE>Wht(-1)
+func TestNeg<FTYPE>P(t *testing.T) {
+	r := Neg<FTYPE>P(-1)
 	if !r {
-		t.Errorf("Neg<FTYPE>Wht failed. Expected=true, actual=false")
+		t.Errorf("Neg<FTYPE>P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = Neg<FTYPE>Wht(1)
+	r = Neg<FTYPE>P(1)
 	if r {
-		t.Errorf("Neg<FTYPE>Wht failed. Expected=false, actual=true")
+		t.Errorf("Neg<FTYPE>P failed. Expected=false, actual=true")
 	}
 
 	var zero <TYPE>
 	var one <TYPE> = -1
-	rPtr := Neg<FTYPE>WhtPtr(&one)
+	rPtr := Neg<FTYPE>PPtr(&one)
 	if !rPtr {
-		t.Errorf("Neg<FTYPE>WhtPtr failed. Expected=true, actual=false")
+		t.Errorf("Neg<FTYPE>PPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = Neg<FTYPE>WhtPtr(&zero)
+	rPtr = Neg<FTYPE>PPtr(&zero)
 	if rPtr {
-		t.Errorf("Neg<FTYPE>WhtPtr failed. Expected=false, actual=true")
+		t.Errorf("Neg<FTYPE>PPtr failed. Expected=false, actual=true")
 	}
 }
 `
