@@ -6,8 +6,8 @@ func MinMaxPtr() string {
 // MinMax<FTYPE>Ptr returns min and max items from the list.
 // Return 0,0 if the list is either empty or nil
 func MinMax<FTYPE>Ptr(list []*<TYPE>) (*<TYPE>, *<TYPE>) {
-	var zero <TYPE> = 0 
-	
+	var zero <TYPE> = 0
+
 	if list == nil || len(list) == 0 {
 		return &zero, &zero
 	}
@@ -23,6 +23,5 @@ func MinMax<FTYPE>Ptr(list []*<TYPE>) (*<TYPE>, *<TYPE>) {
 	}
 	return min, max
 }
-
 `
 }

@@ -3,7 +3,7 @@ package basic
 // DropPtr returns a new list after dropping the given item
 func DropPtr() string {
 	return `
-// Drop<FTYPE> returns a new list after dropping the given item
+// Drop<FTYPE>Ptr returns a new list after dropping the given item
 func Drop<FTYPE>Ptr(num *<TYPE>, list []*<TYPE>) []*<TYPE> {
 	var newList []*<TYPE>
 	for _, v := range list {
@@ -14,7 +14,7 @@ func Drop<FTYPE>Ptr(num *<TYPE>, list []*<TYPE>) []*<TYPE> {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// Drop<FTYPE>sPtr returns a new list after dropping the given items
 func Drop<FTYPE>sPtr(nums []*<TYPE>, list []*<TYPE>) []*<TYPE> {
 	var newList []*<TYPE>
 	for _, v := range list {

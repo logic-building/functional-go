@@ -1,15 +1,15 @@
 package basic
 
-// Odd is template
-func Odd() string {
+// OddP is template
+func OddP() string {
 	return `
-// Odd<FTYPE> Returns true if n is odd
-func Odd<FTYPE>(v <TYPE>) bool {
+// Odd<FTYPE>P Returns true if n is odd
+func Odd<FTYPE>P(v <TYPE>) bool {
 	return v%2 != 0
 }
 
-// Odd<FTYPE>Ptr Returns true if n is odd
-func Odd<FTYPE>Ptr(v *<TYPE>) bool {
+// Odd<FTYPE>PPtr Returns true if n is odd
+func Odd<FTYPE>PPtr(v *<TYPE>) bool {
 	return *v%2 != 0
 }
 `

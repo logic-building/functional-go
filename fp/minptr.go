@@ -1,6 +1,6 @@
 package fp
 
-// MinInt returns min item from the list.
+// MinIntPtr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinIntPtr(list []*int) *int {
 	if list == nil || len(list) == 0 {
@@ -16,7 +16,7 @@ func MinIntPtr(list []*int) *int {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinInt64Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt64Ptr(list []*int64) *int64 {
 	if list == nil || len(list) == 0 {
@@ -32,7 +32,7 @@ func MinInt64Ptr(list []*int64) *int64 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinInt32Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt32Ptr(list []*int32) *int32 {
 	if list == nil || len(list) == 0 {
@@ -48,7 +48,7 @@ func MinInt32Ptr(list []*int32) *int32 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinInt16Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt16Ptr(list []*int16) *int16 {
 	if list == nil || len(list) == 0 {
@@ -64,7 +64,7 @@ func MinInt16Ptr(list []*int16) *int16 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinInt8Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinInt8Ptr(list []*int8) *int8 {
 	if list == nil || len(list) == 0 {
@@ -80,7 +80,7 @@ func MinInt8Ptr(list []*int8) *int8 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinUintPtr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUintPtr(list []*uint) *uint {
 	if list == nil || len(list) == 0 {
@@ -96,7 +96,7 @@ func MinUintPtr(list []*uint) *uint {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinUint64Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint64Ptr(list []*uint64) *uint64 {
 	if list == nil || len(list) == 0 {
@@ -112,7 +112,7 @@ func MinUint64Ptr(list []*uint64) *uint64 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinUint32Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint32Ptr(list []*uint32) *uint32 {
 	if list == nil || len(list) == 0 {
@@ -128,7 +128,7 @@ func MinUint32Ptr(list []*uint32) *uint32 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinUint16Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint16Ptr(list []*uint16) *uint16 {
 	if list == nil || len(list) == 0 {
@@ -144,7 +144,7 @@ func MinUint16Ptr(list []*uint16) *uint16 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinUint8Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinUint8Ptr(list []*uint8) *uint8 {
 	if list == nil || len(list) == 0 {
@@ -160,7 +160,7 @@ func MinUint8Ptr(list []*uint8) *uint8 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinFloat32Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinFloat32Ptr(list []*float32) *float32 {
 	if list == nil || len(list) == 0 {
@@ -176,7 +176,7 @@ func MinFloat32Ptr(list []*float32) *float32 {
 	return min
 }
 
-// MinInt returns min item from the list.
+// MinFloat64Ptr returns min item from the list.
 // Return 0 if the list is either empty or nil
 func MinFloat64Ptr(list []*float64) *float64 {
 	if list == nil || len(list) == 0 {

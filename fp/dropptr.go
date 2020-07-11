@@ -1,6 +1,6 @@
 package fp
 
-// DropInt returns a new list after dropping the given item
+// DropIntPtr returns a new list after dropping the given item
 func DropIntPtr(num *int, list []*int) []*int {
 	var newList []*int
 	for _, v := range list {
@@ -11,7 +11,7 @@ func DropIntPtr(num *int, list []*int) []*int {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropIntsPtr returns a new list after dropping the given items
 func DropIntsPtr(nums []*int, list []*int) []*int {
 	var newList []*int
 	for _, v := range list {
@@ -22,7 +22,7 @@ func DropIntsPtr(nums []*int, list []*int) []*int {
 	return newList
 }
 
-// DropInt64 returns a new list after dropping the given item
+// DropInt64Ptr returns a new list after dropping the given item
 func DropInt64Ptr(num *int64, list []*int64) []*int64 {
 	var newList []*int64
 	for _, v := range list {
@@ -33,7 +33,7 @@ func DropInt64Ptr(num *int64, list []*int64) []*int64 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropInts64Ptr returns a new list after dropping the given items
 func DropInts64Ptr(nums []*int64, list []*int64) []*int64 {
 	var newList []*int64
 	for _, v := range list {
@@ -44,7 +44,7 @@ func DropInts64Ptr(nums []*int64, list []*int64) []*int64 {
 	return newList
 }
 
-// DropInt32 returns a new list after dropping the given item
+// DropInt32Ptr returns a new list after dropping the given item
 func DropInt32Ptr(num *int32, list []*int32) []*int32 {
 	var newList []*int32
 	for _, v := range list {
@@ -55,7 +55,7 @@ func DropInt32Ptr(num *int32, list []*int32) []*int32 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropInts32Ptr returns a new list after dropping the given items
 func DropInts32Ptr(nums []*int32, list []*int32) []*int32 {
 	var newList []*int32
 	for _, v := range list {
@@ -66,7 +66,7 @@ func DropInts32Ptr(nums []*int32, list []*int32) []*int32 {
 	return newList
 }
 
-// DropInt16 returns a new list after dropping the given item
+// DropInt16Ptr returns a new list after dropping the given item
 func DropInt16Ptr(num *int16, list []*int16) []*int16 {
 	var newList []*int16
 	for _, v := range list {
@@ -77,7 +77,7 @@ func DropInt16Ptr(num *int16, list []*int16) []*int16 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropInts16Ptr returns a new list after dropping the given items
 func DropInts16Ptr(nums []*int16, list []*int16) []*int16 {
 	var newList []*int16
 	for _, v := range list {
@@ -88,7 +88,7 @@ func DropInts16Ptr(nums []*int16, list []*int16) []*int16 {
 	return newList
 }
 
-// DropInt8 returns a new list after dropping the given item
+// DropInt8Ptr returns a new list after dropping the given item
 func DropInt8Ptr(num *int8, list []*int8) []*int8 {
 	var newList []*int8
 	for _, v := range list {
@@ -99,7 +99,7 @@ func DropInt8Ptr(num *int8, list []*int8) []*int8 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropInts8Ptr returns a new list after dropping the given items
 func DropInts8Ptr(nums []*int8, list []*int8) []*int8 {
 	var newList []*int8
 	for _, v := range list {
@@ -110,7 +110,7 @@ func DropInts8Ptr(nums []*int8, list []*int8) []*int8 {
 	return newList
 }
 
-// DropUint returns a new list after dropping the given item
+// DropUintPtr returns a new list after dropping the given item
 func DropUintPtr(num *uint, list []*uint) []*uint {
 	var newList []*uint
 	for _, v := range list {
@@ -121,7 +121,7 @@ func DropUintPtr(num *uint, list []*uint) []*uint {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropUintsPtr returns a new list after dropping the given items
 func DropUintsPtr(nums []*uint, list []*uint) []*uint {
 	var newList []*uint
 	for _, v := range list {
@@ -132,7 +132,7 @@ func DropUintsPtr(nums []*uint, list []*uint) []*uint {
 	return newList
 }
 
-// DropUint64 returns a new list after dropping the given item
+// DropUint64Ptr returns a new list after dropping the given item
 func DropUint64Ptr(num *uint64, list []*uint64) []*uint64 {
 	var newList []*uint64
 	for _, v := range list {
@@ -143,7 +143,7 @@ func DropUint64Ptr(num *uint64, list []*uint64) []*uint64 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropUint64sPtr returns a new list after dropping the given items
 func DropUint64sPtr(nums []*uint64, list []*uint64) []*uint64 {
 	var newList []*uint64
 	for _, v := range list {
@@ -154,7 +154,7 @@ func DropUint64sPtr(nums []*uint64, list []*uint64) []*uint64 {
 	return newList
 }
 
-// DropUint32 returns a new list after dropping the given item
+// DropUint32Ptr returns a new list after dropping the given item
 func DropUint32Ptr(num *uint32, list []*uint32) []*uint32 {
 	var newList []*uint32
 	for _, v := range list {
@@ -165,7 +165,7 @@ func DropUint32Ptr(num *uint32, list []*uint32) []*uint32 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropUints32Ptr returns a new list after dropping the given items
 func DropUints32Ptr(nums []*uint32, list []*uint32) []*uint32 {
 	var newList []*uint32
 	for _, v := range list {
@@ -176,7 +176,7 @@ func DropUints32Ptr(nums []*uint32, list []*uint32) []*uint32 {
 	return newList
 }
 
-// DropUint16 returns a new list after dropping the given item
+// DropUint16Ptr returns a new list after dropping the given item
 func DropUint16Ptr(num *uint16, list []*uint16) []*uint16 {
 	var newList []*uint16
 	for _, v := range list {
@@ -187,7 +187,7 @@ func DropUint16Ptr(num *uint16, list []*uint16) []*uint16 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropUints16Ptr returns a new list after dropping the given items
 func DropUints16Ptr(nums []*uint16, list []*uint16) []*uint16 {
 	var newList []*uint16
 	for _, v := range list {
@@ -198,7 +198,7 @@ func DropUints16Ptr(nums []*uint16, list []*uint16) []*uint16 {
 	return newList
 }
 
-// DropUint8 returns a new list after dropping the given item
+// DropUint8Ptr returns a new list after dropping the given item
 func DropUint8Ptr(num *uint8, list []*uint8) []*uint8 {
 	var newList []*uint8
 	for _, v := range list {
@@ -209,7 +209,7 @@ func DropUint8Ptr(num *uint8, list []*uint8) []*uint8 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropUints8Ptr returns a new list after dropping the given items
 func DropUints8Ptr(nums []*uint8, list []*uint8) []*uint8 {
 	var newList []*uint8
 	for _, v := range list {
@@ -220,7 +220,7 @@ func DropUints8Ptr(nums []*uint8, list []*uint8) []*uint8 {
 	return newList
 }
 
-// DropStr returns a new list after dropping the given item
+// DropStrPtr returns a new list after dropping the given item
 func DropStrPtr(num *string, list []*string) []*string {
 	var newList []*string
 	for _, v := range list {
@@ -231,7 +231,7 @@ func DropStrPtr(num *string, list []*string) []*string {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropStrsPtr returns a new list after dropping the given items
 func DropStrsPtr(nums []*string, list []*string) []*string {
 	var newList []*string
 	for _, v := range list {
@@ -242,7 +242,7 @@ func DropStrsPtr(nums []*string, list []*string) []*string {
 	return newList
 }
 
-// DropBool returns a new list after dropping the given item
+// DropBoolPtr returns a new list after dropping the given item
 func DropBoolPtr(num *bool, list []*bool) []*bool {
 	var newList []*bool
 	for _, v := range list {
@@ -253,7 +253,7 @@ func DropBoolPtr(num *bool, list []*bool) []*bool {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropBoolsPtr returns a new list after dropping the given items
 func DropBoolsPtr(nums []*bool, list []*bool) []*bool {
 	var newList []*bool
 	for _, v := range list {
@@ -264,7 +264,7 @@ func DropBoolsPtr(nums []*bool, list []*bool) []*bool {
 	return newList
 }
 
-// DropFloat32 returns a new list after dropping the given item
+// DropFloat32Ptr returns a new list after dropping the given item
 func DropFloat32Ptr(num *float32, list []*float32) []*float32 {
 	var newList []*float32
 	for _, v := range list {
@@ -275,7 +275,7 @@ func DropFloat32Ptr(num *float32, list []*float32) []*float32 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropFloat32sPtr returns a new list after dropping the given items
 func DropFloat32sPtr(nums []*float32, list []*float32) []*float32 {
 	var newList []*float32
 	for _, v := range list {
@@ -286,7 +286,7 @@ func DropFloat32sPtr(nums []*float32, list []*float32) []*float32 {
 	return newList
 }
 
-// DropFloat64 returns a new list after dropping the given item
+// DropFloat64Ptr returns a new list after dropping the given item
 func DropFloat64Ptr(num *float64, list []*float64) []*float64 {
 	var newList []*float64
 	for _, v := range list {
@@ -297,7 +297,7 @@ func DropFloat64Ptr(num *float64, list []*float64) []*float64 {
 	return newList
 }
 
-// DropInts returns a new list after dropping the given items
+// DropFloat64sPtr returns a new list after dropping the given items
 func DropFloat64sPtr(nums []*float64, list []*float64) []*float64 {
 	var newList []*float64
 	for _, v := range list {

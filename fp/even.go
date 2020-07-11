@@ -1,101 +1,101 @@
 package fp
 
-// EvenInt Returns true if n is even
-func EvenInt(v int) bool {
+// EvenIntP Returns true if n is even
+func EvenIntP(v int) bool {
 	return v%2 == 0
 }
 
-// EvenIntPtr Returns true if n is even
-func EvenIntPtr(v *int) bool {
+// EvenIntPPtr Returns true if n is even
+func EvenIntPPtr(v *int) bool {
 	return *v%2 == 0
 }
 
-// EvenInt64 Returns true if n is even
-func EvenInt64(v int64) bool {
+// EvenInt64P Returns true if n is even
+func EvenInt64P(v int64) bool {
 	return v%2 == 0
 }
 
-// EvenInt64Ptr Returns true if n is even
-func EvenInt64Ptr(v *int64) bool {
+// EvenInt64PPtr Returns true if n is even
+func EvenInt64PPtr(v *int64) bool {
 	return *v%2 == 0
 }
 
-// EvenInt32 Returns true if n is even
-func EvenInt32(v int32) bool {
+// EvenInt32P Returns true if n is even
+func EvenInt32P(v int32) bool {
 	return v%2 == 0
 }
 
-// EvenInt32Ptr Returns true if n is even
-func EvenInt32Ptr(v *int32) bool {
+// EvenInt32PPtr Returns true if n is even
+func EvenInt32PPtr(v *int32) bool {
 	return *v%2 == 0
 }
 
-// EvenInt16 Returns true if n is even
-func EvenInt16(v int16) bool {
+// EvenInt16P Returns true if n is even
+func EvenInt16P(v int16) bool {
 	return v%2 == 0
 }
 
-// EvenInt16Ptr Returns true if n is even
-func EvenInt16Ptr(v *int16) bool {
+// EvenInt16PPtr Returns true if n is even
+func EvenInt16PPtr(v *int16) bool {
 	return *v%2 == 0
 }
 
-// EvenInt8 Returns true if n is even
-func EvenInt8(v int8) bool {
+// EvenInt8P Returns true if n is even
+func EvenInt8P(v int8) bool {
 	return v%2 == 0
 }
 
-// EvenInt8Ptr Returns true if n is even
-func EvenInt8Ptr(v *int8) bool {
+// EvenInt8PPtr Returns true if n is even
+func EvenInt8PPtr(v *int8) bool {
 	return *v%2 == 0
 }
 
-// EvenUint Returns true if n is even
-func EvenUint(v uint) bool {
+// EvenUintP Returns true if n is even
+func EvenUintP(v uint) bool {
 	return v%2 == 0
 }
 
-// EvenUintPtr Returns true if n is even
-func EvenUintPtr(v *uint) bool {
+// EvenUintPPtr Returns true if n is even
+func EvenUintPPtr(v *uint) bool {
 	return *v%2 == 0
 }
 
-// EvenUint64 Returns true if n is even
-func EvenUint64(v uint64) bool {
+// EvenUint64P Returns true if n is even
+func EvenUint64P(v uint64) bool {
 	return v%2 == 0
 }
 
-// EvenUint64Ptr Returns true if n is even
-func EvenUint64Ptr(v *uint64) bool {
+// EvenUint64PPtr Returns true if n is even
+func EvenUint64PPtr(v *uint64) bool {
 	return *v%2 == 0
 }
 
-// EvenUint32 Returns true if n is even
-func EvenUint32(v uint32) bool {
+// EvenUint32P Returns true if n is even
+func EvenUint32P(v uint32) bool {
 	return v%2 == 0
 }
 
-// EvenUint32Ptr Returns true if n is even
-func EvenUint32Ptr(v *uint32) bool {
+// EvenUint32PPtr Returns true if n is even
+func EvenUint32PPtr(v *uint32) bool {
 	return *v%2 == 0
 }
 
-// EvenUint16 Returns true if n is even
-func EvenUint16(v uint16) bool {
+// EvenUint16P Returns true if n is even
+func EvenUint16P(v uint16) bool {
 	return v%2 == 0
 }
 
-// EvenUint16Ptr Returns true if n is even
-func EvenUint16Ptr(v *uint16) bool {
+// EvenUint16PPtr Returns true if n is even
+func EvenUint16PPtr(v *uint16) bool {
 	return *v%2 == 0
 }
 
-// EvenUint8 Returns true if n is even
-func EvenUint8(v uint8) bool {
+// EvenUint8P Returns true if n is even
+func EvenUint8P(v uint8) bool {
 	return v%2 == 0
 }
 
-// EvenUint8Ptr Returns true if n is even
-func EvenUint8Ptr(v *uint8) bool {
+// EvenUint8PPtr Returns true if n is even
+func EvenUint8PPtr(v *uint8) bool {
 	return *v%2 == 0
 }

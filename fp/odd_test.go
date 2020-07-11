@@ -7,191 +7,191 @@ import (
 )
 
 func TestOddInt(t *testing.T) {
-	r := OddInt(11)
+	r := OddIntP(11)
 	if !r {
-		t.Errorf("OddInt failed. Expected=true, actual=false")
+		t.Errorf("OddIntP failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddInt(2)
+	r = OddIntP(2)
 	if r {
-		t.Errorf("OddInt failed. Expected=false, actual=true")
+		t.Errorf("OddIntP failed. Expected=false, actual=true")
 	}
 
 	var three int = 3
-	rPtr := OddIntPtr(&three)
+	rPtr := OddIntPPtr(&three)
 	if !rPtr {
-		t.Errorf("OddIntPtr failed. Expected=true, actual=false")
+		t.Errorf("OddIntPPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddInt64(t *testing.T) {
-	r := OddInt64(11)
+	r := OddInt64P(11)
 	if !r {
-		t.Errorf("OddInt64 failed. Expected=true, actual=false")
+		t.Errorf("OddInt64P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddInt64(2)
+	r = OddInt64P(2)
 	if r {
-		t.Errorf("OddInt64 failed. Expected=false, actual=true")
+		t.Errorf("OddInt64P failed. Expected=false, actual=true")
 	}
 
 	var three int64 = 3
-	rPtr := OddInt64Ptr(&three)
+	rPtr := OddInt64PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddInt64Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddInt64PPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddInt32(t *testing.T) {
-	r := OddInt32(11)
+	r := OddInt32P(11)
 	if !r {
-		t.Errorf("OddInt32 failed. Expected=true, actual=false")
+		t.Errorf("OddInt32P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddInt32(2)
+	r = OddInt32P(2)
 	if r {
-		t.Errorf("OddInt32 failed. Expected=false, actual=true")
+		t.Errorf("OddInt32P failed. Expected=false, actual=true")
 	}
 
 	var three int32 = 3
-	rPtr := OddInt32Ptr(&three)
+	rPtr := OddInt32PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddInt32Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddInt32PPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddInt16(t *testing.T) {
-	r := OddInt16(11)
+	r := OddInt16P(11)
 	if !r {
-		t.Errorf("OddInt16 failed. Expected=true, actual=false")
+		t.Errorf("OddInt16P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddInt16(2)
+	r = OddInt16P(2)
 	if r {
-		t.Errorf("OddInt16 failed. Expected=false, actual=true")
+		t.Errorf("OddInt16P failed. Expected=false, actual=true")
 	}
 
 	var three int16 = 3
-	rPtr := OddInt16Ptr(&three)
+	rPtr := OddInt16PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddInt16Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddInt16PPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddInt8(t *testing.T) {
-	r := OddInt8(11)
+	r := OddInt8P(11)
 	if !r {
-		t.Errorf("OddInt8 failed. Expected=true, actual=false")
+		t.Errorf("OddInt8P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddInt8(2)
+	r = OddInt8P(2)
 	if r {
-		t.Errorf("OddInt8 failed. Expected=false, actual=true")
+		t.Errorf("OddInt8P failed. Expected=false, actual=true")
 	}
 
 	var three int8 = 3
-	rPtr := OddInt8Ptr(&three)
+	rPtr := OddInt8PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddInt8Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddInt8PPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddUint(t *testing.T) {
-	r := OddUint(11)
+	r := OddUintP(11)
 	if !r {
-		t.Errorf("OddUint failed. Expected=true, actual=false")
+		t.Errorf("OddUintP failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddUint(2)
+	r = OddUintP(2)
 	if r {
-		t.Errorf("OddUint failed. Expected=false, actual=true")
+		t.Errorf("OddUintP failed. Expected=false, actual=true")
 	}
 
 	var three uint = 3
-	rPtr := OddUintPtr(&three)
+	rPtr := OddUintPPtr(&three)
 	if !rPtr {
-		t.Errorf("OddUintPtr failed. Expected=true, actual=false")
+		t.Errorf("OddUintPPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddUint64(t *testing.T) {
-	r := OddUint64(11)
+	r := OddUint64P(11)
 	if !r {
-		t.Errorf("OddUint64 failed. Expected=true, actual=false")
+		t.Errorf("OddUint64P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddUint64(2)
+	r = OddUint64P(2)
 	if r {
-		t.Errorf("OddUint64 failed. Expected=false, actual=true")
+		t.Errorf("OddUint64P failed. Expected=false, actual=true")
 	}
 
 	var three uint64 = 3
-	rPtr := OddUint64Ptr(&three)
+	rPtr := OddUint64PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddUint64Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddUint64PPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddUint32(t *testing.T) {
-	r := OddUint32(11)
+	r := OddUint32P(11)
 	if !r {
-		t.Errorf("OddUint32 failed. Expected=true, actual=false")
+		t.Errorf("OddUint32P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddUint32(2)
+	r = OddUint32P(2)
 	if r {
-		t.Errorf("OddUint32 failed. Expected=false, actual=true")
+		t.Errorf("OddUint32P failed. Expected=false, actual=true")
 	}
 
 	var three uint32 = 3
-	rPtr := OddUint32Ptr(&three)
+	rPtr := OddUint32PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddUint32Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddUint32PPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddUint16(t *testing.T) {
-	r := OddUint16(11)
+	r := OddUint16P(11)
 	if !r {
-		t.Errorf("OddUint16 failed. Expected=true, actual=false")
+		t.Errorf("OddUint16P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddUint16(2)
+	r = OddUint16P(2)
 	if r {
-		t.Errorf("OddUint16 failed. Expected=false, actual=true")
+		t.Errorf("OddUint16P failed. Expected=false, actual=true")
 	}
 
 	var three uint16 = 3
-	rPtr := OddUint16Ptr(&three)
+	rPtr := OddUint16PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddUint16Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddUint16PPtr failed. Expected=true, actual=false")
 	}
 }
 
 func TestOddUint8(t *testing.T) {
-	r := OddUint8(11)
+	r := OddUint8P(11)
 	if !r {
-		t.Errorf("OddUint8 failed. Expected=true, actual=false")
+		t.Errorf("OddUint8P failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = OddUint8(2)
+	r = OddUint8P(2)
 	if r {
-		t.Errorf("OddUint8 failed. Expected=false, actual=true")
+		t.Errorf("OddUint8P failed. Expected=false, actual=true")
 	}
 
 	var three uint8 = 3
-	rPtr := OddUint8Ptr(&three)
+	rPtr := OddUint8PPtr(&three)
 	if !rPtr {
-		t.Errorf("OddUint8Ptr failed. Expected=true, actual=false")
+		t.Errorf("OddUint8PPtr failed. Expected=true, actual=false")
 	}
 }

@@ -1,15 +1,15 @@
 package basic
 
-// Even is template
-func Even() string {
+// EvenP is template
+func EvenP() string {
 	return `
-// Even<FTYPE> Returns true if n is even
-func Even<FTYPE>(v <TYPE>) bool {
+// Even<FTYPE>P Returns true if n is even
+func Even<FTYPE>P(v <TYPE>) bool {
 	return v%2 == 0
 }
 
-// Even<FTYPE>Ptr Returns true if n is even
-func Even<FTYPE>Ptr(v *<TYPE>) bool {
+// Even<FTYPE>PPtr Returns true if n is even
+func Even<FTYPE>PPtr(v *<TYPE>) bool {
 	return *v%2 == 0
 }
 `

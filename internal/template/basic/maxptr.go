@@ -3,6 +3,7 @@ package basic
 // MaxPtr returns max in the list
 func MaxPtr() string {
 	return `
+// Max<FTYPE>Ptr Returns the greatest of the nums
 func Max<FTYPE>Ptr(list []*<TYPE>) *<TYPE> {
 	var initialVal <TYPE> = 0
 	var max *<TYPE> = &initialVal
