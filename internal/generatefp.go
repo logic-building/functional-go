@@ -162,8 +162,8 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
-		function:          "Odd",
-		codeTemplate:      basic.Odd(),
+		function:          "OddWht",
+		codeTemplate:      basic.OddWht(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8"},
 		generatedFileName: "odd.go",
 

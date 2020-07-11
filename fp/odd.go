@@ -1,101 +1,101 @@
 package fp
 
-// OddInt Returns true if n is odd
-func OddInt(v int) bool {
+// OddIntWht Returns true if n is odd
+func OddIntWht(v int) bool {
 	return v%2 != 0
 }
 
-// OddIntPtr Returns true if n is odd
-func OddIntPtr(v *int) bool {
+// OddIntWhtPtr Returns true if n is odd
+func OddIntWhtPtr(v *int) bool {
 	return *v%2 != 0
 }
 
-// OddInt64 Returns true if n is odd
-func OddInt64(v int64) bool {
+// OddInt64Wht Returns true if n is odd
+func OddInt64Wht(v int64) bool {
 	return v%2 != 0
 }
 
-// OddInt64Ptr Returns true if n is odd
-func OddInt64Ptr(v *int64) bool {
+// OddInt64WhtPtr Returns true if n is odd
+func OddInt64WhtPtr(v *int64) bool {
 	return *v%2 != 0
 }
 
-// OddInt32 Returns true if n is odd
-func OddInt32(v int32) bool {
+// OddInt32Wht Returns true if n is odd
+func OddInt32Wht(v int32) bool {
 	return v%2 != 0
 }
 
-// OddInt32Ptr Returns true if n is odd
-func OddInt32Ptr(v *int32) bool {
+// OddInt32WhtPtr Returns true if n is odd
+func OddInt32WhtPtr(v *int32) bool {
 	return *v%2 != 0
 }
 
-// OddInt16 Returns true if n is odd
-func OddInt16(v int16) bool {
+// OddInt16Wht Returns true if n is odd
+func OddInt16Wht(v int16) bool {
 	return v%2 != 0
 }
 
-// OddInt16Ptr Returns true if n is odd
-func OddInt16Ptr(v *int16) bool {
+// OddInt16WhtPtr Returns true if n is odd
+func OddInt16WhtPtr(v *int16) bool {
 	return *v%2 != 0
 }
 
-// OddInt8 Returns true if n is odd
-func OddInt8(v int8) bool {
+// OddInt8Wht Returns true if n is odd
+func OddInt8Wht(v int8) bool {
 	return v%2 != 0
 }
 
-// OddInt8Ptr Returns true if n is odd
-func OddInt8Ptr(v *int8) bool {
+// OddInt8WhtPtr Returns true if n is odd
+func OddInt8WhtPtr(v *int8) bool {
 	return *v%2 != 0
 }
 
-// OddUint Returns true if n is odd
-func OddUint(v uint) bool {
+// OddUintWht Returns true if n is odd
+func OddUintWht(v uint) bool {
 	return v%2 != 0
 }
 
-// OddUintPtr Returns true if n is odd
-func OddUintPtr(v *uint) bool {
+// OddUintWhtPtr Returns true if n is odd
+func OddUintWhtPtr(v *uint) bool {
 	return *v%2 != 0
 }
 
-// OddUint64 Returns true if n is odd
-func OddUint64(v uint64) bool {
+// OddUint64Wht Returns true if n is odd
+func OddUint64Wht(v uint64) bool {
 	return v%2 != 0
 }
 
-// OddUint64Ptr Returns true if n is odd
-func OddUint64Ptr(v *uint64) bool {
+// OddUint64WhtPtr Returns true if n is odd
+func OddUint64WhtPtr(v *uint64) bool {
 	return *v%2 != 0
 }
 
-// OddUint32 Returns true if n is odd
-func OddUint32(v uint32) bool {
+// OddUint32Wht Returns true if n is odd
+func OddUint32Wht(v uint32) bool {
 	return v%2 != 0
 }
 
-// OddUint32Ptr Returns true if n is odd
-func OddUint32Ptr(v *uint32) bool {
+// OddUint32WhtPtr Returns true if n is odd
+func OddUint32WhtPtr(v *uint32) bool {
 	return *v%2 != 0
 }
 
-// OddUint16 Returns true if n is odd
-func OddUint16(v uint16) bool {
+// OddUint16Wht Returns true if n is odd
+func OddUint16Wht(v uint16) bool {
 	return v%2 != 0
 }
 
-// OddUint16Ptr Returns true if n is odd
-func OddUint16Ptr(v *uint16) bool {
+// OddUint16WhtPtr Returns true if n is odd
+func OddUint16WhtPtr(v *uint16) bool {
 	return *v%2 != 0
 }
 
-// OddUint8 Returns true if n is odd
-func OddUint8(v uint8) bool {
+// OddUint8Wht Returns true if n is odd
+func OddUint8Wht(v uint8) bool {
 	return v%2 != 0
 }
 
-// OddUint8Ptr Returns true if n is odd
-func OddUint8Ptr(v *uint8) bool {
+// OddUint8WhtPtr Returns true if n is odd
+func OddUint8WhtPtr(v *uint8) bool {
 	return *v%2 != 0
 }
