@@ -129,12 +129,12 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
-		function:          "Pos",
-		codeTemplate:      basic.Pos(),
+		function:          "PosWht",
+		codeTemplate:      basic.PosWht(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "float32", "float64"},
 		generatedFileName: "pos.go",
 
-		testTemplate: basic.PosTest(),
+		testTemplate: basic.PosWhtTest(),
 		//testTemplateBool:      basic.SupersetBoolTest(),
 		generatedTestFileName: "pos_test.go",
 	},

@@ -1,18 +1,18 @@
 package basic
 
-// Pos is template
-func Pos() string {
+// PosWht is template
+func PosWht() string {
 	return `
-// Pos<FTYPE> Returns true if num is greater than zero, else false
-func Pos<FTYPE>(v <TYPE>) bool {
+// PosWht<FTYPE> Returns true if num is greater than zero, else false
+func PosWht<FTYPE>(v <TYPE>) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// Pos<FTYPE>Ptr Returns true if num is greater than zero, else false
-func Pos<FTYPE>Ptr(v *<TYPE>) bool {
+// PosWht<FTYPE>Ptr Returns true if num is greater than zero, else false
+func PosWht<FTYPE>Ptr(v *<TYPE>) bool {
 	if *v > 0 {
 		return true
 	}

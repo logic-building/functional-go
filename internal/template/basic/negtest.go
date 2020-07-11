@@ -1,6 +1,6 @@
 package basic
 
-// PosTest is template to generate itself for different combination of data type.
+// PosWhtTest is template to generate itself for different combination of data type.
 func NegTest() string {
 	return `
 func TestNeg<FTYPE>(t *testing.T) {
