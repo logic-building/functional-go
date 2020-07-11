@@ -4,27 +4,27 @@ package basic
 func PosWhtTest() string {
 	return `
 func TestPos<FTYPE>(t *testing.T) {
-	r := PosWht<FTYPE>(1)
+	r := Pos<FTYPE>Wht(1)
 	if !r {
-		t.Errorf("PosWht<FTYPE> failed. Expected=true, actual=false")
+		t.Errorf("Pos<FTYPE>Wht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWht<FTYPE>(-1)
+	r = Pos<FTYPE>Wht(-1)
 	if r {
-		t.Errorf("PosWht<FTYPE> failed. Expected=false, actual=true")
+		t.Errorf("Pos<FTYPE>Wht failed. Expected=false, actual=true")
 	}
 
 	var zero <TYPE>
 	var one <TYPE> = 1
-	rPtr := PosWht<FTYPE>Ptr(&one)
+	rPtr := Pos<FTYPE>WhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWht<FTYPE>Ptr failed. Expected=true, actual=false")
+		t.Errorf("Pos<FTYPE>WhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWht<FTYPE>Ptr(&zero)
+	rPtr = Pos<FTYPE>WhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWht<FTYPE>Ptr failed. Expected=false, actual=true")
+		t.Errorf("Pos<FTYPE>WhtPtr failed. Expected=false, actual=true")
 	}
 }
 `

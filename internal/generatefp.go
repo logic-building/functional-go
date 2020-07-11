@@ -140,12 +140,12 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
-		function:          "Neg",
-		codeTemplate:      basic.Neg(),
+		function:          "NegWht",
+		codeTemplate:      basic.NegWht(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "float32", "float64"},
 		generatedFileName: "neg.go",
 
-		testTemplate: basic.NegTest(),
+		testTemplate: basic.NegWhtTest(),
 		//testTemplateBool:      basic.SupersetBoolTest(),
 		generatedTestFileName: "neg_test.go",
 	},

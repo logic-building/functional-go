@@ -7,176 +7,176 @@ import (
 )
 
 func TestPosInt(t *testing.T) {
-	r := PosWhtInt(1)
+	r := PosIntWht(1)
 	if !r {
-		t.Errorf("PosWhtInt failed. Expected=true, actual=false")
+		t.Errorf("PosIntWht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWhtInt(-1)
+	r = PosIntWht(-1)
 	if r {
-		t.Errorf("PosWhtInt failed. Expected=false, actual=true")
+		t.Errorf("PosIntWht failed. Expected=false, actual=true")
 	}
 
 	var zero int
 	var one int = 1
-	rPtr := PosWhtIntPtr(&one)
+	rPtr := PosIntWhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWhtIntPtr failed. Expected=true, actual=false")
+		t.Errorf("PosIntWhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWhtIntPtr(&zero)
+	rPtr = PosIntWhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWhtIntPtr failed. Expected=false, actual=true")
+		t.Errorf("PosIntWhtPtr failed. Expected=false, actual=true")
 	}
 }
 
 func TestPosInt64(t *testing.T) {
-	r := PosWhtInt64(1)
+	r := PosInt64Wht(1)
 	if !r {
-		t.Errorf("PosWhtInt64 failed. Expected=true, actual=false")
+		t.Errorf("PosInt64Wht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWhtInt64(-1)
+	r = PosInt64Wht(-1)
 	if r {
-		t.Errorf("PosWhtInt64 failed. Expected=false, actual=true")
+		t.Errorf("PosInt64Wht failed. Expected=false, actual=true")
 	}
 
 	var zero int64
 	var one int64 = 1
-	rPtr := PosWhtInt64Ptr(&one)
+	rPtr := PosInt64WhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWhtInt64Ptr failed. Expected=true, actual=false")
+		t.Errorf("PosInt64WhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWhtInt64Ptr(&zero)
+	rPtr = PosInt64WhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWhtInt64Ptr failed. Expected=false, actual=true")
+		t.Errorf("PosInt64WhtPtr failed. Expected=false, actual=true")
 	}
 }
 
 func TestPosInt32(t *testing.T) {
-	r := PosWhtInt32(1)
+	r := PosInt32Wht(1)
 	if !r {
-		t.Errorf("PosWhtInt32 failed. Expected=true, actual=false")
+		t.Errorf("PosInt32Wht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWhtInt32(-1)
+	r = PosInt32Wht(-1)
 	if r {
-		t.Errorf("PosWhtInt32 failed. Expected=false, actual=true")
+		t.Errorf("PosInt32Wht failed. Expected=false, actual=true")
 	}
 
 	var zero int32
 	var one int32 = 1
-	rPtr := PosWhtInt32Ptr(&one)
+	rPtr := PosInt32WhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWhtInt32Ptr failed. Expected=true, actual=false")
+		t.Errorf("PosInt32WhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWhtInt32Ptr(&zero)
+	rPtr = PosInt32WhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWhtInt32Ptr failed. Expected=false, actual=true")
+		t.Errorf("PosInt32WhtPtr failed. Expected=false, actual=true")
 	}
 }
 
 func TestPosInt16(t *testing.T) {
-	r := PosWhtInt16(1)
+	r := PosInt16Wht(1)
 	if !r {
-		t.Errorf("PosWhtInt16 failed. Expected=true, actual=false")
+		t.Errorf("PosInt16Wht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWhtInt16(-1)
+	r = PosInt16Wht(-1)
 	if r {
-		t.Errorf("PosWhtInt16 failed. Expected=false, actual=true")
+		t.Errorf("PosInt16Wht failed. Expected=false, actual=true")
 	}
 
 	var zero int16
 	var one int16 = 1
-	rPtr := PosWhtInt16Ptr(&one)
+	rPtr := PosInt16WhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWhtInt16Ptr failed. Expected=true, actual=false")
+		t.Errorf("PosInt16WhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWhtInt16Ptr(&zero)
+	rPtr = PosInt16WhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWhtInt16Ptr failed. Expected=false, actual=true")
+		t.Errorf("PosInt16WhtPtr failed. Expected=false, actual=true")
 	}
 }
 
 func TestPosInt8(t *testing.T) {
-	r := PosWhtInt8(1)
+	r := PosInt8Wht(1)
 	if !r {
-		t.Errorf("PosWhtInt8 failed. Expected=true, actual=false")
+		t.Errorf("PosInt8Wht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWhtInt8(-1)
+	r = PosInt8Wht(-1)
 	if r {
-		t.Errorf("PosWhtInt8 failed. Expected=false, actual=true")
+		t.Errorf("PosInt8Wht failed. Expected=false, actual=true")
 	}
 
 	var zero int8
 	var one int8 = 1
-	rPtr := PosWhtInt8Ptr(&one)
+	rPtr := PosInt8WhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWhtInt8Ptr failed. Expected=true, actual=false")
+		t.Errorf("PosInt8WhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWhtInt8Ptr(&zero)
+	rPtr = PosInt8WhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWhtInt8Ptr failed. Expected=false, actual=true")
+		t.Errorf("PosInt8WhtPtr failed. Expected=false, actual=true")
 	}
 }
 
 func TestPosFloat32(t *testing.T) {
-	r := PosWhtFloat32(1)
+	r := PosFloat32Wht(1)
 	if !r {
-		t.Errorf("PosWhtFloat32 failed. Expected=true, actual=false")
+		t.Errorf("PosFloat32Wht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWhtFloat32(-1)
+	r = PosFloat32Wht(-1)
 	if r {
-		t.Errorf("PosWhtFloat32 failed. Expected=false, actual=true")
+		t.Errorf("PosFloat32Wht failed. Expected=false, actual=true")
 	}
 
 	var zero float32
 	var one float32 = 1
-	rPtr := PosWhtFloat32Ptr(&one)
+	rPtr := PosFloat32WhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWhtFloat32Ptr failed. Expected=true, actual=false")
+		t.Errorf("PosFloat32WhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWhtFloat32Ptr(&zero)
+	rPtr = PosFloat32WhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWhtFloat32Ptr failed. Expected=false, actual=true")
+		t.Errorf("PosFloat32WhtPtr failed. Expected=false, actual=true")
 	}
 }
 
 func TestPosFloat64(t *testing.T) {
-	r := PosWhtFloat64(1)
+	r := PosFloat64Wht(1)
 	if !r {
-		t.Errorf("PosWhtFloat64 failed. Expected=true, actual=false")
+		t.Errorf("PosFloat64Wht failed. Expected=true, actual=false")
 		t.Errorf(reflect.String.String())
 	}
 
-	r = PosWhtFloat64(-1)
+	r = PosFloat64Wht(-1)
 	if r {
-		t.Errorf("PosWhtFloat64 failed. Expected=false, actual=true")
+		t.Errorf("PosFloat64Wht failed. Expected=false, actual=true")
 	}
 
 	var zero float64
 	var one float64 = 1
-	rPtr := PosWhtFloat64Ptr(&one)
+	rPtr := PosFloat64WhtPtr(&one)
 	if !rPtr {
-		t.Errorf("PosWhtFloat64Ptr failed. Expected=true, actual=false")
+		t.Errorf("PosFloat64WhtPtr failed. Expected=true, actual=false")
 	}
 
-	rPtr = PosWhtFloat64Ptr(&zero)
+	rPtr = PosFloat64WhtPtr(&zero)
 	if rPtr {
-		t.Errorf("PosWhtFloat64Ptr failed. Expected=false, actual=true")
+		t.Errorf("PosFloat64WhtPtr failed. Expected=false, actual=true")
 	}
 }

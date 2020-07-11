@@ -3,16 +3,16 @@ package basic
 // PosWht is template
 func PosWht() string {
 	return `
-// PosWht<FTYPE> Returns true if num is greater than zero, else false
-func PosWht<FTYPE>(v <TYPE>) bool {
+// Pos<FTYPE>Wht Returns true if num is greater than zero, else false
+func Pos<FTYPE>Wht(v <TYPE>) bool {
 	if v > 0 {
 		return true
 	}
 	return false
 }
 
-// PosWht<FTYPE>Ptr Returns true if num is greater than zero, else false
-func PosWht<FTYPE>Ptr(v *<TYPE>) bool {
+// Pos<FTYPE>WhtPtr Returns true if num is greater than zero, else false
+func Pos<FTYPE>WhtPtr(v *<TYPE>) bool {
 	if *v > 0 {
 		return true
 	}
