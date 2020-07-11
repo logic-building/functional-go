@@ -21,7 +21,7 @@ go install github.com/logic-building/functional-go/gofp
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.9.0"
+version = "8.10.0"
 ```
 
 ### Quick Start
@@ -36,7 +36,7 @@ func square(num int) int {
 }
 
 ```
-#### Four variants of function 1 is given above and 3 are given below
+#### Four variants of function. 1 is given above and 3 are given below
 ##### MapInt, MapIntPtr, MapIntErr, MapIntPtrErr
 ### MapIntPtr
 ```
@@ -172,10 +172,10 @@ Note:
    C. "Employee, Teacher" :  User defined data types
    
 Options on go:generate :
-    A. -sort: to generate sorting functions for struct
+    A. -sort: generate sorting functions for struct will override default behavior of generating sorting functions by each member of sturct of basic types 
       //go:generate gofp -destination fp.go -pkg employee -type "Employee" -sort "Employee:Name, Employee:Salary"
       
-    B. -set: to generate set functions-Union, Intersection, Difference, Set, Superset, Subset for struct
+    B. -set: generate set functions-Union, Intersection, Difference, Set, Superset, Subset for struct will override default behavior of generating set functions by each member of struct of basic types
       //go:generate gofp -destination fp.go -pkg employee -type "Employee" -set "Employee:Name:string"
       
     C. -mapfun: To generate Merge & Zip functions for struct
@@ -241,37 +241,42 @@ Options on go:generate :
 2. Distinct<Type>
 3. Drop<Type>
 4. DropWhile<Type>
-5. Every<Type>
-6. Exists<Type>
-7. Filter<Type>
-8. FilterMap<Type>
-9. FilterMap<InputType><OutputType>
-10. Intersection<Type>
-11. Keys<Type>
-12. Map<Type>
-13. Map<InputType><OutputType>
-14. Max<Type>
-15. Merge<Type>
-16. Merge<Type1><Type2>
-17. Min<Type>
-18. MinMax<Type>
-19. PMap<Type>
-20. PMap<InputType><OutputType>
-21. Range<Type>
-22. Remove<Type>
-23. Reduce<Type>
-24. Rest<Type>
-25. Reverse<Type>
-26. Set<Type>
-27. Some<Type>
-28. Subset<Type>
-29. Superset<Type>
-30. Sort<Type>s
-31. Take<Type>
-32. TakeWhile<Type>
-33. Union<Type>
-34. Zip<Type>
-35. Zip<Type1><Type2>
+5. Even<Type>P
+6. Every<Type>
+7. Exists<Type>
+8. Filter<Type>
+9. FilterMap<Type>
+10. FilterMap<InputType><OutputType>
+11. Intersection<Type>
+12. Keys<Type>
+13. Map<Type>
+14. Map<InputType><OutputType>
+15. Max<Type>
+16. Merge<Type>
+17. Merge<Type1><Type2>
+18. Min<Type>
+19. MinMax<Type>
+20. Neg<Type>P
+21. Odd<Type>P
+22. PMap<Type>
+23. PMap<InputType><OutputType>
+24. Pos<Type>P
+25. Range<Type>
+26. Remove<Type>
+27. Reduce<Type>
+28. Rest<Type>
+29. Reverse<Type>
+30. Set<Type>
+31. Some<Type>
+32. Subset<Type>
+33. Superset<Type>
+34. Sort<Type>s
+35. Take<Type>
+36. TakeWhile<Type>
+37. Union<Type>
+38. Zero<Type>P
+39. Zip<Type>
+40. Zip<Type1><Type2>
 ```
 
 ### Contains functions
