@@ -1,191 +1,191 @@
 package fp
 
-// ZeroInt Returns true if num is zero, else false
-func ZeroInt(v int) bool {
+// ZeroIntWht Returns true if num is zero, else false
+func ZeroIntWht(v int) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroIntPtr Returns true if num is zero, else false
-func ZeroIntPtr(v *int) bool {
+// ZeroIntWhtPtr Returns true if num is zero, else false
+func ZeroIntWhtPtr(v *int) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt64 Returns true if num is zero, else false
-func ZeroInt64(v int64) bool {
+// ZeroInt64Wht Returns true if num is zero, else false
+func ZeroInt64Wht(v int64) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt64Ptr Returns true if num is zero, else false
-func ZeroInt64Ptr(v *int64) bool {
+// ZeroInt64WhtPtr Returns true if num is zero, else false
+func ZeroInt64WhtPtr(v *int64) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt32 Returns true if num is zero, else false
-func ZeroInt32(v int32) bool {
+// ZeroInt32Wht Returns true if num is zero, else false
+func ZeroInt32Wht(v int32) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt32Ptr Returns true if num is zero, else false
-func ZeroInt32Ptr(v *int32) bool {
+// ZeroInt32WhtPtr Returns true if num is zero, else false
+func ZeroInt32WhtPtr(v *int32) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt16 Returns true if num is zero, else false
-func ZeroInt16(v int16) bool {
+// ZeroInt16Wht Returns true if num is zero, else false
+func ZeroInt16Wht(v int16) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt16Ptr Returns true if num is zero, else false
-func ZeroInt16Ptr(v *int16) bool {
+// ZeroInt16WhtPtr Returns true if num is zero, else false
+func ZeroInt16WhtPtr(v *int16) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt8 Returns true if num is zero, else false
-func ZeroInt8(v int8) bool {
+// ZeroInt8Wht Returns true if num is zero, else false
+func ZeroInt8Wht(v int8) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroInt8Ptr Returns true if num is zero, else false
-func ZeroInt8Ptr(v *int8) bool {
+// ZeroInt8WhtPtr Returns true if num is zero, else false
+func ZeroInt8WhtPtr(v *int8) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint Returns true if num is zero, else false
-func ZeroUint(v uint) bool {
+// ZeroUintWht Returns true if num is zero, else false
+func ZeroUintWht(v uint) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUintPtr Returns true if num is zero, else false
-func ZeroUintPtr(v *uint) bool {
+// ZeroUintWhtPtr Returns true if num is zero, else false
+func ZeroUintWhtPtr(v *uint) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint64 Returns true if num is zero, else false
-func ZeroUint64(v uint64) bool {
+// ZeroUint64Wht Returns true if num is zero, else false
+func ZeroUint64Wht(v uint64) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint64Ptr Returns true if num is zero, else false
-func ZeroUint64Ptr(v *uint64) bool {
+// ZeroUint64WhtPtr Returns true if num is zero, else false
+func ZeroUint64WhtPtr(v *uint64) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint32 Returns true if num is zero, else false
-func ZeroUint32(v uint32) bool {
+// ZeroUint32Wht Returns true if num is zero, else false
+func ZeroUint32Wht(v uint32) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint32Ptr Returns true if num is zero, else false
-func ZeroUint32Ptr(v *uint32) bool {
+// ZeroUint32WhtPtr Returns true if num is zero, else false
+func ZeroUint32WhtPtr(v *uint32) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint16 Returns true if num is zero, else false
-func ZeroUint16(v uint16) bool {
+// ZeroUint16Wht Returns true if num is zero, else false
+func ZeroUint16Wht(v uint16) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint16Ptr Returns true if num is zero, else false
-func ZeroUint16Ptr(v *uint16) bool {
+// ZeroUint16WhtPtr Returns true if num is zero, else false
+func ZeroUint16WhtPtr(v *uint16) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint8 Returns true if num is zero, else false
-func ZeroUint8(v uint8) bool {
+// ZeroUint8Wht Returns true if num is zero, else false
+func ZeroUint8Wht(v uint8) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroUint8Ptr Returns true if num is zero, else false
-func ZeroUint8Ptr(v *uint8) bool {
+// ZeroUint8WhtPtr Returns true if num is zero, else false
+func ZeroUint8WhtPtr(v *uint8) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroFloat32 Returns true if num is zero, else false
-func ZeroFloat32(v float32) bool {
+// ZeroFloat32Wht Returns true if num is zero, else false
+func ZeroFloat32Wht(v float32) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroFloat32Ptr Returns true if num is zero, else false
-func ZeroFloat32Ptr(v *float32) bool {
+// ZeroFloat32WhtPtr Returns true if num is zero, else false
+func ZeroFloat32WhtPtr(v *float32) bool {
 	if *v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroFloat64 Returns true if num is zero, else false
-func ZeroFloat64(v float64) bool {
+// ZeroFloat64Wht Returns true if num is zero, else false
+func ZeroFloat64Wht(v float64) bool {
 	if v == 0 {
 		return true
 	}
 	return false
 }
 
-// ZeroFloat64Ptr Returns true if num is zero, else false
-func ZeroFloat64Ptr(v *float64) bool {
+// ZeroFloat64WhtPtr Returns true if num is zero, else false
+func ZeroFloat64WhtPtr(v *float64) bool {
 	if *v == 0 {
 		return true
 	}
