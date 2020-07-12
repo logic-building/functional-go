@@ -1120,7 +1120,7 @@ func findStructNamesAndFieldsGivenInGoGenerate() map[string][]string {
 						dataType := strings.TrimSpace(words[1])
 
 						switch dataType {
-						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "time.Time":
+						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string":
 							structFields = append(structFields, field+" "+dataType)
 						}
 					}

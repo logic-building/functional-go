@@ -1036,6 +1036,7 @@ func TakePtr(n int, list []*Employer) []*Employer {
 	}
 	return newList
 }
+
 func MapEmployee(f func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
 	if f == nil {
 		return []employee.Employee{}
@@ -2069,6 +2070,7 @@ func TakeEmployeePtr(n int, list []*employee.Employee) []*employee.Employee {
 	return newList
 }
 
+
 // MapEmployerEmployee takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployerEmployee(f func(Employer) employee.Employee, list []Employer) []employee.Employee {
@@ -2082,7 +2084,7 @@ func MapEmployerEmployee(f func(Employer) employee.Employee, list []Employer) []
 	return newList
 }
 
-// MapEmployerEmployee takes two inputs -
+// MapEmployerEmployeeErr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
 func MapEmployerEmployeeErr(f func(Employer) (employee.Employee, error), list []Employer) ([]employee.Employee, error) {
 	if f == nil {
@@ -2099,7 +2101,7 @@ func MapEmployerEmployeeErr(f func(Employer) (employee.Employee, error), list []
 	return newList, nil
 }
 
-// MapEmployerEmployee takes two inputs -
+// MapEmployerEmployeePtr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployerEmployeePtr(f func(*Employer) *employee.Employee, list []*Employer) []*employee.Employee {
 	if f == nil {
@@ -2416,7 +2418,7 @@ func MapEmployerInt(f func(Employer) int, list []Employer) []int {
 	return newList
 }
 
-// MapEmployerInt takes two inputs -
+// MapEmployerIntErr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
 func MapEmployerIntErr(f func(Employer) (int, error), list []Employer) ([]int, error) {
 	if f == nil {
@@ -2433,7 +2435,7 @@ func MapEmployerIntErr(f func(Employer) (int, error), list []Employer) ([]int, e
 	return newList, nil
 }
 
-// MapEmployerInt takes two inputs -
+// MapEmployerIntPtr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployerIntPtr(f func(*Employer) *int, list []*Employer) []*int {
 	if f == nil {
@@ -2750,7 +2752,7 @@ func MapEmployeeEmployer(f func(employee.Employee) Employer, list []employee.Emp
 	return newList
 }
 
-// MapEmployeeEmployer takes two inputs -
+// MapEmployeeEmployerErr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
 func MapEmployeeEmployerErr(f func(employee.Employee) (Employer, error), list []employee.Employee) ([]Employer, error) {
 	if f == nil {
@@ -2767,7 +2769,7 @@ func MapEmployeeEmployerErr(f func(employee.Employee) (Employer, error), list []
 	return newList, nil
 }
 
-// MapEmployeeEmployer takes two inputs -
+// MapEmployeeEmployerPtr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployeeEmployerPtr(f func(*employee.Employee) *Employer, list []*employee.Employee) []*Employer {
 	if f == nil {
@@ -3084,7 +3086,7 @@ func MapEmployeeInt(f func(employee.Employee) int, list []employee.Employee) []i
 	return newList
 }
 
-// MapEmployeeInt takes two inputs -
+// MapEmployeeIntErr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
 func MapEmployeeIntErr(f func(employee.Employee) (int, error), list []employee.Employee) ([]int, error) {
 	if f == nil {
@@ -3101,7 +3103,7 @@ func MapEmployeeIntErr(f func(employee.Employee) (int, error), list []employee.E
 	return newList, nil
 }
 
-// MapEmployeeInt takes two inputs -
+// MapEmployeeIntPtr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapEmployeeIntPtr(f func(*employee.Employee) *int, list []*employee.Employee) []*int {
 	if f == nil {
@@ -3418,7 +3420,7 @@ func MapIntEmployer(f func(int) Employer, list []int) []Employer {
 	return newList
 }
 
-// MapIntEmployer takes two inputs -
+// MapIntEmployerErr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
 func MapIntEmployerErr(f func(int) (Employer, error), list []int) ([]Employer, error) {
 	if f == nil {
@@ -3435,7 +3437,7 @@ func MapIntEmployerErr(f func(int) (Employer, error), list []int) ([]Employer, e
 	return newList, nil
 }
 
-// MapIntEmployer takes two inputs -
+// MapIntEmployerPtr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapIntEmployerPtr(f func(*int) *Employer, list []*int) []*Employer {
 	if f == nil {
@@ -3752,7 +3754,7 @@ func MapIntEmployee(f func(int) employee.Employee, list []int) []employee.Employ
 	return newList
 }
 
-// MapIntEmployee takes two inputs -
+// MapIntEmployeeErr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list and error
 func MapIntEmployeeErr(f func(int) (employee.Employee, error), list []int) ([]employee.Employee, error) {
 	if f == nil {
@@ -3769,7 +3771,7 @@ func MapIntEmployeeErr(f func(int) (employee.Employee, error), list []int) ([]em
 	return newList, nil
 }
 
-// MapIntEmployee takes two inputs -
+// MapIntEmployeePtr takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list
 func MapIntEmployeePtr(f func(*int) *employee.Employee, list []*int) []*employee.Employee {
 	if f == nil {
