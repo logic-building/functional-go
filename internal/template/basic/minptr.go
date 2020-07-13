@@ -7,7 +7,7 @@ func MinPtr() string {
 // Return 0 if the list is either empty or nil
 func Min<FTYPE>Ptr(list []*<TYPE>) *<TYPE> {
 	if list == nil || len(list) == 0 {
-		var zero <TYPE> = 0
+		var zero <TYPE>
 		return &zero
 	}
 	min := list[0]

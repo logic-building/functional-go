@@ -15,7 +15,6 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	var vi2 <INPUT_TYPE> = 2
 	var vi3 <INPUT_TYPE> = 3
 
-
 	expectedList := []*<OUTPUT_TYPE>{&vo2, &vo3, &vo4}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Ptr, []*<INPUT_TYPE>{&vi1, &vi2, &vi3})
 
@@ -116,7 +115,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 
 	var v10 <INPUT_TYPE> = 10
 	var v0 <INPUT_TYPE>
-	
+
 	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr, []*<INPUT_TYPE>{&v10, &v0})
 
@@ -174,7 +173,8 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	var vf <INPUT_TYPE> = false
 
 	var v10 <OUTPUT_TYPE> = 10
-	var v0 <OUTPUT_TYPE> 
+	var v0 <OUTPUT_TYPE>
+
 	// Test : someLogic
 	expectedList := []*<OUTPUT_TYPE>{&v10, &v0}
 	newList := Map<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr, []*<INPUT_TYPE>{&vt, &vf})
@@ -236,7 +236,6 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	var vi1 <INPUT_TYPE> = 1
 	var vi2 <INPUT_TYPE> = 2
 	var vi3 <INPUT_TYPE> = 3
-
 
 	expectedList := []*<OUTPUT_TYPE>{&vo2, &vo3}
 	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi1, &vi2})
@@ -317,7 +316,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 <OUTPUT_TYPE> = "10"
 	var vi10 <INPUT_TYPE> = 10
-	var vi0 <INPUT_TYPE> 
+	var vi0 <INPUT_TYPE>
 
 	expectedList := []*<OUTPUT_TYPE>{&vo10}
 	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vi10})
@@ -364,7 +363,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	var vf <OUTPUT_TYPE> = false
 
 	var v10 <INPUT_TYPE> = 10
-	var v0 <INPUT_TYPE> 
+	var v0 <INPUT_TYPE>
 	var v3 <INPUT_TYPE> = 3
 	
 	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}
@@ -437,7 +436,8 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	var vf <INPUT_TYPE> = false
 
 	var v10 <OUTPUT_TYPE> = 10
-	var v0 <OUTPUT_TYPE> 
+	var v0 <OUTPUT_TYPE>
+
 	// Test : someLogic
 	expectedList := []*<OUTPUT_TYPE>{&v10, &v0}
 	newList, _ := Map<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr, []*<INPUT_TYPE>{&vt, &vt})

@@ -15,7 +15,6 @@ func TestMapIntInt64PtrErr(t *testing.T) {
 	var vi2 int = 2
 	var vi3 int = 3
 
-
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapIntInt64PtrErr(plusOneIntInt64PtrErr, []*int{&vi1, &vi2})
 
@@ -48,7 +47,6 @@ func TestMapIntInt32PtrErr(t *testing.T) {
 	var vi1 int = 1
 	var vi2 int = 2
 	var vi3 int = 3
-
 
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapIntInt32PtrErr(plusOneIntInt32PtrErr, []*int{&vi1, &vi2})
@@ -83,7 +81,6 @@ func TestMapIntInt16PtrErr(t *testing.T) {
 	var vi2 int = 2
 	var vi3 int = 3
 
-
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapIntInt16PtrErr(plusOneIntInt16PtrErr, []*int{&vi1, &vi2})
 
@@ -116,7 +113,6 @@ func TestMapIntInt8PtrErr(t *testing.T) {
 	var vi1 int = 1
 	var vi2 int = 2
 	var vi3 int = 3
-
 
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapIntInt8PtrErr(plusOneIntInt8PtrErr, []*int{&vi1, &vi2})
@@ -151,7 +147,6 @@ func TestMapIntUintPtrErr(t *testing.T) {
 	var vi2 int = 2
 	var vi3 int = 3
 
-
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapIntUintPtrErr(plusOneIntUintPtrErr, []*int{&vi1, &vi2})
 
@@ -184,7 +179,6 @@ func TestMapIntUint64PtrErr(t *testing.T) {
 	var vi1 int = 1
 	var vi2 int = 2
 	var vi3 int = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapIntUint64PtrErr(plusOneIntUint64PtrErr, []*int{&vi1, &vi2})
@@ -219,7 +213,6 @@ func TestMapIntUint32PtrErr(t *testing.T) {
 	var vi2 int = 2
 	var vi3 int = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapIntUint32PtrErr(plusOneIntUint32PtrErr, []*int{&vi1, &vi2})
 
@@ -252,7 +245,6 @@ func TestMapIntUint16PtrErr(t *testing.T) {
 	var vi1 int = 1
 	var vi2 int = 2
 	var vi3 int = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapIntUint16PtrErr(plusOneIntUint16PtrErr, []*int{&vi1, &vi2})
@@ -287,7 +279,6 @@ func TestMapIntUint8PtrErr(t *testing.T) {
 	var vi2 int = 2
 	var vi3 int = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapIntUint8PtrErr(plusOneIntUint8PtrErr, []*int{&vi1, &vi2})
 
@@ -316,7 +307,7 @@ func TestMapIntStrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int = 10
-	var vi0 int 
+	var vi0 int
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapIntStrPtrErr(someLogicIntStrPtrErr, []*int{&vi10})
@@ -358,7 +349,7 @@ func TestMapIntBoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int = 10
-	var v0 int 
+	var v0 int
 	var v3 int = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -393,7 +384,6 @@ func TestMapIntFloat32PtrErr(t *testing.T) {
 	var vi2 int = 2
 	var vi3 int = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapIntFloat32PtrErr(plusOneIntFloat32PtrErr, []*int{&vi1, &vi2})
 
@@ -426,7 +416,6 @@ func TestMapIntFloat64PtrErr(t *testing.T) {
 	var vi1 int = 1
 	var vi2 int = 2
 	var vi3 int = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapIntFloat64PtrErr(plusOneIntFloat64PtrErr, []*int{&vi1, &vi2})
@@ -461,7 +450,6 @@ func TestMapInt64IntPtrErr(t *testing.T) {
 	var vi2 int64 = 2
 	var vi3 int64 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapInt64IntPtrErr(plusOneInt64IntPtrErr, []*int64{&vi1, &vi2})
 
@@ -494,7 +482,6 @@ func TestMapInt64Int32PtrErr(t *testing.T) {
 	var vi1 int64 = 1
 	var vi2 int64 = 2
 	var vi3 int64 = 3
-
 
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapInt64Int32PtrErr(plusOneInt64Int32PtrErr, []*int64{&vi1, &vi2})
@@ -529,7 +516,6 @@ func TestMapInt64Int16PtrErr(t *testing.T) {
 	var vi2 int64 = 2
 	var vi3 int64 = 3
 
-
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapInt64Int16PtrErr(plusOneInt64Int16PtrErr, []*int64{&vi1, &vi2})
 
@@ -562,7 +548,6 @@ func TestMapInt64Int8PtrErr(t *testing.T) {
 	var vi1 int64 = 1
 	var vi2 int64 = 2
 	var vi3 int64 = 3
-
 
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapInt64Int8PtrErr(plusOneInt64Int8PtrErr, []*int64{&vi1, &vi2})
@@ -597,7 +582,6 @@ func TestMapInt64UintPtrErr(t *testing.T) {
 	var vi2 int64 = 2
 	var vi3 int64 = 3
 
-
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapInt64UintPtrErr(plusOneInt64UintPtrErr, []*int64{&vi1, &vi2})
 
@@ -630,7 +614,6 @@ func TestMapInt64Uint64PtrErr(t *testing.T) {
 	var vi1 int64 = 1
 	var vi2 int64 = 2
 	var vi3 int64 = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapInt64Uint64PtrErr(plusOneInt64Uint64PtrErr, []*int64{&vi1, &vi2})
@@ -665,7 +648,6 @@ func TestMapInt64Uint32PtrErr(t *testing.T) {
 	var vi2 int64 = 2
 	var vi3 int64 = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapInt64Uint32PtrErr(plusOneInt64Uint32PtrErr, []*int64{&vi1, &vi2})
 
@@ -698,7 +680,6 @@ func TestMapInt64Uint16PtrErr(t *testing.T) {
 	var vi1 int64 = 1
 	var vi2 int64 = 2
 	var vi3 int64 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapInt64Uint16PtrErr(plusOneInt64Uint16PtrErr, []*int64{&vi1, &vi2})
@@ -733,7 +714,6 @@ func TestMapInt64Uint8PtrErr(t *testing.T) {
 	var vi2 int64 = 2
 	var vi3 int64 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapInt64Uint8PtrErr(plusOneInt64Uint8PtrErr, []*int64{&vi1, &vi2})
 
@@ -762,7 +742,7 @@ func TestMapInt64StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int64 = 10
-	var vi0 int64 
+	var vi0 int64
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapInt64StrPtrErr(someLogicInt64StrPtrErr, []*int64{&vi10})
@@ -804,7 +784,7 @@ func TestMapInt64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int64 = 10
-	var v0 int64 
+	var v0 int64
 	var v3 int64 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -839,7 +819,6 @@ func TestMapInt64Float32PtrErr(t *testing.T) {
 	var vi2 int64 = 2
 	var vi3 int64 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapInt64Float32PtrErr(plusOneInt64Float32PtrErr, []*int64{&vi1, &vi2})
 
@@ -872,7 +851,6 @@ func TestMapInt64Float64PtrErr(t *testing.T) {
 	var vi1 int64 = 1
 	var vi2 int64 = 2
 	var vi3 int64 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapInt64Float64PtrErr(plusOneInt64Float64PtrErr, []*int64{&vi1, &vi2})
@@ -907,7 +885,6 @@ func TestMapInt32IntPtrErr(t *testing.T) {
 	var vi2 int32 = 2
 	var vi3 int32 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapInt32IntPtrErr(plusOneInt32IntPtrErr, []*int32{&vi1, &vi2})
 
@@ -940,7 +917,6 @@ func TestMapInt32Int64PtrErr(t *testing.T) {
 	var vi1 int32 = 1
 	var vi2 int32 = 2
 	var vi3 int32 = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapInt32Int64PtrErr(plusOneInt32Int64PtrErr, []*int32{&vi1, &vi2})
@@ -975,7 +951,6 @@ func TestMapInt32Int16PtrErr(t *testing.T) {
 	var vi2 int32 = 2
 	var vi3 int32 = 3
 
-
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapInt32Int16PtrErr(plusOneInt32Int16PtrErr, []*int32{&vi1, &vi2})
 
@@ -1008,7 +983,6 @@ func TestMapInt32Int8PtrErr(t *testing.T) {
 	var vi1 int32 = 1
 	var vi2 int32 = 2
 	var vi3 int32 = 3
-
 
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapInt32Int8PtrErr(plusOneInt32Int8PtrErr, []*int32{&vi1, &vi2})
@@ -1043,7 +1017,6 @@ func TestMapInt32UintPtrErr(t *testing.T) {
 	var vi2 int32 = 2
 	var vi3 int32 = 3
 
-
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapInt32UintPtrErr(plusOneInt32UintPtrErr, []*int32{&vi1, &vi2})
 
@@ -1076,7 +1049,6 @@ func TestMapInt32Uint64PtrErr(t *testing.T) {
 	var vi1 int32 = 1
 	var vi2 int32 = 2
 	var vi3 int32 = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapInt32Uint64PtrErr(plusOneInt32Uint64PtrErr, []*int32{&vi1, &vi2})
@@ -1111,7 +1083,6 @@ func TestMapInt32Uint32PtrErr(t *testing.T) {
 	var vi2 int32 = 2
 	var vi3 int32 = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapInt32Uint32PtrErr(plusOneInt32Uint32PtrErr, []*int32{&vi1, &vi2})
 
@@ -1144,7 +1115,6 @@ func TestMapInt32Uint16PtrErr(t *testing.T) {
 	var vi1 int32 = 1
 	var vi2 int32 = 2
 	var vi3 int32 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapInt32Uint16PtrErr(plusOneInt32Uint16PtrErr, []*int32{&vi1, &vi2})
@@ -1179,7 +1149,6 @@ func TestMapInt32Uint8PtrErr(t *testing.T) {
 	var vi2 int32 = 2
 	var vi3 int32 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapInt32Uint8PtrErr(plusOneInt32Uint8PtrErr, []*int32{&vi1, &vi2})
 
@@ -1208,7 +1177,7 @@ func TestMapInt32StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int32 = 10
-	var vi0 int32 
+	var vi0 int32
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapInt32StrPtrErr(someLogicInt32StrPtrErr, []*int32{&vi10})
@@ -1250,7 +1219,7 @@ func TestMapInt32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int32 = 10
-	var v0 int32 
+	var v0 int32
 	var v3 int32 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -1285,7 +1254,6 @@ func TestMapInt32Float32PtrErr(t *testing.T) {
 	var vi2 int32 = 2
 	var vi3 int32 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapInt32Float32PtrErr(plusOneInt32Float32PtrErr, []*int32{&vi1, &vi2})
 
@@ -1318,7 +1286,6 @@ func TestMapInt32Float64PtrErr(t *testing.T) {
 	var vi1 int32 = 1
 	var vi2 int32 = 2
 	var vi3 int32 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapInt32Float64PtrErr(plusOneInt32Float64PtrErr, []*int32{&vi1, &vi2})
@@ -1353,7 +1320,6 @@ func TestMapInt16IntPtrErr(t *testing.T) {
 	var vi2 int16 = 2
 	var vi3 int16 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapInt16IntPtrErr(plusOneInt16IntPtrErr, []*int16{&vi1, &vi2})
 
@@ -1386,7 +1352,6 @@ func TestMapInt16Int64PtrErr(t *testing.T) {
 	var vi1 int16 = 1
 	var vi2 int16 = 2
 	var vi3 int16 = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapInt16Int64PtrErr(plusOneInt16Int64PtrErr, []*int16{&vi1, &vi2})
@@ -1421,7 +1386,6 @@ func TestMapInt16Int32PtrErr(t *testing.T) {
 	var vi2 int16 = 2
 	var vi3 int16 = 3
 
-
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapInt16Int32PtrErr(plusOneInt16Int32PtrErr, []*int16{&vi1, &vi2})
 
@@ -1454,7 +1418,6 @@ func TestMapInt16Int8PtrErr(t *testing.T) {
 	var vi1 int16 = 1
 	var vi2 int16 = 2
 	var vi3 int16 = 3
-
 
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapInt16Int8PtrErr(plusOneInt16Int8PtrErr, []*int16{&vi1, &vi2})
@@ -1489,7 +1452,6 @@ func TestMapInt16UintPtrErr(t *testing.T) {
 	var vi2 int16 = 2
 	var vi3 int16 = 3
 
-
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapInt16UintPtrErr(plusOneInt16UintPtrErr, []*int16{&vi1, &vi2})
 
@@ -1522,7 +1484,6 @@ func TestMapInt16Uint64PtrErr(t *testing.T) {
 	var vi1 int16 = 1
 	var vi2 int16 = 2
 	var vi3 int16 = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapInt16Uint64PtrErr(plusOneInt16Uint64PtrErr, []*int16{&vi1, &vi2})
@@ -1557,7 +1518,6 @@ func TestMapInt16Uint32PtrErr(t *testing.T) {
 	var vi2 int16 = 2
 	var vi3 int16 = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapInt16Uint32PtrErr(plusOneInt16Uint32PtrErr, []*int16{&vi1, &vi2})
 
@@ -1590,7 +1550,6 @@ func TestMapInt16Uint16PtrErr(t *testing.T) {
 	var vi1 int16 = 1
 	var vi2 int16 = 2
 	var vi3 int16 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapInt16Uint16PtrErr(plusOneInt16Uint16PtrErr, []*int16{&vi1, &vi2})
@@ -1625,7 +1584,6 @@ func TestMapInt16Uint8PtrErr(t *testing.T) {
 	var vi2 int16 = 2
 	var vi3 int16 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapInt16Uint8PtrErr(plusOneInt16Uint8PtrErr, []*int16{&vi1, &vi2})
 
@@ -1654,7 +1612,7 @@ func TestMapInt16StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int16 = 10
-	var vi0 int16 
+	var vi0 int16
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapInt16StrPtrErr(someLogicInt16StrPtrErr, []*int16{&vi10})
@@ -1696,7 +1654,7 @@ func TestMapInt16BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int16 = 10
-	var v0 int16 
+	var v0 int16
 	var v3 int16 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -1731,7 +1689,6 @@ func TestMapInt16Float32PtrErr(t *testing.T) {
 	var vi2 int16 = 2
 	var vi3 int16 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapInt16Float32PtrErr(plusOneInt16Float32PtrErr, []*int16{&vi1, &vi2})
 
@@ -1764,7 +1721,6 @@ func TestMapInt16Float64PtrErr(t *testing.T) {
 	var vi1 int16 = 1
 	var vi2 int16 = 2
 	var vi3 int16 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapInt16Float64PtrErr(plusOneInt16Float64PtrErr, []*int16{&vi1, &vi2})
@@ -1799,7 +1755,6 @@ func TestMapInt8IntPtrErr(t *testing.T) {
 	var vi2 int8 = 2
 	var vi3 int8 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapInt8IntPtrErr(plusOneInt8IntPtrErr, []*int8{&vi1, &vi2})
 
@@ -1832,7 +1787,6 @@ func TestMapInt8Int64PtrErr(t *testing.T) {
 	var vi1 int8 = 1
 	var vi2 int8 = 2
 	var vi3 int8 = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapInt8Int64PtrErr(plusOneInt8Int64PtrErr, []*int8{&vi1, &vi2})
@@ -1867,7 +1821,6 @@ func TestMapInt8Int32PtrErr(t *testing.T) {
 	var vi2 int8 = 2
 	var vi3 int8 = 3
 
-
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapInt8Int32PtrErr(plusOneInt8Int32PtrErr, []*int8{&vi1, &vi2})
 
@@ -1900,7 +1853,6 @@ func TestMapInt8Int16PtrErr(t *testing.T) {
 	var vi1 int8 = 1
 	var vi2 int8 = 2
 	var vi3 int8 = 3
-
 
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapInt8Int16PtrErr(plusOneInt8Int16PtrErr, []*int8{&vi1, &vi2})
@@ -1935,7 +1887,6 @@ func TestMapInt8UintPtrErr(t *testing.T) {
 	var vi2 int8 = 2
 	var vi3 int8 = 3
 
-
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapInt8UintPtrErr(plusOneInt8UintPtrErr, []*int8{&vi1, &vi2})
 
@@ -1968,7 +1919,6 @@ func TestMapInt8Uint64PtrErr(t *testing.T) {
 	var vi1 int8 = 1
 	var vi2 int8 = 2
 	var vi3 int8 = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapInt8Uint64PtrErr(plusOneInt8Uint64PtrErr, []*int8{&vi1, &vi2})
@@ -2003,7 +1953,6 @@ func TestMapInt8Uint32PtrErr(t *testing.T) {
 	var vi2 int8 = 2
 	var vi3 int8 = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapInt8Uint32PtrErr(plusOneInt8Uint32PtrErr, []*int8{&vi1, &vi2})
 
@@ -2036,7 +1985,6 @@ func TestMapInt8Uint16PtrErr(t *testing.T) {
 	var vi1 int8 = 1
 	var vi2 int8 = 2
 	var vi3 int8 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapInt8Uint16PtrErr(plusOneInt8Uint16PtrErr, []*int8{&vi1, &vi2})
@@ -2071,7 +2019,6 @@ func TestMapInt8Uint8PtrErr(t *testing.T) {
 	var vi2 int8 = 2
 	var vi3 int8 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapInt8Uint8PtrErr(plusOneInt8Uint8PtrErr, []*int8{&vi1, &vi2})
 
@@ -2100,7 +2047,7 @@ func TestMapInt8StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 int8 = 10
-	var vi0 int8 
+	var vi0 int8
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapInt8StrPtrErr(someLogicInt8StrPtrErr, []*int8{&vi10})
@@ -2142,7 +2089,7 @@ func TestMapInt8BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int8 = 10
-	var v0 int8 
+	var v0 int8
 	var v3 int8 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -2177,7 +2124,6 @@ func TestMapInt8Float32PtrErr(t *testing.T) {
 	var vi2 int8 = 2
 	var vi3 int8 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapInt8Float32PtrErr(plusOneInt8Float32PtrErr, []*int8{&vi1, &vi2})
 
@@ -2210,7 +2156,6 @@ func TestMapInt8Float64PtrErr(t *testing.T) {
 	var vi1 int8 = 1
 	var vi2 int8 = 2
 	var vi3 int8 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapInt8Float64PtrErr(plusOneInt8Float64PtrErr, []*int8{&vi1, &vi2})
@@ -2245,7 +2190,6 @@ func TestMapUintIntPtrErr(t *testing.T) {
 	var vi2 uint = 2
 	var vi3 uint = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapUintIntPtrErr(plusOneUintIntPtrErr, []*uint{&vi1, &vi2})
 
@@ -2278,7 +2222,6 @@ func TestMapUintInt64PtrErr(t *testing.T) {
 	var vi1 uint = 1
 	var vi2 uint = 2
 	var vi3 uint = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapUintInt64PtrErr(plusOneUintInt64PtrErr, []*uint{&vi1, &vi2})
@@ -2313,7 +2256,6 @@ func TestMapUintInt32PtrErr(t *testing.T) {
 	var vi2 uint = 2
 	var vi3 uint = 3
 
-
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapUintInt32PtrErr(plusOneUintInt32PtrErr, []*uint{&vi1, &vi2})
 
@@ -2346,7 +2288,6 @@ func TestMapUintInt16PtrErr(t *testing.T) {
 	var vi1 uint = 1
 	var vi2 uint = 2
 	var vi3 uint = 3
-
 
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapUintInt16PtrErr(plusOneUintInt16PtrErr, []*uint{&vi1, &vi2})
@@ -2381,7 +2322,6 @@ func TestMapUintInt8PtrErr(t *testing.T) {
 	var vi2 uint = 2
 	var vi3 uint = 3
 
-
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapUintInt8PtrErr(plusOneUintInt8PtrErr, []*uint{&vi1, &vi2})
 
@@ -2414,7 +2354,6 @@ func TestMapUintUint64PtrErr(t *testing.T) {
 	var vi1 uint = 1
 	var vi2 uint = 2
 	var vi3 uint = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapUintUint64PtrErr(plusOneUintUint64PtrErr, []*uint{&vi1, &vi2})
@@ -2449,7 +2388,6 @@ func TestMapUintUint32PtrErr(t *testing.T) {
 	var vi2 uint = 2
 	var vi3 uint = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapUintUint32PtrErr(plusOneUintUint32PtrErr, []*uint{&vi1, &vi2})
 
@@ -2482,7 +2420,6 @@ func TestMapUintUint16PtrErr(t *testing.T) {
 	var vi1 uint = 1
 	var vi2 uint = 2
 	var vi3 uint = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapUintUint16PtrErr(plusOneUintUint16PtrErr, []*uint{&vi1, &vi2})
@@ -2517,7 +2454,6 @@ func TestMapUintUint8PtrErr(t *testing.T) {
 	var vi2 uint = 2
 	var vi3 uint = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapUintUint8PtrErr(plusOneUintUint8PtrErr, []*uint{&vi1, &vi2})
 
@@ -2546,7 +2482,7 @@ func TestMapUintStrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint = 10
-	var vi0 uint 
+	var vi0 uint
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapUintStrPtrErr(someLogicUintStrPtrErr, []*uint{&vi10})
@@ -2588,7 +2524,7 @@ func TestMapUintBoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint = 10
-	var v0 uint 
+	var v0 uint
 	var v3 uint = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -2623,7 +2559,6 @@ func TestMapUintFloat32PtrErr(t *testing.T) {
 	var vi2 uint = 2
 	var vi3 uint = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapUintFloat32PtrErr(plusOneUintFloat32PtrErr, []*uint{&vi1, &vi2})
 
@@ -2656,7 +2591,6 @@ func TestMapUintFloat64PtrErr(t *testing.T) {
 	var vi1 uint = 1
 	var vi2 uint = 2
 	var vi3 uint = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapUintFloat64PtrErr(plusOneUintFloat64PtrErr, []*uint{&vi1, &vi2})
@@ -2691,7 +2625,6 @@ func TestMapUint64IntPtrErr(t *testing.T) {
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapUint64IntPtrErr(plusOneUint64IntPtrErr, []*uint64{&vi1, &vi2})
 
@@ -2724,7 +2657,6 @@ func TestMapUint64Int64PtrErr(t *testing.T) {
 	var vi1 uint64 = 1
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapUint64Int64PtrErr(plusOneUint64Int64PtrErr, []*uint64{&vi1, &vi2})
@@ -2759,7 +2691,6 @@ func TestMapUint64Int32PtrErr(t *testing.T) {
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
 
-
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapUint64Int32PtrErr(plusOneUint64Int32PtrErr, []*uint64{&vi1, &vi2})
 
@@ -2792,7 +2723,6 @@ func TestMapUint64Int16PtrErr(t *testing.T) {
 	var vi1 uint64 = 1
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
-
 
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapUint64Int16PtrErr(plusOneUint64Int16PtrErr, []*uint64{&vi1, &vi2})
@@ -2827,7 +2757,6 @@ func TestMapUint64Int8PtrErr(t *testing.T) {
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
 
-
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapUint64Int8PtrErr(plusOneUint64Int8PtrErr, []*uint64{&vi1, &vi2})
 
@@ -2860,7 +2789,6 @@ func TestMapUint64UintPtrErr(t *testing.T) {
 	var vi1 uint64 = 1
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
-
 
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapUint64UintPtrErr(plusOneUint64UintPtrErr, []*uint64{&vi1, &vi2})
@@ -2895,7 +2823,6 @@ func TestMapUint64Uint32PtrErr(t *testing.T) {
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapUint64Uint32PtrErr(plusOneUint64Uint32PtrErr, []*uint64{&vi1, &vi2})
 
@@ -2928,7 +2855,6 @@ func TestMapUint64Uint16PtrErr(t *testing.T) {
 	var vi1 uint64 = 1
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapUint64Uint16PtrErr(plusOneUint64Uint16PtrErr, []*uint64{&vi1, &vi2})
@@ -2963,7 +2889,6 @@ func TestMapUint64Uint8PtrErr(t *testing.T) {
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapUint64Uint8PtrErr(plusOneUint64Uint8PtrErr, []*uint64{&vi1, &vi2})
 
@@ -2992,7 +2917,7 @@ func TestMapUint64StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint64 = 10
-	var vi0 uint64 
+	var vi0 uint64
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapUint64StrPtrErr(someLogicUint64StrPtrErr, []*uint64{&vi10})
@@ -3034,7 +2959,7 @@ func TestMapUint64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint64 = 10
-	var v0 uint64 
+	var v0 uint64
 	var v3 uint64 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -3069,7 +2994,6 @@ func TestMapUint64Float32PtrErr(t *testing.T) {
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapUint64Float32PtrErr(plusOneUint64Float32PtrErr, []*uint64{&vi1, &vi2})
 
@@ -3102,7 +3026,6 @@ func TestMapUint64Float64PtrErr(t *testing.T) {
 	var vi1 uint64 = 1
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapUint64Float64PtrErr(plusOneUint64Float64PtrErr, []*uint64{&vi1, &vi2})
@@ -3137,7 +3060,6 @@ func TestMapUint32IntPtrErr(t *testing.T) {
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapUint32IntPtrErr(plusOneUint32IntPtrErr, []*uint32{&vi1, &vi2})
 
@@ -3170,7 +3092,6 @@ func TestMapUint32Int64PtrErr(t *testing.T) {
 	var vi1 uint32 = 1
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapUint32Int64PtrErr(plusOneUint32Int64PtrErr, []*uint32{&vi1, &vi2})
@@ -3205,7 +3126,6 @@ func TestMapUint32Int32PtrErr(t *testing.T) {
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
 
-
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapUint32Int32PtrErr(plusOneUint32Int32PtrErr, []*uint32{&vi1, &vi2})
 
@@ -3238,7 +3158,6 @@ func TestMapUint32Int16PtrErr(t *testing.T) {
 	var vi1 uint32 = 1
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
-
 
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapUint32Int16PtrErr(plusOneUint32Int16PtrErr, []*uint32{&vi1, &vi2})
@@ -3273,7 +3192,6 @@ func TestMapUint32Int8PtrErr(t *testing.T) {
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
 
-
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapUint32Int8PtrErr(plusOneUint32Int8PtrErr, []*uint32{&vi1, &vi2})
 
@@ -3306,7 +3224,6 @@ func TestMapUint32UintPtrErr(t *testing.T) {
 	var vi1 uint32 = 1
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
-
 
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapUint32UintPtrErr(plusOneUint32UintPtrErr, []*uint32{&vi1, &vi2})
@@ -3341,7 +3258,6 @@ func TestMapUint32Uint64PtrErr(t *testing.T) {
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
 
-
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapUint32Uint64PtrErr(plusOneUint32Uint64PtrErr, []*uint32{&vi1, &vi2})
 
@@ -3374,7 +3290,6 @@ func TestMapUint32Uint16PtrErr(t *testing.T) {
 	var vi1 uint32 = 1
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapUint32Uint16PtrErr(plusOneUint32Uint16PtrErr, []*uint32{&vi1, &vi2})
@@ -3409,7 +3324,6 @@ func TestMapUint32Uint8PtrErr(t *testing.T) {
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapUint32Uint8PtrErr(plusOneUint32Uint8PtrErr, []*uint32{&vi1, &vi2})
 
@@ -3438,7 +3352,7 @@ func TestMapUint32StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint32 = 10
-	var vi0 uint32 
+	var vi0 uint32
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapUint32StrPtrErr(someLogicUint32StrPtrErr, []*uint32{&vi10})
@@ -3480,7 +3394,7 @@ func TestMapUint32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint32 = 10
-	var v0 uint32 
+	var v0 uint32
 	var v3 uint32 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -3515,7 +3429,6 @@ func TestMapUint32Float32PtrErr(t *testing.T) {
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapUint32Float32PtrErr(plusOneUint32Float32PtrErr, []*uint32{&vi1, &vi2})
 
@@ -3548,7 +3461,6 @@ func TestMapUint32Float64PtrErr(t *testing.T) {
 	var vi1 uint32 = 1
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapUint32Float64PtrErr(plusOneUint32Float64PtrErr, []*uint32{&vi1, &vi2})
@@ -3583,7 +3495,6 @@ func TestMapUint16IntPtrErr(t *testing.T) {
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapUint16IntPtrErr(plusOneUint16IntPtrErr, []*uint16{&vi1, &vi2})
 
@@ -3616,7 +3527,6 @@ func TestMapUint16Int64PtrErr(t *testing.T) {
 	var vi1 uint16 = 1
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapUint16Int64PtrErr(plusOneUint16Int64PtrErr, []*uint16{&vi1, &vi2})
@@ -3651,7 +3561,6 @@ func TestMapUint16Int32PtrErr(t *testing.T) {
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
 
-
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapUint16Int32PtrErr(plusOneUint16Int32PtrErr, []*uint16{&vi1, &vi2})
 
@@ -3684,7 +3593,6 @@ func TestMapUint16Int16PtrErr(t *testing.T) {
 	var vi1 uint16 = 1
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
-
 
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapUint16Int16PtrErr(plusOneUint16Int16PtrErr, []*uint16{&vi1, &vi2})
@@ -3719,7 +3627,6 @@ func TestMapUint16Int8PtrErr(t *testing.T) {
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
 
-
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapUint16Int8PtrErr(plusOneUint16Int8PtrErr, []*uint16{&vi1, &vi2})
 
@@ -3752,7 +3659,6 @@ func TestMapUint16UintPtrErr(t *testing.T) {
 	var vi1 uint16 = 1
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
-
 
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapUint16UintPtrErr(plusOneUint16UintPtrErr, []*uint16{&vi1, &vi2})
@@ -3787,7 +3693,6 @@ func TestMapUint16Uint64PtrErr(t *testing.T) {
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
 
-
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapUint16Uint64PtrErr(plusOneUint16Uint64PtrErr, []*uint16{&vi1, &vi2})
 
@@ -3820,7 +3725,6 @@ func TestMapUint16Uint32PtrErr(t *testing.T) {
 	var vi1 uint16 = 1
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
-
 
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapUint16Uint32PtrErr(plusOneUint16Uint32PtrErr, []*uint16{&vi1, &vi2})
@@ -3855,7 +3759,6 @@ func TestMapUint16Uint8PtrErr(t *testing.T) {
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapUint16Uint8PtrErr(plusOneUint16Uint8PtrErr, []*uint16{&vi1, &vi2})
 
@@ -3884,7 +3787,7 @@ func TestMapUint16StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint16 = 10
-	var vi0 uint16 
+	var vi0 uint16
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapUint16StrPtrErr(someLogicUint16StrPtrErr, []*uint16{&vi10})
@@ -3926,7 +3829,7 @@ func TestMapUint16BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint16 = 10
-	var v0 uint16 
+	var v0 uint16
 	var v3 uint16 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -3961,7 +3864,6 @@ func TestMapUint16Float32PtrErr(t *testing.T) {
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapUint16Float32PtrErr(plusOneUint16Float32PtrErr, []*uint16{&vi1, &vi2})
 
@@ -3994,7 +3896,6 @@ func TestMapUint16Float64PtrErr(t *testing.T) {
 	var vi1 uint16 = 1
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapUint16Float64PtrErr(plusOneUint16Float64PtrErr, []*uint16{&vi1, &vi2})
@@ -4029,7 +3930,6 @@ func TestMapUint8IntPtrErr(t *testing.T) {
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
 
-
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapUint8IntPtrErr(plusOneUint8IntPtrErr, []*uint8{&vi1, &vi2})
 
@@ -4062,7 +3962,6 @@ func TestMapUint8Int64PtrErr(t *testing.T) {
 	var vi1 uint8 = 1
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
-
 
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapUint8Int64PtrErr(plusOneUint8Int64PtrErr, []*uint8{&vi1, &vi2})
@@ -4097,7 +3996,6 @@ func TestMapUint8Int32PtrErr(t *testing.T) {
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
 
-
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapUint8Int32PtrErr(plusOneUint8Int32PtrErr, []*uint8{&vi1, &vi2})
 
@@ -4130,7 +4028,6 @@ func TestMapUint8Int16PtrErr(t *testing.T) {
 	var vi1 uint8 = 1
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
-
 
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapUint8Int16PtrErr(plusOneUint8Int16PtrErr, []*uint8{&vi1, &vi2})
@@ -4165,7 +4062,6 @@ func TestMapUint8Int8PtrErr(t *testing.T) {
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
 
-
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapUint8Int8PtrErr(plusOneUint8Int8PtrErr, []*uint8{&vi1, &vi2})
 
@@ -4198,7 +4094,6 @@ func TestMapUint8UintPtrErr(t *testing.T) {
 	var vi1 uint8 = 1
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
-
 
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapUint8UintPtrErr(plusOneUint8UintPtrErr, []*uint8{&vi1, &vi2})
@@ -4233,7 +4128,6 @@ func TestMapUint8Uint64PtrErr(t *testing.T) {
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
 
-
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapUint8Uint64PtrErr(plusOneUint8Uint64PtrErr, []*uint8{&vi1, &vi2})
 
@@ -4266,7 +4160,6 @@ func TestMapUint8Uint32PtrErr(t *testing.T) {
 	var vi1 uint8 = 1
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
-
 
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapUint8Uint32PtrErr(plusOneUint8Uint32PtrErr, []*uint8{&vi1, &vi2})
@@ -4301,7 +4194,6 @@ func TestMapUint8Uint16PtrErr(t *testing.T) {
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
 
-
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapUint8Uint16PtrErr(plusOneUint8Uint16PtrErr, []*uint8{&vi1, &vi2})
 
@@ -4330,7 +4222,7 @@ func TestMapUint8StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 uint8 = 10
-	var vi0 uint8 
+	var vi0 uint8
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapUint8StrPtrErr(someLogicUint8StrPtrErr, []*uint8{&vi10})
@@ -4372,7 +4264,7 @@ func TestMapUint8BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint8 = 10
-	var v0 uint8 
+	var v0 uint8
 	var v3 uint8 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -4407,7 +4299,6 @@ func TestMapUint8Float32PtrErr(t *testing.T) {
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
 
-
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapUint8Float32PtrErr(plusOneUint8Float32PtrErr, []*uint8{&vi1, &vi2})
 
@@ -4440,7 +4331,6 @@ func TestMapUint8Float64PtrErr(t *testing.T) {
 	var vi1 uint8 = 1
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
-
 
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapUint8Float64PtrErr(plusOneUint8Float64PtrErr, []*uint8{&vi1, &vi2})
@@ -4995,7 +4885,8 @@ func TestMapBoolIntPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int = 10
-	var v0 int 
+	var v0 int
+
 	// Test : someLogic
 	expectedList := []*int{&v10, &v0}
 	newList, _ := MapBoolIntPtrErr(someLogicBoolIntPtrErr, []*bool{&vt, &vt})
@@ -5025,7 +4916,8 @@ func TestMapBoolInt64PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int64 = 10
-	var v0 int64 
+	var v0 int64
+
 	// Test : someLogic
 	expectedList := []*int64{&v10, &v0}
 	newList, _ := MapBoolInt64PtrErr(someLogicBoolInt64PtrErr, []*bool{&vt, &vt})
@@ -5055,7 +4947,8 @@ func TestMapBoolInt32PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int32 = 10
-	var v0 int32 
+	var v0 int32
+
 	// Test : someLogic
 	expectedList := []*int32{&v10, &v0}
 	newList, _ := MapBoolInt32PtrErr(someLogicBoolInt32PtrErr, []*bool{&vt, &vt})
@@ -5085,7 +4978,8 @@ func TestMapBoolInt16PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int16 = 10
-	var v0 int16 
+	var v0 int16
+
 	// Test : someLogic
 	expectedList := []*int16{&v10, &v0}
 	newList, _ := MapBoolInt16PtrErr(someLogicBoolInt16PtrErr, []*bool{&vt, &vt})
@@ -5115,7 +5009,8 @@ func TestMapBoolInt8PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int8 = 10
-	var v0 int8 
+	var v0 int8
+
 	// Test : someLogic
 	expectedList := []*int8{&v10, &v0}
 	newList, _ := MapBoolInt8PtrErr(someLogicBoolInt8PtrErr, []*bool{&vt, &vt})
@@ -5145,7 +5040,8 @@ func TestMapBoolUintPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint = 10
-	var v0 uint 
+	var v0 uint
+
 	// Test : someLogic
 	expectedList := []*uint{&v10, &v0}
 	newList, _ := MapBoolUintPtrErr(someLogicBoolUintPtrErr, []*bool{&vt, &vt})
@@ -5175,7 +5071,8 @@ func TestMapBoolUint64PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint64 = 10
-	var v0 uint64 
+	var v0 uint64
+
 	// Test : someLogic
 	expectedList := []*uint64{&v10, &v0}
 	newList, _ := MapBoolUint64PtrErr(someLogicBoolUint64PtrErr, []*bool{&vt, &vt})
@@ -5205,7 +5102,8 @@ func TestMapBoolUint32PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint32 = 10
-	var v0 uint32 
+	var v0 uint32
+
 	// Test : someLogic
 	expectedList := []*uint32{&v10, &v0}
 	newList, _ := MapBoolUint32PtrErr(someLogicBoolUint32PtrErr, []*bool{&vt, &vt})
@@ -5235,7 +5133,8 @@ func TestMapBoolUint16PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint16 = 10
-	var v0 uint16 
+	var v0 uint16
+
 	// Test : someLogic
 	expectedList := []*uint16{&v10, &v0}
 	newList, _ := MapBoolUint16PtrErr(someLogicBoolUint16PtrErr, []*bool{&vt, &vt})
@@ -5265,7 +5164,8 @@ func TestMapBoolUint8PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint8 = 10
-	var v0 uint8 
+	var v0 uint8
+
 	// Test : someLogic
 	expectedList := []*uint8{&v10, &v0}
 	newList, _ := MapBoolUint8PtrErr(someLogicBoolUint8PtrErr, []*bool{&vt, &vt})
@@ -5326,7 +5226,8 @@ func TestMapBoolFloat32PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float32 = 10
-	var v0 float32 
+	var v0 float32
+
 	// Test : someLogic
 	expectedList := []*float32{&v10, &v0}
 	newList, _ := MapBoolFloat32PtrErr(someLogicBoolFloat32PtrErr, []*bool{&vt, &vt})
@@ -5356,7 +5257,8 @@ func TestMapBoolFloat64PtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float64 = 10
-	var v0 float64 
+	var v0 float64
+
 	// Test : someLogic
 	expectedList := []*float64{&v10, &v0}
 	newList, _ := MapBoolFloat64PtrErr(someLogicBoolFloat64PtrErr, []*bool{&vt, &vt})
@@ -5389,7 +5291,6 @@ func TestMapFloat32IntPtrErr(t *testing.T) {
 	var vi1 float32 = 1
 	var vi2 float32 = 2
 	var vi3 float32 = 3
-
 
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapFloat32IntPtrErr(plusOneFloat32IntPtrErr, []*float32{&vi1, &vi2})
@@ -5424,7 +5325,6 @@ func TestMapFloat32Int64PtrErr(t *testing.T) {
 	var vi2 float32 = 2
 	var vi3 float32 = 3
 
-
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapFloat32Int64PtrErr(plusOneFloat32Int64PtrErr, []*float32{&vi1, &vi2})
 
@@ -5457,7 +5357,6 @@ func TestMapFloat32Int32PtrErr(t *testing.T) {
 	var vi1 float32 = 1
 	var vi2 float32 = 2
 	var vi3 float32 = 3
-
 
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapFloat32Int32PtrErr(plusOneFloat32Int32PtrErr, []*float32{&vi1, &vi2})
@@ -5492,7 +5391,6 @@ func TestMapFloat32Int16PtrErr(t *testing.T) {
 	var vi2 float32 = 2
 	var vi3 float32 = 3
 
-
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapFloat32Int16PtrErr(plusOneFloat32Int16PtrErr, []*float32{&vi1, &vi2})
 
@@ -5525,7 +5423,6 @@ func TestMapFloat32Int8PtrErr(t *testing.T) {
 	var vi1 float32 = 1
 	var vi2 float32 = 2
 	var vi3 float32 = 3
-
 
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapFloat32Int8PtrErr(plusOneFloat32Int8PtrErr, []*float32{&vi1, &vi2})
@@ -5560,7 +5457,6 @@ func TestMapFloat32UintPtrErr(t *testing.T) {
 	var vi2 float32 = 2
 	var vi3 float32 = 3
 
-
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapFloat32UintPtrErr(plusOneFloat32UintPtrErr, []*float32{&vi1, &vi2})
 
@@ -5593,7 +5489,6 @@ func TestMapFloat32Uint64PtrErr(t *testing.T) {
 	var vi1 float32 = 1
 	var vi2 float32 = 2
 	var vi3 float32 = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapFloat32Uint64PtrErr(plusOneFloat32Uint64PtrErr, []*float32{&vi1, &vi2})
@@ -5628,7 +5523,6 @@ func TestMapFloat32Uint32PtrErr(t *testing.T) {
 	var vi2 float32 = 2
 	var vi3 float32 = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapFloat32Uint32PtrErr(plusOneFloat32Uint32PtrErr, []*float32{&vi1, &vi2})
 
@@ -5661,7 +5555,6 @@ func TestMapFloat32Uint16PtrErr(t *testing.T) {
 	var vi1 float32 = 1
 	var vi2 float32 = 2
 	var vi3 float32 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapFloat32Uint16PtrErr(plusOneFloat32Uint16PtrErr, []*float32{&vi1, &vi2})
@@ -5696,7 +5589,6 @@ func TestMapFloat32Uint8PtrErr(t *testing.T) {
 	var vi2 float32 = 2
 	var vi3 float32 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapFloat32Uint8PtrErr(plusOneFloat32Uint8PtrErr, []*float32{&vi1, &vi2})
 
@@ -5725,7 +5617,7 @@ func TestMapFloat32StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 float32 = 10
-	var vi0 float32 
+	var vi0 float32
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapFloat32StrPtrErr(someLogicFloat32StrPtrErr, []*float32{&vi10})
@@ -5767,7 +5659,7 @@ func TestMapFloat32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float32 = 10
-	var v0 float32 
+	var v0 float32
 	var v3 float32 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -5802,7 +5694,6 @@ func TestMapFloat32Float64PtrErr(t *testing.T) {
 	var vi2 float32 = 2
 	var vi3 float32 = 3
 
-
 	expectedList := []*float64{&vo2, &vo3}
 	newList, _ := MapFloat32Float64PtrErr(plusOneFloat32Float64PtrErr, []*float32{&vi1, &vi2})
 
@@ -5835,7 +5726,6 @@ func TestMapFloat64IntPtrErr(t *testing.T) {
 	var vi1 float64 = 1
 	var vi2 float64 = 2
 	var vi3 float64 = 3
-
 
 	expectedList := []*int{&vo2, &vo3}
 	newList, _ := MapFloat64IntPtrErr(plusOneFloat64IntPtrErr, []*float64{&vi1, &vi2})
@@ -5870,7 +5760,6 @@ func TestMapFloat64Int64PtrErr(t *testing.T) {
 	var vi2 float64 = 2
 	var vi3 float64 = 3
 
-
 	expectedList := []*int64{&vo2, &vo3}
 	newList, _ := MapFloat64Int64PtrErr(plusOneFloat64Int64PtrErr, []*float64{&vi1, &vi2})
 
@@ -5903,7 +5792,6 @@ func TestMapFloat64Int32PtrErr(t *testing.T) {
 	var vi1 float64 = 1
 	var vi2 float64 = 2
 	var vi3 float64 = 3
-
 
 	expectedList := []*int32{&vo2, &vo3}
 	newList, _ := MapFloat64Int32PtrErr(plusOneFloat64Int32PtrErr, []*float64{&vi1, &vi2})
@@ -5938,7 +5826,6 @@ func TestMapFloat64Int16PtrErr(t *testing.T) {
 	var vi2 float64 = 2
 	var vi3 float64 = 3
 
-
 	expectedList := []*int16{&vo2, &vo3}
 	newList, _ := MapFloat64Int16PtrErr(plusOneFloat64Int16PtrErr, []*float64{&vi1, &vi2})
 
@@ -5971,7 +5858,6 @@ func TestMapFloat64Int8PtrErr(t *testing.T) {
 	var vi1 float64 = 1
 	var vi2 float64 = 2
 	var vi3 float64 = 3
-
 
 	expectedList := []*int8{&vo2, &vo3}
 	newList, _ := MapFloat64Int8PtrErr(plusOneFloat64Int8PtrErr, []*float64{&vi1, &vi2})
@@ -6006,7 +5892,6 @@ func TestMapFloat64UintPtrErr(t *testing.T) {
 	var vi2 float64 = 2
 	var vi3 float64 = 3
 
-
 	expectedList := []*uint{&vo2, &vo3}
 	newList, _ := MapFloat64UintPtrErr(plusOneFloat64UintPtrErr, []*float64{&vi1, &vi2})
 
@@ -6039,7 +5924,6 @@ func TestMapFloat64Uint64PtrErr(t *testing.T) {
 	var vi1 float64 = 1
 	var vi2 float64 = 2
 	var vi3 float64 = 3
-
 
 	expectedList := []*uint64{&vo2, &vo3}
 	newList, _ := MapFloat64Uint64PtrErr(plusOneFloat64Uint64PtrErr, []*float64{&vi1, &vi2})
@@ -6074,7 +5958,6 @@ func TestMapFloat64Uint32PtrErr(t *testing.T) {
 	var vi2 float64 = 2
 	var vi3 float64 = 3
 
-
 	expectedList := []*uint32{&vo2, &vo3}
 	newList, _ := MapFloat64Uint32PtrErr(plusOneFloat64Uint32PtrErr, []*float64{&vi1, &vi2})
 
@@ -6107,7 +5990,6 @@ func TestMapFloat64Uint16PtrErr(t *testing.T) {
 	var vi1 float64 = 1
 	var vi2 float64 = 2
 	var vi3 float64 = 3
-
 
 	expectedList := []*uint16{&vo2, &vo3}
 	newList, _ := MapFloat64Uint16PtrErr(plusOneFloat64Uint16PtrErr, []*float64{&vi1, &vi2})
@@ -6142,7 +6024,6 @@ func TestMapFloat64Uint8PtrErr(t *testing.T) {
 	var vi2 float64 = 2
 	var vi3 float64 = 3
 
-
 	expectedList := []*uint8{&vo2, &vo3}
 	newList, _ := MapFloat64Uint8PtrErr(plusOneFloat64Uint8PtrErr, []*float64{&vi1, &vi2})
 
@@ -6171,7 +6052,7 @@ func TestMapFloat64StrPtrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
 	var vi10 float64 = 10
-	var vi0 float64 
+	var vi0 float64
 
 	expectedList := []*string{&vo10}
 	newList, _ := MapFloat64StrPtrErr(someLogicFloat64StrPtrErr, []*float64{&vi10})
@@ -6213,7 +6094,7 @@ func TestMapFloat64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float64 = 10
-	var v0 float64 
+	var v0 float64
 	var v3 float64 = 3
 	
 	expectedList := []*bool{&vt, &vf}
@@ -6247,7 +6128,6 @@ func TestMapFloat64Float32PtrErr(t *testing.T) {
 	var vi1 float64 = 1
 	var vi2 float64 = 2
 	var vi3 float64 = 3
-
 
 	expectedList := []*float32{&vo2, &vo3}
 	newList, _ := MapFloat64Float32PtrErr(plusOneFloat64Float32PtrErr, []*float64{&vi1, &vi2})

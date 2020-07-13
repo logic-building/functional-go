@@ -380,7 +380,7 @@ func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 	var vi2 <INPUT_TYPE> = 2
 	var vi3 <INPUT_TYPE> = 3
 	var vi10 <INPUT_TYPE> = 10
-	var vi0 <INPUT_TYPE> = 0
+	var vi0 <INPUT_TYPE>
 
 	expectedList := []<OUTPUT_TYPE>{vto, vfo}
 	newList, _ := FilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(notOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{vi1, vi10, vi0})
@@ -546,7 +546,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num bool) (<OUTPUT_TYPE>, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 <OUTPUT_TYPE> = 10
-	var v0 <OUTPUT_TYPE> = 0
+	var v0 <OUTPUT_TYPE>
 
 	if num == true {
 		return v10, nil

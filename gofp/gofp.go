@@ -151,16 +151,23 @@ func main() {
 		var setCode string
 
 		if *setStr != "" {
+			if strings.Contains(strings.ToLower(*setStr), "time") {
+				generatedCode = strings.Replace(generatedCode,
+					`import "sync" `,
+					`import "sync" 
+import "time"`, -1)
+			}
 			setCode = generateSetMethods(*setStr, nil)
 		}
 
 		var sortingCode string
 		// Generate sort functions
 		if *sortStr != "" {
+
 			generatedCode = strings.Replace(generatedCode,
 				`import "sync" `,
 				`import "sort" 
-import "sync" `, -1)
+import "sync"`, -1)
 			sortingCode = generateSortMethods(*sortStr, nil)
 		}
 
@@ -174,12 +181,22 @@ import "sync" `, -1)
 				generatedCode = strings.Replace(generatedCode,
 					`import "sync" `,
 					`import "sort" 
-import "sync" `, -1)
+import "sync"`, -1)
 				sortingCode = generateSortMethods(*sortStr, structToFieldsMap)
-
 			}
 
 			if *setStr == "" {
+				if strings.Contains(strings.ToLower(fmt.Sprintf("%s", structToFieldsMap)), "time") {
+					generatedCode = strings.Replace(generatedCode,
+						`import "sync" `,
+						`import "sync" 
+import "time"`, -1)
+
+					generatedCode = strings.Replace(generatedCode,
+						`import "sync"`,
+						`import "sync" 
+import "time"`, -1)
+				}
 				setCode = generateSetMethods(*setStr, structToFieldsMap)
 			}
 		}
@@ -922,9 +939,17 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 				for _, fieldType := range fieldsAndTypes {
 
 					fieldName := strings.Split(fieldType, " ")[0]
+					dataType := strings.Split(fieldType, " ")[1]
 
 					fStructName := strings.Title(structName)
 					fFieldName := strings.Title(fieldName)
+
+					if strings.Contains(strings.ToLower(dataType), "time") {
+						r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+						template += template2.SortStructForTimeField()
+						template = r.Replace(template)
+						continue
+					}
 
 					r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 					template += template2.SortStruct()
@@ -946,7 +971,7 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 		for _, sortedStrItem := range sortedStrList {
 			sortedStrItem = strings.TrimSpace(sortedStrItem)
 			sortStrItemElements := strings.Split(sortedStrItem, ":")
-			if len(sortStrItemElements) != 2 {
+			if len(sortStrItemElements) < 2 || len(sortStrItemElements) > 3 {
 				fmt.Println("-sort: format is not valid. expected format for option -sort: <struct_name>:<field_name>. eg. -sort=\"Employee:Salary\"")
 				fmt.Println("ignoring sort methods")
 				return ""
@@ -957,6 +982,16 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 
 			fStructName := strings.Title(structName)
 			fFieldName := strings.Title(fieldName)
+
+			if len(sortStrItemElements) == 3 {
+				dataType := strings.TrimSpace(sortStrItemElements[2])
+				if strings.Contains(strings.ToLower(dataType), "time") {
+					r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+					template += template2.SortStructForTimeField()
+					template = r.Replace(template)
+					continue
+				}
+			}
 
 			r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 			template += template2.SortStruct()
@@ -1120,7 +1155,7 @@ func findStructNamesAndFieldsGivenInGoGenerate() map[string][]string {
 						dataType := strings.TrimSpace(words[1])
 
 						switch dataType {
-						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string":
+						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "time.Time":
 							structFields = append(structFields, field+" "+dataType)
 						}
 					}
