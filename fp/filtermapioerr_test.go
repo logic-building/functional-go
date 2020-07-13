@@ -527,7 +527,7 @@ func TestFilterMapIntBoolErr(t *testing.T) {
 	var vi2 int = 2
 	var vi3 int = 3
 	var vi10 int = 10
-	var vi0 int = 0
+	var vi0 int
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapIntBoolErr(notOneIntBoolErr, someLogicIntBoolErr, []int{vi1, vi10, vi0})
@@ -1195,7 +1195,7 @@ func TestFilterMapInt64BoolErr(t *testing.T) {
 	var vi2 int64 = 2
 	var vi3 int64 = 3
 	var vi10 int64 = 10
-	var vi0 int64 = 0
+	var vi0 int64
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapInt64BoolErr(notOneInt64BoolErr, someLogicInt64BoolErr, []int64{vi1, vi10, vi0})
@@ -1863,7 +1863,7 @@ func TestFilterMapInt32BoolErr(t *testing.T) {
 	var vi2 int32 = 2
 	var vi3 int32 = 3
 	var vi10 int32 = 10
-	var vi0 int32 = 0
+	var vi0 int32
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapInt32BoolErr(notOneInt32BoolErr, someLogicInt32BoolErr, []int32{vi1, vi10, vi0})
@@ -2531,7 +2531,7 @@ func TestFilterMapInt16BoolErr(t *testing.T) {
 	var vi2 int16 = 2
 	var vi3 int16 = 3
 	var vi10 int16 = 10
-	var vi0 int16 = 0
+	var vi0 int16
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapInt16BoolErr(notOneInt16BoolErr, someLogicInt16BoolErr, []int16{vi1, vi10, vi0})
@@ -3199,7 +3199,7 @@ func TestFilterMapInt8BoolErr(t *testing.T) {
 	var vi2 int8 = 2
 	var vi3 int8 = 3
 	var vi10 int8 = 10
-	var vi0 int8 = 0
+	var vi0 int8
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapInt8BoolErr(notOneInt8BoolErr, someLogicInt8BoolErr, []int8{vi1, vi10, vi0})
@@ -3867,7 +3867,7 @@ func TestFilterMapUintBoolErr(t *testing.T) {
 	var vi2 uint = 2
 	var vi3 uint = 3
 	var vi10 uint = 10
-	var vi0 uint = 0
+	var vi0 uint
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapUintBoolErr(notOneUintBoolErr, someLogicUintBoolErr, []uint{vi1, vi10, vi0})
@@ -4535,7 +4535,7 @@ func TestFilterMapUint64BoolErr(t *testing.T) {
 	var vi2 uint64 = 2
 	var vi3 uint64 = 3
 	var vi10 uint64 = 10
-	var vi0 uint64 = 0
+	var vi0 uint64
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapUint64BoolErr(notOneUint64BoolErr, someLogicUint64BoolErr, []uint64{vi1, vi10, vi0})
@@ -5203,7 +5203,7 @@ func TestFilterMapUint32BoolErr(t *testing.T) {
 	var vi2 uint32 = 2
 	var vi3 uint32 = 3
 	var vi10 uint32 = 10
-	var vi0 uint32 = 0
+	var vi0 uint32
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapUint32BoolErr(notOneUint32BoolErr, someLogicUint32BoolErr, []uint32{vi1, vi10, vi0})
@@ -5871,7 +5871,7 @@ func TestFilterMapUint16BoolErr(t *testing.T) {
 	var vi2 uint16 = 2
 	var vi3 uint16 = 3
 	var vi10 uint16 = 10
-	var vi0 uint16 = 0
+	var vi0 uint16
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapUint16BoolErr(notOneUint16BoolErr, someLogicUint16BoolErr, []uint16{vi1, vi10, vi0})
@@ -6539,7 +6539,7 @@ func TestFilterMapUint8BoolErr(t *testing.T) {
 	var vi2 uint8 = 2
 	var vi3 uint8 = 3
 	var vi10 uint8 = 10
-	var vi0 uint8 = 0
+	var vi0 uint8
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapUint8BoolErr(notOneUint8BoolErr, someLogicUint8BoolErr, []uint8{vi1, vi10, vi0})
@@ -7457,7 +7457,7 @@ func someLogicBoolIntErr(num bool) (int, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 int = 10
-	var v0 int = 0
+	var v0 int
 
 	if num == true {
 		return v10, nil
@@ -7519,7 +7519,7 @@ func someLogicBoolInt64Err(num bool) (int64, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 int64 = 10
-	var v0 int64 = 0
+	var v0 int64
 
 	if num == true {
 		return v10, nil
@@ -7581,7 +7581,7 @@ func someLogicBoolInt32Err(num bool) (int32, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 int32 = 10
-	var v0 int32 = 0
+	var v0 int32
 
 	if num == true {
 		return v10, nil
@@ -7643,7 +7643,7 @@ func someLogicBoolInt16Err(num bool) (int16, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 int16 = 10
-	var v0 int16 = 0
+	var v0 int16
 
 	if num == true {
 		return v10, nil
@@ -7705,7 +7705,7 @@ func someLogicBoolInt8Err(num bool) (int8, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 int8 = 10
-	var v0 int8 = 0
+	var v0 int8
 
 	if num == true {
 		return v10, nil
@@ -7767,7 +7767,7 @@ func someLogicBoolUintErr(num bool) (uint, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 uint = 10
-	var v0 uint = 0
+	var v0 uint
 
 	if num == true {
 		return v10, nil
@@ -7829,7 +7829,7 @@ func someLogicBoolUint64Err(num bool) (uint64, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 uint64 = 10
-	var v0 uint64 = 0
+	var v0 uint64
 
 	if num == true {
 		return v10, nil
@@ -7891,7 +7891,7 @@ func someLogicBoolUint32Err(num bool) (uint32, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 uint32 = 10
-	var v0 uint32 = 0
+	var v0 uint32
 
 	if num == true {
 		return v10, nil
@@ -7953,7 +7953,7 @@ func someLogicBoolUint16Err(num bool) (uint16, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 uint16 = 10
-	var v0 uint16 = 0
+	var v0 uint16
 
 	if num == true {
 		return v10, nil
@@ -8015,7 +8015,7 @@ func someLogicBoolUint8Err(num bool) (uint8, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 uint8 = 10
-	var v0 uint8 = 0
+	var v0 uint8
 
 	if num == true {
 		return v10, nil
@@ -8137,7 +8137,7 @@ func someLogicBoolFloat32Err(num bool) (float32, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 float32 = 10
-	var v0 float32 = 0
+	var v0 float32
 
 	if num == true {
 		return v10, nil
@@ -8199,7 +8199,7 @@ func someLogicBoolFloat64Err(num bool) (float64, error) {
 		return 0, errors.New("false is error for this test")
 	}
 	var v10 float64 = 10
-	var v0 float64 = 0
+	var v0 float64
 
 	if num == true {
 		return v10, nil
@@ -8781,7 +8781,7 @@ func TestFilterMapFloat32BoolErr(t *testing.T) {
 	var vi2 float32 = 2
 	var vi3 float32 = 3
 	var vi10 float32 = 10
-	var vi0 float32 = 0
+	var vi0 float32
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapFloat32BoolErr(notOneFloat32BoolErr, someLogicFloat32BoolErr, []float32{vi1, vi10, vi0})
@@ -9449,7 +9449,7 @@ func TestFilterMapFloat64BoolErr(t *testing.T) {
 	var vi2 float64 = 2
 	var vi3 float64 = 3
 	var vi10 float64 = 10
-	var vi0 float64 = 0
+	var vi0 float64
 
 	expectedList := []bool{vto, vfo}
 	newList, _ := FilterMapFloat64BoolErr(notOneFloat64BoolErr, someLogicFloat64BoolErr, []float64{vi1, vi10, vi0})
