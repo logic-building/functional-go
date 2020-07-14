@@ -63,6 +63,7 @@ func TestRemove<FTYPE>Ptr(t *testing.T) {
 `
 }
 
+// ReplaceActivityRemoveStrPtr replaces ...
 func ReplaceActivityRemoveStrPtr(code string) string {
 	s1 := `unc TestRemoveStrPtr(t *testing.T) {
 	// Test : even number in the list

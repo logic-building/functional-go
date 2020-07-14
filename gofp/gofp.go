@@ -944,9 +944,36 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 					fStructName := strings.Title(structName)
 					fFieldName := strings.Title(fieldName)
 
+					if strings.Contains(strings.ToLower(dataType), "*time") {
+						r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+						template += template2.SortStructForTimeFieldPtr()
+						template = r.Replace(template)
+						continue
+					}
+
 					if strings.Contains(strings.ToLower(dataType), "time") {
 						r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 						template += template2.SortStructForTimeField()
+						template = r.Replace(template)
+						continue
+					}
+
+					// "*int", "*int64", "*int32", "*int16", "*int8", "*uint", "*uint64", "*uint32", "*uint16", "*uint8", "*float64", "*float32", "*string"
+					if strings.Contains(strings.ToLower(dataType), "*int") ||
+						strings.Contains(strings.ToLower(dataType), "*int64") ||
+						strings.Contains(strings.ToLower(dataType), "*int32") ||
+						strings.Contains(strings.ToLower(dataType), "*int16") ||
+						strings.Contains(strings.ToLower(dataType), "*int8") ||
+						strings.Contains(strings.ToLower(dataType), "*uint") ||
+						strings.Contains(strings.ToLower(dataType), "*uint64") ||
+						strings.Contains(strings.ToLower(dataType), "*uint32") ||
+						strings.Contains(strings.ToLower(dataType), "*uint16") ||
+						strings.Contains(strings.ToLower(dataType), "*uint8") ||
+						strings.Contains(strings.ToLower(dataType), "*float64") ||
+						strings.Contains(strings.ToLower(dataType), "*float32") ||
+						strings.Contains(strings.ToLower(dataType), "*string") {
+						r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+						template += template2.SortStructPtr()
 						template = r.Replace(template)
 						continue
 					}
@@ -959,47 +986,46 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 			}
 		}
 		return template
-	} else {
-		if len(strings.TrimSpace(sortStr)) == 0 {
-			fmt.Println("-sort: value is empty. ignoring sort methods")
+	}
+	if len(strings.TrimSpace(sortStr)) == 0 {
+		fmt.Println("-sort: value is empty. ignoring sort methods")
+		return ""
+	}
+
+	template := ""
+	sortedStrList := strings.Split(sortStr, ",")
+
+	for _, sortedStrItem := range sortedStrList {
+		sortedStrItem = strings.TrimSpace(sortedStrItem)
+		sortStrItemElements := strings.Split(sortedStrItem, ":")
+		if len(sortStrItemElements) < 2 || len(sortStrItemElements) > 3 {
+			fmt.Println("-sort: format is not valid. expected format for option -sort: <struct_name>:<field_name>. eg. -sort=\"Employee:Salary\"")
+			fmt.Println("ignoring sort methods")
 			return ""
 		}
 
-		template := ""
-		sortedStrList := strings.Split(sortStr, ",")
+		structName := strings.TrimSpace(sortStrItemElements[0])
+		fieldName := strings.TrimSpace(sortStrItemElements[1])
 
-		for _, sortedStrItem := range sortedStrList {
-			sortedStrItem = strings.TrimSpace(sortedStrItem)
-			sortStrItemElements := strings.Split(sortedStrItem, ":")
-			if len(sortStrItemElements) < 2 || len(sortStrItemElements) > 3 {
-				fmt.Println("-sort: format is not valid. expected format for option -sort: <struct_name>:<field_name>. eg. -sort=\"Employee:Salary\"")
-				fmt.Println("ignoring sort methods")
-				return ""
+		fStructName := strings.Title(structName)
+		fFieldName := strings.Title(fieldName)
+
+		if len(sortStrItemElements) == 3 {
+			dataType := strings.TrimSpace(sortStrItemElements[2])
+			if strings.Contains(strings.ToLower(dataType), "time") {
+				r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+				template += template2.SortStructForTimeField()
+				template = r.Replace(template)
+				continue
 			}
-
-			structName := strings.TrimSpace(sortStrItemElements[0])
-			fieldName := strings.TrimSpace(sortStrItemElements[1])
-
-			fStructName := strings.Title(structName)
-			fFieldName := strings.Title(fieldName)
-
-			if len(sortStrItemElements) == 3 {
-				dataType := strings.TrimSpace(sortStrItemElements[2])
-				if strings.Contains(strings.ToLower(dataType), "time") {
-					r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
-					template += template2.SortStructForTimeField()
-					template = r.Replace(template)
-					continue
-				}
-			}
-
-			r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
-			template += template2.SortStruct()
-			template = r.Replace(template)
 		}
 
-		return template
+		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
+		template += template2.SortStruct()
+		template = r.Replace(template)
 	}
+
+	return template
 }
 
 func generateSetMethods(setStr string, allFields map[string][]string) string {
@@ -1024,42 +1050,40 @@ func generateSetMethods(setStr string, allFields map[string][]string) string {
 			}
 		}
 		return template
+	}
+	if len(strings.TrimSpace(setStr)) == 0 {
+		fmt.Println("-set: value is empty. ignoring set methods")
+		return ""
+	}
 
-	} else {
-		if len(strings.TrimSpace(setStr)) == 0 {
-			fmt.Println("-set: value is empty. ignoring set methods")
+	template := ""
+	sortedStrList := strings.Split(setStr, ",")
+
+	for _, sortedStrItem := range sortedStrList {
+		sortedStrItem = strings.TrimSpace(sortedStrItem)
+		sortStrItemElements := strings.Split(sortedStrItem, ":")
+		if len(sortStrItemElements) != 3 {
+			fmt.Println("-set: format is not valid. expected format for option -sort: <struct_name>:<field_name>:<field_type>. eg. -set=\"Employee:Salary:float64\"")
+			fmt.Println("ignoring set methods")
 			return ""
 		}
 
-		template := ""
-		sortedStrList := strings.Split(setStr, ",")
+		structName := strings.TrimSpace(sortStrItemElements[0])
+		fieldName := strings.TrimSpace(sortStrItemElements[1])
+		fieldType := strings.TrimSpace(sortStrItemElements[2])
 
-		for _, sortedStrItem := range sortedStrList {
-			sortedStrItem = strings.TrimSpace(sortedStrItem)
-			sortStrItemElements := strings.Split(sortedStrItem, ":")
-			if len(sortStrItemElements) != 3 {
-				fmt.Println("-set: format is not valid. expected format for option -sort: <struct_name>:<field_name>:<field_type>. eg. -set=\"Employee:Salary:float64\"")
-				fmt.Println("ignoring set methods")
-				return ""
-			}
+		fStructName := strings.Title(structName)
+		fFieldName := strings.Title(fieldName)
 
-			structName := strings.TrimSpace(sortStrItemElements[0])
-			fieldName := strings.TrimSpace(sortStrItemElements[1])
-			fieldType := strings.TrimSpace(sortStrItemElements[2])
-
-			fStructName := strings.Title(structName)
-			fFieldName := strings.Title(fieldName)
-
-			r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName, "<FIELD_TYPE>", fieldType)
-			template += template2.SetStruct()
-			template = r.Replace(template)
-		}
-
-		return template
+		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName, "<FIELD_TYPE>", fieldType)
+		template += template2.SetStruct()
+		template = r.Replace(template)
 	}
+
+	return template
 }
 
-func ListDir(dirName string) ([]string, error) {
+func listDir(dirName string) ([]string, error) {
 	var files []string
 
 	root := dirName
@@ -1092,7 +1116,7 @@ func findStructNamesAndFieldsGivenInGoGenerate() map[string][]string {
 	if err != nil {
 		fmt.Println(err)
 	}
-	files, err := ListDir(path)
+	files, err := listDir(path)
 	if err != nil {
 		fmt.Printf("\n error scanning current folder=%v, error=%v. sort and set methods will be skipped", path, err)
 		return nil
@@ -1155,7 +1179,7 @@ func findStructNamesAndFieldsGivenInGoGenerate() map[string][]string {
 						dataType := strings.TrimSpace(words[1])
 
 						switch dataType {
-						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "time.Time":
+						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "time.Time", "*time.Time", "*int", "*int64", "*int32", "*int16", "*int8", "*uint", "*uint64", "*uint32", "*uint16", "*uint8", "*float64", "*float32", "*string":
 							structFields = append(structFields, field+" "+dataType)
 						}
 					}

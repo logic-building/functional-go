@@ -20,7 +20,7 @@ func TestMapIntInt64Err(t *testing.T) {
 		t.Errorf("MapIntInt64Err failed")
 	}
 
-	r, _ =MapIntInt64Err(nil, []int{})
+	r, _ = MapIntInt64Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntInt64Err failed")
 	}
@@ -46,7 +46,7 @@ func TestMapIntInt32Err(t *testing.T) {
 		t.Errorf("MapIntInt32Err failed")
 	}
 
-	r, _ =MapIntInt32Err(nil, []int{})
+	r, _ = MapIntInt32Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntInt32Err failed")
 	}
@@ -72,7 +72,7 @@ func TestMapIntInt16Err(t *testing.T) {
 		t.Errorf("MapIntInt16Err failed")
 	}
 
-	r, _ =MapIntInt16Err(nil, []int{})
+	r, _ = MapIntInt16Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntInt16Err failed")
 	}
@@ -98,7 +98,7 @@ func TestMapIntInt8Err(t *testing.T) {
 		t.Errorf("MapIntInt8Err failed")
 	}
 
-	r, _ =MapIntInt8Err(nil, []int{})
+	r, _ = MapIntInt8Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntInt8Err failed")
 	}
@@ -124,7 +124,7 @@ func TestMapIntUintErr(t *testing.T) {
 		t.Errorf("MapIntUintErr failed")
 	}
 
-	r, _ =MapIntUintErr(nil, []int{})
+	r, _ = MapIntUintErr(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntUintErr failed")
 	}
@@ -150,7 +150,7 @@ func TestMapIntUint64Err(t *testing.T) {
 		t.Errorf("MapIntUint64Err failed")
 	}
 
-	r, _ =MapIntUint64Err(nil, []int{})
+	r, _ = MapIntUint64Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntUint64Err failed")
 	}
@@ -176,7 +176,7 @@ func TestMapIntUint32Err(t *testing.T) {
 		t.Errorf("MapIntUint32Err failed")
 	}
 
-	r, _ =MapIntUint32Err(nil, []int{})
+	r, _ = MapIntUint32Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntUint32Err failed")
 	}
@@ -202,7 +202,7 @@ func TestMapIntUint16Err(t *testing.T) {
 		t.Errorf("MapIntUint16Err failed")
 	}
 
-	r, _ =MapIntUint16Err(nil, []int{})
+	r, _ = MapIntUint16Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntUint16Err failed")
 	}
@@ -228,7 +228,7 @@ func TestMapIntUint8Err(t *testing.T) {
 		t.Errorf("MapIntUint8Err failed")
 	}
 
-	r, _ =MapIntUint8Err(nil, []int{})
+	r, _ = MapIntUint8Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntUint8Err failed")
 	}
@@ -300,7 +300,7 @@ func TestMapIntBoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapIntBoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -318,7 +318,7 @@ func TestMapIntFloat32Err(t *testing.T) {
 		t.Errorf("MapIntFloat32Err failed")
 	}
 
-	r, _ =MapIntFloat32Err(nil, []int{})
+	r, _ = MapIntFloat32Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntFloat32Err failed")
 	}
@@ -344,7 +344,7 @@ func TestMapIntFloat64Err(t *testing.T) {
 		t.Errorf("MapIntFloat64Err failed")
 	}
 
-	r, _ =MapIntFloat64Err(nil, []int{})
+	r, _ = MapIntFloat64Err(nil, []int{})
 	if len(r) > 0 {
 		t.Errorf("MapIntFloat64Err failed")
 	}
@@ -370,7 +370,7 @@ func TestMapInt64IntErr(t *testing.T) {
 		t.Errorf("MapInt64IntErr failed")
 	}
 
-	r, _ =MapInt64IntErr(nil, []int64{})
+	r, _ = MapInt64IntErr(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64IntErr failed")
 	}
@@ -396,7 +396,7 @@ func TestMapInt64Int32Err(t *testing.T) {
 		t.Errorf("MapInt64Int32Err failed")
 	}
 
-	r, _ =MapInt64Int32Err(nil, []int64{})
+	r, _ = MapInt64Int32Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Int32Err failed")
 	}
@@ -422,7 +422,7 @@ func TestMapInt64Int16Err(t *testing.T) {
 		t.Errorf("MapInt64Int16Err failed")
 	}
 
-	r, _ =MapInt64Int16Err(nil, []int64{})
+	r, _ = MapInt64Int16Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Int16Err failed")
 	}
@@ -448,7 +448,7 @@ func TestMapInt64Int8Err(t *testing.T) {
 		t.Errorf("MapInt64Int8Err failed")
 	}
 
-	r, _ =MapInt64Int8Err(nil, []int64{})
+	r, _ = MapInt64Int8Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Int8Err failed")
 	}
@@ -474,7 +474,7 @@ func TestMapInt64UintErr(t *testing.T) {
 		t.Errorf("MapInt64UintErr failed")
 	}
 
-	r, _ =MapInt64UintErr(nil, []int64{})
+	r, _ = MapInt64UintErr(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64UintErr failed")
 	}
@@ -500,7 +500,7 @@ func TestMapInt64Uint64Err(t *testing.T) {
 		t.Errorf("MapInt64Uint64Err failed")
 	}
 
-	r, _ =MapInt64Uint64Err(nil, []int64{})
+	r, _ = MapInt64Uint64Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Uint64Err failed")
 	}
@@ -526,7 +526,7 @@ func TestMapInt64Uint32Err(t *testing.T) {
 		t.Errorf("MapInt64Uint32Err failed")
 	}
 
-	r, _ =MapInt64Uint32Err(nil, []int64{})
+	r, _ = MapInt64Uint32Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Uint32Err failed")
 	}
@@ -552,7 +552,7 @@ func TestMapInt64Uint16Err(t *testing.T) {
 		t.Errorf("MapInt64Uint16Err failed")
 	}
 
-	r, _ =MapInt64Uint16Err(nil, []int64{})
+	r, _ = MapInt64Uint16Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Uint16Err failed")
 	}
@@ -578,7 +578,7 @@ func TestMapInt64Uint8Err(t *testing.T) {
 		t.Errorf("MapInt64Uint8Err failed")
 	}
 
-	r, _ =MapInt64Uint8Err(nil, []int64{})
+	r, _ = MapInt64Uint8Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Uint8Err failed")
 	}
@@ -650,7 +650,7 @@ func TestMapInt64BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt64BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -668,7 +668,7 @@ func TestMapInt64Float32Err(t *testing.T) {
 		t.Errorf("MapInt64Float32Err failed")
 	}
 
-	r, _ =MapInt64Float32Err(nil, []int64{})
+	r, _ = MapInt64Float32Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Float32Err failed")
 	}
@@ -694,7 +694,7 @@ func TestMapInt64Float64Err(t *testing.T) {
 		t.Errorf("MapInt64Float64Err failed")
 	}
 
-	r, _ =MapInt64Float64Err(nil, []int64{})
+	r, _ = MapInt64Float64Err(nil, []int64{})
 	if len(r) > 0 {
 		t.Errorf("MapInt64Float64Err failed")
 	}
@@ -720,7 +720,7 @@ func TestMapInt32IntErr(t *testing.T) {
 		t.Errorf("MapInt32IntErr failed")
 	}
 
-	r, _ =MapInt32IntErr(nil, []int32{})
+	r, _ = MapInt32IntErr(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32IntErr failed")
 	}
@@ -746,7 +746,7 @@ func TestMapInt32Int64Err(t *testing.T) {
 		t.Errorf("MapInt32Int64Err failed")
 	}
 
-	r, _ =MapInt32Int64Err(nil, []int32{})
+	r, _ = MapInt32Int64Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Int64Err failed")
 	}
@@ -772,7 +772,7 @@ func TestMapInt32Int16Err(t *testing.T) {
 		t.Errorf("MapInt32Int16Err failed")
 	}
 
-	r, _ =MapInt32Int16Err(nil, []int32{})
+	r, _ = MapInt32Int16Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Int16Err failed")
 	}
@@ -798,7 +798,7 @@ func TestMapInt32Int8Err(t *testing.T) {
 		t.Errorf("MapInt32Int8Err failed")
 	}
 
-	r, _ =MapInt32Int8Err(nil, []int32{})
+	r, _ = MapInt32Int8Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Int8Err failed")
 	}
@@ -824,7 +824,7 @@ func TestMapInt32UintErr(t *testing.T) {
 		t.Errorf("MapInt32UintErr failed")
 	}
 
-	r, _ =MapInt32UintErr(nil, []int32{})
+	r, _ = MapInt32UintErr(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32UintErr failed")
 	}
@@ -850,7 +850,7 @@ func TestMapInt32Uint64Err(t *testing.T) {
 		t.Errorf("MapInt32Uint64Err failed")
 	}
 
-	r, _ =MapInt32Uint64Err(nil, []int32{})
+	r, _ = MapInt32Uint64Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Uint64Err failed")
 	}
@@ -876,7 +876,7 @@ func TestMapInt32Uint32Err(t *testing.T) {
 		t.Errorf("MapInt32Uint32Err failed")
 	}
 
-	r, _ =MapInt32Uint32Err(nil, []int32{})
+	r, _ = MapInt32Uint32Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Uint32Err failed")
 	}
@@ -902,7 +902,7 @@ func TestMapInt32Uint16Err(t *testing.T) {
 		t.Errorf("MapInt32Uint16Err failed")
 	}
 
-	r, _ =MapInt32Uint16Err(nil, []int32{})
+	r, _ = MapInt32Uint16Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Uint16Err failed")
 	}
@@ -928,7 +928,7 @@ func TestMapInt32Uint8Err(t *testing.T) {
 		t.Errorf("MapInt32Uint8Err failed")
 	}
 
-	r, _ =MapInt32Uint8Err(nil, []int32{})
+	r, _ = MapInt32Uint8Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Uint8Err failed")
 	}
@@ -1000,7 +1000,7 @@ func TestMapInt32BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt32BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -1018,7 +1018,7 @@ func TestMapInt32Float32Err(t *testing.T) {
 		t.Errorf("MapInt32Float32Err failed")
 	}
 
-	r, _ =MapInt32Float32Err(nil, []int32{})
+	r, _ = MapInt32Float32Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Float32Err failed")
 	}
@@ -1044,7 +1044,7 @@ func TestMapInt32Float64Err(t *testing.T) {
 		t.Errorf("MapInt32Float64Err failed")
 	}
 
-	r, _ =MapInt32Float64Err(nil, []int32{})
+	r, _ = MapInt32Float64Err(nil, []int32{})
 	if len(r) > 0 {
 		t.Errorf("MapInt32Float64Err failed")
 	}
@@ -1070,7 +1070,7 @@ func TestMapInt16IntErr(t *testing.T) {
 		t.Errorf("MapInt16IntErr failed")
 	}
 
-	r, _ =MapInt16IntErr(nil, []int16{})
+	r, _ = MapInt16IntErr(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16IntErr failed")
 	}
@@ -1096,7 +1096,7 @@ func TestMapInt16Int64Err(t *testing.T) {
 		t.Errorf("MapInt16Int64Err failed")
 	}
 
-	r, _ =MapInt16Int64Err(nil, []int16{})
+	r, _ = MapInt16Int64Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Int64Err failed")
 	}
@@ -1122,7 +1122,7 @@ func TestMapInt16Int32Err(t *testing.T) {
 		t.Errorf("MapInt16Int32Err failed")
 	}
 
-	r, _ =MapInt16Int32Err(nil, []int16{})
+	r, _ = MapInt16Int32Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Int32Err failed")
 	}
@@ -1148,7 +1148,7 @@ func TestMapInt16Int8Err(t *testing.T) {
 		t.Errorf("MapInt16Int8Err failed")
 	}
 
-	r, _ =MapInt16Int8Err(nil, []int16{})
+	r, _ = MapInt16Int8Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Int8Err failed")
 	}
@@ -1174,7 +1174,7 @@ func TestMapInt16UintErr(t *testing.T) {
 		t.Errorf("MapInt16UintErr failed")
 	}
 
-	r, _ =MapInt16UintErr(nil, []int16{})
+	r, _ = MapInt16UintErr(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16UintErr failed")
 	}
@@ -1200,7 +1200,7 @@ func TestMapInt16Uint64Err(t *testing.T) {
 		t.Errorf("MapInt16Uint64Err failed")
 	}
 
-	r, _ =MapInt16Uint64Err(nil, []int16{})
+	r, _ = MapInt16Uint64Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Uint64Err failed")
 	}
@@ -1226,7 +1226,7 @@ func TestMapInt16Uint32Err(t *testing.T) {
 		t.Errorf("MapInt16Uint32Err failed")
 	}
 
-	r, _ =MapInt16Uint32Err(nil, []int16{})
+	r, _ = MapInt16Uint32Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Uint32Err failed")
 	}
@@ -1252,7 +1252,7 @@ func TestMapInt16Uint16Err(t *testing.T) {
 		t.Errorf("MapInt16Uint16Err failed")
 	}
 
-	r, _ =MapInt16Uint16Err(nil, []int16{})
+	r, _ = MapInt16Uint16Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Uint16Err failed")
 	}
@@ -1278,7 +1278,7 @@ func TestMapInt16Uint8Err(t *testing.T) {
 		t.Errorf("MapInt16Uint8Err failed")
 	}
 
-	r, _ =MapInt16Uint8Err(nil, []int16{})
+	r, _ = MapInt16Uint8Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Uint8Err failed")
 	}
@@ -1350,7 +1350,7 @@ func TestMapInt16BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt16BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -1368,7 +1368,7 @@ func TestMapInt16Float32Err(t *testing.T) {
 		t.Errorf("MapInt16Float32Err failed")
 	}
 
-	r, _ =MapInt16Float32Err(nil, []int16{})
+	r, _ = MapInt16Float32Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Float32Err failed")
 	}
@@ -1394,7 +1394,7 @@ func TestMapInt16Float64Err(t *testing.T) {
 		t.Errorf("MapInt16Float64Err failed")
 	}
 
-	r, _ =MapInt16Float64Err(nil, []int16{})
+	r, _ = MapInt16Float64Err(nil, []int16{})
 	if len(r) > 0 {
 		t.Errorf("MapInt16Float64Err failed")
 	}
@@ -1420,7 +1420,7 @@ func TestMapInt8IntErr(t *testing.T) {
 		t.Errorf("MapInt8IntErr failed")
 	}
 
-	r, _ =MapInt8IntErr(nil, []int8{})
+	r, _ = MapInt8IntErr(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8IntErr failed")
 	}
@@ -1446,7 +1446,7 @@ func TestMapInt8Int64Err(t *testing.T) {
 		t.Errorf("MapInt8Int64Err failed")
 	}
 
-	r, _ =MapInt8Int64Err(nil, []int8{})
+	r, _ = MapInt8Int64Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Int64Err failed")
 	}
@@ -1472,7 +1472,7 @@ func TestMapInt8Int32Err(t *testing.T) {
 		t.Errorf("MapInt8Int32Err failed")
 	}
 
-	r, _ =MapInt8Int32Err(nil, []int8{})
+	r, _ = MapInt8Int32Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Int32Err failed")
 	}
@@ -1498,7 +1498,7 @@ func TestMapInt8Int16Err(t *testing.T) {
 		t.Errorf("MapInt8Int16Err failed")
 	}
 
-	r, _ =MapInt8Int16Err(nil, []int8{})
+	r, _ = MapInt8Int16Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Int16Err failed")
 	}
@@ -1524,7 +1524,7 @@ func TestMapInt8UintErr(t *testing.T) {
 		t.Errorf("MapInt8UintErr failed")
 	}
 
-	r, _ =MapInt8UintErr(nil, []int8{})
+	r, _ = MapInt8UintErr(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8UintErr failed")
 	}
@@ -1550,7 +1550,7 @@ func TestMapInt8Uint64Err(t *testing.T) {
 		t.Errorf("MapInt8Uint64Err failed")
 	}
 
-	r, _ =MapInt8Uint64Err(nil, []int8{})
+	r, _ = MapInt8Uint64Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Uint64Err failed")
 	}
@@ -1576,7 +1576,7 @@ func TestMapInt8Uint32Err(t *testing.T) {
 		t.Errorf("MapInt8Uint32Err failed")
 	}
 
-	r, _ =MapInt8Uint32Err(nil, []int8{})
+	r, _ = MapInt8Uint32Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Uint32Err failed")
 	}
@@ -1602,7 +1602,7 @@ func TestMapInt8Uint16Err(t *testing.T) {
 		t.Errorf("MapInt8Uint16Err failed")
 	}
 
-	r, _ =MapInt8Uint16Err(nil, []int8{})
+	r, _ = MapInt8Uint16Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Uint16Err failed")
 	}
@@ -1628,7 +1628,7 @@ func TestMapInt8Uint8Err(t *testing.T) {
 		t.Errorf("MapInt8Uint8Err failed")
 	}
 
-	r, _ =MapInt8Uint8Err(nil, []int8{})
+	r, _ = MapInt8Uint8Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Uint8Err failed")
 	}
@@ -1700,7 +1700,7 @@ func TestMapInt8BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt8BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -1718,7 +1718,7 @@ func TestMapInt8Float32Err(t *testing.T) {
 		t.Errorf("MapInt8Float32Err failed")
 	}
 
-	r, _ =MapInt8Float32Err(nil, []int8{})
+	r, _ = MapInt8Float32Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Float32Err failed")
 	}
@@ -1744,7 +1744,7 @@ func TestMapInt8Float64Err(t *testing.T) {
 		t.Errorf("MapInt8Float64Err failed")
 	}
 
-	r, _ =MapInt8Float64Err(nil, []int8{})
+	r, _ = MapInt8Float64Err(nil, []int8{})
 	if len(r) > 0 {
 		t.Errorf("MapInt8Float64Err failed")
 	}
@@ -1770,7 +1770,7 @@ func TestMapUintIntErr(t *testing.T) {
 		t.Errorf("MapUintIntErr failed")
 	}
 
-	r, _ =MapUintIntErr(nil, []uint{})
+	r, _ = MapUintIntErr(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintIntErr failed")
 	}
@@ -1796,7 +1796,7 @@ func TestMapUintInt64Err(t *testing.T) {
 		t.Errorf("MapUintInt64Err failed")
 	}
 
-	r, _ =MapUintInt64Err(nil, []uint{})
+	r, _ = MapUintInt64Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintInt64Err failed")
 	}
@@ -1822,7 +1822,7 @@ func TestMapUintInt32Err(t *testing.T) {
 		t.Errorf("MapUintInt32Err failed")
 	}
 
-	r, _ =MapUintInt32Err(nil, []uint{})
+	r, _ = MapUintInt32Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintInt32Err failed")
 	}
@@ -1848,7 +1848,7 @@ func TestMapUintInt16Err(t *testing.T) {
 		t.Errorf("MapUintInt16Err failed")
 	}
 
-	r, _ =MapUintInt16Err(nil, []uint{})
+	r, _ = MapUintInt16Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintInt16Err failed")
 	}
@@ -1874,7 +1874,7 @@ func TestMapUintInt8Err(t *testing.T) {
 		t.Errorf("MapUintInt8Err failed")
 	}
 
-	r, _ =MapUintInt8Err(nil, []uint{})
+	r, _ = MapUintInt8Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintInt8Err failed")
 	}
@@ -1900,7 +1900,7 @@ func TestMapUintUint64Err(t *testing.T) {
 		t.Errorf("MapUintUint64Err failed")
 	}
 
-	r, _ =MapUintUint64Err(nil, []uint{})
+	r, _ = MapUintUint64Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintUint64Err failed")
 	}
@@ -1926,7 +1926,7 @@ func TestMapUintUint32Err(t *testing.T) {
 		t.Errorf("MapUintUint32Err failed")
 	}
 
-	r, _ =MapUintUint32Err(nil, []uint{})
+	r, _ = MapUintUint32Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintUint32Err failed")
 	}
@@ -1952,7 +1952,7 @@ func TestMapUintUint16Err(t *testing.T) {
 		t.Errorf("MapUintUint16Err failed")
 	}
 
-	r, _ =MapUintUint16Err(nil, []uint{})
+	r, _ = MapUintUint16Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintUint16Err failed")
 	}
@@ -1978,7 +1978,7 @@ func TestMapUintUint8Err(t *testing.T) {
 		t.Errorf("MapUintUint8Err failed")
 	}
 
-	r, _ =MapUintUint8Err(nil, []uint{})
+	r, _ = MapUintUint8Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintUint8Err failed")
 	}
@@ -2050,7 +2050,7 @@ func TestMapUintBoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUintBoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -2068,7 +2068,7 @@ func TestMapUintFloat32Err(t *testing.T) {
 		t.Errorf("MapUintFloat32Err failed")
 	}
 
-	r, _ =MapUintFloat32Err(nil, []uint{})
+	r, _ = MapUintFloat32Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintFloat32Err failed")
 	}
@@ -2094,7 +2094,7 @@ func TestMapUintFloat64Err(t *testing.T) {
 		t.Errorf("MapUintFloat64Err failed")
 	}
 
-	r, _ =MapUintFloat64Err(nil, []uint{})
+	r, _ = MapUintFloat64Err(nil, []uint{})
 	if len(r) > 0 {
 		t.Errorf("MapUintFloat64Err failed")
 	}
@@ -2120,7 +2120,7 @@ func TestMapUint64IntErr(t *testing.T) {
 		t.Errorf("MapUint64IntErr failed")
 	}
 
-	r, _ =MapUint64IntErr(nil, []uint64{})
+	r, _ = MapUint64IntErr(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64IntErr failed")
 	}
@@ -2146,7 +2146,7 @@ func TestMapUint64Int64Err(t *testing.T) {
 		t.Errorf("MapUint64Int64Err failed")
 	}
 
-	r, _ =MapUint64Int64Err(nil, []uint64{})
+	r, _ = MapUint64Int64Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Int64Err failed")
 	}
@@ -2172,7 +2172,7 @@ func TestMapUint64Int32Err(t *testing.T) {
 		t.Errorf("MapUint64Int32Err failed")
 	}
 
-	r, _ =MapUint64Int32Err(nil, []uint64{})
+	r, _ = MapUint64Int32Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Int32Err failed")
 	}
@@ -2198,7 +2198,7 @@ func TestMapUint64Int16Err(t *testing.T) {
 		t.Errorf("MapUint64Int16Err failed")
 	}
 
-	r, _ =MapUint64Int16Err(nil, []uint64{})
+	r, _ = MapUint64Int16Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Int16Err failed")
 	}
@@ -2224,7 +2224,7 @@ func TestMapUint64Int8Err(t *testing.T) {
 		t.Errorf("MapUint64Int8Err failed")
 	}
 
-	r, _ =MapUint64Int8Err(nil, []uint64{})
+	r, _ = MapUint64Int8Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Int8Err failed")
 	}
@@ -2250,7 +2250,7 @@ func TestMapUint64UintErr(t *testing.T) {
 		t.Errorf("MapUint64UintErr failed")
 	}
 
-	r, _ =MapUint64UintErr(nil, []uint64{})
+	r, _ = MapUint64UintErr(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64UintErr failed")
 	}
@@ -2276,7 +2276,7 @@ func TestMapUint64Uint32Err(t *testing.T) {
 		t.Errorf("MapUint64Uint32Err failed")
 	}
 
-	r, _ =MapUint64Uint32Err(nil, []uint64{})
+	r, _ = MapUint64Uint32Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Uint32Err failed")
 	}
@@ -2302,7 +2302,7 @@ func TestMapUint64Uint16Err(t *testing.T) {
 		t.Errorf("MapUint64Uint16Err failed")
 	}
 
-	r, _ =MapUint64Uint16Err(nil, []uint64{})
+	r, _ = MapUint64Uint16Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Uint16Err failed")
 	}
@@ -2328,7 +2328,7 @@ func TestMapUint64Uint8Err(t *testing.T) {
 		t.Errorf("MapUint64Uint8Err failed")
 	}
 
-	r, _ =MapUint64Uint8Err(nil, []uint64{})
+	r, _ = MapUint64Uint8Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Uint8Err failed")
 	}
@@ -2400,7 +2400,7 @@ func TestMapUint64BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint64BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -2418,7 +2418,7 @@ func TestMapUint64Float32Err(t *testing.T) {
 		t.Errorf("MapUint64Float32Err failed")
 	}
 
-	r, _ =MapUint64Float32Err(nil, []uint64{})
+	r, _ = MapUint64Float32Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Float32Err failed")
 	}
@@ -2444,7 +2444,7 @@ func TestMapUint64Float64Err(t *testing.T) {
 		t.Errorf("MapUint64Float64Err failed")
 	}
 
-	r, _ =MapUint64Float64Err(nil, []uint64{})
+	r, _ = MapUint64Float64Err(nil, []uint64{})
 	if len(r) > 0 {
 		t.Errorf("MapUint64Float64Err failed")
 	}
@@ -2470,7 +2470,7 @@ func TestMapUint32IntErr(t *testing.T) {
 		t.Errorf("MapUint32IntErr failed")
 	}
 
-	r, _ =MapUint32IntErr(nil, []uint32{})
+	r, _ = MapUint32IntErr(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32IntErr failed")
 	}
@@ -2496,7 +2496,7 @@ func TestMapUint32Int64Err(t *testing.T) {
 		t.Errorf("MapUint32Int64Err failed")
 	}
 
-	r, _ =MapUint32Int64Err(nil, []uint32{})
+	r, _ = MapUint32Int64Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Int64Err failed")
 	}
@@ -2522,7 +2522,7 @@ func TestMapUint32Int32Err(t *testing.T) {
 		t.Errorf("MapUint32Int32Err failed")
 	}
 
-	r, _ =MapUint32Int32Err(nil, []uint32{})
+	r, _ = MapUint32Int32Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Int32Err failed")
 	}
@@ -2548,7 +2548,7 @@ func TestMapUint32Int16Err(t *testing.T) {
 		t.Errorf("MapUint32Int16Err failed")
 	}
 
-	r, _ =MapUint32Int16Err(nil, []uint32{})
+	r, _ = MapUint32Int16Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Int16Err failed")
 	}
@@ -2574,7 +2574,7 @@ func TestMapUint32Int8Err(t *testing.T) {
 		t.Errorf("MapUint32Int8Err failed")
 	}
 
-	r, _ =MapUint32Int8Err(nil, []uint32{})
+	r, _ = MapUint32Int8Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Int8Err failed")
 	}
@@ -2600,7 +2600,7 @@ func TestMapUint32UintErr(t *testing.T) {
 		t.Errorf("MapUint32UintErr failed")
 	}
 
-	r, _ =MapUint32UintErr(nil, []uint32{})
+	r, _ = MapUint32UintErr(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32UintErr failed")
 	}
@@ -2626,7 +2626,7 @@ func TestMapUint32Uint64Err(t *testing.T) {
 		t.Errorf("MapUint32Uint64Err failed")
 	}
 
-	r, _ =MapUint32Uint64Err(nil, []uint32{})
+	r, _ = MapUint32Uint64Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Uint64Err failed")
 	}
@@ -2652,7 +2652,7 @@ func TestMapUint32Uint16Err(t *testing.T) {
 		t.Errorf("MapUint32Uint16Err failed")
 	}
 
-	r, _ =MapUint32Uint16Err(nil, []uint32{})
+	r, _ = MapUint32Uint16Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Uint16Err failed")
 	}
@@ -2678,7 +2678,7 @@ func TestMapUint32Uint8Err(t *testing.T) {
 		t.Errorf("MapUint32Uint8Err failed")
 	}
 
-	r, _ =MapUint32Uint8Err(nil, []uint32{})
+	r, _ = MapUint32Uint8Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Uint8Err failed")
 	}
@@ -2750,7 +2750,7 @@ func TestMapUint32BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint32BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -2768,7 +2768,7 @@ func TestMapUint32Float32Err(t *testing.T) {
 		t.Errorf("MapUint32Float32Err failed")
 	}
 
-	r, _ =MapUint32Float32Err(nil, []uint32{})
+	r, _ = MapUint32Float32Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Float32Err failed")
 	}
@@ -2794,7 +2794,7 @@ func TestMapUint32Float64Err(t *testing.T) {
 		t.Errorf("MapUint32Float64Err failed")
 	}
 
-	r, _ =MapUint32Float64Err(nil, []uint32{})
+	r, _ = MapUint32Float64Err(nil, []uint32{})
 	if len(r) > 0 {
 		t.Errorf("MapUint32Float64Err failed")
 	}
@@ -2820,7 +2820,7 @@ func TestMapUint16IntErr(t *testing.T) {
 		t.Errorf("MapUint16IntErr failed")
 	}
 
-	r, _ =MapUint16IntErr(nil, []uint16{})
+	r, _ = MapUint16IntErr(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16IntErr failed")
 	}
@@ -2846,7 +2846,7 @@ func TestMapUint16Int64Err(t *testing.T) {
 		t.Errorf("MapUint16Int64Err failed")
 	}
 
-	r, _ =MapUint16Int64Err(nil, []uint16{})
+	r, _ = MapUint16Int64Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Int64Err failed")
 	}
@@ -2872,7 +2872,7 @@ func TestMapUint16Int32Err(t *testing.T) {
 		t.Errorf("MapUint16Int32Err failed")
 	}
 
-	r, _ =MapUint16Int32Err(nil, []uint16{})
+	r, _ = MapUint16Int32Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Int32Err failed")
 	}
@@ -2898,7 +2898,7 @@ func TestMapUint16Int16Err(t *testing.T) {
 		t.Errorf("MapUint16Int16Err failed")
 	}
 
-	r, _ =MapUint16Int16Err(nil, []uint16{})
+	r, _ = MapUint16Int16Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Int16Err failed")
 	}
@@ -2924,7 +2924,7 @@ func TestMapUint16Int8Err(t *testing.T) {
 		t.Errorf("MapUint16Int8Err failed")
 	}
 
-	r, _ =MapUint16Int8Err(nil, []uint16{})
+	r, _ = MapUint16Int8Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Int8Err failed")
 	}
@@ -2950,7 +2950,7 @@ func TestMapUint16UintErr(t *testing.T) {
 		t.Errorf("MapUint16UintErr failed")
 	}
 
-	r, _ =MapUint16UintErr(nil, []uint16{})
+	r, _ = MapUint16UintErr(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16UintErr failed")
 	}
@@ -2976,7 +2976,7 @@ func TestMapUint16Uint64Err(t *testing.T) {
 		t.Errorf("MapUint16Uint64Err failed")
 	}
 
-	r, _ =MapUint16Uint64Err(nil, []uint16{})
+	r, _ = MapUint16Uint64Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Uint64Err failed")
 	}
@@ -3002,7 +3002,7 @@ func TestMapUint16Uint32Err(t *testing.T) {
 		t.Errorf("MapUint16Uint32Err failed")
 	}
 
-	r, _ =MapUint16Uint32Err(nil, []uint16{})
+	r, _ = MapUint16Uint32Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Uint32Err failed")
 	}
@@ -3028,7 +3028,7 @@ func TestMapUint16Uint8Err(t *testing.T) {
 		t.Errorf("MapUint16Uint8Err failed")
 	}
 
-	r, _ =MapUint16Uint8Err(nil, []uint16{})
+	r, _ = MapUint16Uint8Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Uint8Err failed")
 	}
@@ -3100,7 +3100,7 @@ func TestMapUint16BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint16BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -3118,7 +3118,7 @@ func TestMapUint16Float32Err(t *testing.T) {
 		t.Errorf("MapUint16Float32Err failed")
 	}
 
-	r, _ =MapUint16Float32Err(nil, []uint16{})
+	r, _ = MapUint16Float32Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Float32Err failed")
 	}
@@ -3144,7 +3144,7 @@ func TestMapUint16Float64Err(t *testing.T) {
 		t.Errorf("MapUint16Float64Err failed")
 	}
 
-	r, _ =MapUint16Float64Err(nil, []uint16{})
+	r, _ = MapUint16Float64Err(nil, []uint16{})
 	if len(r) > 0 {
 		t.Errorf("MapUint16Float64Err failed")
 	}
@@ -3170,7 +3170,7 @@ func TestMapUint8IntErr(t *testing.T) {
 		t.Errorf("MapUint8IntErr failed")
 	}
 
-	r, _ =MapUint8IntErr(nil, []uint8{})
+	r, _ = MapUint8IntErr(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8IntErr failed")
 	}
@@ -3196,7 +3196,7 @@ func TestMapUint8Int64Err(t *testing.T) {
 		t.Errorf("MapUint8Int64Err failed")
 	}
 
-	r, _ =MapUint8Int64Err(nil, []uint8{})
+	r, _ = MapUint8Int64Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Int64Err failed")
 	}
@@ -3222,7 +3222,7 @@ func TestMapUint8Int32Err(t *testing.T) {
 		t.Errorf("MapUint8Int32Err failed")
 	}
 
-	r, _ =MapUint8Int32Err(nil, []uint8{})
+	r, _ = MapUint8Int32Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Int32Err failed")
 	}
@@ -3248,7 +3248,7 @@ func TestMapUint8Int16Err(t *testing.T) {
 		t.Errorf("MapUint8Int16Err failed")
 	}
 
-	r, _ =MapUint8Int16Err(nil, []uint8{})
+	r, _ = MapUint8Int16Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Int16Err failed")
 	}
@@ -3274,7 +3274,7 @@ func TestMapUint8Int8Err(t *testing.T) {
 		t.Errorf("MapUint8Int8Err failed")
 	}
 
-	r, _ =MapUint8Int8Err(nil, []uint8{})
+	r, _ = MapUint8Int8Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Int8Err failed")
 	}
@@ -3300,7 +3300,7 @@ func TestMapUint8UintErr(t *testing.T) {
 		t.Errorf("MapUint8UintErr failed")
 	}
 
-	r, _ =MapUint8UintErr(nil, []uint8{})
+	r, _ = MapUint8UintErr(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8UintErr failed")
 	}
@@ -3326,7 +3326,7 @@ func TestMapUint8Uint64Err(t *testing.T) {
 		t.Errorf("MapUint8Uint64Err failed")
 	}
 
-	r, _ =MapUint8Uint64Err(nil, []uint8{})
+	r, _ = MapUint8Uint64Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Uint64Err failed")
 	}
@@ -3352,7 +3352,7 @@ func TestMapUint8Uint32Err(t *testing.T) {
 		t.Errorf("MapUint8Uint32Err failed")
 	}
 
-	r, _ =MapUint8Uint32Err(nil, []uint8{})
+	r, _ = MapUint8Uint32Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Uint32Err failed")
 	}
@@ -3378,7 +3378,7 @@ func TestMapUint8Uint16Err(t *testing.T) {
 		t.Errorf("MapUint8Uint16Err failed")
 	}
 
-	r, _ =MapUint8Uint16Err(nil, []uint8{})
+	r, _ = MapUint8Uint16Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Uint16Err failed")
 	}
@@ -3450,7 +3450,7 @@ func TestMapUint8BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint8BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -3468,7 +3468,7 @@ func TestMapUint8Float32Err(t *testing.T) {
 		t.Errorf("MapUint8Float32Err failed")
 	}
 
-	r, _ =MapUint8Float32Err(nil, []uint8{})
+	r, _ = MapUint8Float32Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Float32Err failed")
 	}
@@ -3494,7 +3494,7 @@ func TestMapUint8Float64Err(t *testing.T) {
 		t.Errorf("MapUint8Float64Err failed")
 	}
 
-	r, _ =MapUint8Float64Err(nil, []uint8{})
+	r, _ = MapUint8Float64Err(nil, []uint8{})
 	if len(r) > 0 {
 		t.Errorf("MapUint8Float64Err failed")
 	}
@@ -3880,7 +3880,7 @@ func TestMapStrBoolErr(t *testing.T) {
 		t.Errorf("MapStrBool failed")
 	}
 
-	r,  _ = MapStrBoolErr(nil, []string{})
+	r, _ = MapStrBoolErr(nil, []string{})
 	if len(r) > 0 {
 		t.Errorf("MapStrBoolErr failed")
 	}
@@ -4316,7 +4316,7 @@ func TestMapFloat32IntErr(t *testing.T) {
 		t.Errorf("MapFloat32IntErr failed")
 	}
 
-	r, _ =MapFloat32IntErr(nil, []float32{})
+	r, _ = MapFloat32IntErr(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32IntErr failed")
 	}
@@ -4342,7 +4342,7 @@ func TestMapFloat32Int64Err(t *testing.T) {
 		t.Errorf("MapFloat32Int64Err failed")
 	}
 
-	r, _ =MapFloat32Int64Err(nil, []float32{})
+	r, _ = MapFloat32Int64Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Int64Err failed")
 	}
@@ -4368,7 +4368,7 @@ func TestMapFloat32Int32Err(t *testing.T) {
 		t.Errorf("MapFloat32Int32Err failed")
 	}
 
-	r, _ =MapFloat32Int32Err(nil, []float32{})
+	r, _ = MapFloat32Int32Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Int32Err failed")
 	}
@@ -4394,7 +4394,7 @@ func TestMapFloat32Int16Err(t *testing.T) {
 		t.Errorf("MapFloat32Int16Err failed")
 	}
 
-	r, _ =MapFloat32Int16Err(nil, []float32{})
+	r, _ = MapFloat32Int16Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Int16Err failed")
 	}
@@ -4420,7 +4420,7 @@ func TestMapFloat32Int8Err(t *testing.T) {
 		t.Errorf("MapFloat32Int8Err failed")
 	}
 
-	r, _ =MapFloat32Int8Err(nil, []float32{})
+	r, _ = MapFloat32Int8Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Int8Err failed")
 	}
@@ -4446,7 +4446,7 @@ func TestMapFloat32UintErr(t *testing.T) {
 		t.Errorf("MapFloat32UintErr failed")
 	}
 
-	r, _ =MapFloat32UintErr(nil, []float32{})
+	r, _ = MapFloat32UintErr(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32UintErr failed")
 	}
@@ -4472,7 +4472,7 @@ func TestMapFloat32Uint64Err(t *testing.T) {
 		t.Errorf("MapFloat32Uint64Err failed")
 	}
 
-	r, _ =MapFloat32Uint64Err(nil, []float32{})
+	r, _ = MapFloat32Uint64Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Uint64Err failed")
 	}
@@ -4498,7 +4498,7 @@ func TestMapFloat32Uint32Err(t *testing.T) {
 		t.Errorf("MapFloat32Uint32Err failed")
 	}
 
-	r, _ =MapFloat32Uint32Err(nil, []float32{})
+	r, _ = MapFloat32Uint32Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Uint32Err failed")
 	}
@@ -4524,7 +4524,7 @@ func TestMapFloat32Uint16Err(t *testing.T) {
 		t.Errorf("MapFloat32Uint16Err failed")
 	}
 
-	r, _ =MapFloat32Uint16Err(nil, []float32{})
+	r, _ = MapFloat32Uint16Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Uint16Err failed")
 	}
@@ -4550,7 +4550,7 @@ func TestMapFloat32Uint8Err(t *testing.T) {
 		t.Errorf("MapFloat32Uint8Err failed")
 	}
 
-	r, _ =MapFloat32Uint8Err(nil, []float32{})
+	r, _ = MapFloat32Uint8Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Uint8Err failed")
 	}
@@ -4622,7 +4622,7 @@ func TestMapFloat32BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapFloat32BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -4640,7 +4640,7 @@ func TestMapFloat32Float64Err(t *testing.T) {
 		t.Errorf("MapFloat32Float64Err failed")
 	}
 
-	r, _ =MapFloat32Float64Err(nil, []float32{})
+	r, _ = MapFloat32Float64Err(nil, []float32{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat32Float64Err failed")
 	}
@@ -4666,7 +4666,7 @@ func TestMapFloat64IntErr(t *testing.T) {
 		t.Errorf("MapFloat64IntErr failed")
 	}
 
-	r, _ =MapFloat64IntErr(nil, []float64{})
+	r, _ = MapFloat64IntErr(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64IntErr failed")
 	}
@@ -4692,7 +4692,7 @@ func TestMapFloat64Int64Err(t *testing.T) {
 		t.Errorf("MapFloat64Int64Err failed")
 	}
 
-	r, _ =MapFloat64Int64Err(nil, []float64{})
+	r, _ = MapFloat64Int64Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Int64Err failed")
 	}
@@ -4718,7 +4718,7 @@ func TestMapFloat64Int32Err(t *testing.T) {
 		t.Errorf("MapFloat64Int32Err failed")
 	}
 
-	r, _ =MapFloat64Int32Err(nil, []float64{})
+	r, _ = MapFloat64Int32Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Int32Err failed")
 	}
@@ -4744,7 +4744,7 @@ func TestMapFloat64Int16Err(t *testing.T) {
 		t.Errorf("MapFloat64Int16Err failed")
 	}
 
-	r, _ =MapFloat64Int16Err(nil, []float64{})
+	r, _ = MapFloat64Int16Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Int16Err failed")
 	}
@@ -4770,7 +4770,7 @@ func TestMapFloat64Int8Err(t *testing.T) {
 		t.Errorf("MapFloat64Int8Err failed")
 	}
 
-	r, _ =MapFloat64Int8Err(nil, []float64{})
+	r, _ = MapFloat64Int8Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Int8Err failed")
 	}
@@ -4796,7 +4796,7 @@ func TestMapFloat64UintErr(t *testing.T) {
 		t.Errorf("MapFloat64UintErr failed")
 	}
 
-	r, _ =MapFloat64UintErr(nil, []float64{})
+	r, _ = MapFloat64UintErr(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64UintErr failed")
 	}
@@ -4822,7 +4822,7 @@ func TestMapFloat64Uint64Err(t *testing.T) {
 		t.Errorf("MapFloat64Uint64Err failed")
 	}
 
-	r, _ =MapFloat64Uint64Err(nil, []float64{})
+	r, _ = MapFloat64Uint64Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Uint64Err failed")
 	}
@@ -4848,7 +4848,7 @@ func TestMapFloat64Uint32Err(t *testing.T) {
 		t.Errorf("MapFloat64Uint32Err failed")
 	}
 
-	r, _ =MapFloat64Uint32Err(nil, []float64{})
+	r, _ = MapFloat64Uint32Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Uint32Err failed")
 	}
@@ -4874,7 +4874,7 @@ func TestMapFloat64Uint16Err(t *testing.T) {
 		t.Errorf("MapFloat64Uint16Err failed")
 	}
 
-	r, _ =MapFloat64Uint16Err(nil, []float64{})
+	r, _ = MapFloat64Uint16Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Uint16Err failed")
 	}
@@ -4900,7 +4900,7 @@ func TestMapFloat64Uint8Err(t *testing.T) {
 		t.Errorf("MapFloat64Uint8Err failed")
 	}
 
-	r, _ =MapFloat64Uint8Err(nil, []float64{})
+	r, _ = MapFloat64Uint8Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Uint8Err failed")
 	}
@@ -4972,7 +4972,7 @@ func TestMapFloat64BoolErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapFloat64BoolErr failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
@@ -4990,7 +4990,7 @@ func TestMapFloat64Float32Err(t *testing.T) {
 		t.Errorf("MapFloat64Float32Err failed")
 	}
 
-	r, _ =MapFloat64Float32Err(nil, []float64{})
+	r, _ = MapFloat64Float32Err(nil, []float64{})
 	if len(r) > 0 {
 		t.Errorf("MapFloat64Float32Err failed")
 	}

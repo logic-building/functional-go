@@ -411,7 +411,7 @@ func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 }
 func notOne<FINPUT_TYPE><FOUTPUT_TYPE>Err(num <INPUT_TYPE>) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -484,7 +484,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num <INPUT_TYPE>) (bool, error) {
 
 	if num == "10" {
 		return t, nil
-	} 
+	}
 	return f, nil
 }
 `
@@ -497,7 +497,7 @@ func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 <OUTPUT_TYPE> = 10
-	
+
 	var vit <INPUT_TYPE> = true
 	var vif <INPUT_TYPE> = false
 
@@ -550,9 +550,8 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num bool) (<OUTPUT_TYPE>, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 `
 }
@@ -563,7 +562,7 @@ func FilterMapIOBoolStrErrTest() string {
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 	// Test : someLogic
 	var vo10 <OUTPUT_TYPE> = "10"
-	
+
 	var vit <INPUT_TYPE> = true
 	var vif <INPUT_TYPE> = false
 

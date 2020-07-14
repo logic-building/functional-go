@@ -1641,6 +1641,5 @@ func squareStrPtr(num *string) *string {
 	code = basic.ReplaceActivityMapIOErr(code)
 	code = basic.ReplaceActivityMapIOPtrErr(code)
 
-	code = basic.ReplaceActivityPMapIOErr(code)
 	return code
 }

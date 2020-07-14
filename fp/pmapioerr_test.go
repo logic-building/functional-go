@@ -281,7 +281,6 @@ func TestPmapIntBoolErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapIntFloat32Err(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []float32{2, 3}
@@ -606,7 +605,6 @@ func TestPmapInt64BoolErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapInt64Float32Err(t *testing.T) {
 	// Test : add 1 to the list
@@ -933,7 +931,6 @@ func TestPmapInt32BoolErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapInt32Float32Err(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []float32{2, 3}
@@ -1258,7 +1255,6 @@ func TestPmapInt16BoolErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapInt16Float32Err(t *testing.T) {
 	// Test : add 1 to the list
@@ -1585,7 +1581,6 @@ func TestPmapInt8BoolErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapInt8Float32Err(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []float32{2, 3}
@@ -1910,7 +1905,6 @@ func TestPmapUintBoolErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUintFloat32Err(t *testing.T) {
 	// Test : add 1 to the list
@@ -2237,7 +2231,6 @@ func TestPmapUint64BoolErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapUint64Float32Err(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []float32{2, 3}
@@ -2562,7 +2555,6 @@ func TestPmapUint32BoolErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUint32Float32Err(t *testing.T) {
 	// Test : add 1 to the list
@@ -2889,7 +2881,6 @@ func TestPmapUint16BoolErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapUint16Float32Err(t *testing.T) {
 	// Test : add 1 to the list
 	expectedList := []float32{2, 3}
@@ -3214,7 +3205,6 @@ func TestPmapUint8BoolErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapUint8Float32Err(t *testing.T) {
 	// Test : add 1 to the list
@@ -3541,7 +3531,6 @@ func TestPmapStrBoolErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapStrFloat32Err(t *testing.T) {
 	// Test : someLogic
 	expectedList := []float32{10}
@@ -3617,7 +3606,6 @@ func TestPmapBoolIntErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolInt64Err(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int64{10, 10}
@@ -3642,7 +3630,6 @@ func TestPmapBoolInt64Err(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolInt32Err(t *testing.T) {
 	// Test : someLogic
@@ -3669,7 +3656,6 @@ func TestPmapBoolInt32Err(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolInt16Err(t *testing.T) {
 	// Test : someLogic
 	expectedList := []int16{10, 10}
@@ -3694,7 +3680,6 @@ func TestPmapBoolInt16Err(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolInt8Err(t *testing.T) {
 	// Test : someLogic
@@ -3721,7 +3706,6 @@ func TestPmapBoolInt8Err(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolUintErr(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint{10, 10}
@@ -3746,7 +3730,6 @@ func TestPmapBoolUintErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolUint64Err(t *testing.T) {
 	// Test : someLogic
@@ -3773,7 +3756,6 @@ func TestPmapBoolUint64Err(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolUint32Err(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint32{10, 10}
@@ -3798,7 +3780,6 @@ func TestPmapBoolUint32Err(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolUint16Err(t *testing.T) {
 	// Test : someLogic
@@ -3825,7 +3806,6 @@ func TestPmapBoolUint16Err(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolUint8Err(t *testing.T) {
 	// Test : someLogic
 	expectedList := []uint8{10, 10}
@@ -3850,7 +3830,6 @@ func TestPmapBoolUint8Err(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapBoolStrErr(t *testing.T) {
 	// Test : someLogic
@@ -3877,7 +3856,6 @@ func TestPmapBoolStrErr(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolFloat32Err(t *testing.T) {
 	// Test : someLogic
 	expectedList := []float32{10, 10}
@@ -3903,7 +3881,6 @@ func TestPmapBoolFloat32Err(t *testing.T) {
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 
-
 func TestPmapBoolFloat64Err(t *testing.T) {
 	// Test : someLogic
 	expectedList := []float64{10, 10}
@@ -3928,7 +3905,6 @@ func TestPmapBoolFloat64Err(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapFloat32IntErr(t *testing.T) {
 	// Test : add 1 to the list
@@ -4229,7 +4205,6 @@ func TestPmapFloat32BoolErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapFloat32Float64Err(t *testing.T) {
 	// Test : add 1 to the list
@@ -4555,7 +4530,6 @@ func TestPmapFloat64BoolErr(t *testing.T) {
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
-
 
 func TestPmapFloat64Float32Err(t *testing.T) {
 	// Test : add 1 to the list
