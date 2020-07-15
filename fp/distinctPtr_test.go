@@ -9,8 +9,7 @@ import (
 func TestDistinctIntPtr(t *testing.T) {
 	var v8 int = 8
 	var v2 int = 2
-	var v0 int = 0
-
+	var v0 int
 
 	// Test : Get distinct values
 	expected := []*int{&v8, &v2, &v0}
@@ -44,8 +43,7 @@ func TestDistinctIntPtr(t *testing.T) {
 func TestDistinctInt64Ptr(t *testing.T) {
 	var v8 int64 = 8
 	var v2 int64 = 2
-	var v0 int64 = 0
-
+	var v0 int64
 
 	// Test : Get distinct values
 	expected := []*int64{&v8, &v2, &v0}
@@ -79,8 +77,7 @@ func TestDistinctInt64Ptr(t *testing.T) {
 func TestDistinctInt32Ptr(t *testing.T) {
 	var v8 int32 = 8
 	var v2 int32 = 2
-	var v0 int32 = 0
-
+	var v0 int32
 
 	// Test : Get distinct values
 	expected := []*int32{&v8, &v2, &v0}
@@ -114,8 +111,7 @@ func TestDistinctInt32Ptr(t *testing.T) {
 func TestDistinctInt16Ptr(t *testing.T) {
 	var v8 int16 = 8
 	var v2 int16 = 2
-	var v0 int16 = 0
-
+	var v0 int16
 
 	// Test : Get distinct values
 	expected := []*int16{&v8, &v2, &v0}
@@ -149,8 +145,7 @@ func TestDistinctInt16Ptr(t *testing.T) {
 func TestDistinctInt8Ptr(t *testing.T) {
 	var v8 int8 = 8
 	var v2 int8 = 2
-	var v0 int8 = 0
-
+	var v0 int8
 
 	// Test : Get distinct values
 	expected := []*int8{&v8, &v2, &v0}
@@ -184,8 +179,7 @@ func TestDistinctInt8Ptr(t *testing.T) {
 func TestDistinctUintPtr(t *testing.T) {
 	var v8 uint = 8
 	var v2 uint = 2
-	var v0 uint = 0
-
+	var v0 uint
 
 	// Test : Get distinct values
 	expected := []*uint{&v8, &v2, &v0}
@@ -219,8 +213,7 @@ func TestDistinctUintPtr(t *testing.T) {
 func TestDistinctUint64Ptr(t *testing.T) {
 	var v8 uint64 = 8
 	var v2 uint64 = 2
-	var v0 uint64 = 0
-
+	var v0 uint64
 
 	// Test : Get distinct values
 	expected := []*uint64{&v8, &v2, &v0}
@@ -254,8 +247,7 @@ func TestDistinctUint64Ptr(t *testing.T) {
 func TestDistinctUint32Ptr(t *testing.T) {
 	var v8 uint32 = 8
 	var v2 uint32 = 2
-	var v0 uint32 = 0
-
+	var v0 uint32
 
 	// Test : Get distinct values
 	expected := []*uint32{&v8, &v2, &v0}
@@ -289,8 +281,7 @@ func TestDistinctUint32Ptr(t *testing.T) {
 func TestDistinctUint16Ptr(t *testing.T) {
 	var v8 uint16 = 8
 	var v2 uint16 = 2
-	var v0 uint16 = 0
-
+	var v0 uint16
 
 	// Test : Get distinct values
 	expected := []*uint16{&v8, &v2, &v0}
@@ -324,8 +315,7 @@ func TestDistinctUint16Ptr(t *testing.T) {
 func TestDistinctUint8Ptr(t *testing.T) {
 	var v8 uint8 = 8
 	var v2 uint8 = 2
-	var v0 uint8 = 0
-
+	var v0 uint8
 
 	// Test : Get distinct values
 	expected := []*uint8{&v8, &v2, &v0}
@@ -359,8 +349,7 @@ func TestDistinctUint8Ptr(t *testing.T) {
 func TestDistinctStrPtr(t *testing.T) {
 	var v8 string = "8"
 	var v2 string = "2"
-	var v0 string = "0"
-
+	var v0 string
 
 	// Test : Get distinct values
 	expected := []*string{&v8, &v2, &v0}
@@ -395,7 +384,7 @@ func TestDistinctBoolPtr(t *testing.T) {
 	var vt bool = true
 
 	newList := DistinctBoolPtr([]*bool{&vt, &vt})
-	if *newList[0] != vt  {
+	if *newList[0] != vt {
 		t.Errorf("DistinctBoolPtr failed")
 	}
 
@@ -404,12 +393,10 @@ func TestDistinctBoolPtr(t *testing.T) {
 	}
 }
 
-
 func TestDistinctFloat32Ptr(t *testing.T) {
 	var v8 float32 = 8
 	var v2 float32 = 2
-	var v0 float32 = 0
-
+	var v0 float32
 
 	// Test : Get distinct values
 	expected := []*float32{&v8, &v2, &v0}
@@ -443,8 +430,7 @@ func TestDistinctFloat32Ptr(t *testing.T) {
 func TestDistinctFloat64Ptr(t *testing.T) {
 	var v8 float64 = 8
 	var v2 float64 = 2
-	var v0 float64 = 0
-
+	var v0 float64
 
 	// Test : Get distinct values
 	expected := []*float64{&v8, &v2, &v0}

@@ -246,7 +246,6 @@ func TestMap<FTYPE>Err(t *testing.T) {
 	var v7 <TYPE> = 7
 	var v8 <TYPE> = 8
 
-
 	// Test: add 5 to each item in the list
 	expectedSumList := []<TYPE>{v6, v7, v8}
 	partialAdd<FTYPE> := func(num <TYPE>) (<TYPE>, error) {
@@ -279,18 +278,15 @@ func TestMap<FTYPE>Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("Map<FTYPE>Err failed")
 	}
-
-	
 }
 
 func add<FTYPE>Err(num1, num2 <TYPE>) (<TYPE>, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 `
 }
 
@@ -302,14 +298,14 @@ func TestMap<FTYPE>Err(t *testing.T) {
 	var vf <TYPE> = false
 
 	expectedSumList := []<TYPE>{vf}
-	
+
 	newList, _ := Map<FTYPE>Err(inverse<FTYPE>Err, []<TYPE>{vt})
-	if newList[0] != expectedSumList[0]  {
+	if newList[0] != expectedSumList[0] {
 		t.Errorf("Map<FTYPE>Err failed")
 	}
 
 	_, err1 := Map<FTYPE>Err(inverse<FTYPE>Err, []<TYPE>{vf})
-	if err1 == nil  {
+	if err1 == nil {
 		t.Errorf("Map<FTYPE>Err failed")
 	}
 
@@ -324,13 +320,12 @@ func inverse<FTYPE>Err(num1 <TYPE>) (<TYPE>, error) {
 		return false, errors.New("False is not allowed")
 	}
 	vt := true
-    if num1 == true {
+	if num1 == true {
 		v := false
 		return v, nil
-	} 
+	}
 	return vt, nil
 }
-
 `
 }
 
@@ -356,14 +351,14 @@ func TestMapIntErr(t *testing.T) {`
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }`
 	s2 = `func addStrErr(num1, num2 string) (string, error) {
 	if num1 == "0" {
 		return "", errors.New("0 is not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }`
 	code = strings.Replace(code, s1, s2, -1)
@@ -377,7 +372,6 @@ func TestMapIntErr(t *testing.T) {`
 	var v7 string = "7"
 	var v8 string = "8"
 
-
 	// Test: add 5 to each item in the list
 	expectedSumList := []string{v6, v7, v8}`
 
@@ -389,7 +383,6 @@ func TestMapIntErr(t *testing.T) {`
 	var v6 string = "51"
 	var v7 string = "52"
 	var v8 string = "53"
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []string{v6, v7, v8}`

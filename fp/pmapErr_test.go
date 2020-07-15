@@ -61,7 +61,6 @@ func squareIntErr(num int) (int, error) {
 	return r, nil
 }
 
-
 func TestPmapInt64Err(t *testing.T) {
 	// Test : square the list
 	var v1 int64 = 1
@@ -117,7 +116,6 @@ func squareInt64Err(num int64) (int64, error) {
 	r := num * num
 	return r, nil
 }
-
 
 func TestPmapInt32Err(t *testing.T) {
 	// Test : square the list
@@ -175,7 +173,6 @@ func squareInt32Err(num int32) (int32, error) {
 	return r, nil
 }
 
-
 func TestPmapInt16Err(t *testing.T) {
 	// Test : square the list
 	var v1 int16 = 1
@@ -231,7 +228,6 @@ func squareInt16Err(num int16) (int16, error) {
 	r := num * num
 	return r, nil
 }
-
 
 func TestPmapInt8Err(t *testing.T) {
 	// Test : square the list
@@ -289,7 +285,6 @@ func squareInt8Err(num int8) (int8, error) {
 	return r, nil
 }
 
-
 func TestPmapUintErr(t *testing.T) {
 	// Test : square the list
 	var v1 uint = 1
@@ -345,7 +340,6 @@ func squareUintErr(num uint) (uint, error) {
 	r := num * num
 	return r, nil
 }
-
 
 func TestPmapUint64Err(t *testing.T) {
 	// Test : square the list
@@ -403,7 +397,6 @@ func squareUint64Err(num uint64) (uint64, error) {
 	return r, nil
 }
 
-
 func TestPmapUint32Err(t *testing.T) {
 	// Test : square the list
 	var v1 uint32 = 1
@@ -459,7 +452,6 @@ func squareUint32Err(num uint32) (uint32, error) {
 	r := num * num
 	return r, nil
 }
-
 
 func TestPmapUint16Err(t *testing.T) {
 	// Test : square the list
@@ -517,7 +509,6 @@ func squareUint16Err(num uint16) (uint16, error) {
 	return r, nil
 }
 
-
 func TestPmapUint8Err(t *testing.T) {
 	// Test : square the list
 	var v1 uint8 = 1
@@ -573,7 +564,6 @@ func squareUint8Err(num uint8) (uint8, error) {
 	r := num * num
 	return r, nil
 }
-
 
 func TestPmapStrErr(t *testing.T) {
 	// Test : square the list
@@ -634,7 +624,6 @@ func squareStrErr(num string) (string, error) {
 	return r, nil
 }
 
-
 func TestPMapBoolErr(t *testing.T) {
 	var vt bool = true
 	var vf bool = false
@@ -656,7 +645,6 @@ func TestPMapBoolErr(t *testing.T) {
 		t.Errorf("MapBoolErr failed")
 	}
 }
-
 
 func TestPmapFloat32Err(t *testing.T) {
 	// Test : square the list
@@ -714,7 +702,6 @@ func squareFloat32Err(num float32) (float32, error) {
 	return r, nil
 }
 
-
 func TestPmapFloat64Err(t *testing.T) {
 	// Test : square the list
 	var v1 float64 = 1
@@ -770,4 +757,3 @@ func squareFloat64Err(num float64) (float64, error) {
 	r := num * num
 	return r, nil
 }
-

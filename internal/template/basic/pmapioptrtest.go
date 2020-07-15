@@ -322,7 +322,7 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(t *testing.T) {
 	var vf <OUTPUT_TYPE> = false
 
 	var v10 <INPUT_TYPE> = 10
-	var v0 <INPUT_TYPE> 
+	var v0 <INPUT_TYPE>
 	var v3 <INPUT_TYPE> = 3
 
 	expectedList := []*<OUTPUT_TYPE>{&vt, &vf}

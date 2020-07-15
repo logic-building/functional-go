@@ -329,7 +329,7 @@ func TestPmapIntBoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int = 10
-	var v0 int 
+	var v0 int
 	var v3 int = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -742,7 +742,7 @@ func TestPmapInt64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int64 = 10
-	var v0 int64 
+	var v0 int64
 	var v3 int64 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -1155,7 +1155,7 @@ func TestPmapInt32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int32 = 10
-	var v0 int32 
+	var v0 int32
 	var v3 int32 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -1568,7 +1568,7 @@ func TestPmapInt16BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int16 = 10
-	var v0 int16 
+	var v0 int16
 	var v3 int16 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -1981,7 +1981,7 @@ func TestPmapInt8BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 int8 = 10
-	var v0 int8 
+	var v0 int8
 	var v3 int8 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -2394,7 +2394,7 @@ func TestPmapUintBoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint = 10
-	var v0 uint 
+	var v0 uint
 	var v3 uint = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -2807,7 +2807,7 @@ func TestPmapUint64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint64 = 10
-	var v0 uint64 
+	var v0 uint64
 	var v3 uint64 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -3220,7 +3220,7 @@ func TestPmapUint32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint32 = 10
-	var v0 uint32 
+	var v0 uint32
 	var v3 uint32 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -3633,7 +3633,7 @@ func TestPmapUint16BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint16 = 10
-	var v0 uint16 
+	var v0 uint16
 	var v3 uint16 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -4046,7 +4046,7 @@ func TestPmapUint8BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 uint8 = 10
-	var v0 uint8 
+	var v0 uint8
 	var v3 uint8 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -5298,7 +5298,7 @@ func TestPmapFloat32BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float32 = 10
-	var v0 float32 
+	var v0 float32
 	var v3 float32 = 3
 
 	expectedList := []*bool{&vt, &vf}
@@ -5711,7 +5711,7 @@ func TestPmapFloat64BoolPtrErr(t *testing.T) {
 	var vf bool = false
 
 	var v10 float64 = 10
-	var v0 float64 
+	var v0 float64
 	var v3 float64 = 3
 
 	expectedList := []*bool{&vt, &vf}
