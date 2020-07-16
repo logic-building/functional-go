@@ -130,7 +130,7 @@ func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 
 	var vi1 <INPUT_TYPE> = 1
 	var vi10 <INPUT_TYPE> = 10
-	var vi0 <INPUT_TYPE> = 0
+	var vi0 <INPUT_TYPE>
 
 	expectedList := []*<OUTPUT_TYPE>{&vto, &vfo}
 	newList := FilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(notOne<FINPUT_TYPE><FOUTPUT_TYPE>Ptr, someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr, []*<INPUT_TYPE>{&vi1, &vi10, &vi0})
@@ -198,7 +198,7 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *<INPUT_TYPE>) *bool {
 
 	if *num == "10" {
 		return &t
-	} 
+	}
 	return &f
 }
 `
@@ -211,7 +211,7 @@ func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 <OUTPUT_TYPE> = 10
-	
+
 	var vit <INPUT_TYPE> = true
 	var vif <INPUT_TYPE> = false
 
@@ -254,7 +254,7 @@ func FilterMapIOBoolStrPtrTest() string {
 func TestFilterMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 	// Test : someLogic
 	var vo10 <OUTPUT_TYPE> = "10"
-	
+
 	var vit <INPUT_TYPE> = true
 	var vif <INPUT_TYPE> = false
 

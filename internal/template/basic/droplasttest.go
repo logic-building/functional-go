@@ -88,9 +88,9 @@ func TestDropLast<FTYPE>(t *testing.T) {
 func DropLastPtrTest() string {
 	return `
 func TestDropLast<FTYPE>Ptr(t *testing.T) {
-    var v1 <TYPE> = 1
+	var v1 <TYPE> = 1
 	var v2 <TYPE> = 2
-    var v3 <TYPE> = 3
+	var v3 <TYPE> = 3
 	var v4 <TYPE> = 4
 	var v5 <TYPE> = 5
 
@@ -137,7 +137,7 @@ func DropLastPtrBoolTest() string {
 	return `
 func TestDropLast<FTYPE>Ptr(t *testing.T) {
 	var true bool = true
-    var false bool = false
+	var false bool = false
 	list := []*<TYPE>{&true, &true, &true, &true, &false}
 	expectedList := []*<TYPE>{&true, &true, &true, &true}
 	actualList := DropLast<FTYPE>Ptr(list)

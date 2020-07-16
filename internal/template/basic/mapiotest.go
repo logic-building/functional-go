@@ -187,7 +187,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
 
-	r, _ =Map<FINPUT_TYPE><FOUTPUT_TYPE>Err(nil, []<INPUT_TYPE>{})
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>Err(nil, []<INPUT_TYPE>{})
 	if len(r) > 0 {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
@@ -310,7 +310,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
-	
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
 }
 `
@@ -333,7 +333,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 
-	r,  _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>Err(nil, []<INPUT_TYPE>{})
+	r, _ = Map<FINPUT_TYPE><FOUTPUT_TYPE>Err(nil, []<INPUT_TYPE>{})
 	if len(r) > 0 {
 		t.Errorf("Map<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}

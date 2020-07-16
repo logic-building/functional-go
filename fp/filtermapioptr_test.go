@@ -344,7 +344,7 @@ func TestFilterMapIntBoolPtr(t *testing.T) {
 
 	var vi1 int = 1
 	var vi10 int = 10
-	var vi0 int = 0
+	var vi0 int
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapIntBoolPtr(notOneIntBoolPtr, someLogicIntBoolPtr, []*int{&vi1, &vi10, &vi0})
@@ -775,7 +775,7 @@ func TestFilterMapInt64BoolPtr(t *testing.T) {
 
 	var vi1 int64 = 1
 	var vi10 int64 = 10
-	var vi0 int64 = 0
+	var vi0 int64
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapInt64BoolPtr(notOneInt64BoolPtr, someLogicInt64BoolPtr, []*int64{&vi1, &vi10, &vi0})
@@ -1206,7 +1206,7 @@ func TestFilterMapInt32BoolPtr(t *testing.T) {
 
 	var vi1 int32 = 1
 	var vi10 int32 = 10
-	var vi0 int32 = 0
+	var vi0 int32
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapInt32BoolPtr(notOneInt32BoolPtr, someLogicInt32BoolPtr, []*int32{&vi1, &vi10, &vi0})
@@ -1637,7 +1637,7 @@ func TestFilterMapInt16BoolPtr(t *testing.T) {
 
 	var vi1 int16 = 1
 	var vi10 int16 = 10
-	var vi0 int16 = 0
+	var vi0 int16
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapInt16BoolPtr(notOneInt16BoolPtr, someLogicInt16BoolPtr, []*int16{&vi1, &vi10, &vi0})
@@ -2068,7 +2068,7 @@ func TestFilterMapInt8BoolPtr(t *testing.T) {
 
 	var vi1 int8 = 1
 	var vi10 int8 = 10
-	var vi0 int8 = 0
+	var vi0 int8
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapInt8BoolPtr(notOneInt8BoolPtr, someLogicInt8BoolPtr, []*int8{&vi1, &vi10, &vi0})
@@ -2499,7 +2499,7 @@ func TestFilterMapUintBoolPtr(t *testing.T) {
 
 	var vi1 uint = 1
 	var vi10 uint = 10
-	var vi0 uint = 0
+	var vi0 uint
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapUintBoolPtr(notOneUintBoolPtr, someLogicUintBoolPtr, []*uint{&vi1, &vi10, &vi0})
@@ -2930,7 +2930,7 @@ func TestFilterMapUint64BoolPtr(t *testing.T) {
 
 	var vi1 uint64 = 1
 	var vi10 uint64 = 10
-	var vi0 uint64 = 0
+	var vi0 uint64
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapUint64BoolPtr(notOneUint64BoolPtr, someLogicUint64BoolPtr, []*uint64{&vi1, &vi10, &vi0})
@@ -3361,7 +3361,7 @@ func TestFilterMapUint32BoolPtr(t *testing.T) {
 
 	var vi1 uint32 = 1
 	var vi10 uint32 = 10
-	var vi0 uint32 = 0
+	var vi0 uint32
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapUint32BoolPtr(notOneUint32BoolPtr, someLogicUint32BoolPtr, []*uint32{&vi1, &vi10, &vi0})
@@ -3792,7 +3792,7 @@ func TestFilterMapUint16BoolPtr(t *testing.T) {
 
 	var vi1 uint16 = 1
 	var vi10 uint16 = 10
-	var vi0 uint16 = 0
+	var vi0 uint16
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapUint16BoolPtr(notOneUint16BoolPtr, someLogicUint16BoolPtr, []*uint16{&vi1, &vi10, &vi0})
@@ -4223,7 +4223,7 @@ func TestFilterMapUint8BoolPtr(t *testing.T) {
 
 	var vi1 uint8 = 1
 	var vi10 uint8 = 10
-	var vi0 uint8 = 0
+	var vi0 uint8
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapUint8BoolPtr(notOneUint8BoolPtr, someLogicUint8BoolPtr, []*uint8{&vi1, &vi10, &vi0})
@@ -4712,7 +4712,7 @@ func someLogicStrBoolPtr(num *string) *bool {
 
 	if *num == "10" {
 		return &t
-	} 
+	}
 	return &f
 }
 
@@ -4792,7 +4792,7 @@ func TestFilterMapBoolIntPtr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -4831,7 +4831,7 @@ func TestFilterMapBoolInt64Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int64 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -4870,7 +4870,7 @@ func TestFilterMapBoolInt32Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int32 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -4909,7 +4909,7 @@ func TestFilterMapBoolInt16Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int16 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -4948,7 +4948,7 @@ func TestFilterMapBoolInt8Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int8 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -4987,7 +4987,7 @@ func TestFilterMapBoolUintPtr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5026,7 +5026,7 @@ func TestFilterMapBoolUint64Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint64 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5065,7 +5065,7 @@ func TestFilterMapBoolUint32Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint32 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5104,7 +5104,7 @@ func TestFilterMapBoolUint16Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint16 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5143,7 +5143,7 @@ func TestFilterMapBoolUint8Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint8 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5181,7 +5181,7 @@ func someLogicBoolUint8Ptr(num *bool) *uint8 {
 func TestFilterMapBoolStrPtr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5220,7 +5220,7 @@ func TestFilterMapBoolFloat32Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 float32 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5259,7 +5259,7 @@ func TestFilterMapBoolFloat64Ptr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 float64 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -5665,7 +5665,7 @@ func TestFilterMapFloat32BoolPtr(t *testing.T) {
 
 	var vi1 float32 = 1
 	var vi10 float32 = 10
-	var vi0 float32 = 0
+	var vi0 float32
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapFloat32BoolPtr(notOneFloat32BoolPtr, someLogicFloat32BoolPtr, []*float32{&vi1, &vi10, &vi0})
@@ -6096,7 +6096,7 @@ func TestFilterMapFloat64BoolPtr(t *testing.T) {
 
 	var vi1 float64 = 1
 	var vi10 float64 = 10
-	var vi0 float64 = 0
+	var vi0 float64
 
 	expectedList := []*bool{&vto, &vfo}
 	newList := FilterMapFloat64BoolPtr(notOneFloat64BoolPtr, someLogicFloat64BoolPtr, []*float64{&vi1, &vi10, &vi0})

@@ -558,7 +558,7 @@ func TestFilterMapIntBoolErr(t *testing.T) {
 }
 func notOneIntBoolErr(num int) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -1226,7 +1226,7 @@ func TestFilterMapInt64BoolErr(t *testing.T) {
 }
 func notOneInt64BoolErr(num int64) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -1894,7 +1894,7 @@ func TestFilterMapInt32BoolErr(t *testing.T) {
 }
 func notOneInt32BoolErr(num int32) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -2562,7 +2562,7 @@ func TestFilterMapInt16BoolErr(t *testing.T) {
 }
 func notOneInt16BoolErr(num int16) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -3230,7 +3230,7 @@ func TestFilterMapInt8BoolErr(t *testing.T) {
 }
 func notOneInt8BoolErr(num int8) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -3898,7 +3898,7 @@ func TestFilterMapUintBoolErr(t *testing.T) {
 }
 func notOneUintBoolErr(num uint) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -4566,7 +4566,7 @@ func TestFilterMapUint64BoolErr(t *testing.T) {
 }
 func notOneUint64BoolErr(num uint64) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -5234,7 +5234,7 @@ func TestFilterMapUint32BoolErr(t *testing.T) {
 }
 func notOneUint32BoolErr(num uint32) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -5902,7 +5902,7 @@ func TestFilterMapUint16BoolErr(t *testing.T) {
 }
 func notOneUint16BoolErr(num uint16) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -6570,7 +6570,7 @@ func TestFilterMapUint8BoolErr(t *testing.T) {
 }
 func notOneUint8BoolErr(num uint8) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -7290,7 +7290,7 @@ func someLogicStrBoolErr(num string) (bool, error) {
 
 	if num == "10" {
 		return t, nil
-	} 
+	}
 	return f, nil
 }
 
@@ -7408,7 +7408,7 @@ func TestFilterMapBoolIntErr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7461,16 +7461,15 @@ func someLogicBoolIntErr(num bool) (int, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolInt64Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int64 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7523,16 +7522,15 @@ func someLogicBoolInt64Err(num bool) (int64, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolInt32Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int32 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7585,16 +7583,15 @@ func someLogicBoolInt32Err(num bool) (int32, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolInt16Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int16 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7647,16 +7644,15 @@ func someLogicBoolInt16Err(num bool) (int16, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolInt8Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 int8 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7709,16 +7705,15 @@ func someLogicBoolInt8Err(num bool) (int8, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolUintErr(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7771,16 +7766,15 @@ func someLogicBoolUintErr(num bool) (uint, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolUint64Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint64 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7833,16 +7827,15 @@ func someLogicBoolUint64Err(num bool) (uint64, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolUint32Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint32 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7895,16 +7888,15 @@ func someLogicBoolUint32Err(num bool) (uint32, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolUint16Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint16 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -7957,16 +7949,15 @@ func someLogicBoolUint16Err(num bool) (uint16, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolUint8Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 uint8 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -8019,15 +8010,14 @@ func someLogicBoolUint8Err(num bool) (uint8, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolStrErr(t *testing.T) {
 	// Test : someLogic
 	var vo10 string = "10"
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -8088,7 +8078,7 @@ func TestFilterMapBoolFloat32Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 float32 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -8141,16 +8131,15 @@ func someLogicBoolFloat32Err(num bool) (float32, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapBoolFloat64Err(t *testing.T) {
 	// Test : someLogic
 
 	var vo10 float64 = 10
-	
+
 	var vit bool = true
 	var vif bool = false
 
@@ -8203,9 +8192,8 @@ func someLogicBoolFloat64Err(num bool) (float64, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 
 func TestFilterMapFloat32IntErr(t *testing.T) {
@@ -8812,7 +8800,7 @@ func TestFilterMapFloat32BoolErr(t *testing.T) {
 }
 func notOneFloat32BoolErr(num float32) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }
@@ -9480,7 +9468,7 @@ func TestFilterMapFloat64BoolErr(t *testing.T) {
 }
 func notOneFloat64BoolErr(num float64) (bool, error) {
 	if num == 2 {
-		return false, errors.New("2 is not valid number for this test") 
+		return false, errors.New("2 is not valid number for this test")
 	}
 	return num != 1, nil
 }

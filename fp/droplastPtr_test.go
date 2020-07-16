@@ -7,9 +7,9 @@ import (
 )
 
 func TestDropLastIntPtr(t *testing.T) {
-    var v1 int = 1
+	var v1 int = 1
 	var v2 int = 2
-    var v3 int = 3
+	var v3 int = 3
 	var v4 int = 4
 	var v5 int = 5
 
@@ -50,9 +50,9 @@ func TestDropLastIntPtr(t *testing.T) {
 }
 
 func TestDropLastInt64Ptr(t *testing.T) {
-    var v1 int64 = 1
+	var v1 int64 = 1
 	var v2 int64 = 2
-    var v3 int64 = 3
+	var v3 int64 = 3
 	var v4 int64 = 4
 	var v5 int64 = 5
 
@@ -93,9 +93,9 @@ func TestDropLastInt64Ptr(t *testing.T) {
 }
 
 func TestDropLastInt32Ptr(t *testing.T) {
-    var v1 int32 = 1
+	var v1 int32 = 1
 	var v2 int32 = 2
-    var v3 int32 = 3
+	var v3 int32 = 3
 	var v4 int32 = 4
 	var v5 int32 = 5
 
@@ -136,9 +136,9 @@ func TestDropLastInt32Ptr(t *testing.T) {
 }
 
 func TestDropLastInt16Ptr(t *testing.T) {
-    var v1 int16 = 1
+	var v1 int16 = 1
 	var v2 int16 = 2
-    var v3 int16 = 3
+	var v3 int16 = 3
 	var v4 int16 = 4
 	var v5 int16 = 5
 
@@ -179,9 +179,9 @@ func TestDropLastInt16Ptr(t *testing.T) {
 }
 
 func TestDropLastInt8Ptr(t *testing.T) {
-    var v1 int8 = 1
+	var v1 int8 = 1
 	var v2 int8 = 2
-    var v3 int8 = 3
+	var v3 int8 = 3
 	var v4 int8 = 4
 	var v5 int8 = 5
 
@@ -222,9 +222,9 @@ func TestDropLastInt8Ptr(t *testing.T) {
 }
 
 func TestDropLastUintPtr(t *testing.T) {
-    var v1 uint = 1
+	var v1 uint = 1
 	var v2 uint = 2
-    var v3 uint = 3
+	var v3 uint = 3
 	var v4 uint = 4
 	var v5 uint = 5
 
@@ -265,9 +265,9 @@ func TestDropLastUintPtr(t *testing.T) {
 }
 
 func TestDropLastUint64Ptr(t *testing.T) {
-    var v1 uint64 = 1
+	var v1 uint64 = 1
 	var v2 uint64 = 2
-    var v3 uint64 = 3
+	var v3 uint64 = 3
 	var v4 uint64 = 4
 	var v5 uint64 = 5
 
@@ -308,9 +308,9 @@ func TestDropLastUint64Ptr(t *testing.T) {
 }
 
 func TestDropLastUint32Ptr(t *testing.T) {
-    var v1 uint32 = 1
+	var v1 uint32 = 1
 	var v2 uint32 = 2
-    var v3 uint32 = 3
+	var v3 uint32 = 3
 	var v4 uint32 = 4
 	var v5 uint32 = 5
 
@@ -351,9 +351,9 @@ func TestDropLastUint32Ptr(t *testing.T) {
 }
 
 func TestDropLastUint16Ptr(t *testing.T) {
-    var v1 uint16 = 1
+	var v1 uint16 = 1
 	var v2 uint16 = 2
-    var v3 uint16 = 3
+	var v3 uint16 = 3
 	var v4 uint16 = 4
 	var v5 uint16 = 5
 
@@ -394,9 +394,9 @@ func TestDropLastUint16Ptr(t *testing.T) {
 }
 
 func TestDropLastUint8Ptr(t *testing.T) {
-    var v1 uint8 = 1
+	var v1 uint8 = 1
 	var v2 uint8 = 2
-    var v3 uint8 = 3
+	var v3 uint8 = 3
 	var v4 uint8 = 4
 	var v5 uint8 = 5
 
@@ -437,9 +437,9 @@ func TestDropLastUint8Ptr(t *testing.T) {
 }
 
 func TestDropLastStrPtr(t *testing.T) {
-    var v1 string = "1"
+	var v1 string = "1"
 	var v2 string = "2"
-    var v3 string = "3"
+	var v3 string = "3"
 	var v4 string = "4"
 	var v5 string = "5"
 
@@ -481,7 +481,7 @@ func TestDropLastStrPtr(t *testing.T) {
 
 func TestDropLastBoolPtr(t *testing.T) {
 	var true bool = true
-    var false bool = false
+	var false bool = false
 	list := []*bool{&true, &true, &true, &true, &false}
 	expectedList := []*bool{&true, &true, &true, &true}
 	actualList := DropLastBoolPtr(list)
@@ -519,9 +519,9 @@ func TestDropLastBoolPtr(t *testing.T) {
 }
 
 func TestDropLastFloat32Ptr(t *testing.T) {
-    var v1 float32 = 1
+	var v1 float32 = 1
 	var v2 float32 = 2
-    var v3 float32 = 3
+	var v3 float32 = 3
 	var v4 float32 = 4
 	var v5 float32 = 5
 
@@ -562,9 +562,9 @@ func TestDropLastFloat32Ptr(t *testing.T) {
 }
 
 func TestDropLastFloat64Ptr(t *testing.T) {
-    var v1 float64 = 1
+	var v1 float64 = 1
 	var v2 float64 = 2
-    var v3 float64 = 3
+	var v3 float64 = 3
 	var v4 float64 = 4
 	var v5 float64 = 5
 
