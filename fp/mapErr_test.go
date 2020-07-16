@@ -15,7 +15,6 @@ func TestMapIntErr(t *testing.T) {
 	var v7 int = 7
 	var v8 int = 8
 
-
 	// Test: add 5 to each item in the list
 	expectedSumList := []int{v6, v7, v8}
 	partialAddInt := func(num int) (int, error) {
@@ -48,18 +47,15 @@ func TestMapIntErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapIntErr failed")
 	}
-
-	
 }
 
 func addIntErr(num1, num2 int) (int, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapInt64Err(t *testing.T) {
 	var v1 int64 = 1
@@ -69,7 +65,6 @@ func TestMapInt64Err(t *testing.T) {
 	var v6 int64 = 6
 	var v7 int64 = 7
 	var v8 int64 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []int64{v6, v7, v8}
@@ -103,18 +98,15 @@ func TestMapInt64Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt64Err failed")
 	}
-
-	
 }
 
 func addInt64Err(num1, num2 int64) (int64, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapInt32Err(t *testing.T) {
 	var v1 int32 = 1
@@ -124,7 +116,6 @@ func TestMapInt32Err(t *testing.T) {
 	var v6 int32 = 6
 	var v7 int32 = 7
 	var v8 int32 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []int32{v6, v7, v8}
@@ -158,18 +149,15 @@ func TestMapInt32Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt32Err failed")
 	}
-
-	
 }
 
 func addInt32Err(num1, num2 int32) (int32, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapInt16Err(t *testing.T) {
 	var v1 int16 = 1
@@ -179,7 +167,6 @@ func TestMapInt16Err(t *testing.T) {
 	var v6 int16 = 6
 	var v7 int16 = 7
 	var v8 int16 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []int16{v6, v7, v8}
@@ -213,18 +200,15 @@ func TestMapInt16Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt16Err failed")
 	}
-
-	
 }
 
 func addInt16Err(num1, num2 int16) (int16, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapInt8Err(t *testing.T) {
 	var v1 int8 = 1
@@ -234,7 +218,6 @@ func TestMapInt8Err(t *testing.T) {
 	var v6 int8 = 6
 	var v7 int8 = 7
 	var v8 int8 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []int8{v6, v7, v8}
@@ -268,18 +251,15 @@ func TestMapInt8Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapInt8Err failed")
 	}
-
-	
 }
 
 func addInt8Err(num1, num2 int8) (int8, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapUintErr(t *testing.T) {
 	var v1 uint = 1
@@ -289,7 +269,6 @@ func TestMapUintErr(t *testing.T) {
 	var v6 uint = 6
 	var v7 uint = 7
 	var v8 uint = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []uint{v6, v7, v8}
@@ -323,18 +302,15 @@ func TestMapUintErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUintErr failed")
 	}
-
-	
 }
 
 func addUintErr(num1, num2 uint) (uint, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapUint64Err(t *testing.T) {
 	var v1 uint64 = 1
@@ -344,7 +320,6 @@ func TestMapUint64Err(t *testing.T) {
 	var v6 uint64 = 6
 	var v7 uint64 = 7
 	var v8 uint64 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []uint64{v6, v7, v8}
@@ -378,18 +353,15 @@ func TestMapUint64Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint64Err failed")
 	}
-
-	
 }
 
 func addUint64Err(num1, num2 uint64) (uint64, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapUint32Err(t *testing.T) {
 	var v1 uint32 = 1
@@ -399,7 +371,6 @@ func TestMapUint32Err(t *testing.T) {
 	var v6 uint32 = 6
 	var v7 uint32 = 7
 	var v8 uint32 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []uint32{v6, v7, v8}
@@ -433,18 +404,15 @@ func TestMapUint32Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint32Err failed")
 	}
-
-	
 }
 
 func addUint32Err(num1, num2 uint32) (uint32, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapUint16Err(t *testing.T) {
 	var v1 uint16 = 1
@@ -454,7 +422,6 @@ func TestMapUint16Err(t *testing.T) {
 	var v6 uint16 = 6
 	var v7 uint16 = 7
 	var v8 uint16 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []uint16{v6, v7, v8}
@@ -488,18 +455,15 @@ func TestMapUint16Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint16Err failed")
 	}
-
-	
 }
 
 func addUint16Err(num1, num2 uint16) (uint16, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapUint8Err(t *testing.T) {
 	var v1 uint8 = 1
@@ -509,7 +473,6 @@ func TestMapUint8Err(t *testing.T) {
 	var v6 uint8 = 6
 	var v7 uint8 = 7
 	var v8 uint8 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []uint8{v6, v7, v8}
@@ -543,18 +506,15 @@ func TestMapUint8Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapUint8Err failed")
 	}
-
-	
 }
 
 func addUint8Err(num1, num2 uint8) (uint8, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapStrErr(t *testing.T) {
 	var v1 string = "1"
@@ -564,7 +524,6 @@ func TestMapStrErr(t *testing.T) {
 	var v6 string = "51"
 	var v7 string = "52"
 	var v8 string = "53"
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []string{v6, v7, v8}
@@ -598,32 +557,29 @@ func TestMapStrErr(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapStrErr failed")
 	}
-
-	
 }
 
 func addStrErr(num1, num2 string) (string, error) {
 	if num1 == "0" {
 		return "", errors.New("0 is not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapBoolErr(t *testing.T) {
 	var vt bool = true
 	var vf bool = false
 
 	expectedSumList := []bool{vf}
-	
+
 	newList, _ := MapBoolErr(inverseBoolErr, []bool{vt})
-	if newList[0] != expectedSumList[0]  {
+	if newList[0] != expectedSumList[0] {
 		t.Errorf("MapBoolErr failed")
 	}
 
 	_, err1 := MapBoolErr(inverseBoolErr, []bool{vf})
-	if err1 == nil  {
+	if err1 == nil {
 		t.Errorf("MapBoolErr failed")
 	}
 
@@ -638,13 +594,12 @@ func inverseBoolErr(num1 bool) (bool, error) {
 		return false, errors.New("False is not allowed")
 	}
 	vt := true
-    if num1 == true {
+	if num1 == true {
 		v := false
 		return v, nil
-	} 
+	}
 	return vt, nil
 }
-
 
 func TestMapFloat32Err(t *testing.T) {
 	var v1 float32 = 1
@@ -654,7 +609,6 @@ func TestMapFloat32Err(t *testing.T) {
 	var v6 float32 = 6
 	var v7 float32 = 7
 	var v8 float32 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []float32{v6, v7, v8}
@@ -688,18 +642,15 @@ func TestMapFloat32Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapFloat32Err failed")
 	}
-
-	
 }
 
 func addFloat32Err(num1, num2 float32) (float32, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-
 
 func TestMapFloat64Err(t *testing.T) {
 	var v1 float64 = 1
@@ -709,7 +660,6 @@ func TestMapFloat64Err(t *testing.T) {
 	var v6 float64 = 6
 	var v7 float64 = 7
 	var v8 float64 = 8
-
 
 	// Test: add 5 to each item in the list
 	expectedSumList := []float64{v6, v7, v8}
@@ -743,15 +693,12 @@ func TestMapFloat64Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("MapFloat64Err failed")
 	}
-
-	
 }
 
 func addFloat64Err(num1, num2 float64) (float64, error) {
 	if num1 < 1 {
 		return 0, errors.New("Negative value not allowed")
 	}
-    result := num1 + num2
+	result := num1 + num2
 	return result, nil
 }
-

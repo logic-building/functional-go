@@ -50,7 +50,6 @@ func squareIntPtr(num *int) *int {
 	return &r
 }
 
-
 func TestPmapInt64Ptr(t *testing.T) {
 	// Test : square the list
 	var v1 int64 = 1
@@ -94,7 +93,6 @@ func squareInt64Ptr(num *int64) *int64 {
 	r := *num * *num
 	return &r
 }
-
 
 func TestPmapInt32Ptr(t *testing.T) {
 	// Test : square the list
@@ -140,7 +138,6 @@ func squareInt32Ptr(num *int32) *int32 {
 	return &r
 }
 
-
 func TestPmapInt16Ptr(t *testing.T) {
 	// Test : square the list
 	var v1 int16 = 1
@@ -184,7 +181,6 @@ func squareInt16Ptr(num *int16) *int16 {
 	r := *num * *num
 	return &r
 }
-
 
 func TestPmapInt8Ptr(t *testing.T) {
 	// Test : square the list
@@ -230,7 +226,6 @@ func squareInt8Ptr(num *int8) *int8 {
 	return &r
 }
 
-
 func TestPmapUintPtr(t *testing.T) {
 	// Test : square the list
 	var v1 uint = 1
@@ -274,7 +269,6 @@ func squareUintPtr(num *uint) *uint {
 	r := *num * *num
 	return &r
 }
-
 
 func TestPmapUint64Ptr(t *testing.T) {
 	// Test : square the list
@@ -320,7 +314,6 @@ func squareUint64Ptr(num *uint64) *uint64 {
 	return &r
 }
 
-
 func TestPmapUint32Ptr(t *testing.T) {
 	// Test : square the list
 	var v1 uint32 = 1
@@ -364,7 +357,6 @@ func squareUint32Ptr(num *uint32) *uint32 {
 	r := *num * *num
 	return &r
 }
-
 
 func TestPmapUint16Ptr(t *testing.T) {
 	// Test : square the list
@@ -410,7 +402,6 @@ func squareUint16Ptr(num *uint16) *uint16 {
 	return &r
 }
 
-
 func TestPmapUint8Ptr(t *testing.T) {
 	// Test : square the list
 	var v1 uint8 = 1
@@ -454,7 +445,6 @@ func squareUint8Ptr(num *uint8) *uint8 {
 	r := *num * *num
 	return &r
 }
-
 
 func TestPmapStrPtr(t *testing.T) {
 	// Test : square the list
@@ -502,15 +492,14 @@ func squareStrPtr(num *string) *string {
 	return &r
 }
 
-
 func TestPMapBoolPtr(t *testing.T) {
 	var vt bool = true
 	var vf bool = false
 
 	expectedSumList := []*bool{&vf}
-	
+
 	newList := PMapBoolPtr(inverseBoolPtr, []*bool{&vt})
-	if *newList[0] != *expectedSumList[0]  {
+	if *newList[0] != *expectedSumList[0] {
 		t.Errorf("MapBoolPtr failed")
 	}
 
@@ -518,7 +507,6 @@ func TestPMapBoolPtr(t *testing.T) {
 		t.Errorf("MapBoolPtr failed.")
 	}
 }
-
 
 func TestPmapFloat32Ptr(t *testing.T) {
 	// Test : square the list
@@ -564,7 +552,6 @@ func squareFloat32Ptr(num *float32) *float32 {
 	return &r
 }
 
-
 func TestPmapFloat64Ptr(t *testing.T) {
 	// Test : square the list
 	var v1 float64 = 1
@@ -608,4 +595,3 @@ func squareFloat64Ptr(num *float64) *float64 {
 	r := *num * *num
 	return &r
 }
-

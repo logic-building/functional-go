@@ -323,7 +323,6 @@ func plus<FTYPE>Err(num1, num2 <TYPE>) (<TYPE>, error) {
 	c := num1 + num2
 	return c, nil
 }
-
 `
 }
 

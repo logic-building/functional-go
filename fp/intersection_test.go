@@ -530,14 +530,14 @@ func TestIntersectionBool(t *testing.T) {
 	if len(actualPtr) != 0 {
 		t.Errorf("IntersectionBoolPtr failed.")
 	}
-	
+
 	expectedPtr := []*bool{&v8, &v2, &v1}
 	actualPtr = IntersectionBoolPtr(expectedPtr)
-	
+
 	if len(actualPtr) != 2 || !ExistsBoolPtr(&v8, actualPtr) || !ExistsBoolPtr(&v1, actualPtr) {
 		t.Errorf("IntersectionBoolPtr failed. Expected=%v, actual=%v", expectedPtr, actualPtr)
 	}
-	
+
 	list1Ptr := []*bool{&v8, &v2, &v1, &v1, &v2, &v8}
 	list2Ptr := []*bool{&v8}
 	actualPtr = IntersectionBoolPtr(list1Ptr, list2Ptr)

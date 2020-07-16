@@ -47,7 +47,6 @@ func TestSomeIntPtrErr(t *testing.T) {
 	}
 }
 
-
 func TestSomeInt64PtrErr(t *testing.T) {
 	// Test : value exist in the list
 
@@ -89,7 +88,6 @@ func TestSomeInt64PtrErr(t *testing.T) {
 		t.Errorf("SomeInt64Ptr failed. Expected=false, actual=true")
 	}
 }
-
 
 func TestSomeInt32PtrErr(t *testing.T) {
 	// Test : value exist in the list
@@ -133,7 +131,6 @@ func TestSomeInt32PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestSomeInt16PtrErr(t *testing.T) {
 	// Test : value exist in the list
 
@@ -175,7 +172,6 @@ func TestSomeInt16PtrErr(t *testing.T) {
 		t.Errorf("SomeInt16Ptr failed. Expected=false, actual=true")
 	}
 }
-
 
 func TestSomeInt8PtrErr(t *testing.T) {
 	// Test : value exist in the list
@@ -219,7 +215,6 @@ func TestSomeInt8PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestSomeUintPtrErr(t *testing.T) {
 	// Test : value exist in the list
 
@@ -261,7 +256,6 @@ func TestSomeUintPtrErr(t *testing.T) {
 		t.Errorf("SomeUintPtr failed. Expected=false, actual=true")
 	}
 }
-
 
 func TestSomeUint64PtrErr(t *testing.T) {
 	// Test : value exist in the list
@@ -305,7 +299,6 @@ func TestSomeUint64PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestSomeUint32PtrErr(t *testing.T) {
 	// Test : value exist in the list
 
@@ -347,7 +340,6 @@ func TestSomeUint32PtrErr(t *testing.T) {
 		t.Errorf("SomeUint32Ptr failed. Expected=false, actual=true")
 	}
 }
-
 
 func TestSomeUint16PtrErr(t *testing.T) {
 	// Test : value exist in the list
@@ -391,7 +383,6 @@ func TestSomeUint16PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestSomeUint8PtrErr(t *testing.T) {
 	// Test : value exist in the list
 
@@ -433,7 +424,6 @@ func TestSomeUint8PtrErr(t *testing.T) {
 		t.Errorf("SomeUint8Ptr failed. Expected=false, actual=true")
 	}
 }
-
 
 func TestSomeStrPtrErr(t *testing.T) {
 	// Test : value exist in the list
@@ -477,7 +467,6 @@ func TestSomeStrPtrErr(t *testing.T) {
 	}
 }
 
-
 func TestSomeBoolPtrErr(t *testing.T) {
 	// Test : value exist in the list
 
@@ -506,7 +495,6 @@ func TestSomeBoolPtrErr(t *testing.T) {
 		t.Errorf("SomeBoolPtrErr failed. Expected=false, actual=true")
 	}
 }
-
 
 func TestSomeFloat32PtrErr(t *testing.T) {
 	// Test : value exist in the list
@@ -550,7 +538,6 @@ func TestSomeFloat32PtrErr(t *testing.T) {
 	}
 }
 
-
 func TestSomeFloat64PtrErr(t *testing.T) {
 	// Test : value exist in the list
 
@@ -592,4 +579,3 @@ func TestSomeFloat64PtrErr(t *testing.T) {
 		t.Errorf("SomeFloat64Ptr failed. Expected=false, actual=true")
 	}
 }
-

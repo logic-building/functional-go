@@ -36,7 +36,6 @@ func TestSome<FTYPE>Ptr(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
-
 `
 }
 
@@ -54,7 +53,6 @@ func TestSome<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=true, actual=false")
 	}
 
-	
 	if Some<FTYPE>Ptr(nil, nil) {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
@@ -63,7 +61,6 @@ func TestSome<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
 }
-
 `
 }
 
@@ -113,7 +110,6 @@ func TestSome<FTYPE>PtrErr(t *testing.T) {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
 }
-
 `
 }
 
@@ -148,7 +144,6 @@ func TestSome<FTYPE>PtrErr(t *testing.T) {
 		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
 	}
 }
-
 `
 }
 
@@ -217,7 +212,6 @@ func TestSome<FTYPE>Err(t *testing.T) {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
 }
-
 `
 }
 
@@ -252,7 +246,6 @@ func TestSome<FTYPE>Err(t *testing.T) {
 		t.Errorf("Some<FTYPE>Err failed. Expected=false, actual=true")
 	}
 }
-
 `
 }
 

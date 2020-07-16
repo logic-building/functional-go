@@ -6,8 +6,7 @@ func DistinctPtrTest() string {
 func TestDistinct<FTYPE>Ptr(t *testing.T) {
 	var v8 <TYPE> = 8
 	var v2 <TYPE> = 2
-	var v0 <TYPE> = 0
-
+	var v0 <TYPE>
 
 	// Test : Get distinct values
 	expected := []*<TYPE>{&v8, &v2, &v0}
@@ -47,7 +46,7 @@ func TestDistinct<FTYPE>Ptr(t *testing.T) {
 	var vt <TYPE> = true
 
 	newList := Distinct<FTYPE>Ptr([]*<TYPE>{&vt, &vt})
-	if *newList[0] != vt  {
+	if *newList[0] != vt {
 		t.Errorf("Distinct<FTYPE>Ptr failed")
 	}
 
@@ -55,6 +54,5 @@ func TestDistinct<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("Distinct<FTYPE>Ptr failed.")
 	}
 }
-
 `
 }

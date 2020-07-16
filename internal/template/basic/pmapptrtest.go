@@ -48,7 +48,6 @@ func square<FTYPE>Ptr(num *<TYPE>) *<TYPE> {
 	r := *num * *num
 	return &r
 }
-
 `
 }
 
@@ -60,9 +59,9 @@ func TestPMap<FTYPE>Ptr(t *testing.T) {
 	var vf <TYPE> = false
 
 	expectedSumList := []*<TYPE>{&vf}
-	
+
 	newList := PMap<FTYPE>Ptr(inverse<FTYPE>Ptr, []*<TYPE>{&vt})
-	if *newList[0] != *expectedSumList[0]  {
+	if *newList[0] != *expectedSumList[0] {
 		t.Errorf("Map<FTYPE>Ptr failed")
 	}
 
@@ -70,7 +69,6 @@ func TestPMap<FTYPE>Ptr(t *testing.T) {
 		t.Errorf("Map<FTYPE>Ptr failed.")
 	}
 }
-
 `
 }
 
@@ -134,7 +132,6 @@ func square<FTYPE>PtrErr(num *<TYPE>) (*<TYPE>, error) {
 	r := *num * *num
 	return &r, nil
 }
-
 `
 }
 
@@ -162,7 +159,6 @@ func TestPMap<FTYPE>PtrErr(t *testing.T) {
 		t.Errorf("Map<FTYPE>PtrErr failed")
 	}
 }
-
 `
 }
 
@@ -361,7 +357,6 @@ func square<FTYPE>Err(num <TYPE>) (<TYPE>, error) {
 	r := num * num
 	return r, nil
 }
-
 `
 }
 
@@ -389,7 +384,6 @@ func TestPMap<FTYPE>Err(t *testing.T) {
 		t.Errorf("Map<FTYPE>Err failed")
 	}
 }
-
 `
 }
 

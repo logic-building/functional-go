@@ -63,7 +63,6 @@ func plusIntErr(num1, num2 int) (int, error) {
 	return c, nil
 }
 
-
 func TestReduceInt64Err(t *testing.T) {
 	var v1 int64 = 1
 	var v2 int64 = 2
@@ -121,7 +120,6 @@ func plusInt64Err(num1, num2 int64) (int64, error) {
 	c := num1 + num2
 	return c, nil
 }
-
 
 func TestReduceInt32Err(t *testing.T) {
 	var v1 int32 = 1
@@ -181,7 +179,6 @@ func plusInt32Err(num1, num2 int32) (int32, error) {
 	return c, nil
 }
 
-
 func TestReduceInt16Err(t *testing.T) {
 	var v1 int16 = 1
 	var v2 int16 = 2
@@ -239,7 +236,6 @@ func plusInt16Err(num1, num2 int16) (int16, error) {
 	c := num1 + num2
 	return c, nil
 }
-
 
 func TestReduceInt8Err(t *testing.T) {
 	var v1 int8 = 1
@@ -299,7 +295,6 @@ func plusInt8Err(num1, num2 int8) (int8, error) {
 	return c, nil
 }
 
-
 func TestReduceUintErr(t *testing.T) {
 	var v1 uint = 1
 	var v2 uint = 2
@@ -357,7 +352,6 @@ func plusUintErr(num1, num2 uint) (uint, error) {
 	c := num1 + num2
 	return c, nil
 }
-
 
 func TestReduceUint64Err(t *testing.T) {
 	var v1 uint64 = 1
@@ -417,7 +411,6 @@ func plusUint64Err(num1, num2 uint64) (uint64, error) {
 	return c, nil
 }
 
-
 func TestReduceUint32Err(t *testing.T) {
 	var v1 uint32 = 1
 	var v2 uint32 = 2
@@ -475,7 +468,6 @@ func plusUint32Err(num1, num2 uint32) (uint32, error) {
 	c := num1 + num2
 	return c, nil
 }
-
 
 func TestReduceUint16Err(t *testing.T) {
 	var v1 uint16 = 1
@@ -535,7 +527,6 @@ func plusUint16Err(num1, num2 uint16) (uint16, error) {
 	return c, nil
 }
 
-
 func TestReduceUint8Err(t *testing.T) {
 	var v1 uint8 = 1
 	var v2 uint8 = 2
@@ -593,7 +584,6 @@ func plusUint8Err(num1, num2 uint8) (uint8, error) {
 	c := num1 + num2
 	return c, nil
 }
-
 
 func TestReduceStrErr(t *testing.T) {
 	var v1 string = "1"
@@ -653,7 +643,6 @@ func plusStrErr(num1, num2 string) (string, error) {
 	return c, nil
 }
 
-
 func TestReduceFloat32Err(t *testing.T) {
 	var v1 float32 = 1
 	var v2 float32 = 2
@@ -712,7 +701,6 @@ func plusFloat32Err(num1, num2 float32) (float32, error) {
 	return c, nil
 }
 
-
 func TestReduceFloat64Err(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
@@ -770,4 +758,3 @@ func plusFloat64Err(num1, num2 float64) (float64, error) {
 	c := num1 + num2
 	return c, nil
 }
-
