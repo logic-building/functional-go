@@ -21,7 +21,7 @@ go install github.com/logic-building/functional-go/gofp
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.10.1"
+version = "8.11.0"
 ```
 
 ### Quick Start
@@ -237,46 +237,47 @@ Options on go:generate :
 
 ### All Standard FP Function
 ```
-1. Difference<Type>
-2. Distinct<Type>
-3. Drop<Type>
-4. DropWhile<Type>
-5. Even<Type>P
-6. Every<Type>
-7. Exists<Type>
-8. Filter<Type>
-9. FilterMap<Type>
-10. FilterMap<InputType><OutputType>
-11. Intersection<Type>
-12. Keys<Type>
-13. Map<Type>
-14. Map<InputType><OutputType>
-15. Max<Type>
-16. Merge<Type>
-17. Merge<Type1><Type2>
-18. Min<Type>
-19. MinMax<Type>
-20. Neg<Type>P
-21. Odd<Type>P
-22. PMap<Type>
-23. PMap<InputType><OutputType>
-24. Pos<Type>P
-25. Range<Type>
-26. Remove<Type>
-27. Reduce<Type>
-28. Rest<Type>
-29. Reverse<Type>
-30. Set<Type>
-31. Some<Type>
-32. Subset<Type>
-33. Superset<Type>
-34. Sort<Type>s
-35. Take<Type>
-36. TakeWhile<Type>
-37. Union<Type>
-38. Zero<Type>P
-39. Zip<Type>
-40. Zip<Type1><Type2>
+1. Dedupe<Type>
+2. Difference<Type>
+3. Distinct<Type>
+4. Drop<Type>
+5. DropWhile<Type>
+6. Even<Type>P
+7. Every<Type>
+8. Exists<Type>
+9. Filter<Type>
+10. FilterMap<Type>
+11. FilterMap<InputType><OutputType>
+12. Intersection<Type>
+13. Keys<Type>
+14. Map<Type>
+15. Map<InputType><OutputType>
+16. Max<Type>
+17. Merge<Type>
+18. Merge<Type1><Type2>
+19. Min<Type>
+20. MinMax<Type>
+21. Neg<Type>P
+22. Odd<Type>P
+23. PMap<Type>
+24. PMap<InputType><OutputType>
+25. Pos<Type>P
+26. Range<Type>
+27. Remove<Type>
+28. Reduce<Type>
+29. Rest<Type>
+30. Reverse<Type>
+31. Set<Type>
+32. Some<Type>
+33. Subset<Type>
+34. Superset<Type>
+35. Sort<Type>s
+36. Take<Type>
+37. TakeWhile<Type>
+38. Union<Type>
+39. Zero<Type>P
+40. Zip<Type>
+41. Zip<Type1><Type2>
 ```
 
 ### Contains functions
