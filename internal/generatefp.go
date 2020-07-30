@@ -129,6 +129,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "Equal",
+		codeTemplate:      basic.Equal(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "equal.go",
+
+		testTemplate:          basic.EqualTest(),
+		testTemplateBool:      basic.EqualBoolTest(),
+		generatedTestFileName: "equal_test.go",
+	},
+
+	fpCode{
 		function:          "Zero",
 		codeTemplate:      basic.ZeroP(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},

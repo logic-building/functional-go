@@ -105,7 +105,7 @@ func TestSome<FTYPE>PtrErr(t *testing.T) {
 		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=Some<FTYPE>PtrErr(isEven<FTYPE>PtrErr, []*<TYPE>{})
+	r, _ = Some<FTYPE>PtrErr(isEven<FTYPE>PtrErr, []*<TYPE>{})
 	if r {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
@@ -129,18 +129,24 @@ func TestSome<FTYPE>PtrErr(t *testing.T) {
 	}
 
 	r, _ = Some<FTYPE>PtrErr(nil, nil)
-	
-	if r{
+
+	if r {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
 
 	r, _ = Some<FTYPE>PtrErr(func(v *bool) (bool, error) { return *v == true, nil }, []*<TYPE>{})
-	if  r {
+	if r {
 		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
 	}
 
-	_, err := Some<FTYPE>PtrErr(func(v *bool) (bool, error) { if *v == false { return false, errors.New("false is invalid in this test") }; return *v == true, nil }, []*<TYPE>{&vf})
-	if  err == nil {
+	_, err := Some<FTYPE>PtrErr(func(v *bool) (bool, error) {
+		if *v == false {
+			return false, errors.New("false is invalid in this test")
+		}
+		return *v == true, nil
+	}, []*<TYPE>{&vf})
+
+	if err == nil {
 		t.Errorf("Some<FTYPE>PtrErr failed. Expected=false, actual=true")
 	}
 }
@@ -207,7 +213,7 @@ func TestSome<FTYPE>Err(t *testing.T) {
 		t.Errorf("Some<FTYPE>Err failed. Expected=false, actual=true")
 	}
 
-	r, _=Some<FTYPE>Err(isEven<FTYPE>Err, []<TYPE>{})
+	r, _ = Some<FTYPE>Err(isEven<FTYPE>Err, []<TYPE>{})
 	if r {
 		t.Errorf("Some<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
