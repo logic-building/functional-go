@@ -2,7 +2,7 @@ package fp
 
 import "strings"
 
-// ExistsInt checkss if given item exists in the list
+// ExistsInt checks if given item exists in the list
 //
 // Example:
 //	ExistsInt(8, []int{8, 2, 10, 4}) // Returns true

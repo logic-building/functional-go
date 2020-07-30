@@ -41,7 +41,7 @@ func TestSomeIntPtrErr(t *testing.T) {
 		t.Errorf("SomeIntPtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeIntPtrErr(isEvenIntPtrErr, []*int{})
+	r, _ = SomeIntPtrErr(isEvenIntPtrErr, []*int{})
 	if r {
 		t.Errorf("SomeIntPtr failed. Expected=false, actual=true")
 	}
@@ -83,7 +83,7 @@ func TestSomeInt64PtrErr(t *testing.T) {
 		t.Errorf("SomeInt64PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeInt64PtrErr(isEvenInt64PtrErr, []*int64{})
+	r, _ = SomeInt64PtrErr(isEvenInt64PtrErr, []*int64{})
 	if r {
 		t.Errorf("SomeInt64Ptr failed. Expected=false, actual=true")
 	}
@@ -125,7 +125,7 @@ func TestSomeInt32PtrErr(t *testing.T) {
 		t.Errorf("SomeInt32PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeInt32PtrErr(isEvenInt32PtrErr, []*int32{})
+	r, _ = SomeInt32PtrErr(isEvenInt32PtrErr, []*int32{})
 	if r {
 		t.Errorf("SomeInt32Ptr failed. Expected=false, actual=true")
 	}
@@ -167,7 +167,7 @@ func TestSomeInt16PtrErr(t *testing.T) {
 		t.Errorf("SomeInt16PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeInt16PtrErr(isEvenInt16PtrErr, []*int16{})
+	r, _ = SomeInt16PtrErr(isEvenInt16PtrErr, []*int16{})
 	if r {
 		t.Errorf("SomeInt16Ptr failed. Expected=false, actual=true")
 	}
@@ -209,7 +209,7 @@ func TestSomeInt8PtrErr(t *testing.T) {
 		t.Errorf("SomeInt8PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeInt8PtrErr(isEvenInt8PtrErr, []*int8{})
+	r, _ = SomeInt8PtrErr(isEvenInt8PtrErr, []*int8{})
 	if r {
 		t.Errorf("SomeInt8Ptr failed. Expected=false, actual=true")
 	}
@@ -251,7 +251,7 @@ func TestSomeUintPtrErr(t *testing.T) {
 		t.Errorf("SomeUintPtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeUintPtrErr(isEvenUintPtrErr, []*uint{})
+	r, _ = SomeUintPtrErr(isEvenUintPtrErr, []*uint{})
 	if r {
 		t.Errorf("SomeUintPtr failed. Expected=false, actual=true")
 	}
@@ -293,7 +293,7 @@ func TestSomeUint64PtrErr(t *testing.T) {
 		t.Errorf("SomeUint64PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeUint64PtrErr(isEvenUint64PtrErr, []*uint64{})
+	r, _ = SomeUint64PtrErr(isEvenUint64PtrErr, []*uint64{})
 	if r {
 		t.Errorf("SomeUint64Ptr failed. Expected=false, actual=true")
 	}
@@ -335,7 +335,7 @@ func TestSomeUint32PtrErr(t *testing.T) {
 		t.Errorf("SomeUint32PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeUint32PtrErr(isEvenUint32PtrErr, []*uint32{})
+	r, _ = SomeUint32PtrErr(isEvenUint32PtrErr, []*uint32{})
 	if r {
 		t.Errorf("SomeUint32Ptr failed. Expected=false, actual=true")
 	}
@@ -377,7 +377,7 @@ func TestSomeUint16PtrErr(t *testing.T) {
 		t.Errorf("SomeUint16PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeUint16PtrErr(isEvenUint16PtrErr, []*uint16{})
+	r, _ = SomeUint16PtrErr(isEvenUint16PtrErr, []*uint16{})
 	if r {
 		t.Errorf("SomeUint16Ptr failed. Expected=false, actual=true")
 	}
@@ -419,7 +419,7 @@ func TestSomeUint8PtrErr(t *testing.T) {
 		t.Errorf("SomeUint8PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeUint8PtrErr(isEvenUint8PtrErr, []*uint8{})
+	r, _ = SomeUint8PtrErr(isEvenUint8PtrErr, []*uint8{})
 	if r {
 		t.Errorf("SomeUint8Ptr failed. Expected=false, actual=true")
 	}
@@ -461,7 +461,7 @@ func TestSomeStrPtrErr(t *testing.T) {
 		t.Errorf("SomeStrPtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeStrPtrErr(isEvenStrPtrErr, []*string{})
+	r, _ = SomeStrPtrErr(isEvenStrPtrErr, []*string{})
 	if r {
 		t.Errorf("SomeStrPtr failed. Expected=false, actual=true")
 	}
@@ -480,18 +480,24 @@ func TestSomeBoolPtrErr(t *testing.T) {
 	}
 
 	r, _ = SomeBoolPtrErr(nil, nil)
-	
-	if r{
+
+	if r {
 		t.Errorf("SomeBoolPtr failed. Expected=false, actual=true")
 	}
 
 	r, _ = SomeBoolPtrErr(func(v *bool) (bool, error) { return *v == true, nil }, []*bool{})
-	if  r {
+	if r {
 		t.Errorf("SomeBoolPtrErr failed. Expected=false, actual=true")
 	}
 
-	_, err := SomeBoolPtrErr(func(v *bool) (bool, error) { if *v == false { return false, errors.New("false is invalid in this test") }; return *v == true, nil }, []*bool{&vf})
-	if  err == nil {
+	_, err := SomeBoolPtrErr(func(v *bool) (bool, error) {
+		if *v == false {
+			return false, errors.New("false is invalid in this test")
+		}
+		return *v == true, nil
+	}, []*bool{&vf})
+
+	if err == nil {
 		t.Errorf("SomeBoolPtrErr failed. Expected=false, actual=true")
 	}
 }
@@ -532,7 +538,7 @@ func TestSomeFloat32PtrErr(t *testing.T) {
 		t.Errorf("SomeFloat32PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeFloat32PtrErr(isEvenFloat32PtrErr, []*float32{})
+	r, _ = SomeFloat32PtrErr(isEvenFloat32PtrErr, []*float32{})
 	if r {
 		t.Errorf("SomeFloat32Ptr failed. Expected=false, actual=true")
 	}
@@ -574,7 +580,7 @@ func TestSomeFloat64PtrErr(t *testing.T) {
 		t.Errorf("SomeFloat64PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _=SomeFloat64PtrErr(isEvenFloat64PtrErr, []*float64{})
+	r, _ = SomeFloat64PtrErr(isEvenFloat64PtrErr, []*float64{})
 	if r {
 		t.Errorf("SomeFloat64Ptr failed. Expected=false, actual=true")
 	}
