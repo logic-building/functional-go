@@ -12,7 +12,7 @@ func TestFilterMapIntPtr(t *testing.T) {
 	var v1 int = 1
 	var v4 int = 4
 	var v8 int = 8
-	var v0 int = 0
+	var v0 int
 	var v2 int = 2
 
 	expectedFilteredList := []*int{&v2, &v4, &v8}
@@ -35,14 +35,13 @@ func multiplyBy2IntPtr(num *int) *int {
 	return &result
 }
 
-
 func TestFilterMapInt64Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 int64 = 1
 	var v4 int64 = 4
 	var v8 int64 = 8
-	var v0 int64 = 0
+	var v0 int64
 	var v2 int64 = 2
 
 	expectedFilteredList := []*int64{&v2, &v4, &v8}
@@ -65,14 +64,13 @@ func multiplyBy2Int64Ptr(num *int64) *int64 {
 	return &result
 }
 
-
 func TestFilterMapInt32Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 int32 = 1
 	var v4 int32 = 4
 	var v8 int32 = 8
-	var v0 int32 = 0
+	var v0 int32
 	var v2 int32 = 2
 
 	expectedFilteredList := []*int32{&v2, &v4, &v8}
@@ -95,14 +93,13 @@ func multiplyBy2Int32Ptr(num *int32) *int32 {
 	return &result
 }
 
-
 func TestFilterMapInt16Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 int16 = 1
 	var v4 int16 = 4
 	var v8 int16 = 8
-	var v0 int16 = 0
+	var v0 int16
 	var v2 int16 = 2
 
 	expectedFilteredList := []*int16{&v2, &v4, &v8}
@@ -125,14 +122,13 @@ func multiplyBy2Int16Ptr(num *int16) *int16 {
 	return &result
 }
 
-
 func TestFilterMapInt8Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 int8 = 1
 	var v4 int8 = 4
 	var v8 int8 = 8
-	var v0 int8 = 0
+	var v0 int8
 	var v2 int8 = 2
 
 	expectedFilteredList := []*int8{&v2, &v4, &v8}
@@ -155,14 +151,13 @@ func multiplyBy2Int8Ptr(num *int8) *int8 {
 	return &result
 }
 
-
 func TestFilterMapUintPtr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 uint = 1
 	var v4 uint = 4
 	var v8 uint = 8
-	var v0 uint = 0
+	var v0 uint
 	var v2 uint = 2
 
 	expectedFilteredList := []*uint{&v2, &v4, &v8}
@@ -185,14 +180,13 @@ func multiplyBy2UintPtr(num *uint) *uint {
 	return &result
 }
 
-
 func TestFilterMapUint64Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 uint64 = 1
 	var v4 uint64 = 4
 	var v8 uint64 = 8
-	var v0 uint64 = 0
+	var v0 uint64
 	var v2 uint64 = 2
 
 	expectedFilteredList := []*uint64{&v2, &v4, &v8}
@@ -215,14 +209,13 @@ func multiplyBy2Uint64Ptr(num *uint64) *uint64 {
 	return &result
 }
 
-
 func TestFilterMapUint32Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 uint32 = 1
 	var v4 uint32 = 4
 	var v8 uint32 = 8
-	var v0 uint32 = 0
+	var v0 uint32
 	var v2 uint32 = 2
 
 	expectedFilteredList := []*uint32{&v2, &v4, &v8}
@@ -245,14 +238,13 @@ func multiplyBy2Uint32Ptr(num *uint32) *uint32 {
 	return &result
 }
 
-
 func TestFilterMapUint16Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 uint16 = 1
 	var v4 uint16 = 4
 	var v8 uint16 = 8
-	var v0 uint16 = 0
+	var v0 uint16
 	var v2 uint16 = 2
 
 	expectedFilteredList := []*uint16{&v2, &v4, &v8}
@@ -275,14 +267,13 @@ func multiplyBy2Uint16Ptr(num *uint16) *uint16 {
 	return &result
 }
 
-
 func TestFilterMapUint8Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 uint8 = 1
 	var v4 uint8 = 4
 	var v8 uint8 = 8
-	var v0 uint8 = 0
+	var v0 uint8
 	var v2 uint8 = 2
 
 	expectedFilteredList := []*uint8{&v2, &v4, &v8}
@@ -304,7 +295,6 @@ func multiplyBy2Uint8Ptr(num *uint8) *uint8 {
 	result := *num * 2
 	return &result
 }
-
 
 func TestFilterMapStrPtr(t *testing.T) {
 	var v1 string = "1"
@@ -330,7 +320,6 @@ func concatA(num *string) *string {
 	result := *num + "A"
 	return &result
 }
-
 
 func TestFilterMapBoolPtr(t *testing.T) {
 	var vt1 bool = true
@@ -363,7 +352,7 @@ func TestFilterMapFloat32Ptr(t *testing.T) {
 	var v1 float32 = 1
 	var v4 float32 = 4
 	var v8 float32 = 8
-	var v0 float32 = 0
+	var v0 float32
 	var v2 float32 = 2
 
 	expectedFilteredList := []*float32{&v2, &v4, &v8}
@@ -386,14 +375,13 @@ func multiplyBy2Float32Ptr(num *float32) *float32 {
 	return &result
 }
 
-
 func TestFilterMapFloat64Ptr(t *testing.T) {
 	// Test : Multiply all positive numbers in the list by 2
 
 	var v1 float64 = 1
 	var v4 float64 = 4
 	var v8 float64 = 8
-	var v0 float64 = 0
+	var v0 float64
 	var v2 float64 = 2
 
 	expectedFilteredList := []*float64{&v2, &v4, &v8}
@@ -415,4 +403,3 @@ func multiplyBy2Float64Ptr(num *float64) *float64 {
 	result := *num * 2
 	return &result
 }
-

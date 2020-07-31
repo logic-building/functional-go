@@ -29,7 +29,7 @@ func TestEveryIntPErr(t *testing.T) {
 
 	list2 := []int{v8, v2, v10, v5, v4}
 	r, _ = EveryIntErr(isEvenIntErr, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryIntPtrErr failed. Expected=false, actual=true")
 	}
 
@@ -43,7 +43,7 @@ func TestEveryIntPErr(t *testing.T) {
 		t.Errorf("EveryIntErr failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryIntErr(nil, []int{})
+	r, _ = EveryIntErr(nil, []int{})
 	if r {
 		t.Errorf("EveryIntErr failed. Expected=false, actual=true")
 	}
@@ -73,7 +73,7 @@ func TestEveryInt64Err(t *testing.T) {
 
 	list2 := []int64{v8, v2, v10, v5, v4}
 	r, _ = EveryInt64Err(isEvenInt64Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryInt64PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -87,7 +87,7 @@ func TestEveryInt64Err(t *testing.T) {
 		t.Errorf("EveryInt64Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryInt64Err(nil, []int64{})
+	r, _ = EveryInt64Err(nil, []int64{})
 	if r {
 		t.Errorf("EveryInt64Err failed. Expected=false, actual=true")
 	}
@@ -117,7 +117,7 @@ func TestEveryInt32Err(t *testing.T) {
 
 	list2 := []int32{v8, v2, v10, v5, v4}
 	r, _ = EveryInt32Err(isEvenInt32Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryInt32PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -131,7 +131,7 @@ func TestEveryInt32Err(t *testing.T) {
 		t.Errorf("EveryInt32Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryInt32Err(nil, []int32{})
+	r, _ = EveryInt32Err(nil, []int32{})
 	if r {
 		t.Errorf("EveryInt32Err failed. Expected=false, actual=true")
 	}
@@ -161,7 +161,7 @@ func TestEveryInt16Err(t *testing.T) {
 
 	list2 := []int16{v8, v2, v10, v5, v4}
 	r, _ = EveryInt16Err(isEvenInt16Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryInt16PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -175,7 +175,7 @@ func TestEveryInt16Err(t *testing.T) {
 		t.Errorf("EveryInt16Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryInt16Err(nil, []int16{})
+	r, _ = EveryInt16Err(nil, []int16{})
 	if r {
 		t.Errorf("EveryInt16Err failed. Expected=false, actual=true")
 	}
@@ -205,7 +205,7 @@ func TestEveryInt8Err(t *testing.T) {
 
 	list2 := []int8{v8, v2, v10, v5, v4}
 	r, _ = EveryInt8Err(isEvenInt8Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryInt8PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -219,7 +219,7 @@ func TestEveryInt8Err(t *testing.T) {
 		t.Errorf("EveryInt8Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryInt8Err(nil, []int8{})
+	r, _ = EveryInt8Err(nil, []int8{})
 	if r {
 		t.Errorf("EveryInt8Err failed. Expected=false, actual=true")
 	}
@@ -249,7 +249,7 @@ func TestEveryUintErr(t *testing.T) {
 
 	list2 := []uint{v8, v2, v10, v5, v4}
 	r, _ = EveryUintErr(isEvenUintErr, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryUintPtrErr failed. Expected=false, actual=true")
 	}
 
@@ -263,7 +263,7 @@ func TestEveryUintErr(t *testing.T) {
 		t.Errorf("EveryUintErr failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryUintErr(nil, []uint{})
+	r, _ = EveryUintErr(nil, []uint{})
 	if r {
 		t.Errorf("EveryUintErr failed. Expected=false, actual=true")
 	}
@@ -293,7 +293,7 @@ func TestEveryUint64Err(t *testing.T) {
 
 	list2 := []uint64{v8, v2, v10, v5, v4}
 	r, _ = EveryUint64Err(isEvenUint64Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryUint64PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -307,7 +307,7 @@ func TestEveryUint64Err(t *testing.T) {
 		t.Errorf("EveryUint64Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryUint64Err(nil, []uint64{})
+	r, _ = EveryUint64Err(nil, []uint64{})
 	if r {
 		t.Errorf("EveryUint64Err failed. Expected=false, actual=true")
 	}
@@ -337,7 +337,7 @@ func TestEveryUint32Err(t *testing.T) {
 
 	list2 := []uint32{v8, v2, v10, v5, v4}
 	r, _ = EveryUint32Err(isEvenUint32Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryUint32PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -351,7 +351,7 @@ func TestEveryUint32Err(t *testing.T) {
 		t.Errorf("EveryUint32Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryUint32Err(nil, []uint32{})
+	r, _ = EveryUint32Err(nil, []uint32{})
 	if r {
 		t.Errorf("EveryUint32Err failed. Expected=false, actual=true")
 	}
@@ -381,7 +381,7 @@ func TestEveryUint16Err(t *testing.T) {
 
 	list2 := []uint16{v8, v2, v10, v5, v4}
 	r, _ = EveryUint16Err(isEvenUint16Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryUint16PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -395,7 +395,7 @@ func TestEveryUint16Err(t *testing.T) {
 		t.Errorf("EveryUint16Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryUint16Err(nil, []uint16{})
+	r, _ = EveryUint16Err(nil, []uint16{})
 	if r {
 		t.Errorf("EveryUint16Err failed. Expected=false, actual=true")
 	}
@@ -425,7 +425,7 @@ func TestEveryUint8Err(t *testing.T) {
 
 	list2 := []uint8{v8, v2, v10, v5, v4}
 	r, _ = EveryUint8Err(isEvenUint8Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryUint8PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -439,7 +439,7 @@ func TestEveryUint8Err(t *testing.T) {
 		t.Errorf("EveryUint8Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryUint8Err(nil, []uint8{})
+	r, _ = EveryUint8Err(nil, []uint8{})
 	if r {
 		t.Errorf("EveryUint8Err failed. Expected=false, actual=true")
 	}
@@ -469,7 +469,7 @@ func TestEveryStrErr(t *testing.T) {
 
 	list2 := []string{v8, v2, v10, v5, v4}
 	r, _ = EveryStrErr(isEvenStrErr, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
 	}
 
@@ -483,7 +483,7 @@ func TestEveryStrErr(t *testing.T) {
 		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryStrErr(nil, []string{})
+	r, _ = EveryStrErr(nil, []string{})
 	if r {
 		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
 	}
@@ -517,7 +517,7 @@ func TestEveryBoolErr(t *testing.T) {
 	if r {
 		t.Errorf("EveryBoolErr failed. Expected=true, actual=false")
 	}
-	
+
 	list1 = []bool{}
 	r, _ = EveryBoolErr(TrueErr, list1)
 	if r {
@@ -575,7 +575,7 @@ func TestEveryFloat32Err(t *testing.T) {
 
 	list2 := []float32{v8, v2, v10, v5, v4}
 	r, _ = EveryFloat32Err(isEvenFloat32Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryFloat32PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -589,7 +589,7 @@ func TestEveryFloat32Err(t *testing.T) {
 		t.Errorf("EveryFloat32Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryFloat32Err(nil, []float32{})
+	r, _ = EveryFloat32Err(nil, []float32{})
 	if r {
 		t.Errorf("EveryFloat32Err failed. Expected=false, actual=true")
 	}
@@ -619,7 +619,7 @@ func TestEveryFloat64Err(t *testing.T) {
 
 	list2 := []float64{v8, v2, v10, v5, v4}
 	r, _ = EveryFloat64Err(isEvenFloat64Err, list2)
-	if  r {
+	if r {
 		t.Errorf("EveryFloat64PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -633,7 +633,7 @@ func TestEveryFloat64Err(t *testing.T) {
 		t.Errorf("EveryFloat64Err failed. Expected=false, actual=true")
 	}
 
-	r, _= EveryFloat64Err(nil, []float64{})
+	r, _ = EveryFloat64Err(nil, []float64{})
 	if r {
 		t.Errorf("EveryFloat64Err failed. Expected=false, actual=true")
 	}

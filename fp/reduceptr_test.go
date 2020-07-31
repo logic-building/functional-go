@@ -55,7 +55,6 @@ func plusIntPtr(num1, num2 *int) *int {
 	return &c
 }
 
-
 func TestReduceInt64Ptr(t *testing.T) {
 	var v1 int64 = 1
 	var v2 int64 = 2
@@ -104,7 +103,6 @@ func plusInt64Ptr(num1, num2 *int64) *int64 {
 	c := *num1 + *num2
 	return &c
 }
-
 
 func TestReduceInt32Ptr(t *testing.T) {
 	var v1 int32 = 1
@@ -155,7 +153,6 @@ func plusInt32Ptr(num1, num2 *int32) *int32 {
 	return &c
 }
 
-
 func TestReduceInt16Ptr(t *testing.T) {
 	var v1 int16 = 1
 	var v2 int16 = 2
@@ -204,7 +201,6 @@ func plusInt16Ptr(num1, num2 *int16) *int16 {
 	c := *num1 + *num2
 	return &c
 }
-
 
 func TestReduceInt8Ptr(t *testing.T) {
 	var v1 int8 = 1
@@ -255,7 +251,6 @@ func plusInt8Ptr(num1, num2 *int8) *int8 {
 	return &c
 }
 
-
 func TestReduceUintPtr(t *testing.T) {
 	var v1 uint = 1
 	var v2 uint = 2
@@ -304,7 +299,6 @@ func plusUintPtr(num1, num2 *uint) *uint {
 	c := *num1 + *num2
 	return &c
 }
-
 
 func TestReduceUint64Ptr(t *testing.T) {
 	var v1 uint64 = 1
@@ -355,7 +349,6 @@ func plusUint64Ptr(num1, num2 *uint64) *uint64 {
 	return &c
 }
 
-
 func TestReduceUint32Ptr(t *testing.T) {
 	var v1 uint32 = 1
 	var v2 uint32 = 2
@@ -404,7 +397,6 @@ func plusUint32Ptr(num1, num2 *uint32) *uint32 {
 	c := *num1 + *num2
 	return &c
 }
-
 
 func TestReduceUint16Ptr(t *testing.T) {
 	var v1 uint16 = 1
@@ -455,7 +447,6 @@ func plusUint16Ptr(num1, num2 *uint16) *uint16 {
 	return &c
 }
 
-
 func TestReduceUint8Ptr(t *testing.T) {
 	var v1 uint8 = 1
 	var v2 uint8 = 2
@@ -504,7 +495,6 @@ func plusUint8Ptr(num1, num2 *uint8) *uint8 {
 	c := *num1 + *num2
 	return &c
 }
-
 
 func TestReduceStrPtr(t *testing.T) {
 	var v1 string = "1"
@@ -555,7 +545,6 @@ func plusStrPtr(num1, num2 *string) *string {
 	return &c
 }
 
-
 func TestReduceFloat32Ptr(t *testing.T) {
 	var v1 float32 = 1
 	var v2 float32 = 2
@@ -605,7 +594,6 @@ func plusFloat32Ptr(num1, num2 *float32) *float32 {
 	return &c
 }
 
-
 func TestReduceFloat64Ptr(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
@@ -654,4 +642,3 @@ func plusFloat64Ptr(num1, num2 *float64) *float64 {
 	c := *num1 + *num2
 	return &c
 }
-

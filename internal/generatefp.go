@@ -140,6 +140,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "EqualMaps",
+		codeTemplate:      basic.EqualMaps(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "equalmap.go",
+
+		testTemplate:          basic.EqualMapsTest(),
+		testTemplateBool:      basic.EqualMapsBoolTest(),
+		generatedTestFileName: "equalmap_test.go",
+	},
+
+	fpCode{
 		function:          "Zero",
 		codeTemplate:      basic.ZeroP(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
@@ -1217,6 +1228,7 @@ func modifyTestDataToStr2(code string) string {
 	code = strings.Replace(code, "var v10 string = 10", "var v10 string = \"10\"", -1)
 	code = strings.Replace(code, "var v16 string = 16", "var v16 string = \"16\"", -1)
 	code = strings.Replace(code, "var v20 string = 20", "var v20 string = \"20\"", -1)
+	code = strings.Replace(code, "var v30 string = 30", "var v30 string = \"30\"", -1)
 	code = strings.Replace(code, "var v40 string = 40", "var v40 string = \"40\"", -1)
 	code = strings.Replace(code, "var v80 string = 80", "var v80 string = \"80\"", -1)
 
@@ -1340,60 +1352,6 @@ func isEvenStrPtr(num *string) bool {
 	} else {
 		return false
 	}
-}`
-	code = strings.Replace(code, s1, s2, -1)
-
-	s1 = `func TestFilterMapStrPtr(t *testing.T) {
-	// Test : Multiply all positive numbers in the list by 2
-
-	var v1 string = "1"
-	var v4 string = "4"
-	var v8 string = "8"
-	var v0 string = "0"
-	var v2 string = "2"
-
-	expectedFilteredList := []*string{&v2, &v4, &v8}
-	filteredList := FilterMapStrPtr(isPositiveStrPtr, multiplyBy2StrPtr, []*string{&v1, &v0, &v2, &v4})
-
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
-		t.Errorf("FilterMapStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
-	}
-	if len(FilterMapStrPtr(nil, nil, nil)) > 0 {
-		t.Errorf("FilterMapStrPtr failed.")
-		t.Errorf(reflect.String.String())
-	}
-}
-
-func isPositiveStrPtr(num *string) bool {
-	return *num > 0
-}
-func multiplyBy2StrPtr(num *string) *string {
-	result := *num * 2
-	return &result
-}`
-	s2 = `func TestFilterMapStrPtr(t *testing.T) {
-	var v1 string = "1"
-	var v4 string = "4"
-	var v0 string = "0"
-	var v2 string = "2"
-
-	expectedFilteredList := []*string{&v1, &v0, &v2, &v4}
-	filteredList := FilterMapStrPtr(noFilter, concatA, []*string{&v1, &v0, &v2, &v4})
-
-	if *filteredList[0] != *expectedFilteredList[0]+"A" || *filteredList[1] != *expectedFilteredList[1]+"A" {
-		t.Errorf("FilterMapStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
-	}
-	if len(FilterMapStrPtr(nil, nil, nil)) > 0 {
-		t.Errorf("FilterMapStrPtr failed.")
-	}
-}
-
-func noFilter(num *string) bool {
-	return true
-}
-func concatA(num *string) *string {
-	result := *num + "A"
-	return &result
 }`
 	code = strings.Replace(code, s1, s2, -1)
 
@@ -1662,6 +1620,8 @@ func squareStrPtr(num *string) *string {
 
 	code = basic.ReplaceActivityMapIOErr(code)
 	code = basic.ReplaceActivityMapIOPtrErr(code)
+
+	code = basic.ReplaceActivityTakeWhilePtr(code)
 
 	return code
 }
