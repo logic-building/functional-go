@@ -11,7 +11,7 @@ func TestReduceIntPtrErr(t *testing.T) {
 	var v3 int = 3
 	var v4 int = 4
 	var v5 int = 5
-	var v0 int = 0
+	var v0 int
 
 	list := []*int{&v1, &v2, &v3, &v4, &v5}
 	var expected int = 15
@@ -63,14 +63,13 @@ func plusIntPtrErr(num1, num2 *int) (*int, error) {
 	return &c, nil
 }
 
-
 func TestReduceInt64PtrErr(t *testing.T) {
 	var v1 int64 = 1
 	var v2 int64 = 2
 	var v3 int64 = 3
 	var v4 int64 = 4
 	var v5 int64 = 5
-	var v0 int64 = 0
+	var v0 int64
 
 	list := []*int64{&v1, &v2, &v3, &v4, &v5}
 	var expected int64 = 15
@@ -122,14 +121,13 @@ func plusInt64PtrErr(num1, num2 *int64) (*int64, error) {
 	return &c, nil
 }
 
-
 func TestReduceInt32PtrErr(t *testing.T) {
 	var v1 int32 = 1
 	var v2 int32 = 2
 	var v3 int32 = 3
 	var v4 int32 = 4
 	var v5 int32 = 5
-	var v0 int32 = 0
+	var v0 int32
 
 	list := []*int32{&v1, &v2, &v3, &v4, &v5}
 	var expected int32 = 15
@@ -181,14 +179,13 @@ func plusInt32PtrErr(num1, num2 *int32) (*int32, error) {
 	return &c, nil
 }
 
-
 func TestReduceInt16PtrErr(t *testing.T) {
 	var v1 int16 = 1
 	var v2 int16 = 2
 	var v3 int16 = 3
 	var v4 int16 = 4
 	var v5 int16 = 5
-	var v0 int16 = 0
+	var v0 int16
 
 	list := []*int16{&v1, &v2, &v3, &v4, &v5}
 	var expected int16 = 15
@@ -240,14 +237,13 @@ func plusInt16PtrErr(num1, num2 *int16) (*int16, error) {
 	return &c, nil
 }
 
-
 func TestReduceInt8PtrErr(t *testing.T) {
 	var v1 int8 = 1
 	var v2 int8 = 2
 	var v3 int8 = 3
 	var v4 int8 = 4
 	var v5 int8 = 5
-	var v0 int8 = 0
+	var v0 int8
 
 	list := []*int8{&v1, &v2, &v3, &v4, &v5}
 	var expected int8 = 15
@@ -299,14 +295,13 @@ func plusInt8PtrErr(num1, num2 *int8) (*int8, error) {
 	return &c, nil
 }
 
-
 func TestReduceUintPtrErr(t *testing.T) {
 	var v1 uint = 1
 	var v2 uint = 2
 	var v3 uint = 3
 	var v4 uint = 4
 	var v5 uint = 5
-	var v0 uint = 0
+	var v0 uint
 
 	list := []*uint{&v1, &v2, &v3, &v4, &v5}
 	var expected uint = 15
@@ -358,14 +353,13 @@ func plusUintPtrErr(num1, num2 *uint) (*uint, error) {
 	return &c, nil
 }
 
-
 func TestReduceUint64PtrErr(t *testing.T) {
 	var v1 uint64 = 1
 	var v2 uint64 = 2
 	var v3 uint64 = 3
 	var v4 uint64 = 4
 	var v5 uint64 = 5
-	var v0 uint64 = 0
+	var v0 uint64
 
 	list := []*uint64{&v1, &v2, &v3, &v4, &v5}
 	var expected uint64 = 15
@@ -417,14 +411,13 @@ func plusUint64PtrErr(num1, num2 *uint64) (*uint64, error) {
 	return &c, nil
 }
 
-
 func TestReduceUint32PtrErr(t *testing.T) {
 	var v1 uint32 = 1
 	var v2 uint32 = 2
 	var v3 uint32 = 3
 	var v4 uint32 = 4
 	var v5 uint32 = 5
-	var v0 uint32 = 0
+	var v0 uint32
 
 	list := []*uint32{&v1, &v2, &v3, &v4, &v5}
 	var expected uint32 = 15
@@ -476,14 +469,13 @@ func plusUint32PtrErr(num1, num2 *uint32) (*uint32, error) {
 	return &c, nil
 }
 
-
 func TestReduceUint16PtrErr(t *testing.T) {
 	var v1 uint16 = 1
 	var v2 uint16 = 2
 	var v3 uint16 = 3
 	var v4 uint16 = 4
 	var v5 uint16 = 5
-	var v0 uint16 = 0
+	var v0 uint16
 
 	list := []*uint16{&v1, &v2, &v3, &v4, &v5}
 	var expected uint16 = 15
@@ -535,14 +527,13 @@ func plusUint16PtrErr(num1, num2 *uint16) (*uint16, error) {
 	return &c, nil
 }
 
-
 func TestReduceUint8PtrErr(t *testing.T) {
 	var v1 uint8 = 1
 	var v2 uint8 = 2
 	var v3 uint8 = 3
 	var v4 uint8 = 4
 	var v5 uint8 = 5
-	var v0 uint8 = 0
+	var v0 uint8
 
 	list := []*uint8{&v1, &v2, &v3, &v4, &v5}
 	var expected uint8 = 15
@@ -593,7 +584,6 @@ func plusUint8PtrErr(num1, num2 *uint8) (*uint8, error) {
 	c := *num1 + *num2
 	return &c, nil
 }
-
 
 func TestReduceStrPtrErr(t *testing.T) {
 	var v1 string = "1"
@@ -653,14 +643,13 @@ func plusStrPtrErr(num1, num2 *string) (*string, error) {
 	return &c, nil
 }
 
-
 func TestReduceFloat32PtrErr(t *testing.T) {
 	var v1 float32 = 1
 	var v2 float32 = 2
 	var v3 float32 = 3
 	var v4 float32 = 4
 	var v5 float32 = 5
-	var v0 float32 = 0
+	var v0 float32
 
 	list := []*float32{&v1, &v2, &v3, &v4, &v5}
 	var expected float32 = 15
@@ -712,14 +701,13 @@ func plusFloat32PtrErr(num1, num2 *float32) (*float32, error) {
 	return &c, nil
 }
 
-
 func TestReduceFloat64PtrErr(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
 	var v3 float64 = 3
 	var v4 float64 = 4
 	var v5 float64 = 5
-	var v0 float64 = 0
+	var v0 float64
 
 	list := []*float64{&v1, &v2, &v3, &v4, &v5}
 	var expected float64 = 15
@@ -770,4 +758,3 @@ func plusFloat64PtrErr(num1, num2 *float64) (*float64, error) {
 	c := *num1 + *num2
 	return &c, nil
 }
-

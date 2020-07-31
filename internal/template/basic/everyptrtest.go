@@ -310,7 +310,7 @@ func TestEvery<FTYPE>Err(t *testing.T) {
 
 	list2 := []<TYPE>{v8, v2, v10, v5, v4}
 	r, _ = Every<FTYPE>Err(isEven<FTYPE>Err, list2)
-	if  r {
+	if r {
 		t.Errorf("Every<FTYPE>PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -324,7 +324,7 @@ func TestEvery<FTYPE>Err(t *testing.T) {
 		t.Errorf("Every<FTYPE>Err failed. Expected=false, actual=true")
 	}
 
-	r, _= Every<FTYPE>Err(nil, []<TYPE>{})
+	r, _ = Every<FTYPE>Err(nil, []<TYPE>{})
 	if r {
 		t.Errorf("Every<FTYPE>Err failed. Expected=false, actual=true")
 	}
@@ -363,7 +363,7 @@ func TestEvery<FTYPE>Err(t *testing.T) {
 	if r {
 		t.Errorf("Every<FTYPE>Err failed. Expected=true, actual=false")
 	}
-	
+
 	list1 = []bool{}
 	r, _ = Every<FTYPE>Err(TrueErr, list1)
 	if r {

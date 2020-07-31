@@ -53,7 +53,6 @@ func plus<FTYPE>Ptr(num1, num2 *<TYPE>) *<TYPE> {
 	c := *num1 + *num2
 	return &c
 }
-
 `
 }
 
@@ -68,7 +67,7 @@ func TestReduce<FTYPE>PtrErr(t *testing.T) {
 	var v3 <TYPE> = 3
 	var v4 <TYPE> = 4
 	var v5 <TYPE> = 5
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	list := []*<TYPE>{&v1, &v2, &v3, &v4, &v5}
 	var expected <TYPE> = 15
@@ -119,7 +118,6 @@ func plus<FTYPE>PtrErr(num1, num2 *<TYPE>) (*<TYPE>, error) {
 	c := *num1 + *num2
 	return &c, nil
 }
-
 `
 }
 
@@ -147,7 +145,7 @@ func TestReduceIntPtrErr(t *testing.T) {`
 	var v3 string = "3"
 	var v4 string = "4"
 	var v5 string = "5"
-	var v0 string = "0"
+	var v0 string
 
 	list := []*string{&v1, &v2, &v3, &v4, &v5}
 	var expected string = 15
