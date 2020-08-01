@@ -12,7 +12,7 @@ func TestEveryIntPErr(t *testing.T) {
 	var v5 int = 5
 	var v8 int = 8
 	var v10 int = 10
-	var v0 int = 0
+	var v0 int
 
 	list1 := []int{v2, v4}
 
@@ -56,7 +56,7 @@ func TestEveryInt64Err(t *testing.T) {
 	var v5 int64 = 5
 	var v8 int64 = 8
 	var v10 int64 = 10
-	var v0 int64 = 0
+	var v0 int64
 
 	list1 := []int64{v2, v4}
 
@@ -100,7 +100,7 @@ func TestEveryInt32Err(t *testing.T) {
 	var v5 int32 = 5
 	var v8 int32 = 8
 	var v10 int32 = 10
-	var v0 int32 = 0
+	var v0 int32
 
 	list1 := []int32{v2, v4}
 
@@ -144,7 +144,7 @@ func TestEveryInt16Err(t *testing.T) {
 	var v5 int16 = 5
 	var v8 int16 = 8
 	var v10 int16 = 10
-	var v0 int16 = 0
+	var v0 int16
 
 	list1 := []int16{v2, v4}
 
@@ -188,7 +188,7 @@ func TestEveryInt8Err(t *testing.T) {
 	var v5 int8 = 5
 	var v8 int8 = 8
 	var v10 int8 = 10
-	var v0 int8 = 0
+	var v0 int8
 
 	list1 := []int8{v2, v4}
 
@@ -232,7 +232,7 @@ func TestEveryUintErr(t *testing.T) {
 	var v5 uint = 5
 	var v8 uint = 8
 	var v10 uint = 10
-	var v0 uint = 0
+	var v0 uint
 
 	list1 := []uint{v2, v4}
 
@@ -276,7 +276,7 @@ func TestEveryUint64Err(t *testing.T) {
 	var v5 uint64 = 5
 	var v8 uint64 = 8
 	var v10 uint64 = 10
-	var v0 uint64 = 0
+	var v0 uint64
 
 	list1 := []uint64{v2, v4}
 
@@ -320,7 +320,7 @@ func TestEveryUint32Err(t *testing.T) {
 	var v5 uint32 = 5
 	var v8 uint32 = 8
 	var v10 uint32 = 10
-	var v0 uint32 = 0
+	var v0 uint32
 
 	list1 := []uint32{v2, v4}
 
@@ -364,7 +364,7 @@ func TestEveryUint16Err(t *testing.T) {
 	var v5 uint16 = 5
 	var v8 uint16 = 8
 	var v10 uint16 = 10
-	var v0 uint16 = 0
+	var v0 uint16
 
 	list1 := []uint16{v2, v4}
 
@@ -408,7 +408,7 @@ func TestEveryUint8Err(t *testing.T) {
 	var v5 uint8 = 5
 	var v8 uint8 = 8
 	var v10 uint8 = 10
-	var v0 uint8 = 0
+	var v0 uint8
 
 	list1 := []uint8{v2, v4}
 
@@ -558,7 +558,7 @@ func TestEveryFloat32Err(t *testing.T) {
 	var v5 float32 = 5
 	var v8 float32 = 8
 	var v10 float32 = 10
-	var v0 float32 = 0
+	var v0 float32
 
 	list1 := []float32{v2, v4}
 
@@ -602,7 +602,7 @@ func TestEveryFloat64Err(t *testing.T) {
 	var v5 float64 = 5
 	var v8 float64 = 8
 	var v10 float64 = 10
-	var v0 float64 = 0
+	var v0 float64
 
 	list1 := []float64{v2, v4}
 

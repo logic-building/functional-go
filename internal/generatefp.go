@@ -140,14 +140,21 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
-		function:          "EqualMaps",
-		codeTemplate:      basic.EqualMaps(),
+		function:          "EqualMapType1Type2",
+		codeTemplate:      basic.EqualMapType1Type2(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "equalmap.go",
 
-		testTemplate:          basic.EqualMapsTest(),
-		testTemplateBool:      basic.EqualMapsBoolTest(),
-		generatedTestFileName: "equalmap_test.go",
+		testTemplate:           basic.EqualMapsTest(),
+		testTemplateNumberStr:  basic.EqualMapsNumberToStringTest(),
+		testTemplateStrNumber:  basic.EqualMapsStringToNumberTest(),
+		testTemplateStrBool:    basic.EqualMapsStringToBoolTest(),
+		testTemplateBoolStr:    basic.EqualMapsBoolToStringTest(),
+		testTemplateNumberBool: basic.EqualMapsNumberToBoolTest(),
+		testTemplateBoolNumber: basic.EqualMapsBoolToNumberTest(),
+		testTemplateBoolBool:   basic.EqualMapsBoolTest(),
+		testTemplateStrStr:     basic.EqualMapsStringToStringTest(),
+		generatedTestFileName:  "equalmap_test.go",
 	},
 
 	fpCode{

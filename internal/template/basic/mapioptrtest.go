@@ -61,7 +61,7 @@ func TestMap<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(t *testing.T) {
 }
 
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *<INPUT_TYPE>) *<OUTPUT_TYPE> {
-	var r <OUTPUT_TYPE> = 0
+	var r <OUTPUT_TYPE>
 	if *num == "10" {
 		r = 10
 	}

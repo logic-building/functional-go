@@ -3550,7 +3550,7 @@ func TestMapStrIntPtr(t *testing.T) {
 }
 
 func someLogicStrIntPtr(num *string) *int {
-	var r int = 0
+	var r int
 	if *num == "10" {
 		r = 10
 	}
@@ -3581,7 +3581,7 @@ func TestMapStrInt64Ptr(t *testing.T) {
 }
 
 func someLogicStrInt64Ptr(num *string) *int64 {
-	var r int64 = 0
+	var r int64
 	if *num == "10" {
 		r = 10
 	}
@@ -3612,7 +3612,7 @@ func TestMapStrInt32Ptr(t *testing.T) {
 }
 
 func someLogicStrInt32Ptr(num *string) *int32 {
-	var r int32 = 0
+	var r int32
 	if *num == "10" {
 		r = 10
 	}
@@ -3643,7 +3643,7 @@ func TestMapStrInt16Ptr(t *testing.T) {
 }
 
 func someLogicStrInt16Ptr(num *string) *int16 {
-	var r int16 = 0
+	var r int16
 	if *num == "10" {
 		r = 10
 	}
@@ -3674,7 +3674,7 @@ func TestMapStrInt8Ptr(t *testing.T) {
 }
 
 func someLogicStrInt8Ptr(num *string) *int8 {
-	var r int8 = 0
+	var r int8
 	if *num == "10" {
 		r = 10
 	}
@@ -3705,7 +3705,7 @@ func TestMapStrUintPtr(t *testing.T) {
 }
 
 func someLogicStrUintPtr(num *string) *uint {
-	var r uint = 0
+	var r uint
 	if *num == "10" {
 		r = 10
 	}
@@ -3736,7 +3736,7 @@ func TestMapStrUint64Ptr(t *testing.T) {
 }
 
 func someLogicStrUint64Ptr(num *string) *uint64 {
-	var r uint64 = 0
+	var r uint64
 	if *num == "10" {
 		r = 10
 	}
@@ -3767,7 +3767,7 @@ func TestMapStrUint32Ptr(t *testing.T) {
 }
 
 func someLogicStrUint32Ptr(num *string) *uint32 {
-	var r uint32 = 0
+	var r uint32
 	if *num == "10" {
 		r = 10
 	}
@@ -3798,7 +3798,7 @@ func TestMapStrUint16Ptr(t *testing.T) {
 }
 
 func someLogicStrUint16Ptr(num *string) *uint16 {
-	var r uint16 = 0
+	var r uint16
 	if *num == "10" {
 		r = 10
 	}
@@ -3829,7 +3829,7 @@ func TestMapStrUint8Ptr(t *testing.T) {
 }
 
 func someLogicStrUint8Ptr(num *string) *uint8 {
-	var r uint8 = 0
+	var r uint8
 	if *num == "10" {
 		r = 10
 	}
@@ -3885,7 +3885,7 @@ func TestMapStrFloat32Ptr(t *testing.T) {
 }
 
 func someLogicStrFloat32Ptr(num *string) *float32 {
-	var r float32 = 0
+	var r float32
 	if *num == "10" {
 		r = 10
 	}
@@ -3916,7 +3916,7 @@ func TestMapStrFloat64Ptr(t *testing.T) {
 }
 
 func someLogicStrFloat64Ptr(num *string) *float64 {
-	var r float64 = 0
+	var r float64
 	if *num == "10" {
 		r = 10
 	}

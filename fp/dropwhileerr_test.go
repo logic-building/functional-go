@@ -12,7 +12,7 @@ func TestDropWhileIntErr(t *testing.T) {
 	var v3 int = 3
 	var v4 int = 4
 	var v5 int = 5
-	var v0 int = 0
+	var v0 int
 
 	expectedNewList := []int{v3, v4, v5}
 	NewList, _ := DropWhileIntErr(isEvenIntErr, []int{v4, v2, v3, v4, v5})
@@ -48,7 +48,7 @@ func TestDropWhileInt64Err(t *testing.T) {
 	var v3 int64 = 3
 	var v4 int64 = 4
 	var v5 int64 = 5
-	var v0 int64 = 0
+	var v0 int64
 
 	expectedNewList := []int64{v3, v4, v5}
 	NewList, _ := DropWhileInt64Err(isEvenInt64Err, []int64{v4, v2, v3, v4, v5})
@@ -84,7 +84,7 @@ func TestDropWhileInt32Err(t *testing.T) {
 	var v3 int32 = 3
 	var v4 int32 = 4
 	var v5 int32 = 5
-	var v0 int32 = 0
+	var v0 int32
 
 	expectedNewList := []int32{v3, v4, v5}
 	NewList, _ := DropWhileInt32Err(isEvenInt32Err, []int32{v4, v2, v3, v4, v5})
@@ -120,7 +120,7 @@ func TestDropWhileInt16Err(t *testing.T) {
 	var v3 int16 = 3
 	var v4 int16 = 4
 	var v5 int16 = 5
-	var v0 int16 = 0
+	var v0 int16
 
 	expectedNewList := []int16{v3, v4, v5}
 	NewList, _ := DropWhileInt16Err(isEvenInt16Err, []int16{v4, v2, v3, v4, v5})
@@ -156,7 +156,7 @@ func TestDropWhileInt8Err(t *testing.T) {
 	var v3 int8 = 3
 	var v4 int8 = 4
 	var v5 int8 = 5
-	var v0 int8 = 0
+	var v0 int8
 
 	expectedNewList := []int8{v3, v4, v5}
 	NewList, _ := DropWhileInt8Err(isEvenInt8Err, []int8{v4, v2, v3, v4, v5})
@@ -192,7 +192,7 @@ func TestDropWhileUintErr(t *testing.T) {
 	var v3 uint = 3
 	var v4 uint = 4
 	var v5 uint = 5
-	var v0 uint = 0
+	var v0 uint
 
 	expectedNewList := []uint{v3, v4, v5}
 	NewList, _ := DropWhileUintErr(isEvenUintErr, []uint{v4, v2, v3, v4, v5})
@@ -228,7 +228,7 @@ func TestDropWhileUint64Err(t *testing.T) {
 	var v3 uint64 = 3
 	var v4 uint64 = 4
 	var v5 uint64 = 5
-	var v0 uint64 = 0
+	var v0 uint64
 
 	expectedNewList := []uint64{v3, v4, v5}
 	NewList, _ := DropWhileUint64Err(isEvenUint64Err, []uint64{v4, v2, v3, v4, v5})
@@ -264,7 +264,7 @@ func TestDropWhileUint32Err(t *testing.T) {
 	var v3 uint32 = 3
 	var v4 uint32 = 4
 	var v5 uint32 = 5
-	var v0 uint32 = 0
+	var v0 uint32
 
 	expectedNewList := []uint32{v3, v4, v5}
 	NewList, _ := DropWhileUint32Err(isEvenUint32Err, []uint32{v4, v2, v3, v4, v5})
@@ -300,7 +300,7 @@ func TestDropWhileUint16Err(t *testing.T) {
 	var v3 uint16 = 3
 	var v4 uint16 = 4
 	var v5 uint16 = 5
-	var v0 uint16 = 0
+	var v0 uint16
 
 	expectedNewList := []uint16{v3, v4, v5}
 	NewList, _ := DropWhileUint16Err(isEvenUint16Err, []uint16{v4, v2, v3, v4, v5})
@@ -336,7 +336,7 @@ func TestDropWhileUint8Err(t *testing.T) {
 	var v3 uint8 = 3
 	var v4 uint8 = 4
 	var v5 uint8 = 5
-	var v0 uint8 = 0
+	var v0 uint8
 
 	expectedNewList := []uint8{v3, v4, v5}
 	NewList, _ := DropWhileUint8Err(isEvenUint8Err, []uint8{v4, v2, v3, v4, v5})
@@ -449,7 +449,7 @@ func TestDropWhileFloat32Err(t *testing.T) {
 	var v3 float32 = 3
 	var v4 float32 = 4
 	var v5 float32 = 5
-	var v0 float32 = 0
+	var v0 float32
 
 	expectedNewList := []float32{v3, v4, v5}
 	NewList, _ := DropWhileFloat32Err(isEvenFloat32Err, []float32{v4, v2, v3, v4, v5})
@@ -485,7 +485,7 @@ func TestDropWhileFloat64Err(t *testing.T) {
 	var v3 float64 = 3
 	var v4 float64 = 4
 	var v5 float64 = 5
-	var v0 float64 = 0
+	var v0 float64
 
 	expectedNewList := []float64{v3, v4, v5}
 	NewList, _ := DropWhileFloat64Err(isEvenFloat64Err, []float64{v4, v2, v3, v4, v5})

@@ -126,7 +126,7 @@ func TestDropWhile<FTYPE>PtrErr(t *testing.T) {
 	var v3 <TYPE> = 3
 	var v4 <TYPE> = 4
 	var v5 <TYPE> = 5
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	expectedNewList := []*<TYPE>{&v3, &v4, &v5}
 	NewList, _ := DropWhile<FTYPE>PtrErr(isEven<FTYPE>PtrErr, []*<TYPE>{&v4, &v2, &v3, &v4, &v5})
@@ -219,7 +219,81 @@ func TestDropWhileIntPtrErr(t *testing.T) {`
 
 func TestDropWhileIntPtrErr(t *testing.T) {`
 
-	return strings.Replace(code, s1, s2, -1)
+	code = strings.Replace(code, s1, s2, -1)
+	s1 = `func TestDropWhileStrPtrErr(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v0 string
+
+	expectedNewList := []*string{&v3, &v4, &v5}
+	NewList, _ := DropWhileStrPtrErr(isEvenStrPtrErr, []*string{&v4, &v2, &v3, &v4, &v5})
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhileStrPtrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	_, err := DropWhileStrPtrErr(isEvenStrPtrErr, []*string{&v4, &v2, &v0, &v4, &v5})
+	if err == nil {
+		t.Errorf("DropWhileStrPtrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	r, _ := DropWhileStrPtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+
+	r, _ = DropWhileStrPtrErr(nil, []*string{})
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+
+	NewList, _ = DropWhileStrPtrErr(isEvenStrPtrErr, []*string{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileStrPtrErr failed")
+	}
+}`
+	s2 = `func TestDropWhileStrPtrErr(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v0 string = "0"
+
+	expectedNewList := []*string{&v3, &v4, &v5}
+	NewList, _ := DropWhileStrPtrErr(isEvenStrPtrErr, []*string{&v4, &v2, &v3, &v4, &v5})
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhileStrPtrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	_, err := DropWhileStrPtrErr(isEvenStrPtrErr, []*string{&v4, &v2, &v0, &v4, &v5})
+	if err == nil {
+		t.Errorf("DropWhileStrPtrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	r, _ := DropWhileStrPtrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+
+	r, _ = DropWhileStrPtrErr(nil, []*string{})
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+
+	NewList, _ = DropWhileStrPtrErr(isEvenStrPtrErr, []*string{&v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileStrPtrErr failed")
+	}
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	return code
 }
 
 //**********DropWhileErrTest************************
@@ -234,7 +308,7 @@ func TestDropWhile<FTYPE>Err(t *testing.T) {
 	var v3 <TYPE> = 3
 	var v4 <TYPE> = 4
 	var v5 <TYPE> = 5
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	expectedNewList := []<TYPE>{v3, v4, v5}
 	NewList, _ := DropWhile<FTYPE>Err(isEven<FTYPE>Err, []<TYPE>{v4, v2, v3, v4, v5})
@@ -327,5 +401,80 @@ func TestDropWhileIntErr(t *testing.T) {`
 
 func TestDropWhileIntErr(t *testing.T) {`
 
-	return strings.Replace(code, s1, s2, -1)
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func TestDropWhileStrErr(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v0 string
+
+	expectedNewList := []string{v3, v4, v5}
+	NewList, _ := DropWhileStrErr(isEvenStrErr, []string{v4, v2, v3, v4, v5})
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhileStrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	_, err := DropWhileStrErr(isEvenStrErr, []string{v4, v2, v0, v4, v5})
+	if err == nil {
+		t.Errorf("DropWhileStrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	r, _ := DropWhileStrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrErr failed.")
+	}
+
+	r, _ = DropWhileStrErr(nil, []string{})
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrErr failed.")
+	}
+
+	NewList, _ = DropWhileStrErr(isEvenStrErr, []string{v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileStrErr failed")
+	}
+}`
+
+	s2 = `func TestDropWhileStrErr(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v0 string = "0"
+
+	expectedNewList := []string{v3, v4, v5}
+	NewList, _ := DropWhileStrErr(isEvenStrErr, []string{v4, v2, v3, v4, v5})
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhileStrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	_, err := DropWhileStrErr(isEvenStrErr, []string{v4, v2, v0, v4, v5})
+	if err == nil {
+		t.Errorf("DropWhileStrErr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	r, _ := DropWhileStrErr(nil, nil)
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrErr failed.")
+	}
+
+	r, _ = DropWhileStrErr(nil, []string{})
+	if len(r) > 0 {
+		t.Errorf("DropWhileStrErr failed.")
+	}
+
+	NewList, _ = DropWhileStrErr(isEvenStrErr, []string{v4})
+	if len(NewList) != 0 {
+		t.Errorf("DropWhileStrErr failed")
+	}
+}`
+	code = strings.Replace(code, s1, s2, -1)
+
+	return code
 }
