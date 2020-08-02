@@ -483,7 +483,7 @@ func TestRemove<FTYPE>Err(t *testing.T) {
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num%10 == 0, nil 
+		return num%10 == 0, nil
 	}
 	NewList, _ = Remove<FTYPE>Err(partialIsEven, []<TYPE>{v20, v1, v3, v40})
 
@@ -496,7 +496,12 @@ func TestRemove<FTYPE>Err(t *testing.T) {
 		t.Errorf("Remove<FTYPE>Err failed.")
 	}
 
-	_, err := Remove<FTYPE>Err(func(v <TYPE>) (bool, error) {if v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []<TYPE>{v20, v1, v3, v40})
+	_, err := Remove<FTYPE>Err(func(v <TYPE>) (bool, error) {
+		if v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []<TYPE>{v20, v1, v3, v40})
 	if err == nil {
 		t.Errorf("Remove<FTYPE>Err failed.")
 	}
@@ -511,15 +516,21 @@ func TestRemove<FTYPE>Err(t *testing.T) {
 	// Test : even number in the list
 	var vt <TYPE> = true
 	var vf <TYPE> = false
-	
-	expectedNewList := []<TYPE>{vt}
-	NewList, _ := Remove<FTYPE>Err(func(v bool) (bool, error) { return v == false, nil } , []<TYPE>{vt, vf, vf})
 
-	if NewList[0] != expectedNewList[0]  {
+	expectedNewList := []<TYPE>{vt}
+	NewList, _ := Remove<FTYPE>Err(func(v bool) (bool, error) { return v == false, nil }, []<TYPE>{vt, vf, vf})
+
+	if NewList[0] != expectedNewList[0] {
 		t.Errorf("Remove<FTYPE>Err failed. Expected New list=%v, actual list=%v", expectedNewList[0], NewList[0])
 	}
 
-	_, err := Remove<FTYPE>Err(func(v bool) (bool, error) { if v == false {return false, errors.New("false is invalid in this test")}; return true, nil } , []<TYPE>{vt, vf, vf})
+	_, err := Remove<FTYPE>Err(func(v bool) (bool, error) {
+		if v == false {
+			return false, errors.New("false is invalid in this test")
+		}
+		return true, nil
+	}, []<TYPE>{vt, vf, vf})
+
 	if err == nil {
 		t.Errorf("Remove<FTYPE>Err failed.")
 	}
@@ -554,7 +565,7 @@ func TestRemoveIntErr(t *testing.T) {`
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num%10 == 0, nil 
+		return num%10 == 0, nil
 	}
 	NewList, _ = RemoveStrErr(partialIsEven, []string{v20, v1, v3, v40})`
 	s2 = `partialIsEven := func(num string) (bool, error) {
@@ -564,7 +575,7 @@ func TestRemoveIntErr(t *testing.T) {`
 		if num == "20" || num == "40" {
 			return true, nil
 		}
-		return false, nil 
+		return false, nil
 	}
 	NewList, _ = RemoveStrErr(partialIsEven, []string{v20, v1, v3, v40})`
 	code = strings.Replace(code, s1, s2, -1)
@@ -573,7 +584,7 @@ func TestRemoveIntErr(t *testing.T) {`
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num%10 == 0, nil 
+		return num%10 == 0, nil
 	}
 	NewList, _ = RemoveFloat32Err(partialIsEven, []float32{v20, v1, v3, v40})`
 
@@ -581,7 +592,7 @@ func TestRemoveIntErr(t *testing.T) {`
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return int(num) % 10 == 0, nil 
+		return int(num)%10 == 0, nil
 	}
 	NewList, _ = RemoveFloat32Err(partialIsEven, []float32{v20, v1, v3, v40})`
 
@@ -591,7 +602,7 @@ func TestRemoveIntErr(t *testing.T) {`
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return num%10 == 0, nil 
+		return num%10 == 0, nil
 	}
 	NewList, _ = RemoveFloat64Err(partialIsEven, []float64{v20, v1, v3, v40})`
 
@@ -599,14 +610,24 @@ func TestRemoveIntErr(t *testing.T) {`
 		if num == 0 {
 			return false, errors.New("0 in invalid number for this test")
 		}
-		return int(num) % 10 == 0, nil 
+		return int(num)%10 == 0, nil
 	}
 	NewList, _ = RemoveFloat64Err(partialIsEven, []float64{v20, v1, v3, v40})`
 
 	code = strings.Replace(code, s1, s2, -1)
 
-	s1 = `_, err := RemoveStrErr(func(v string) (bool, error) {if v == 20 { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []string{v20, v1, v3, v40})`
-	s2 = `_, err := RemoveStrErr(func(v string) (bool, error) {if v == "20" { return false, errors.New("20 is invalid number for this test") }; return true, nil}, []string{v20, v1, v3, v40})`
+	s1 = `_, err := RemoveStrErr(func(v string) (bool, error) {
+		if v == 20 {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []string{v20, v1, v3, v40})`
+	s2 = `_, err := RemoveStrErr(func(v string) (bool, error) {
+		if v == "20" {
+			return false, errors.New("20 is invalid number for this test")
+		}
+		return true, nil
+	}, []string{v20, v1, v3, v40})`
 	code = strings.Replace(code, s1, s2, -1)
 	return code
 }

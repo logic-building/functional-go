@@ -72,6 +72,7 @@ func TestTakeWhile<FTYPE>Ptr(t *testing.T) {
 `
 }
 
+// ReplaceActivityTakeWhilePtr replaces ...
 func ReplaceActivityTakeWhilePtr(code string) string {
 	s1 := `func TestTakeWhileStrPtrErr(t *testing.T) {
 	// Test : Take the numbers as long as condition match

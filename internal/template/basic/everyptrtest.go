@@ -156,7 +156,7 @@ func TestEvery<FTYPE>PtrErr(t *testing.T) {
 	var v5 <TYPE> = 5
 	var v8 <TYPE> = 8
 	var v10 <TYPE> = 10
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	list1 := []*<TYPE>{&v2, &v4}
 
@@ -173,7 +173,7 @@ func TestEvery<FTYPE>PtrErr(t *testing.T) {
 
 	list2 := []*<TYPE>{&v8, &v2, &v10, &v5, &v4}
 	r, _ = Every<FTYPE>PtrErr(isEven<FTYPE>PtrErr, list2)
-	if  r {
+	if r {
 		t.Errorf("Every<FTYPE>PtrErr failed. Expected=false, actual=true")
 	}
 
@@ -187,7 +187,7 @@ func TestEvery<FTYPE>PtrErr(t *testing.T) {
 		t.Errorf("Every<FTYPE>PtrErr failed. Expected=false, actual=true")
 	}
 
-	r, _= Every<FTYPE>PtrErr(nil, []*<TYPE>{})
+	r, _ = Every<FTYPE>PtrErr(nil, []*<TYPE>{})
 	if r {
 		t.Errorf("Every<FTYPE>Ptr failed. Expected=false, actual=true")
 	}
@@ -226,7 +226,7 @@ func TestEvery<FTYPE>PtrErr(t *testing.T) {
 	if r {
 		t.Errorf("Every<FTYPE>PtrErr failed. Expected=true, actual=false")
 	}
-	
+
 	list1 = []*bool{}
 	r, _ = Every<FTYPE>PtrErr(TruePtrErr, list1)
 	if r {
@@ -278,7 +278,98 @@ func TestEveryIntPtrErr(t *testing.T) {`
 
 func TestEveryIntPtrErr(t *testing.T) {`
 
-	return strings.Replace(code, s1, s2, -1)
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func TestEveryStrPtrErr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v8 string = "8"
+	var v10 string = "10"
+	var v0 string
+
+	list1 := []*string{&v2, &v4}
+
+	r, _ := EveryStrPtrErr(isEvenStrPtrErr, list1)
+	if !r {
+		t.Errorf("EveryStrPtrErr failed. Expected=true, actual=false")
+	}
+
+	list1 = []*string{&v0, &v4}
+	_, err := EveryStrPtrErr(isEvenStrPtrErr, list1)
+	if err == nil {
+		t.Errorf("EveryStrPtrErr failed. Expected=true, actual=false")
+	}
+
+	list2 := []*string{&v8, &v2, &v10, &v5, &v4}
+	r, _ = EveryStrPtrErr(isEvenStrPtrErr, list2)
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrPtrErr(isEvenStrPtrErr, nil)
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrPtrErr(isEvenStrPtrErr, []*string{})
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrPtrErr(nil, []*string{})
+	if r {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+}`
+	s2 = `func TestEveryStrPtrErr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v8 string = "8"
+	var v10 string = "10"
+	var v0 string = "0"
+
+	list1 := []*string{&v2, &v4}
+
+	r, _ := EveryStrPtrErr(isEvenStrPtrErr, list1)
+	if !r {
+		t.Errorf("EveryStrPtrErr failed. Expected=true, actual=false")
+	}
+
+	list1 = []*string{&v0, &v4}
+	_, err := EveryStrPtrErr(isEvenStrPtrErr, list1)
+	if err == nil {
+		t.Errorf("EveryStrPtrErr failed. Expected=true, actual=false")
+	}
+
+	list2 := []*string{&v8, &v2, &v10, &v5, &v4}
+	r, _ = EveryStrPtrErr(isEvenStrPtrErr, list2)
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrPtrErr(isEvenStrPtrErr, nil)
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrPtrErr(isEvenStrPtrErr, []*string{})
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrPtrErr(nil, []*string{})
+	if r {
+		t.Errorf("EveryStrPtr failed. Expected=false, actual=true")
+	}
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	return code
 }
 
 //*************EveryErr******************
@@ -293,7 +384,7 @@ func TestEvery<FTYPE>Err(t *testing.T) {
 	var v5 <TYPE> = 5
 	var v8 <TYPE> = 8
 	var v10 <TYPE> = 10
-	var v0 <TYPE> = 0
+	var v0 <TYPE>
 
 	list1 := []<TYPE>{v2, v4}
 
@@ -415,5 +506,96 @@ func TestEveryIntErr(t *testing.T) {`
 
 func TestEveryIntPErr(t *testing.T) {`
 
-	return strings.Replace(code, s1, s2, -1)
+	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `func TestEveryStrErr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v8 string = "8"
+	var v10 string = "10"
+	var v0 string
+
+	list1 := []string{v2, v4}
+
+	r, _ := EveryStrErr(isEvenStrErr, list1)
+	if !r {
+		t.Errorf("EveryStrErr failed. Expected=true, actual=false")
+	}
+
+	list1 = []string{v0, v4}
+	_, err := EveryStrErr(isEvenStrErr, list1)
+	if err == nil {
+		t.Errorf("EveryStrErr failed. Expected=true, actual=false")
+	}
+
+	list2 := []string{v8, v2, v10, v5, v4}
+	r, _ = EveryStrErr(isEvenStrErr, list2)
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrErr(isEvenStrErr, nil)
+	if r {
+		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrErr(isEvenStrErr, []string{})
+	if r {
+		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrErr(nil, []string{})
+	if r {
+		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
+	}
+}`
+	s2 = `func TestEveryStrErr(t *testing.T) {
+	// Test : every value in the list is even number
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v8 string = "8"
+	var v10 string = "10"
+	var v0 string = "0"
+
+	list1 := []string{v2, v4}
+
+	r, _ := EveryStrErr(isEvenStrErr, list1)
+	if !r {
+		t.Errorf("EveryStrErr failed. Expected=true, actual=false")
+	}
+
+	list1 = []string{v0, v4}
+	_, err := EveryStrErr(isEvenStrErr, list1)
+	if err == nil {
+		t.Errorf("EveryStrErr failed. Expected=true, actual=false")
+	}
+
+	list2 := []string{v8, v2, v10, v5, v4}
+	r, _ = EveryStrErr(isEvenStrErr, list2)
+	if r {
+		t.Errorf("EveryStrPtrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrErr(isEvenStrErr, nil)
+	if r {
+		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrErr(isEvenStrErr, []string{})
+	if r {
+		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
+	}
+
+	r, _ = EveryStrErr(nil, []string{})
+	if r {
+		t.Errorf("EveryStrErr failed. Expected=false, actual=true")
+	}
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
+
+	return code
 }
