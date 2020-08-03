@@ -498,7 +498,6 @@ func TestTakeWhile<FTYPE>Err(t *testing.T) {
 		t.Errorf("TakeWhile<FTYPE>Err failed.")
 	}
 }
-
 `
 }
 

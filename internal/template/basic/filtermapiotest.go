@@ -614,9 +614,8 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err(num bool) (<OUTPUT_TYPE>, error) {
 
 	if num == true {
 		return v10, nil
-	} else {
-		return v0, nil
 	}
+	return v0, nil
 }
 `
 }

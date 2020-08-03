@@ -56,3 +56,120 @@ func TestDistinct<FTYPE>Ptr(t *testing.T) {
 }
 `
 }
+
+// DistinctP
+
+// DistinctPTest is template
+func DistinctPTest() string {
+	return `
+func TestDistinct<FTYPE>P(t *testing.T) {
+	var v8 <TYPE> = 8
+	var v2 <TYPE> = 2
+	var v0 <TYPE>
+
+	list0 := []<TYPE>{v8, v2, v8, v0, v2, v0}
+	result := Distinct<FTYPE>P(list0)
+	if result {
+		t.Errorf("Distinct<FTYPE>P failed. Expected=false, actual=true")
+	}
+
+	list0 = []<TYPE>{v8, v2, v0}
+	result = Distinct<FTYPE>P(list0)
+	if !result {
+		t.Errorf("Distinct<FTYPE>P failed. Expected=true, actual=false")
+	}
+
+	list0 = []<TYPE>{}
+	result = Distinct<FTYPE>P(list0)
+	if result {
+		t.Errorf("Distinct<FTYPE>P failed. Expected=false, actual=true")
+	}
+
+	result = Distinct<FTYPE>P(nil)
+	if result {
+		t.Errorf("Distinct<TYPE>P failed. Expected=false, actual=true")
+	}
+
+	list := []*<TYPE>{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := Distinct<FTYPE>PPtr(list)
+	if distinct {
+		t.Errorf("Distinct<FTYPE>PPtr failed. Expected=false, actual=true")
+	}
+
+	list = []*<TYPE>{&v8, &v2, &v0}
+	distinct = Distinct<FTYPE>PPtr(list)
+	if !distinct {
+		t.Errorf("Distinct<FTYPE>PPtr failed. Expected=true, actual=false")
+	}
+
+	list = []*<TYPE>{}
+	distinct = Distinct<FTYPE>PPtr(list)
+	if distinct {
+		t.Errorf("Distinct<FTYPE>PPtr failed. Expected=false, actual=true")
+	}
+
+	distinct = Distinct<FTYPE>PPtr(nil)
+	if distinct {
+		t.Errorf("Distinct<TYPE>PPtr failed. Expected=false, actual=true")
+		t.Errorf(reflect.String.String())
+	}
+}
+`
+}
+
+// DistinctPBoolTest is template
+func DistinctPBoolTest() string {
+	return `
+func TestDistinct<FTYPE>P(t *testing.T) {
+	var v8 <TYPE> = true
+	var v2 <TYPE> = false
+
+	list0 := []<TYPE>{v8, v2, v8, v2}
+	result := Distinct<FTYPE>P(list0)
+	if result {
+		t.Errorf("Distinct<FTYPE>P failed. Expected=false, actual=true")
+	}
+
+	list0 = []<TYPE>{v8, v2}
+	result = Distinct<FTYPE>P(list0)
+	if !result {
+		t.Errorf("Distinct<FTYPE>P failed. Expected=true, actual=false")
+	}
+
+	list0 = []<TYPE>{}
+	result = Distinct<FTYPE>P(list0)
+	if result {
+		t.Errorf("Distinct<FTYPE>P failed. Expected=false, actual=true")
+	}
+
+	result = Distinct<FTYPE>P(nil)
+	if result {
+		t.Errorf("Distinct<TYPE>P failed. Expected=false, actual=true")
+	}
+
+	list := []*<TYPE>{&v8, &v2, &v8, &v2}
+	distinct := Distinct<FTYPE>PPtr(list)
+	if distinct {
+		t.Errorf("Distinct<FTYPE>PPtr failed. Expected=false, actual=true")
+	}
+
+	list = []*<TYPE>{&v8, &v2}
+	distinct = Distinct<FTYPE>PPtr(list)
+	if !distinct {
+		t.Errorf("Distinct<FTYPE>PPtr failed. Expected=true, actual=false")
+	}
+
+	list = []*<TYPE>{}
+	distinct = Distinct<FTYPE>PPtr(list)
+	if distinct {
+		t.Errorf("Distinct<FTYPE>PPtr failed. Expected=false, actual=true")
+	}
+
+	distinct = Distinct<FTYPE>PPtr(nil)
+	if distinct {
+		t.Errorf("Distinct<TYPE>PPtr failed. Expected=false, actual=true")
+		t.Errorf(reflect.String.String())
+	}
+}
+`
+}

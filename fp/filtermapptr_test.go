@@ -18,7 +18,7 @@ func TestFilterMapIntPtr(t *testing.T) {
 	expectedFilteredList := []*int{&v2, &v4, &v8}
 	filteredList := FilterMapIntPtr(isPositiveIntPtr, multiplyBy2IntPtr, []*int{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapIntPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapIntPtr(nil, nil, nil)) > 0 {
@@ -47,7 +47,7 @@ func TestFilterMapInt64Ptr(t *testing.T) {
 	expectedFilteredList := []*int64{&v2, &v4, &v8}
 	filteredList := FilterMapInt64Ptr(isPositiveInt64Ptr, multiplyBy2Int64Ptr, []*int64{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapInt64Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapInt64Ptr(nil, nil, nil)) > 0 {
@@ -76,7 +76,7 @@ func TestFilterMapInt32Ptr(t *testing.T) {
 	expectedFilteredList := []*int32{&v2, &v4, &v8}
 	filteredList := FilterMapInt32Ptr(isPositiveInt32Ptr, multiplyBy2Int32Ptr, []*int32{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapInt32Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapInt32Ptr(nil, nil, nil)) > 0 {
@@ -105,7 +105,7 @@ func TestFilterMapInt16Ptr(t *testing.T) {
 	expectedFilteredList := []*int16{&v2, &v4, &v8}
 	filteredList := FilterMapInt16Ptr(isPositiveInt16Ptr, multiplyBy2Int16Ptr, []*int16{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapInt16Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapInt16Ptr(nil, nil, nil)) > 0 {
@@ -134,7 +134,7 @@ func TestFilterMapInt8Ptr(t *testing.T) {
 	expectedFilteredList := []*int8{&v2, &v4, &v8}
 	filteredList := FilterMapInt8Ptr(isPositiveInt8Ptr, multiplyBy2Int8Ptr, []*int8{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapInt8Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapInt8Ptr(nil, nil, nil)) > 0 {
@@ -163,7 +163,7 @@ func TestFilterMapUintPtr(t *testing.T) {
 	expectedFilteredList := []*uint{&v2, &v4, &v8}
 	filteredList := FilterMapUintPtr(isPositiveUintPtr, multiplyBy2UintPtr, []*uint{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapUintPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapUintPtr(nil, nil, nil)) > 0 {
@@ -192,7 +192,7 @@ func TestFilterMapUint64Ptr(t *testing.T) {
 	expectedFilteredList := []*uint64{&v2, &v4, &v8}
 	filteredList := FilterMapUint64Ptr(isPositiveUint64Ptr, multiplyBy2Uint64Ptr, []*uint64{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapUint64Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapUint64Ptr(nil, nil, nil)) > 0 {
@@ -221,7 +221,7 @@ func TestFilterMapUint32Ptr(t *testing.T) {
 	expectedFilteredList := []*uint32{&v2, &v4, &v8}
 	filteredList := FilterMapUint32Ptr(isPositiveUint32Ptr, multiplyBy2Uint32Ptr, []*uint32{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapUint32Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapUint32Ptr(nil, nil, nil)) > 0 {
@@ -250,7 +250,7 @@ func TestFilterMapUint16Ptr(t *testing.T) {
 	expectedFilteredList := []*uint16{&v2, &v4, &v8}
 	filteredList := FilterMapUint16Ptr(isPositiveUint16Ptr, multiplyBy2Uint16Ptr, []*uint16{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapUint16Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapUint16Ptr(nil, nil, nil)) > 0 {
@@ -279,7 +279,7 @@ func TestFilterMapUint8Ptr(t *testing.T) {
 	expectedFilteredList := []*uint8{&v2, &v4, &v8}
 	filteredList := FilterMapUint8Ptr(isPositiveUint8Ptr, multiplyBy2Uint8Ptr, []*uint8{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapUint8Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapUint8Ptr(nil, nil, nil)) > 0 {
@@ -358,7 +358,7 @@ func TestFilterMapFloat32Ptr(t *testing.T) {
 	expectedFilteredList := []*float32{&v2, &v4, &v8}
 	filteredList := FilterMapFloat32Ptr(isPositiveFloat32Ptr, multiplyBy2Float32Ptr, []*float32{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapFloat32Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapFloat32Ptr(nil, nil, nil)) > 0 {
@@ -387,7 +387,7 @@ func TestFilterMapFloat64Ptr(t *testing.T) {
 	expectedFilteredList := []*float64{&v2, &v4, &v8}
 	filteredList := FilterMapFloat64Ptr(isPositiveFloat64Ptr, multiplyBy2Float64Ptr, []*float64{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapFloat64Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapFloat64Ptr(nil, nil, nil)) > 0 {

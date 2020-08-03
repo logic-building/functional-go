@@ -17,7 +17,7 @@ func TestFilterMap<FTYPE>Ptr(t *testing.T) {
 	expectedFilteredList := []*<TYPE>{&v2, &v4, &v8}
 	filteredList := FilterMap<FTYPE>Ptr(isPositive<FTYPE>Ptr, multiplyBy2<FTYPE>Ptr, []*<TYPE>{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMap<FTYPE>Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMap<FTYPE>Ptr(nil, nil, nil)) > 0 {
@@ -204,7 +204,7 @@ func TestFilterMapIntPtrErr(t *testing.T) {`
 	expectedFilteredList := []*string{&v2, &v4, &v8}
 	filteredList := FilterMapStrPtr(isPositiveStrPtr, multiplyBy2StrPtr, []*string{&v1, &v0, &v2, &v4})
 
-	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2]{
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] || *filteredList[2] != *expectedFilteredList[2] {
 		t.Errorf("FilterMapStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
 	}
 	if len(FilterMapStrPtr(nil, nil, nil)) > 0 {

@@ -4822,9 +4822,8 @@ func someLogicBoolIntPtr(num *bool) *int {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolInt64Ptr(t *testing.T) {
@@ -4861,9 +4860,8 @@ func someLogicBoolInt64Ptr(num *bool) *int64 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolInt32Ptr(t *testing.T) {
@@ -4900,9 +4898,8 @@ func someLogicBoolInt32Ptr(num *bool) *int32 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolInt16Ptr(t *testing.T) {
@@ -4939,9 +4936,8 @@ func someLogicBoolInt16Ptr(num *bool) *int16 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolInt8Ptr(t *testing.T) {
@@ -4978,9 +4974,8 @@ func someLogicBoolInt8Ptr(num *bool) *int8 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolUintPtr(t *testing.T) {
@@ -5017,9 +5012,8 @@ func someLogicBoolUintPtr(num *bool) *uint {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolUint64Ptr(t *testing.T) {
@@ -5056,9 +5050,8 @@ func someLogicBoolUint64Ptr(num *bool) *uint64 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolUint32Ptr(t *testing.T) {
@@ -5095,9 +5088,8 @@ func someLogicBoolUint32Ptr(num *bool) *uint32 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolUint16Ptr(t *testing.T) {
@@ -5134,9 +5126,8 @@ func someLogicBoolUint16Ptr(num *bool) *uint16 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolUint8Ptr(t *testing.T) {
@@ -5173,9 +5164,8 @@ func someLogicBoolUint8Ptr(num *bool) *uint8 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolStrPtr(t *testing.T) {
@@ -5211,9 +5201,8 @@ func someLogicBoolStrPtr(num *bool) *string {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolFloat32Ptr(t *testing.T) {
@@ -5250,9 +5239,8 @@ func someLogicBoolFloat32Ptr(num *bool) *float32 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapBoolFloat64Ptr(t *testing.T) {
@@ -5289,9 +5277,8 @@ func someLogicBoolFloat64Ptr(num *bool) *float64 {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 
 func TestFilterMapFloat32IntPtr(t *testing.T) {

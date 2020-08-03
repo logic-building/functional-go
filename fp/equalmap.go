@@ -25,7 +25,7 @@ func EqualMapIntP(map1, map2 map[int]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntPPtr Returns true if both maps are equal else returns false
 func EqualMapIntPPtr(map1, map2 map[*int]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -75,7 +75,7 @@ func EqualMapIntInt64P(map1, map2 map[int]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntInt64PPtr Returns true if both maps are equal else returns false
 func EqualMapIntInt64PPtr(map1, map2 map[*int]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -125,7 +125,7 @@ func EqualMapIntInt32P(map1, map2 map[int]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntInt32PPtr Returns true if both maps are equal else returns false
 func EqualMapIntInt32PPtr(map1, map2 map[*int]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -175,7 +175,7 @@ func EqualMapIntInt16P(map1, map2 map[int]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntInt16PPtr Returns true if both maps are equal else returns false
 func EqualMapIntInt16PPtr(map1, map2 map[*int]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -225,7 +225,7 @@ func EqualMapIntInt8P(map1, map2 map[int]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntInt8PPtr Returns true if both maps are equal else returns false
 func EqualMapIntInt8PPtr(map1, map2 map[*int]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -275,7 +275,7 @@ func EqualMapIntUintP(map1, map2 map[int]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntUintPPtr Returns true if both maps are equal else returns false
 func EqualMapIntUintPPtr(map1, map2 map[*int]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -325,7 +325,7 @@ func EqualMapIntUint64P(map1, map2 map[int]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntUint64PPtr Returns true if both maps are equal else returns false
 func EqualMapIntUint64PPtr(map1, map2 map[*int]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -375,7 +375,7 @@ func EqualMapIntUint32P(map1, map2 map[int]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntUint32PPtr Returns true if both maps are equal else returns false
 func EqualMapIntUint32PPtr(map1, map2 map[*int]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -425,7 +425,7 @@ func EqualMapIntUint16P(map1, map2 map[int]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntUint16PPtr Returns true if both maps are equal else returns false
 func EqualMapIntUint16PPtr(map1, map2 map[*int]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -475,7 +475,7 @@ func EqualMapIntUint8P(map1, map2 map[int]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntUint8PPtr Returns true if both maps are equal else returns false
 func EqualMapIntUint8PPtr(map1, map2 map[*int]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -525,7 +525,7 @@ func EqualMapIntStrP(map1, map2 map[int]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntStrPPtr Returns true if both maps are equal else returns false
 func EqualMapIntStrPPtr(map1, map2 map[*int]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -575,7 +575,7 @@ func EqualMapIntBoolP(map1, map2 map[int]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntBoolPPtr Returns true if both maps are equal else returns false
 func EqualMapIntBoolPPtr(map1, map2 map[*int]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -625,7 +625,7 @@ func EqualMapIntFloat32P(map1, map2 map[int]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntFloat32PPtr Returns true if both maps are equal else returns false
 func EqualMapIntFloat32PPtr(map1, map2 map[*int]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -675,7 +675,7 @@ func EqualMapIntFloat64P(map1, map2 map[int]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapIntFloat64PPtr Returns true if both maps are equal else returns false
 func EqualMapIntFloat64PPtr(map1, map2 map[*int]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -725,7 +725,7 @@ func EqualMapInt64IntP(map1, map2 map[int64]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64IntPPtr Returns true if both maps are equal else returns false
 func EqualMapInt64IntPPtr(map1, map2 map[*int64]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -775,7 +775,7 @@ func EqualMapInt64P(map1, map2 map[int64]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64PPtr(map1, map2 map[*int64]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -825,7 +825,7 @@ func EqualMapInt64Int32P(map1, map2 map[int64]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Int32PPtr(map1, map2 map[*int64]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -875,7 +875,7 @@ func EqualMapInt64Int16P(map1, map2 map[int64]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Int16PPtr(map1, map2 map[*int64]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -925,7 +925,7 @@ func EqualMapInt64Int8P(map1, map2 map[int64]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Int8PPtr(map1, map2 map[*int64]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -975,7 +975,7 @@ func EqualMapInt64UintP(map1, map2 map[int64]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64UintPPtr Returns true if both maps are equal else returns false
 func EqualMapInt64UintPPtr(map1, map2 map[*int64]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1025,7 +1025,7 @@ func EqualMapInt64Uint64P(map1, map2 map[int64]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Uint64PPtr(map1, map2 map[*int64]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1075,7 +1075,7 @@ func EqualMapInt64Uint32P(map1, map2 map[int64]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Uint32PPtr(map1, map2 map[*int64]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1125,7 +1125,7 @@ func EqualMapInt64Uint16P(map1, map2 map[int64]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Uint16PPtr(map1, map2 map[*int64]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1175,7 +1175,7 @@ func EqualMapInt64Uint8P(map1, map2 map[int64]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Uint8PPtr(map1, map2 map[*int64]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1225,7 +1225,7 @@ func EqualMapInt64StrP(map1, map2 map[int64]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64StrPPtr Returns true if both maps are equal else returns false
 func EqualMapInt64StrPPtr(map1, map2 map[*int64]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1275,7 +1275,7 @@ func EqualMapInt64BoolP(map1, map2 map[int64]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapInt64BoolPPtr(map1, map2 map[*int64]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1325,7 +1325,7 @@ func EqualMapInt64Float32P(map1, map2 map[int64]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Float32PPtr(map1, map2 map[*int64]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1375,7 +1375,7 @@ func EqualMapInt64Float64P(map1, map2 map[int64]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt64Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt64Float64PPtr(map1, map2 map[*int64]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1425,7 +1425,7 @@ func EqualMapInt32IntP(map1, map2 map[int32]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32IntPPtr Returns true if both maps are equal else returns false
 func EqualMapInt32IntPPtr(map1, map2 map[*int32]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1475,7 +1475,7 @@ func EqualMapInt32Int64P(map1, map2 map[int32]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Int64PPtr(map1, map2 map[*int32]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1525,7 +1525,7 @@ func EqualMapInt32P(map1, map2 map[int32]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32PPtr(map1, map2 map[*int32]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1575,7 +1575,7 @@ func EqualMapInt32Int16P(map1, map2 map[int32]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Int16PPtr(map1, map2 map[*int32]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1625,7 +1625,7 @@ func EqualMapInt32Int8P(map1, map2 map[int32]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Int8PPtr(map1, map2 map[*int32]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1675,7 +1675,7 @@ func EqualMapInt32UintP(map1, map2 map[int32]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32UintPPtr Returns true if both maps are equal else returns false
 func EqualMapInt32UintPPtr(map1, map2 map[*int32]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1725,7 +1725,7 @@ func EqualMapInt32Uint64P(map1, map2 map[int32]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Uint64PPtr(map1, map2 map[*int32]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1775,7 +1775,7 @@ func EqualMapInt32Uint32P(map1, map2 map[int32]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Uint32PPtr(map1, map2 map[*int32]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1825,7 +1825,7 @@ func EqualMapInt32Uint16P(map1, map2 map[int32]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Uint16PPtr(map1, map2 map[*int32]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1875,7 +1875,7 @@ func EqualMapInt32Uint8P(map1, map2 map[int32]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Uint8PPtr(map1, map2 map[*int32]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1925,7 +1925,7 @@ func EqualMapInt32StrP(map1, map2 map[int32]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32StrPPtr Returns true if both maps are equal else returns false
 func EqualMapInt32StrPPtr(map1, map2 map[*int32]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -1975,7 +1975,7 @@ func EqualMapInt32BoolP(map1, map2 map[int32]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapInt32BoolPPtr(map1, map2 map[*int32]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2025,7 +2025,7 @@ func EqualMapInt32Float32P(map1, map2 map[int32]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Float32PPtr(map1, map2 map[*int32]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2075,7 +2075,7 @@ func EqualMapInt32Float64P(map1, map2 map[int32]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt32Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt32Float64PPtr(map1, map2 map[*int32]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2125,7 +2125,7 @@ func EqualMapInt16IntP(map1, map2 map[int16]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16IntPPtr Returns true if both maps are equal else returns false
 func EqualMapInt16IntPPtr(map1, map2 map[*int16]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2175,7 +2175,7 @@ func EqualMapInt16Int64P(map1, map2 map[int16]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Int64PPtr(map1, map2 map[*int16]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2225,7 +2225,7 @@ func EqualMapInt16Int32P(map1, map2 map[int16]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Int32PPtr(map1, map2 map[*int16]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2275,7 +2275,7 @@ func EqualMapInt16P(map1, map2 map[int16]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16PPtr(map1, map2 map[*int16]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2325,7 +2325,7 @@ func EqualMapInt16Int8P(map1, map2 map[int16]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Int8PPtr(map1, map2 map[*int16]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2375,7 +2375,7 @@ func EqualMapInt16UintP(map1, map2 map[int16]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16UintPPtr Returns true if both maps are equal else returns false
 func EqualMapInt16UintPPtr(map1, map2 map[*int16]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2425,7 +2425,7 @@ func EqualMapInt16Uint64P(map1, map2 map[int16]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Uint64PPtr(map1, map2 map[*int16]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2475,7 +2475,7 @@ func EqualMapInt16Uint32P(map1, map2 map[int16]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Uint32PPtr(map1, map2 map[*int16]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2525,7 +2525,7 @@ func EqualMapInt16Uint16P(map1, map2 map[int16]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Uint16PPtr(map1, map2 map[*int16]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2575,7 +2575,7 @@ func EqualMapInt16Uint8P(map1, map2 map[int16]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Uint8PPtr(map1, map2 map[*int16]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2625,7 +2625,7 @@ func EqualMapInt16StrP(map1, map2 map[int16]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16StrPPtr Returns true if both maps are equal else returns false
 func EqualMapInt16StrPPtr(map1, map2 map[*int16]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2675,7 +2675,7 @@ func EqualMapInt16BoolP(map1, map2 map[int16]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapInt16BoolPPtr(map1, map2 map[*int16]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2725,7 +2725,7 @@ func EqualMapInt16Float32P(map1, map2 map[int16]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Float32PPtr(map1, map2 map[*int16]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2775,7 +2775,7 @@ func EqualMapInt16Float64P(map1, map2 map[int16]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt16Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt16Float64PPtr(map1, map2 map[*int16]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2825,7 +2825,7 @@ func EqualMapInt8IntP(map1, map2 map[int8]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8IntPPtr Returns true if both maps are equal else returns false
 func EqualMapInt8IntPPtr(map1, map2 map[*int8]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2875,7 +2875,7 @@ func EqualMapInt8Int64P(map1, map2 map[int8]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Int64PPtr(map1, map2 map[*int8]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2925,7 +2925,7 @@ func EqualMapInt8Int32P(map1, map2 map[int8]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Int32PPtr(map1, map2 map[*int8]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -2975,7 +2975,7 @@ func EqualMapInt8Int16P(map1, map2 map[int8]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Int16PPtr(map1, map2 map[*int8]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3025,7 +3025,7 @@ func EqualMapInt8P(map1, map2 map[int8]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8PPtr(map1, map2 map[*int8]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3075,7 +3075,7 @@ func EqualMapInt8UintP(map1, map2 map[int8]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8UintPPtr Returns true if both maps are equal else returns false
 func EqualMapInt8UintPPtr(map1, map2 map[*int8]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3125,7 +3125,7 @@ func EqualMapInt8Uint64P(map1, map2 map[int8]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Uint64PPtr(map1, map2 map[*int8]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3175,7 +3175,7 @@ func EqualMapInt8Uint32P(map1, map2 map[int8]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Uint32PPtr(map1, map2 map[*int8]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3225,7 +3225,7 @@ func EqualMapInt8Uint16P(map1, map2 map[int8]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Uint16PPtr(map1, map2 map[*int8]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3275,7 +3275,7 @@ func EqualMapInt8Uint8P(map1, map2 map[int8]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Uint8PPtr(map1, map2 map[*int8]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3325,7 +3325,7 @@ func EqualMapInt8StrP(map1, map2 map[int8]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8StrPPtr Returns true if both maps are equal else returns false
 func EqualMapInt8StrPPtr(map1, map2 map[*int8]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3375,7 +3375,7 @@ func EqualMapInt8BoolP(map1, map2 map[int8]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapInt8BoolPPtr(map1, map2 map[*int8]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3425,7 +3425,7 @@ func EqualMapInt8Float32P(map1, map2 map[int8]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Float32PPtr(map1, map2 map[*int8]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3475,7 +3475,7 @@ func EqualMapInt8Float64P(map1, map2 map[int8]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapInt8Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapInt8Float64PPtr(map1, map2 map[*int8]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3525,7 +3525,7 @@ func EqualMapUintIntP(map1, map2 map[uint]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintIntPPtr Returns true if both maps are equal else returns false
 func EqualMapUintIntPPtr(map1, map2 map[*uint]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3575,7 +3575,7 @@ func EqualMapUintInt64P(map1, map2 map[uint]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintInt64PPtr Returns true if both maps are equal else returns false
 func EqualMapUintInt64PPtr(map1, map2 map[*uint]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3625,7 +3625,7 @@ func EqualMapUintInt32P(map1, map2 map[uint]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintInt32PPtr Returns true if both maps are equal else returns false
 func EqualMapUintInt32PPtr(map1, map2 map[*uint]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3675,7 +3675,7 @@ func EqualMapUintInt16P(map1, map2 map[uint]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintInt16PPtr Returns true if both maps are equal else returns false
 func EqualMapUintInt16PPtr(map1, map2 map[*uint]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3725,7 +3725,7 @@ func EqualMapUintInt8P(map1, map2 map[uint]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintInt8PPtr Returns true if both maps are equal else returns false
 func EqualMapUintInt8PPtr(map1, map2 map[*uint]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3775,7 +3775,7 @@ func EqualMapUintP(map1, map2 map[uint]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintPPtr Returns true if both maps are equal else returns false
 func EqualMapUintPPtr(map1, map2 map[*uint]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3825,7 +3825,7 @@ func EqualMapUintUint64P(map1, map2 map[uint]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintUint64PPtr Returns true if both maps are equal else returns false
 func EqualMapUintUint64PPtr(map1, map2 map[*uint]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3875,7 +3875,7 @@ func EqualMapUintUint32P(map1, map2 map[uint]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintUint32PPtr Returns true if both maps are equal else returns false
 func EqualMapUintUint32PPtr(map1, map2 map[*uint]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3925,7 +3925,7 @@ func EqualMapUintUint16P(map1, map2 map[uint]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintUint16PPtr Returns true if both maps are equal else returns false
 func EqualMapUintUint16PPtr(map1, map2 map[*uint]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -3975,7 +3975,7 @@ func EqualMapUintUint8P(map1, map2 map[uint]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintUint8PPtr Returns true if both maps are equal else returns false
 func EqualMapUintUint8PPtr(map1, map2 map[*uint]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4025,7 +4025,7 @@ func EqualMapUintStrP(map1, map2 map[uint]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintStrPPtr Returns true if both maps are equal else returns false
 func EqualMapUintStrPPtr(map1, map2 map[*uint]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4075,7 +4075,7 @@ func EqualMapUintBoolP(map1, map2 map[uint]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintBoolPPtr Returns true if both maps are equal else returns false
 func EqualMapUintBoolPPtr(map1, map2 map[*uint]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4125,7 +4125,7 @@ func EqualMapUintFloat32P(map1, map2 map[uint]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintFloat32PPtr Returns true if both maps are equal else returns false
 func EqualMapUintFloat32PPtr(map1, map2 map[*uint]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4175,7 +4175,7 @@ func EqualMapUintFloat64P(map1, map2 map[uint]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUintFloat64PPtr Returns true if both maps are equal else returns false
 func EqualMapUintFloat64PPtr(map1, map2 map[*uint]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4225,7 +4225,7 @@ func EqualMapUint64IntP(map1, map2 map[uint64]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64IntPPtr Returns true if both maps are equal else returns false
 func EqualMapUint64IntPPtr(map1, map2 map[*uint64]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4275,7 +4275,7 @@ func EqualMapUint64Int64P(map1, map2 map[uint64]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Int64PPtr(map1, map2 map[*uint64]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4325,7 +4325,7 @@ func EqualMapUint64Int32P(map1, map2 map[uint64]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Int32PPtr(map1, map2 map[*uint64]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4375,7 +4375,7 @@ func EqualMapUint64Int16P(map1, map2 map[uint64]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Int16PPtr(map1, map2 map[*uint64]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4425,7 +4425,7 @@ func EqualMapUint64Int8P(map1, map2 map[uint64]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Int8PPtr(map1, map2 map[*uint64]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4475,7 +4475,7 @@ func EqualMapUint64UintP(map1, map2 map[uint64]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64UintPPtr Returns true if both maps are equal else returns false
 func EqualMapUint64UintPPtr(map1, map2 map[*uint64]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4525,7 +4525,7 @@ func EqualMapUint64P(map1, map2 map[uint64]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64PPtr(map1, map2 map[*uint64]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4575,7 +4575,7 @@ func EqualMapUint64Uint32P(map1, map2 map[uint64]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Uint32PPtr(map1, map2 map[*uint64]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4625,7 +4625,7 @@ func EqualMapUint64Uint16P(map1, map2 map[uint64]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Uint16PPtr(map1, map2 map[*uint64]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4675,7 +4675,7 @@ func EqualMapUint64Uint8P(map1, map2 map[uint64]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Uint8PPtr(map1, map2 map[*uint64]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4725,7 +4725,7 @@ func EqualMapUint64StrP(map1, map2 map[uint64]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64StrPPtr Returns true if both maps are equal else returns false
 func EqualMapUint64StrPPtr(map1, map2 map[*uint64]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4775,7 +4775,7 @@ func EqualMapUint64BoolP(map1, map2 map[uint64]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapUint64BoolPPtr(map1, map2 map[*uint64]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4825,7 +4825,7 @@ func EqualMapUint64Float32P(map1, map2 map[uint64]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Float32PPtr(map1, map2 map[*uint64]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4875,7 +4875,7 @@ func EqualMapUint64Float64P(map1, map2 map[uint64]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint64Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint64Float64PPtr(map1, map2 map[*uint64]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4925,7 +4925,7 @@ func EqualMapUint32IntP(map1, map2 map[uint32]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32IntPPtr Returns true if both maps are equal else returns false
 func EqualMapUint32IntPPtr(map1, map2 map[*uint32]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -4975,7 +4975,7 @@ func EqualMapUint32Int64P(map1, map2 map[uint32]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Int64PPtr(map1, map2 map[*uint32]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5025,7 +5025,7 @@ func EqualMapUint32Int32P(map1, map2 map[uint32]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Int32PPtr(map1, map2 map[*uint32]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5075,7 +5075,7 @@ func EqualMapUint32Int16P(map1, map2 map[uint32]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Int16PPtr(map1, map2 map[*uint32]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5125,7 +5125,7 @@ func EqualMapUint32Int8P(map1, map2 map[uint32]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Int8PPtr(map1, map2 map[*uint32]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5175,7 +5175,7 @@ func EqualMapUint32UintP(map1, map2 map[uint32]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32UintPPtr Returns true if both maps are equal else returns false
 func EqualMapUint32UintPPtr(map1, map2 map[*uint32]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5225,7 +5225,7 @@ func EqualMapUint32Uint64P(map1, map2 map[uint32]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Uint64PPtr(map1, map2 map[*uint32]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5275,7 +5275,7 @@ func EqualMapUint32P(map1, map2 map[uint32]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32PPtr(map1, map2 map[*uint32]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5325,7 +5325,7 @@ func EqualMapUint32Uint16P(map1, map2 map[uint32]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Uint16PPtr(map1, map2 map[*uint32]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5375,7 +5375,7 @@ func EqualMapUint32Uint8P(map1, map2 map[uint32]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Uint8PPtr(map1, map2 map[*uint32]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5425,7 +5425,7 @@ func EqualMapUint32StrP(map1, map2 map[uint32]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32StrPPtr Returns true if both maps are equal else returns false
 func EqualMapUint32StrPPtr(map1, map2 map[*uint32]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5475,7 +5475,7 @@ func EqualMapUint32BoolP(map1, map2 map[uint32]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapUint32BoolPPtr(map1, map2 map[*uint32]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5525,7 +5525,7 @@ func EqualMapUint32Float32P(map1, map2 map[uint32]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Float32PPtr(map1, map2 map[*uint32]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5575,7 +5575,7 @@ func EqualMapUint32Float64P(map1, map2 map[uint32]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint32Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint32Float64PPtr(map1, map2 map[*uint32]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5625,7 +5625,7 @@ func EqualMapUint16IntP(map1, map2 map[uint16]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16IntPPtr Returns true if both maps are equal else returns false
 func EqualMapUint16IntPPtr(map1, map2 map[*uint16]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5675,7 +5675,7 @@ func EqualMapUint16Int64P(map1, map2 map[uint16]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Int64PPtr(map1, map2 map[*uint16]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5725,7 +5725,7 @@ func EqualMapUint16Int32P(map1, map2 map[uint16]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Int32PPtr(map1, map2 map[*uint16]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5775,7 +5775,7 @@ func EqualMapUint16Int16P(map1, map2 map[uint16]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Int16PPtr(map1, map2 map[*uint16]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5825,7 +5825,7 @@ func EqualMapUint16Int8P(map1, map2 map[uint16]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Int8PPtr(map1, map2 map[*uint16]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5875,7 +5875,7 @@ func EqualMapUint16UintP(map1, map2 map[uint16]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16UintPPtr Returns true if both maps are equal else returns false
 func EqualMapUint16UintPPtr(map1, map2 map[*uint16]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5925,7 +5925,7 @@ func EqualMapUint16Uint64P(map1, map2 map[uint16]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Uint64PPtr(map1, map2 map[*uint16]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -5975,7 +5975,7 @@ func EqualMapUint16Uint32P(map1, map2 map[uint16]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Uint32PPtr(map1, map2 map[*uint16]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6025,7 +6025,7 @@ func EqualMapUint16P(map1, map2 map[uint16]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16PPtr(map1, map2 map[*uint16]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6075,7 +6075,7 @@ func EqualMapUint16Uint8P(map1, map2 map[uint16]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Uint8PPtr(map1, map2 map[*uint16]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6125,7 +6125,7 @@ func EqualMapUint16StrP(map1, map2 map[uint16]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16StrPPtr Returns true if both maps are equal else returns false
 func EqualMapUint16StrPPtr(map1, map2 map[*uint16]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6175,7 +6175,7 @@ func EqualMapUint16BoolP(map1, map2 map[uint16]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapUint16BoolPPtr(map1, map2 map[*uint16]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6225,7 +6225,7 @@ func EqualMapUint16Float32P(map1, map2 map[uint16]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Float32PPtr(map1, map2 map[*uint16]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6275,7 +6275,7 @@ func EqualMapUint16Float64P(map1, map2 map[uint16]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint16Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint16Float64PPtr(map1, map2 map[*uint16]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6325,7 +6325,7 @@ func EqualMapUint8IntP(map1, map2 map[uint8]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8IntPPtr Returns true if both maps are equal else returns false
 func EqualMapUint8IntPPtr(map1, map2 map[*uint8]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6375,7 +6375,7 @@ func EqualMapUint8Int64P(map1, map2 map[uint8]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Int64PPtr(map1, map2 map[*uint8]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6425,7 +6425,7 @@ func EqualMapUint8Int32P(map1, map2 map[uint8]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Int32PPtr(map1, map2 map[*uint8]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6475,7 +6475,7 @@ func EqualMapUint8Int16P(map1, map2 map[uint8]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Int16PPtr(map1, map2 map[*uint8]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6525,7 +6525,7 @@ func EqualMapUint8Int8P(map1, map2 map[uint8]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Int8PPtr(map1, map2 map[*uint8]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6575,7 +6575,7 @@ func EqualMapUint8UintP(map1, map2 map[uint8]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8UintPPtr Returns true if both maps are equal else returns false
 func EqualMapUint8UintPPtr(map1, map2 map[*uint8]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6625,7 +6625,7 @@ func EqualMapUint8Uint64P(map1, map2 map[uint8]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Uint64PPtr(map1, map2 map[*uint8]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6675,7 +6675,7 @@ func EqualMapUint8Uint32P(map1, map2 map[uint8]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Uint32PPtr(map1, map2 map[*uint8]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6725,7 +6725,7 @@ func EqualMapUint8Uint16P(map1, map2 map[uint8]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Uint16PPtr(map1, map2 map[*uint8]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6775,7 +6775,7 @@ func EqualMapUint8P(map1, map2 map[uint8]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8PPtr(map1, map2 map[*uint8]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6825,7 +6825,7 @@ func EqualMapUint8StrP(map1, map2 map[uint8]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8StrPPtr Returns true if both maps are equal else returns false
 func EqualMapUint8StrPPtr(map1, map2 map[*uint8]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6875,7 +6875,7 @@ func EqualMapUint8BoolP(map1, map2 map[uint8]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapUint8BoolPPtr(map1, map2 map[*uint8]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6925,7 +6925,7 @@ func EqualMapUint8Float32P(map1, map2 map[uint8]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Float32PPtr(map1, map2 map[*uint8]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -6975,7 +6975,7 @@ func EqualMapUint8Float64P(map1, map2 map[uint8]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapUint8Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapUint8Float64PPtr(map1, map2 map[*uint8]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7025,7 +7025,7 @@ func EqualMapStrIntP(map1, map2 map[string]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrIntPPtr Returns true if both maps are equal else returns false
 func EqualMapStrIntPPtr(map1, map2 map[*string]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7075,7 +7075,7 @@ func EqualMapStrInt64P(map1, map2 map[string]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrInt64PPtr Returns true if both maps are equal else returns false
 func EqualMapStrInt64PPtr(map1, map2 map[*string]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7125,7 +7125,7 @@ func EqualMapStrInt32P(map1, map2 map[string]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrInt32PPtr Returns true if both maps are equal else returns false
 func EqualMapStrInt32PPtr(map1, map2 map[*string]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7175,7 +7175,7 @@ func EqualMapStrInt16P(map1, map2 map[string]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrInt16PPtr Returns true if both maps are equal else returns false
 func EqualMapStrInt16PPtr(map1, map2 map[*string]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7225,7 +7225,7 @@ func EqualMapStrInt8P(map1, map2 map[string]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrInt8PPtr Returns true if both maps are equal else returns false
 func EqualMapStrInt8PPtr(map1, map2 map[*string]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7275,7 +7275,7 @@ func EqualMapStrUintP(map1, map2 map[string]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrUintPPtr Returns true if both maps are equal else returns false
 func EqualMapStrUintPPtr(map1, map2 map[*string]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7325,7 +7325,7 @@ func EqualMapStrUint64P(map1, map2 map[string]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrUint64PPtr Returns true if both maps are equal else returns false
 func EqualMapStrUint64PPtr(map1, map2 map[*string]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7375,7 +7375,7 @@ func EqualMapStrUint32P(map1, map2 map[string]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrUint32PPtr Returns true if both maps are equal else returns false
 func EqualMapStrUint32PPtr(map1, map2 map[*string]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7425,7 +7425,7 @@ func EqualMapStrUint16P(map1, map2 map[string]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrUint16PPtr Returns true if both maps are equal else returns false
 func EqualMapStrUint16PPtr(map1, map2 map[*string]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7475,7 +7475,7 @@ func EqualMapStrUint8P(map1, map2 map[string]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrUint8PPtr Returns true if both maps are equal else returns false
 func EqualMapStrUint8PPtr(map1, map2 map[*string]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7525,7 +7525,7 @@ func EqualMapStrP(map1, map2 map[string]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrPPtr Returns true if both maps are equal else returns false
 func EqualMapStrPPtr(map1, map2 map[*string]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7575,7 +7575,7 @@ func EqualMapStrBoolP(map1, map2 map[string]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrBoolPPtr Returns true if both maps are equal else returns false
 func EqualMapStrBoolPPtr(map1, map2 map[*string]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7625,7 +7625,7 @@ func EqualMapStrFloat32P(map1, map2 map[string]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrFloat32PPtr Returns true if both maps are equal else returns false
 func EqualMapStrFloat32PPtr(map1, map2 map[*string]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7675,7 +7675,7 @@ func EqualMapStrFloat64P(map1, map2 map[string]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapStrFloat64PPtr Returns true if both maps are equal else returns false
 func EqualMapStrFloat64PPtr(map1, map2 map[*string]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7725,7 +7725,7 @@ func EqualMapBoolIntP(map1, map2 map[bool]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolIntPPtr Returns true if both maps are equal else returns false
 func EqualMapBoolIntPPtr(map1, map2 map[*bool]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7775,7 +7775,7 @@ func EqualMapBoolInt64P(map1, map2 map[bool]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolInt64PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolInt64PPtr(map1, map2 map[*bool]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7825,7 +7825,7 @@ func EqualMapBoolInt32P(map1, map2 map[bool]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolInt32PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolInt32PPtr(map1, map2 map[*bool]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7875,7 +7875,7 @@ func EqualMapBoolInt16P(map1, map2 map[bool]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolInt16PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolInt16PPtr(map1, map2 map[*bool]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7925,7 +7925,7 @@ func EqualMapBoolInt8P(map1, map2 map[bool]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolInt8PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolInt8PPtr(map1, map2 map[*bool]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -7975,7 +7975,7 @@ func EqualMapBoolUintP(map1, map2 map[bool]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolUintPPtr Returns true if both maps are equal else returns false
 func EqualMapBoolUintPPtr(map1, map2 map[*bool]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8025,7 +8025,7 @@ func EqualMapBoolUint64P(map1, map2 map[bool]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolUint64PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolUint64PPtr(map1, map2 map[*bool]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8075,7 +8075,7 @@ func EqualMapBoolUint32P(map1, map2 map[bool]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolUint32PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolUint32PPtr(map1, map2 map[*bool]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8125,7 +8125,7 @@ func EqualMapBoolUint16P(map1, map2 map[bool]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolUint16PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolUint16PPtr(map1, map2 map[*bool]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8175,7 +8175,7 @@ func EqualMapBoolUint8P(map1, map2 map[bool]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolUint8PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolUint8PPtr(map1, map2 map[*bool]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8225,7 +8225,7 @@ func EqualMapBoolStrP(map1, map2 map[bool]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolStrPPtr Returns true if both maps are equal else returns false
 func EqualMapBoolStrPPtr(map1, map2 map[*bool]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8275,7 +8275,7 @@ func EqualMapBoolP(map1, map2 map[bool]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolPPtr Returns true if both maps are equal else returns false
 func EqualMapBoolPPtr(map1, map2 map[*bool]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8325,7 +8325,7 @@ func EqualMapBoolFloat32P(map1, map2 map[bool]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolFloat32PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolFloat32PPtr(map1, map2 map[*bool]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8375,7 +8375,7 @@ func EqualMapBoolFloat64P(map1, map2 map[bool]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapBoolFloat64PPtr Returns true if both maps are equal else returns false
 func EqualMapBoolFloat64PPtr(map1, map2 map[*bool]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8425,7 +8425,7 @@ func EqualMapFloat32IntP(map1, map2 map[float32]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32IntPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32IntPPtr(map1, map2 map[*float32]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8475,7 +8475,7 @@ func EqualMapFloat32Int64P(map1, map2 map[float32]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Int64PPtr(map1, map2 map[*float32]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8525,7 +8525,7 @@ func EqualMapFloat32Int32P(map1, map2 map[float32]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Int32PPtr(map1, map2 map[*float32]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8575,7 +8575,7 @@ func EqualMapFloat32Int16P(map1, map2 map[float32]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Int16PPtr(map1, map2 map[*float32]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8625,7 +8625,7 @@ func EqualMapFloat32Int8P(map1, map2 map[float32]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Int8PPtr(map1, map2 map[*float32]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8675,7 +8675,7 @@ func EqualMapFloat32UintP(map1, map2 map[float32]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32UintPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32UintPPtr(map1, map2 map[*float32]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8725,7 +8725,7 @@ func EqualMapFloat32Uint64P(map1, map2 map[float32]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Uint64PPtr(map1, map2 map[*float32]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8775,7 +8775,7 @@ func EqualMapFloat32Uint32P(map1, map2 map[float32]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Uint32PPtr(map1, map2 map[*float32]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8825,7 +8825,7 @@ func EqualMapFloat32Uint16P(map1, map2 map[float32]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Uint16PPtr(map1, map2 map[*float32]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8875,7 +8875,7 @@ func EqualMapFloat32Uint8P(map1, map2 map[float32]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Uint8PPtr(map1, map2 map[*float32]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8925,7 +8925,7 @@ func EqualMapFloat32StrP(map1, map2 map[float32]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32StrPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32StrPPtr(map1, map2 map[*float32]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -8975,7 +8975,7 @@ func EqualMapFloat32BoolP(map1, map2 map[float32]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32BoolPPtr(map1, map2 map[*float32]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9025,7 +9025,7 @@ func EqualMapFloat32P(map1, map2 map[float32]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32PPtr(map1, map2 map[*float32]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9075,7 +9075,7 @@ func EqualMapFloat32Float64P(map1, map2 map[float32]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat32Float64PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat32Float64PPtr(map1, map2 map[*float32]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9125,7 +9125,7 @@ func EqualMapFloat64IntP(map1, map2 map[float64]int) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64IntPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64IntPPtr(map1, map2 map[*float64]*int) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9175,7 +9175,7 @@ func EqualMapFloat64Int64P(map1, map2 map[float64]int64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Int64PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Int64PPtr(map1, map2 map[*float64]*int64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9225,7 +9225,7 @@ func EqualMapFloat64Int32P(map1, map2 map[float64]int32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Int32PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Int32PPtr(map1, map2 map[*float64]*int32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9275,7 +9275,7 @@ func EqualMapFloat64Int16P(map1, map2 map[float64]int16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Int16PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Int16PPtr(map1, map2 map[*float64]*int16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9325,7 +9325,7 @@ func EqualMapFloat64Int8P(map1, map2 map[float64]int8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Int8PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Int8PPtr(map1, map2 map[*float64]*int8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9375,7 +9375,7 @@ func EqualMapFloat64UintP(map1, map2 map[float64]uint) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64UintPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64UintPPtr(map1, map2 map[*float64]*uint) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9425,7 +9425,7 @@ func EqualMapFloat64Uint64P(map1, map2 map[float64]uint64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Uint64PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Uint64PPtr(map1, map2 map[*float64]*uint64) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9475,7 +9475,7 @@ func EqualMapFloat64Uint32P(map1, map2 map[float64]uint32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Uint32PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Uint32PPtr(map1, map2 map[*float64]*uint32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9525,7 +9525,7 @@ func EqualMapFloat64Uint16P(map1, map2 map[float64]uint16) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Uint16PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Uint16PPtr(map1, map2 map[*float64]*uint16) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9575,7 +9575,7 @@ func EqualMapFloat64Uint8P(map1, map2 map[float64]uint8) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Uint8PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Uint8PPtr(map1, map2 map[*float64]*uint8) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9625,7 +9625,7 @@ func EqualMapFloat64StrP(map1, map2 map[float64]string) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64StrPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64StrPPtr(map1, map2 map[*float64]*string) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9675,7 +9675,7 @@ func EqualMapFloat64BoolP(map1, map2 map[float64]bool) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64BoolPPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64BoolPPtr(map1, map2 map[*float64]*bool) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9725,7 +9725,7 @@ func EqualMapFloat64Float32P(map1, map2 map[float64]float32) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64Float32PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64Float32PPtr(map1, map2 map[*float64]*float32) bool {
 	len1 := len(map1)
 	len2 := len(map2)
@@ -9775,7 +9775,7 @@ func EqualMapFloat64P(map1, map2 map[float64]float64) bool {
 	return true
 }
 
-// EqualMap<FTYPE>PPtr Returns true if both maps are equal else returns false
+// EqualMapFloat64PPtr Returns true if both maps are equal else returns false
 func EqualMapFloat64PPtr(map1, map2 map[*float64]*float64) bool {
 	len1 := len(map1)
 	len2 := len(map2)

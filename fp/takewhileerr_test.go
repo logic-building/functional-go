@@ -44,7 +44,6 @@ func TestTakeWhileIntErr(t *testing.T) {
 	}
 }
 
-
 func TestTakeWhileInt64Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
 	var v2 int64 = 2
@@ -83,7 +82,6 @@ func TestTakeWhileInt64Err(t *testing.T) {
 		t.Errorf("TakeWhileInt64Err failed.")
 	}
 }
-
 
 func TestTakeWhileInt32Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
@@ -124,7 +122,6 @@ func TestTakeWhileInt32Err(t *testing.T) {
 	}
 }
 
-
 func TestTakeWhileInt16Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
 	var v2 int16 = 2
@@ -163,7 +160,6 @@ func TestTakeWhileInt16Err(t *testing.T) {
 		t.Errorf("TakeWhileInt16Err failed.")
 	}
 }
-
 
 func TestTakeWhileInt8Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
@@ -204,7 +200,6 @@ func TestTakeWhileInt8Err(t *testing.T) {
 	}
 }
 
-
 func TestTakeWhileUintErr(t *testing.T) {
 	// Test : Take the numbers as long as condition match
 	var v2 uint = 2
@@ -243,7 +238,6 @@ func TestTakeWhileUintErr(t *testing.T) {
 		t.Errorf("TakeWhileUintErr failed.")
 	}
 }
-
 
 func TestTakeWhileUint64Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
@@ -284,7 +278,6 @@ func TestTakeWhileUint64Err(t *testing.T) {
 	}
 }
 
-
 func TestTakeWhileUint32Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
 	var v2 uint32 = 2
@@ -323,7 +316,6 @@ func TestTakeWhileUint32Err(t *testing.T) {
 		t.Errorf("TakeWhileUint32Err failed.")
 	}
 }
-
 
 func TestTakeWhileUint16Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
@@ -364,7 +356,6 @@ func TestTakeWhileUint16Err(t *testing.T) {
 	}
 }
 
-
 func TestTakeWhileUint8Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
 	var v2 uint8 = 2
@@ -404,7 +395,6 @@ func TestTakeWhileUint8Err(t *testing.T) {
 	}
 }
 
-
 func TestTakeWhileStrErr(t *testing.T) {
 	// Test : Take the numbers as long as condition match
 	var v2 string = "2"
@@ -443,7 +433,6 @@ func TestTakeWhileStrErr(t *testing.T) {
 		t.Errorf("TakeWhileStrErr failed.")
 	}
 }
-
 
 func TestTakeWhileBoolErr(t *testing.T) {
 	// Test : Take the numbers as long as condition match
@@ -519,7 +508,6 @@ func TestTakeWhileFloat32Err(t *testing.T) {
 	}
 }
 
-
 func TestTakeWhileFloat64Err(t *testing.T) {
 	// Test : Take the numbers as long as condition match
 	var v2 float64 = 2
@@ -558,4 +546,3 @@ func TestTakeWhileFloat64Err(t *testing.T) {
 		t.Errorf("TakeWhileFloat64Err failed.")
 	}
 }
-

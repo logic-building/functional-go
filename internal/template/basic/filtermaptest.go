@@ -85,9 +85,8 @@ func TestFilterMapIntErr(t *testing.T) {`
 	}
 	if num == "2" || num == "3" || num == "4" || num == "5" || num == "6" || num == "7" || num == "8" {
 		return true, nil
-	} else {
-		return false, nil
-	}`
+	}
+	return false, nil`
 
 	code = strings.Replace(code, s1, s2, -1)
 

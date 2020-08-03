@@ -543,6 +543,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "DistinctP",
+		codeTemplate:      basic.DistinctP(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "distinctp.go",
+
+		testTemplate:          basic.DistinctPTest(),
+		testTemplateBool:      basic.DistinctPBoolTest(),
+		generatedTestFileName: "distinctp_test.go",
+	},
+
+	fpCode{
 		function:          "FilterMapPtr",
 		codeTemplate:      basic.FilterMapPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -1356,9 +1367,8 @@ func isEvenDivisibleByStrPtr(num, divisibleBy *string) bool {
 func isEvenStrPtr(num *string) bool {
 	if *num == "2" || *num == "4" || *num == "6" || *num == "8" || *num == "10" {
 		return true
-	} else {
-		return false
 	}
+	return false
 }`
 	code = strings.Replace(code, s1, s2, -1)
 
