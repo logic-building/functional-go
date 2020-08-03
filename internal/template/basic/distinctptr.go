@@ -18,3 +18,41 @@ func Distinct<FTYPE>Ptr(list []*<TYPE>) []*<TYPE> {
 }
 `
 }
+
+// Distinct check
+// DistinctP is template.
+func DistinctP() string {
+	return `
+// Distinct<FTYPE>P returns true if no two of the arguments are =
+func Distinct<FTYPE>P(list []<TYPE>) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[<TYPE>]bool)
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			return false
+		}
+		s[v] = true
+	}
+	return true
+}
+
+// Distinct<FTYPE>PPtr returns true if no two of the arguments are =
+func Distinct<FTYPE>PPtr(list []*<TYPE>) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[<TYPE>]bool)
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			return false
+		}
+		s[*v] = true
+	}
+	return true
+}
+`
+}

@@ -7461,9 +7461,8 @@ func someLogicBoolIntPtrErr(num *bool) (*int, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolInt64PtrErr(t *testing.T) {
@@ -7523,9 +7522,8 @@ func someLogicBoolInt64PtrErr(num *bool) (*int64, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolInt32PtrErr(t *testing.T) {
@@ -7585,9 +7583,8 @@ func someLogicBoolInt32PtrErr(num *bool) (*int32, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolInt16PtrErr(t *testing.T) {
@@ -7647,9 +7644,8 @@ func someLogicBoolInt16PtrErr(num *bool) (*int16, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolInt8PtrErr(t *testing.T) {
@@ -7709,9 +7705,8 @@ func someLogicBoolInt8PtrErr(num *bool) (*int8, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolUintPtrErr(t *testing.T) {
@@ -7771,9 +7766,8 @@ func someLogicBoolUintPtrErr(num *bool) (*uint, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolUint64PtrErr(t *testing.T) {
@@ -7833,9 +7827,8 @@ func someLogicBoolUint64PtrErr(num *bool) (*uint64, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolUint32PtrErr(t *testing.T) {
@@ -7895,9 +7888,8 @@ func someLogicBoolUint32PtrErr(num *bool) (*uint32, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolUint16PtrErr(t *testing.T) {
@@ -7957,9 +7949,8 @@ func someLogicBoolUint16PtrErr(num *bool) (*uint16, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolUint8PtrErr(t *testing.T) {
@@ -8019,9 +8010,8 @@ func someLogicBoolUint8PtrErr(num *bool) (*uint8, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolStrPtrErr(t *testing.T) {
@@ -8079,9 +8069,8 @@ func someLogicBoolStrPtrErr(num *bool) (*string, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolFloat32PtrErr(t *testing.T) {
@@ -8141,9 +8130,8 @@ func someLogicBoolFloat32PtrErr(num *bool) (*float32, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapBoolFloat64PtrErr(t *testing.T) {
@@ -8203,9 +8191,8 @@ func someLogicBoolFloat64PtrErr(num *bool) (*float64, error) {
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 
 func TestFilterMapFloat32IntPtrErr(t *testing.T) {

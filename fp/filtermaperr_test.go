@@ -523,9 +523,8 @@ func isPositiveStrErr(num string) (bool, error) {
 	}
 	if num == "2" || num == "3" || num == "4" || num == "5" || num == "6" || num == "7" || num == "8" {
 		return true, nil
-	} else {
-		return false, nil
 	}
+	return false, nil
 }
 
 func multiplyBy2StrErr(num string) (string, error) {

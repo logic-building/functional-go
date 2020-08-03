@@ -439,9 +439,8 @@ func TestFilterStrPtr(t *testing.T) {
 func isEvenStrPtr(num *string) bool {
 	if *num == "2" || *num == "4" || *num == "6" || *num == "8" || *num == "10" {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 

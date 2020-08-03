@@ -241,9 +241,8 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *bool) *<OUTPUT_TYPE> {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 `
 }
@@ -284,9 +283,8 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Ptr(num *bool) *<OUTPUT_TYPE> {
 
 	if *num == true {
 		return &v10
-	} else {
-		return &v0
 	}
+	return &v0
 }
 `
 }
@@ -650,9 +648,8 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *bool) (*<OUTPUT_TYPE>, erro
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 `
 }
@@ -715,9 +712,8 @@ func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>PtrErr(num *bool) (*<OUTPUT_TYPE>, erro
 
 	if *num == true {
 		return &v10, nil
-	} else {
-		return &v0, nil
 	}
+	return &v0, nil
 }
 `
 }
