@@ -1037,6 +1037,66 @@ func TakePtr(n int, list []*Employee) []*Employee {
 	return newList
 }
 
+// DistinctP returns true if no two of the arguments are =
+func DistinctP(list []Employee) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[Employee]bool)
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			return false
+		}
+		s[v] = true
+	}
+	return true
+}
+
+// DistinctPPtr returns true if no two of the arguments are =
+func DistinctPPtr(list []*Employee) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[Employee]bool)
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			return false
+		}
+		s[*v] = true
+	}
+	return true
+}
+
+// Distinct removes duplicates.
+func Distinct(list []Employee) []Employee {
+	var newList []Employee
+	s := make(map[Employee]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			continue
+		}
+		s[v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
+// DistinctPtr removes duplicates.
+func DistinctPtr(list []*Employee) []*Employee {
+	var newList []*Employee
+	s := make(map[Employee]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			continue
+		}
+		s[*v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
 
 // MapEmployeeInt takes two inputs -
 // 1. Function 2. List. Then It returns a new list after applying the function on each item of the list

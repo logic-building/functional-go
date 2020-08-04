@@ -20,7 +20,12 @@ func Take<FTYPE>(n int, list []<TYPE>) []<TYPE> {
 	}
 	return newList
 }
+`
+}
 
+// TakePtr template to return n items in the list
+func TakePtr() string {
+	return `
 // Take<FTYPE>Ptr returns n items in the list
 func Take<FTYPE>Ptr(n int, list []*<TYPE>) []*<TYPE> {
 	if n < 0 {

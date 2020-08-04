@@ -1037,6 +1037,66 @@ func TakeEmployerPtr(n int, list []*employer.Employer) []*employer.Employer {
 	return newList
 }
 
+// DistinctEmployerP returns true if no two of the arguments are =
+func DistinctEmployerP(list []employer.Employer) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[employer.Employer]bool)
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			return false
+		}
+		s[v] = true
+	}
+	return true
+}
+
+// DistinctEmployerPPtr returns true if no two of the arguments are =
+func DistinctEmployerPPtr(list []*employer.Employer) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[employer.Employer]bool)
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			return false
+		}
+		s[*v] = true
+	}
+	return true
+}
+
+// DistinctEmployer removes duplicates.
+func DistinctEmployer(list []employer.Employer) []employer.Employer {
+	var newList []employer.Employer
+	s := make(map[employer.Employer]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			continue
+		}
+		s[v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
+// DistinctEmployerPtr removes duplicates.
+func DistinctEmployerPtr(list []*employer.Employer) []*employer.Employer {
+	var newList []*employer.Employer
+	s := make(map[employer.Employer]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			continue
+		}
+		s[*v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
 func MapEmployee(f func(employee.Employee) employee.Employee, list []employee.Employee) []employee.Employee {
 	if f == nil {
 		return []employee.Employee{}
@@ -2066,6 +2126,66 @@ func TakeEmployeePtr(n int, list []*employee.Employee) []*employee.Employee {
 	newList := make([]*employee.Employee, newListLen)
 	for i := 0; i < newListLen; i++ {
 		newList[i] = list[i]
+	}
+	return newList
+}
+
+// DistinctEmployeeP returns true if no two of the arguments are =
+func DistinctEmployeeP(list []employee.Employee) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[employee.Employee]bool)
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			return false
+		}
+		s[v] = true
+	}
+	return true
+}
+
+// DistinctEmployeePPtr returns true if no two of the arguments are =
+func DistinctEmployeePPtr(list []*employee.Employee) bool {
+	if len(list) == 0 {
+		return false
+	}
+
+	s := make(map[employee.Employee]bool)
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			return false
+		}
+		s[*v] = true
+	}
+	return true
+}
+
+// DistinctEmployee removes duplicates.
+func DistinctEmployee(list []employee.Employee) []employee.Employee {
+	var newList []employee.Employee
+	s := make(map[employee.Employee]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			continue
+		}
+		s[v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}
+
+// DistinctEmployeePtr removes duplicates.
+func DistinctEmployeePtr(list []*employee.Employee) []*employee.Employee {
+	var newList []*employee.Employee
+	s := make(map[employee.Employee]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[*v]; ok {
+			continue
+		}
+		s[*v] = struct{}{}
+		newList = append(newList, v)
 	}
 	return newList
 }

@@ -1,5 +1,24 @@
 package basic
 
+// Distinct is template.
+func Distinct() string {
+	return `
+// Distinct<FTYPE> removes duplicates.
+func Distinct<FTYPE>(list []<TYPE>) []<TYPE> {
+	var newList []<TYPE>
+	s := make(map[<TYPE>]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			continue
+		}
+		s[v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}
+`
+}
+
 // DistinctPtr is template.
 func DistinctPtr() string {
 	return `
@@ -38,7 +57,12 @@ func Distinct<FTYPE>P(list []<TYPE>) bool {
 	}
 	return true
 }
+`
+}
 
+// DistinctPPtr is template.
+func DistinctPPtr() string {
+	return `
 // Distinct<FTYPE>PPtr returns true if no two of the arguments are =
 func Distinct<FTYPE>PPtr(list []*<TYPE>) bool {
 	if len(list) == 0 {
