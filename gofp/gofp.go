@@ -256,45 +256,43 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 		template = r.Replace(template)
 
 		if len(onlyList) > 0 {
-			if fp.ExistsStrIgnoreCase("Map", onlyList) {
-				template += template2.Map()
-				template = r.Replace(template)
-			}
+			// Always include these functions
 
-			if fp.ExistsStrIgnoreCase("MapPtr", onlyList) {
-				template += template2.MapPtr()
-				template = r.Replace(template)
-			}
+			template += template2.Map()
+			template = r.Replace(template)
 
-			if fp.ExistsStrIgnoreCase("MapPtrErr", onlyList) {
-				template += basic.MapPtrErr()
-				template = r2.Replace(template)
-			}
+			template += template2.MapPtr()
+			template = r.Replace(template)
 
-			if fp.ExistsStrIgnoreCase("MapErr", onlyList) {
-				template += basic.MapErr()
-				template = r2.Replace(template)
-			}
+			template += basic.MapPtrErr()
+			template = r2.Replace(template)
 
-			if fp.ExistsStrIgnoreCase("Filter", onlyList) {
-				template += template2.Filter()
-				template = r.Replace(template)
-			}
+			template += basic.MapErr()
+			template = r2.Replace(template)
 
-			if fp.ExistsStrIgnoreCase("FilterPtr", onlyList) {
-				template += template2.FilterPtr()
-				template = r.Replace(template)
-			}
+			template += template2.Pmap()
+			template = r.Replace(template)
 
-			if fp.ExistsStrIgnoreCase("FilterPtrErr", onlyList) {
-				template += basic.FilterPtrErr()
-				template = r2.Replace(template)
-			}
+			template += template2.PmapPtr()
+			template = r.Replace(template)
 
-			if fp.ExistsStrIgnoreCase("FilterErr", onlyList) {
-				template += basic.FilterErr()
-				template = r2.Replace(template)
-			}
+			template += basic.PMapPtrErr()
+			template = r2.Replace(template)
+
+			template += basic.PMapErr()
+			template = r2.Replace(template)
+
+			template += template2.Filter()
+			template = r.Replace(template)
+
+			template += template2.FilterPtr()
+			template = r.Replace(template)
+
+			template += basic.FilterPtrErr()
+			template = r2.Replace(template)
+
+			template += basic.FilterErr()
+			template = r2.Replace(template)
 
 			if fp.ExistsStrIgnoreCase("Remove", onlyList) {
 				template += template2.Remove()
@@ -396,26 +394,6 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 				template = r2.Replace(template)
 			}
 
-			if fp.ExistsStrIgnoreCase("Pmap", onlyList) {
-				template += template2.Pmap()
-				template = r.Replace(template)
-			}
-
-			if fp.ExistsStrIgnoreCase("PmapPtr", onlyList) {
-				template += template2.PmapPtr()
-				template = r.Replace(template)
-			}
-
-			if fp.ExistsStrIgnoreCase("PMapPtrErr", onlyList) {
-				template += basic.PMapPtrErr()
-				template = r2.Replace(template)
-			}
-
-			if fp.ExistsStrIgnoreCase("PMapErr", onlyList) {
-				template += basic.PMapErr()
-				template = r2.Replace(template)
-			}
-
 			if fp.ExistsStrIgnoreCase("FilterMap", onlyList) {
 				template += template2.FilterMap()
 				template = r.Replace(template)
@@ -481,8 +459,38 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 				template = r2.Replace(template)
 			}
 
+			if fp.ExistsStrIgnoreCase("ReversePtr", onlyList) {
+				template += basic.ReversePtr()
+				template = r2.Replace(template)
+			}
+
 			if fp.ExistsStrIgnoreCase("Take", onlyList) {
 				template += basic.Take()
+				template = r2.Replace(template)
+			}
+
+			if fp.ExistsStrIgnoreCase("TakePtr", onlyList) {
+				template += basic.TakePtr()
+				template = r2.Replace(template)
+			}
+
+			if fp.ExistsStrIgnoreCase("DistinctP", onlyList) {
+				template += basic.DistinctP()
+				template = r2.Replace(template)
+			}
+
+			if fp.ExistsStrIgnoreCase("DistinctPPtr", onlyList) {
+				template += basic.DistinctPPtr()
+				template = r2.Replace(template)
+			}
+
+			if fp.ExistsStrIgnoreCase("Distinct", onlyList) {
+				template += basic.Distinct()
+				template = r2.Replace(template)
+			}
+
+			if fp.ExistsStrIgnoreCase("DistinctPtr", onlyList) {
+				template += basic.DistinctPtr()
 				template = r2.Replace(template)
 			}
 
@@ -622,7 +630,25 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 			template += basic.Reverse()
 			template = r2.Replace(template)
 
+			template += basic.ReversePtr()
+			template = r2.Replace(template)
+
 			template += basic.Take()
+			template = r2.Replace(template)
+
+			template += basic.TakePtr()
+			template = r2.Replace(template)
+
+			template += basic.DistinctP()
+			template = r2.Replace(template)
+
+			template += basic.DistinctPPtr()
+			template = r2.Replace(template)
+
+			template += basic.Distinct()
+			template = r2.Replace(template)
+
+			template += basic.DistinctPtr()
 			template = r2.Replace(template)
 		}
 

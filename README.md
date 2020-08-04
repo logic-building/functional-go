@@ -172,13 +172,22 @@ Note:
    C. "Employee, Teacher" :  User defined data types
    
 Options on go:generate :
-    A. -sort: generate sorting functions for struct will override default behavior of generating sorting functions by each member of sturct of basic types 
+    A: -only: overrides default behavior of generating all the functions. But it always includes Map and Filter
+     //go:generate gofp -destination fp.go -pkg employee -type "Employee" -only "Distinct, DistinctPtr, DistinctP"
+     full-list-values-for-only: "Distinct, DistinctPtr, DistinctP, DistinctPPtr, DropLast, DropLastPtr, 
+                                 DropWhile, DropWhileErr, DropWhilePtr, DropWhilePtrErr, Every, EveryErr, EveryPtr, 
+                                 EveryPtrErr, FilterMap, FilterMapErr, FilterMapPtr, FilterMapPtrErr, 
+                                 Remove, RemoveErr, RemovePtr, RemovePtrErr, Reduce, ReduceErr, ReducePtr, ReducePtrErr, Rest, RestPtr, 
+                                 Reverse, ReversePtr, Some, SomeErr, SomePtr, SomePtrErr, Take, TakePtr,
+                                 TakeWhile, TakeWhileErr, TakeWhilePtr, TakeWhilePtrErr"
+                                 
+    B. -sort: generate sorting functions for struct will override default behavior of generating sorting functions by each member of sturct of basic types 
       //go:generate gofp -destination fp.go -pkg employee -type "Employee" -sort "Employee:Name, Employee:Salary"
       
-    B. -set: generate set functions-Union, Intersection, Difference, Set, Superset, Subset for struct will override default behavior of generating set functions by each member of struct of basic types
+    C. -set: generate set functions-Union, Intersection, Difference, Set, Superset, Subset for struct will override default behavior of generating set functions by each member of struct of basic types
       //go:generate gofp -destination fp.go -pkg employee -type "Employee" -set "Employee:Name:string"
       
-    C. -mapfun: To generate Merge & Zip functions for struct
+    D. -mapfun: To generate Merge & Zip functions for struct
       //go:generate gofp -destination fp.go -pkg employee -type "Employee" -mapfun "true"
       Caution: It will complain at runtime if struct contains slice or array 
 

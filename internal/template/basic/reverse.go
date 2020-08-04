@@ -11,7 +11,12 @@ func Reverse<FTYPE>s(list []<TYPE>) []<TYPE> {
 	}
 	return newList
 }
+`
+}
 
+// ReversePtr reverse the list.
+func ReversePtr() string {
+	return `
 // Reverse<FTYPE>sPtr reverse the list
 func Reverse<FTYPE>sPtr(list []*<TYPE>) []*<TYPE> {
 	newList := make([]*<TYPE>, len(list))

@@ -214,7 +214,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Take",
-		codeTemplate:      basic.Take(),
+		codeTemplate:      basic.Take() + basic.TakePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "take.go",
 
@@ -225,7 +225,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Reverse",
-		codeTemplate:      basic.Reverse(),
+		codeTemplate:      basic.Reverse() + basic.ReversePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "reverse.go",
 
@@ -544,7 +544,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "DistinctP",
-		codeTemplate:      basic.DistinctP(),
+		codeTemplate:      basic.DistinctP() + basic.DistinctPPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "distinctp.go",
 
