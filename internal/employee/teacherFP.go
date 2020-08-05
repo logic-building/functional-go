@@ -1037,66 +1037,6 @@ func TakeTeacherPtr(n int, list []*Teacher) []*Teacher {
 	return newList
 }
 
-// DistinctTeacherP returns true if no two of the arguments are =
-func DistinctTeacherP(list []Teacher) bool {
-	if len(list) == 0 {
-		return false
-	}
-
-	s := make(map[Teacher]bool)
-	for _, v := range list {
-		if _, ok := s[v]; ok {
-			return false
-		}
-		s[v] = true
-	}
-	return true
-}
-
-// DistinctTeacherPPtr returns true if no two of the arguments are =
-func DistinctTeacherPPtr(list []*Teacher) bool {
-	if len(list) == 0 {
-		return false
-	}
-
-	s := make(map[Teacher]bool)
-	for _, v := range list {
-		if _, ok := s[*v]; ok {
-			return false
-		}
-		s[*v] = true
-	}
-	return true
-}
-
-// DistinctTeacher removes duplicates.
-func DistinctTeacher(list []Teacher) []Teacher {
-	var newList []Teacher
-	s := make(map[Teacher]struct{}, len(list))
-	for _, v := range list {
-		if _, ok := s[v]; ok {
-			continue
-		}
-		s[v] = struct{}{}
-		newList = append(newList, v)
-	}
-	return newList
-}
-
-// DistinctTeacherPtr removes duplicates.
-func DistinctTeacherPtr(list []*Teacher) []*Teacher {
-	var newList []*Teacher
-	s := make(map[Teacher]struct{}, len(list))
-	for _, v := range list {
-		if _, ok := s[*v]; ok {
-			continue
-		}
-		s[*v] = struct{}{}
-		newList = append(newList, v)
-	}
-	return newList
-}
-
 
 
 type byIdTeacher []Teacher
