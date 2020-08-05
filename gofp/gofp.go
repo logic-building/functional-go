@@ -474,25 +474,28 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 				template = r2.Replace(template)
 			}
 
-			if fp.ExistsStrIgnoreCase("DistinctP", onlyList) {
-				template += basic.DistinctP()
-				template = r2.Replace(template)
-			}
+			/*
+				if fp.ExistsStrIgnoreCase("DistinctP", onlyList) {
+					template += basic.DistinctP()
+					template = r2.Replace(template)
+				}
 
-			if fp.ExistsStrIgnoreCase("DistinctPPtr", onlyList) {
-				template += basic.DistinctPPtr()
-				template = r2.Replace(template)
-			}
+				if fp.ExistsStrIgnoreCase("DistinctPPtr", onlyList) {
+					template += basic.DistinctPPtr()
+					template = r2.Replace(template)
+				}
 
-			if fp.ExistsStrIgnoreCase("Distinct", onlyList) {
-				template += basic.Distinct()
-				template = r2.Replace(template)
-			}
+				if fp.ExistsStrIgnoreCase("Distinct", onlyList) {
+					template += basic.Distinct()
+					template = r2.Replace(template)
+				}
 
-			if fp.ExistsStrIgnoreCase("DistinctPtr", onlyList) {
-				template += basic.DistinctPtr()
-				template = r2.Replace(template)
-			}
+				if fp.ExistsStrIgnoreCase("DistinctPtr", onlyList) {
+					template += basic.DistinctPtr()
+					template = r2.Replace(template)
+				}
+
+			*/
 
 		} else {
 			template += template2.Map()
@@ -638,18 +641,20 @@ func generateFPCode(pkg, dataTypes, imports string) (string, error) {
 
 			template += basic.TakePtr()
 			template = r2.Replace(template)
+			/*
+				template += basic.DistinctP()
+				template = r2.Replace(template)
 
-			template += basic.DistinctP()
-			template = r2.Replace(template)
+				template += basic.DistinctPPtr()
+				template = r2.Replace(template)
 
-			template += basic.DistinctPPtr()
-			template = r2.Replace(template)
+				template += basic.Distinct()
+				template = r2.Replace(template)
 
-			template += basic.Distinct()
-			template = r2.Replace(template)
+				template += basic.DistinctPtr()
+				template = r2.Replace(template)
 
-			template += basic.DistinctPtr()
-			template = r2.Replace(template)
+			*/
 		}
 
 	}
@@ -1208,6 +1213,105 @@ func findStructNamesAndFieldsGivenInGoGenerate() map[string][]string {
 						case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "time.Time", "*time.Time", "*int", "*int64", "*int32", "*int16", "*int8", "*uint", "*uint64", "*uint32", "*uint16", "*uint8", "*float64", "*float32", "*string":
 							structFields = append(structFields, field+" "+dataType)
 						}
+					}
+				}
+			}
+		}
+
+		if err := scanner.Err(); err != nil {
+			fmt.Printf("\n error scanning data from file %s. skipping generation of sort and set functions", fileStr)
+			return nil
+		}
+	}
+
+	return structToFieldsMap
+}
+
+func allFeildsInStruct() map[string][]string {
+	allTypesInGoGenerate := strings.Split(*types, ",")
+
+	isUserDefinedType := func(dataType string) bool {
+		switch strings.ToLower(strings.TrimSpace(dataType)) {
+		case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "bool":
+			return false
+		}
+		return true
+	}
+	userDefinedTypesInGoGenerate := fp.MapStr(strings.TrimSpace, fp.FilterStr(isUserDefinedType, allTypesInGoGenerate))
+
+	structToFieldsMap := make(map[string][]string, len(userDefinedTypesInGoGenerate))
+	structToFieldsMapIndex := 0
+
+	path, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+	}
+	files, err := listDir(path)
+	if err != nil {
+		fmt.Printf("\n error scanning current folder=%v, error=%v. sort and set methods will be skipped", path, err)
+		return nil
+	}
+
+	onlyGoFiles := fp.FilterStr(func(str string) bool {
+		return strings.Contains(str, ".go")
+	}, files)
+
+	totalStructCount := 0
+	for _, fileStr := range onlyGoFiles {
+
+		if totalStructCount == len(userDefinedTypesInGoGenerate) {
+			break
+		}
+
+		file, err := os.Open(fileStr)
+		if err != nil {
+			fmt.Printf("\n error reading file=%s to generate sort and set methods. skipping set and sort functions", fileStr)
+			return nil
+		}
+		defer file.Close()
+
+		scanner := bufio.NewScanner(file)
+		packageFound := false
+		startCollectingStructInfo := false
+		var structFields []string
+
+		for scanner.Scan() {
+			txtLine := scanner.Text()
+			if len(txtLine) > 0 && strings.Contains(txtLine, *pkgName) {
+				packageFound = true
+			}
+			// reading lines of file of package mentioned in go:generate
+			if packageFound {
+
+				words := strings.Fields(txtLine)
+
+				// Found struct
+				if len(words) == 4 && strings.Contains(words[0], "type") && fp.ExistsStr(words[1], userDefinedTypesInGoGenerate) && strings.Contains(words[2], "struct") && strings.Contains(words[3], "{") {
+					startCollectingStructInfo = true
+					totalStructCount++
+				}
+
+				if startCollectingStructInfo && strings.TrimSpace(txtLine) == "}" {
+					startCollectingStructInfo = false
+
+					newStructFieldsArr := make([]string, len(structFields))
+					for i, v := range structFields {
+						newStructFieldsArr[i] = v
+					}
+					structToFieldsMap[userDefinedTypesInGoGenerate[structToFieldsMapIndex]] = newStructFieldsArr
+					structToFieldsMapIndex++
+					structFields = make([]string, 0)
+				}
+
+				if startCollectingStructInfo {
+					if len(words) >= 2 {
+						field := strings.TrimSpace(words[0])
+						dataType := strings.TrimSpace(words[1])
+
+						//switch dataType {
+						//case "int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float64", "float32", "string", "time.Time", "*time.Time", "*int", "*int64", "*int32", "*int16", "*int8", "*uint", "*uint64", "*uint32", "*uint16", "*uint8", "*float64", "*float32", "*string":
+						structFields = append(structFields, field+" "+dataType)
+						//}
 					}
 				}
 			}

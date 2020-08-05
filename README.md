@@ -174,7 +174,7 @@ Note:
 Options on go:generate :
     A: -only: overrides default behavior of generating all the functions. But it always includes Map and Filter
      //go:generate gofp -destination fp.go -pkg employee -type "Employee" -only "Distinct, DistinctPtr, DistinctP"
-     full-list-values-for-only: "Distinct, DistinctPtr, DistinctP, DistinctPPtr, DropLast, DropLastPtr, 
+     full-list-values-for-only: "DropLast, DropLastPtr, 
                                  DropWhile, DropWhileErr, DropWhilePtr, DropWhilePtrErr, Every, EveryErr, EveryPtr, 
                                  EveryPtrErr, FilterMap, FilterMapErr, FilterMapPtr, FilterMapPtrErr, 
                                  Remove, RemoveErr, RemovePtr, RemovePtrErr, Reduce, ReduceErr, ReducePtr, ReducePtrErr, Rest, RestPtr, 
