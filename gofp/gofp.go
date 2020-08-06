@@ -264,7 +264,7 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 		template = r.Replace(template)
 
 		// it collects info of members of struct other than basic types
-		unexpectedFieldsForDistinct := structToFieldsMapUnexpected[t]
+		complextFieldsInStructSuchAsSlice := structToFieldsMapUnexpected[t]
 
 		if len(onlyList) > 0 {
 			// Always include these functions
@@ -485,7 +485,7 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 				template = r2.Replace(template)
 			}
 
-			if len(unexpectedFieldsForDistinct) > 1 {
+			if len(complextFieldsInStructSuchAsSlice) > 1 {
 				switchTemplateDistinct = true
 
 				if fp.ExistsStrIgnoreCase("DistinctP", onlyList) {
@@ -508,6 +508,66 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 					template = r2.Replace(template)
 				}
 
+				if fp.ExistsStrIgnoreCase("Union", onlyList) {
+					template += basic.Union2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("UnionPtr", onlyList) {
+					template += basic.Union2Ptr()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Intersection", onlyList) {
+					template += basic.Intersection2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("IntersectionPtr", onlyList) {
+					template += basic.IntersectionPtr2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Difference", onlyList) {
+					template += basic.Difference2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("DifferencePtr", onlyList) {
+					template += basic.DifferencePtr2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Subset", onlyList) {
+					template += basic.Subset2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("SubsetPtr", onlyList) {
+					template += basic.SubsetPtr2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Superset", onlyList) {
+					template += basic.Superset2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("SupersetPtr", onlyList) {
+					template += basic.SupersetPtr2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Set", onlyList) {
+					template += basic.Set2()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("SetPtr", onlyList) {
+					template += basic.SetPtr2()
+					template = r2.Replace(template)
+				}
+
 			} else {
 				if fp.ExistsStrIgnoreCase("DistinctP", onlyList) {
 					template += basic.DistinctP()
@@ -526,6 +586,66 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 
 				if fp.ExistsStrIgnoreCase("DistinctPtr", onlyList) {
 					template += basic.DistinctPtr()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Union", onlyList) {
+					template += basic.Union()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("UnionPtr", onlyList) {
+					template += basic.UnionPtr()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Intersection", onlyList) {
+					template += basic.Intersection()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("IntersectionPtr", onlyList) {
+					template += basic.IntersectionPtr()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Difference", onlyList) {
+					template += basic.Difference()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("DifferencePtr", onlyList) {
+					template += basic.DifferencePtr()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Subset", onlyList) {
+					template += basic.Subset()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("SubsetPtr", onlyList) {
+					template += basic.SubsetPtr()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Superset", onlyList) {
+					template += basic.Superset()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("SupersetPtr", onlyList) {
+					template += basic.SupersetPtr()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("Set", onlyList) {
+					template += basic.Set()
+					template = r2.Replace(template)
+				}
+
+				if fp.ExistsStrIgnoreCase("SetPtr", onlyList) {
+					template += basic.SetPtr()
 					template = r2.Replace(template)
 				}
 			}
@@ -675,7 +795,8 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template += basic.TakePtr()
 			template = r2.Replace(template)
 
-			if len(unexpectedFieldsForDistinct) > 1 {
+			// if struct's has member of type other than basic types such as list then use template which uses reflect
+			if len(complextFieldsInStructSuchAsSlice) > 1 {
 				switchTemplateDistinct = true
 
 				template += basic.DistinctP2()
@@ -690,6 +811,42 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 				template += basic.DistinctPtr2()
 				template = r2.Replace(template)
 
+				template += basic.Union2()
+				template = r2.Replace(template)
+
+				template += basic.Union2Ptr()
+				template = r2.Replace(template)
+
+				template += basic.Intersection2()
+				template = r2.Replace(template)
+
+				template += basic.IntersectionPtr2()
+				template = r2.Replace(template)
+
+				template += basic.Difference2()
+				template = r2.Replace(template)
+
+				template += basic.DifferencePtr2()
+				template = r2.Replace(template)
+
+				template += basic.Subset2()
+				template = r2.Replace(template)
+
+				template += basic.SubsetPtr2()
+				template = r2.Replace(template)
+
+				template += basic.Superset2()
+				template = r2.Replace(template)
+
+				template += basic.SupersetPtr2()
+				template = r2.Replace(template)
+
+				template += basic.Set2()
+				template = r2.Replace(template)
+
+				template += basic.SetPtr2()
+				template = r2.Replace(template)
+
 			} else {
 				template += basic.DistinctP()
 				template = r2.Replace(template)
@@ -701,6 +858,42 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 				template = r2.Replace(template)
 
 				template += basic.DistinctPtr()
+				template = r2.Replace(template)
+
+				template += basic.Union()
+				template = r2.Replace(template)
+
+				template += basic.UnionPtr()
+				template = r2.Replace(template)
+
+				template += basic.Intersection()
+				template = r2.Replace(template)
+
+				template += basic.IntersectionPtr()
+				template = r2.Replace(template)
+
+				template += basic.Difference()
+				template = r2.Replace(template)
+
+				template += basic.DifferencePtr()
+				template = r2.Replace(template)
+
+				template += basic.Subset()
+				template = r2.Replace(template)
+
+				template += basic.SubsetPtr()
+				template = r2.Replace(template)
+
+				template += basic.Superset()
+				template = r2.Replace(template)
+
+				template += basic.SupersetPtr()
+				template = r2.Replace(template)
+
+				template += basic.Set()
+				template = r2.Replace(template)
+
+				template += basic.SetPtr()
 				template = r2.Replace(template)
 			}
 		}
