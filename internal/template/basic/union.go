@@ -21,7 +21,12 @@ func Union<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 	}
 	return resultArr
 }
+`
+}
 
+// UnionPtr is template.
+func UnionPtr() string {
+	return `
 // Union<FTYPE>Ptr return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func Union<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
@@ -37,6 +42,62 @@ func Union<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 		}
 	}
 	return resultArr
+}
+`
+}
+
+// For struct. template2 uses reflect.DeepEqual for struct which contains other than basic types such as list as member
+
+// Union2 is template.
+func Union2() string {
+	return `
+// Union<FTYPE> return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func Union<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
+	var newList []<TYPE>
+
+	for _, arr := range arrList {
+		for _, v := range arr {
+			found := false
+			for i := 0; i < len(newList); i++ {
+				if reflect.DeepEqual(newList[i], v) {
+					found = true
+					break
+				}
+			}
+			if !found {
+				newList = append(newList, v)
+			}
+		}
+	}
+	return newList
+}
+`
+}
+
+// Union2Ptr is template.
+func Union2Ptr() string {
+	return `
+// Union<FTYPE>Ptr return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func Union<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
+	var newList []*<TYPE>
+
+	for _, arr := range arrList {
+		for _, v := range arr {
+			found := false
+			for i := 0; i < len(newList); i++ {
+				if reflect.DeepEqual(*newList[i], *v) {
+					found = true
+					break
+				}
+			}
+			if !found {
+				newList = append(newList, v)
+			}
+		}
+	}
+	return newList
 }
 `
 }

@@ -64,7 +64,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Set",
-		codeTemplate:      basic.Set(),
+		codeTemplate:      basic.Set() + basic.SetPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "set.go",
 
@@ -75,7 +75,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Union",
-		codeTemplate:      basic.Union(),
+		codeTemplate:      basic.Union() + basic.UnionPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "union.go",
 
@@ -86,7 +86,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Intersection",
-		codeTemplate:      basic.Intersection(),
+		codeTemplate:      basic.Intersection() + basic.IntersectionPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "intersection.go",
 
@@ -97,7 +97,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Difference",
-		codeTemplate:      basic.Difference(),
+		codeTemplate:      basic.Difference() + basic.DifferencePtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "difference.go",
 
@@ -108,7 +108,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Subset",
-		codeTemplate:      basic.Subset(),
+		codeTemplate:      basic.Subset() + basic.SubsetPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "subset.go",
 
@@ -119,7 +119,7 @@ var fpCodeList = []fpCode{
 
 	fpCode{
 		function:          "Superset",
-		codeTemplate:      basic.Superset(),
+		codeTemplate:      basic.Superset() + basic.SupersetPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "superset.go",
 
