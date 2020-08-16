@@ -21,7 +21,7 @@ go install github.com/logic-building/functional-go/gofp
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.12.2"
+version = "8.13.0"
 ```
 
 ### Quick Start
@@ -264,36 +264,67 @@ Options on go:generate :
                                        output(return list) type is different
 16. Intersection<Type> : Returns a set that is the intersection of the input sets. Repeated value within the list(arguments) will be ignored
 17. Keys<Type>         : Returns new a list of map's keys
-18. Map<Type>          : Returns a new list after  applying the function(1st argument) on each item in the list(2nd argument) 
-19. Map<InputType><OutputType> : Similar to Map<Type> with additional feature - input(2nd argument) type is different and output(return) type is different
-20. Max<Type>          : Returns max item from the list.
-21. Merge<Type>        : Returns new map[<Type>]<Type> after merging map[<Type>]<Type> and map[<Type>]<Type> 
-22. Merge<Type1><Type2>: Returns new map<[<Type1>]<Type2> after merging map[<Type1>]<Type2> and map[<Type1>]<Type2>
-23. Min<Type>          : Returns min item from the list.
-24. MinMax<Type>       : Returns min and max items from the list.
-25. Neg<Type>P         : Returns true if num is less than zero, else false
-26. Odd<Type>P         : Returns true if n is odd
-27. PMap<Type>         : Similar to Map<Type> with additional feature - function(1st) argument runs concurrently for each item in the list(2nd argument)
-28. PMap<InputType><OutputType>: Similar to Map<InputType><OutputType> with additional feature - function(1st) argument runs concurrently for each item in the list(2nd argument)
-29. Pos<Type>P         : Returns true if num is greater than zero, else false
-30. Range<Type>        : Returns a new list of range between lower and upper value. Optional argument(3rd) will increment value by given number
-31. Reduce<Type>       : Reduces a list to a single value by combining elements via a supplied function
-32. Remove<Type>       : Returns a new list after removing the items from the given list(2nd argument) based on supplied predicate function(1st argument)
-33. Rest<Type>         : Returns a new list after removing 1st item in the list(2nd argument)
-34. Reverse<Type>      : Returns a new list after reversing the list
-35. Set<Type>          : Returns a new list after removing duplicates items in the list
-36. Some<Type>         : Returns true if item is found in the list(2nd argument) based on predicate function(1st argument)
-37. Sort<Type>s        : Returns new sorted list
-38. Subset<Type>       : Returns true or false by checking if set1 is a subset of set2. Repeated value within list(argument) will be ignored
-39. Superset<Type>     : Returns true or false by checking if set1 is a superset of set2. Repeated value within list(argument) will be ignored
-40. Take<Type>         : Returns n items in the list
-41. TakeWhile<Type>    : Returns a new list based on predicate function(1st argument). It returns new list once condition fails.
-42. Union<Type>        : Return a set that is the union of the input sets. Repeated value within list(argument) will be ignored
-43. Zero<Type>P        : Returns true if num is zero, else false
-44. Zip<Type>          : Returns New map([<Type>])Type after merging two lists 
-45. Zip<Type1><Type2>  : Similar to Zip<Type> with additional feature: Type of both list can be different
+18. Keys<Type1><Type2> : Returns new a list of map's Keys
+19. Map<Type>          : Returns a new list after  applying the function(1st argument) on each item in the list(2nd argument) 
+20. Map<InputType><OutputType> : Similar to Map<Type> with additional feature - input(2nd argument) type is different and output(return) type is different
+21. Max<Type>          : Returns max item from the list.
+22. Merge<Type>        : Returns new map[<Type>]<Type> after merging map[<Type>]<Type> and map[<Type>]<Type> 
+23. Merge<Type1><Type2>: Returns new map<[<Type1>]<Type2> after merging map[<Type1>]<Type2> and map[<Type1>]<Type2>
+24. Min<Type>          : Returns min item from the list.
+25. MinMax<Type>       : Returns min and max items from the list.
+26. Neg<Type>P         : Returns true if num is less than zero, else false
+27. Odd<Type>P         : Returns true if n is odd
+28. PMap<Type>         : Similar to Map<Type> with additional feature - function(1st) argument runs concurrently for each item in the list(2nd argument)
+29. PMap<InputType><OutputType>: Similar to Map<InputType><OutputType> with additional feature - function(1st) argument runs concurrently for each item in the list(2nd argument)
+30. Pos<Type>P         : Returns true if num is greater than zero, else false
+31. Range<Type>        : Returns a new list of range between lower and upper value. Optional argument(3rd) will increment value by given number
+32. Reduce<Type>       : Reduces a list to a single value by combining elements via a supplied function
+33. Remove<Type>       : Returns a new list after removing the items from the given list(2nd argument) based on supplied predicate function(1st argument)
+34. Rest<Type>         : Returns a new list after removing 1st item in the list(2nd argument)
+35. Reverse<Type>      : Returns a new list after reversing the list
+36. Set<Type>          : Returns a new list after removing duplicates items in the list
+37. Some<Type>         : Returns true if item is found in the list(2nd argument) based on predicate function(1st argument)
+38. Sort<Type>s        : Returns new sorted list
+39. Subset<Type>       : Returns true or false by checking if set1 is a subset of set2. Repeated value within list(argument) will be ignored
+40. Superset<Type>     : Returns true or false by checking if set1 is a superset of set2. Repeated value within list(argument) will be ignored
+41. Take<Type>         : Returns n items in the list
+42. TakeWhile<Type>    : Returns a new list based on predicate function(1st argument). It returns new list once condition fails.
+43. Union<Type>        : Return a set that is the union of the input sets. Repeated value within list(argument) will be ignored
+44. Zero<Type>P        : Returns true if num is zero, else false
+45. Zip<Type>          : Returns New map([<Type>])Type after merging two lists 
+46. Zip<Type1><Type2>  : Similar to Zip<Type> with additional feature: Type of both list can be different
 ```
 
+### Functions in generated code for struct (user defined type)
+```
+1. Difference : Returns a set that is the first set without elements of the remaining sets
+2. Difference<struct>By<Field> 
+3. Distinct  : Returns a new list with duplicates removed
+4. DistinctP : Returns true if no two of the arguments are =
+5. DropWhile : Returns a new list after dropping the items in the given list as long as condition satisfies(1st argument - predicate)
+6. Every     : Returns true if supplied predicate function(1st argument) returns logical true for every item in the list
+7. Filter    : Returns a new list after filtering the list(2nd argument) based on predicate function passed (1st argument)
+8. FilterMap : Returns a new list after filtering given list(3rd argument), based on predicate function(1st argument) then apply function(2nd argument) on each item in the list(3rd argument)
+9. Intersection : Returns a set that is the intersection of the input sets. Repeated value within the list(arguments) will be ignored
+10. Intersection<struct>By<Field>
+11. Map      : Returns a new list after  applying the function(1st argument) on each item in the list(2nd argument)
+12. PMap     : Similar to Map<Type> with additional feature - function(1st) argument runs concurrently for each item in the list(2nd argument)
+13. Reduce   : Reduces a list to a single value by combining elements via a supplied function
+14. Remove   : Returns a new list after removing the items from the given list(2nd argument) based on supplied predicate function(1st argument)
+15. Rest     : Returns a new list after removing 1st item in the list(2nd argument)
+16. Reverse  : Returns a new list after reversing the list
+17. Set      : Returns a new list after removing duplicates items in the list
+18. Set<struct>By<Field>
+19. Some     : Returns true if item is found in the list(2nd argument) based on predicate function(1st argument)
+20. Sort<struct>By<Field> : Returns new sorted list
+21. Subset   : Returns true or false by checking if set1 is a subset of set2. Repeated value within list(argument) will be ignored
+22. Subset<struct>By<Field>
+23. Superset : Returns true or false by checking if set1 is a superset of set2. Repeated value within list(argument) will be ignored
+24. Superset<struct>By<Field>
+25. TakeWhile : Returns a new list based on predicate function(1st argument). It returns new list once condition fails.
+26. Union     : Return a set that is the union of the input sets. Repeated value within list(argument) will be ignored
+27. Union<struct>By<Field>
+```
 ### Contains functions
 ```
 Takes list as argument and returns Distinct list.  Returns empty list if 2nd parameter is empty or nil
