@@ -137,44 +137,68 @@ Design 1: Functional code distributed within different package
 Design 2: All functional code in one place
 ```
 ### Design 1:  Functional code distributed within different package
+#### Generate functional code for struct - Employee
 ```
-1. Install "gofp" to generate code
-   go get github.com/logic-building/functional-go/gofp
-   go get -u github.com/logic-building/functional-go/gofp
-
-   go install github.com/logic-building/functional-go/gofp
-
-2. Add this line in a file where user defined data type exists
-   //go:generate gofp -destination <file> -pkg <pkg> -type <Types separated by comma>
-
-   // If the user defined type has to be imported, then use options "-imports" and value will be comma separated.
-   // See the file internal/employer/employer.go for the example
-
-example:
-    package employee
-
-   //go:generate gofp -destination fp.go -pkg employee -type "Employee, Teacher"
    type Employee struct {
    	id     int
    	name   string
    	salary float64
    }
-
-   type Teacher struct {
+```
+#### 1. Add line given below in the file where struct resides
+```
+//go:generate gofp -destination fp.go -pkg employee -type "Employee"
+```
+##### Example: 
+```
+   //go:generate gofp -destination fp.go -pkg employee -type "Employee"
+   type Employee struct {
    	id     int
    	name   string
    	salary float64
    }
+```
+##### Note:
+```
+//go:generate gofp -destination fp.go -pkg employee -type "Employee"
 
-Note:
-   A. fp.go               :  generated code
-   B. employee            :  package name
-   C. "Employee, Teacher" :  User defined data types
-   
+-destination fp.go : fp.go is a new file which contains functional code for struct - Employee
+-pkg employee      : employee is package where struct "Employee" resides
+-type "Employee"   : Employee is struct for which functional code is generated.
+
+```
+#### Step 2. Install "gofp
+```
+    go get github.com/logic-building/functional-go/gofp
+    go get -u github.com/logic-building/functional-go/gofp
+    go install github.com/logic-building/functional-go/gofp
+```
+#### Step 3. Run go generate from root folder of the project
+```
+ go generate ./...
+```
+#### You are done. Enjoy the functional code
+```
+    emp1 := employee.Employee{1, "A", 1000}
+    emp2 := employee.Employee{2, "B", 1000}
+    emp3 := employee.Employee{3, "C", 1000}
+
+    empList := []employee.Employee{emp1, emp2, emp3}
+
+    newEmpList := employee.Map(incrementSalary, empList) //  Returns: [{1 A 1500} {2 B 1500} {3 C 1500}]
+
+   func incrementSalary(emp employee.Employee) employee.Employee {
+        emp.Salary = emp.Salary + 500
+        return emp
+   }
+```
+
+##### Optional parameter 
+```  
 Options on go:generate :
     A: -only: overrides default behavior of generating all the functions. But it always includes Map and Filter
      //go:generate gofp -destination fp.go -pkg employee -type "Employee" -only "Distinct, DistinctPtr, DistinctP"
-     full-list-values-for-only: "DropLast, DropLastPtr, 
+     full-list-values-for-only: "Distinct, DistinctP, DropLast, DropLastPtr, 
                                  DropWhile, DropWhileErr, DropWhilePtr, DropWhilePtrErr, Every, EveryErr, EveryPtr, 
                                  EveryPtrErr, FilterMap, FilterMapErr, FilterMapPtr, FilterMapPtrErr, 
                                  Remove, RemoveErr, RemovePtr, RemovePtrErr, Reduce, ReduceErr, ReducePtr, ReducePtrErr, Rest, RestPtr, 
@@ -190,25 +214,6 @@ Options on go:generate :
     D. -mapfun: To generate Merge & Zip functions for struct
       //go:generate gofp -destination fp.go -pkg employee -type "Employee" -mapfun "true"
       Caution: It will complain at runtime if struct contains slice or array 
-
-3. Generate functional code
-   go generate ./...
-
-4. Now write your code
-
-    emp1 := employee.Employee{1, "A", 1000}
-   	emp2 := employee.Employee{2, "B", 1000}
-   	emp3 := employee.Employee{3, "C", 1000}
-
-   	empList := []employee.Employee{emp1, emp2, emp3}
-
-   	newEmpList := employee.Map(incrementSalary, empList) //  Returns: [{1 A 1500} {2 B 1500} {3 C 1500}]
-
-   func incrementSalary(emp employee.Employee) employee.Employee {
-        emp.Salary = emp.Salary + 500
-        return emp
-   }
-
 ```
 
 ### Design 2: All functional code in one place
