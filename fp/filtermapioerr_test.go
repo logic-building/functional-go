@@ -507,7 +507,7 @@ func notOneIntStrNumErr(num int) (bool, error) {
 }
 
 func someLogicIntStrNumErr(num int) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -1175,7 +1175,7 @@ func notOneInt64StrNumErr(num int64) (bool, error) {
 }
 
 func someLogicInt64StrNumErr(num int64) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -1843,7 +1843,7 @@ func notOneInt32StrNumErr(num int32) (bool, error) {
 }
 
 func someLogicInt32StrNumErr(num int32) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -2511,7 +2511,7 @@ func notOneInt16StrNumErr(num int16) (bool, error) {
 }
 
 func someLogicInt16StrNumErr(num int16) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -3179,7 +3179,7 @@ func notOneInt8StrNumErr(num int8) (bool, error) {
 }
 
 func someLogicInt8StrNumErr(num int8) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -3847,7 +3847,7 @@ func notOneUintStrNumErr(num uint) (bool, error) {
 }
 
 func someLogicUintStrNumErr(num uint) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -4515,7 +4515,7 @@ func notOneUint64StrNumErr(num uint64) (bool, error) {
 }
 
 func someLogicUint64StrNumErr(num uint64) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -5183,7 +5183,7 @@ func notOneUint32StrNumErr(num uint32) (bool, error) {
 }
 
 func someLogicUint32StrNumErr(num uint32) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -5851,7 +5851,7 @@ func notOneUint16StrNumErr(num uint16) (bool, error) {
 }
 
 func someLogicUint16StrNumErr(num uint16) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -6519,7 +6519,7 @@ func notOneUint8StrNumErr(num uint8) (bool, error) {
 }
 
 func someLogicUint8StrNumErr(num uint8) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -8748,7 +8748,7 @@ func notOneFloat32StrNumErr(num float32) (bool, error) {
 }
 
 func someLogicFloat32StrNumErr(num float32) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}
@@ -9416,7 +9416,7 @@ func notOneFloat64StrNumErr(num float64) (bool, error) {
 }
 
 func someLogicFloat64StrNumErr(num float64) (string, error) {
-	var r string = string(0)
+	var r string = "0"
 	if num == 3 {
 		return "0", errors.New("3 is not valid number for this test")
 	}

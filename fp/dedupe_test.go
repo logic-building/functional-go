@@ -292,6 +292,29 @@ func TestDedupeStr(t *testing.T) {
 	}
 }
 
+func TestDedupeBool(t *testing.T) {
+	var vt bool = true
+	var vf bool = false
+
+	expectedList := []bool{vt, vf, vt}
+	givenList := []bool{vt, vt, vf, vf, vf, vt, vt, vt, vt, vt, vt}
+	r := DedupeBool(givenList)
+	if !reflect.DeepEqual(r, expectedList) {
+		t.Errorf("TestDedupeBool failed. acutal_list=%v, expected_list=%v", r, expectedList)
+	}
+
+	expectedListPtr := []*bool{&vt, &vf, &vt, &vf}
+	givenListPtr := []*bool{&vt, &vt, &vf, &vf, &vf, &vt, &vf, &vf, &vf, &vf, &vf}
+	rPtr := DedupeBoolPtr(givenListPtr)
+	if !reflect.DeepEqual(rPtr, expectedListPtr) {
+		t.Errorf("TestDedupeBoolPtr failed. acutal_list=%v, expected_listPtr=%v", rPtr, expectedListPtr)
+	}
+
+	if *expectedListPtr[0] != *rPtr[0] {
+		t.Errorf("TestDedupeBoolPtr failed.")
+	}
+}
+
 func TestDedupeFloat32(t *testing.T) {
 	var v0 float32
 	var v1 float32 = 1

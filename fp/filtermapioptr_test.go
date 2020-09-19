@@ -329,7 +329,7 @@ func notOneIntStrNumPtr(num *int) bool {
 }
 
 func someLogicIntStrNumPtr(num *int) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -760,7 +760,7 @@ func notOneInt64StrNumPtr(num *int64) bool {
 }
 
 func someLogicInt64StrNumPtr(num *int64) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -1191,7 +1191,7 @@ func notOneInt32StrNumPtr(num *int32) bool {
 }
 
 func someLogicInt32StrNumPtr(num *int32) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -1622,7 +1622,7 @@ func notOneInt16StrNumPtr(num *int16) bool {
 }
 
 func someLogicInt16StrNumPtr(num *int16) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -2053,7 +2053,7 @@ func notOneInt8StrNumPtr(num *int8) bool {
 }
 
 func someLogicInt8StrNumPtr(num *int8) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -2484,7 +2484,7 @@ func notOneUintStrNumPtr(num *uint) bool {
 }
 
 func someLogicUintStrNumPtr(num *uint) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -2915,7 +2915,7 @@ func notOneUint64StrNumPtr(num *uint64) bool {
 }
 
 func someLogicUint64StrNumPtr(num *uint64) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -3346,7 +3346,7 @@ func notOneUint32StrNumPtr(num *uint32) bool {
 }
 
 func someLogicUint32StrNumPtr(num *uint32) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -3777,7 +3777,7 @@ func notOneUint16StrNumPtr(num *uint16) bool {
 }
 
 func someLogicUint16StrNumPtr(num *uint16) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -4208,7 +4208,7 @@ func notOneUint8StrNumPtr(num *uint8) bool {
 }
 
 func someLogicUint8StrNumPtr(num *uint8) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -5637,7 +5637,7 @@ func notOneFloat32StrNumPtr(num *float32) bool {
 }
 
 func someLogicFloat32StrNumPtr(num *float32) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r
@@ -6068,7 +6068,7 @@ func notOneFloat64StrNumPtr(num *float64) bool {
 }
 
 func someLogicFloat64StrNumPtr(num *float64) *string {
-	var r string = string(0)
+	var r string = "0"
 	if *num == 10 {
 		r = "10"
 		return &r

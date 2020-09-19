@@ -208,6 +208,12 @@ import "time"`, -1)
 		if switchTemplateDistinct {
 			generatedCode = strings.Replace(generatedCode, `import _ "reflect"`, `import "reflect"`, -1)
 		}
+		generatedCode = strings.Replace(generatedCode, "...Optional", "...fp.Optional", -1)
+		generatedCodeIO = strings.Replace(generatedCodeIO, "...Optional", "...fp.Optional", -1)
+		generatedCodeII = strings.Replace(generatedCodeII, "...Optional", "...fp.Optional", -1)
+		sortingCode = strings.Replace(sortingCode, "...Optional", "...fp.Optional", -1)
+		setCode = strings.Replace(setCode, "...Optional", "...fp.Optional", -1)
+
 		f.Write([]byte(generatedCode + "\n" + generatedCodeIO + "\n" + generatedCodeII + sortingCode + setCode))
 		defer f.Close()
 
@@ -237,6 +243,7 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 	template += "package <PACKAGE>\n"
 	template += "import _ \"reflect\" \n"
 	template += "import \"sync\" \n"
+	template += "import \"github.com/logic-building/functional-go/fp\" \n"
 
 	if imports != "" {
 		importList := strings.Split(imports, ",")
@@ -281,11 +288,11 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template += basic.MapErr()
 			template = r2.Replace(template)
 
-			template += template2.Pmap()
-			template = r.Replace(template)
+			template += basic.PMap()
+			template = r2.Replace(template)
 
-			template += template2.PmapPtr()
-			template = r.Replace(template)
+			template += basic.PMapPtr()
+			template = r2.Replace(template)
 
 			template += basic.PMapPtrErr()
 			template = r2.Replace(template)
@@ -735,11 +742,11 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template += basic.TakeWhileErr()
 			template = r2.Replace(template)
 
-			template += template2.Pmap()
-			template = r.Replace(template)
+			template += basic.PMap()
+			template = r2.Replace(template)
 
-			template += template2.PmapPtr()
-			template = r.Replace(template)
+			template += basic.PMapPtr()
+			template = r2.Replace(template)
 
 			template += basic.PMapPtrErr()
 			template = r2.Replace(template)

@@ -20,6 +20,20 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	expectedList = []<OUTPUT_TYPE>{2, 3, 4}
+	newList = PMap<FINPUT_TYPE><FOUTPUT_TYPE>(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{1, 2, 3}, Optional{FixedPool: 2, RandomOrder: true})
+	count := 0
+	for _, v := range expectedList {
+		for _, x := range newList {
+			if v == x {
+				count++
+			}
+		}
+	}
+	if count != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed.expected len=%v, actual len=%v", len(expectedList), count)
+	}
 }
 
 func plusOne<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
@@ -48,6 +62,13 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	expectedList = []<OUTPUT_TYPE>{10}
+	newList = PMap<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{"ten", "one"}, Optional{FixedPool: 1, RandomOrder: true})
+
+	if newList[0] != expectedList[0] || newList[1] != 0 {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
+	}
 }
 
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
@@ -79,6 +100,13 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	expectedList = []<OUTPUT_TYPE>{"10"}
+	newList = PMap<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{10, 20}, Optional{FixedPool: 1, RandomOrder: true})
+
+	if newList[0] != expectedList[0] || newList[1] != "0" {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
+	}
 }
 
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
@@ -110,6 +138,13 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	expectedList = []<OUTPUT_TYPE>{true, false}
+	newList = PMap<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{10, 0}, Optional{FixedPool: 1, RandomOrder: true})
+
+	if newList[0] != expectedList[0] || newList[1] != false {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
+	}
 }
 
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
@@ -141,6 +176,13 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	expectedList = []<OUTPUT_TYPE>{true, false}
+	newList = PMap<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{"10", "0"}, Optional{FixedPool: 1, RandomOrder: true})
+
+	if newList[0] != expectedList[0] || newList[1] != false {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
+	}
 }
 
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
@@ -172,6 +214,13 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	expectedList = []<OUTPUT_TYPE>{10, 0}
+	newList = PMap<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{true, false}, Optional{FixedPool: 1, RandomOrder: true})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
+	}
 }
 
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
@@ -203,6 +252,13 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	expectedList = []<OUTPUT_TYPE>{"10", "0"}
+	newList = PMap<FINPUT_TYPE><FOUTPUT_TYPE>(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>, []<INPUT_TYPE>{true, false}, Optional{FixedPool: 1, RandomOrder: true})
+
+	if newList[0] != expectedList[0] || newList[1] != expectedList[1] {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed. expected=%v, actual=%v", expectedList, newList)
+	}
 }
 
 func someLogic<FINPUT_TYPE><FOUTPUT_TYPE>(num <INPUT_TYPE>) <OUTPUT_TYPE> {
@@ -239,7 +295,67 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 	if err == nil {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
+
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 3, 2}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 3, 2}, Optional{FixedPool: 2})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 1, 3}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{1, 2, 3}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	expectedList = []<OUTPUT_TYPE>{2, 3}
+	newList, _ = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{1, 2}, Optional{RandomOrder: true})
+	
+	counter := 0
+	for i := 0; i < len(expectedList); i++ {
+		for j := 0; j < len(newList); j++ {
+			if expectedList[i] == newList[j] {
+				counter++
+				break
+			}
+		}
+	}
+	if counter != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{1, 2, 3}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{1, 2, 3}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 3, 1}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 2, 3}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(plusOne<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{1, 2, 3}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
 }
 `
 }
@@ -270,6 +386,65 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"0", "0", "ten"}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"0", "0", "ten"}, Optional{FixedPool: 2})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"0", "ten", "0"}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"ten", "ten", "0"}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	expectedList = []<OUTPUT_TYPE>{10, 10}
+	newList, _ = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"ten", "ten"}, Optional{RandomOrder: true})
+	
+	counter := 0
+	for i := 0; i < len(expectedList); i++ {
+		for j := 0; j < len(newList); j++ {
+			if expectedList[i] == newList[j] {
+				counter++
+				break
+			}
+		}
+	}
+	if counter != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"ten", "ten", "0"}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"ten", "ten", "0"}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"0", "0", "ten"}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"0", "ten", "0"}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"ten", "ten", "0"}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
 }
 `
 }
@@ -300,6 +475,65 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 0}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{0, 0, 10}, Optional{FixedPool: 2})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{0, 10, 0}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 0}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	expectedList = []<OUTPUT_TYPE>{"10", "10"}
+	newList, _ = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10}, Optional{RandomOrder: true})
+	
+	counter := 0
+	for i := 0; i < len(expectedList); i++ {
+		for j := 0; j < len(newList); j++ {
+			if expectedList[i] == newList[j] {
+				counter++
+				break
+			}
+		}
+	}
+	if counter != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 0}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 0}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{0, 0, 10}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{0, 10, 0}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 0}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
 }
 `
 }
@@ -325,11 +559,70 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 	if len(r) > 0 {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
-	_, err := PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 0, 3})
+	_, err := PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 3, 3})
 	if err == nil {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 3}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 3, 10}, Optional{FixedPool: 2})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 10, 3}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 3}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	expectedList = []<OUTPUT_TYPE>{true, true}
+	newList, _ = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10}, Optional{RandomOrder: true})
+	
+	counter := 0
+	for i := 0; i < len(expectedList); i++ {
+		for j := 0; j < len(newList); j++ {
+			if expectedList[i] == newList[j] {
+				counter++
+				break
+			}
+		}
+	}
+	if counter != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 3}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 3}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 3, 10}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{3, 10, 3}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{10, 10, 3}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
 }
 `
 }
@@ -360,6 +653,65 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"10", "10", "3"}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"3", "3", "10"}, Optional{FixedPool: 2})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"3", "10", "3"}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"10", "10", "3"}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	expectedList = []<OUTPUT_TYPE>{true, true}
+	newList, _ = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"10", "10"}, Optional{RandomOrder: true})
+	
+	counter := 0
+	for i := 0; i < len(expectedList); i++ {
+		for j := 0; j < len(newList); j++ {
+			if expectedList[i] == newList[j] {
+				counter++
+				break
+			}
+		}
+	}
+	if counter != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"10", "10", "3"}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"10", "10", "3"}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"3", "3", "10"}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"3", "10", "3"}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{"10", "10", "3"}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
 }
 `
 }
@@ -390,6 +742,65 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, false, true}, Optional{FixedPool: 2})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, true, false}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	expectedList = []<OUTPUT_TYPE>{10, 10}
+	newList, _ = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true}, Optional{RandomOrder: true})
+	
+	counter := 0
+	for i := 0; i < len(expectedList); i++ {
+		for j := 0; j < len(newList); j++ {
+			if expectedList[i] == newList[j] {
+				counter++
+				break
+			}
+		}
+	}
+	if counter != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, false, true}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, true, false}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
 }
 `
 }
@@ -420,6 +831,65 @@ func TestPmap<FINPUT_TYPE><FOUTPUT_TYPE>Err(t *testing.T) {
 		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
 	}
 	reflect.TypeOf("Nandeshwar") // Leaving it here to make use of import reflect
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, false, true}, Optional{FixedPool: 2})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, true, false}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 1})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	expectedList = []<OUTPUT_TYPE>{"10", "10"}
+	newList, _ = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true}, Optional{RandomOrder: true})
+	
+	counter := 0
+	for i := 0; i < len(expectedList); i++ {
+		for j := 0; j < len(newList); j++ {
+			if expectedList[i] == newList[j] {
+				counter++
+				break
+			}
+		}
+	}
+	if counter != len(expectedList) {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE> failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, false, true}, Optional{FixedPool: 1, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{false, true, false}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
+
+	_, err = PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err(someLogic<FINPUT_TYPE><FOUTPUT_TYPE>Err, []<INPUT_TYPE>{true, true, false}, Optional{FixedPool: 2, RandomOrder: true})
+	if err == nil {
+		t.Errorf("PMap<FINPUT_TYPE><FOUTPUT_TYPE>Err failed")
+	}
 }
 `
 }

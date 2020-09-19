@@ -1,6 +1,7 @@
 package fp
 
 import (
+	"strconv"
 	"strings"
 	"testing"
 )
@@ -442,7 +443,7 @@ func BenchmarkMapStr(b *testing.B) {
 	b.N = iterations
 	list := make([]string, size)
 	for i := 0; i < size; i++ {
-		list[i] = string(i)
+		list[i] = strconv.Itoa(i)
 	}
 
 	partialPrependStr := func(str string) string { return prependStr(str, "Name:") }
