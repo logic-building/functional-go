@@ -45,7 +45,7 @@ func TestDedupe<FTYPE>(t *testing.T) {
 		t.Errorf("TestDedupe<FTYPE> failed. acutal_list=%v, expected_list=%v", r, expectedList)
 	}
 
-	expectedListPtr := []*<TYPE>{&vt, &vf}
+	expectedListPtr := []*<TYPE>{&vt, &vf, &vt, &vf}
 	givenListPtr := []*<TYPE>{&vt, &vt, &vf, &vf, &vf, &vt, &vf, &vf, &vf, &vf, &vf}
 	rPtr := Dedupe<FTYPE>Ptr(givenListPtr)
 	if !reflect.DeepEqual(rPtr, expectedListPtr) {

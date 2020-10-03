@@ -57,8 +57,8 @@ var fpCodeList = []fpCode{
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "dedupe.go",
 
-		testTemplate: basic.DedupeTest(),
-		//testTemplateBool:      basic.DropLastBoolTest(),
+		testTemplate:          basic.DedupeTest(),
+		testTemplateBool:      basic.DedupeBoolTest(),
 		generatedTestFileName: "dedupe_test.go",
 	},
 
@@ -466,13 +466,25 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "PMap",
+		codeTemplate:      basic.PMap(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "pmap.go",
+
+		// Not required because there is a manually generated file
+		testTemplate:          basic.PMap2Test(),
+		testTemplateBool:      basic.PMap2BoolTest(),
+		generatedTestFileName: "pmap2_test.go",
+	},
+
+	fpCode{
 		function:          "PMapPtr",
 		codeTemplate:      basic.PMapPtr(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "pmapPtr.go",
 
-		testTemplate:          basic.PMapPtrTest(),
-		testTemplateBool:      basic.PMapPtrBoolTest(),
+		testTemplate:          basic.PMapPtrTest() + basic.PMapPtr2Test(),
+		testTemplateBool:      basic.PMapPtrBoolTest() + basic.PMap2PtrBoolTest(),
 		generatedTestFileName: "pmapPtr_test.go",
 	},
 
@@ -482,8 +494,8 @@ var fpCodeList = []fpCode{
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "pmapPtrErr.go",
 
-		testTemplate:          basic.PMapPtrErrTest(),
-		testTemplateBool:      basic.PMapPtrErrBoolTest(),
+		testTemplate:          basic.PMapPtrErrTest() + basic.PMapPtr2ErrTest(),
+		testTemplateBool:      basic.PMapPtrErrBoolTest() + basic.PMapPtr2ErrBoolTest(),
 		generatedTestFileName: "pmapPtrErr_test.go",
 	},
 
@@ -493,8 +505,8 @@ var fpCodeList = []fpCode{
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "pmapErr.go",
 
-		testTemplate:          basic.PMapErrTest(),
-		testTemplateBool:      basic.PMapErrBoolTest(),
+		testTemplate:          basic.PMapErrTest() + basic.PMap2ErrTest(),
+		testTemplateBool:      basic.PMapErrBoolTest() + basic.PMap2ErrBoolTest(),
 		generatedTestFileName: "pmapErr_test.go",
 	},
 
@@ -1228,6 +1240,22 @@ func modifyTestDataToStr(code string) string {
 	code = strings.Replace(code, "var v3 string = 3", "var v3 string = \"3\"", -1)
 	code = strings.Replace(code, "var v4 string = 4", "var v4 string = \"4\"", -1)
 	code = strings.Replace(code, "var v5 string = 5", "var v5 string = \"5\"", -1)
+
+	code = strings.Replace(code, "string(0)", "0", -1)
+	code = strings.Replace(code, "string = 0", "string = \"0\"", -1)
+	code = strings.Replace(code, `partialAddStr := func(num string) (string, error) {
+		r, err := addStrErr(v5, num)
+		if err != nil {
+			return 0, err
+		}
+		return r, nil
+	}`, `partialAddStr := func(num string) (string, error) {
+		r, err := addStrErr(v5, num)
+		if err != nil {
+			return "0", err
+		}
+		return r, nil
+	}`, -1)
 	return code
 }
 
@@ -1249,6 +1277,21 @@ func modifyTestDataToStr2(code string) string {
 	code = strings.Replace(code, "var v30 string = 30", "var v30 string = \"30\"", -1)
 	code = strings.Replace(code, "var v40 string = 40", "var v40 string = \"40\"", -1)
 	code = strings.Replace(code, "var v80 string = 80", "var v80 string = \"80\"", -1)
+	code = strings.Replace(code, "string(0)", "0", -1)
+	code = strings.Replace(code, "string = 0", "string = \"0\"", -1)
+	code = strings.Replace(code, `partialAddStr := func(num string) (string, error) {
+		r, err := addStrErr(v5, num)
+		if err != nil {
+			return 0, err
+		}
+		return r, nil
+	}`, `partialAddStr := func(num string) (string, error) {
+		r, err := addStrErr(v5, num)
+		if err != nil {
+			return "0", err
+		}
+		return r, nil
+	}`, -1)
 
 	// Change one of the test for MapPtrStr
 	s1 := `func TestMapStrPtr(t *testing.T) {
@@ -1420,97 +1463,8 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 
 	code = basic.ReplaceActivityEveryPtrTest(code)
 
-	s1 = `func TestPmapStrPtr(t *testing.T) {
-	// Test : square the list
-	var v1 string = "1"
-	var v2 string = "2"
-	var v3 string = "3"
-	var v4 string = "4"
-	var v6 string = "6"
-	var v7 string = "7"
-	var v8 string = "8"
-	var v9 string = "9"
+	code = basic.ReplaceActivityMapPtr(code)
 
-	expectedSquareList := []*string{&v1, &v4, &v9}
-	squareList := PMapStrPtr(squareStrPtr, []*string{&v1, &v2, &v3})
-
-	if *squareList[0] != *expectedSquareList[0] || *squareList[1] != *expectedSquareList[1] || *squareList[2] != *expectedSquareList[2] {
-		t.Errorf("PMapStrPtr failed. expected=%v, actual=%v", expectedSquareList, squareList)
-	}
-
-	// Test: add 5 to each item in the list
-	expectedSumList := []*string{&v6, &v7, &v8}
-	partialAddStrPtr := func(num *string) *string {
-		r := 5 + *num
-		return &r
-	}
-	sumList := PMapStrPtr(partialAddStrPtr, []*string{&v1, &v2, &v3})
-	if *sumList[0] != *expectedSumList[0] || *sumList[1] != *expectedSumList[1] || *sumList[2] != *expectedSumList[2] {
-		t.Errorf("PMapStrPtr failed.expected=%v, actual=%v", expectedSumList, sumList)
-	}
-
-	if len(PMapStrPtr(nil, nil)) > 0 {
-		t.Errorf("PMapStrPtr failed.expected=%v, actual=%v", expectedSquareList, sumList)
-	}
-
-	if len(PMapStrPtr(nil, []*string{})) > 0 {
-		t.Errorf("PMapStrPtr failed.expected=%v, actual=%v", expectedSquareList, sumList)
-		t.Errorf(reflect.String.String())
-	}
-}
-
-func squareStrPtr(num *string) *string {
-	r := *num * *num
-	return &r
-}`
-
-	s2 = `func TestPmapStrPtr(t *testing.T) {
-	// Test : square the list
-	var v1 string = "1"
-	var v2 string = "2"
-	var v3 string = "3"
-	var v6 string = "51"
-	var v7 string = "52"
-	var v8 string = "53"
-
-	var v1SquareExpected string = "11"
-	var v2SquareExpected string = "22"
-	var v3SquareExpected string = "33"
-
-	expectedSquareList := []*string{&v1SquareExpected, &v2SquareExpected, &v3SquareExpected}
-	squareList := PMapStrPtr(squareStrPtr, []*string{&v1, &v2, &v3})
-
-	if *squareList[0] != *expectedSquareList[0] || *squareList[1] != *expectedSquareList[1] || *squareList[2] != *expectedSquareList[2] {
-		t.Errorf("PMapStrPtr failed. expected=%v, actual=%v", expectedSquareList, squareList)
-	}
-
-	// Test: add 5 to each item in the list
-	expectedSumList := []*string{&v6, &v7, &v8}
-	partialAddStrPtr := func(num *string) *string {
-		r := "5" + *num
-		return &r
-	}
-	sumList := PMapStrPtr(partialAddStrPtr, []*string{&v1, &v2, &v3})
-	if *sumList[0] != *expectedSumList[0] || *sumList[1] != *expectedSumList[1] || *sumList[2] != *expectedSumList[2] {
-		t.Errorf("PMapStrPtr failed.expected=%v, actual=%v", expectedSumList, sumList)
-	}
-
-	if len(PMapStrPtr(nil, nil)) > 0 {
-		t.Errorf("PMapStrPtr failed.expected=%v, actual=%v", expectedSquareList, sumList)
-	}
-
-	if len(PMapStrPtr(nil, []*string{})) > 0 {
-		t.Errorf("PMapStrPtr failed.expected=%v, actual=%v", expectedSquareList, sumList)
-		t.Errorf(reflect.String.String())
-	}
-}
-
-func squareStrPtr(num *string) *string {
-	r := *num + *num
-	return &r
-}`
-
-	code = strings.Replace(code, s1, s2, -1)
 	s1 = `func TestReduceStrPtr(t *testing.T) {
 	var v1 string = "1"
 	var v2 string = "2"
@@ -1639,6 +1593,13 @@ func squareStrPtr(num *string) *string {
 	code = basic.ReplaceActivityMapIOPtrErr(code)
 
 	code = basic.ReplaceActivityTakeWhilePtr(code)
+
+	code = basic.ReplaceActivityPMapPtr2Test(code)
+	code = basic.ReplaceActivityPMap2Test(code)
+
+	code = basic.ReplaceActivityPMapPtr2ErrTest(code)
+
+	code = basic.ReplaceActivityPMap2ErrTest(code)
 
 	return code
 }

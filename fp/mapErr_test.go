@@ -530,7 +530,7 @@ func TestMapStrErr(t *testing.T) {
 	partialAddStr := func(num string) (string, error) {
 		r, err := addStrErr(v5, num)
 		if err != nil {
-			return string(0), err
+			return "0", err
 		}
 		return r, nil
 	}

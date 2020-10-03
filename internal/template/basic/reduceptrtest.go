@@ -394,7 +394,7 @@ func TestReduceIntErr(t *testing.T) {`
 
 func plusStrErr(num1, num2 string) (string, error) {
 	if num1 == 0 || num2 == 0 {
-		return string(0), errors.New("0 in not valid number for this test")
+		return 0, errors.New("0 in not valid number for this test")
 	}
 	c := num1 + num2
 	return c, nil

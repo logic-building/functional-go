@@ -2,6 +2,7 @@ package set
 
 import (
 	"github.com/logic-building/functional-go/fp"
+	"strconv"
 	"sync"
 	"testing"
 )
@@ -178,7 +179,7 @@ func TestSetStrSyncMultipleGoRoutine(t *testing.T) {
 	go func(mySet *StrSync, wg *sync.WaitGroup) {
 		defer wg.Done()
 		for i := 0; i < 10; i++ {
-			mySet.Add(string(i))
+			mySet.Add(strconv.Itoa(i))
 		}
 	}(mySet, &wg)
 
@@ -186,7 +187,7 @@ func TestSetStrSyncMultipleGoRoutine(t *testing.T) {
 		defer wg.Done()
 		for i := 0; i < 10; i++ {
 			for {
-				if mySet.Remove(string(i)) {
+				if mySet.Remove(strconv.Itoa(i)) {
 					break
 				}
 			}
