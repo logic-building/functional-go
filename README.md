@@ -21,7 +21,7 @@ go install github.com/logic-building/functional-go/gofp
 ```
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.13.0"
+version = "8.13.1"
 ```
 
 ### Quick Start
@@ -280,7 +280,13 @@ Options on go:generate :
 26. Neg<Type>P         : Returns true if num is less than zero, else false
 27. Odd<Type>P         : Returns true if n is odd
 28. PMap<Type>         : Similar to Map<Type> with additional feature - function(1st) argument runs concurrently for each item in the list(2nd argument)
+                        EX. PMapInt(squareInt, []int{v1, v2, v3})
+                            PMapInt(squareInt, []int{v1, v2, v3}, Optional{FixedPool: 2, RandomOrder: true})
+                        
 29. PMap<InputType><OutputType>: Similar to Map<InputType><OutputType> with additional feature - function(1st) argument runs concurrently for each item in the list(2nd argument)
+                       EX. PMapIntInt64(plusOneIntInt64, []int{1, 2, 3}) // input: list(int), returns: list(int64) 
+                           PMapIntInt64(plusOneIntInt64, []int{1, 2, 3}, Optional{FixedPool: 2, RandomOrder: true})
+                           
 30. Pos<Type>P         : Returns true if num is greater than zero, else false
 31. Range<Type>        : Returns a new list of range between lower and upper value. Optional argument(3rd) will increment value by given number
 32. Reduce<Type>       : Reduces a list to a single value by combining elements via a supplied function
@@ -301,6 +307,11 @@ Options on go:generate :
 ```
 
 ### Functions in generated code for struct (user defined type)
+```
+Note: 
+  Comparison logic for struct is based on == operator as long as the members of struct are of simple types.
+  But reflect.DeepEqual is used for struct comparison if the struct contains any slices, maps. 
+```
 ```
 1. Difference : Returns a set that is the first set without elements of the remaining sets
 2. Difference<struct>By<Field> 
@@ -959,10 +970,14 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ### Test Coverage
 ```
 Tests Passed : 1217
-ok  	functional-go/fp	0.015s	coverage: 100.0% of statements
+ok  	functional-go/fp	0.015s	coverage: 99.7% of statements
 ok  	functional-go/set	0.031s	coverage: 100.0% of statements
 ```
-
+### Test Counts
+```
+go test ./... -v | grep -c RUN
+4762
+```
 ### BenchMark test:
 ```
   Model Identifier:	MacBookPro11,5
@@ -986,4 +1001,16 @@ BenchmarkMapInt64_PassedMethod_2_Arg-8   	 1000000	      3622 ns/op
 BenchmarkMapStr-8                        	 1000000	     49438 ns/op
 PASS
 ok  	functional-go/fp	67.567s
+```
+
+### Benchmark test for PMap with fixed order and random order
+```
+go test -benchtime=200x -bench=BenchmarkPMapInt
+goos: darwin
+goarch: amd64
+pkg: github.com/logic-building/functional-go/fp
+BenchmarkPMapInt-8                           200             16224 ns/op
+BenchmarkPMapIntRandomOrder-8                200             10091 ns/op
+PASS
+ok      github.com/logic-building/functional-go/fp      4.549s
 ```
