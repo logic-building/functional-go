@@ -1421,6 +1421,35 @@ func TakeTeacherPtr(n int, list []*Teacher) []*Teacher {
 	return newList
 }
 
+type teacherSlice []Teacher
+type teacherFunctor func(Teacher) Teacher
+
+// MakeTeacherSlice - creates slice for the functional method such as map, filter
+func MakeTeacherSlice(values ...Teacher) teacherSlice {
+	newSlice := teacherSlice(values)
+	return newSlice
+}
+
+func mapCoreteacher(f teacherFunctor, slice teacherSlice) teacherSlice {
+	newSlice := make(teacherSlice, len(slice))
+	for i, v := range slice {
+		newSlice[i] = f(v)
+	}
+	return newSlice
+}
+
+// Map - applies the function(1st argument) on each item of the list and returns new list
+func (slice teacherSlice) Map(functors ...teacherFunctor) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		tmpSlice = mapCoreteacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 // DistinctTeacherP returns true if no two of the arguments are =
 func DistinctTeacherP(list []Teacher) bool {
 	if len(list) == 0 {

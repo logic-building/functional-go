@@ -1421,6 +1421,35 @@ func TakePtr(n int, list []*Employee) []*Employee {
 	return newList
 }
 
+type employeeSlice []Employee
+type employeeFunctor func(Employee) Employee
+
+// MakeEmployeeSlice - creates slice for the functional method such as map, filter
+func MakeEmployeeSlice(values ...Employee) employeeSlice {
+	newSlice := employeeSlice(values)
+	return newSlice
+}
+
+func mapCoreemployee(f employeeFunctor, slice employeeSlice) employeeSlice {
+	newSlice := make(employeeSlice, len(slice))
+	for i, v := range slice {
+		newSlice[i] = f(v)
+	}
+	return newSlice
+}
+
+// Map - applies the function(1st argument) on each item of the list and returns new list
+func (slice employeeSlice) Map(functors ...employeeFunctor) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		tmpSlice = mapCoreemployee(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 // DistinctP returns true if no two of the arguments are =
 func DistinctP(list []Employee) bool {
 	if len(list) == 0 {

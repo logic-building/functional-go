@@ -68,6 +68,7 @@ import (
 	"github.com/logic-building/functional-go/fp"
 	template2 "github.com/logic-building/functional-go/internal/template"
 	"github.com/logic-building/functional-go/internal/template/basic"
+	template3 "github.com/logic-building/functional-go/internal/template/methodchain"
 )
 
 var (
@@ -268,6 +269,16 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 		// This template is used to use same function templated used for fp code for basic types
 		r2 := strings.NewReplacer("<PACKAGE>", pkg, "<TYPE>", t, "<FTYPE>", removeFirstPartOfDot(conditionalType))
 
+		firstLetterLowerCase := func(s string) string {
+			if len(s) > 0 {
+				return strings.ToLower(s[0:1]) + s[1:]
+			}
+			return s
+		}
+
+		// template for method chain
+		r3 := strings.NewReplacer("<PACKAGE>", pkg, "<TYPE>", t, "<FTYPE>", removeFirstPartOfDot(t), "<NEWTYPE>", firstLetterLowerCase(removeFirstPartOfDot(t)))
+
 		template = r.Replace(template)
 
 		// it collects info of members of struct other than basic types
@@ -311,6 +322,9 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 
 			template += basic.FilterErr()
 			template = r2.Replace(template)
+
+			template += template3.MethodChain()
+			template = r3.Replace(template)
 
 			if fp.ExistsStrIgnoreCase("Remove", onlyList) {
 				template += template2.Remove()
@@ -801,6 +815,9 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 
 			template += basic.TakePtr()
 			template = r2.Replace(template)
+
+			template += template3.MethodChain()
+			template = r3.Replace(template)
 
 			// if struct's has member of type other than basic types such as list then use template which uses reflect
 			if len(complextFieldsInStructSuchAsSlice) > 1 {

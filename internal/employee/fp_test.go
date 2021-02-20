@@ -457,3 +457,22 @@ func TestDifference(t *testing.T) {
 		t.Errorf("Error in teacherDifferencePtr")
 	}
 }
+
+func TestMethodChainWithMap(t *testing.T) {
+	now := time.Now()
+	employees := []Employee{{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: now}}
+
+	salaryIncrement := func(emp Employee) Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+	employeesWithIncrementedSalary := MakeEmployeeSlice(employees...).
+		Map(salaryIncrement).
+		Map(salaryIncrement)
+	if employees[0].Salary+2000 != employeesWithIncrementedSalary[0].Salary {
+		t.Errorf("error in method chain with Map. actual employee=%v", employees)
+	}
+}
