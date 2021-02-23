@@ -365,3 +365,22 @@ func TestFilterStr(t *testing.T) {
 func isStringLengthLessThan10(str string) bool {
 	return len(str) < 10
 }
+
+func TestFilterBool(t *testing.T) {
+	var vt bool = true
+
+	expectedSumList := []bool{vt}
+
+	newList := FilterBool(trueBool, []bool{vt})
+	if newList[0] != expectedSumList[0] {
+		t.Errorf("FilterBoolPtr failed")
+	}
+
+	if len(FilterBoolPtr(nil, nil)) > 0 {
+		t.Errorf("MapBoolPtr failed.")
+	}
+}
+
+func trueBool(num1 bool) bool {
+	return true
+}

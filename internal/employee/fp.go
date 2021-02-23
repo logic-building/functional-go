@@ -1422,7 +1422,12 @@ func TakePtr(n int, list []*Employee) []*Employee {
 }
 
 type employeeSlice []Employee
-type employeeFunctor func(Employee) Employee
+type employeeFunctorForMap func(Employee) Employee
+type employeeFunctorForFilter func(Employee) bool
+
+type employeeSlicePtr []*Employee
+type employeeFunctorForMapPtr func(*Employee) *Employee
+type employeeFunctorForFilterPtr func(*Employee) bool
 
 // MakeEmployeeSlice - creates slice for the functional method such as map, filter
 func MakeEmployeeSlice(values ...Employee) employeeSlice {
@@ -1430,21 +1435,67 @@ func MakeEmployeeSlice(values ...Employee) employeeSlice {
 	return newSlice
 }
 
-func mapCoreemployee(f employeeFunctor, slice employeeSlice) employeeSlice {
-	newSlice := make(employeeSlice, len(slice))
-	for i, v := range slice {
-		newSlice[i] = f(v)
-	}
-	return newSlice
-}
-
 // Map - applies the function(1st argument) on each item of the list and returns new list
-func (slice employeeSlice) Map(functors ...employeeFunctor) employeeSlice {
+func (slice employeeSlice) Map(functors ...employeeFunctorForMap) employeeSlice {
 
 	tmpSlice := slice
 	
 	for _, f := range functors {
-		tmpSlice = mapCoreemployee(f, tmpSlice)
+		if f == nil {
+			continue
+		}
+		tmpSlice = Map(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// MakeEmployeeSlicePtr - creates slice for the functional method such as map, filter
+func MakeEmployeeSlicePtr(values ...*Employee) employeeSlicePtr {
+	newSlice := employeeSlicePtr(values)
+	return newSlice
+}
+
+// MapPtr - applies the function(1st argument) on each item of the list and returns new list
+func (slice employeeSlicePtr) MapPtr(functors ...employeeFunctorForMapPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = MapPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Filter - 
+func (slice employeeSlice) Filter(functors ...employeeFunctorForFilter) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Filter(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// FilterPtr - 
+func (slice employeeSlicePtr) FilterPtr(functors ...employeeFunctorForFilterPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = FilterPtr(f, tmpSlice)
 	}
 
 	return tmpSlice

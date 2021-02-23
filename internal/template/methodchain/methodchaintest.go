@@ -18,6 +18,60 @@ func TestMap<FTYPE>MethodChain(t *testing.T) {
 		t.Errorf(reflect.String.String())
 	}
 }
+
+func TestMap<FTYPE>MethodChainPtr(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+	var v4 <TYPE> = 4
+	var v9 <TYPE> = 9
+	expectedSquareList := []*<TYPE>{&v1, &v4, &v9}
+	squareList := Make<FTYPE>SlicePtr([]*<TYPE>{&v1, &v2, &v3}...).MapPtr(square<FTYPE>Ptr)
+
+	if *squareList[0] != *expectedSquareList[0] || *squareList[1] != *expectedSquareList[1] || *squareList[2] != *expectedSquareList[2] {
+		t.Errorf("Map<FTYPE>PtrMthodChain failed")
+	}
+
+	if len(Make<FTYPE>SlicePtr().MapPtr(square<FTYPE>Ptr)) > 0 {
+		t.Errorf("Map<FTYPE>Ptr failed.")
+	}
+}
+
+func TestFilter<FTYPE>MethodChain(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	greaterThan1<FTYPE>MethodChain := func(num <TYPE>) bool {
+		return num > 1
+	}
+
+	// Test : even number in the list
+	expectedFilteredList := []<TYPE>{v2, v3}
+	filteredList := Make<FTYPE>Slice([]<TYPE>{v1, v2, v3}...).Filter(greaterThan1<FTYPE>MethodChain)
+
+	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
+		t.Errorf("Filter<FTYPE> failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+func TestFilter<FTYPE>PtrMethodChain(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	greaterThan1<FTYPE>MethodChain := func(num *<TYPE>) bool {
+		return *num > 1
+	}
+
+	// Test : even number in the list
+	expectedFilteredList := []*<TYPE>{&v2, &v3}
+	filteredList := Make<FTYPE>SlicePtr([]*<TYPE>{&v1, &v2, &v3}...).FilterPtr(greaterThan1<FTYPE>MethodChain)
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
+		t.Errorf("Filter<FTYPE>Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
 `
 }
 
@@ -43,6 +97,51 @@ func inverseBool(v bool) bool {
 		return false
 	} 
 	return true
+}
+
+func TestMapPtrMethodChainBool<FTYPE>MethodChain(t *testing.T) {
+	tr := true
+	f := false
+	expectedSquareList := []*<TYPE>{&f, &tr, &f}
+	squareList := Make<FTYPE>SlicePtr([]*<TYPE>{&tr, &f, &tr}...).MapPtr(inverseBoolPtr)
+
+	if *squareList[0] != *expectedSquareList[0] || *squareList[1] != *expectedSquareList[1] || *squareList[2] != *expectedSquareList[2] {
+		t.Errorf("Map<FTYPE>PtrMthodChain failed")
+	}
+
+	if len(Make<FTYPE>SlicePtr().MapPtr(inverseBoolPtr)) > 0 {
+		t.Errorf("Map<FTYPE>PtrFilterChain failed.")
+	}
+}
+
+func TestFilterBoolMethodChain(t *testing.T) {
+	var vt bool = true
+
+	expectedSumList := []bool{vt}
+
+	newList := Make<FTYPE>Slice([]bool{vt}...).Filter(trueBool)
+	if newList[0] != expectedSumList[0] {
+		t.Errorf("FilterBoolPtr failed")
+	}
+
+	if len(FilterBoolPtr(nil, nil)) > 0 {
+		t.Errorf("MapBoolPtr failed.")
+	}
+}
+
+func TestFilterBoolPtrMethodChain(t *testing.T) {
+	var vt bool = true
+
+	expectedSumList := []*bool{&vt}
+
+	newList := Make<FTYPE>SlicePtr([]*bool{&vt}...).FilterPtr(trueBoolPtr)
+	if *newList[0] != *expectedSumList[0] {
+		t.Errorf("FilterBoolPtr failed")
+	}
+
+	if len(Make<FTYPE>SlicePtr(&vt).FilterPtr(nil)) == 0 {
+		t.Errorf("MapBoolPtr failed.")
+	}
 }
 `
 }
@@ -79,6 +178,90 @@ func ReplaceActivityMethodChainMap(code string) string {
 func squareStr(s string) string {
 	return s+s
 }`
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `greaterThan1StrMethodChain := func(num string) bool {
+		return num > 1
+	}`
+	t2 = `greaterThan1StrMethodChain := func(num string) bool {
+		return num > "1"
+	}`
+
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `func TestMapStrMethodChainPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v9 string = "9"
+	expectedSquareList := []*string{&v1, &v4, &v9}
+	squareList := MakeStrSlicePtr([]*string{&v1, &v2, &v3}...).MapPtr(squareStrPtr)
+
+	if *squareList[0] != *expectedSquareList[0] || *squareList[1] != *expectedSquareList[1] || *squareList[2] != *expectedSquareList[2] {
+		t.Errorf("MapStrPtrMthodChain failed")
+	}
+
+	if len(MakeStrSlicePtr().MapPtr(squareStrPtr)) > 0 {
+		t.Errorf("MapStrPtr failed.")
+	}
+}`
+	t2 = `func TestMapStrMethodChainPtr(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+	var v11 string = "11"
+	var v22 string = "22"
+	var v33 string = "33"
+	expectedSquareList := []*string{&v11, &v22, &v33}
+	squareList := MakeStrSlicePtr([]*string{&v1, &v2, &v3}...).MapPtr(squareStrPtr)
+
+	if *squareList[0] != *expectedSquareList[0] || *squareList[1] != *expectedSquareList[1] || *squareList[2] != *expectedSquareList[2] {
+		t.Errorf("MapStrPtrMthodChain failed")
+	}
+
+	if len(MakeStrSlicePtr().MapPtr(squareStrPtr)) > 0 {
+		t.Errorf("MapStrPtr failed.")
+	}
+}`
+
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `func TestFilterStrPtrMethodChain(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+
+	greaterThan1StrMethodChain := func(num *string) bool {
+		return *num > 1
+	}
+
+	// Test : even number in the list
+	expectedFilteredList := []*string{&v2, &v3}
+	filteredList := MakeStrSlicePtr([]*string{&v1, &v2, &v3}...).FilterPtr(greaterThan1StrMethodChain)
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
+		t.Errorf("FilterStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}`
+	t2 = `func TestFilterStrPtrMethodChain(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+
+	greaterThan1StrMethodChain := func(num *string) bool {
+		return *num > "1"
+	}
+
+	// Test : even number in the list
+	expectedFilteredList := []*string{&v2, &v3}
+	filteredList := MakeStrSlicePtr([]*string{&v1, &v2, &v3}...).FilterPtr(greaterThan1StrMethodChain)
+
+	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
+		t.Errorf("FilterStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}`
+
 	code = strings.ReplaceAll(code, t1, t2)
 	return code
 }

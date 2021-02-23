@@ -277,7 +277,12 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 		}
 
 		// template for method chain
-		r3 := strings.NewReplacer("<PACKAGE>", pkg, "<TYPE>", t, "<FTYPE>", removeFirstPartOfDot(t), "<NEWTYPE>", firstLetterLowerCase(removeFirstPartOfDot(t)))
+		r3 := strings.NewReplacer(
+			"<PACKAGE>", pkg,
+			"<TYPE>", t,
+			"<FTYPE>", removeFirstPartOfDot(t),
+			"<CONDITIONAL_TYPE>", removeFirstPartOfDot(conditionalType),
+			"<NEWTYPE>", firstLetterLowerCase(removeFirstPartOfDot(t)))
 
 		template = r.Replace(template)
 
@@ -323,7 +328,7 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template += basic.FilterErr()
 			template = r2.Replace(template)
 
-			template += template3.MethodChain()
+			template += template3.MethodChainStruct()
 			template = r3.Replace(template)
 
 			if fp.ExistsStrIgnoreCase("Remove", onlyList) {
@@ -816,7 +821,7 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template += basic.TakePtr()
 			template = r2.Replace(template)
 
-			template += template3.MethodChain()
+			template += template3.MethodChainStruct()
 			template = r3.Replace(template)
 
 			// if struct's has member of type other than basic types such as list then use template which uses reflect

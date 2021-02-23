@@ -43,7 +43,7 @@ type fpCode struct {
 var fpCodeList = []fpCode{
 	fpCode{
 		function:          "methodchain",
-		codeTemplate:      methodchain.MethodChain(),
+		codeTemplate:      methodchain.MethodChainBasic(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
 		generatedFileName: "methodchain.go",
 

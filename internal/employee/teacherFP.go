@@ -1422,7 +1422,12 @@ func TakeTeacherPtr(n int, list []*Teacher) []*Teacher {
 }
 
 type teacherSlice []Teacher
-type teacherFunctor func(Teacher) Teacher
+type teacherFunctorForMap func(Teacher) Teacher
+type teacherFunctorForFilter func(Teacher) bool
+
+type teacherSlicePtr []*Teacher
+type teacherFunctorForMapPtr func(*Teacher) *Teacher
+type teacherFunctorForFilterPtr func(*Teacher) bool
 
 // MakeTeacherSlice - creates slice for the functional method such as map, filter
 func MakeTeacherSlice(values ...Teacher) teacherSlice {
@@ -1430,21 +1435,67 @@ func MakeTeacherSlice(values ...Teacher) teacherSlice {
 	return newSlice
 }
 
-func mapCoreteacher(f teacherFunctor, slice teacherSlice) teacherSlice {
-	newSlice := make(teacherSlice, len(slice))
-	for i, v := range slice {
-		newSlice[i] = f(v)
-	}
-	return newSlice
-}
-
 // Map - applies the function(1st argument) on each item of the list and returns new list
-func (slice teacherSlice) Map(functors ...teacherFunctor) teacherSlice {
+func (slice teacherSlice) Map(functors ...teacherFunctorForMap) teacherSlice {
 
 	tmpSlice := slice
 	
 	for _, f := range functors {
-		tmpSlice = mapCoreteacher(f, tmpSlice)
+		if f == nil {
+			continue
+		}
+		tmpSlice = MapTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// MakeTeacherSlicePtr - creates slice for the functional method such as map, filter
+func MakeTeacherSlicePtr(values ...*Teacher) teacherSlicePtr {
+	newSlice := teacherSlicePtr(values)
+	return newSlice
+}
+
+// MapPtr - applies the function(1st argument) on each item of the list and returns new list
+func (slice teacherSlicePtr) MapPtr(functors ...teacherFunctorForMapPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = MapTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Filter - 
+func (slice teacherSlice) Filter(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = FilterTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// FilterPtr - 
+func (slice teacherSlicePtr) FilterPtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = FilterTeacherPtr(f, tmpSlice)
 	}
 
 	return tmpSlice

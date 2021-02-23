@@ -460,7 +460,8 @@ func TestDifference(t *testing.T) {
 
 func TestMethodChainWithMap(t *testing.T) {
 	now := time.Now()
-	employees := []Employee{{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
+	employees := []Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
 		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
 		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
 		{Id: 3, Name: "Radha", Salary: 900, CreationDate: now}}
@@ -469,10 +470,38 @@ func TestMethodChainWithMap(t *testing.T) {
 		emp.Salary = emp.Salary + 1000
 		return emp
 	}
+
+	salaryGreaterThan800 := func(emp Employee) bool {
+		return emp.Salary > 800
+	}
 	employeesWithIncrementedSalary := MakeEmployeeSlice(employees...).
-		Map(salaryIncrement).
+		Filter(salaryGreaterThan800).
 		Map(salaryIncrement)
-	if employees[0].Salary+2000 != employeesWithIncrementedSalary[0].Salary {
-		t.Errorf("error in method chain with Map. actual employee=%v", employees)
+	if employees[3].Salary+1000 != employeesWithIncrementedSalary[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+}
+
+func TestMethodChainWithMapPtr(t *testing.T) {
+	now := time.Now()
+	employees := []*Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: now}}
+
+	salaryIncrement := func(emp *Employee) *Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+
+	salaryGreaterThan800 := func(emp *Employee) bool {
+		return emp.Salary > 800
+	}
+	employeesWithIncrementedSalary := MakeEmployeeSlicePtr(employees...).
+		FilterPtr(salaryGreaterThan800).
+		MapPtr(salaryIncrement)
+	if 1900 != employeesWithIncrementedSalary[0].Salary {
+		t.Errorf("error in method chain with Map %v %v", employees[0].Salary, employeesWithIncrementedSalary[0].Salary)
 	}
 }
