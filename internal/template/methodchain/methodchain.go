@@ -53,7 +53,7 @@ func (slice <NEWTYPE>SlicePtr) MapPtr(functors ...<NEWTYPE>FunctorForMapPtr) <NE
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice <NEWTYPE>Slice) Filter(functors ...<NEWTYPE>FunctorForFilter) <NEWTYPE>Slice {
 
 	tmpSlice := slice
@@ -68,7 +68,7 @@ func (slice <NEWTYPE>Slice) Filter(functors ...<NEWTYPE>FunctorForFilter) <NEWTY
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice <NEWTYPE>SlicePtr) FilterPtr(functors ...<NEWTYPE>FunctorForFilterPtr) <NEWTYPE>SlicePtr {
 
 	tmpSlice := slice
@@ -78,6 +78,36 @@ func (slice <NEWTYPE>SlicePtr) FilterPtr(functors ...<NEWTYPE>FunctorForFilterPt
 			continue
 		}
 		tmpSlice = Filter<FTYPE>Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice <NEWTYPE>Slice) Remove(functors ...<NEWTYPE>FunctorForFilter) <NEWTYPE>Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Remove<FTYPE>(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice <NEWTYPE>SlicePtr) RemovePtr(functors ...<NEWTYPE>FunctorForFilterPtr) <NEWTYPE>SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Remove<FTYPE>Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -163,6 +193,46 @@ func (slice <NEWTYPE>SlicePtr) FilterPtr(functors ...<NEWTYPE>FunctorForFilterPt
 			continue
 		}
 		tmpSlice = Filter<CONDITIONAL_TYPE>Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+`
+}
+
+// MethodChainStructForRemove is template to generate functional code for different combination of data type
+func MethodChainStructForRemove() string {
+	return `
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice <NEWTYPE>Slice) Remove(functors ...<NEWTYPE>FunctorForFilter) <NEWTYPE>Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Remove<CONDITIONAL_TYPE>(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+`
+}
+
+// MethodChainStructForRemove is template to generate functional code for different combination of data type
+func MethodChainStructForRemovePtr() string {
+	return `
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice <NEWTYPE>SlicePtr) RemovePtr(functors ...<NEWTYPE>FunctorForFilterPtr) <NEWTYPE>SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Remove<CONDITIONAL_TYPE>Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice

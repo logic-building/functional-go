@@ -1501,6 +1501,36 @@ func (slice teacherSlicePtr) FilterPtr(functors ...teacherFunctorForFilterPtr) t
 	return tmpSlice
 }
 
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice teacherSlice) Remove(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice teacherSlicePtr) RemovePtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 // DistinctTeacherP returns true if no two of the arguments are =
 func DistinctTeacherP(list []Teacher) bool {
 	if len(list) == 0 {

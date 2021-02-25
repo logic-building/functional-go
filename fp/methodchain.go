@@ -50,7 +50,7 @@ func (slice intSlicePtr) MapPtr(functors ...intFunctorForMapPtr) intSlicePtr {
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice intSlice) Filter(functors ...intFunctorForFilter) intSlice {
 
 	tmpSlice := slice
@@ -65,7 +65,7 @@ func (slice intSlice) Filter(functors ...intFunctorForFilter) intSlice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice intSlicePtr) FilterPtr(functors ...intFunctorForFilterPtr) intSlicePtr {
 
 	tmpSlice := slice
@@ -75,6 +75,36 @@ func (slice intSlicePtr) FilterPtr(functors ...intFunctorForFilterPtr) intSliceP
 			continue
 		}
 		tmpSlice = FilterIntPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice intSlice) Remove(functors ...intFunctorForFilter) intSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice intSlicePtr) RemovePtr(functors ...intFunctorForFilterPtr) intSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveIntPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -130,7 +160,7 @@ func (slice int64SlicePtr) MapPtr(functors ...int64FunctorForMapPtr) int64SliceP
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice int64Slice) Filter(functors ...int64FunctorForFilter) int64Slice {
 
 	tmpSlice := slice
@@ -145,7 +175,7 @@ func (slice int64Slice) Filter(functors ...int64FunctorForFilter) int64Slice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice int64SlicePtr) FilterPtr(functors ...int64FunctorForFilterPtr) int64SlicePtr {
 
 	tmpSlice := slice
@@ -155,6 +185,36 @@ func (slice int64SlicePtr) FilterPtr(functors ...int64FunctorForFilterPtr) int64
 			continue
 		}
 		tmpSlice = FilterInt64Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice int64Slice) Remove(functors ...int64FunctorForFilter) int64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice int64SlicePtr) RemovePtr(functors ...int64FunctorForFilterPtr) int64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt64Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -210,7 +270,7 @@ func (slice int32SlicePtr) MapPtr(functors ...int32FunctorForMapPtr) int32SliceP
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice int32Slice) Filter(functors ...int32FunctorForFilter) int32Slice {
 
 	tmpSlice := slice
@@ -225,7 +285,7 @@ func (slice int32Slice) Filter(functors ...int32FunctorForFilter) int32Slice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice int32SlicePtr) FilterPtr(functors ...int32FunctorForFilterPtr) int32SlicePtr {
 
 	tmpSlice := slice
@@ -235,6 +295,36 @@ func (slice int32SlicePtr) FilterPtr(functors ...int32FunctorForFilterPtr) int32
 			continue
 		}
 		tmpSlice = FilterInt32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice int32Slice) Remove(functors ...int32FunctorForFilter) int32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice int32SlicePtr) RemovePtr(functors ...int32FunctorForFilterPtr) int32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt32Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -290,7 +380,7 @@ func (slice int16SlicePtr) MapPtr(functors ...int16FunctorForMapPtr) int16SliceP
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice int16Slice) Filter(functors ...int16FunctorForFilter) int16Slice {
 
 	tmpSlice := slice
@@ -305,7 +395,7 @@ func (slice int16Slice) Filter(functors ...int16FunctorForFilter) int16Slice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice int16SlicePtr) FilterPtr(functors ...int16FunctorForFilterPtr) int16SlicePtr {
 
 	tmpSlice := slice
@@ -315,6 +405,36 @@ func (slice int16SlicePtr) FilterPtr(functors ...int16FunctorForFilterPtr) int16
 			continue
 		}
 		tmpSlice = FilterInt16Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice int16Slice) Remove(functors ...int16FunctorForFilter) int16Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt16(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice int16SlicePtr) RemovePtr(functors ...int16FunctorForFilterPtr) int16SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt16Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -370,7 +490,7 @@ func (slice int8SlicePtr) MapPtr(functors ...int8FunctorForMapPtr) int8SlicePtr 
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice int8Slice) Filter(functors ...int8FunctorForFilter) int8Slice {
 
 	tmpSlice := slice
@@ -385,7 +505,7 @@ func (slice int8Slice) Filter(functors ...int8FunctorForFilter) int8Slice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice int8SlicePtr) FilterPtr(functors ...int8FunctorForFilterPtr) int8SlicePtr {
 
 	tmpSlice := slice
@@ -395,6 +515,36 @@ func (slice int8SlicePtr) FilterPtr(functors ...int8FunctorForFilterPtr) int8Sli
 			continue
 		}
 		tmpSlice = FilterInt8Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice int8Slice) Remove(functors ...int8FunctorForFilter) int8Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt8(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice int8SlicePtr) RemovePtr(functors ...int8FunctorForFilterPtr) int8SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveInt8Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -450,7 +600,7 @@ func (slice uintSlicePtr) MapPtr(functors ...uintFunctorForMapPtr) uintSlicePtr 
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice uintSlice) Filter(functors ...uintFunctorForFilter) uintSlice {
 
 	tmpSlice := slice
@@ -465,7 +615,7 @@ func (slice uintSlice) Filter(functors ...uintFunctorForFilter) uintSlice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice uintSlicePtr) FilterPtr(functors ...uintFunctorForFilterPtr) uintSlicePtr {
 
 	tmpSlice := slice
@@ -475,6 +625,36 @@ func (slice uintSlicePtr) FilterPtr(functors ...uintFunctorForFilterPtr) uintSli
 			continue
 		}
 		tmpSlice = FilterUintPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice uintSlice) Remove(functors ...uintFunctorForFilter) uintSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice uintSlicePtr) RemovePtr(functors ...uintFunctorForFilterPtr) uintSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUintPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -530,7 +710,7 @@ func (slice uint64SlicePtr) MapPtr(functors ...uint64FunctorForMapPtr) uint64Sli
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice uint64Slice) Filter(functors ...uint64FunctorForFilter) uint64Slice {
 
 	tmpSlice := slice
@@ -545,7 +725,7 @@ func (slice uint64Slice) Filter(functors ...uint64FunctorForFilter) uint64Slice 
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice uint64SlicePtr) FilterPtr(functors ...uint64FunctorForFilterPtr) uint64SlicePtr {
 
 	tmpSlice := slice
@@ -555,6 +735,36 @@ func (slice uint64SlicePtr) FilterPtr(functors ...uint64FunctorForFilterPtr) uin
 			continue
 		}
 		tmpSlice = FilterUint64Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice uint64Slice) Remove(functors ...uint64FunctorForFilter) uint64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice uint64SlicePtr) RemovePtr(functors ...uint64FunctorForFilterPtr) uint64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint64Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -610,7 +820,7 @@ func (slice uint32SlicePtr) MapPtr(functors ...uint32FunctorForMapPtr) uint32Sli
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice uint32Slice) Filter(functors ...uint32FunctorForFilter) uint32Slice {
 
 	tmpSlice := slice
@@ -625,7 +835,7 @@ func (slice uint32Slice) Filter(functors ...uint32FunctorForFilter) uint32Slice 
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice uint32SlicePtr) FilterPtr(functors ...uint32FunctorForFilterPtr) uint32SlicePtr {
 
 	tmpSlice := slice
@@ -635,6 +845,36 @@ func (slice uint32SlicePtr) FilterPtr(functors ...uint32FunctorForFilterPtr) uin
 			continue
 		}
 		tmpSlice = FilterUint32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice uint32Slice) Remove(functors ...uint32FunctorForFilter) uint32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice uint32SlicePtr) RemovePtr(functors ...uint32FunctorForFilterPtr) uint32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint32Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -690,7 +930,7 @@ func (slice uint16SlicePtr) MapPtr(functors ...uint16FunctorForMapPtr) uint16Sli
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice uint16Slice) Filter(functors ...uint16FunctorForFilter) uint16Slice {
 
 	tmpSlice := slice
@@ -705,7 +945,7 @@ func (slice uint16Slice) Filter(functors ...uint16FunctorForFilter) uint16Slice 
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice uint16SlicePtr) FilterPtr(functors ...uint16FunctorForFilterPtr) uint16SlicePtr {
 
 	tmpSlice := slice
@@ -715,6 +955,36 @@ func (slice uint16SlicePtr) FilterPtr(functors ...uint16FunctorForFilterPtr) uin
 			continue
 		}
 		tmpSlice = FilterUint16Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice uint16Slice) Remove(functors ...uint16FunctorForFilter) uint16Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint16(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice uint16SlicePtr) RemovePtr(functors ...uint16FunctorForFilterPtr) uint16SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint16Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -770,7 +1040,7 @@ func (slice uint8SlicePtr) MapPtr(functors ...uint8FunctorForMapPtr) uint8SliceP
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice uint8Slice) Filter(functors ...uint8FunctorForFilter) uint8Slice {
 
 	tmpSlice := slice
@@ -785,7 +1055,7 @@ func (slice uint8Slice) Filter(functors ...uint8FunctorForFilter) uint8Slice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice uint8SlicePtr) FilterPtr(functors ...uint8FunctorForFilterPtr) uint8SlicePtr {
 
 	tmpSlice := slice
@@ -795,6 +1065,36 @@ func (slice uint8SlicePtr) FilterPtr(functors ...uint8FunctorForFilterPtr) uint8
 			continue
 		}
 		tmpSlice = FilterUint8Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice uint8Slice) Remove(functors ...uint8FunctorForFilter) uint8Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint8(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice uint8SlicePtr) RemovePtr(functors ...uint8FunctorForFilterPtr) uint8SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveUint8Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -850,7 +1150,7 @@ func (slice stringSlicePtr) MapPtr(functors ...stringFunctorForMapPtr) stringSli
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice stringSlice) Filter(functors ...stringFunctorForFilter) stringSlice {
 
 	tmpSlice := slice
@@ -865,7 +1165,7 @@ func (slice stringSlice) Filter(functors ...stringFunctorForFilter) stringSlice 
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice stringSlicePtr) FilterPtr(functors ...stringFunctorForFilterPtr) stringSlicePtr {
 
 	tmpSlice := slice
@@ -875,6 +1175,36 @@ func (slice stringSlicePtr) FilterPtr(functors ...stringFunctorForFilterPtr) str
 			continue
 		}
 		tmpSlice = FilterStrPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice stringSlice) Remove(functors ...stringFunctorForFilter) stringSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveStr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice stringSlicePtr) RemovePtr(functors ...stringFunctorForFilterPtr) stringSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveStrPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -930,7 +1260,7 @@ func (slice boolSlicePtr) MapPtr(functors ...boolFunctorForMapPtr) boolSlicePtr 
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice boolSlice) Filter(functors ...boolFunctorForFilter) boolSlice {
 
 	tmpSlice := slice
@@ -945,7 +1275,7 @@ func (slice boolSlice) Filter(functors ...boolFunctorForFilter) boolSlice {
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice boolSlicePtr) FilterPtr(functors ...boolFunctorForFilterPtr) boolSlicePtr {
 
 	tmpSlice := slice
@@ -955,6 +1285,36 @@ func (slice boolSlicePtr) FilterPtr(functors ...boolFunctorForFilterPtr) boolSli
 			continue
 		}
 		tmpSlice = FilterBoolPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice boolSlice) Remove(functors ...boolFunctorForFilter) boolSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveBool(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice boolSlicePtr) RemovePtr(functors ...boolFunctorForFilterPtr) boolSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveBoolPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -1010,7 +1370,7 @@ func (slice float32SlicePtr) MapPtr(functors ...float32FunctorForMapPtr) float32
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice float32Slice) Filter(functors ...float32FunctorForFilter) float32Slice {
 
 	tmpSlice := slice
@@ -1025,7 +1385,7 @@ func (slice float32Slice) Filter(functors ...float32FunctorForFilter) float32Sli
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice float32SlicePtr) FilterPtr(functors ...float32FunctorForFilterPtr) float32SlicePtr {
 
 	tmpSlice := slice
@@ -1035,6 +1395,36 @@ func (slice float32SlicePtr) FilterPtr(functors ...float32FunctorForFilterPtr) f
 			continue
 		}
 		tmpSlice = FilterFloat32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice float32Slice) Remove(functors ...float32FunctorForFilter) float32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveFloat32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice float32SlicePtr) RemovePtr(functors ...float32FunctorForFilterPtr) float32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveFloat32Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -1090,7 +1480,7 @@ func (slice float64SlicePtr) MapPtr(functors ...float64FunctorForMapPtr) float64
 	return tmpSlice
 }
 
-// Filter - 
+// Filter - filters list based on function passed as argument
 func (slice float64Slice) Filter(functors ...float64FunctorForFilter) float64Slice {
 
 	tmpSlice := slice
@@ -1105,7 +1495,7 @@ func (slice float64Slice) Filter(functors ...float64FunctorForFilter) float64Sli
 	return tmpSlice
 }
 
-// FilterPtr - 
+// FilterPtr - filters list based on function passed as argument
 func (slice float64SlicePtr) FilterPtr(functors ...float64FunctorForFilterPtr) float64SlicePtr {
 
 	tmpSlice := slice
@@ -1115,6 +1505,36 @@ func (slice float64SlicePtr) FilterPtr(functors ...float64FunctorForFilterPtr) f
 			continue
 		}
 		tmpSlice = FilterFloat64Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice float64Slice) Remove(functors ...float64FunctorForFilter) float64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveFloat64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice float64SlicePtr) RemovePtr(functors ...float64FunctorForFilterPtr) float64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveFloat64Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice

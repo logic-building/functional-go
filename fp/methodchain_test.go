@@ -20,6 +20,7 @@ func TestMapIntMethodChain(t *testing.T) {
 	}
 }
 
+// TestMapIntMethodChainPtr - 
 func TestMapIntMethodChainPtr(t *testing.T) {
 	var v1 int = 1
 	var v2 int = 2
@@ -38,6 +39,7 @@ func TestMapIntMethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterIntMethodChain - 
 func TestFilterIntMethodChain(t *testing.T) {
 	var v1 int = 1
 	var v2 int = 2
@@ -56,6 +58,7 @@ func TestFilterIntMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterIntPtrMethodChain - 
 func TestFilterIntPtrMethodChain(t *testing.T) {
 	var v1 int = 1
 	var v2 int = 2
@@ -74,6 +77,44 @@ func TestFilterIntPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveIntMethodChain - 
+func TestRemoveIntMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int = 2
+	var v3 int = 3
+	var v4 int = 4
+
+	isGreaterThanThreeInt := func (num int) bool {
+		return num > 3
+	}
+
+	expectedNewList := []int{v2, v3}
+	NewList := MakeIntSlice([]int{v2, v3, v4}...).Remove(isGreaterThanThreeInt)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveIntPtrMethodChain - 
+func TestRemoveIntPtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int = 2
+	var v3 int = 3
+	var v4 int = 4
+
+	isGreaterThanThreeInt := func (num *int) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*int{&v2, &v3}
+	NewList := MakeIntSlicePtr([]*int{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeInt)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveIntPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapInt64MethodChain(t *testing.T) {
 	expectedSquareList := []int64{1, 4, 9}
 	squareList := MakeInt64Slice([]int64{1, 2, 3}...).Map(squareInt64)
@@ -88,6 +129,7 @@ func TestMapInt64MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapInt64MethodChainPtr - 
 func TestMapInt64MethodChainPtr(t *testing.T) {
 	var v1 int64 = 1
 	var v2 int64 = 2
@@ -106,6 +148,7 @@ func TestMapInt64MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterInt64MethodChain - 
 func TestFilterInt64MethodChain(t *testing.T) {
 	var v1 int64 = 1
 	var v2 int64 = 2
@@ -124,6 +167,7 @@ func TestFilterInt64MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterInt64PtrMethodChain - 
 func TestFilterInt64PtrMethodChain(t *testing.T) {
 	var v1 int64 = 1
 	var v2 int64 = 2
@@ -142,6 +186,44 @@ func TestFilterInt64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveInt64MethodChain - 
+func TestRemoveInt64MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int64 = 2
+	var v3 int64 = 3
+	var v4 int64 = 4
+
+	isGreaterThanThreeInt64 := func (num int64) bool {
+		return num > 3
+	}
+
+	expectedNewList := []int64{v2, v3}
+	NewList := MakeInt64Slice([]int64{v2, v3, v4}...).Remove(isGreaterThanThreeInt64)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveInt64PtrMethodChain - 
+func TestRemoveInt64PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int64 = 2
+	var v3 int64 = 3
+	var v4 int64 = 4
+
+	isGreaterThanThreeInt64 := func (num *int64) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*int64{&v2, &v3}
+	NewList := MakeInt64SlicePtr([]*int64{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeInt64)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveInt64Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapInt32MethodChain(t *testing.T) {
 	expectedSquareList := []int32{1, 4, 9}
 	squareList := MakeInt32Slice([]int32{1, 2, 3}...).Map(squareInt32)
@@ -156,6 +238,7 @@ func TestMapInt32MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapInt32MethodChainPtr - 
 func TestMapInt32MethodChainPtr(t *testing.T) {
 	var v1 int32 = 1
 	var v2 int32 = 2
@@ -174,6 +257,7 @@ func TestMapInt32MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterInt32MethodChain - 
 func TestFilterInt32MethodChain(t *testing.T) {
 	var v1 int32 = 1
 	var v2 int32 = 2
@@ -192,6 +276,7 @@ func TestFilterInt32MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterInt32PtrMethodChain - 
 func TestFilterInt32PtrMethodChain(t *testing.T) {
 	var v1 int32 = 1
 	var v2 int32 = 2
@@ -210,6 +295,44 @@ func TestFilterInt32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveInt32MethodChain - 
+func TestRemoveInt32MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int32 = 2
+	var v3 int32 = 3
+	var v4 int32 = 4
+
+	isGreaterThanThreeInt32 := func (num int32) bool {
+		return num > 3
+	}
+
+	expectedNewList := []int32{v2, v3}
+	NewList := MakeInt32Slice([]int32{v2, v3, v4}...).Remove(isGreaterThanThreeInt32)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveInt32PtrMethodChain - 
+func TestRemoveInt32PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int32 = 2
+	var v3 int32 = 3
+	var v4 int32 = 4
+
+	isGreaterThanThreeInt32 := func (num *int32) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*int32{&v2, &v3}
+	NewList := MakeInt32SlicePtr([]*int32{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeInt32)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveInt32Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapInt16MethodChain(t *testing.T) {
 	expectedSquareList := []int16{1, 4, 9}
 	squareList := MakeInt16Slice([]int16{1, 2, 3}...).Map(squareInt16)
@@ -224,6 +347,7 @@ func TestMapInt16MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapInt16MethodChainPtr - 
 func TestMapInt16MethodChainPtr(t *testing.T) {
 	var v1 int16 = 1
 	var v2 int16 = 2
@@ -242,6 +366,7 @@ func TestMapInt16MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterInt16MethodChain - 
 func TestFilterInt16MethodChain(t *testing.T) {
 	var v1 int16 = 1
 	var v2 int16 = 2
@@ -260,6 +385,7 @@ func TestFilterInt16MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterInt16PtrMethodChain - 
 func TestFilterInt16PtrMethodChain(t *testing.T) {
 	var v1 int16 = 1
 	var v2 int16 = 2
@@ -278,6 +404,44 @@ func TestFilterInt16PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveInt16MethodChain - 
+func TestRemoveInt16MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int16 = 2
+	var v3 int16 = 3
+	var v4 int16 = 4
+
+	isGreaterThanThreeInt16 := func (num int16) bool {
+		return num > 3
+	}
+
+	expectedNewList := []int16{v2, v3}
+	NewList := MakeInt16Slice([]int16{v2, v3, v4}...).Remove(isGreaterThanThreeInt16)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveInt16PtrMethodChain - 
+func TestRemoveInt16PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int16 = 2
+	var v3 int16 = 3
+	var v4 int16 = 4
+
+	isGreaterThanThreeInt16 := func (num *int16) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*int16{&v2, &v3}
+	NewList := MakeInt16SlicePtr([]*int16{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeInt16)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveInt16Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapInt8MethodChain(t *testing.T) {
 	expectedSquareList := []int8{1, 4, 9}
 	squareList := MakeInt8Slice([]int8{1, 2, 3}...).Map(squareInt8)
@@ -292,6 +456,7 @@ func TestMapInt8MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapInt8MethodChainPtr - 
 func TestMapInt8MethodChainPtr(t *testing.T) {
 	var v1 int8 = 1
 	var v2 int8 = 2
@@ -310,6 +475,7 @@ func TestMapInt8MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterInt8MethodChain - 
 func TestFilterInt8MethodChain(t *testing.T) {
 	var v1 int8 = 1
 	var v2 int8 = 2
@@ -328,6 +494,7 @@ func TestFilterInt8MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterInt8PtrMethodChain - 
 func TestFilterInt8PtrMethodChain(t *testing.T) {
 	var v1 int8 = 1
 	var v2 int8 = 2
@@ -346,6 +513,44 @@ func TestFilterInt8PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveInt8MethodChain - 
+func TestRemoveInt8MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int8 = 2
+	var v3 int8 = 3
+	var v4 int8 = 4
+
+	isGreaterThanThreeInt8 := func (num int8) bool {
+		return num > 3
+	}
+
+	expectedNewList := []int8{v2, v3}
+	NewList := MakeInt8Slice([]int8{v2, v3, v4}...).Remove(isGreaterThanThreeInt8)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveInt8 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveInt8PtrMethodChain - 
+func TestRemoveInt8PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 int8 = 2
+	var v3 int8 = 3
+	var v4 int8 = 4
+
+	isGreaterThanThreeInt8 := func (num *int8) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*int8{&v2, &v3}
+	NewList := MakeInt8SlicePtr([]*int8{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeInt8)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveInt8Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapUintMethodChain(t *testing.T) {
 	expectedSquareList := []uint{1, 4, 9}
 	squareList := MakeUintSlice([]uint{1, 2, 3}...).Map(squareUint)
@@ -360,6 +565,7 @@ func TestMapUintMethodChain(t *testing.T) {
 	}
 }
 
+// TestMapUintMethodChainPtr - 
 func TestMapUintMethodChainPtr(t *testing.T) {
 	var v1 uint = 1
 	var v2 uint = 2
@@ -378,6 +584,7 @@ func TestMapUintMethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterUintMethodChain - 
 func TestFilterUintMethodChain(t *testing.T) {
 	var v1 uint = 1
 	var v2 uint = 2
@@ -396,6 +603,7 @@ func TestFilterUintMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterUintPtrMethodChain - 
 func TestFilterUintPtrMethodChain(t *testing.T) {
 	var v1 uint = 1
 	var v2 uint = 2
@@ -414,6 +622,44 @@ func TestFilterUintPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveUintMethodChain - 
+func TestRemoveUintMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint = 2
+	var v3 uint = 3
+	var v4 uint = 4
+
+	isGreaterThanThreeUint := func (num uint) bool {
+		return num > 3
+	}
+
+	expectedNewList := []uint{v2, v3}
+	NewList := MakeUintSlice([]uint{v2, v3, v4}...).Remove(isGreaterThanThreeUint)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveUintPtrMethodChain - 
+func TestRemoveUintPtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint = 2
+	var v3 uint = 3
+	var v4 uint = 4
+
+	isGreaterThanThreeUint := func (num *uint) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*uint{&v2, &v3}
+	NewList := MakeUintSlicePtr([]*uint{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeUint)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveUintPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapUint64MethodChain(t *testing.T) {
 	expectedSquareList := []uint64{1, 4, 9}
 	squareList := MakeUint64Slice([]uint64{1, 2, 3}...).Map(squareUint64)
@@ -428,6 +674,7 @@ func TestMapUint64MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapUint64MethodChainPtr - 
 func TestMapUint64MethodChainPtr(t *testing.T) {
 	var v1 uint64 = 1
 	var v2 uint64 = 2
@@ -446,6 +693,7 @@ func TestMapUint64MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterUint64MethodChain - 
 func TestFilterUint64MethodChain(t *testing.T) {
 	var v1 uint64 = 1
 	var v2 uint64 = 2
@@ -464,6 +712,7 @@ func TestFilterUint64MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterUint64PtrMethodChain - 
 func TestFilterUint64PtrMethodChain(t *testing.T) {
 	var v1 uint64 = 1
 	var v2 uint64 = 2
@@ -482,6 +731,44 @@ func TestFilterUint64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveUint64MethodChain - 
+func TestRemoveUint64MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint64 = 2
+	var v3 uint64 = 3
+	var v4 uint64 = 4
+
+	isGreaterThanThreeUint64 := func (num uint64) bool {
+		return num > 3
+	}
+
+	expectedNewList := []uint64{v2, v3}
+	NewList := MakeUint64Slice([]uint64{v2, v3, v4}...).Remove(isGreaterThanThreeUint64)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveUint64PtrMethodChain - 
+func TestRemoveUint64PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint64 = 2
+	var v3 uint64 = 3
+	var v4 uint64 = 4
+
+	isGreaterThanThreeUint64 := func (num *uint64) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*uint64{&v2, &v3}
+	NewList := MakeUint64SlicePtr([]*uint64{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeUint64)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveUint64Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapUint32MethodChain(t *testing.T) {
 	expectedSquareList := []uint32{1, 4, 9}
 	squareList := MakeUint32Slice([]uint32{1, 2, 3}...).Map(squareUint32)
@@ -496,6 +783,7 @@ func TestMapUint32MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapUint32MethodChainPtr - 
 func TestMapUint32MethodChainPtr(t *testing.T) {
 	var v1 uint32 = 1
 	var v2 uint32 = 2
@@ -514,6 +802,7 @@ func TestMapUint32MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterUint32MethodChain - 
 func TestFilterUint32MethodChain(t *testing.T) {
 	var v1 uint32 = 1
 	var v2 uint32 = 2
@@ -532,6 +821,7 @@ func TestFilterUint32MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterUint32PtrMethodChain - 
 func TestFilterUint32PtrMethodChain(t *testing.T) {
 	var v1 uint32 = 1
 	var v2 uint32 = 2
@@ -550,6 +840,44 @@ func TestFilterUint32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveUint32MethodChain - 
+func TestRemoveUint32MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint32 = 2
+	var v3 uint32 = 3
+	var v4 uint32 = 4
+
+	isGreaterThanThreeUint32 := func (num uint32) bool {
+		return num > 3
+	}
+
+	expectedNewList := []uint32{v2, v3}
+	NewList := MakeUint32Slice([]uint32{v2, v3, v4}...).Remove(isGreaterThanThreeUint32)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveUint32PtrMethodChain - 
+func TestRemoveUint32PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint32 = 2
+	var v3 uint32 = 3
+	var v4 uint32 = 4
+
+	isGreaterThanThreeUint32 := func (num *uint32) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*uint32{&v2, &v3}
+	NewList := MakeUint32SlicePtr([]*uint32{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeUint32)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveUint32Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapUint16MethodChain(t *testing.T) {
 	expectedSquareList := []uint16{1, 4, 9}
 	squareList := MakeUint16Slice([]uint16{1, 2, 3}...).Map(squareUint16)
@@ -564,6 +892,7 @@ func TestMapUint16MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapUint16MethodChainPtr - 
 func TestMapUint16MethodChainPtr(t *testing.T) {
 	var v1 uint16 = 1
 	var v2 uint16 = 2
@@ -582,6 +911,7 @@ func TestMapUint16MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterUint16MethodChain - 
 func TestFilterUint16MethodChain(t *testing.T) {
 	var v1 uint16 = 1
 	var v2 uint16 = 2
@@ -600,6 +930,7 @@ func TestFilterUint16MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterUint16PtrMethodChain - 
 func TestFilterUint16PtrMethodChain(t *testing.T) {
 	var v1 uint16 = 1
 	var v2 uint16 = 2
@@ -618,6 +949,44 @@ func TestFilterUint16PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveUint16MethodChain - 
+func TestRemoveUint16MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint16 = 2
+	var v3 uint16 = 3
+	var v4 uint16 = 4
+
+	isGreaterThanThreeUint16 := func (num uint16) bool {
+		return num > 3
+	}
+
+	expectedNewList := []uint16{v2, v3}
+	NewList := MakeUint16Slice([]uint16{v2, v3, v4}...).Remove(isGreaterThanThreeUint16)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveUint16PtrMethodChain - 
+func TestRemoveUint16PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint16 = 2
+	var v3 uint16 = 3
+	var v4 uint16 = 4
+
+	isGreaterThanThreeUint16 := func (num *uint16) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*uint16{&v2, &v3}
+	NewList := MakeUint16SlicePtr([]*uint16{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeUint16)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveUint16Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapUint8MethodChain(t *testing.T) {
 	expectedSquareList := []uint8{1, 4, 9}
 	squareList := MakeUint8Slice([]uint8{1, 2, 3}...).Map(squareUint8)
@@ -632,6 +1001,7 @@ func TestMapUint8MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapUint8MethodChainPtr - 
 func TestMapUint8MethodChainPtr(t *testing.T) {
 	var v1 uint8 = 1
 	var v2 uint8 = 2
@@ -650,6 +1020,7 @@ func TestMapUint8MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterUint8MethodChain - 
 func TestFilterUint8MethodChain(t *testing.T) {
 	var v1 uint8 = 1
 	var v2 uint8 = 2
@@ -668,6 +1039,7 @@ func TestFilterUint8MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterUint8PtrMethodChain - 
 func TestFilterUint8PtrMethodChain(t *testing.T) {
 	var v1 uint8 = 1
 	var v2 uint8 = 2
@@ -683,6 +1055,44 @@ func TestFilterUint8PtrMethodChain(t *testing.T) {
 
 	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
 		t.Errorf("FilterUint8Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestRemoveUint8MethodChain - 
+func TestRemoveUint8MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint8 = 2
+	var v3 uint8 = 3
+	var v4 uint8 = 4
+
+	isGreaterThanThreeUint8 := func (num uint8) bool {
+		return num > 3
+	}
+
+	expectedNewList := []uint8{v2, v3}
+	NewList := MakeUint8Slice([]uint8{v2, v3, v4}...).Remove(isGreaterThanThreeUint8)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveUint8 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveUint8PtrMethodChain - 
+func TestRemoveUint8PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 uint8 = 2
+	var v3 uint8 = 3
+	var v4 uint8 = 4
+
+	isGreaterThanThreeUint8 := func (num *uint8) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*uint8{&v2, &v3}
+	NewList := MakeUint8SlicePtr([]*uint8{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeUint8)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveUint8Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 }
 
@@ -704,6 +1114,7 @@ func squareStr(s string) string {
 	return s+s
 }
 
+// TestMapStrMethodChainPtr - 
 func TestMapStrMethodChainPtr(t *testing.T) {
 	var v1 string = "1"
 	var v2 string = "2"
@@ -723,6 +1134,7 @@ func TestMapStrMethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterStrMethodChain - 
 func TestFilterStrMethodChain(t *testing.T) {
 	var v1 string = "1"
 	var v2 string = "2"
@@ -741,6 +1153,7 @@ func TestFilterStrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterStrPtrMethodChain - 
 func TestFilterStrPtrMethodChain(t *testing.T) {
 	var v1 string = "1"
 	var v2 string = "2"
@@ -756,6 +1169,44 @@ func TestFilterStrPtrMethodChain(t *testing.T) {
 
 	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
 		t.Errorf("FilterStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestRemoveStrMethodChain - 
+func TestRemoveStrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+
+	isGreaterThanThreeStr := func (num string) bool {
+		return num > "3"
+	}
+
+	expectedNewList := []string{v2, v3}
+	NewList := MakeStrSlice([]string{v2, v3, v4}...).Remove(isGreaterThanThreeStr)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveStr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveStrPtrMethodChain - 
+func TestRemoveStrPtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+
+	isGreaterThanThreeStr := func (num *string) bool {
+		return *num > "3"
+	}
+
+	expectedNewList := []*string{&v2, &v3}
+	NewList := MakeStrSlicePtr([]*string{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeStr)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 }
 
@@ -825,6 +1276,13 @@ func TestFilterBoolPtrMethodChain(t *testing.T) {
 	}
 }
 
+func TestRemoveBoolPtrMethodChain(t *testing.T) {
+	var vt bool = true
+	if len(MakeBoolSlice(vt).Remove(nil)) == 0 {
+		t.Errorf("RemoveBool failed.")
+	}
+}
+
 func TestMapFloat32MethodChain(t *testing.T) {
 	expectedSquareList := []float32{1, 4, 9}
 	squareList := MakeFloat32Slice([]float32{1, 2, 3}...).Map(squareFloat32)
@@ -839,6 +1297,7 @@ func TestMapFloat32MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapFloat32MethodChainPtr - 
 func TestMapFloat32MethodChainPtr(t *testing.T) {
 	var v1 float32 = 1
 	var v2 float32 = 2
@@ -857,6 +1316,7 @@ func TestMapFloat32MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterFloat32MethodChain - 
 func TestFilterFloat32MethodChain(t *testing.T) {
 	var v1 float32 = 1
 	var v2 float32 = 2
@@ -875,6 +1335,7 @@ func TestFilterFloat32MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterFloat32PtrMethodChain - 
 func TestFilterFloat32PtrMethodChain(t *testing.T) {
 	var v1 float32 = 1
 	var v2 float32 = 2
@@ -893,6 +1354,44 @@ func TestFilterFloat32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemoveFloat32MethodChain - 
+func TestRemoveFloat32MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 float32 = 2
+	var v3 float32 = 3
+	var v4 float32 = 4
+
+	isGreaterThanThreeFloat32 := func (num float32) bool {
+		return num > 3
+	}
+
+	expectedNewList := []float32{v2, v3}
+	NewList := MakeFloat32Slice([]float32{v2, v3, v4}...).Remove(isGreaterThanThreeFloat32)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveFloat32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveFloat32PtrMethodChain - 
+func TestRemoveFloat32PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 float32 = 2
+	var v3 float32 = 3
+	var v4 float32 = 4
+
+	isGreaterThanThreeFloat32 := func (num *float32) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*float32{&v2, &v3}
+	NewList := MakeFloat32SlicePtr([]*float32{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeFloat32)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveFloat32Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
 func TestMapFloat64MethodChain(t *testing.T) {
 	expectedSquareList := []float64{1, 4, 9}
 	squareList := MakeFloat64Slice([]float64{1, 2, 3}...).Map(squareFloat64)
@@ -907,6 +1406,7 @@ func TestMapFloat64MethodChain(t *testing.T) {
 	}
 }
 
+// TestMapFloat64MethodChainPtr - 
 func TestMapFloat64MethodChainPtr(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
@@ -925,6 +1425,7 @@ func TestMapFloat64MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilterFloat64MethodChain - 
 func TestFilterFloat64MethodChain(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
@@ -943,6 +1444,7 @@ func TestFilterFloat64MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilterFloat64PtrMethodChain - 
 func TestFilterFloat64PtrMethodChain(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
@@ -958,5 +1460,43 @@ func TestFilterFloat64PtrMethodChain(t *testing.T) {
 
 	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
 		t.Errorf("FilterFloat64Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestRemoveFloat64MethodChain - 
+func TestRemoveFloat64MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+
+	isGreaterThanThreeFloat64 := func (num float64) bool {
+		return num > 3
+	}
+
+	expectedNewList := []float64{v2, v3}
+	NewList := MakeFloat64Slice([]float64{v2, v3, v4}...).Remove(isGreaterThanThreeFloat64)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveFloat64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemoveFloat64PtrMethodChain - 
+func TestRemoveFloat64PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+
+	isGreaterThanThreeFloat64 := func (num *float64) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*float64{&v2, &v3}
+	NewList := MakeFloat64SlicePtr([]*float64{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeFloat64)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveFloat64Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 }

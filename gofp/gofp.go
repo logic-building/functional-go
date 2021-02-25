@@ -334,11 +334,17 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			if fp.ExistsStrIgnoreCase("Remove", onlyList) {
 				template += template2.Remove()
 				template = r.Replace(template)
+
+				template += template3.MethodChainStructForRemove()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("RemovePtr", onlyList) {
 				template += template2.RemovePtr()
 				template = r.Replace(template)
+
+				template += template3.MethodChainStructForRemovePtr()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("RemovePtrErr", onlyList) {
@@ -822,6 +828,12 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template = r2.Replace(template)
 
 			template += template3.MethodChainStruct()
+			template = r3.Replace(template)
+
+			template += template3.MethodChainStructForRemove()
+			template = r3.Replace(template)
+
+			template += template3.MethodChainStructForRemovePtr()
 			template = r3.Replace(template)
 
 			// if struct's has member of type other than basic types such as list then use template which uses reflect

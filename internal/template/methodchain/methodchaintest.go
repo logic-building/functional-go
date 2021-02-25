@@ -19,6 +19,7 @@ func TestMap<FTYPE>MethodChain(t *testing.T) {
 	}
 }
 
+// TestMap<FTYPE>MethodChainPtr - 
 func TestMap<FTYPE>MethodChainPtr(t *testing.T) {
 	var v1 <TYPE> = 1
 	var v2 <TYPE> = 2
@@ -37,6 +38,7 @@ func TestMap<FTYPE>MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestFilter<FTYPE>MethodChain - 
 func TestFilter<FTYPE>MethodChain(t *testing.T) {
 	var v1 <TYPE> = 1
 	var v2 <TYPE> = 2
@@ -55,6 +57,7 @@ func TestFilter<FTYPE>MethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter<FTYPE>PtrMethodChain - 
 func TestFilter<FTYPE>PtrMethodChain(t *testing.T) {
 	var v1 <TYPE> = 1
 	var v2 <TYPE> = 2
@@ -70,6 +73,44 @@ func TestFilter<FTYPE>PtrMethodChain(t *testing.T) {
 
 	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
 		t.Errorf("Filter<FTYPE>Ptr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestRemove<FTYPE>MethodChain - 
+func TestRemove<FTYPE>MethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+	var v4 <TYPE> = 4
+
+	isGreaterThanThree<FTYPE> := func (num <TYPE>) bool {
+		return num > 3
+	}
+
+	expectedNewList := []<TYPE>{v2, v3}
+	NewList := Make<FTYPE>Slice([]<TYPE>{v2, v3, v4}...).Remove(isGreaterThanThree<FTYPE>)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("Remove<FTYPE> failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove<FTYPE>PtrMethodChain - 
+func TestRemove<FTYPE>PtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+	var v4 <TYPE> = 4
+
+	isGreaterThanThree<FTYPE> := func (num *<TYPE>) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*<TYPE>{&v2, &v3}
+	NewList := Make<FTYPE>SlicePtr([]*<TYPE>{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThree<FTYPE>)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("Remove<FTYPE>Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 }
 `
@@ -141,6 +182,13 @@ func TestFilterBoolPtrMethodChain(t *testing.T) {
 
 	if len(Make<FTYPE>SlicePtr(&vt).FilterPtr(nil)) == 0 {
 		t.Errorf("MapBoolPtr failed.")
+	}
+}
+
+func TestRemoveBoolPtrMethodChain(t *testing.T) {
+	var vt bool = true
+	if len(Make<FTYPE>Slice(vt).Remove(nil)) == 0 {
+		t.Errorf("RemoveBool failed.")
 	}
 }
 `
@@ -259,6 +307,80 @@ func squareStr(s string) string {
 
 	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
 		t.Errorf("FilterStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}`
+
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `func TestRemoveStrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+
+	isGreaterThanThreeStr := func (num string) bool {
+		return num > 3
+	}
+
+	expectedNewList := []string{v2, v3}
+	NewList := MakeStrSlice([]string{v2, v3, v4}...).Remove(isGreaterThanThreeStr)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveStr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}`
+	t2 = `func TestRemoveStrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+
+	isGreaterThanThreeStr := func (num string) bool {
+		return num > "3"
+	}
+
+	expectedNewList := []string{v2, v3}
+	NewList := MakeStrSlice([]string{v2, v3, v4}...).Remove(isGreaterThanThreeStr)
+
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("RemoveStr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}`
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `func TestRemoveStrPtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+
+	isGreaterThanThreeStr := func (num *string) bool {
+		return *num > 3
+	}
+
+	expectedNewList := []*string{&v2, &v3}
+	NewList := MakeStrSlicePtr([]*string{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeStr)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}`
+
+	t2 = `func TestRemoveStrPtrMethodChain(t *testing.T) {
+	// Test : even number in the list
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+
+	isGreaterThanThreeStr := func (num *string) bool {
+		return *num > "3"
+	}
+
+	expectedNewList := []*string{&v2, &v3}
+	NewList := MakeStrSlicePtr([]*string{&v2, &v3, &v4}...).RemovePtr(isGreaterThanThreeStr)
+
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("RemoveStrPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
 	}
 }`
 
