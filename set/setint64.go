@@ -2,7 +2,7 @@ package set
 
 // Int64 - struct
 type Int64 struct {
-	nodeMap map[int64]bool
+	nodeMap map[int64]struct{}
 }
 
 // NewInt64 creates set
@@ -17,18 +17,18 @@ func NewInt64(nums []int64) *Int64 {
 // Add an item
 func (s *Int64) Add(num int64) *Int64 {
 	if s.nodeMap == nil {
-		s.nodeMap = make(map[int64]bool)
+		s.nodeMap = make(map[int64]struct{})
 	}
 	_, ok := s.nodeMap[num]
 	if !ok {
-		s.nodeMap[num] = true
+		s.nodeMap[num] = struct{}{}
 	}
 	return s
 }
 
 // Clear set
 func (s *Int64) Clear() {
-	s.nodeMap = make(map[int64]bool)
+	s.nodeMap = make(map[int64]struct{})
 }
 
 // Remove an item
@@ -63,14 +63,14 @@ func (s *Int64) Size() int {
 // Union returns all the items that are in S or in S2
 func (s *Int64) Union(s2 *Int64) *Int64 {
 	s3 := Int64{}
-	s3.nodeMap = make(map[int64]bool)
+	s3.nodeMap = make(map[int64]struct{})
 	for i := range s.nodeMap {
-		s3.nodeMap[i] = true
+		s3.nodeMap[i] = struct{}{}
 	}
 	for i := range s2.nodeMap {
 		_, ok := s3.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -79,11 +79,11 @@ func (s *Int64) Union(s2 *Int64) *Int64 {
 // Intersection returns common items in S and S2
 func (s *Int64) Intersection(s2 *Int64) *Int64 {
 	s3 := Int64{}
-	s3.nodeMap = make(map[int64]bool)
+	s3.nodeMap = make(map[int64]struct{})
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -92,11 +92,11 @@ func (s *Int64) Intersection(s2 *Int64) *Int64 {
 // Minus - s.Minus(s2) : all of S but not in S2
 func (s *Int64) Minus(s2 *Int64) *Int64 {
 	s3 := Int64{}
-	s3.nodeMap = make(map[int64]bool)
+	s3.nodeMap = make(map[int64]struct{})
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3

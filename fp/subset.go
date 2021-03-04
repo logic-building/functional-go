@@ -7,12 +7,12 @@ func SubsetInt(list1, list2 []int) bool {
 		return false
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -34,12 +34,12 @@ func SubsetIntPtr(list1, list2 []*int) bool {
 		return false
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -61,12 +61,12 @@ func SubsetInt64(list1, list2 []int64) bool {
 		return false
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -88,12 +88,12 @@ func SubsetInt64Ptr(list1, list2 []*int64) bool {
 		return false
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -115,12 +115,12 @@ func SubsetInt32(list1, list2 []int32) bool {
 		return false
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -142,12 +142,12 @@ func SubsetInt32Ptr(list1, list2 []*int32) bool {
 		return false
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -169,12 +169,12 @@ func SubsetInt16(list1, list2 []int16) bool {
 		return false
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -196,12 +196,12 @@ func SubsetInt16Ptr(list1, list2 []*int16) bool {
 		return false
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -223,12 +223,12 @@ func SubsetInt8(list1, list2 []int8) bool {
 		return false
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -250,12 +250,12 @@ func SubsetInt8Ptr(list1, list2 []*int8) bool {
 		return false
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -277,12 +277,12 @@ func SubsetUint(list1, list2 []uint) bool {
 		return false
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -304,12 +304,12 @@ func SubsetUintPtr(list1, list2 []*uint) bool {
 		return false
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -331,12 +331,12 @@ func SubsetUint64(list1, list2 []uint64) bool {
 		return false
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -358,12 +358,12 @@ func SubsetUint64Ptr(list1, list2 []*uint64) bool {
 		return false
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -385,12 +385,12 @@ func SubsetUint32(list1, list2 []uint32) bool {
 		return false
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -412,12 +412,12 @@ func SubsetUint32Ptr(list1, list2 []*uint32) bool {
 		return false
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -439,12 +439,12 @@ func SubsetUint16(list1, list2 []uint16) bool {
 		return false
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -466,12 +466,12 @@ func SubsetUint16Ptr(list1, list2 []*uint16) bool {
 		return false
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -493,12 +493,12 @@ func SubsetUint8(list1, list2 []uint8) bool {
 		return false
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -520,12 +520,12 @@ func SubsetUint8Ptr(list1, list2 []*uint8) bool {
 		return false
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -547,12 +547,12 @@ func SubsetStr(list1, list2 []string) bool {
 		return false
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -574,12 +574,12 @@ func SubsetStrPtr(list1, list2 []*string) bool {
 		return false
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -601,12 +601,12 @@ func SubsetBool(list1, list2 []bool) bool {
 		return false
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -628,12 +628,12 @@ func SubsetBoolPtr(list1, list2 []*bool) bool {
 		return false
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -655,12 +655,12 @@ func SubsetFloat32(list1, list2 []float32) bool {
 		return false
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -682,12 +682,12 @@ func SubsetFloat32Ptr(list1, list2 []*float32) bool {
 		return false
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -709,12 +709,12 @@ func SubsetFloat64(list1, list2 []float64) bool {
 		return false
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -736,12 +736,12 @@ func SubsetFloat64Ptr(list1, list2 []*float64) bool {
 		return false
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true

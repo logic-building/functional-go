@@ -2,7 +2,7 @@ package set
 
 // Str - struct
 type Str struct {
-	nodeMap map[string]bool
+	nodeMap map[string]struct{}
 }
 
 // NewStr creates set
@@ -17,18 +17,18 @@ func NewStr(strList []string) *Str {
 // Add an item
 func (s *Str) Add(str string) *Str {
 	if s.nodeMap == nil {
-		s.nodeMap = make(map[string]bool)
+		s.nodeMap = make(map[string]struct{})
 	}
 	_, ok := s.nodeMap[str]
 	if !ok {
-		s.nodeMap[str] = true
+		s.nodeMap[str] = struct{}{}
 	}
 	return s
 }
 
 // Clear set
 func (s *Str) Clear() {
-	s.nodeMap = make(map[string]bool)
+	s.nodeMap = make(map[string]struct{})
 }
 
 // Remove an item
@@ -63,14 +63,14 @@ func (s *Str) Size() int {
 // Union returns all the items that are in S or in S2
 func (s *Str) Union(s2 *Str) *Str {
 	s3 := Str{}
-	s3.nodeMap = make(map[string]bool)
+	s3.nodeMap = make(map[string]struct{})
 	for i := range s.nodeMap {
-		s3.nodeMap[i] = true
+		s3.nodeMap[i] = struct{}{}
 	}
 	for i := range s2.nodeMap {
 		_, ok := s3.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -79,11 +79,11 @@ func (s *Str) Union(s2 *Str) *Str {
 // Intersection returns common items in S and S2
 func (s *Str) Intersection(s2 *Str) *Str {
 	s3 := Str{}
-	s3.nodeMap = make(map[string]bool)
+	s3.nodeMap = make(map[string]struct{})
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -92,11 +92,11 @@ func (s *Str) Intersection(s2 *Str) *Str {
 // Minus - s.Minus(s2) : all of S but not in S2
 func (s *Str) Minus(s2 *Str) *Str {
 	s3 := Str{}
-	s3.nodeMap = make(map[string]bool)
+	s3.nodeMap = make(map[string]struct{})
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3

@@ -10,13 +10,13 @@ func Superset<FTYPE>(list1, list2 []<TYPE>) bool {
 		return false
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -43,13 +43,13 @@ func Superset<FTYPE>Ptr(list1, list2 []*<TYPE>) bool {
 		return false
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true

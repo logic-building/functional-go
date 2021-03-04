@@ -6,12 +6,12 @@ func SetInt(list []int) []int {
 		return []int{}
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 	newList := []int{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -24,12 +24,12 @@ func SetIntPtr(list []*int) []*int {
 		return []*int{}
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 	newList := []*int{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -42,12 +42,12 @@ func SetInt64(list []int64) []int64 {
 		return []int64{}
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 	newList := []int64{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -60,12 +60,12 @@ func SetInt64Ptr(list []*int64) []*int64 {
 		return []*int64{}
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 	newList := []*int64{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -78,12 +78,12 @@ func SetInt32(list []int32) []int32 {
 		return []int32{}
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 	newList := []int32{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -96,12 +96,12 @@ func SetInt32Ptr(list []*int32) []*int32 {
 		return []*int32{}
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 	newList := []*int32{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -114,12 +114,12 @@ func SetInt16(list []int16) []int16 {
 		return []int16{}
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 	newList := []int16{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -132,12 +132,12 @@ func SetInt16Ptr(list []*int16) []*int16 {
 		return []*int16{}
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 	newList := []*int16{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -150,12 +150,12 @@ func SetInt8(list []int8) []int8 {
 		return []int8{}
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 	newList := []int8{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -168,12 +168,12 @@ func SetInt8Ptr(list []*int8) []*int8 {
 		return []*int8{}
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 	newList := []*int8{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -186,12 +186,12 @@ func SetUint(list []uint) []uint {
 		return []uint{}
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 	newList := []uint{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -204,12 +204,12 @@ func SetUintPtr(list []*uint) []*uint {
 		return []*uint{}
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 	newList := []*uint{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -222,12 +222,12 @@ func SetUint64(list []uint64) []uint64 {
 		return []uint64{}
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 	newList := []uint64{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -240,12 +240,12 @@ func SetUint64Ptr(list []*uint64) []*uint64 {
 		return []*uint64{}
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 	newList := []*uint64{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -258,12 +258,12 @@ func SetUint32(list []uint32) []uint32 {
 		return []uint32{}
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 	newList := []uint32{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -276,12 +276,12 @@ func SetUint32Ptr(list []*uint32) []*uint32 {
 		return []*uint32{}
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 	newList := []*uint32{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -294,12 +294,12 @@ func SetUint16(list []uint16) []uint16 {
 		return []uint16{}
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 	newList := []uint16{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -312,12 +312,12 @@ func SetUint16Ptr(list []*uint16) []*uint16 {
 		return []*uint16{}
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 	newList := []*uint16{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -330,12 +330,12 @@ func SetUint8(list []uint8) []uint8 {
 		return []uint8{}
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 	newList := []uint8{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -348,12 +348,12 @@ func SetUint8Ptr(list []*uint8) []*uint8 {
 		return []*uint8{}
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 	newList := []*uint8{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -366,12 +366,12 @@ func SetStr(list []string) []string {
 		return []string{}
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 	newList := []string{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -384,12 +384,12 @@ func SetStrPtr(list []*string) []*string {
 		return []*string{}
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 	newList := []*string{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -402,12 +402,12 @@ func SetBool(list []bool) []bool {
 		return []bool{}
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 	newList := []bool{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -420,12 +420,12 @@ func SetBoolPtr(list []*bool) []*bool {
 		return []*bool{}
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 	newList := []*bool{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -438,12 +438,12 @@ func SetFloat32(list []float32) []float32 {
 		return []float32{}
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 	newList := []float32{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -456,12 +456,12 @@ func SetFloat32Ptr(list []*float32) []*float32 {
 		return []*float32{}
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 	newList := []*float32{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -474,12 +474,12 @@ func SetFloat64(list []float64) []float64 {
 		return []float64{}
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 	newList := []float64{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -492,12 +492,12 @@ func SetFloat64Ptr(list []*float64) []*float64 {
 		return []*float64{}
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 	newList := []*float64{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}

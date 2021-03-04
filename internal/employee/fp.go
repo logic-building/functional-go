@@ -1594,10 +1594,10 @@ func DistinctPtr(list []*Employee) []*Employee {
 // Union return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func Union(arrList ...[]Employee) []Employee {
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	for _, arr := range arrList {
 		for _, v := range arr {
-			resultMap[v] = true
+			resultMap[v] = struct{}{}
 		}
 	}
 
@@ -1613,13 +1613,13 @@ func Union(arrList ...[]Employee) []Employee {
 // UnionPtr return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func UnionPtr(arrList ...[]*Employee) []*Employee {
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	var resultArr []*Employee
 	for _, arr := range arrList {
 		for _, v := range arr {
 			_, ok := resultMap[*v]
 			if !ok {
-				resultMap[*v] = true
+				resultMap[*v] = struct{}{}
 				resultArr = append(resultArr, v)
 			}
 		}
@@ -1634,14 +1634,14 @@ func Intersection(arrList ...[]Employee) []Employee {
 		return []Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -1667,7 +1667,7 @@ func Intersection(arrList ...[]Employee) []Employee {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1681,13 +1681,13 @@ func IntersectionPtr(arrList ...[]*Employee) []*Employee {
 		return []*Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []*Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1714,7 +1714,7 @@ func IntersectionPtr(arrList ...[]*Employee) []*Employee {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1728,14 +1728,14 @@ func Difference(arrList ...[]Employee) []Employee {
 		return []Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -1761,7 +1761,7 @@ func Difference(arrList ...[]Employee) []Employee {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1775,13 +1775,13 @@ func DifferencePtr(arrList ...[]*Employee) []*Employee {
 		return []*Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []*Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1808,7 +1808,7 @@ func DifferencePtr(arrList ...[]*Employee) []*Employee {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1822,12 +1822,12 @@ func Subset(list1, list2 []Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -1849,12 +1849,12 @@ func SubsetPtr(list1, list2 []*Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -1876,13 +1876,13 @@ func Superset(list1, list2 []Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -1904,13 +1904,13 @@ func SupersetPtr(list1, list2 []*Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -1931,12 +1931,12 @@ func Set(list []Employee) []Employee {
 		return []Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	newList := []Employee{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -1949,12 +1949,12 @@ func SetPtr(list []*Employee) []*Employee {
 		return []*Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	newList := []*Employee{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}

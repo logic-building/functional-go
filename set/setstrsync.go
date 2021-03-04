@@ -4,7 +4,7 @@ import "sync"
 
 // StrSync - struct
 type StrSync struct {
-	nodeMap map[string]bool
+	nodeMap map[string]struct{}
 	sync.RWMutex
 }
 
@@ -22,11 +22,11 @@ func (s *StrSync) Add(str string) *StrSync {
 	s.Lock()
 	defer s.Unlock()
 	if s.nodeMap == nil {
-		s.nodeMap = make(map[string]bool)
+		s.nodeMap = make(map[string]struct{})
 	}
 	_, ok := s.nodeMap[str]
 	if !ok {
-		s.nodeMap[str] = true
+		s.nodeMap[str] = struct{}{}
 	}
 	return s
 }
@@ -35,7 +35,7 @@ func (s *StrSync) Add(str string) *StrSync {
 func (s *StrSync) Clear() {
 	s.Lock()
 	defer s.Unlock()
-	s.nodeMap = make(map[string]bool)
+	s.nodeMap = make(map[string]struct{})
 }
 
 // Remove an item
@@ -78,17 +78,17 @@ func (s *StrSync) Size() int {
 // Union returns all the items that are in S or in S2
 func (s *StrSync) Union(s2 *StrSync) *StrSync {
 	s3 := StrSync{}
-	s3.nodeMap = make(map[string]bool)
+	s3.nodeMap = make(map[string]struct{})
 	s.RLock()
 	for i := range s.nodeMap {
-		s3.nodeMap[i] = true
+		s3.nodeMap[i] = struct{}{}
 	}
 	s.RUnlock()
 	s2.RLock()
 	for i := range s2.nodeMap {
 		_, ok := s3.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	s2.RUnlock()
@@ -98,7 +98,7 @@ func (s *StrSync) Union(s2 *StrSync) *StrSync {
 // Intersection returns common items in S and S2
 func (s *StrSync) Intersection(s2 *StrSync) *StrSync {
 	s3 := StrSync{}
-	s3.nodeMap = make(map[string]bool)
+	s3.nodeMap = make(map[string]struct{})
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -106,7 +106,7 @@ func (s *StrSync) Intersection(s2 *StrSync) *StrSync {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -115,7 +115,7 @@ func (s *StrSync) Intersection(s2 *StrSync) *StrSync {
 // Minus - s.Minus(s2) : all of S but not in S2
 func (s *StrSync) Minus(s2 *StrSync) *StrSync {
 	s3 := StrSync{}
-	s3.nodeMap = make(map[string]bool)
+	s3.nodeMap = make(map[string]struct{})
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -123,7 +123,7 @@ func (s *StrSync) Minus(s2 *StrSync) *StrSync {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3

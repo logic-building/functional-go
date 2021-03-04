@@ -7,14 +7,14 @@ func IntersectionInt(arrList ...[]int) []int {
 		return []int{}
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 	if len(arrList) == 1 {
 		var newList []int
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -40,7 +40,7 @@ func IntersectionInt(arrList ...[]int) []int {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -54,13 +54,13 @@ func IntersectionIntPtr(arrList ...[]*int) []*int {
 		return []*int{}
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 	if len(arrList) == 1 {
 		var newList []*int
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -87,7 +87,7 @@ func IntersectionIntPtr(arrList ...[]*int) []*int {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -101,14 +101,14 @@ func IntersectionInt64(arrList ...[]int64) []int64 {
 		return []int64{}
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 	if len(arrList) == 1 {
 		var newList []int64
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -134,7 +134,7 @@ func IntersectionInt64(arrList ...[]int64) []int64 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -148,13 +148,13 @@ func IntersectionInt64Ptr(arrList ...[]*int64) []*int64 {
 		return []*int64{}
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 	if len(arrList) == 1 {
 		var newList []*int64
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -181,7 +181,7 @@ func IntersectionInt64Ptr(arrList ...[]*int64) []*int64 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -195,14 +195,14 @@ func IntersectionInt32(arrList ...[]int32) []int32 {
 		return []int32{}
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 	if len(arrList) == 1 {
 		var newList []int32
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -228,7 +228,7 @@ func IntersectionInt32(arrList ...[]int32) []int32 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -242,13 +242,13 @@ func IntersectionInt32Ptr(arrList ...[]*int32) []*int32 {
 		return []*int32{}
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 	if len(arrList) == 1 {
 		var newList []*int32
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -275,7 +275,7 @@ func IntersectionInt32Ptr(arrList ...[]*int32) []*int32 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -289,14 +289,14 @@ func IntersectionInt16(arrList ...[]int16) []int16 {
 		return []int16{}
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 	if len(arrList) == 1 {
 		var newList []int16
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -322,7 +322,7 @@ func IntersectionInt16(arrList ...[]int16) []int16 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -336,13 +336,13 @@ func IntersectionInt16Ptr(arrList ...[]*int16) []*int16 {
 		return []*int16{}
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 	if len(arrList) == 1 {
 		var newList []*int16
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -369,7 +369,7 @@ func IntersectionInt16Ptr(arrList ...[]*int16) []*int16 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -383,14 +383,14 @@ func IntersectionInt8(arrList ...[]int8) []int8 {
 		return []int8{}
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 	if len(arrList) == 1 {
 		var newList []int8
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -416,7 +416,7 @@ func IntersectionInt8(arrList ...[]int8) []int8 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -430,13 +430,13 @@ func IntersectionInt8Ptr(arrList ...[]*int8) []*int8 {
 		return []*int8{}
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 	if len(arrList) == 1 {
 		var newList []*int8
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -463,7 +463,7 @@ func IntersectionInt8Ptr(arrList ...[]*int8) []*int8 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -477,14 +477,14 @@ func IntersectionUint(arrList ...[]uint) []uint {
 		return []uint{}
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 	if len(arrList) == 1 {
 		var newList []uint
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -510,7 +510,7 @@ func IntersectionUint(arrList ...[]uint) []uint {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -524,13 +524,13 @@ func IntersectionUintPtr(arrList ...[]*uint) []*uint {
 		return []*uint{}
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 	if len(arrList) == 1 {
 		var newList []*uint
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -557,7 +557,7 @@ func IntersectionUintPtr(arrList ...[]*uint) []*uint {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -571,14 +571,14 @@ func IntersectionUint64(arrList ...[]uint64) []uint64 {
 		return []uint64{}
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 	if len(arrList) == 1 {
 		var newList []uint64
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -604,7 +604,7 @@ func IntersectionUint64(arrList ...[]uint64) []uint64 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -618,13 +618,13 @@ func IntersectionUint64Ptr(arrList ...[]*uint64) []*uint64 {
 		return []*uint64{}
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 	if len(arrList) == 1 {
 		var newList []*uint64
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -651,7 +651,7 @@ func IntersectionUint64Ptr(arrList ...[]*uint64) []*uint64 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -665,14 +665,14 @@ func IntersectionUint32(arrList ...[]uint32) []uint32 {
 		return []uint32{}
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 	if len(arrList) == 1 {
 		var newList []uint32
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -698,7 +698,7 @@ func IntersectionUint32(arrList ...[]uint32) []uint32 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -712,13 +712,13 @@ func IntersectionUint32Ptr(arrList ...[]*uint32) []*uint32 {
 		return []*uint32{}
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 	if len(arrList) == 1 {
 		var newList []*uint32
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -745,7 +745,7 @@ func IntersectionUint32Ptr(arrList ...[]*uint32) []*uint32 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -759,14 +759,14 @@ func IntersectionUint16(arrList ...[]uint16) []uint16 {
 		return []uint16{}
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 	if len(arrList) == 1 {
 		var newList []uint16
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -792,7 +792,7 @@ func IntersectionUint16(arrList ...[]uint16) []uint16 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -806,13 +806,13 @@ func IntersectionUint16Ptr(arrList ...[]*uint16) []*uint16 {
 		return []*uint16{}
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 	if len(arrList) == 1 {
 		var newList []*uint16
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -839,7 +839,7 @@ func IntersectionUint16Ptr(arrList ...[]*uint16) []*uint16 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -853,14 +853,14 @@ func IntersectionUint8(arrList ...[]uint8) []uint8 {
 		return []uint8{}
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 	if len(arrList) == 1 {
 		var newList []uint8
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -886,7 +886,7 @@ func IntersectionUint8(arrList ...[]uint8) []uint8 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -900,13 +900,13 @@ func IntersectionUint8Ptr(arrList ...[]*uint8) []*uint8 {
 		return []*uint8{}
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 	if len(arrList) == 1 {
 		var newList []*uint8
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -933,7 +933,7 @@ func IntersectionUint8Ptr(arrList ...[]*uint8) []*uint8 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -947,14 +947,14 @@ func IntersectionStr(arrList ...[]string) []string {
 		return []string{}
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 	if len(arrList) == 1 {
 		var newList []string
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -980,7 +980,7 @@ func IntersectionStr(arrList ...[]string) []string {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -994,13 +994,13 @@ func IntersectionStrPtr(arrList ...[]*string) []*string {
 		return []*string{}
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 	if len(arrList) == 1 {
 		var newList []*string
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1027,7 +1027,7 @@ func IntersectionStrPtr(arrList ...[]*string) []*string {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1041,14 +1041,14 @@ func IntersectionBool(arrList ...[]bool) []bool {
 		return []bool{}
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 	if len(arrList) == 1 {
 		var newList []bool
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -1074,7 +1074,7 @@ func IntersectionBool(arrList ...[]bool) []bool {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1088,13 +1088,13 @@ func IntersectionBoolPtr(arrList ...[]*bool) []*bool {
 		return []*bool{}
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 	if len(arrList) == 1 {
 		var newList []*bool
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1121,7 +1121,7 @@ func IntersectionBoolPtr(arrList ...[]*bool) []*bool {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1135,14 +1135,14 @@ func IntersectionFloat32(arrList ...[]float32) []float32 {
 		return []float32{}
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 	if len(arrList) == 1 {
 		var newList []float32
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -1168,7 +1168,7 @@ func IntersectionFloat32(arrList ...[]float32) []float32 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1182,13 +1182,13 @@ func IntersectionFloat32Ptr(arrList ...[]*float32) []*float32 {
 		return []*float32{}
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 	if len(arrList) == 1 {
 		var newList []*float32
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1215,7 +1215,7 @@ func IntersectionFloat32Ptr(arrList ...[]*float32) []*float32 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1229,14 +1229,14 @@ func IntersectionFloat64(arrList ...[]float64) []float64 {
 		return []float64{}
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 	if len(arrList) == 1 {
 		var newList []float64
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -1262,7 +1262,7 @@ func IntersectionFloat64(arrList ...[]float64) []float64 {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1276,13 +1276,13 @@ func IntersectionFloat64Ptr(arrList ...[]*float64) []*float64 {
 		return []*float64{}
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 	if len(arrList) == 1 {
 		var newList []*float64
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1309,7 +1309,7 @@ func IntersectionFloat64Ptr(arrList ...[]*float64) []*float64 {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}

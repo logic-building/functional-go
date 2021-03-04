@@ -4,7 +4,7 @@ import "sync"
 
 // Uint8Sync - struct
 type Uint8Sync struct {
-	nodeMap map[uint8]bool
+	nodeMap map[uint8]struct{}
 	sync.RWMutex
 }
 
@@ -22,11 +22,11 @@ func (s *Uint8Sync) Add(num uint8) *Uint8Sync {
 	s.Lock()
 	defer s.Unlock()
 	if s.nodeMap == nil {
-		s.nodeMap = make(map[uint8]bool)
+		s.nodeMap = make(map[uint8]struct{})
 	}
 	_, ok := s.nodeMap[num]
 	if !ok {
-		s.nodeMap[num] = true
+		s.nodeMap[num] = struct{}{}
 	}
 	return s
 }
@@ -35,7 +35,7 @@ func (s *Uint8Sync) Add(num uint8) *Uint8Sync {
 func (s *Uint8Sync) Clear() {
 	s.Lock()
 	defer s.Unlock()
-	s.nodeMap = make(map[uint8]bool)
+	s.nodeMap = make(map[uint8]struct{})
 }
 
 // Remove an item
@@ -78,17 +78,17 @@ func (s *Uint8Sync) Size() int {
 // Union returns all the items that are in S or in S2
 func (s *Uint8Sync) Union(s2 *Uint8Sync) *Uint8Sync {
 	s3 := Uint8Sync{}
-	s3.nodeMap = make(map[uint8]bool)
+	s3.nodeMap = make(map[uint8]struct{})
 	s.RLock()
 	for i := range s.nodeMap {
-		s3.nodeMap[i] = true
+		s3.nodeMap[i] = struct{}{}
 	}
 	s.RUnlock()
 	s2.RLock()
 	for i := range s2.nodeMap {
 		_, ok := s3.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	s2.RUnlock()
@@ -98,7 +98,7 @@ func (s *Uint8Sync) Union(s2 *Uint8Sync) *Uint8Sync {
 // Intersection returns common items in S and S2
 func (s *Uint8Sync) Intersection(s2 *Uint8Sync) *Uint8Sync {
 	s3 := Uint8Sync{}
-	s3.nodeMap = make(map[uint8]bool)
+	s3.nodeMap = make(map[uint8]struct{})
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -106,7 +106,7 @@ func (s *Uint8Sync) Intersection(s2 *Uint8Sync) *Uint8Sync {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -115,7 +115,7 @@ func (s *Uint8Sync) Intersection(s2 *Uint8Sync) *Uint8Sync {
 // Minus - s.Minus(s2) : all of S but not in S2
 func (s *Uint8Sync) Minus(s2 *Uint8Sync) *Uint8Sync {
 	s3 := Uint8Sync{}
-	s3.nodeMap = make(map[uint8]bool)
+	s3.nodeMap = make(map[uint8]struct{})
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -123,7 +123,7 @@ func (s *Uint8Sync) Minus(s2 *Uint8Sync) *Uint8Sync {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3

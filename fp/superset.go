@@ -7,13 +7,13 @@ func SupersetInt(list1, list2 []int) bool {
 		return false
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -35,13 +35,13 @@ func SupersetIntPtr(list1, list2 []*int) bool {
 		return false
 	}
 
-	resultMap := make(map[int]bool)
+	resultMap := make(map[int]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -63,13 +63,13 @@ func SupersetInt64(list1, list2 []int64) bool {
 		return false
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -91,13 +91,13 @@ func SupersetInt64Ptr(list1, list2 []*int64) bool {
 		return false
 	}
 
-	resultMap := make(map[int64]bool)
+	resultMap := make(map[int64]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -119,13 +119,13 @@ func SupersetInt32(list1, list2 []int32) bool {
 		return false
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -147,13 +147,13 @@ func SupersetInt32Ptr(list1, list2 []*int32) bool {
 		return false
 	}
 
-	resultMap := make(map[int32]bool)
+	resultMap := make(map[int32]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -175,13 +175,13 @@ func SupersetInt16(list1, list2 []int16) bool {
 		return false
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -203,13 +203,13 @@ func SupersetInt16Ptr(list1, list2 []*int16) bool {
 		return false
 	}
 
-	resultMap := make(map[int16]bool)
+	resultMap := make(map[int16]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -231,13 +231,13 @@ func SupersetInt8(list1, list2 []int8) bool {
 		return false
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -259,13 +259,13 @@ func SupersetInt8Ptr(list1, list2 []*int8) bool {
 		return false
 	}
 
-	resultMap := make(map[int8]bool)
+	resultMap := make(map[int8]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -287,13 +287,13 @@ func SupersetUint(list1, list2 []uint) bool {
 		return false
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -315,13 +315,13 @@ func SupersetUintPtr(list1, list2 []*uint) bool {
 		return false
 	}
 
-	resultMap := make(map[uint]bool)
+	resultMap := make(map[uint]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -343,13 +343,13 @@ func SupersetUint64(list1, list2 []uint64) bool {
 		return false
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -371,13 +371,13 @@ func SupersetUint64Ptr(list1, list2 []*uint64) bool {
 		return false
 	}
 
-	resultMap := make(map[uint64]bool)
+	resultMap := make(map[uint64]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -399,13 +399,13 @@ func SupersetUint32(list1, list2 []uint32) bool {
 		return false
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -427,13 +427,13 @@ func SupersetUint32Ptr(list1, list2 []*uint32) bool {
 		return false
 	}
 
-	resultMap := make(map[uint32]bool)
+	resultMap := make(map[uint32]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -455,13 +455,13 @@ func SupersetUint16(list1, list2 []uint16) bool {
 		return false
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -483,13 +483,13 @@ func SupersetUint16Ptr(list1, list2 []*uint16) bool {
 		return false
 	}
 
-	resultMap := make(map[uint16]bool)
+	resultMap := make(map[uint16]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -511,13 +511,13 @@ func SupersetUint8(list1, list2 []uint8) bool {
 		return false
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -539,13 +539,13 @@ func SupersetUint8Ptr(list1, list2 []*uint8) bool {
 		return false
 	}
 
-	resultMap := make(map[uint8]bool)
+	resultMap := make(map[uint8]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -567,13 +567,13 @@ func SupersetStr(list1, list2 []string) bool {
 		return false
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -595,13 +595,13 @@ func SupersetStrPtr(list1, list2 []*string) bool {
 		return false
 	}
 
-	resultMap := make(map[string]bool)
+	resultMap := make(map[string]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -623,13 +623,13 @@ func SupersetBool(list1, list2 []bool) bool {
 		return false
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -651,13 +651,13 @@ func SupersetBoolPtr(list1, list2 []*bool) bool {
 		return false
 	}
 
-	resultMap := make(map[bool]bool)
+	resultMap := make(map[bool]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -679,13 +679,13 @@ func SupersetFloat32(list1, list2 []float32) bool {
 		return false
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -707,13 +707,13 @@ func SupersetFloat32Ptr(list1, list2 []*float32) bool {
 		return false
 	}
 
-	resultMap := make(map[float32]bool)
+	resultMap := make(map[float32]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -735,13 +735,13 @@ func SupersetFloat64(list1, list2 []float64) bool {
 		return false
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -763,13 +763,13 @@ func SupersetFloat64Ptr(list1, list2 []*float64) bool {
 		return false
 	}
 
-	resultMap := make(map[float64]bool)
+	resultMap := make(map[float64]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
