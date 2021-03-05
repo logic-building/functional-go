@@ -1531,6 +1531,36 @@ func (slice employerSlicePtr) RemovePtr(functors ...employerFunctorForFilterPtr)
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice employerSlice) DropWhile(functors ...employerFunctorForFilter) employerSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhile(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice employerSlicePtr) DropWhilePtr(functors ...employerFunctorForFilterPtr) employerSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhilePtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 // DistinctP returns true if no two of the arguments are =
 func DistinctP(list []Employer) bool {
 	if len(list) == 0 {
@@ -3481,6 +3511,36 @@ func (slice employeeSlicePtr) RemovePtr(functors ...employeeFunctorForFilterPtr)
 			continue
 		}
 		tmpSlice = RemoveEmployeePtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice employeeSlice) DropWhile(functors ...employeeFunctorForFilter) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileEmployee(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice employeeSlicePtr) DropWhilePtr(functors ...employeeFunctorForFilterPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileEmployeePtr(f, tmpSlice)
 	}
 
 	return tmpSlice

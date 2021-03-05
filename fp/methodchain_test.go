@@ -20,6 +20,14 @@ func TestMapIntMethodChain(t *testing.T) {
 	}
 }
 
+// TestMap2IntMethodChain - 
+func TestMap2IntMethodChain(t *testing.T) {
+	if len(MakeIntSlice().Map(nil)) > 0 {
+		t.Errorf("MapInt failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
 // TestMapIntMethodChainPtr - 
 func TestMapIntMethodChainPtr(t *testing.T) {
 	var v1 int = 1
@@ -35,6 +43,13 @@ func TestMapIntMethodChainPtr(t *testing.T) {
 	}
 
 	if len(MakeIntSlicePtr().MapPtr(squareIntPtr)) > 0 {
+		t.Errorf("MapIntPtr failed.")
+	}
+}
+
+// TestMapPtr2IntMethodChain -  
+func TestMapPtr2IntMethodChain(t *testing.T) {
+	if len(MakeIntSlicePtr().MapPtr(nil)) > 0 {
 		t.Errorf("MapIntPtr failed.")
 	}
 }
@@ -58,6 +73,13 @@ func TestFilterIntMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2IntMethodChain - 
+func TestFilter2IntMethodChain(t *testing.T) {
+	if len(MakeIntSlice().Filter(nil)) > 0 {
+		t.Errorf("FilterIntPtr failed.")
+	}
+}
+
 // TestFilterIntPtrMethodChain - 
 func TestFilterIntPtrMethodChain(t *testing.T) {
 	var v1 int = 1
@@ -74,6 +96,13 @@ func TestFilterIntPtrMethodChain(t *testing.T) {
 
 	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
 		t.Errorf("FilterIntPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2IntPtrMethodChain - 
+func TestFilter2IntPtrMethodChain(t *testing.T) {
+	if len(MakeIntSlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterIntPtr failed.")
 	}
 }
 
@@ -96,6 +125,13 @@ func TestRemoveIntMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2IntMethodChain - 
+func TestRemove2IntMethodChain(t *testing.T) {
+	if len(MakeIntSlice().Remove(nil)) > 0 {
+		t.Errorf("RemoveInt failed.")
+	}
+}
+
 // TestRemoveIntPtrMethodChain - 
 func TestRemoveIntPtrMethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -115,6 +151,65 @@ func TestRemoveIntPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrIntMethodChain - 
+func TestRemove2PtrIntMethodChain(t *testing.T) {
+	if len(MakeIntSlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveIntPtr failed.")
+	}
+}
+
+func TestDropWhileIntMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int = 2
+	var v3 int = 3
+	var v4 int = 4
+	var v5 int = 5
+
+	isEvenInt := func(num int) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []int{v3, v4, v5}
+	NewList := MakeIntSlice([]int{v4, v2, v3, v4, v5}...).DropWhile(isEvenInt)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2IntMethodChain - 
+func TestDropWhile2IntMethodChain(t *testing.T) {
+	if len(MakeIntSlice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileInt failed.")
+	}
+}
+
+func TestDropWhileIntPtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int = 2
+	var v3 int = 3
+	var v4 int = 4
+	var v5 int = 5
+
+	isEvenIntPtr := func(num *int) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*int{&v3, &v4, &v5}
+	NewList := MakeIntSlicePtr([]*int{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenIntPtr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrIntMethodChain - 
+func TestDropWhile2PtrIntMethodChain(t *testing.T) {
+	if len(MakeIntSlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileIntPtr failed.")
+	}
+}
+
 func TestMapInt64MethodChain(t *testing.T) {
 	expectedSquareList := []int64{1, 4, 9}
 	squareList := MakeInt64Slice([]int64{1, 2, 3}...).Map(squareInt64)
@@ -124,6 +219,14 @@ func TestMapInt64MethodChain(t *testing.T) {
 	}
 
 	if len(MakeInt64Slice().Map(squareInt64)) > 0 {
+		t.Errorf("MapInt64 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Int64MethodChain - 
+func TestMap2Int64MethodChain(t *testing.T) {
+	if len(MakeInt64Slice().Map(nil)) > 0 {
 		t.Errorf("MapInt64 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -148,6 +251,13 @@ func TestMapInt64MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Int64MethodChain -  
+func TestMapPtr2Int64MethodChain(t *testing.T) {
+	if len(MakeInt64SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapInt64Ptr failed.")
+	}
+}
+
 // TestFilterInt64MethodChain - 
 func TestFilterInt64MethodChain(t *testing.T) {
 	var v1 int64 = 1
@@ -164,6 +274,13 @@ func TestFilterInt64MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterInt64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Int64MethodChain - 
+func TestFilter2Int64MethodChain(t *testing.T) {
+	if len(MakeInt64Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterInt64Ptr failed.")
 	}
 }
 
@@ -186,6 +303,13 @@ func TestFilterInt64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Int64PtrMethodChain - 
+func TestFilter2Int64PtrMethodChain(t *testing.T) {
+	if len(MakeInt64SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterInt64Ptr failed.")
+	}
+}
+
 // TestRemoveInt64MethodChain - 
 func TestRemoveInt64MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -202,6 +326,13 @@ func TestRemoveInt64MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveInt64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Int64MethodChain - 
+func TestRemove2Int64MethodChain(t *testing.T) {
+	if len(MakeInt64Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveInt64 failed.")
 	}
 }
 
@@ -224,6 +355,65 @@ func TestRemoveInt64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrInt64MethodChain - 
+func TestRemove2PtrInt64MethodChain(t *testing.T) {
+	if len(MakeInt64SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveInt64Ptr failed.")
+	}
+}
+
+func TestDropWhileInt64MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int64 = 2
+	var v3 int64 = 3
+	var v4 int64 = 4
+	var v5 int64 = 5
+
+	isEvenInt64 := func(num int64) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []int64{v3, v4, v5}
+	NewList := MakeInt64Slice([]int64{v4, v2, v3, v4, v5}...).DropWhile(isEvenInt64)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Int64MethodChain - 
+func TestDropWhile2Int64MethodChain(t *testing.T) {
+	if len(MakeInt64Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileInt64 failed.")
+	}
+}
+
+func TestDropWhileInt64PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int64 = 2
+	var v3 int64 = 3
+	var v4 int64 = 4
+	var v5 int64 = 5
+
+	isEvenInt64Ptr := func(num *int64) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*int64{&v3, &v4, &v5}
+	NewList := MakeInt64SlicePtr([]*int64{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenInt64Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrInt64MethodChain - 
+func TestDropWhile2PtrInt64MethodChain(t *testing.T) {
+	if len(MakeInt64SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileInt64Ptr failed.")
+	}
+}
+
 func TestMapInt32MethodChain(t *testing.T) {
 	expectedSquareList := []int32{1, 4, 9}
 	squareList := MakeInt32Slice([]int32{1, 2, 3}...).Map(squareInt32)
@@ -233,6 +423,14 @@ func TestMapInt32MethodChain(t *testing.T) {
 	}
 
 	if len(MakeInt32Slice().Map(squareInt32)) > 0 {
+		t.Errorf("MapInt32 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Int32MethodChain - 
+func TestMap2Int32MethodChain(t *testing.T) {
+	if len(MakeInt32Slice().Map(nil)) > 0 {
 		t.Errorf("MapInt32 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -257,6 +455,13 @@ func TestMapInt32MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Int32MethodChain -  
+func TestMapPtr2Int32MethodChain(t *testing.T) {
+	if len(MakeInt32SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapInt32Ptr failed.")
+	}
+}
+
 // TestFilterInt32MethodChain - 
 func TestFilterInt32MethodChain(t *testing.T) {
 	var v1 int32 = 1
@@ -273,6 +478,13 @@ func TestFilterInt32MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterInt32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Int32MethodChain - 
+func TestFilter2Int32MethodChain(t *testing.T) {
+	if len(MakeInt32Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterInt32Ptr failed.")
 	}
 }
 
@@ -295,6 +507,13 @@ func TestFilterInt32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Int32PtrMethodChain - 
+func TestFilter2Int32PtrMethodChain(t *testing.T) {
+	if len(MakeInt32SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterInt32Ptr failed.")
+	}
+}
+
 // TestRemoveInt32MethodChain - 
 func TestRemoveInt32MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -311,6 +530,13 @@ func TestRemoveInt32MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveInt32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Int32MethodChain - 
+func TestRemove2Int32MethodChain(t *testing.T) {
+	if len(MakeInt32Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveInt32 failed.")
 	}
 }
 
@@ -333,6 +559,65 @@ func TestRemoveInt32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrInt32MethodChain - 
+func TestRemove2PtrInt32MethodChain(t *testing.T) {
+	if len(MakeInt32SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveInt32Ptr failed.")
+	}
+}
+
+func TestDropWhileInt32MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int32 = 2
+	var v3 int32 = 3
+	var v4 int32 = 4
+	var v5 int32 = 5
+
+	isEvenInt32 := func(num int32) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []int32{v3, v4, v5}
+	NewList := MakeInt32Slice([]int32{v4, v2, v3, v4, v5}...).DropWhile(isEvenInt32)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Int32MethodChain - 
+func TestDropWhile2Int32MethodChain(t *testing.T) {
+	if len(MakeInt32Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileInt32 failed.")
+	}
+}
+
+func TestDropWhileInt32PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int32 = 2
+	var v3 int32 = 3
+	var v4 int32 = 4
+	var v5 int32 = 5
+
+	isEvenInt32Ptr := func(num *int32) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*int32{&v3, &v4, &v5}
+	NewList := MakeInt32SlicePtr([]*int32{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenInt32Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrInt32MethodChain - 
+func TestDropWhile2PtrInt32MethodChain(t *testing.T) {
+	if len(MakeInt32SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileInt32Ptr failed.")
+	}
+}
+
 func TestMapInt16MethodChain(t *testing.T) {
 	expectedSquareList := []int16{1, 4, 9}
 	squareList := MakeInt16Slice([]int16{1, 2, 3}...).Map(squareInt16)
@@ -342,6 +627,14 @@ func TestMapInt16MethodChain(t *testing.T) {
 	}
 
 	if len(MakeInt16Slice().Map(squareInt16)) > 0 {
+		t.Errorf("MapInt16 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Int16MethodChain - 
+func TestMap2Int16MethodChain(t *testing.T) {
+	if len(MakeInt16Slice().Map(nil)) > 0 {
 		t.Errorf("MapInt16 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -366,6 +659,13 @@ func TestMapInt16MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Int16MethodChain -  
+func TestMapPtr2Int16MethodChain(t *testing.T) {
+	if len(MakeInt16SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapInt16Ptr failed.")
+	}
+}
+
 // TestFilterInt16MethodChain - 
 func TestFilterInt16MethodChain(t *testing.T) {
 	var v1 int16 = 1
@@ -382,6 +682,13 @@ func TestFilterInt16MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterInt16 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Int16MethodChain - 
+func TestFilter2Int16MethodChain(t *testing.T) {
+	if len(MakeInt16Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterInt16Ptr failed.")
 	}
 }
 
@@ -404,6 +711,13 @@ func TestFilterInt16PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Int16PtrMethodChain - 
+func TestFilter2Int16PtrMethodChain(t *testing.T) {
+	if len(MakeInt16SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterInt16Ptr failed.")
+	}
+}
+
 // TestRemoveInt16MethodChain - 
 func TestRemoveInt16MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -420,6 +734,13 @@ func TestRemoveInt16MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveInt16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Int16MethodChain - 
+func TestRemove2Int16MethodChain(t *testing.T) {
+	if len(MakeInt16Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveInt16 failed.")
 	}
 }
 
@@ -442,6 +763,65 @@ func TestRemoveInt16PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrInt16MethodChain - 
+func TestRemove2PtrInt16MethodChain(t *testing.T) {
+	if len(MakeInt16SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveInt16Ptr failed.")
+	}
+}
+
+func TestDropWhileInt16MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int16 = 2
+	var v3 int16 = 3
+	var v4 int16 = 4
+	var v5 int16 = 5
+
+	isEvenInt16 := func(num int16) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []int16{v3, v4, v5}
+	NewList := MakeInt16Slice([]int16{v4, v2, v3, v4, v5}...).DropWhile(isEvenInt16)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Int16MethodChain - 
+func TestDropWhile2Int16MethodChain(t *testing.T) {
+	if len(MakeInt16Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileInt16 failed.")
+	}
+}
+
+func TestDropWhileInt16PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int16 = 2
+	var v3 int16 = 3
+	var v4 int16 = 4
+	var v5 int16 = 5
+
+	isEvenInt16Ptr := func(num *int16) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*int16{&v3, &v4, &v5}
+	NewList := MakeInt16SlicePtr([]*int16{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenInt16Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrInt16MethodChain - 
+func TestDropWhile2PtrInt16MethodChain(t *testing.T) {
+	if len(MakeInt16SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileInt16Ptr failed.")
+	}
+}
+
 func TestMapInt8MethodChain(t *testing.T) {
 	expectedSquareList := []int8{1, 4, 9}
 	squareList := MakeInt8Slice([]int8{1, 2, 3}...).Map(squareInt8)
@@ -451,6 +831,14 @@ func TestMapInt8MethodChain(t *testing.T) {
 	}
 
 	if len(MakeInt8Slice().Map(squareInt8)) > 0 {
+		t.Errorf("MapInt8 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Int8MethodChain - 
+func TestMap2Int8MethodChain(t *testing.T) {
+	if len(MakeInt8Slice().Map(nil)) > 0 {
 		t.Errorf("MapInt8 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -475,6 +863,13 @@ func TestMapInt8MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Int8MethodChain -  
+func TestMapPtr2Int8MethodChain(t *testing.T) {
+	if len(MakeInt8SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapInt8Ptr failed.")
+	}
+}
+
 // TestFilterInt8MethodChain - 
 func TestFilterInt8MethodChain(t *testing.T) {
 	var v1 int8 = 1
@@ -491,6 +886,13 @@ func TestFilterInt8MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterInt8 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Int8MethodChain - 
+func TestFilter2Int8MethodChain(t *testing.T) {
+	if len(MakeInt8Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterInt8Ptr failed.")
 	}
 }
 
@@ -513,6 +915,13 @@ func TestFilterInt8PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Int8PtrMethodChain - 
+func TestFilter2Int8PtrMethodChain(t *testing.T) {
+	if len(MakeInt8SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterInt8Ptr failed.")
+	}
+}
+
 // TestRemoveInt8MethodChain - 
 func TestRemoveInt8MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -529,6 +938,13 @@ func TestRemoveInt8MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveInt8 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Int8MethodChain - 
+func TestRemove2Int8MethodChain(t *testing.T) {
+	if len(MakeInt8Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveInt8 failed.")
 	}
 }
 
@@ -551,6 +967,65 @@ func TestRemoveInt8PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrInt8MethodChain - 
+func TestRemove2PtrInt8MethodChain(t *testing.T) {
+	if len(MakeInt8SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveInt8Ptr failed.")
+	}
+}
+
+func TestDropWhileInt8MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int8 = 2
+	var v3 int8 = 3
+	var v4 int8 = 4
+	var v5 int8 = 5
+
+	isEvenInt8 := func(num int8) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []int8{v3, v4, v5}
+	NewList := MakeInt8Slice([]int8{v4, v2, v3, v4, v5}...).DropWhile(isEvenInt8)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Int8MethodChain - 
+func TestDropWhile2Int8MethodChain(t *testing.T) {
+	if len(MakeInt8Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileInt8 failed.")
+	}
+}
+
+func TestDropWhileInt8PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 int8 = 2
+	var v3 int8 = 3
+	var v4 int8 = 4
+	var v5 int8 = 5
+
+	isEvenInt8Ptr := func(num *int8) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*int8{&v3, &v4, &v5}
+	NewList := MakeInt8SlicePtr([]*int8{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenInt8Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrInt8MethodChain - 
+func TestDropWhile2PtrInt8MethodChain(t *testing.T) {
+	if len(MakeInt8SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileInt8Ptr failed.")
+	}
+}
+
 func TestMapUintMethodChain(t *testing.T) {
 	expectedSquareList := []uint{1, 4, 9}
 	squareList := MakeUintSlice([]uint{1, 2, 3}...).Map(squareUint)
@@ -560,6 +1035,14 @@ func TestMapUintMethodChain(t *testing.T) {
 	}
 
 	if len(MakeUintSlice().Map(squareUint)) > 0 {
+		t.Errorf("MapUint failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2UintMethodChain - 
+func TestMap2UintMethodChain(t *testing.T) {
+	if len(MakeUintSlice().Map(nil)) > 0 {
 		t.Errorf("MapUint failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -584,6 +1067,13 @@ func TestMapUintMethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2UintMethodChain -  
+func TestMapPtr2UintMethodChain(t *testing.T) {
+	if len(MakeUintSlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapUintPtr failed.")
+	}
+}
+
 // TestFilterUintMethodChain - 
 func TestFilterUintMethodChain(t *testing.T) {
 	var v1 uint = 1
@@ -600,6 +1090,13 @@ func TestFilterUintMethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterUint failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2UintMethodChain - 
+func TestFilter2UintMethodChain(t *testing.T) {
+	if len(MakeUintSlice().Filter(nil)) > 0 {
+		t.Errorf("FilterUintPtr failed.")
 	}
 }
 
@@ -622,6 +1119,13 @@ func TestFilterUintPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2UintPtrMethodChain - 
+func TestFilter2UintPtrMethodChain(t *testing.T) {
+	if len(MakeUintSlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterUintPtr failed.")
+	}
+}
+
 // TestRemoveUintMethodChain - 
 func TestRemoveUintMethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -638,6 +1142,13 @@ func TestRemoveUintMethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveUint failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2UintMethodChain - 
+func TestRemove2UintMethodChain(t *testing.T) {
+	if len(MakeUintSlice().Remove(nil)) > 0 {
+		t.Errorf("RemoveUint failed.")
 	}
 }
 
@@ -660,6 +1171,65 @@ func TestRemoveUintPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrUintMethodChain - 
+func TestRemove2PtrUintMethodChain(t *testing.T) {
+	if len(MakeUintSlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveUintPtr failed.")
+	}
+}
+
+func TestDropWhileUintMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint = 2
+	var v3 uint = 3
+	var v4 uint = 4
+	var v5 uint = 5
+
+	isEvenUint := func(num uint) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []uint{v3, v4, v5}
+	NewList := MakeUintSlice([]uint{v4, v2, v3, v4, v5}...).DropWhile(isEvenUint)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2UintMethodChain - 
+func TestDropWhile2UintMethodChain(t *testing.T) {
+	if len(MakeUintSlice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileUint failed.")
+	}
+}
+
+func TestDropWhileUintPtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint = 2
+	var v3 uint = 3
+	var v4 uint = 4
+	var v5 uint = 5
+
+	isEvenUintPtr := func(num *uint) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*uint{&v3, &v4, &v5}
+	NewList := MakeUintSlicePtr([]*uint{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenUintPtr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrUintMethodChain - 
+func TestDropWhile2PtrUintMethodChain(t *testing.T) {
+	if len(MakeUintSlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileUintPtr failed.")
+	}
+}
+
 func TestMapUint64MethodChain(t *testing.T) {
 	expectedSquareList := []uint64{1, 4, 9}
 	squareList := MakeUint64Slice([]uint64{1, 2, 3}...).Map(squareUint64)
@@ -669,6 +1239,14 @@ func TestMapUint64MethodChain(t *testing.T) {
 	}
 
 	if len(MakeUint64Slice().Map(squareUint64)) > 0 {
+		t.Errorf("MapUint64 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Uint64MethodChain - 
+func TestMap2Uint64MethodChain(t *testing.T) {
+	if len(MakeUint64Slice().Map(nil)) > 0 {
 		t.Errorf("MapUint64 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -693,6 +1271,13 @@ func TestMapUint64MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Uint64MethodChain -  
+func TestMapPtr2Uint64MethodChain(t *testing.T) {
+	if len(MakeUint64SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapUint64Ptr failed.")
+	}
+}
+
 // TestFilterUint64MethodChain - 
 func TestFilterUint64MethodChain(t *testing.T) {
 	var v1 uint64 = 1
@@ -709,6 +1294,13 @@ func TestFilterUint64MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterUint64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Uint64MethodChain - 
+func TestFilter2Uint64MethodChain(t *testing.T) {
+	if len(MakeUint64Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterUint64Ptr failed.")
 	}
 }
 
@@ -731,6 +1323,13 @@ func TestFilterUint64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Uint64PtrMethodChain - 
+func TestFilter2Uint64PtrMethodChain(t *testing.T) {
+	if len(MakeUint64SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterUint64Ptr failed.")
+	}
+}
+
 // TestRemoveUint64MethodChain - 
 func TestRemoveUint64MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -747,6 +1346,13 @@ func TestRemoveUint64MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveUint64 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Uint64MethodChain - 
+func TestRemove2Uint64MethodChain(t *testing.T) {
+	if len(MakeUint64Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveUint64 failed.")
 	}
 }
 
@@ -769,6 +1375,65 @@ func TestRemoveUint64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrUint64MethodChain - 
+func TestRemove2PtrUint64MethodChain(t *testing.T) {
+	if len(MakeUint64SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveUint64Ptr failed.")
+	}
+}
+
+func TestDropWhileUint64MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint64 = 2
+	var v3 uint64 = 3
+	var v4 uint64 = 4
+	var v5 uint64 = 5
+
+	isEvenUint64 := func(num uint64) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []uint64{v3, v4, v5}
+	NewList := MakeUint64Slice([]uint64{v4, v2, v3, v4, v5}...).DropWhile(isEvenUint64)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Uint64MethodChain - 
+func TestDropWhile2Uint64MethodChain(t *testing.T) {
+	if len(MakeUint64Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileUint64 failed.")
+	}
+}
+
+func TestDropWhileUint64PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint64 = 2
+	var v3 uint64 = 3
+	var v4 uint64 = 4
+	var v5 uint64 = 5
+
+	isEvenUint64Ptr := func(num *uint64) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*uint64{&v3, &v4, &v5}
+	NewList := MakeUint64SlicePtr([]*uint64{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenUint64Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrUint64MethodChain - 
+func TestDropWhile2PtrUint64MethodChain(t *testing.T) {
+	if len(MakeUint64SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileUint64Ptr failed.")
+	}
+}
+
 func TestMapUint32MethodChain(t *testing.T) {
 	expectedSquareList := []uint32{1, 4, 9}
 	squareList := MakeUint32Slice([]uint32{1, 2, 3}...).Map(squareUint32)
@@ -778,6 +1443,14 @@ func TestMapUint32MethodChain(t *testing.T) {
 	}
 
 	if len(MakeUint32Slice().Map(squareUint32)) > 0 {
+		t.Errorf("MapUint32 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Uint32MethodChain - 
+func TestMap2Uint32MethodChain(t *testing.T) {
+	if len(MakeUint32Slice().Map(nil)) > 0 {
 		t.Errorf("MapUint32 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -802,6 +1475,13 @@ func TestMapUint32MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Uint32MethodChain -  
+func TestMapPtr2Uint32MethodChain(t *testing.T) {
+	if len(MakeUint32SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapUint32Ptr failed.")
+	}
+}
+
 // TestFilterUint32MethodChain - 
 func TestFilterUint32MethodChain(t *testing.T) {
 	var v1 uint32 = 1
@@ -818,6 +1498,13 @@ func TestFilterUint32MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterUint32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Uint32MethodChain - 
+func TestFilter2Uint32MethodChain(t *testing.T) {
+	if len(MakeUint32Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterUint32Ptr failed.")
 	}
 }
 
@@ -840,6 +1527,13 @@ func TestFilterUint32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Uint32PtrMethodChain - 
+func TestFilter2Uint32PtrMethodChain(t *testing.T) {
+	if len(MakeUint32SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterUint32Ptr failed.")
+	}
+}
+
 // TestRemoveUint32MethodChain - 
 func TestRemoveUint32MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -856,6 +1550,13 @@ func TestRemoveUint32MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveUint32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Uint32MethodChain - 
+func TestRemove2Uint32MethodChain(t *testing.T) {
+	if len(MakeUint32Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveUint32 failed.")
 	}
 }
 
@@ -878,6 +1579,65 @@ func TestRemoveUint32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrUint32MethodChain - 
+func TestRemove2PtrUint32MethodChain(t *testing.T) {
+	if len(MakeUint32SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveUint32Ptr failed.")
+	}
+}
+
+func TestDropWhileUint32MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint32 = 2
+	var v3 uint32 = 3
+	var v4 uint32 = 4
+	var v5 uint32 = 5
+
+	isEvenUint32 := func(num uint32) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []uint32{v3, v4, v5}
+	NewList := MakeUint32Slice([]uint32{v4, v2, v3, v4, v5}...).DropWhile(isEvenUint32)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Uint32MethodChain - 
+func TestDropWhile2Uint32MethodChain(t *testing.T) {
+	if len(MakeUint32Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileUint32 failed.")
+	}
+}
+
+func TestDropWhileUint32PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint32 = 2
+	var v3 uint32 = 3
+	var v4 uint32 = 4
+	var v5 uint32 = 5
+
+	isEvenUint32Ptr := func(num *uint32) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*uint32{&v3, &v4, &v5}
+	NewList := MakeUint32SlicePtr([]*uint32{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenUint32Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrUint32MethodChain - 
+func TestDropWhile2PtrUint32MethodChain(t *testing.T) {
+	if len(MakeUint32SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileUint32Ptr failed.")
+	}
+}
+
 func TestMapUint16MethodChain(t *testing.T) {
 	expectedSquareList := []uint16{1, 4, 9}
 	squareList := MakeUint16Slice([]uint16{1, 2, 3}...).Map(squareUint16)
@@ -887,6 +1647,14 @@ func TestMapUint16MethodChain(t *testing.T) {
 	}
 
 	if len(MakeUint16Slice().Map(squareUint16)) > 0 {
+		t.Errorf("MapUint16 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Uint16MethodChain - 
+func TestMap2Uint16MethodChain(t *testing.T) {
+	if len(MakeUint16Slice().Map(nil)) > 0 {
 		t.Errorf("MapUint16 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -911,6 +1679,13 @@ func TestMapUint16MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Uint16MethodChain -  
+func TestMapPtr2Uint16MethodChain(t *testing.T) {
+	if len(MakeUint16SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapUint16Ptr failed.")
+	}
+}
+
 // TestFilterUint16MethodChain - 
 func TestFilterUint16MethodChain(t *testing.T) {
 	var v1 uint16 = 1
@@ -927,6 +1702,13 @@ func TestFilterUint16MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterUint16 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Uint16MethodChain - 
+func TestFilter2Uint16MethodChain(t *testing.T) {
+	if len(MakeUint16Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterUint16Ptr failed.")
 	}
 }
 
@@ -949,6 +1731,13 @@ func TestFilterUint16PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Uint16PtrMethodChain - 
+func TestFilter2Uint16PtrMethodChain(t *testing.T) {
+	if len(MakeUint16SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterUint16Ptr failed.")
+	}
+}
+
 // TestRemoveUint16MethodChain - 
 func TestRemoveUint16MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -965,6 +1754,13 @@ func TestRemoveUint16MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveUint16 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Uint16MethodChain - 
+func TestRemove2Uint16MethodChain(t *testing.T) {
+	if len(MakeUint16Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveUint16 failed.")
 	}
 }
 
@@ -987,6 +1783,65 @@ func TestRemoveUint16PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrUint16MethodChain - 
+func TestRemove2PtrUint16MethodChain(t *testing.T) {
+	if len(MakeUint16SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveUint16Ptr failed.")
+	}
+}
+
+func TestDropWhileUint16MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint16 = 2
+	var v3 uint16 = 3
+	var v4 uint16 = 4
+	var v5 uint16 = 5
+
+	isEvenUint16 := func(num uint16) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []uint16{v3, v4, v5}
+	NewList := MakeUint16Slice([]uint16{v4, v2, v3, v4, v5}...).DropWhile(isEvenUint16)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Uint16MethodChain - 
+func TestDropWhile2Uint16MethodChain(t *testing.T) {
+	if len(MakeUint16Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileUint16 failed.")
+	}
+}
+
+func TestDropWhileUint16PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint16 = 2
+	var v3 uint16 = 3
+	var v4 uint16 = 4
+	var v5 uint16 = 5
+
+	isEvenUint16Ptr := func(num *uint16) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*uint16{&v3, &v4, &v5}
+	NewList := MakeUint16SlicePtr([]*uint16{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenUint16Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrUint16MethodChain - 
+func TestDropWhile2PtrUint16MethodChain(t *testing.T) {
+	if len(MakeUint16SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileUint16Ptr failed.")
+	}
+}
+
 func TestMapUint8MethodChain(t *testing.T) {
 	expectedSquareList := []uint8{1, 4, 9}
 	squareList := MakeUint8Slice([]uint8{1, 2, 3}...).Map(squareUint8)
@@ -996,6 +1851,14 @@ func TestMapUint8MethodChain(t *testing.T) {
 	}
 
 	if len(MakeUint8Slice().Map(squareUint8)) > 0 {
+		t.Errorf("MapUint8 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Uint8MethodChain - 
+func TestMap2Uint8MethodChain(t *testing.T) {
+	if len(MakeUint8Slice().Map(nil)) > 0 {
 		t.Errorf("MapUint8 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -1020,6 +1883,13 @@ func TestMapUint8MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Uint8MethodChain -  
+func TestMapPtr2Uint8MethodChain(t *testing.T) {
+	if len(MakeUint8SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapUint8Ptr failed.")
+	}
+}
+
 // TestFilterUint8MethodChain - 
 func TestFilterUint8MethodChain(t *testing.T) {
 	var v1 uint8 = 1
@@ -1036,6 +1906,13 @@ func TestFilterUint8MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterUint8 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Uint8MethodChain - 
+func TestFilter2Uint8MethodChain(t *testing.T) {
+	if len(MakeUint8Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterUint8Ptr failed.")
 	}
 }
 
@@ -1058,6 +1935,13 @@ func TestFilterUint8PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Uint8PtrMethodChain - 
+func TestFilter2Uint8PtrMethodChain(t *testing.T) {
+	if len(MakeUint8SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterUint8Ptr failed.")
+	}
+}
+
 // TestRemoveUint8MethodChain - 
 func TestRemoveUint8MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -1074,6 +1958,13 @@ func TestRemoveUint8MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveUint8 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Uint8MethodChain - 
+func TestRemove2Uint8MethodChain(t *testing.T) {
+	if len(MakeUint8Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveUint8 failed.")
 	}
 }
 
@@ -1096,6 +1987,65 @@ func TestRemoveUint8PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrUint8MethodChain - 
+func TestRemove2PtrUint8MethodChain(t *testing.T) {
+	if len(MakeUint8SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveUint8Ptr failed.")
+	}
+}
+
+func TestDropWhileUint8MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint8 = 2
+	var v3 uint8 = 3
+	var v4 uint8 = 4
+	var v5 uint8 = 5
+
+	isEvenUint8 := func(num uint8) bool {
+		return num%2 == 0
+	}
+
+	expectedNewList := []uint8{v3, v4, v5}
+	NewList := MakeUint8Slice([]uint8{v4, v2, v3, v4, v5}...).DropWhile(isEvenUint8)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Uint8MethodChain - 
+func TestDropWhile2Uint8MethodChain(t *testing.T) {
+	if len(MakeUint8Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileUint8 failed.")
+	}
+}
+
+func TestDropWhileUint8PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 uint8 = 2
+	var v3 uint8 = 3
+	var v4 uint8 = 4
+	var v5 uint8 = 5
+
+	isEvenUint8Ptr := func(num *uint8) bool {
+		return *num%2 == 0
+	}
+
+	expectedNewList := []*uint8{&v3, &v4, &v5}
+	NewList := MakeUint8SlicePtr([]*uint8{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenUint8Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrUint8MethodChain - 
+func TestDropWhile2PtrUint8MethodChain(t *testing.T) {
+	if len(MakeUint8SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileUint8Ptr failed.")
+	}
+}
+
 func TestMapStrMethodChain(t *testing.T) {
 	expectedSquareList := []string{"11", "22", "33"}
 	squareList := MakeStrSlice([]string{"1", "2", "3"}...).Map(squareStr)
@@ -1114,6 +2064,14 @@ func squareStr(s string) string {
 	return s+s
 }
 
+// TestMap2StrMethodChain - 
+func TestMap2StrMethodChain(t *testing.T) {
+	if len(MakeStrSlice().Map(nil)) > 0 {
+		t.Errorf("MapStr failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
 // TestMapStrMethodChainPtr - 
 func TestMapStrMethodChainPtr(t *testing.T) {
 	var v1 string = "1"
@@ -1130,6 +2088,13 @@ func TestMapStrMethodChainPtr(t *testing.T) {
 	}
 
 	if len(MakeStrSlicePtr().MapPtr(squareStrPtr)) > 0 {
+		t.Errorf("MapStrPtr failed.")
+	}
+}
+
+// TestMapPtr2StrMethodChain -  
+func TestMapPtr2StrMethodChain(t *testing.T) {
+	if len(MakeStrSlicePtr().MapPtr(nil)) > 0 {
 		t.Errorf("MapStrPtr failed.")
 	}
 }
@@ -1153,6 +2118,13 @@ func TestFilterStrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2StrMethodChain - 
+func TestFilter2StrMethodChain(t *testing.T) {
+	if len(MakeStrSlice().Filter(nil)) > 0 {
+		t.Errorf("FilterStrPtr failed.")
+	}
+}
+
 // TestFilterStrPtrMethodChain - 
 func TestFilterStrPtrMethodChain(t *testing.T) {
 	var v1 string = "1"
@@ -1169,6 +2141,13 @@ func TestFilterStrPtrMethodChain(t *testing.T) {
 
 	if *filteredList[0] != *expectedFilteredList[0] || *filteredList[1] != *expectedFilteredList[1] {
 		t.Errorf("FilterStrPtr failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2StrPtrMethodChain - 
+func TestFilter2StrPtrMethodChain(t *testing.T) {
+	if len(MakeStrSlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterStrPtr failed.")
 	}
 }
 
@@ -1191,6 +2170,13 @@ func TestRemoveStrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2StrMethodChain - 
+func TestRemove2StrMethodChain(t *testing.T) {
+	if len(MakeStrSlice().Remove(nil)) > 0 {
+		t.Errorf("RemoveStr failed.")
+	}
+}
+
 // TestRemoveStrPtrMethodChain - 
 func TestRemoveStrPtrMethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -1210,6 +2196,66 @@ func TestRemoveStrPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrStrMethodChain - 
+func TestRemove2PtrStrMethodChain(t *testing.T) {
+	if len(MakeStrSlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveStrPtr failed.")
+	}
+}
+
+func TestDropWhileStrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+
+	isEvenStr := func(num string) bool {
+		return num == "2" || num == "4"
+	}
+
+	expectedNewList := []string{v3, v4, v5}
+	NewList := MakeStrSlice([]string{v4, v2, v3, v4, v5}...).DropWhile(isEvenStr)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2StrMethodChain - 
+func TestDropWhile2StrMethodChain(t *testing.T) {
+	if len(MakeStrSlice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileStr failed.")
+	}
+}
+
+func TestDropWhileStrPtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 string = "2"
+	var v3 string = "3"
+	var v4 string = "4"
+	var v5 string = "5"
+
+	isEvenStrPtr := func(num *string) bool {
+		return *num == "2" || *num == "4"
+	}
+
+	expectedNewList := []*string{&v3, &v4, &v5}
+	NewList := MakeStrSlicePtr([]*string{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenStrPtr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrStrMethodChain - 
+func TestDropWhile2PtrStrMethodChain(t *testing.T) {
+	if len(MakeStrSlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileStrPtr failed.")
+	}
+}
+
+// TestMapBoolMethodChain - 
 func TestMapBoolMethodChain(t *testing.T) {
 	expectedSquareList := []bool{false, true, false}
 	squareList := MakeBoolSlice([]bool{true, false, true}...).Map(inverseBool)
@@ -1222,6 +2268,10 @@ func TestMapBoolMethodChain(t *testing.T) {
 		t.Errorf("MapBool failed.")
 		t.Errorf(reflect.String.String())
 	}
+
+	if len(MakeBoolSlice().Map(nil)) > 0 {
+		t.Errorf("MapBool failed.")
+	}
 }
 
 func inverseBool(v bool) bool {
@@ -1231,6 +2281,7 @@ func inverseBool(v bool) bool {
 	return true
 }
 
+// TestMapPtrMethodChainBool - 
 func TestMapPtrMethodChainBoolBoolMethodChain(t *testing.T) {
 	tr := true
 	f := false
@@ -1244,8 +2295,13 @@ func TestMapPtrMethodChainBoolBoolMethodChain(t *testing.T) {
 	if len(MakeBoolSlicePtr().MapPtr(inverseBoolPtr)) > 0 {
 		t.Errorf("MapBoolPtrFilterChain failed.")
 	}
+
+	if len(MakeBoolSlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapBoolPtrFilterChain failed.")
+	}
 }
 
+// TestFilterBoolMethodChain - 
 func TestFilterBoolMethodChain(t *testing.T) {
 	var vt bool = true
 
@@ -1256,11 +2312,12 @@ func TestFilterBoolMethodChain(t *testing.T) {
 		t.Errorf("FilterBoolPtr failed")
 	}
 
-	if len(FilterBoolPtr(nil, nil)) > 0 {
+	if len(MakeBoolSlice().Filter(nil)) > 0 {
 		t.Errorf("MapBoolPtr failed.")
 	}
 }
 
+// TestFilterBoolPtrMethodChain - 
 func TestFilterBoolPtrMethodChain(t *testing.T) {
 	var vt bool = true
 
@@ -1276,10 +2333,77 @@ func TestFilterBoolPtrMethodChain(t *testing.T) {
 	}
 }
 
-func TestRemoveBoolPtrMethodChain(t *testing.T) {
+// TestRemoveBoolMethodChain - 
+func TestRemoveBoolMethodChain(t *testing.T) {
 	var vt bool = true
+	r := func(vt bool) bool {
+		if vt == true {
+			return true
+		}
+		return false
+	}
+	if len(MakeBoolSlice(vt).Remove(r)) > 0 {
+		t.Errorf("RemoveBool failed.")
+	}
 	if len(MakeBoolSlice(vt).Remove(nil)) == 0 {
 		t.Errorf("RemoveBool failed.")
+	}
+}
+
+// TestRemoveBoolPtrMethodChain - 
+func TestRemoveBoolPtrMethodChain(t *testing.T) {
+	var vt bool = true
+	r := func(vt *bool) bool {
+		if *vt == true {
+			return true
+		}
+		return false
+	}
+	if len(MakeBoolSlicePtr(&vt).RemovePtr(r)) > 0 {
+		t.Errorf("RemoveBool failed.")
+	}
+	if len(MakeBoolSlicePtr(&vt).RemovePtr(nil)) == 0 {
+		t.Errorf("RemoveBoolPtr failed.")
+	}
+}
+
+// TestDropWhileBoolMethodChain - 
+func TestDropWhileBoolMethodChain(t *testing.T) {
+	var vt bool = true
+	var vf bool = false
+
+	isTrueBool := func(num bool) bool {
+		return num == true
+	}
+
+	expectedNewList := []bool{vf, vt}
+	NewList := MakeBoolSlice([]bool{vt, vf, vt}...).DropWhile(isTrueBool)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("DropWhileMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeBoolSlice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhile failed.")
+	}
+}
+
+// TestDropWhileBoolPtrMethodChain - 
+func TestDropWhileBoolPtrMethodChain(t *testing.T) {
+	var vt bool = true
+	var vf bool = false
+
+	isTrueBoolPtr := func(num *bool) bool {
+		return *num == true
+	}
+
+	expectedNewList := []*bool{&vf, &vt}
+	NewList := MakeBoolSlicePtr([]*bool{&vt, &vf, &vt}...).DropWhilePtr(isTrueBoolPtr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("DropWhilePtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeBoolSlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhilePtr failed.")
 	}
 }
 
@@ -1292,6 +2416,14 @@ func TestMapFloat32MethodChain(t *testing.T) {
 	}
 
 	if len(MakeFloat32Slice().Map(squareFloat32)) > 0 {
+		t.Errorf("MapFloat32 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Float32MethodChain - 
+func TestMap2Float32MethodChain(t *testing.T) {
+	if len(MakeFloat32Slice().Map(nil)) > 0 {
 		t.Errorf("MapFloat32 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -1316,6 +2448,13 @@ func TestMapFloat32MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Float32MethodChain -  
+func TestMapPtr2Float32MethodChain(t *testing.T) {
+	if len(MakeFloat32SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapFloat32Ptr failed.")
+	}
+}
+
 // TestFilterFloat32MethodChain - 
 func TestFilterFloat32MethodChain(t *testing.T) {
 	var v1 float32 = 1
@@ -1332,6 +2471,13 @@ func TestFilterFloat32MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterFloat32 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Float32MethodChain - 
+func TestFilter2Float32MethodChain(t *testing.T) {
+	if len(MakeFloat32Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterFloat32Ptr failed.")
 	}
 }
 
@@ -1354,6 +2500,13 @@ func TestFilterFloat32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Float32PtrMethodChain - 
+func TestFilter2Float32PtrMethodChain(t *testing.T) {
+	if len(MakeFloat32SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterFloat32Ptr failed.")
+	}
+}
+
 // TestRemoveFloat32MethodChain - 
 func TestRemoveFloat32MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -1370,6 +2523,13 @@ func TestRemoveFloat32MethodChain(t *testing.T) {
 
 	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
 		t.Errorf("RemoveFloat32 failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2Float32MethodChain - 
+func TestRemove2Float32MethodChain(t *testing.T) {
+	if len(MakeFloat32Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveFloat32 failed.")
 	}
 }
 
@@ -1392,6 +2552,65 @@ func TestRemoveFloat32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2PtrFloat32MethodChain - 
+func TestRemove2PtrFloat32MethodChain(t *testing.T) {
+	if len(MakeFloat32SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveFloat32Ptr failed.")
+	}
+}
+
+func TestDropWhileFloat32MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 float32 = 2
+	var v3 float32 = 3
+	var v4 float32 = 4
+	var v5 float32 = 5
+
+	isEvenFloat32 := func(num float32) bool {
+		return int(num)%2 == 0
+	}
+
+	expectedNewList := []float32{v3, v4, v5}
+	NewList := MakeFloat32Slice([]float32{v4, v2, v3, v4, v5}...).DropWhile(isEvenFloat32)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Float32MethodChain - 
+func TestDropWhile2Float32MethodChain(t *testing.T) {
+	if len(MakeFloat32Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileFloat32 failed.")
+	}
+}
+
+func TestDropWhileFloat32PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 float32 = 2
+	var v3 float32 = 3
+	var v4 float32 = 4
+	var v5 float32 = 5
+
+	isEvenFloat32Ptr := func(num *float32) bool {
+		return int(*num)%2 == 0
+	}
+
+	expectedNewList := []*float32{&v3, &v4, &v5}
+	NewList := MakeFloat32SlicePtr([]*float32{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenFloat32Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrFloat32MethodChain - 
+func TestDropWhile2PtrFloat32MethodChain(t *testing.T) {
+	if len(MakeFloat32SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileFloat32Ptr failed.")
+	}
+}
+
 func TestMapFloat64MethodChain(t *testing.T) {
 	expectedSquareList := []float64{1, 4, 9}
 	squareList := MakeFloat64Slice([]float64{1, 2, 3}...).Map(squareFloat64)
@@ -1401,6 +2620,14 @@ func TestMapFloat64MethodChain(t *testing.T) {
 	}
 
 	if len(MakeFloat64Slice().Map(squareFloat64)) > 0 {
+		t.Errorf("MapFloat64 failed.")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestMap2Float64MethodChain - 
+func TestMap2Float64MethodChain(t *testing.T) {
+	if len(MakeFloat64Slice().Map(nil)) > 0 {
 		t.Errorf("MapFloat64 failed.")
 		t.Errorf(reflect.String.String())
 	}
@@ -1425,6 +2652,13 @@ func TestMapFloat64MethodChainPtr(t *testing.T) {
 	}
 }
 
+// TestMapPtr2Float64MethodChain -  
+func TestMapPtr2Float64MethodChain(t *testing.T) {
+	if len(MakeFloat64SlicePtr().MapPtr(nil)) > 0 {
+		t.Errorf("MapFloat64Ptr failed.")
+	}
+}
+
 // TestFilterFloat64MethodChain - 
 func TestFilterFloat64MethodChain(t *testing.T) {
 	var v1 float64 = 1
@@ -1441,6 +2675,13 @@ func TestFilterFloat64MethodChain(t *testing.T) {
 
 	if filteredList[0] != expectedFilteredList[0] || filteredList[1] != expectedFilteredList[1] {
 		t.Errorf("FilterFloat64 failed. Expected filtered list=%v, actual list=%v", expectedFilteredList, filteredList)
+	}
+}
+
+// TestFilter2Float64MethodChain - 
+func TestFilter2Float64MethodChain(t *testing.T) {
+	if len(MakeFloat64Slice().Filter(nil)) > 0 {
+		t.Errorf("FilterFloat64Ptr failed.")
 	}
 }
 
@@ -1463,6 +2704,13 @@ func TestFilterFloat64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestFilter2Float64PtrMethodChain - 
+func TestFilter2Float64PtrMethodChain(t *testing.T) {
+	if len(MakeFloat64SlicePtr().FilterPtr(nil)) > 0 {
+		t.Errorf("FilterFloat64Ptr failed.")
+	}
+}
+
 // TestRemoveFloat64MethodChain - 
 func TestRemoveFloat64MethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -1482,6 +2730,13 @@ func TestRemoveFloat64MethodChain(t *testing.T) {
 	}
 }
 
+// TestRemove2Float64MethodChain - 
+func TestRemove2Float64MethodChain(t *testing.T) {
+	if len(MakeFloat64Slice().Remove(nil)) > 0 {
+		t.Errorf("RemoveFloat64 failed.")
+	}
+}
+
 // TestRemoveFloat64PtrMethodChain - 
 func TestRemoveFloat64PtrMethodChain(t *testing.T) {
 	// Test : even number in the list
@@ -1498,5 +2753,64 @@ func TestRemoveFloat64PtrMethodChain(t *testing.T) {
 
 	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
 		t.Errorf("RemoveFloat64Ptr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestRemove2PtrFloat64MethodChain - 
+func TestRemove2PtrFloat64MethodChain(t *testing.T) {
+	if len(MakeFloat64SlicePtr().RemovePtr(nil)) > 0 {
+		t.Errorf("RemoveFloat64Ptr failed.")
+	}
+}
+
+func TestDropWhileFloat64MethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+	var v5 float64 = 5
+
+	isEvenFloat64 := func(num float64) bool {
+		return int(num)%2 == 0
+	}
+
+	expectedNewList := []float64{v3, v4, v5}
+	NewList := MakeFloat64Slice([]float64{v4, v2, v3, v4, v5}...).DropWhile(isEvenFloat64)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("DropWhile>MethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2Float64MethodChain - 
+func TestDropWhile2Float64MethodChain(t *testing.T) {
+	if len(MakeFloat64Slice().DropWhile(nil)) > 0 {
+		t.Errorf("DropWhileFloat64 failed.")
+	}
+}
+
+func TestDropWhileFloat64PtrMethodChain(t *testing.T) {
+	// Test : drop the numbers as long as condition match and returns remaining number in the list once condition fails
+
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+	var v5 float64 = 5
+
+	isEvenFloat64Ptr := func(num *float64) bool {
+		return int(*num)%2 == 0
+	}
+
+	expectedNewList := []*float64{&v3, &v4, &v5}
+	NewList := MakeFloat64SlicePtr([]*float64{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenFloat64Ptr)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}
+
+// TestDropWhile2PtrFloat64MethodChain - 
+func TestDropWhile2PtrFloat64MethodChain(t *testing.T) {
+	if len(MakeFloat64SlicePtr().DropWhilePtr(nil)) > 0 {
+		t.Errorf("DropWhileFloat64Ptr failed.")
 	}
 }

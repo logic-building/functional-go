@@ -400,11 +400,17 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			if fp.ExistsStrIgnoreCase("DropWhile", onlyList) {
 				template += template2.DropWhile()
 				template = r.Replace(template)
+
+				template += template3.MethodChainStructForDropWhile()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("DropWhilePtr", onlyList) {
 				template += template2.DropWhilePtr()
 				template = r.Replace(template)
+
+				template += template3.MethodChainStructForDropWhilePtr()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("DropWhilePtrErr", onlyList) {
@@ -834,6 +840,12 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template = r3.Replace(template)
 
 			template += template3.MethodChainStructForRemovePtr()
+			template = r3.Replace(template)
+
+			template += template3.MethodChainStructForDropWhile()
+			template = r3.Replace(template)
+
+			template += template3.MethodChainStructForDropWhilePtr()
 			template = r3.Replace(template)
 
 			// if struct's has member of type other than basic types such as list then use template which uses reflect

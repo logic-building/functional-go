@@ -112,6 +112,36 @@ func (slice <NEWTYPE>SlicePtr) RemovePtr(functors ...<NEWTYPE>FunctorForFilterPt
 
 	return tmpSlice
 }
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice <NEWTYPE>Slice) DropWhile(functors ...<NEWTYPE>FunctorForFilter) <NEWTYPE>Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhile<FTYPE>(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice <NEWTYPE>SlicePtr) DropWhilePtr(functors ...<NEWTYPE>FunctorForFilterPtr) <NEWTYPE>SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhile<FTYPE>Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
 `
 }
 
@@ -233,6 +263,46 @@ func (slice <NEWTYPE>SlicePtr) RemovePtr(functors ...<NEWTYPE>FunctorForFilterPt
 			continue
 		}
 		tmpSlice = Remove<CONDITIONAL_TYPE>Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+`
+}
+
+// MethodChainStructForDropWhile is template to generate functional code for different combination of data type
+func MethodChainStructForDropWhile() string {
+	return `
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice <NEWTYPE>Slice) DropWhile(functors ...<NEWTYPE>FunctorForFilter) <NEWTYPE>Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhile<CONDITIONAL_TYPE>(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+`
+}
+
+// MethodChainStructForDropWhilePtr is template to generate functional code for different combination of data type
+func MethodChainStructForDropWhilePtr() string {
+	return `
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice <NEWTYPE>SlicePtr) DropWhilePtr(functors ...<NEWTYPE>FunctorForFilterPtr) <NEWTYPE>SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhile<CONDITIONAL_TYPE>Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice

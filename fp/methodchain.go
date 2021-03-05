@@ -110,6 +110,36 @@ func (slice intSlicePtr) RemovePtr(functors ...intFunctorForFilterPtr) intSliceP
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice intSlice) DropWhile(functors ...intFunctorForFilter) intSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice intSlicePtr) DropWhilePtr(functors ...intFunctorForFilterPtr) intSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileIntPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type int64Slice []int64
 type int64FunctorForMap func(int64) int64
 type int64FunctorForFilter func(int64) bool
@@ -215,6 +245,36 @@ func (slice int64SlicePtr) RemovePtr(functors ...int64FunctorForFilterPtr) int64
 			continue
 		}
 		tmpSlice = RemoveInt64Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice int64Slice) DropWhile(functors ...int64FunctorForFilter) int64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice int64SlicePtr) DropWhilePtr(functors ...int64FunctorForFilterPtr) int64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt64Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -330,6 +390,36 @@ func (slice int32SlicePtr) RemovePtr(functors ...int32FunctorForFilterPtr) int32
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice int32Slice) DropWhile(functors ...int32FunctorForFilter) int32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice int32SlicePtr) DropWhilePtr(functors ...int32FunctorForFilterPtr) int32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type int16Slice []int16
 type int16FunctorForMap func(int16) int16
 type int16FunctorForFilter func(int16) bool
@@ -435,6 +525,36 @@ func (slice int16SlicePtr) RemovePtr(functors ...int16FunctorForFilterPtr) int16
 			continue
 		}
 		tmpSlice = RemoveInt16Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice int16Slice) DropWhile(functors ...int16FunctorForFilter) int16Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt16(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice int16SlicePtr) DropWhilePtr(functors ...int16FunctorForFilterPtr) int16SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt16Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -550,6 +670,36 @@ func (slice int8SlicePtr) RemovePtr(functors ...int8FunctorForFilterPtr) int8Sli
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice int8Slice) DropWhile(functors ...int8FunctorForFilter) int8Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt8(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice int8SlicePtr) DropWhilePtr(functors ...int8FunctorForFilterPtr) int8SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileInt8Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uintSlice []uint
 type uintFunctorForMap func(uint) uint
 type uintFunctorForFilter func(uint) bool
@@ -655,6 +805,36 @@ func (slice uintSlicePtr) RemovePtr(functors ...uintFunctorForFilterPtr) uintSli
 			continue
 		}
 		tmpSlice = RemoveUintPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice uintSlice) DropWhile(functors ...uintFunctorForFilter) uintSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice uintSlicePtr) DropWhilePtr(functors ...uintFunctorForFilterPtr) uintSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUintPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -770,6 +950,36 @@ func (slice uint64SlicePtr) RemovePtr(functors ...uint64FunctorForFilterPtr) uin
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice uint64Slice) DropWhile(functors ...uint64FunctorForFilter) uint64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice uint64SlicePtr) DropWhilePtr(functors ...uint64FunctorForFilterPtr) uint64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint64Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uint32Slice []uint32
 type uint32FunctorForMap func(uint32) uint32
 type uint32FunctorForFilter func(uint32) bool
@@ -875,6 +1085,36 @@ func (slice uint32SlicePtr) RemovePtr(functors ...uint32FunctorForFilterPtr) uin
 			continue
 		}
 		tmpSlice = RemoveUint32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice uint32Slice) DropWhile(functors ...uint32FunctorForFilter) uint32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice uint32SlicePtr) DropWhilePtr(functors ...uint32FunctorForFilterPtr) uint32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint32Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -990,6 +1230,36 @@ func (slice uint16SlicePtr) RemovePtr(functors ...uint16FunctorForFilterPtr) uin
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice uint16Slice) DropWhile(functors ...uint16FunctorForFilter) uint16Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint16(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice uint16SlicePtr) DropWhilePtr(functors ...uint16FunctorForFilterPtr) uint16SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint16Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uint8Slice []uint8
 type uint8FunctorForMap func(uint8) uint8
 type uint8FunctorForFilter func(uint8) bool
@@ -1095,6 +1365,36 @@ func (slice uint8SlicePtr) RemovePtr(functors ...uint8FunctorForFilterPtr) uint8
 			continue
 		}
 		tmpSlice = RemoveUint8Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice uint8Slice) DropWhile(functors ...uint8FunctorForFilter) uint8Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint8(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice uint8SlicePtr) DropWhilePtr(functors ...uint8FunctorForFilterPtr) uint8SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileUint8Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -1210,6 +1510,36 @@ func (slice stringSlicePtr) RemovePtr(functors ...stringFunctorForFilterPtr) str
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice stringSlice) DropWhile(functors ...stringFunctorForFilter) stringSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileStr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice stringSlicePtr) DropWhilePtr(functors ...stringFunctorForFilterPtr) stringSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileStrPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type boolSlice []bool
 type boolFunctorForMap func(bool) bool
 type boolFunctorForFilter func(bool) bool
@@ -1315,6 +1645,36 @@ func (slice boolSlicePtr) RemovePtr(functors ...boolFunctorForFilterPtr) boolSli
 			continue
 		}
 		tmpSlice = RemoveBoolPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice boolSlice) DropWhile(functors ...boolFunctorForFilter) boolSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileBool(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice boolSlicePtr) DropWhilePtr(functors ...boolFunctorForFilterPtr) boolSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileBoolPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -1430,6 +1790,36 @@ func (slice float32SlicePtr) RemovePtr(functors ...float32FunctorForFilterPtr) f
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice float32Slice) DropWhile(functors ...float32FunctorForFilter) float32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileFloat32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice float32SlicePtr) DropWhilePtr(functors ...float32FunctorForFilterPtr) float32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileFloat32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type float64Slice []float64
 type float64FunctorForMap func(float64) float64
 type float64FunctorForFilter func(float64) bool
@@ -1535,6 +1925,36 @@ func (slice float64SlicePtr) RemovePtr(functors ...float64FunctorForFilterPtr) f
 			continue
 		}
 		tmpSlice = RemoveFloat64Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice float64Slice) DropWhile(functors ...float64FunctorForFilter) float64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileFloat64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice float64SlicePtr) DropWhilePtr(functors ...float64FunctorForFilterPtr) float64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileFloat64Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice

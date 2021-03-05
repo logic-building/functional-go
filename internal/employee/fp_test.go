@@ -563,3 +563,32 @@ func TestMethodChainWithRemovePtr(t *testing.T) {
 		t.Error("error in method chain with Map", employees)
 	}
 }
+
+func TestMethodChainWithDropWhilePtr(t *testing.T) {
+	now := time.Now()
+	employees := []*Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: now}}
+
+	salaryIncrement := func(emp *Employee) *Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+
+	salary700 := func(emp *Employee) bool {
+		return emp.Salary == 700
+	}
+
+	salaryEqualTo800 := func(emp *Employee) bool {
+		return emp.Salary == 800
+	}
+	employeesWithIncrementedSalary := MakeEmployeeSlicePtr(employees...).
+		DropWhilePtr(salary700).
+		RemovePtr(salaryEqualTo800).
+		MapPtr(salaryIncrement)
+	if 1900 != employeesWithIncrementedSalary[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+}

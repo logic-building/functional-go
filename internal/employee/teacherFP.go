@@ -1531,6 +1531,36 @@ func (slice teacherSlicePtr) RemovePtr(functors ...teacherFunctorForFilterPtr) t
 	return tmpSlice
 }
 
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice teacherSlice) DropWhile(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice teacherSlicePtr) DropWhilePtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 // DistinctTeacherP returns true if no two of the arguments are =
 func DistinctTeacherP(list []Teacher) bool {
 	if len(list) == 0 {

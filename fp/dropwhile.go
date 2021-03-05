@@ -480,3 +480,33 @@ func DropWhileStr(f func(string) bool, list []string) []string {
 	}
 	return newList
 }
+
+// DropWhileBool drops the items from the list as long as condition satisfies.
+//
+// Takes two inputs
+//	1. Function: takes one input and returns boolean
+//	2. list
+//
+// Returns:
+// 	New List.
+//  Empty list if either one of arguments or both of them are nil
+func DropWhileBool(f func(bool) bool, list []bool) []bool {
+	if f == nil {
+		return []bool{}
+	}
+	var newList []bool
+	for i, v := range list {
+		if !f(v) {
+			listLen := len(list)
+			newList = make([]bool, listLen-i)
+			j := 0
+			for i < listLen {
+				newList[j] = list[i]
+				i++
+				j++
+			}
+			return newList
+		}
+	}
+	return newList
+}
