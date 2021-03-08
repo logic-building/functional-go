@@ -18,7 +18,7 @@ go install github.com/logic-building/functional-go/gofp
 ```
 
 ### dep Gopkg.toml entry
-```
+```toml
 [[constraint]]
 name = "github.com/logic-building/functional-go"
 version = "8.13.1"
@@ -26,7 +26,7 @@ version = "8.13.1"
 
 ### Quick Start
 #### For Data types available in golang
-```
+```go
 import "github.com/logic-building/functional-go/fp"
 
 fp.MapInt(square, []int{1, 2, 3, 4}) // Returns: [1 4 9 16]
@@ -39,7 +39,7 @@ func square(num int) int {
 #### Four variants of function. 1 is given above and 3 are given below
 ##### MapInt, MapIntPtr, MapIntErr, MapIntPtrErr
 ### MapIntPtr
-```
+```go
 package main
 
 import (
@@ -69,7 +69,7 @@ output:
 ```
 
 ### MapIntErr
-```
+```go
 package main
 
 import (
@@ -98,7 +98,7 @@ output:
 ```
 
 ### MapIntPtrErr
-```
+```go
 package main
 
 import (
@@ -138,7 +138,7 @@ Design 2: All functional code in one place
 ```
 ### Design 1:  Functional code distributed within different package
 #### Generate functional code for struct - Employee
-```
+```go
    type Employee struct {
    	id     int
    	name   string
@@ -146,11 +146,11 @@ Design 2: All functional code in one place
    }
 ```
 #### 1. Add line given below in the file where struct resides
-```
+```go
 //go:generate gofp -destination fp.go -pkg employee -type "Employee"
 ```
 ##### Example: 
-```
+```go
    //go:generate gofp -destination fp.go -pkg employee -type "Employee"
    type Employee struct {
    	id     int
@@ -178,7 +178,7 @@ Design 2: All functional code in one place
  go generate ./...
 ```
 #### You are done. Enjoy the functional code
-```
+```go
     emp1 := employee.Employee{1, "A", 1000}
     emp2 := employee.Employee{2, "B", 1000}
     emp3 := employee.Employee{3, "C", 1000}
@@ -840,7 +840,7 @@ SetStrSync
 ```
 
 ### Example1 - Map : return the list of the square of each items in the list
-```
+```go
 squareList := fp.MapInt(squareInt, []int{1, 2, 3}) // see the map_test.go for detail
 
 func squareInt(num int) int {
@@ -855,7 +855,7 @@ output
 ```
 
 ### Example2 - Filter: filter all the even numbers in the list
-```
+```go
 filteredList := fp.FilterInt(isEven, []int{1, 2, 3, 4})
 
 func isEven(num int) bool {
@@ -868,7 +868,7 @@ output:
 ```
 
 ### Example3 - fp.FilterMap: Multiply all positive numbers in the list by 2
-```
+```go
 filteredList := FilterMapInt(isPositive, multiplyBy2, []int{-1, 0, 2, 4})
 
 func isPositive(num int) bool {
@@ -883,7 +883,7 @@ output:
 ```
 
 ### Example4 - Every: Test if every number in the list is even
-```
+```go
 list := []bool{true, true, true, true}
 fp.EveryBool(fp.True, list)  // Returns true
 
@@ -892,25 +892,25 @@ fp.EveryInt(isEven, list1) // Returns true
 ```
 
 ### Example5 - Exists: Test if number presents in the list
-```
+```go
 list1 := []int{8, 2, 10, 4}
 fp.ExistsInt(8, list1) // returns true
 ```
 
 ### Example6 - Max: Get max number in the list
-```
+```go
 list := []int{8, 2, 10, 4}
 max := fp.MaxInt(list) // returns 10
 ```
 
 ### Example7 - Min: Get min number in the list
-```
+```go
 list := []int{8, 2, 10, 4}
 min := fp.MinInt(list) // returns 2
 ```
 
 ### Example8 - Returns a new list after dropping the given item
-```
+```go
 newList := fp.DropInt(1, []int{1, 2, 3, 1}) // returns [2, 3]
 
 To drop multiple items:
@@ -919,26 +919,26 @@ newList := fp.DropInts([]int{1, 2}, []int{1, 2, 3, 1}) // returns [3]
 ```
 
 ### Example9 - Distinct: returns distinct list
-```
+```go
 list := []int{8, 2, 8, 0, 2, 0}
 distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ```
 
 ### Example10 - Set : Create set objects and apply union operation
-```
+```go
 	mySet1 := set.NewInt([]int{10, 20, 30, 20})
 	mySet2 := set.NewInt([]int{30, 40, 50})
 	mySet3 := mySet1.Union(mySet2) // Returns  [10, 20, 30, 40, 50]
 ```
 
 ### Example11 - Range : accepts lower and end int and returns range list
-```
+```go
 	fp.Range(1, 5) // returns [1, 2, 3, 4]
 	fp.Range(1, 5, 2) // returns [1, 3]
 ```
 
 ### Example12 - Remove :
-```
+```go
     NewList := RemoveInt(isEven, []int{1, 2, 3, 4}) // returns [1, 3]
 
     func isEven(num int) bool {
@@ -948,7 +948,7 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ```
 
 ### Example13 - DropWhileInt :
-```
+```go
     NewList := DropWhile(isEven, []int{4, 2, 3, 4}) // returns [3, 4]
 
     func isEven(num int) bool {
@@ -958,7 +958,7 @@ distinct := fp.DistinctInt(list) // returns [8, 2, 0]
 ```
 
 ### Example14 - TakeWhileInt :
-```
+```go
     NewList := TakeWhile(isEven, []int{4, 2, 3, 4}) // returns [4, 2]
 
     func isEven(num int) bool {
