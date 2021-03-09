@@ -210,6 +210,32 @@ func TestDropWhile2PtrIntMethodChain(t *testing.T) {
 	}
 }
 
+// TestReverseIntmethodchain
+func TestReverseIntmethodchain(t *testing.T) {
+	var v1 int = 1
+	var v2 int = 2
+	var v3 int = 3
+
+	expected := []int{v3, v2, v1}
+	reversed :=  MakeIntSlice([]int{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseIntPtrmethodchain
+func TestReverseIntPtrmethodchain(t *testing.T) {
+	var v1 int = 1
+	var v2 int = 2
+	var v3 int = 3
+
+	expected := []*int{&v3, &v2, &v1}
+	reversed :=  MakeIntSlicePtr([]*int{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
 func TestMapInt64MethodChain(t *testing.T) {
 	expectedSquareList := []int64{1, 4, 9}
 	squareList := MakeInt64Slice([]int64{1, 2, 3}...).Map(squareInt64)
@@ -411,6 +437,32 @@ func TestDropWhileInt64PtrMethodChain(t *testing.T) {
 func TestDropWhile2PtrInt64MethodChain(t *testing.T) {
 	if len(MakeInt64SlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhileInt64Ptr failed.")
+	}
+}
+
+// TestReverseInt64methodchain
+func TestReverseInt64methodchain(t *testing.T) {
+	var v1 int64 = 1
+	var v2 int64 = 2
+	var v3 int64 = 3
+
+	expected := []int64{v3, v2, v1}
+	reversed :=  MakeInt64Slice([]int64{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseInt64Ptrmethodchain
+func TestReverseInt64Ptrmethodchain(t *testing.T) {
+	var v1 int64 = 1
+	var v2 int64 = 2
+	var v3 int64 = 3
+
+	expected := []*int64{&v3, &v2, &v1}
+	reversed :=  MakeInt64SlicePtr([]*int64{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
 
@@ -618,6 +670,32 @@ func TestDropWhile2PtrInt32MethodChain(t *testing.T) {
 	}
 }
 
+// TestReverseInt32methodchain
+func TestReverseInt32methodchain(t *testing.T) {
+	var v1 int32 = 1
+	var v2 int32 = 2
+	var v3 int32 = 3
+
+	expected := []int32{v3, v2, v1}
+	reversed :=  MakeInt32Slice([]int32{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseInt32Ptrmethodchain
+func TestReverseInt32Ptrmethodchain(t *testing.T) {
+	var v1 int32 = 1
+	var v2 int32 = 2
+	var v3 int32 = 3
+
+	expected := []*int32{&v3, &v2, &v1}
+	reversed :=  MakeInt32SlicePtr([]*int32{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
 func TestMapInt16MethodChain(t *testing.T) {
 	expectedSquareList := []int16{1, 4, 9}
 	squareList := MakeInt16Slice([]int16{1, 2, 3}...).Map(squareInt16)
@@ -819,6 +897,32 @@ func TestDropWhileInt16PtrMethodChain(t *testing.T) {
 func TestDropWhile2PtrInt16MethodChain(t *testing.T) {
 	if len(MakeInt16SlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhileInt16Ptr failed.")
+	}
+}
+
+// TestReverseInt16methodchain
+func TestReverseInt16methodchain(t *testing.T) {
+	var v1 int16 = 1
+	var v2 int16 = 2
+	var v3 int16 = 3
+
+	expected := []int16{v3, v2, v1}
+	reversed :=  MakeInt16Slice([]int16{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseInt16Ptrmethodchain
+func TestReverseInt16Ptrmethodchain(t *testing.T) {
+	var v1 int16 = 1
+	var v2 int16 = 2
+	var v3 int16 = 3
+
+	expected := []*int16{&v3, &v2, &v1}
+	reversed :=  MakeInt16SlicePtr([]*int16{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
 
@@ -1026,6 +1130,32 @@ func TestDropWhile2PtrInt8MethodChain(t *testing.T) {
 	}
 }
 
+// TestReverseInt8methodchain
+func TestReverseInt8methodchain(t *testing.T) {
+	var v1 int8 = 1
+	var v2 int8 = 2
+	var v3 int8 = 3
+
+	expected := []int8{v3, v2, v1}
+	reversed :=  MakeInt8Slice([]int8{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseInt8Ptrmethodchain
+func TestReverseInt8Ptrmethodchain(t *testing.T) {
+	var v1 int8 = 1
+	var v2 int8 = 2
+	var v3 int8 = 3
+
+	expected := []*int8{&v3, &v2, &v1}
+	reversed :=  MakeInt8SlicePtr([]*int8{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
 func TestMapUintMethodChain(t *testing.T) {
 	expectedSquareList := []uint{1, 4, 9}
 	squareList := MakeUintSlice([]uint{1, 2, 3}...).Map(squareUint)
@@ -1227,6 +1357,32 @@ func TestDropWhileUintPtrMethodChain(t *testing.T) {
 func TestDropWhile2PtrUintMethodChain(t *testing.T) {
 	if len(MakeUintSlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhileUintPtr failed.")
+	}
+}
+
+// TestReverseUintmethodchain
+func TestReverseUintmethodchain(t *testing.T) {
+	var v1 uint = 1
+	var v2 uint = 2
+	var v3 uint = 3
+
+	expected := []uint{v3, v2, v1}
+	reversed :=  MakeUintSlice([]uint{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseUintPtrmethodchain
+func TestReverseUintPtrmethodchain(t *testing.T) {
+	var v1 uint = 1
+	var v2 uint = 2
+	var v3 uint = 3
+
+	expected := []*uint{&v3, &v2, &v1}
+	reversed :=  MakeUintSlicePtr([]*uint{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
 
@@ -1434,6 +1590,32 @@ func TestDropWhile2PtrUint64MethodChain(t *testing.T) {
 	}
 }
 
+// TestReverseUint64methodchain
+func TestReverseUint64methodchain(t *testing.T) {
+	var v1 uint64 = 1
+	var v2 uint64 = 2
+	var v3 uint64 = 3
+
+	expected := []uint64{v3, v2, v1}
+	reversed :=  MakeUint64Slice([]uint64{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseUint64Ptrmethodchain
+func TestReverseUint64Ptrmethodchain(t *testing.T) {
+	var v1 uint64 = 1
+	var v2 uint64 = 2
+	var v3 uint64 = 3
+
+	expected := []*uint64{&v3, &v2, &v1}
+	reversed :=  MakeUint64SlicePtr([]*uint64{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
 func TestMapUint32MethodChain(t *testing.T) {
 	expectedSquareList := []uint32{1, 4, 9}
 	squareList := MakeUint32Slice([]uint32{1, 2, 3}...).Map(squareUint32)
@@ -1635,6 +1817,32 @@ func TestDropWhileUint32PtrMethodChain(t *testing.T) {
 func TestDropWhile2PtrUint32MethodChain(t *testing.T) {
 	if len(MakeUint32SlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhileUint32Ptr failed.")
+	}
+}
+
+// TestReverseUint32methodchain
+func TestReverseUint32methodchain(t *testing.T) {
+	var v1 uint32 = 1
+	var v2 uint32 = 2
+	var v3 uint32 = 3
+
+	expected := []uint32{v3, v2, v1}
+	reversed :=  MakeUint32Slice([]uint32{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseUint32Ptrmethodchain
+func TestReverseUint32Ptrmethodchain(t *testing.T) {
+	var v1 uint32 = 1
+	var v2 uint32 = 2
+	var v3 uint32 = 3
+
+	expected := []*uint32{&v3, &v2, &v1}
+	reversed :=  MakeUint32SlicePtr([]*uint32{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
 
@@ -1842,6 +2050,32 @@ func TestDropWhile2PtrUint16MethodChain(t *testing.T) {
 	}
 }
 
+// TestReverseUint16methodchain
+func TestReverseUint16methodchain(t *testing.T) {
+	var v1 uint16 = 1
+	var v2 uint16 = 2
+	var v3 uint16 = 3
+
+	expected := []uint16{v3, v2, v1}
+	reversed :=  MakeUint16Slice([]uint16{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseUint16Ptrmethodchain
+func TestReverseUint16Ptrmethodchain(t *testing.T) {
+	var v1 uint16 = 1
+	var v2 uint16 = 2
+	var v3 uint16 = 3
+
+	expected := []*uint16{&v3, &v2, &v1}
+	reversed :=  MakeUint16SlicePtr([]*uint16{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
 func TestMapUint8MethodChain(t *testing.T) {
 	expectedSquareList := []uint8{1, 4, 9}
 	squareList := MakeUint8Slice([]uint8{1, 2, 3}...).Map(squareUint8)
@@ -2043,6 +2277,32 @@ func TestDropWhileUint8PtrMethodChain(t *testing.T) {
 func TestDropWhile2PtrUint8MethodChain(t *testing.T) {
 	if len(MakeUint8SlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhileUint8Ptr failed.")
+	}
+}
+
+// TestReverseUint8methodchain
+func TestReverseUint8methodchain(t *testing.T) {
+	var v1 uint8 = 1
+	var v2 uint8 = 2
+	var v3 uint8 = 3
+
+	expected := []uint8{v3, v2, v1}
+	reversed :=  MakeUint8Slice([]uint8{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseUint8Ptrmethodchain
+func TestReverseUint8Ptrmethodchain(t *testing.T) {
+	var v1 uint8 = 1
+	var v2 uint8 = 2
+	var v3 uint8 = 3
+
+	expected := []*uint8{&v3, &v2, &v1}
+	reversed :=  MakeUint8SlicePtr([]*uint8{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
 
@@ -2255,6 +2515,32 @@ func TestDropWhile2PtrStrMethodChain(t *testing.T) {
 	}
 }
 
+// TestReverseStrmethodchain
+func TestReverseStrmethodchain(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+
+	expected := []string{v3, v2, v1}
+	reversed :=  MakeStrSlice([]string{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseStrPtrmethodchain
+func TestReverseStrPtrmethodchain(t *testing.T) {
+	var v1 string = "1"
+	var v2 string = "2"
+	var v3 string = "3"
+
+	expected := []*string{&v3, &v2, &v1}
+	reversed :=  MakeStrSlicePtr([]*string{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
 // TestMapBoolMethodChain - 
 func TestMapBoolMethodChain(t *testing.T) {
 	expectedSquareList := []bool{false, true, false}
@@ -2404,6 +2690,32 @@ func TestDropWhileBoolPtrMethodChain(t *testing.T) {
 
 	if len(MakeBoolSlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhilePtr failed.")
+	}
+}
+
+// TestReverseBoolmethodchain
+func TestReverseBoolmethodchain(t *testing.T) {
+	var v1 bool = true
+	var v2 bool = false
+	var v3 bool = false
+
+	expected := []bool{v3, v2, v1}
+	reversed :=  MakeBoolSlice([]bool{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseBoolPtrmethodchain
+func TestReverseBoolPtrmethodchain(t *testing.T) {
+	var v1 bool = true
+	var v2 bool = false
+	var v3 bool = false
+
+	expected := []*bool{&v3, &v2, &v1}
+	reversed :=  MakeBoolSlicePtr([]*bool{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
 
@@ -2611,6 +2923,32 @@ func TestDropWhile2PtrFloat32MethodChain(t *testing.T) {
 	}
 }
 
+// TestReverseFloat32methodchain
+func TestReverseFloat32methodchain(t *testing.T) {
+	var v1 float32 = 1
+	var v2 float32 = 2
+	var v3 float32 = 3
+
+	expected := []float32{v3, v2, v1}
+	reversed :=  MakeFloat32Slice([]float32{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseFloat32Ptrmethodchain
+func TestReverseFloat32Ptrmethodchain(t *testing.T) {
+	var v1 float32 = 1
+	var v2 float32 = 2
+	var v3 float32 = 3
+
+	expected := []*float32{&v3, &v2, &v1}
+	reversed :=  MakeFloat32SlicePtr([]*float32{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
 func TestMapFloat64MethodChain(t *testing.T) {
 	expectedSquareList := []float64{1, 4, 9}
 	squareList := MakeFloat64Slice([]float64{1, 2, 3}...).Map(squareFloat64)
@@ -2812,5 +3150,31 @@ func TestDropWhileFloat64PtrMethodChain(t *testing.T) {
 func TestDropWhile2PtrFloat64MethodChain(t *testing.T) {
 	if len(MakeFloat64SlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhileFloat64Ptr failed.")
+	}
+}
+
+// TestReverseFloat64methodchain
+func TestReverseFloat64methodchain(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+
+	expected := []float64{v3, v2, v1}
+	reversed :=  MakeFloat64Slice([]float64{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverseFloat64Ptrmethodchain
+func TestReverseFloat64Ptrmethodchain(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+
+	expected := []*float64{&v3, &v2, &v1}
+	reversed :=  MakeFloat64SlicePtr([]*float64{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }

@@ -140,6 +140,16 @@ func (slice intSlicePtr) DropWhilePtr(functors ...intFunctorForFilterPtr) intSli
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice intSlice) Reverse() intSlice {
+	return ReverseInts(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice intSlicePtr) ReversePtr() intSlicePtr {
+	return ReverseIntsPtr(slice)
+}
+
 type int64Slice []int64
 type int64FunctorForMap func(int64) int64
 type int64FunctorForFilter func(int64) bool
@@ -278,6 +288,16 @@ func (slice int64SlicePtr) DropWhilePtr(functors ...int64FunctorForFilterPtr) in
 	}
 
 	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice int64Slice) Reverse() int64Slice {
+	return ReverseInts64(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice int64SlicePtr) ReversePtr() int64SlicePtr {
+	return ReverseInts64Ptr(slice)
 }
 
 type int32Slice []int32
@@ -420,6 +440,16 @@ func (slice int32SlicePtr) DropWhilePtr(functors ...int32FunctorForFilterPtr) in
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice int32Slice) Reverse() int32Slice {
+	return ReverseInts32(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice int32SlicePtr) ReversePtr() int32SlicePtr {
+	return ReverseInts32Ptr(slice)
+}
+
 type int16Slice []int16
 type int16FunctorForMap func(int16) int16
 type int16FunctorForFilter func(int16) bool
@@ -558,6 +588,16 @@ func (slice int16SlicePtr) DropWhilePtr(functors ...int16FunctorForFilterPtr) in
 	}
 
 	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice int16Slice) Reverse() int16Slice {
+	return ReverseInts16(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice int16SlicePtr) ReversePtr() int16SlicePtr {
+	return ReverseInts16Ptr(slice)
 }
 
 type int8Slice []int8
@@ -700,6 +740,16 @@ func (slice int8SlicePtr) DropWhilePtr(functors ...int8FunctorForFilterPtr) int8
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice int8Slice) Reverse() int8Slice {
+	return ReverseInts8(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice int8SlicePtr) ReversePtr() int8SlicePtr {
+	return ReverseInts8Ptr(slice)
+}
+
 type uintSlice []uint
 type uintFunctorForMap func(uint) uint
 type uintFunctorForFilter func(uint) bool
@@ -838,6 +888,16 @@ func (slice uintSlicePtr) DropWhilePtr(functors ...uintFunctorForFilterPtr) uint
 	}
 
 	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice uintSlice) Reverse() uintSlice {
+	return ReverseUints(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice uintSlicePtr) ReversePtr() uintSlicePtr {
+	return ReverseUintsPtr(slice)
 }
 
 type uint64Slice []uint64
@@ -980,6 +1040,16 @@ func (slice uint64SlicePtr) DropWhilePtr(functors ...uint64FunctorForFilterPtr) 
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice uint64Slice) Reverse() uint64Slice {
+	return ReverseUint64s(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice uint64SlicePtr) ReversePtr() uint64SlicePtr {
+	return ReverseUint64sPtr(slice)
+}
+
 type uint32Slice []uint32
 type uint32FunctorForMap func(uint32) uint32
 type uint32FunctorForFilter func(uint32) bool
@@ -1118,6 +1188,16 @@ func (slice uint32SlicePtr) DropWhilePtr(functors ...uint32FunctorForFilterPtr) 
 	}
 
 	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice uint32Slice) Reverse() uint32Slice {
+	return ReverseUints32(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice uint32SlicePtr) ReversePtr() uint32SlicePtr {
+	return ReverseUints32Ptr(slice)
 }
 
 type uint16Slice []uint16
@@ -1260,6 +1340,16 @@ func (slice uint16SlicePtr) DropWhilePtr(functors ...uint16FunctorForFilterPtr) 
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice uint16Slice) Reverse() uint16Slice {
+	return ReverseUints16(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice uint16SlicePtr) ReversePtr() uint16SlicePtr {
+	return ReverseUints16Ptr(slice)
+}
+
 type uint8Slice []uint8
 type uint8FunctorForMap func(uint8) uint8
 type uint8FunctorForFilter func(uint8) bool
@@ -1398,6 +1488,16 @@ func (slice uint8SlicePtr) DropWhilePtr(functors ...uint8FunctorForFilterPtr) ui
 	}
 
 	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice uint8Slice) Reverse() uint8Slice {
+	return ReverseUints8(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice uint8SlicePtr) ReversePtr() uint8SlicePtr {
+	return ReverseUints8Ptr(slice)
 }
 
 type stringSlice []string
@@ -1540,6 +1640,16 @@ func (slice stringSlicePtr) DropWhilePtr(functors ...stringFunctorForFilterPtr) 
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice stringSlice) Reverse() stringSlice {
+	return ReverseStrs(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice stringSlicePtr) ReversePtr() stringSlicePtr {
+	return ReverseStrsPtr(slice)
+}
+
 type boolSlice []bool
 type boolFunctorForMap func(bool) bool
 type boolFunctorForFilter func(bool) bool
@@ -1678,6 +1788,16 @@ func (slice boolSlicePtr) DropWhilePtr(functors ...boolFunctorForFilterPtr) bool
 	}
 
 	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice boolSlice) Reverse() boolSlice {
+	return ReverseBools(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice boolSlicePtr) ReversePtr() boolSlicePtr {
+	return ReverseBoolsPtr(slice)
 }
 
 type float32Slice []float32
@@ -1820,6 +1940,16 @@ func (slice float32SlicePtr) DropWhilePtr(functors ...float32FunctorForFilterPtr
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice float32Slice) Reverse() float32Slice {
+	return ReverseFloat32s(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice float32SlicePtr) ReversePtr() float32SlicePtr {
+	return ReverseFloat32sPtr(slice)
+}
+
 type float64Slice []float64
 type float64FunctorForMap func(float64) float64
 type float64FunctorForFilter func(float64) bool
@@ -1958,4 +2088,14 @@ func (slice float64SlicePtr) DropWhilePtr(functors ...float64FunctorForFilterPtr
 	}
 
 	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice float64Slice) Reverse() float64Slice {
+	return ReverseFloat64s(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice float64SlicePtr) ReversePtr() float64SlicePtr {
+	return ReverseFloat64sPtr(slice)
 }

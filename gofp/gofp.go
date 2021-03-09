@@ -506,11 +506,17 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			if fp.ExistsStrIgnoreCase("Reverse", onlyList) {
 				template += basic.Reverse()
 				template = r2.Replace(template)
+
+				template += template3.MethodChainStructForReverse()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("ReversePtr", onlyList) {
 				template += basic.ReversePtr()
 				template = r2.Replace(template)
+
+				template += template3.MethodChainStructForReversePtr()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("Take", onlyList) {
@@ -846,6 +852,12 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template = r3.Replace(template)
 
 			template += template3.MethodChainStructForDropWhilePtr()
+			template = r3.Replace(template)
+
+			template += template3.MethodChainStructForReverse()
+			template = r3.Replace(template)
+
+			template += template3.MethodChainStructForReversePtr()
 			template = r3.Replace(template)
 
 			// if struct's has member of type other than basic types such as list then use template which uses reflect

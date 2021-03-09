@@ -1561,6 +1561,16 @@ func (slice employeeSlicePtr) DropWhilePtr(functors ...employeeFunctorForFilterP
 	return tmpSlice
 }
 
+// Reverse - reverse the list
+func (slice employeeSlice) Reverse() employeeSlice {
+	return Reverses(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice employeeSlicePtr) ReversePtr() employeeSlicePtr {
+	return ReversesPtr(slice)
+}
+
 // DistinctP returns true if no two of the arguments are =
 func DistinctP(list []Employee) bool {
 	if len(list) == 0 {

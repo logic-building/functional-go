@@ -208,6 +208,32 @@ func TestDropWhile2Ptr<FTYPE>MethodChain(t *testing.T) {
 		t.Errorf("DropWhile<FTYPE>Ptr failed.")
 	}
 }
+
+// TestReverse<FTYPE>methodchain
+func TestReverse<FTYPE>methodchain(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	expected := []<TYPE>{v3, v2, v1}
+	reversed :=  Make<FTYPE>Slice([]<TYPE>{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverse<FTYPE>Ptrmethodchain
+func TestReverse<FTYPE>Ptrmethodchain(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	expected := []*<TYPE>{&v3, &v2, &v1}
+	reversed :=  Make<FTYPE>SlicePtr([]*<TYPE>{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
 `
 }
 
@@ -363,6 +389,32 @@ func TestDropWhileBoolPtrMethodChain(t *testing.T) {
 
 	if len(Make<FTYPE>SlicePtr().DropWhilePtr(nil)) > 0 {
 		t.Errorf("DropWhilePtr failed.")
+	}
+}
+
+// TestReverse<FTYPE>methodchain
+func TestReverse<FTYPE>methodchain(t *testing.T) {
+	var v1 <TYPE> = true
+	var v2 <TYPE> = false
+	var v3 <TYPE> = false
+
+	expected := []<TYPE>{v3, v2, v1}
+	reversed :=  Make<FTYPE>Slice([]<TYPE>{v1, v2, v3}...).Reverse()
+	if expected[0] != reversed[0] || expected[1] != reversed[1] || expected[2] != reversed[2] {
+		t.Errorf("Reverse<Type>s failed")
+	}
+}
+
+// TestReverse<FTYPE>Ptrmethodchain
+func TestReverse<FTYPE>Ptrmethodchain(t *testing.T) {
+	var v1 <TYPE> = true
+	var v2 <TYPE> = false
+	var v3 <TYPE> = false
+
+	expected := []*<TYPE>{&v3, &v2, &v1}
+	reversed :=  Make<FTYPE>SlicePtr([]*<TYPE>{&v1, &v2, &v3}...).ReversePtr()
+	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
+		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
 `

@@ -142,6 +142,16 @@ func (slice <NEWTYPE>SlicePtr) DropWhilePtr(functors ...<NEWTYPE>FunctorForFilte
 
 	return tmpSlice
 }
+
+// Reverse - reverse the list
+func (slice <NEWTYPE>Slice) Reverse() <NEWTYPE>Slice {
+	return Reverse<FTYPE>s(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice <NEWTYPE>SlicePtr) ReversePtr() <NEWTYPE>SlicePtr {
+	return Reverse<FTYPE>sPtr(slice)
+}
 `
 }
 
@@ -306,6 +316,26 @@ func (slice <NEWTYPE>SlicePtr) DropWhilePtr(functors ...<NEWTYPE>FunctorForFilte
 	}
 
 	return tmpSlice
+}
+`
+}
+
+// MethodChainStructForReverse is template to generate functional code for different combination of data type
+func MethodChainStructForReverse() string {
+	return `
+// Reverse - reverse the list
+func (slice <NEWTYPE>Slice) Reverse() <NEWTYPE>Slice {
+	return Reverse<CONDITIONAL_TYPE>s(slice)
+}
+`
+}
+
+// MethodChainStructForReversePtr is template to generate functional code for different combination of data type
+func MethodChainStructForReversePtr() string {
+	return `
+// ReversePtr - reverse the list
+func (slice <NEWTYPE>SlicePtr) ReversePtr() <NEWTYPE>SlicePtr {
+	return Reverse<CONDITIONAL_TYPE>sPtr(slice)
 }
 `
 }
