@@ -236,6 +236,69 @@ func TestReverseIntPtrmethodchain(t *testing.T) {
 	}
 }
 
+// TestDistinctIntMethodChain - 
+func TestDistinctIntMethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []int{8, 2, 0}
+	list := []int{8, 2, 8, 0, 2, 0}
+	distinct := MakeIntSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int{8, 2, 0}
+	list = []int{8, 2, 0}
+	distinct = MakeIntSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int{}
+	list = []int{}
+	distinct = MakeIntSlice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeIntSlice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctIntPtrMethodChain(t *testing.T) {
+	var v8 int = 8
+	var v2 int = 2
+	var v0 int
+
+	// Test : Get distinct values
+	expected := []*int{&v8, &v2, &v0}
+	list := []*int{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeIntSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctIntPtr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int{&v8, &v2, &v0}
+	list = []*int{&v8, &v2, &v0}
+	distinct = MakeIntSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctintPtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int{}
+	list = []*int{}
+	distinct = MakeIntSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctIntPtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeIntSlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctIntMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
 func TestMapInt64MethodChain(t *testing.T) {
 	expectedSquareList := []int64{1, 4, 9}
 	squareList := MakeInt64Slice([]int64{1, 2, 3}...).Map(squareInt64)
@@ -463,6 +526,69 @@ func TestReverseInt64Ptrmethodchain(t *testing.T) {
 	reversed :=  MakeInt64SlicePtr([]*int64{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctInt64MethodChain - 
+func TestDistinctInt64MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []int64{8, 2, 0}
+	list := []int64{8, 2, 8, 0, 2, 0}
+	distinct := MakeInt64Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int64{8, 2, 0}
+	list = []int64{8, 2, 0}
+	distinct = MakeInt64Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int64{}
+	list = []int64{}
+	distinct = MakeInt64Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt64Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctInt64PtrMethodChain(t *testing.T) {
+	var v8 int64 = 8
+	var v2 int64 = 2
+	var v0 int64
+
+	// Test : Get distinct values
+	expected := []*int64{&v8, &v2, &v0}
+	list := []*int64{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeInt64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctInt64Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int64{&v8, &v2, &v0}
+	list = []*int64{&v8, &v2, &v0}
+	distinct = MakeInt64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctint64PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int64{}
+	list = []*int64{}
+	distinct = MakeInt64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt64PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt64SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt64MethodChain failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }
 
@@ -696,6 +822,69 @@ func TestReverseInt32Ptrmethodchain(t *testing.T) {
 	}
 }
 
+// TestDistinctInt32MethodChain - 
+func TestDistinctInt32MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []int32{8, 2, 0}
+	list := []int32{8, 2, 8, 0, 2, 0}
+	distinct := MakeInt32Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int32{8, 2, 0}
+	list = []int32{8, 2, 0}
+	distinct = MakeInt32Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int32{}
+	list = []int32{}
+	distinct = MakeInt32Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt32Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctInt32PtrMethodChain(t *testing.T) {
+	var v8 int32 = 8
+	var v2 int32 = 2
+	var v0 int32
+
+	// Test : Get distinct values
+	expected := []*int32{&v8, &v2, &v0}
+	list := []*int32{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeInt32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctInt32Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int32{&v8, &v2, &v0}
+	list = []*int32{&v8, &v2, &v0}
+	distinct = MakeInt32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctint32PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int32{}
+	list = []*int32{}
+	distinct = MakeInt32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt32PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt32SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt32MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
 func TestMapInt16MethodChain(t *testing.T) {
 	expectedSquareList := []int16{1, 4, 9}
 	squareList := MakeInt16Slice([]int16{1, 2, 3}...).Map(squareInt16)
@@ -923,6 +1112,69 @@ func TestReverseInt16Ptrmethodchain(t *testing.T) {
 	reversed :=  MakeInt16SlicePtr([]*int16{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctInt16MethodChain - 
+func TestDistinctInt16MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []int16{8, 2, 0}
+	list := []int16{8, 2, 8, 0, 2, 0}
+	distinct := MakeInt16Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int16{8, 2, 0}
+	list = []int16{8, 2, 0}
+	distinct = MakeInt16Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int16{}
+	list = []int16{}
+	distinct = MakeInt16Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt16Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctInt16PtrMethodChain(t *testing.T) {
+	var v8 int16 = 8
+	var v2 int16 = 2
+	var v0 int16
+
+	// Test : Get distinct values
+	expected := []*int16{&v8, &v2, &v0}
+	list := []*int16{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeInt16SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctInt16Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int16{&v8, &v2, &v0}
+	list = []*int16{&v8, &v2, &v0}
+	distinct = MakeInt16SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctint16PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int16{}
+	list = []*int16{}
+	distinct = MakeInt16SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt16PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt16SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt16MethodChain failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }
 
@@ -1156,6 +1408,69 @@ func TestReverseInt8Ptrmethodchain(t *testing.T) {
 	}
 }
 
+// TestDistinctInt8MethodChain - 
+func TestDistinctInt8MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []int8{8, 2, 0}
+	list := []int8{8, 2, 8, 0, 2, 0}
+	distinct := MakeInt8Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int8{8, 2, 0}
+	list = []int8{8, 2, 0}
+	distinct = MakeInt8Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []int8{}
+	list = []int8{}
+	distinct = MakeInt8Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt8Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctInt8PtrMethodChain(t *testing.T) {
+	var v8 int8 = 8
+	var v2 int8 = 2
+	var v0 int8
+
+	// Test : Get distinct values
+	expected := []*int8{&v8, &v2, &v0}
+	list := []*int8{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeInt8SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctInt8Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int8{&v8, &v2, &v0}
+	list = []*int8{&v8, &v2, &v0}
+	distinct = MakeInt8SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctint8PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*int8{}
+	list = []*int8{}
+	distinct = MakeInt8SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt8PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeInt8SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt8MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
 func TestMapUintMethodChain(t *testing.T) {
 	expectedSquareList := []uint{1, 4, 9}
 	squareList := MakeUintSlice([]uint{1, 2, 3}...).Map(squareUint)
@@ -1383,6 +1698,69 @@ func TestReverseUintPtrmethodchain(t *testing.T) {
 	reversed :=  MakeUintSlicePtr([]*uint{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctUintMethodChain - 
+func TestDistinctUintMethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []uint{8, 2, 0}
+	list := []uint{8, 2, 8, 0, 2, 0}
+	distinct := MakeUintSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint{8, 2, 0}
+	list = []uint{8, 2, 0}
+	distinct = MakeUintSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint{}
+	list = []uint{}
+	distinct = MakeUintSlice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUintSlice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctUintPtrMethodChain(t *testing.T) {
+	var v8 uint = 8
+	var v2 uint = 2
+	var v0 uint
+
+	// Test : Get distinct values
+	expected := []*uint{&v8, &v2, &v0}
+	list := []*uint{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeUintSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctUintPtr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint{&v8, &v2, &v0}
+	list = []*uint{&v8, &v2, &v0}
+	distinct = MakeUintSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctuintPtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint{}
+	list = []*uint{}
+	distinct = MakeUintSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUintPtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUintSlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUintMethodChain failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }
 
@@ -1616,6 +1994,69 @@ func TestReverseUint64Ptrmethodchain(t *testing.T) {
 	}
 }
 
+// TestDistinctUint64MethodChain - 
+func TestDistinctUint64MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []uint64{8, 2, 0}
+	list := []uint64{8, 2, 8, 0, 2, 0}
+	distinct := MakeUint64Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint64{8, 2, 0}
+	list = []uint64{8, 2, 0}
+	distinct = MakeUint64Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint64{}
+	list = []uint64{}
+	distinct = MakeUint64Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint64Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctUint64PtrMethodChain(t *testing.T) {
+	var v8 uint64 = 8
+	var v2 uint64 = 2
+	var v0 uint64
+
+	// Test : Get distinct values
+	expected := []*uint64{&v8, &v2, &v0}
+	list := []*uint64{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeUint64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctUint64Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint64{&v8, &v2, &v0}
+	list = []*uint64{&v8, &v2, &v0}
+	distinct = MakeUint64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctuint64PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint64{}
+	list = []*uint64{}
+	distinct = MakeUint64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint64PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint64SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint64MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
 func TestMapUint32MethodChain(t *testing.T) {
 	expectedSquareList := []uint32{1, 4, 9}
 	squareList := MakeUint32Slice([]uint32{1, 2, 3}...).Map(squareUint32)
@@ -1843,6 +2284,69 @@ func TestReverseUint32Ptrmethodchain(t *testing.T) {
 	reversed :=  MakeUint32SlicePtr([]*uint32{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctUint32MethodChain - 
+func TestDistinctUint32MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []uint32{8, 2, 0}
+	list := []uint32{8, 2, 8, 0, 2, 0}
+	distinct := MakeUint32Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint32{8, 2, 0}
+	list = []uint32{8, 2, 0}
+	distinct = MakeUint32Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint32{}
+	list = []uint32{}
+	distinct = MakeUint32Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint32Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctUint32PtrMethodChain(t *testing.T) {
+	var v8 uint32 = 8
+	var v2 uint32 = 2
+	var v0 uint32
+
+	// Test : Get distinct values
+	expected := []*uint32{&v8, &v2, &v0}
+	list := []*uint32{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeUint32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctUint32Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint32{&v8, &v2, &v0}
+	list = []*uint32{&v8, &v2, &v0}
+	distinct = MakeUint32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctuint32PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint32{}
+	list = []*uint32{}
+	distinct = MakeUint32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint32PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint32SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint32MethodChain failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }
 
@@ -2076,6 +2580,69 @@ func TestReverseUint16Ptrmethodchain(t *testing.T) {
 	}
 }
 
+// TestDistinctUint16MethodChain - 
+func TestDistinctUint16MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []uint16{8, 2, 0}
+	list := []uint16{8, 2, 8, 0, 2, 0}
+	distinct := MakeUint16Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint16{8, 2, 0}
+	list = []uint16{8, 2, 0}
+	distinct = MakeUint16Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint16{}
+	list = []uint16{}
+	distinct = MakeUint16Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint16Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctUint16PtrMethodChain(t *testing.T) {
+	var v8 uint16 = 8
+	var v2 uint16 = 2
+	var v0 uint16
+
+	// Test : Get distinct values
+	expected := []*uint16{&v8, &v2, &v0}
+	list := []*uint16{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeUint16SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctUint16Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint16{&v8, &v2, &v0}
+	list = []*uint16{&v8, &v2, &v0}
+	distinct = MakeUint16SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctuint16PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint16{}
+	list = []*uint16{}
+	distinct = MakeUint16SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint16PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint16SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint16MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
 func TestMapUint8MethodChain(t *testing.T) {
 	expectedSquareList := []uint8{1, 4, 9}
 	squareList := MakeUint8Slice([]uint8{1, 2, 3}...).Map(squareUint8)
@@ -2303,6 +2870,69 @@ func TestReverseUint8Ptrmethodchain(t *testing.T) {
 	reversed :=  MakeUint8SlicePtr([]*uint8{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctUint8MethodChain - 
+func TestDistinctUint8MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []uint8{8, 2, 0}
+	list := []uint8{8, 2, 8, 0, 2, 0}
+	distinct := MakeUint8Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint8{8, 2, 0}
+	list = []uint8{8, 2, 0}
+	distinct = MakeUint8Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []uint8{}
+	list = []uint8{}
+	distinct = MakeUint8Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint8Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctUint8PtrMethodChain(t *testing.T) {
+	var v8 uint8 = 8
+	var v2 uint8 = 2
+	var v0 uint8
+
+	// Test : Get distinct values
+	expected := []*uint8{&v8, &v2, &v0}
+	list := []*uint8{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeUint8SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctUint8Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint8{&v8, &v2, &v0}
+	list = []*uint8{&v8, &v2, &v0}
+	distinct = MakeUint8SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctuint8PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*uint8{}
+	list = []*uint8{}
+	distinct = MakeUint8SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint8PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeUint8SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctUint8MethodChain failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }
 
@@ -2541,6 +3171,69 @@ func TestReverseStrPtrmethodchain(t *testing.T) {
 	}
 }
 
+// TestDistinctStrMethodChain -
+func TestDistinctStrMethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []string{"8", "2", "0"}
+	list := []string{"8", "2", "8", "0", "2", "0"}
+	distinct := MakeStrSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != "8" || distinct[1] != "2" || distinct[2] != "0" {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{"8", "2", "0"}
+	list = []string{"8", "2", "0"}
+	distinct = MakeStrSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != "8" || distinct[1] != "2" || distinct[2] != "0" {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{}
+	list = []string{}
+	distinct = MakeStrSlice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeStrSlice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctStrPtrMethodChain(t *testing.T) {
+	var v8 string = "8"
+	var v2 string = "2"
+	var v0 string
+
+	// Test : Get distinct values
+	expected := []*string{&v8, &v2, &v0}
+	list := []*string{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeStrSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctStrPtr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*string{&v8, &v2, &v0}
+	list = []*string{&v8, &v2, &v0}
+	distinct = MakeStrSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctstringPtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*string{}
+	list = []*string{}
+	distinct = MakeStrSlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctStrPtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeStrSlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctStrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
 // TestMapBoolMethodChain - 
 func TestMapBoolMethodChain(t *testing.T) {
 	expectedSquareList := []bool{false, true, false}
@@ -2716,6 +3409,34 @@ func TestReverseBoolPtrmethodchain(t *testing.T) {
 	reversed :=  MakeBoolSlicePtr([]*bool{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctBoolMethodChain
+func TestDistinctBoolMethodChain(t *testing.T) {
+	var vt bool = true
+
+	newList := MakeBoolSlice([]bool{vt, vt}...).Distinct()
+	if newList[0] != vt {
+		t.Errorf("DistinctBool failed")
+	}
+
+	if len(MakeBoolSlice().Distinct()) > 0 {
+		t.Errorf("DistinctBool failed.")
+	}
+}
+
+// TestDistinctBoolPtrMethodChain
+func TestDistinctBoolPtrMethodChain(t *testing.T) {
+	var vt bool = true
+
+	newList := MakeBoolSlicePtr([]*bool{&vt, &vt}...).DistinctPtr()
+	if *newList[0] != vt {
+		t.Errorf("DistinctPtrBool failed")
+	}
+
+	if len(MakeBoolSlicePtr().DistinctPtr()) > 0 {
+		t.Errorf("DistinctPtrBool failed.")
 	}
 }
 
@@ -2949,6 +3670,69 @@ func TestReverseFloat32Ptrmethodchain(t *testing.T) {
 	}
 }
 
+// TestDistinctFloat32MethodChain - 
+func TestDistinctFloat32MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []float32{8, 2, 0}
+	list := []float32{8, 2, 8, 0, 2, 0}
+	distinct := MakeFloat32Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []float32{8, 2, 0}
+	list = []float32{8, 2, 0}
+	distinct = MakeFloat32Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []float32{}
+	list = []float32{}
+	distinct = MakeFloat32Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeFloat32Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctFloat32PtrMethodChain(t *testing.T) {
+	var v8 float32 = 8
+	var v2 float32 = 2
+	var v0 float32
+
+	// Test : Get distinct values
+	expected := []*float32{&v8, &v2, &v0}
+	list := []*float32{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeFloat32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctFloat32Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float32{&v8, &v2, &v0}
+	list = []*float32{&v8, &v2, &v0}
+	distinct = MakeFloat32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctfloat32PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float32{}
+	list = []*float32{}
+	distinct = MakeFloat32SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctFloat32PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeFloat32SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctFloat32MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
 func TestMapFloat64MethodChain(t *testing.T) {
 	expectedSquareList := []float64{1, 4, 9}
 	squareList := MakeFloat64Slice([]float64{1, 2, 3}...).Map(squareFloat64)
@@ -3176,5 +3960,68 @@ func TestReverseFloat64Ptrmethodchain(t *testing.T) {
 	reversed :=  MakeFloat64SlicePtr([]*float64{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctFloat64MethodChain - 
+func TestDistinctFloat64MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []float64{8, 2, 0}
+	list := []float64{8, 2, 8, 0, 2, 0}
+	distinct := MakeFloat64Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []float64{8, 2, 0}
+	list = []float64{8, 2, 0}
+	distinct = MakeFloat64Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []float64{}
+	list = []float64{}
+	distinct = MakeFloat64Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeFloat64Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinctFloat64PtrMethodChain(t *testing.T) {
+	var v8 float64 = 8
+	var v2 float64 = 2
+	var v0 float64
+
+	// Test : Get distinct values
+	expected := []*float64{&v8, &v2, &v0}
+	list := []*float64{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := MakeFloat64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("DistinctFloat64Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float64{&v8, &v2, &v0}
+	list = []*float64{&v8, &v2, &v0}
+	distinct = MakeFloat64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinctfloat64PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*float64{}
+	list = []*float64{}
+	distinct = MakeFloat64SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctFloat64PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeFloat64SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctFloat64MethodChain failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }

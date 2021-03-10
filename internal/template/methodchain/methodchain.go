@@ -152,6 +152,41 @@ func (slice <NEWTYPE>Slice) Reverse() <NEWTYPE>Slice {
 func (slice <NEWTYPE>SlicePtr) ReversePtr() <NEWTYPE>SlicePtr {
 	return Reverse<FTYPE>sPtr(slice)
 }
+
+// Distinct - removes duplicates
+func (slice <NEWTYPE>Slice) Distinct() <NEWTYPE>Slice {
+	return Distinct<FTYPE>(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice <NEWTYPE>SlicePtr) DistinctPtr() <NEWTYPE>SlicePtr {
+	return Distinct<FTYPE>Ptr(slice)
+}
+`
+}
+
+// MethodChainBasicSort -
+func MethodChainBasicSort() string {
+	return `
+// Sort - sort the list
+func (slice <NEWTYPE>Slice) Sort() <NEWTYPE>Slice {
+	return Sort<FTYPE>s(slice)
+}
+
+// SortDesc - sort the list
+func (slice <NEWTYPE>Slice) SortDesc() <NEWTYPE>Slice {
+	return Sort<FTYPE>sDesc(slice)
+}
+
+// SortPtr - sort the list
+func (slice <NEWTYPE>SlicePtr) SortPtr() <NEWTYPE>SlicePtr {
+	return Sort<FTYPE>sPtr(slice)
+}
+
+// SortDescPtr - sort the list
+func (slice <NEWTYPE>SlicePtr) SortDescPtr() <NEWTYPE>SlicePtr {
+	return Sort<FTYPE>sDescPtr(slice)
+}
 `
 }
 
@@ -336,6 +371,56 @@ func MethodChainStructForReversePtr() string {
 // ReversePtr - reverse the list
 func (slice <NEWTYPE>SlicePtr) ReversePtr() <NEWTYPE>SlicePtr {
 	return Reverse<CONDITIONAL_TYPE>sPtr(slice)
+}
+`
+}
+
+// MethodChainStructSort -
+func MethodChainStructSort() string {
+	return `
+// SortBy<FFIELD_NAME> - sort the list
+func (slice <NEWTYPE>Slice) SortBy<FFIELD_NAME>() <NEWTYPE>Slice {
+	return Sort<FSTRUCT_NAME>By<FFIELD_NAME>(slice)
+}
+
+// SortBy<FFIELD_NAME>Desc - sort the list
+func (slice <NEWTYPE>Slice) SortBy<FFIELD_NAME>Desc() <NEWTYPE>Slice {
+	return Sort<FSTRUCT_NAME>By<FFIELD_NAME>Desc(slice)
+}
+`
+}
+
+// MethodChainStructSortPtr -
+func MethodChainStructSortPtr() string {
+	return `
+// SortBy<FFIELD_NAME> - sort the list
+func (slice <NEWTYPE>SlicePtr) SortBy<FFIELD_NAME>Ptr() <NEWTYPE>SlicePtr {
+	return Sort<FSTRUCT_NAME>By<FFIELD_NAME>Ptr(slice)
+}
+
+// SortBy<FFIELD_NAME>DescPtr - sort the list
+func (slice <NEWTYPE>SlicePtr) SortBy<FFIELD_NAME>DescPtr() <NEWTYPE>SlicePtr {
+	return Sort<FSTRUCT_NAME>By<FFIELD_NAME>DescPtr(slice)
+}
+`
+}
+
+// MethodChainStructDistinct -
+func MethodChainStructDistinct() string {
+	return `
+// Distinct - removes duplicates
+func (slice <NEWTYPE>Slice) Distinct() <NEWTYPE>Slice {
+	return Distinct<CONDITIONAL_TYPE>(slice)
+}
+`
+}
+
+// MethodChainStructDistinct -
+func MethodChainStructDistinctPtr() string {
+	return `
+// DistinctPtr - removes duplicates
+func (slice <NEWTYPE>SlicePtr) DistinctPtr() <NEWTYPE>SlicePtr {
+	return Distinct<CONDITIONAL_TYPE>Ptr(slice)
 }
 `
 }

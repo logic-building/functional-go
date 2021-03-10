@@ -761,3 +761,79 @@ func SortFloat32sDescPtr(list []*float32) []*float32 {
 
 	return newListPtr
 }
+
+type float641 []float64
+
+func (a float641) Len() int           { return len(a) }
+func (a float641) Less(i, j int) bool { return a[i] < a[j] }
+func (a float641) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+// SortFloat64s return new sorted list
+func SortFloat64s(list []float64) []float64 {
+	if len(list) == 0 {
+		return []float64{}
+	}
+	var newList float641
+	for _, item := range list {
+		newList = append(newList, item)
+	}
+	sort.Sort(newList)
+	return newList
+}
+
+// SortFloat64sPtr return new sorted list
+func SortFloat64sPtr(list []*float64) []*float64 {
+	if len(list) == 0 {
+		return []*float64{}
+	}
+	var newList float641
+	for _, item := range list {
+		newList = append(newList, *item)
+	}
+	sort.Sort(newList)
+
+	newListPtr := make([]*float64, len(list))
+	for i := 0; i < len(newList); i++ {
+		newListPtr[i] = &newList[i]
+	}
+
+	return newListPtr
+}
+
+type float642 []float64
+
+func (a float642) Len() int           { return len(a) }
+func (a float642) Less(i, j int) bool { return a[i] > a[j] }
+func (a float642) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+// SortFloat64sDesc return new sorted list
+func SortFloat64sDesc(list []float64) []float64 {
+	if len(list) == 0 {
+		return []float64{}
+	}
+	var newList float642
+	for _, item := range list {
+		newList = append(newList, item)
+	}
+	sort.Sort(newList)
+	return newList
+}
+
+// SortFloat64sDescPtr return new sorted list
+func SortFloat64sDescPtr(list []*float64) []*float64 {
+	if len(list) == 0 {
+		return []*float64{}
+	}
+	var newList float642
+	for _, item := range list {
+		newList = append(newList, *item)
+	}
+	sort.Sort(newList)
+
+	newListPtr := make([]*float64, len(list))
+	for i := 0; i < len(newList); i++ {
+		newListPtr[i] = &newList[i]
+	}
+
+	return newListPtr
+}

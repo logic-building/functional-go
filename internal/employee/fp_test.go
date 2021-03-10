@@ -618,3 +618,186 @@ func TestMethodChainWithReverse(t *testing.T) {
 		t.Error("error in method chain with Map", employees)
 	}
 }
+
+func TestMethodChainWithSort(t *testing.T) {
+	now := time.Now()
+	employees := []Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: now}}
+
+	salaryIncrement := func(emp Employee) Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+
+	salary700 := func(emp Employee) bool {
+		return emp.Salary == 700
+	}
+
+	employeesWithIncrementedSalary := MakeEmployeeSlice(employees...).
+		DropWhile(salary700).
+		Map(salaryIncrement).
+		SortBySalary()
+
+	if 1800 != employeesWithIncrementedSalary[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+
+	employeeDescendingOrder := MakeEmployeeSlice(employees...).
+		DropWhile(salary700).
+		Map(salaryIncrement).
+		SortBySalaryDesc()
+
+	if 1900 != employeeDescendingOrder[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+}
+
+func TestMethodChainWithSortTimeField(t *testing.T) {
+	employees := []Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: time.Now()},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: time.Now()},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: time.Now()},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: time.Now()}}
+
+	salaryIncrement := func(emp Employee) Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+
+	salary700 := func(emp Employee) bool {
+		return emp.Salary == 700
+	}
+
+	employeesWithIncrementedSalary := MakeEmployeeSlice(employees...).
+		DropWhile(salary700).
+		Map(salaryIncrement).
+		SortBySalary()
+
+	if 1800 != employeesWithIncrementedSalary[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+
+	employeeOrder := MakeEmployeeSlice(employees...).
+		DropWhile(salary700).
+		Map(salaryIncrement).
+		SortByCreationDate()
+
+	if 1900 != employeeOrder[2].Salary {
+		t.Error("error in method chain with Map", employeeOrder)
+	}
+}
+
+func TestMethodChainWithSortTimeFieldPtr(t *testing.T) {
+	employees := []*Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: time.Now()},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: time.Now()},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: time.Now()},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: time.Now()}}
+
+	salaryIncrement := func(emp *Employee) *Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+
+	salary700 := func(emp *Employee) bool {
+		return emp.Salary == 700
+	}
+
+	employeesWithIncrementedSalary := MakeEmployeeSlicePtr(employees...).
+		DropWhilePtr(salary700).
+		MapPtr(salaryIncrement)
+
+	if 1800 != employeesWithIncrementedSalary[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+
+	employeesList2 := []*Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: time.Now()},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: time.Now()},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: time.Now()},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: time.Now()}}
+	employeeOrder := MakeEmployeeSlicePtr(employeesList2...).
+		DropWhilePtr(salary700).
+		MapPtr(salaryIncrement)
+
+	if 1800 != employeeOrder[0].Salary {
+		t.Error("error in method chain with Map", employeeOrder[0])
+	}
+}
+
+func TestMethodChainDistinct(t *testing.T) {
+	now := time.Now()
+	employees := []Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: now}}
+
+	salaryIncrement := func(emp Employee) Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+
+	employeesWithIncrementedSalary := MakeEmployeeSlice(employees...).
+		Map(salaryIncrement).
+		Distinct()
+
+	if len(employeesWithIncrementedSalary) != 3 || 1700 != employeesWithIncrementedSalary[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+
+	ramAddress := "Ayodhya"
+	shyamAddress := "Gokul"
+	radhaAddress := "Barsana"
+	teachers := []Teacher{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: &now, Address: &ramAddress},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: &now, Address: &shyamAddress},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: &now, Address: &shyamAddress},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: &now, Address: &radhaAddress},
+	}
+
+	r := MakeTeacherSlice(teachers...).Distinct()
+	if len(r) != 3 {
+		t.Error("error in method chain distinct test.")
+	}
+}
+
+func TestMethodChainDistinctPtr(t *testing.T) {
+	now := time.Now()
+	employees := []*Employee{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: now},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: now}}
+
+	salaryIncrement := func(emp *Employee) *Employee {
+		emp.Salary = emp.Salary + 1000
+		return emp
+	}
+
+	employeesWithIncrementedSalary := MakeEmployeeSlicePtr(employees...).
+		MapPtr(salaryIncrement).
+		DistinctPtr()
+
+	if len(employeesWithIncrementedSalary) != 3 || 1700 != employeesWithIncrementedSalary[0].Salary {
+		t.Error("error in method chain with Map", employees)
+	}
+
+	ramAddress := "Ayodhya"
+	shyamAddress := "Gokul"
+	radhaAddress := "Barsana"
+	teachers := []*Teacher{
+		{Id: 1, Name: "Ram", Salary: 700, CreationDate: &now, Address: &ramAddress},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: &now, Address: &shyamAddress},
+		{Id: 2, Name: "Shyam", Salary: 800, CreationDate: &now, Address: &shyamAddress},
+		{Id: 3, Name: "Radha", Salary: 900, CreationDate: &now, Address: &radhaAddress},
+	}
+
+	r := MakeTeacherSlicePtr(teachers...).DistinctPtr()
+	if len(r) != 3 {
+		t.Error("error in method chain distinct test.")
+	}
+}

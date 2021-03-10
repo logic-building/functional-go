@@ -1617,6 +1617,16 @@ func DistinctEmployer(list []employer.Employer) []employer.Employer {
 	return newList
 }
 
+// Distinct - removes duplicates
+func (slice employerSlice) Distinct() employerSlice {
+	return DistinctEmployer(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice employerSlicePtr) DistinctPtr() employerSlicePtr {
+	return DistinctEmployerPtr(slice)
+}
+
 // DistinctEmployerPtr removes duplicates.
 func DistinctEmployerPtr(list []*employer.Employer) []*employer.Employer {
 	var newList []*employer.Employer
@@ -3610,6 +3620,16 @@ func DistinctEmployee(list []employee.Employee) []employee.Employee {
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+// Distinct - removes duplicates
+func (slice employeeSlice) Distinct() employeeSlice {
+	return DistinctEmployee(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice employeeSlicePtr) DistinctPtr() employeeSlicePtr {
+	return DistinctEmployeePtr(slice)
 }
 
 // DistinctEmployeePtr removes duplicates.

@@ -1617,6 +1617,16 @@ func Distinct(list []Employer) []Employer {
 	return newList
 }
 
+// Distinct - removes duplicates
+func (slice employerSlice) Distinct() employerSlice {
+	return Distinct(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice employerSlicePtr) DistinctPtr() employerSlicePtr {
+	return DistinctPtr(slice)
+}
+
 // DistinctPtr removes duplicates.
 func DistinctPtr(list []*Employer) []*Employer {
 	var newList []*Employer
@@ -3610,6 +3620,16 @@ func DistinctEmployee(list []employee.Employee) []employee.Employee {
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+// Distinct - removes duplicates
+func (slice employeeSlice) Distinct() employeeSlice {
+	return DistinctEmployee(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice employeeSlicePtr) DistinctPtr() employeeSlicePtr {
+	return DistinctEmployeePtr(slice)
 }
 
 // DistinctEmployeePtr removes duplicates.
@@ -8165,6 +8185,26 @@ func SortEmployerByIdDescPtr(list []*Employer) []*Employer {
 	}
 	return newListPtr
 }
+// SortById - sort the list
+func (slice employerSlice) SortById() employerSlice {
+	return SortEmployerById(slice)
+}
+
+// SortByIdDesc - sort the list
+func (slice employerSlice) SortByIdDesc() employerSlice {
+	return SortEmployerByIdDesc(slice)
+}
+
+// SortById - sort the list
+func (slice employerSlicePtr) SortByIdPtr() employerSlicePtr {
+	return SortEmployerByIdPtr(slice)
+}
+
+// SortByIdDescPtr - sort the list
+func (slice employerSlicePtr) SortByIdDescPtr() employerSlicePtr {
+	return SortEmployerByIdDescPtr(slice)
+}
+
 // UnionEmployerById return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func UnionEmployerById(arrList ...[]Employer) []Employer {

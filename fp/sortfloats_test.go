@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestSortFloat64(t *testing.T) {
+func TestSortFloat642nd(t *testing.T) {
 	expectedList := []float64{1, 2, 3, 4, 5}
 	sortedList := SortFloats64([]float64{5, 1, 4, 2, 3})
 	matched := reflect.DeepEqual(sortedList, expectedList)
@@ -20,7 +20,7 @@ func TestSortFloat64(t *testing.T) {
 	}
 }
 
-func TestSortFloat64Ptr(t *testing.T) {
+func TestSortFloat642ndPtr(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
 	var v3 float64 = 3
@@ -49,7 +49,7 @@ func TestSortFloat64Ptr(t *testing.T) {
 	}
 }
 
-func TestSortFloat64Desc(t *testing.T) {
+func TestSortFloat642ndDesc(t *testing.T) {
 	expectedList := []float64{5, 4, 3, 2, 1}
 	sortedList := SortFloats64Desc([]float64{5, 1, 4, 2, 3})
 	matched := reflect.DeepEqual(sortedList, expectedList)
@@ -63,7 +63,7 @@ func TestSortFloat64Desc(t *testing.T) {
 	}
 }
 
-func TestSortFloat64DescPtr(t *testing.T) {
+func TestSortFloat642ndDescPtr(t *testing.T) {
 	var v1 float64 = 1
 	var v2 float64 = 2
 	var v3 float64 = 3

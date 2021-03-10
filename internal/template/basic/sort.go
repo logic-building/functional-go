@@ -301,6 +301,23 @@ func ReplaceActivitySortingCode(code string) string {
 import "sort"`
 
 	code = strings.Replace(code, s1, s2, -1)
+
+	s1 = `package fp
+
+import "sort"
+
+// Sort - sort the list
+func (slice intSlice) Sort() intSlice {
+	return SortInts(slice)
+}`
+	s2 = `package fp
+
+// Sort - sort the list
+func (slice intSlice) Sort() intSlice {
+	return SortInts(slice)
+}`
+
+	code = strings.Replace(code, s1, s2, -1)
 	return code
 
 }

@@ -545,11 +545,17 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 				if fp.ExistsStrIgnoreCase("Distinct", onlyList) {
 					template += basic.Distinct2()
 					template = r2.Replace(template)
+
+					template += template3.MethodChainStructDistinct()
+					template = r3.Replace(template)
 				}
 
 				if fp.ExistsStrIgnoreCase("DistinctPtr", onlyList) {
 					template += basic.DistinctPtr2()
 					template = r2.Replace(template)
+
+					template += template3.MethodChainStructDistinctPtr()
+					template = r3.Replace(template)
 				}
 
 				if fp.ExistsStrIgnoreCase("Union", onlyList) {
@@ -626,11 +632,17 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 				if fp.ExistsStrIgnoreCase("Distinct", onlyList) {
 					template += basic.Distinct()
 					template = r2.Replace(template)
+
+					template += template3.MethodChainStructDistinct()
+					template = r3.Replace(template)
 				}
 
 				if fp.ExistsStrIgnoreCase("DistinctPtr", onlyList) {
 					template += basic.DistinctPtr()
 					template = r2.Replace(template)
+
+					template += template3.MethodChainStructDistinctPtr()
+					template = r3.Replace(template)
 				}
 
 				if fp.ExistsStrIgnoreCase("Union", onlyList) {
@@ -873,8 +885,14 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 				template += basic.Distinct2()
 				template = r2.Replace(template)
 
+				template += template3.MethodChainStructDistinct()
+				template = r3.Replace(template)
+
 				template += basic.DistinctPtr2()
 				template = r2.Replace(template)
+
+				template += template3.MethodChainStructDistinctPtr()
+				template = r3.Replace(template)
 
 				template += basic.Union2()
 				template = r2.Replace(template)
@@ -921,6 +939,12 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 
 				template += basic.Distinct()
 				template = r2.Replace(template)
+
+				template += template3.MethodChainStructDistinct()
+				template = r3.Replace(template)
+
+				template += template3.MethodChainStructDistinctPtr()
+				template = r3.Replace(template)
 
 				template += basic.DistinctPtr()
 				template = r2.Replace(template)
@@ -1268,6 +1292,13 @@ func runWithin(duration time.Duration) bool {
 }
 
 func generateSortMethods(sortStr string, allFields map[string][]string) string {
+	firstLetterLowerCase := func(s string) string {
+		if len(s) > 0 {
+			return strings.ToLower(s[0:1]) + s[1:]
+		}
+		return s
+	}
+
 	if allFields != nil {
 		template := ""
 		for structName, fieldsAndTypes := range allFields {
@@ -1284,6 +1315,40 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 						r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 						template += template2.SortStructForTimeFieldPtr()
 						template = r.Replace(template)
+
+						// For method chain ptr
+						r2 := strings.NewReplacer(
+							"<STRUCT_NAME>", structName,
+							"<FIELD_NAME>", fieldName,
+							"<FSTRUCT_NAME>", fStructName,
+							"<FFIELD_NAME>", fFieldName,
+							"<NEWTYPE>", firstLetterLowerCase(fStructName),
+						)
+
+						template += template3.MethodChainStructSortPtr()
+						template = r2.Replace(template)
+
+						// For method chain ptr functionality for struct which has pointer time
+						/*
+							type Teacher struct {
+								Id           int
+								Name         string
+								Salary       float64
+								CreationDate *time.Time
+								Address      *string
+								Students     []string
+							}
+						*/
+						r3 := strings.NewReplacer(
+							"<STRUCT_NAME>", structName,
+							"<FIELD_NAME>", fieldName,
+							"<FSTRUCT_NAME>", fStructName,
+							"<FFIELD_NAME>", fFieldName,
+							"<NEWTYPE>", firstLetterLowerCase(fStructName),
+						)
+
+						template += template3.MethodChainStructSort()
+						template = r3.Replace(template)
 						continue
 					}
 
@@ -1291,6 +1356,30 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 						r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 						template += template2.SortStructForTimeField()
 						template = r.Replace(template)
+
+						// For method chain
+						r2 := strings.NewReplacer(
+							"<STRUCT_NAME>", structName,
+							"<FIELD_NAME>", fieldName,
+							"<FSTRUCT_NAME>", fStructName,
+							"<FFIELD_NAME>", fFieldName,
+							"<NEWTYPE>", firstLetterLowerCase(fStructName),
+						)
+
+						template += template3.MethodChainStructSort()
+						template = r2.Replace(template)
+
+						// For method chain for pointer type time field
+						r5 := strings.NewReplacer(
+							"<STRUCT_NAME>", structName,
+							"<FIELD_NAME>", fieldName,
+							"<FSTRUCT_NAME>", fStructName,
+							"<FFIELD_NAME>", fFieldName,
+							"<NEWTYPE>", firstLetterLowerCase(fStructName),
+						)
+
+						template += template3.MethodChainStructSortPtr()
+						template = r5.Replace(template)
 						continue
 					}
 
@@ -1311,12 +1400,70 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 						r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 						template += template2.SortStructPtr()
 						template = r.Replace(template)
+
+						// For method chain for pointer
+						r2 := strings.NewReplacer(
+							"<STRUCT_NAME>", structName,
+							"<FIELD_NAME>", fieldName,
+							"<FSTRUCT_NAME>", fStructName,
+							"<FFIELD_NAME>", fFieldName,
+							"<NEWTYPE>", firstLetterLowerCase(fStructName),
+						)
+
+						template += template3.MethodChainStructSortPtr()
+						template = r2.Replace(template)
+
+						// For method chain ptr functionality for struct which has pointer time
+						/*
+							type Teacher struct {
+								Id           int
+								Name         string
+								Salary       float64
+								CreationDate *time.Time
+								Address      *string
+								Students     []string
+							}
+						*/
+						r3 := strings.NewReplacer(
+							"<STRUCT_NAME>", structName,
+							"<FIELD_NAME>", fieldName,
+							"<FSTRUCT_NAME>", fStructName,
+							"<FFIELD_NAME>", fFieldName,
+							"<NEWTYPE>", firstLetterLowerCase(fStructName),
+						)
+
+						template += template3.MethodChainStructSort()
+						template = r3.Replace(template)
 						continue
 					}
 
 					r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 					template += template2.SortStruct()
 					template = r.Replace(template)
+
+					// For method chain
+					r2 := strings.NewReplacer(
+						"<STRUCT_NAME>", structName,
+						"<FIELD_NAME>", fieldName,
+						"<FSTRUCT_NAME>", fStructName,
+						"<FFIELD_NAME>", fFieldName,
+						"<NEWTYPE>", firstLetterLowerCase(fStructName),
+					)
+
+					template += template3.MethodChainStructSort()
+					template = r2.Replace(template)
+
+					// For method chain for pointer type field
+					r4 := strings.NewReplacer(
+						"<STRUCT_NAME>", structName,
+						"<FIELD_NAME>", fieldName,
+						"<FSTRUCT_NAME>", fStructName,
+						"<FFIELD_NAME>", fFieldName,
+						"<NEWTYPE>", firstLetterLowerCase(fStructName),
+					)
+
+					template += template3.MethodChainStructSortPtr()
+					template = r4.Replace(template)
 
 				}
 			}
@@ -1352,6 +1499,30 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 				r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 				template += template2.SortStructForTimeField()
 				template = r.Replace(template)
+
+				// For method chain
+				r2 := strings.NewReplacer(
+					"<STRUCT_NAME>", structName,
+					"<FIELD_NAME>", fieldName,
+					"<FSTRUCT_NAME>", fStructName,
+					"<FFIELD_NAME>", fFieldName,
+					"<NEWTYPE>", firstLetterLowerCase(fStructName),
+				)
+
+				template += template3.MethodChainStructSort()
+				template = r2.Replace(template)
+
+				// For method chain Ptr
+				r4 := strings.NewReplacer(
+					"<STRUCT_NAME>", structName,
+					"<FIELD_NAME>", fieldName,
+					"<FSTRUCT_NAME>", fStructName,
+					"<FFIELD_NAME>", fFieldName,
+					"<NEWTYPE>", firstLetterLowerCase(fStructName),
+				)
+
+				template += template3.MethodChainStructSortPtr()
+				template = r4.Replace(template)
 				continue
 			}
 		}
@@ -1359,6 +1530,30 @@ func generateSortMethods(sortStr string, allFields map[string][]string) string {
 		r := strings.NewReplacer("<STRUCT_NAME>", structName, "<FIELD_NAME>", fieldName, "<FSTRUCT_NAME>", fStructName, "<FFIELD_NAME>", fFieldName)
 		template += template2.SortStruct()
 		template = r.Replace(template)
+
+		// For method chain
+		r2 := strings.NewReplacer(
+			"<STRUCT_NAME>", structName,
+			"<FIELD_NAME>", fieldName,
+			"<FSTRUCT_NAME>", fStructName,
+			"<FFIELD_NAME>", fFieldName,
+			"<NEWTYPE>", firstLetterLowerCase(fStructName),
+		)
+
+		template += template3.MethodChainStructSort()
+		template = r2.Replace(template)
+
+		// For method chain Ptr
+		r5 := strings.NewReplacer(
+			"<STRUCT_NAME>", structName,
+			"<FIELD_NAME>", fieldName,
+			"<FSTRUCT_NAME>", fStructName,
+			"<FFIELD_NAME>", fFieldName,
+			"<NEWTYPE>", firstLetterLowerCase(fStructName),
+		)
+
+		template += template3.MethodChainStructSortPtr()
+		template = r5.Replace(template)
 	}
 
 	return template

@@ -21,7 +21,7 @@ go install github.com/logic-building/functional-go/gofp
 ```toml
 [[constraint]]
 name = "github.com/logic-building/functional-go"
-version = "8.13.1"
+version = "8.14.0"
 ```
 
 ### Quick Start
@@ -36,7 +36,7 @@ func square(num int) int {
 }
 
 ```
-#### Four variants of function. 1 is given above and 3 are given below
+#### Four variants of the function. 1 is given above and 3 are given below
 ##### MapInt, MapIntPtr, MapIntErr, MapIntPtrErr
 ### MapIntPtr
 ```go
@@ -341,6 +341,27 @@ Note:
 26. Union     : Return a set that is the union of the input sets. Repeated value within list(argument) will be ignored
 27. Union<struct>By<Field>
 ```
+
+### Method chain functionality for Basic type as well as struct - 
+#### Map, Filter, Sort, Distinct, Reverse, DropWhile, Remove
+#### Examples
+```go
+// Use MakeIntSlicePtr for pointer version
+r := fp.MakeIntSlice([]int{3, 2, 1}...).
+        Filter(odd).
+        Map(square).
+        Sort()
+fmt.Println(r) // [1 9]
+
+func odd (num int) bool {
+        return num % 2 != 0
+}
+func square(num int) int {
+        return num * num
+}
+    
+```
+
 ### Contains functions
 ```
 Takes list as argument and returns Distinct list.  Returns empty list if 2nd parameter is empty or nil

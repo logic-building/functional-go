@@ -53,6 +53,17 @@ var fpCodeList = []fpCode{
 	},
 
 	fpCode{
+		function:          "methodchainSort",
+		codeTemplate:      methodchain.MethodChainBasicSort(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
+		generatedFileName: "methodchainsort.go",
+
+		testTemplate: methodchain.MethodChainSortTest(),
+		//testTemplateBool:      methodchain.MethodChainMapBoolTest(),
+		generatedTestFileName: "methodchainsort_test.go",
+	},
+
+	fpCode{
 		function:          "DropLast",
 		codeTemplate:      basic.DropLast(),
 		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
@@ -282,7 +293,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "Sort",
 		codeTemplate:      basic.Sort(),
-		dataTypes:         []string{"int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32"},
+		dataTypes:         []string{"int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
 		generatedFileName: "sort.go",
 
 		testTemplate: basic.SortTest(),

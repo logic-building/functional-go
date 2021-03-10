@@ -865,3 +865,89 @@ func TestSortFloat32DescPtr(t *testing.T) {
 		t.Errorf("Sotredfloat32sDescPtr failed")
 	}
 }
+
+func TestSortFloat64(t *testing.T) {
+	expectedList := []float64{1, 2, 3, 4, 5}
+	sortedList := SortFloat64s([]float64{5, 1, 4, 2, 3})
+	matched := reflect.DeepEqual(sortedList, expectedList)
+	if !matched {
+		t.Errorf("Sotredfloat64s failed")
+	}
+
+	sortedList = SortFloat64s([]float64{})
+	if len(sortedList) > 0 {
+		t.Errorf("Sotredfloat64s failed")
+	}
+}
+
+func TestSortFloat64Ptr(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+	var v5 float64 = 5
+
+	expectedList := []*float64{&v1, &v2, &v3, &v4, &v5}
+	sortedList := SortFloat64sPtr([]*float64{&v5, &v1, &v4, &v2, &v3})
+
+	for i, val := range sortedList {
+		if *val != *expectedList[i] {
+			for _, val := range expectedList {
+				t.Errorf("expected item: %v", *val)
+			}
+
+			for _, val := range sortedList {
+				t.Errorf("sorted item: %v", *val)
+			}
+			t.Errorf("Sotredfloat64s failed")
+		}
+	}
+
+	sortedList = SortFloat64sPtr([]*float64{})
+	if len(sortedList) > 0 {
+		t.Errorf("Sotredfloat64sPtr failed")
+	}
+}
+
+func TestSortFloat64Desc(t *testing.T) {
+	expectedList := []float64{5, 4, 3, 2, 1}
+	sortedList := SortFloat64sDesc([]float64{5, 1, 4, 2, 3})
+	matched := reflect.DeepEqual(sortedList, expectedList)
+	if !matched {
+		t.Errorf("Sotredfloat64s failed")
+	}
+
+	sortedList = SortFloat64sDesc([]float64{})
+	if len(sortedList) > 0 {
+		t.Errorf("Sotredfloat64sDesc failed")
+	}
+}
+
+func TestSortFloat64DescPtr(t *testing.T) {
+	var v1 float64 = 1
+	var v2 float64 = 2
+	var v3 float64 = 3
+	var v4 float64 = 4
+	var v5 float64 = 5
+
+	expectedList := []*float64{&v5, &v4, &v3, &v2, &v1}
+	sortedList := SortFloat64sDescPtr([]*float64{&v5, &v1, &v4, &v2, &v3})
+
+	for i, val := range sortedList {
+		if *val != *expectedList[i] {
+			for _, val := range expectedList {
+				t.Errorf("expected item: %v", *val)
+			}
+
+			for _, val := range sortedList {
+				t.Errorf("sorted item: %v", *val)
+			}
+			t.Errorf("Sotredfloat64s failed")
+		}
+	}
+
+	sortedList = SortFloat64sDescPtr([]*float64{})
+	if len(sortedList) > 0 {
+		t.Errorf("Sotredfloat64sDescPtr failed")
+	}
+}

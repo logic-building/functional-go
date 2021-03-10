@@ -1,6 +1,8 @@
 package methodchain
 
-import "strings"
+import (
+	"strings"
+)
 
 // MethodChainMapTest is template to generate itself for different combination of data type.
 func MethodChainMapTest() string {
@@ -234,6 +236,128 @@ func TestReverse<FTYPE>Ptrmethodchain(t *testing.T) {
 		t.Errorf("Reverse<Type>sMethodChain failed")
 	}
 }
+
+// TestDistinct<FTYPE>MethodChain - 
+func TestDistinct<FTYPE>MethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []<TYPE>{8, 2, 0}
+	list := []<TYPE>{8, 2, 8, 0, 2, 0}
+	distinct := Make<FTYPE>Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []<TYPE>{8, 2, 0}
+	list = []<TYPE>{8, 2, 0}
+	distinct = Make<FTYPE>Slice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []<TYPE>{}
+	list = []<TYPE>{}
+	distinct = Make<FTYPE>Slice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = Make<FTYPE>Slice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+func TestDistinct<FTYPE>PtrMethodChain(t *testing.T) {
+	var v8 <TYPE> = 8
+	var v2 <TYPE> = 2
+	var v0 <TYPE>
+
+	// Test : Get distinct values
+	expected := []*<TYPE>{&v8, &v2, &v0}
+	list := []*<TYPE>{&v8, &v2, &v8, &v0, &v2, &v0}
+	distinct := Make<FTYPE>SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinct<FTYPE>Ptr failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*<TYPE>{&v8, &v2, &v0}
+	list = []*<TYPE>{&v8, &v2, &v0}
+	distinct = Make<FTYPE>SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 3 || *distinct[0] != v8 || *distinct[1] != v2 || *distinct[2] != v0 {
+		t.Errorf("Distinct<TYPE>PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []*<TYPE>{}
+	list = []*<TYPE>{}
+	distinct = Make<FTYPE>SlicePtr(list...).DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("Distinct<FTYPE>PtrMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = Make<FTYPE>SlicePtr().DistinctPtr()
+	if len(distinct) != 0 {
+		t.Errorf("Distinct<FTYPE>MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+`
+}
+
+// MethodChainSortTest is template to generate itself for different combination of data type.
+func MethodChainSortTest() string {
+	return `
+// TestSort<FTYPE>methodchain
+func TestSort<FTYPE>methodchain(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	expected := []<TYPE>{v1, v2, v3}
+	sorted :=  Make<FTYPE>Slice([]<TYPE>{v3, v2, v1}...).Sort()
+	if expected[0] != sorted[0] || expected[1] != sorted[1] || expected[2] != sorted[2] {
+		t.Errorf("Sort<Type>sMethodChain failed")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestSort<FTYPE>methodchainDesc
+func TestSort<FTYPE>methodchainDesc(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	expected := []<TYPE>{v3, v2, v1}
+	sorted :=  Make<FTYPE>Slice([]<TYPE>{v3, v2, v1}...).SortDesc()
+	if expected[0] != sorted[0] || expected[1] != sorted[1] || expected[2] != sorted[2] {
+		t.Errorf("Sort<Type>sMethodChain failed")
+		t.Errorf(reflect.String.String())
+	}
+}
+
+// TestSort<FTYPE>methodchainPtr
+func TestSort<FTYPE>methodchainPtr(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	expected := []*<TYPE>{&v1, &v2, &v3}
+	sorted :=  Make<FTYPE>SlicePtr([]*<TYPE>{&v3, &v2, &v1}...).SortPtr()
+	if *expected[0] != *sorted[0] || *expected[1] != *sorted[1] || *expected[2] != *sorted[2] {
+		t.Errorf("Sort<Type>sMethodChain failed")
+	}
+}
+
+// TestSort<FTYPE>methodchainDescPtr
+func TestSort<FTYPE>methodchainDescPtr(t *testing.T) {
+	var v1 <TYPE> = 1
+	var v2 <TYPE> = 2
+	var v3 <TYPE> = 3
+
+	expected := []*<TYPE>{&v3, &v2, &v1}
+	sorted :=  Make<FTYPE>SlicePtr([]*<TYPE>{&v3, &v2, &v1}...).SortDescPtr()
+	if *expected[0] != *sorted[0] || *expected[1] != *sorted[1] || *expected[2] != *sorted[2] {
+		t.Errorf("Sort<Type>sMethodChain failed")
+	}
+}
 `
 }
 
@@ -415,6 +539,34 @@ func TestReverse<FTYPE>Ptrmethodchain(t *testing.T) {
 	reversed :=  Make<FTYPE>SlicePtr([]*<TYPE>{&v1, &v2, &v3}...).ReversePtr()
 	if *expected[0] != *reversed[0] || *expected[1] != *reversed[1] || *expected[2] != *reversed[2] {
 		t.Errorf("Reverse<Type>sMethodChain failed")
+	}
+}
+
+// TestDistinctBoolMethodChain
+func TestDistinctBoolMethodChain(t *testing.T) {
+	var vt bool = true
+
+	newList := Make<FTYPE>Slice([]bool{vt, vt}...).Distinct()
+	if newList[0] != vt {
+		t.Errorf("DistinctBool failed")
+	}
+
+	if len(Make<FTYPE>Slice().Distinct()) > 0 {
+		t.Errorf("DistinctBool failed.")
+	}
+}
+
+// TestDistinctBoolPtrMethodChain
+func TestDistinctBoolPtrMethodChain(t *testing.T) {
+	var vt bool = true
+
+	newList := Make<FTYPE>SlicePtr([]*bool{&vt, &vt}...).DistinctPtr()
+	if *newList[0] != vt {
+		t.Errorf("DistinctPtrBool failed")
+	}
+
+	if len(Make<FTYPE>SlicePtr().DistinctPtr()) > 0 {
+		t.Errorf("DistinctPtrBool failed.")
 	}
 }
 `
@@ -717,6 +869,68 @@ func squareStr(s string) string {
 	NewList := MakeStrSlicePtr([]*string{&v4, &v2, &v3, &v4, &v5}...).DropWhilePtr(isEvenStrPtr)
 	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
 		t.Errorf("DropWhile>PtrMethodChain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}`
+
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `// TestDistinctStrMethodChain - 
+func TestDistinctStrMethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []string{8, 2, 0}
+	list := []string{8, 2, 8, 0, 2, 0}
+	distinct := MakeStrSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{8, 2, 0}
+	list = []string{8, 2, 0}
+	distinct = MakeStrSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != 8 || distinct[1] != 2 || distinct[2] != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{}
+	list = []string{}
+	distinct = MakeStrSlice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeStrSlice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}`
+
+	t2 = `// TestDistinctStrMethodChain -
+func TestDistinctStrMethodChain(t *testing.T) {
+	// Test : Get distinct values
+	expected := []string{"8", "2", "0"}
+	list := []string{"8", "2", "8", "0", "2", "0"}
+	distinct := MakeStrSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != "8" || distinct[1] != "2" || distinct[2] != "0" {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{"8", "2", "0"}
+	list = []string{"8", "2", "0"}
+	distinct = MakeStrSlice(list...).Distinct()
+	if len(distinct) != 3 || distinct[0] != "8" || distinct[1] != "2" || distinct[2] != "0" {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	expected = []string{}
+	list = []string{}
+	distinct = MakeStrSlice(list...).Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
+	}
+
+	distinct = MakeStrSlice().Distinct()
+	if len(distinct) != 0 {
+		t.Errorf("DistinctInt failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }`
 

@@ -254,3 +254,17 @@ func DistinctStrIgnoreCase(list []string) []string {
 	}
 	return newList
 }
+
+// DistinctBool removes duplicates.
+func DistinctBool(list []bool) []bool {
+	var newList []bool
+	s := make(map[bool]struct{}, len(list))
+	for _, v := range list {
+		if _, ok := s[v]; ok {
+			continue
+		}
+		s[v] = struct{}{}
+		newList = append(newList, v)
+	}
+	return newList
+}

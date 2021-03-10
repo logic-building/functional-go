@@ -1617,6 +1617,16 @@ func Distinct(list []Employee) []Employee {
 	return newList
 }
 
+// Distinct - removes duplicates
+func (slice employeeSlice) Distinct() employeeSlice {
+	return Distinct(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice employeeSlicePtr) DistinctPtr() employeeSlicePtr {
+	return DistinctPtr(slice)
+}
+
 // DistinctPtr removes duplicates.
 func DistinctPtr(list []*Employee) []*Employee {
 	var newList []*Employee
@@ -4806,6 +4816,26 @@ func SortEmployeeByNameDescPtr(list []*Employee) []*Employee {
 	}
 	return newListPtr
 }
+// SortByName - sort the list
+func (slice employeeSlice) SortByName() employeeSlice {
+	return SortEmployeeByName(slice)
+}
+
+// SortByNameDesc - sort the list
+func (slice employeeSlice) SortByNameDesc() employeeSlice {
+	return SortEmployeeByNameDesc(slice)
+}
+
+// SortByName - sort the list
+func (slice employeeSlicePtr) SortByNamePtr() employeeSlicePtr {
+	return SortEmployeeByNamePtr(slice)
+}
+
+// SortByNameDescPtr - sort the list
+func (slice employeeSlicePtr) SortByNameDescPtr() employeeSlicePtr {
+	return SortEmployeeByNameDescPtr(slice)
+}
+
 type bySalaryEmployee []Employee
 
 func (a bySalaryEmployee) Len() int           { return len(a) }
@@ -4881,6 +4911,26 @@ func SortEmployeeBySalaryDescPtr(list []*Employee) []*Employee {
 	}
 	return newListPtr
 }
+// SortBySalary - sort the list
+func (slice employeeSlice) SortBySalary() employeeSlice {
+	return SortEmployeeBySalary(slice)
+}
+
+// SortBySalaryDesc - sort the list
+func (slice employeeSlice) SortBySalaryDesc() employeeSlice {
+	return SortEmployeeBySalaryDesc(slice)
+}
+
+// SortBySalary - sort the list
+func (slice employeeSlicePtr) SortBySalaryPtr() employeeSlicePtr {
+	return SortEmployeeBySalaryPtr(slice)
+}
+
+// SortBySalaryDescPtr - sort the list
+func (slice employeeSlicePtr) SortBySalaryDescPtr() employeeSlicePtr {
+	return SortEmployeeBySalaryDescPtr(slice)
+}
+
 type byCreationDateEmployee []Employee
 
 func (a byCreationDateEmployee) Len() int           { return len(a) }
@@ -4956,6 +5006,26 @@ func SortEmployeeByCreationDateDescPtr(list []*Employee) []*Employee {
 	}
 	return newListPtr
 }
+// SortByCreationDate - sort the list
+func (slice employeeSlice) SortByCreationDate() employeeSlice {
+	return SortEmployeeByCreationDate(slice)
+}
+
+// SortByCreationDateDesc - sort the list
+func (slice employeeSlice) SortByCreationDateDesc() employeeSlice {
+	return SortEmployeeByCreationDateDesc(slice)
+}
+
+// SortByCreationDate - sort the list
+func (slice employeeSlicePtr) SortByCreationDatePtr() employeeSlicePtr {
+	return SortEmployeeByCreationDatePtr(slice)
+}
+
+// SortByCreationDateDescPtr - sort the list
+func (slice employeeSlicePtr) SortByCreationDateDescPtr() employeeSlicePtr {
+	return SortEmployeeByCreationDateDescPtr(slice)
+}
+
 // UnionEmployeeByName return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func UnionEmployeeByName(arrList ...[]Employee) []Employee {

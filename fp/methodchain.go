@@ -150,6 +150,16 @@ func (slice intSlicePtr) ReversePtr() intSlicePtr {
 	return ReverseIntsPtr(slice)
 }
 
+// Distinct - removes duplicates
+func (slice intSlice) Distinct() intSlice {
+	return DistinctInt(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice intSlicePtr) DistinctPtr() intSlicePtr {
+	return DistinctIntPtr(slice)
+}
+
 type int64Slice []int64
 type int64FunctorForMap func(int64) int64
 type int64FunctorForFilter func(int64) bool
@@ -298,6 +308,16 @@ func (slice int64Slice) Reverse() int64Slice {
 // ReversePtr - reverse the list
 func (slice int64SlicePtr) ReversePtr() int64SlicePtr {
 	return ReverseInts64Ptr(slice)
+}
+
+// Distinct - removes duplicates
+func (slice int64Slice) Distinct() int64Slice {
+	return DistinctInt64(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice int64SlicePtr) DistinctPtr() int64SlicePtr {
+	return DistinctInt64Ptr(slice)
 }
 
 type int32Slice []int32
@@ -450,6 +470,16 @@ func (slice int32SlicePtr) ReversePtr() int32SlicePtr {
 	return ReverseInts32Ptr(slice)
 }
 
+// Distinct - removes duplicates
+func (slice int32Slice) Distinct() int32Slice {
+	return DistinctInt32(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice int32SlicePtr) DistinctPtr() int32SlicePtr {
+	return DistinctInt32Ptr(slice)
+}
+
 type int16Slice []int16
 type int16FunctorForMap func(int16) int16
 type int16FunctorForFilter func(int16) bool
@@ -598,6 +628,16 @@ func (slice int16Slice) Reverse() int16Slice {
 // ReversePtr - reverse the list
 func (slice int16SlicePtr) ReversePtr() int16SlicePtr {
 	return ReverseInts16Ptr(slice)
+}
+
+// Distinct - removes duplicates
+func (slice int16Slice) Distinct() int16Slice {
+	return DistinctInt16(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice int16SlicePtr) DistinctPtr() int16SlicePtr {
+	return DistinctInt16Ptr(slice)
 }
 
 type int8Slice []int8
@@ -750,6 +790,16 @@ func (slice int8SlicePtr) ReversePtr() int8SlicePtr {
 	return ReverseInts8Ptr(slice)
 }
 
+// Distinct - removes duplicates
+func (slice int8Slice) Distinct() int8Slice {
+	return DistinctInt8(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice int8SlicePtr) DistinctPtr() int8SlicePtr {
+	return DistinctInt8Ptr(slice)
+}
+
 type uintSlice []uint
 type uintFunctorForMap func(uint) uint
 type uintFunctorForFilter func(uint) bool
@@ -898,6 +948,16 @@ func (slice uintSlice) Reverse() uintSlice {
 // ReversePtr - reverse the list
 func (slice uintSlicePtr) ReversePtr() uintSlicePtr {
 	return ReverseUintsPtr(slice)
+}
+
+// Distinct - removes duplicates
+func (slice uintSlice) Distinct() uintSlice {
+	return DistinctUint(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice uintSlicePtr) DistinctPtr() uintSlicePtr {
+	return DistinctUintPtr(slice)
 }
 
 type uint64Slice []uint64
@@ -1050,6 +1110,16 @@ func (slice uint64SlicePtr) ReversePtr() uint64SlicePtr {
 	return ReverseUint64sPtr(slice)
 }
 
+// Distinct - removes duplicates
+func (slice uint64Slice) Distinct() uint64Slice {
+	return DistinctUint64(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice uint64SlicePtr) DistinctPtr() uint64SlicePtr {
+	return DistinctUint64Ptr(slice)
+}
+
 type uint32Slice []uint32
 type uint32FunctorForMap func(uint32) uint32
 type uint32FunctorForFilter func(uint32) bool
@@ -1198,6 +1268,16 @@ func (slice uint32Slice) Reverse() uint32Slice {
 // ReversePtr - reverse the list
 func (slice uint32SlicePtr) ReversePtr() uint32SlicePtr {
 	return ReverseUints32Ptr(slice)
+}
+
+// Distinct - removes duplicates
+func (slice uint32Slice) Distinct() uint32Slice {
+	return DistinctUint32(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice uint32SlicePtr) DistinctPtr() uint32SlicePtr {
+	return DistinctUint32Ptr(slice)
 }
 
 type uint16Slice []uint16
@@ -1350,6 +1430,16 @@ func (slice uint16SlicePtr) ReversePtr() uint16SlicePtr {
 	return ReverseUints16Ptr(slice)
 }
 
+// Distinct - removes duplicates
+func (slice uint16Slice) Distinct() uint16Slice {
+	return DistinctUint16(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice uint16SlicePtr) DistinctPtr() uint16SlicePtr {
+	return DistinctUint16Ptr(slice)
+}
+
 type uint8Slice []uint8
 type uint8FunctorForMap func(uint8) uint8
 type uint8FunctorForFilter func(uint8) bool
@@ -1498,6 +1588,16 @@ func (slice uint8Slice) Reverse() uint8Slice {
 // ReversePtr - reverse the list
 func (slice uint8SlicePtr) ReversePtr() uint8SlicePtr {
 	return ReverseUints8Ptr(slice)
+}
+
+// Distinct - removes duplicates
+func (slice uint8Slice) Distinct() uint8Slice {
+	return DistinctUint8(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice uint8SlicePtr) DistinctPtr() uint8SlicePtr {
+	return DistinctUint8Ptr(slice)
 }
 
 type stringSlice []string
@@ -1650,6 +1750,16 @@ func (slice stringSlicePtr) ReversePtr() stringSlicePtr {
 	return ReverseStrsPtr(slice)
 }
 
+// Distinct - removes duplicates
+func (slice stringSlice) Distinct() stringSlice {
+	return DistinctStr(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice stringSlicePtr) DistinctPtr() stringSlicePtr {
+	return DistinctStrPtr(slice)
+}
+
 type boolSlice []bool
 type boolFunctorForMap func(bool) bool
 type boolFunctorForFilter func(bool) bool
@@ -1798,6 +1908,16 @@ func (slice boolSlice) Reverse() boolSlice {
 // ReversePtr - reverse the list
 func (slice boolSlicePtr) ReversePtr() boolSlicePtr {
 	return ReverseBoolsPtr(slice)
+}
+
+// Distinct - removes duplicates
+func (slice boolSlice) Distinct() boolSlice {
+	return DistinctBool(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice boolSlicePtr) DistinctPtr() boolSlicePtr {
+	return DistinctBoolPtr(slice)
 }
 
 type float32Slice []float32
@@ -1950,6 +2070,16 @@ func (slice float32SlicePtr) ReversePtr() float32SlicePtr {
 	return ReverseFloat32sPtr(slice)
 }
 
+// Distinct - removes duplicates
+func (slice float32Slice) Distinct() float32Slice {
+	return DistinctFloat32(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice float32SlicePtr) DistinctPtr() float32SlicePtr {
+	return DistinctFloat32Ptr(slice)
+}
+
 type float64Slice []float64
 type float64FunctorForMap func(float64) float64
 type float64FunctorForFilter func(float64) bool
@@ -2098,4 +2228,14 @@ func (slice float64Slice) Reverse() float64Slice {
 // ReversePtr - reverse the list
 func (slice float64SlicePtr) ReversePtr() float64SlicePtr {
 	return ReverseFloat64sPtr(slice)
+}
+
+// Distinct - removes duplicates
+func (slice float64Slice) Distinct() float64Slice {
+	return DistinctFloat64(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice float64SlicePtr) DistinctPtr() float64SlicePtr {
+	return DistinctFloat64Ptr(slice)
 }
