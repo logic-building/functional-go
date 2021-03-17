@@ -160,6 +160,21 @@ func (slice intSlicePtr) DistinctPtr() intSlicePtr {
 	return DistinctIntPtr(slice)
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice intSlice) TakeWhile(functors ...intFunctorForFilter) intSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type int64Slice []int64
 type int64FunctorForMap func(int64) int64
 type int64FunctorForFilter func(int64) bool
@@ -318,6 +333,21 @@ func (slice int64Slice) Distinct() int64Slice {
 // DistinctPtr - removes duplicates
 func (slice int64SlicePtr) DistinctPtr() int64SlicePtr {
 	return DistinctInt64Ptr(slice)
+}
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int64Slice) TakeWhile(functors ...int64FunctorForFilter) int64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt64(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 type int32Slice []int32
@@ -480,6 +510,21 @@ func (slice int32SlicePtr) DistinctPtr() int32SlicePtr {
 	return DistinctInt32Ptr(slice)
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int32Slice) TakeWhile(functors ...int32FunctorForFilter) int32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type int16Slice []int16
 type int16FunctorForMap func(int16) int16
 type int16FunctorForFilter func(int16) bool
@@ -638,6 +683,21 @@ func (slice int16Slice) Distinct() int16Slice {
 // DistinctPtr - removes duplicates
 func (slice int16SlicePtr) DistinctPtr() int16SlicePtr {
 	return DistinctInt16Ptr(slice)
+}
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int16Slice) TakeWhile(functors ...int16FunctorForFilter) int16Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt16(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 type int8Slice []int8
@@ -800,6 +860,21 @@ func (slice int8SlicePtr) DistinctPtr() int8SlicePtr {
 	return DistinctInt8Ptr(slice)
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int8Slice) TakeWhile(functors ...int8FunctorForFilter) int8Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt8(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uintSlice []uint
 type uintFunctorForMap func(uint) uint
 type uintFunctorForFilter func(uint) bool
@@ -958,6 +1033,21 @@ func (slice uintSlice) Distinct() uintSlice {
 // DistinctPtr - removes duplicates
 func (slice uintSlicePtr) DistinctPtr() uintSlicePtr {
 	return DistinctUintPtr(slice)
+}
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uintSlice) TakeWhile(functors ...uintFunctorForFilter) uintSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 type uint64Slice []uint64
@@ -1120,6 +1210,21 @@ func (slice uint64SlicePtr) DistinctPtr() uint64SlicePtr {
 	return DistinctUint64Ptr(slice)
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint64Slice) TakeWhile(functors ...uint64FunctorForFilter) uint64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uint32Slice []uint32
 type uint32FunctorForMap func(uint32) uint32
 type uint32FunctorForFilter func(uint32) bool
@@ -1278,6 +1383,21 @@ func (slice uint32Slice) Distinct() uint32Slice {
 // DistinctPtr - removes duplicates
 func (slice uint32SlicePtr) DistinctPtr() uint32SlicePtr {
 	return DistinctUint32Ptr(slice)
+}
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint32Slice) TakeWhile(functors ...uint32FunctorForFilter) uint32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint32(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 type uint16Slice []uint16
@@ -1440,6 +1560,21 @@ func (slice uint16SlicePtr) DistinctPtr() uint16SlicePtr {
 	return DistinctUint16Ptr(slice)
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint16Slice) TakeWhile(functors ...uint16FunctorForFilter) uint16Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint16(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uint8Slice []uint8
 type uint8FunctorForMap func(uint8) uint8
 type uint8FunctorForFilter func(uint8) bool
@@ -1598,6 +1733,21 @@ func (slice uint8Slice) Distinct() uint8Slice {
 // DistinctPtr - removes duplicates
 func (slice uint8SlicePtr) DistinctPtr() uint8SlicePtr {
 	return DistinctUint8Ptr(slice)
+}
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint8Slice) TakeWhile(functors ...uint8FunctorForFilter) uint8Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint8(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 type stringSlice []string
@@ -1760,6 +1910,21 @@ func (slice stringSlicePtr) DistinctPtr() stringSlicePtr {
 	return DistinctStrPtr(slice)
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice stringSlice) TakeWhile(functors ...stringFunctorForFilter) stringSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileStr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type boolSlice []bool
 type boolFunctorForMap func(bool) bool
 type boolFunctorForFilter func(bool) bool
@@ -1918,6 +2083,21 @@ func (slice boolSlice) Distinct() boolSlice {
 // DistinctPtr - removes duplicates
 func (slice boolSlicePtr) DistinctPtr() boolSlicePtr {
 	return DistinctBoolPtr(slice)
+}
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice boolSlice) TakeWhile(functors ...boolFunctorForFilter) boolSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileBool(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 type float32Slice []float32
@@ -2080,6 +2260,21 @@ func (slice float32SlicePtr) DistinctPtr() float32SlicePtr {
 	return DistinctFloat32Ptr(slice)
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice float32Slice) TakeWhile(functors ...float32FunctorForFilter) float32Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileFloat32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type float64Slice []float64
 type float64FunctorForMap func(float64) float64
 type float64FunctorForFilter func(float64) bool
@@ -2238,4 +2433,19 @@ func (slice float64Slice) Distinct() float64Slice {
 // DistinctPtr - removes duplicates
 func (slice float64SlicePtr) DistinctPtr() float64SlicePtr {
 	return DistinctFloat64Ptr(slice)
+}
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice float64Slice) TakeWhile(functors ...float64FunctorForFilter) float64Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileFloat64(f, tmpSlice)
+	}
+
+	return tmpSlice
 }

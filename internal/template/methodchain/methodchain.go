@@ -162,6 +162,21 @@ func (slice <NEWTYPE>Slice) Distinct() <NEWTYPE>Slice {
 func (slice <NEWTYPE>SlicePtr) DistinctPtr() <NEWTYPE>SlicePtr {
 	return Distinct<FTYPE>Ptr(slice)
 }
+
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice <NEWTYPE>Slice) TakeWhile(functors ...<NEWTYPE>FunctorForFilter) <NEWTYPE>Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhile<FTYPE>(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
 `
 }
 
