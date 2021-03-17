@@ -299,6 +299,55 @@ func TestDistinctIntPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestTakeWhileIntMethodChain - 
+func TestTakeWhileIntMethodChain(t *testing.T) {
+	isEvenMethodChain := func(num int) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []int{4, 2, 4}
+	NewList := MakeIntSlice([]int{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeIntSlice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeIntSlice([]int{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileIntMethodChainPtr - 
+func TestTakeWhileIntMethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *int) bool {
+		return *num%2 == 0
+	}
+
+	var v2 int = 2
+	var v4 int = 4
+	var v5 int = 5
+	var v7 int = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*int{&v4, &v2, &v4}
+	NewList := MakeIntSlicePtr([]*int{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileIntmethodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeIntSlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeIntSlicePtr([]*int{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
 func TestMapInt64MethodChain(t *testing.T) {
 	expectedSquareList := []int64{1, 4, 9}
 	squareList := MakeInt64Slice([]int64{1, 2, 3}...).Map(squareInt64)
@@ -589,6 +638,55 @@ func TestDistinctInt64PtrMethodChain(t *testing.T) {
 	distinct = MakeInt64SlicePtr().DistinctPtr()
 	if len(distinct) != 0 {
 		t.Errorf("DistinctInt64MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+// TestTakeWhileInt64MethodChain - 
+func TestTakeWhileInt64MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num int64) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []int64{4, 2, 4}
+	NewList := MakeInt64Slice([]int64{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt64Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeInt64Slice([]int64{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileInt64MethodChainPtr - 
+func TestTakeWhileInt64MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *int64) bool {
+		return *num%2 == 0
+	}
+
+	var v2 int64 = 2
+	var v4 int64 = 4
+	var v5 int64 = 5
+	var v7 int64 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*int64{&v4, &v2, &v4}
+	NewList := MakeInt64SlicePtr([]*int64{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileInt64methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt64SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt64 failed.")
+	}
+
+	if len(MakeInt64SlicePtr([]*int64{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt64 failed.")
 	}
 }
 
@@ -885,6 +983,55 @@ func TestDistinctInt32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestTakeWhileInt32MethodChain - 
+func TestTakeWhileInt32MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num int32) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []int32{4, 2, 4}
+	NewList := MakeInt32Slice([]int32{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt32Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeInt32Slice([]int32{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileInt32MethodChainPtr - 
+func TestTakeWhileInt32MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *int32) bool {
+		return *num%2 == 0
+	}
+
+	var v2 int32 = 2
+	var v4 int32 = 4
+	var v5 int32 = 5
+	var v7 int32 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*int32{&v4, &v2, &v4}
+	NewList := MakeInt32SlicePtr([]*int32{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileInt32methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt32SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt32 failed.")
+	}
+
+	if len(MakeInt32SlicePtr([]*int32{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt32 failed.")
+	}
+}
+
 func TestMapInt16MethodChain(t *testing.T) {
 	expectedSquareList := []int16{1, 4, 9}
 	squareList := MakeInt16Slice([]int16{1, 2, 3}...).Map(squareInt16)
@@ -1175,6 +1322,55 @@ func TestDistinctInt16PtrMethodChain(t *testing.T) {
 	distinct = MakeInt16SlicePtr().DistinctPtr()
 	if len(distinct) != 0 {
 		t.Errorf("DistinctInt16MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+// TestTakeWhileInt16MethodChain - 
+func TestTakeWhileInt16MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num int16) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []int16{4, 2, 4}
+	NewList := MakeInt16Slice([]int16{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt16Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeInt16Slice([]int16{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileInt16MethodChainPtr - 
+func TestTakeWhileInt16MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *int16) bool {
+		return *num%2 == 0
+	}
+
+	var v2 int16 = 2
+	var v4 int16 = 4
+	var v5 int16 = 5
+	var v7 int16 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*int16{&v4, &v2, &v4}
+	NewList := MakeInt16SlicePtr([]*int16{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileInt16methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt16SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt16 failed.")
+	}
+
+	if len(MakeInt16SlicePtr([]*int16{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt16 failed.")
 	}
 }
 
@@ -1471,6 +1667,55 @@ func TestDistinctInt8PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestTakeWhileInt8MethodChain - 
+func TestTakeWhileInt8MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num int8) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []int8{4, 2, 4}
+	NewList := MakeInt8Slice([]int8{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt8Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeInt8Slice([]int8{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileInt8MethodChainPtr - 
+func TestTakeWhileInt8MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *int8) bool {
+		return *num%2 == 0
+	}
+
+	var v2 int8 = 2
+	var v4 int8 = 4
+	var v5 int8 = 5
+	var v7 int8 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*int8{&v4, &v2, &v4}
+	NewList := MakeInt8SlicePtr([]*int8{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileInt8methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeInt8SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt8 failed.")
+	}
+
+	if len(MakeInt8SlicePtr([]*int8{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileInt8 failed.")
+	}
+}
+
 func TestMapUintMethodChain(t *testing.T) {
 	expectedSquareList := []uint{1, 4, 9}
 	squareList := MakeUintSlice([]uint{1, 2, 3}...).Map(squareUint)
@@ -1761,6 +2006,55 @@ func TestDistinctUintPtrMethodChain(t *testing.T) {
 	distinct = MakeUintSlicePtr().DistinctPtr()
 	if len(distinct) != 0 {
 		t.Errorf("DistinctUintMethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+// TestTakeWhileUintMethodChain - 
+func TestTakeWhileUintMethodChain(t *testing.T) {
+	isEvenMethodChain := func(num uint) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []uint{4, 2, 4}
+	NewList := MakeUintSlice([]uint{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUintSlice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeUintSlice([]uint{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileUintMethodChainPtr - 
+func TestTakeWhileUintMethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *uint) bool {
+		return *num%2 == 0
+	}
+
+	var v2 uint = 2
+	var v4 uint = 4
+	var v5 uint = 5
+	var v7 uint = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*uint{&v4, &v2, &v4}
+	NewList := MakeUintSlicePtr([]*uint{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileUintmethodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUintSlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint failed.")
+	}
+
+	if len(MakeUintSlicePtr([]*uint{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint failed.")
 	}
 }
 
@@ -2057,6 +2351,55 @@ func TestDistinctUint64PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestTakeWhileUint64MethodChain - 
+func TestTakeWhileUint64MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num uint64) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []uint64{4, 2, 4}
+	NewList := MakeUint64Slice([]uint64{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint64Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeUint64Slice([]uint64{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileUint64MethodChainPtr - 
+func TestTakeWhileUint64MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *uint64) bool {
+		return *num%2 == 0
+	}
+
+	var v2 uint64 = 2
+	var v4 uint64 = 4
+	var v5 uint64 = 5
+	var v7 uint64 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*uint64{&v4, &v2, &v4}
+	NewList := MakeUint64SlicePtr([]*uint64{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileUint64methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint64SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint64 failed.")
+	}
+
+	if len(MakeUint64SlicePtr([]*uint64{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint64 failed.")
+	}
+}
+
 func TestMapUint32MethodChain(t *testing.T) {
 	expectedSquareList := []uint32{1, 4, 9}
 	squareList := MakeUint32Slice([]uint32{1, 2, 3}...).Map(squareUint32)
@@ -2347,6 +2690,55 @@ func TestDistinctUint32PtrMethodChain(t *testing.T) {
 	distinct = MakeUint32SlicePtr().DistinctPtr()
 	if len(distinct) != 0 {
 		t.Errorf("DistinctUint32MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+// TestTakeWhileUint32MethodChain - 
+func TestTakeWhileUint32MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num uint32) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []uint32{4, 2, 4}
+	NewList := MakeUint32Slice([]uint32{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint32Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeUint32Slice([]uint32{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileUint32MethodChainPtr - 
+func TestTakeWhileUint32MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *uint32) bool {
+		return *num%2 == 0
+	}
+
+	var v2 uint32 = 2
+	var v4 uint32 = 4
+	var v5 uint32 = 5
+	var v7 uint32 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*uint32{&v4, &v2, &v4}
+	NewList := MakeUint32SlicePtr([]*uint32{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileUint32methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint32SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint32 failed.")
+	}
+
+	if len(MakeUint32SlicePtr([]*uint32{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint32 failed.")
 	}
 }
 
@@ -2643,6 +3035,55 @@ func TestDistinctUint16PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestTakeWhileUint16MethodChain - 
+func TestTakeWhileUint16MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num uint16) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []uint16{4, 2, 4}
+	NewList := MakeUint16Slice([]uint16{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint16Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeUint16Slice([]uint16{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileUint16MethodChainPtr - 
+func TestTakeWhileUint16MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *uint16) bool {
+		return *num%2 == 0
+	}
+
+	var v2 uint16 = 2
+	var v4 uint16 = 4
+	var v5 uint16 = 5
+	var v7 uint16 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*uint16{&v4, &v2, &v4}
+	NewList := MakeUint16SlicePtr([]*uint16{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileUint16methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint16SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint16 failed.")
+	}
+
+	if len(MakeUint16SlicePtr([]*uint16{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint16 failed.")
+	}
+}
+
 func TestMapUint8MethodChain(t *testing.T) {
 	expectedSquareList := []uint8{1, 4, 9}
 	squareList := MakeUint8Slice([]uint8{1, 2, 3}...).Map(squareUint8)
@@ -2933,6 +3374,55 @@ func TestDistinctUint8PtrMethodChain(t *testing.T) {
 	distinct = MakeUint8SlicePtr().DistinctPtr()
 	if len(distinct) != 0 {
 		t.Errorf("DistinctUint8MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+// TestTakeWhileUint8MethodChain - 
+func TestTakeWhileUint8MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num uint8) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []uint8{4, 2, 4}
+	NewList := MakeUint8Slice([]uint8{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint8Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeUint8Slice([]uint8{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileUint8MethodChainPtr - 
+func TestTakeWhileUint8MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *uint8) bool {
+		return *num%2 == 0
+	}
+
+	var v2 uint8 = 2
+	var v4 uint8 = 4
+	var v5 uint8 = 5
+	var v7 uint8 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*uint8{&v4, &v2, &v4}
+	NewList := MakeUint8SlicePtr([]*uint8{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileUint8methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeUint8SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint8 failed.")
+	}
+
+	if len(MakeUint8SlicePtr([]*uint8{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileUint8 failed.")
 	}
 }
 
@@ -3234,6 +3724,54 @@ func TestDistinctStrPtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestTakeWhileStrMethodChain - 
+func TestTakeWhileStrMethodChain(t *testing.T) {
+	isEvenMethodChain := func(num string) bool {
+		return num == "2" || num == "4"
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []string{"4", "2", "4"}
+	NewList := MakeStrSlice([]string{"4", "2", "4", "7", "5"}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeStrSlice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeStrSlice([]string{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+// TestTakeWhileStrMethodChainPtr - 
+func TestTakeWhileStrMethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *string) bool {
+		return *num == "2" || *num == "4"
+	}
+
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v7 string = "7"
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*string{&v4, &v2, &v4}
+	NewList := MakeStrSlicePtr([]*string{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileStrmethodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeStrSlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileStr failed.")
+	}
+
+	if len(MakeStrSlicePtr([]*string{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileStr failed.")
+	}
+}
+
 // TestMapBoolMethodChain - 
 func TestMapBoolMethodChain(t *testing.T) {
 	expectedSquareList := []bool{false, true, false}
@@ -3437,6 +3975,63 @@ func TestDistinctBoolPtrMethodChain(t *testing.T) {
 
 	if len(MakeBoolSlicePtr().DistinctPtr()) > 0 {
 		t.Errorf("DistinctPtrBool failed.")
+	}
+}
+
+// TestTakeWhileBoolMethodChain - 
+func TestTakeWhileBoolMethodChain(t *testing.T) {
+	// Test : Take the numbers as long as condition match
+	var vt bool = true
+	var vf bool = false
+
+	expectedNewList := []bool{vt, vt, vf}
+	NewList := MakeBoolSlice([]bool{vt, vt, vf, vf, vf}...).TakeWhile(func(v bool) bool { return v == true })
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("TakeWhileBool failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	expectedNewList = []bool{vt}
+	NewList = MakeBoolSlice([]bool{vt}...).TakeWhile(func(v bool) bool { return v == true })
+
+	if NewList[0] != expectedNewList[0] {
+		t.Errorf("TakeWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeBoolSlice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+
+	if len(MakeBoolSlice([]bool{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+}
+
+// TestTakeWhileBoolPtrMethodChain - 
+func TestTakeWhileBoolPtrMethodChain(t *testing.T) {
+	// Test : Take the numbers as long as condition match
+	var vt bool = true
+	var vf bool = false
+
+	expectedNewList := []*bool{&vt, &vt, &vf}
+	NewList := MakeBoolSlicePtr([]*bool{&vt, &vt, &vf, &vf, &vf}...).TakeWhilePtr(func(v *bool) bool { return *v == true } )
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("TakeWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	expectedNewList = []*bool{&vt}
+	NewList = MakeBoolSlicePtr([]*bool{&vt}...).TakeWhilePtr(func(v *bool) bool { return *v == true })
+
+	if *NewList[0] != *expectedNewList[0] {
+		t.Errorf("TakeWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeBoolSlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+
+	if len(MakeBoolSlicePtr([]*bool{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+		t.Errorf(reflect.String.String())
 	}
 }
 
@@ -3733,6 +4328,55 @@ func TestDistinctFloat32PtrMethodChain(t *testing.T) {
 	}
 }
 
+// TestTakeWhileFloat32MethodChain - 
+func TestTakeWhileFloat32MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num float32) bool {
+		return int(num)%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []float32{4, 2, 4}
+	NewList := MakeFloat32Slice([]float32{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeFloat32Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeFloat32Slice([]float32{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileFloat32MethodChainPtr - 
+func TestTakeWhileFloat32MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *float32) bool {
+		return int(*num)%2 == 0
+	}
+
+	var v2 float32 = 2
+	var v4 float32 = 4
+	var v5 float32 = 5
+	var v7 float32 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*float32{&v4, &v2, &v4}
+	NewList := MakeFloat32SlicePtr([]*float32{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileFloat32methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeFloat32SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileFloat32 failed.")
+	}
+
+	if len(MakeFloat32SlicePtr([]*float32{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileFloat32 failed.")
+	}
+}
+
 func TestMapFloat64MethodChain(t *testing.T) {
 	expectedSquareList := []float64{1, 4, 9}
 	squareList := MakeFloat64Slice([]float64{1, 2, 3}...).Map(squareFloat64)
@@ -4023,5 +4667,54 @@ func TestDistinctFloat64PtrMethodChain(t *testing.T) {
 	distinct = MakeFloat64SlicePtr().DistinctPtr()
 	if len(distinct) != 0 {
 		t.Errorf("DistinctFloat64MethodChain failed. Expected=%v, actual=%v", expected, distinct)
+	}
+}
+
+// TestTakeWhileFloat64MethodChain - 
+func TestTakeWhileFloat64MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num float64) bool {
+		return int(num)%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []float64{4, 2, 4}
+	NewList := MakeFloat64Slice([]float64{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeFloat64Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeFloat64Slice([]float64{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhileFloat64MethodChainPtr - 
+func TestTakeWhileFloat64MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *float64) bool {
+		return int(*num)%2 == 0
+	}
+
+	var v2 float64 = 2
+	var v4 float64 = 4
+	var v5 float64 = 5
+	var v7 float64 = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*float64{&v4, &v2, &v4}
+	NewList := MakeFloat64SlicePtr([]*float64{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileFloat64methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeFloat64SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileFloat64 failed.")
+	}
+
+	if len(MakeFloat64SlicePtr([]*float64{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileFloat64 failed.")
 	}
 }

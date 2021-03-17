@@ -175,6 +175,21 @@ func (slice intSlice) TakeWhile(functors ...intFunctorForFilter) intSlice {
 	return tmpSlice
 }
 
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice intSlicePtr) TakeWhilePtr(functors ...intFunctorForFilterPtr) intSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileIntPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type int64Slice []int64
 type int64FunctorForMap func(int64) int64
 type int64FunctorForFilter func(int64) bool
@@ -345,6 +360,21 @@ func (slice int64Slice) TakeWhile(functors ...int64FunctorForFilter) int64Slice 
 			continue
 		}
 		tmpSlice = TakeWhileInt64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int64SlicePtr) TakeWhilePtr(functors ...int64FunctorForFilterPtr) int64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt64Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -525,6 +555,21 @@ func (slice int32Slice) TakeWhile(functors ...int32FunctorForFilter) int32Slice 
 	return tmpSlice
 }
 
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int32SlicePtr) TakeWhilePtr(functors ...int32FunctorForFilterPtr) int32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type int16Slice []int16
 type int16FunctorForMap func(int16) int16
 type int16FunctorForFilter func(int16) bool
@@ -695,6 +740,21 @@ func (slice int16Slice) TakeWhile(functors ...int16FunctorForFilter) int16Slice 
 			continue
 		}
 		tmpSlice = TakeWhileInt16(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int16SlicePtr) TakeWhilePtr(functors ...int16FunctorForFilterPtr) int16SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt16Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -875,6 +935,21 @@ func (slice int8Slice) TakeWhile(functors ...int8FunctorForFilter) int8Slice {
 	return tmpSlice
 }
 
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice int8SlicePtr) TakeWhilePtr(functors ...int8FunctorForFilterPtr) int8SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileInt8Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uintSlice []uint
 type uintFunctorForMap func(uint) uint
 type uintFunctorForFilter func(uint) bool
@@ -1045,6 +1120,21 @@ func (slice uintSlice) TakeWhile(functors ...uintFunctorForFilter) uintSlice {
 			continue
 		}
 		tmpSlice = TakeWhileUint(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uintSlicePtr) TakeWhilePtr(functors ...uintFunctorForFilterPtr) uintSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUintPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -1225,6 +1315,21 @@ func (slice uint64Slice) TakeWhile(functors ...uint64FunctorForFilter) uint64Sli
 	return tmpSlice
 }
 
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint64SlicePtr) TakeWhilePtr(functors ...uint64FunctorForFilterPtr) uint64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint64Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uint32Slice []uint32
 type uint32FunctorForMap func(uint32) uint32
 type uint32FunctorForFilter func(uint32) bool
@@ -1395,6 +1500,21 @@ func (slice uint32Slice) TakeWhile(functors ...uint32FunctorForFilter) uint32Sli
 			continue
 		}
 		tmpSlice = TakeWhileUint32(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint32SlicePtr) TakeWhilePtr(functors ...uint32FunctorForFilterPtr) uint32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint32Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -1575,6 +1695,21 @@ func (slice uint16Slice) TakeWhile(functors ...uint16FunctorForFilter) uint16Sli
 	return tmpSlice
 }
 
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint16SlicePtr) TakeWhilePtr(functors ...uint16FunctorForFilterPtr) uint16SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint16Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type uint8Slice []uint8
 type uint8FunctorForMap func(uint8) uint8
 type uint8FunctorForFilter func(uint8) bool
@@ -1745,6 +1880,21 @@ func (slice uint8Slice) TakeWhile(functors ...uint8FunctorForFilter) uint8Slice 
 			continue
 		}
 		tmpSlice = TakeWhileUint8(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice uint8SlicePtr) TakeWhilePtr(functors ...uint8FunctorForFilterPtr) uint8SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileUint8Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -1925,6 +2075,21 @@ func (slice stringSlice) TakeWhile(functors ...stringFunctorForFilter) stringSli
 	return tmpSlice
 }
 
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice stringSlicePtr) TakeWhilePtr(functors ...stringFunctorForFilterPtr) stringSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileStrPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type boolSlice []bool
 type boolFunctorForMap func(bool) bool
 type boolFunctorForFilter func(bool) bool
@@ -2095,6 +2260,21 @@ func (slice boolSlice) TakeWhile(functors ...boolFunctorForFilter) boolSlice {
 			continue
 		}
 		tmpSlice = TakeWhileBool(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice boolSlicePtr) TakeWhilePtr(functors ...boolFunctorForFilterPtr) boolSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileBoolPtr(f, tmpSlice)
 	}
 
 	return tmpSlice
@@ -2275,6 +2455,21 @@ func (slice float32Slice) TakeWhile(functors ...float32FunctorForFilter) float32
 	return tmpSlice
 }
 
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice float32SlicePtr) TakeWhilePtr(functors ...float32FunctorForFilterPtr) float32SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileFloat32Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 type float64Slice []float64
 type float64FunctorForMap func(float64) float64
 type float64FunctorForFilter func(float64) bool
@@ -2445,6 +2640,21 @@ func (slice float64Slice) TakeWhile(functors ...float64FunctorForFilter) float64
 			continue
 		}
 		tmpSlice = TakeWhileFloat64(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice float64SlicePtr) TakeWhilePtr(functors ...float64FunctorForFilterPtr) float64SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileFloat64Ptr(f, tmpSlice)
 	}
 
 	return tmpSlice

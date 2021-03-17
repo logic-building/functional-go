@@ -343,7 +343,7 @@ Note:
 ```
 
 ### Method chain functionality for Basic type as well as struct - 
-#### Map, Filter, Sort, Distinct, Reverse, DropWhile, Remove
+#### Map, Filter, Sort, Distinct, Reverse, DropWhile, TakeWhile, Remove
 #### Examples
 ```go
 // Use MakeIntSlicePtr for pointer version

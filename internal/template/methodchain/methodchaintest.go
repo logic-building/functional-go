@@ -299,6 +299,55 @@ func TestDistinct<FTYPE>PtrMethodChain(t *testing.T) {
 		t.Errorf("Distinct<FTYPE>MethodChain failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }
+
+// TestTakeWhile<FTYPE>MethodChain - 
+func TestTakeWhile<FTYPE>MethodChain(t *testing.T) {
+	isEvenMethodChain := func(num <TYPE>) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []<TYPE>{4, 2, 4}
+	NewList := Make<FTYPE>Slice([]<TYPE>{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(Make<FTYPE>Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(Make<FTYPE>Slice([]<TYPE>{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}
+
+// TestTakeWhile<FTYPE>MethodChainPtr - 
+func TestTakeWhile<FTYPE>MethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *<TYPE>) bool {
+		return *num%2 == 0
+	}
+
+	var v2 <TYPE> = 2
+	var v4 <TYPE> = 4
+	var v5 <TYPE> = 5
+	var v7 <TYPE> = 7
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*<TYPE>{&v4, &v2, &v4}
+	NewList := Make<FTYPE>SlicePtr([]*<TYPE>{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhile<FTYPE>methodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(Make<FTYPE>SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhile<FTYPE> failed.")
+	}
+
+	if len(Make<FTYPE>SlicePtr([]*<TYPE>{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhile<FTYPE> failed.")
+	}
+}
 `
 }
 
@@ -567,6 +616,63 @@ func TestDistinctBoolPtrMethodChain(t *testing.T) {
 
 	if len(Make<FTYPE>SlicePtr().DistinctPtr()) > 0 {
 		t.Errorf("DistinctPtrBool failed.")
+	}
+}
+
+// TestTakeWhileBoolMethodChain - 
+func TestTakeWhileBoolMethodChain(t *testing.T) {
+	// Test : Take the numbers as long as condition match
+	var vt bool = true
+	var vf bool = false
+
+	expectedNewList := []bool{vt, vt, vf}
+	NewList := Make<FTYPE>Slice([]bool{vt, vt, vf, vf, vf}...).TakeWhile(func(v bool) bool { return v == true })
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("TakeWhileBool failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	expectedNewList = []bool{vt}
+	NewList = Make<FTYPE>Slice([]bool{vt}...).TakeWhile(func(v bool) bool { return v == true })
+
+	if NewList[0] != expectedNewList[0] {
+		t.Errorf("TakeWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(Make<FTYPE>Slice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+
+	if len(Make<FTYPE>Slice([]bool{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+}
+
+// TestTakeWhileBoolPtrMethodChain - 
+func TestTakeWhileBoolPtrMethodChain(t *testing.T) {
+	// Test : Take the numbers as long as condition match
+	var vt bool = true
+	var vf bool = false
+
+	expectedNewList := []*bool{&vt, &vt, &vf}
+	NewList := Make<FTYPE>SlicePtr([]*bool{&vt, &vt, &vf, &vf, &vf}...).TakeWhilePtr(func(v *bool) bool { return *v == true } )
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] {
+		t.Errorf("TakeWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	expectedNewList = []*bool{&vt}
+	NewList = Make<FTYPE>SlicePtr([]*bool{&vt}...).TakeWhilePtr(func(v *bool) bool { return *v == true })
+
+	if *NewList[0] != *expectedNewList[0] {
+		t.Errorf("TakeWhileBoolPtr failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(Make<FTYPE>SlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+	}
+
+	if len(Make<FTYPE>SlicePtr([]*bool{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileBoolPtr failed.")
+		t.Errorf(reflect.String.String())
 	}
 }
 `
@@ -935,5 +1041,139 @@ func TestDistinctStrMethodChain(t *testing.T) {
 }`
 
 	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `func TestTakeWhileStrMethodChain(t *testing.T) {
+	isEvenMethodChain := func(num string) bool {
+		return num%2 == 0
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []string{4, 2, 4}
+	NewList := MakeStrSlice([]string{4, 2, 4, 7, 5}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeStrSlice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeStrSlice([]string{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}`
+	t2 = `func TestTakeWhileStrMethodChain(t *testing.T) {
+	isEvenMethodChain := func(num string) bool {
+		return num == "2" || num == "4"
+	}
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []string{"4", "2", "4"}
+	NewList := MakeStrSlice([]string{"4", "2", "4", "7", "5"}...).TakeWhile(isEvenMethodChain)
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] || NewList[2] != expectedNewList[2] {
+		t.Errorf("TakeWhileInt failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeStrSlice().TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+
+	if len(MakeStrSlice([]string{}...).TakeWhile(nil)) > 0 {
+		t.Errorf("TakeWhileInt failed.")
+	}
+}`
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `isEvenMethodChain := func(num float32) bool {
+		return num%2 == 0
+	}`
+	t2 = `isEvenMethodChain := func(num float32) bool {
+		return int(num)%2 == 0
+	}`
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `isEvenMethodChain := func(num float64) bool {
+		return num%2 == 0
+	}`
+	t2 = `isEvenMethodChain := func(num float64) bool {
+		return int(num)%2 == 0
+	}`
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `
+// TestTakeWhileStrMethodChainPtr - 
+func TestTakeWhileStrMethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *string) bool {
+		return *num%2 == 0
+	}
+
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v7 string = "7"
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*string{&v4, &v2, &v4}
+	NewList := MakeStrSlicePtr([]*string{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileStrmethodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeStrSlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileStr failed.")
+	}
+
+	if len(MakeStrSlicePtr([]*string{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileStr failed.")
+	}
+}`
+	t2 = `// TestTakeWhileStrMethodChainPtr - 
+func TestTakeWhileStrMethodChainPtr(t *testing.T) {
+	isEvenMethodChain := func(num *string) bool {
+		return *num == "2" || *num == "4"
+	}
+
+	var v2 string = "2"
+	var v4 string = "4"
+	var v5 string = "5"
+	var v7 string = "7"
+
+	// Test : Take the numbers as long as condition match
+	expectedNewList := []*string{&v4, &v2, &v4}
+	NewList := MakeStrSlicePtr([]*string{&v4, &v2, &v4, &v7, &v5}...).TakeWhilePtr(isEvenMethodChain)
+	if *NewList[0] != *expectedNewList[0] || *NewList[1] != *expectedNewList[1] || *NewList[2] != *expectedNewList[2] {
+		t.Errorf("TakeWhileStrmethodchain failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+
+	if len(MakeStrSlicePtr().TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileStr failed.")
+	}
+
+	if len(MakeStrSlicePtr([]*string{}...).TakeWhilePtr(nil)) > 0 {
+		t.Errorf("TakeWhileStr failed.")
+	}
+}`
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `isEvenMethodChain := func(num *float32) bool {
+		return *num%2 == 0
+	}`
+
+	t2 = `isEvenMethodChain := func(num *float32) bool {
+		return int(*num)%2 == 0
+	}`
+
+	code = strings.ReplaceAll(code, t1, t2)
+
+	t1 = `isEvenMethodChain := func(num *float64) bool {
+		return *num%2 == 0
+	}`
+
+	t2 = `isEvenMethodChain := func(num *float64) bool {
+		return int(*num)%2 == 0
+	}`
+
+	code = strings.ReplaceAll(code, t1, t2)
+
 	return code
 }

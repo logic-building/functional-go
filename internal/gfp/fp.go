@@ -476,6 +476,21 @@ func TakeWhileEmployer(f func(employer.Employer) bool, list []employer.Employer)
 	return newList
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice employerSlice) TakeWhile(functors ...employerFunctorForFilter) employerSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileEmployer(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 func TakeWhileEmployerPtr(f func(*employer.Employer) bool, list []*employer.Employer) []*employer.Employer {
 	if f == nil {
 		return []*employer.Employer{}
@@ -488,6 +503,21 @@ func TakeWhileEmployerPtr(f func(*employer.Employer) bool, list []*employer.Empl
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice employerSlicePtr) TakeWhilePtr(functors ...employerFunctorForFilterPtr) employerSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileEmployerPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 // TakeWhileEmployerPtrErr returns new list based on condition in the supplied function. It returns new list once condition fails.
@@ -2481,6 +2511,21 @@ func TakeWhileEmployee(f func(employee.Employee) bool, list []employee.Employee)
 	return newList
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice employeeSlice) TakeWhile(functors ...employeeFunctorForFilter) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileEmployee(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 func TakeWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Employee) []*employee.Employee {
 	if f == nil {
 		return []*employee.Employee{}
@@ -2493,6 +2538,21 @@ func TakeWhileEmployeePtr(f func(*employee.Employee) bool, list []*employee.Empl
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice employeeSlicePtr) TakeWhilePtr(functors ...employeeFunctorForFilterPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileEmployeePtr(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 // TakeWhileEmployeePtrErr returns new list based on condition in the supplied function. It returns new list once condition fails.

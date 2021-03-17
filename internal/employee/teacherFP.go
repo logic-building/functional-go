@@ -476,6 +476,21 @@ func TakeWhileTeacher(f func(Teacher) bool, list []Teacher) []Teacher {
 	return newList
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice teacherSlice) TakeWhile(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 func TakeWhileTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 	if f == nil {
 		return []*Teacher{}
@@ -488,6 +503,21 @@ func TakeWhileTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice teacherSlicePtr) TakeWhilePtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 // TakeWhileTeacherPtrErr returns new list based on condition in the supplied function. It returns new list once condition fails.

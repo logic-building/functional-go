@@ -426,11 +426,17 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			if fp.ExistsStrIgnoreCase("TakeWhile", onlyList) {
 				template += template2.TakeWhile()
 				template = r.Replace(template)
+
+				template += template3.MethodChainStructTakeWhile()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("TakeWhilePtr", onlyList) {
 				template += template2.TakeWhilePtr()
 				template = r.Replace(template)
+
+				template += template3.MethodChainStructTakeWhilePtr()
+				template = r3.Replace(template)
 			}
 
 			if fp.ExistsStrIgnoreCase("TakeWhilePtrErr", onlyList) {
@@ -782,8 +788,14 @@ func generateFPCode(pkg, dataTypes, imports string, structToFieldsMapUnexpected 
 			template += template2.TakeWhile()
 			template = r.Replace(template)
 
+			template += template3.MethodChainStructTakeWhile()
+			template = r3.Replace(template)
+
 			template += template2.TakeWhilePtr()
 			template = r.Replace(template)
+
+			template += template3.MethodChainStructTakeWhilePtr()
+			template = r3.Replace(template)
 
 			template += basic.TakeWhilePtrErr()
 			template = r2.Replace(template)

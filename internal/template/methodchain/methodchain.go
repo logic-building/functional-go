@@ -177,6 +177,21 @@ func (slice <NEWTYPE>Slice) TakeWhile(functors ...<NEWTYPE>FunctorForFilter) <NE
 
 	return tmpSlice
 }
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice <NEWTYPE>SlicePtr) TakeWhilePtr(functors ...<NEWTYPE>FunctorForFilterPtr) <NEWTYPE>SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhile<FTYPE>Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
 `
 }
 
@@ -436,6 +451,46 @@ func MethodChainStructDistinctPtr() string {
 // DistinctPtr - removes duplicates
 func (slice <NEWTYPE>SlicePtr) DistinctPtr() <NEWTYPE>SlicePtr {
 	return Distinct<CONDITIONAL_TYPE>Ptr(slice)
+}
+`
+}
+
+// MethodChainStructTakeWhile -
+func MethodChainStructTakeWhile() string {
+	return `
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice <NEWTYPE>Slice) TakeWhile(functors ...<NEWTYPE>FunctorForFilter) <NEWTYPE>Slice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhile<CONDITIONAL_TYPE>(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+`
+}
+
+// MethodChainStructTakeWhilePtr -
+func MethodChainStructTakeWhilePtr() string {
+	return `
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice <NEWTYPE>SlicePtr) TakeWhilePtr(functors ...<NEWTYPE>FunctorForFilterPtr) <NEWTYPE>SlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhile<CONDITIONAL_TYPE>Ptr(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 `
 }
