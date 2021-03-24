@@ -377,3 +377,18 @@ func TestDropWhileStr(t *testing.T) {
 		t.Errorf("DropWhileStr failed.")
 	}
 }
+
+func TestDropWhileBool(t *testing.T) {
+	var vt bool = true
+	var vf bool = false
+
+	isTrueBool := func(num bool) bool {
+		return num == true
+	}
+
+	expectedNewList := []bool{vf, vt}
+	NewList := DropWhileBool(isTrueBool, []bool{vt, vf, vt})
+	if NewList[0] != expectedNewList[0] || NewList[1] != expectedNewList[1] {
+		t.Errorf("DropWhileBool failed. Expected New list=%v, actual list=%v", expectedNewList, NewList)
+	}
+}

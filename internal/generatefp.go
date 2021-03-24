@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/logic-building/functional-go/internal/template/basic"
+	"github.com/logic-building/functional-go/internal/template/methodchain"
 )
 
 type fpCode struct {
@@ -40,6 +41,28 @@ type fpCode struct {
 }
 
 var fpCodeList = []fpCode{
+	fpCode{
+		function:          "methodchain",
+		codeTemplate:      methodchain.MethodChainBasic(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "bool", "float32", "float64"},
+		generatedFileName: "methodchain.go",
+
+		testTemplate:          methodchain.MethodChainMapTest(),
+		testTemplateBool:      methodchain.MethodChainMapBoolTest(),
+		generatedTestFileName: "methodchain_test.go",
+	},
+
+	fpCode{
+		function:          "methodchainSort",
+		codeTemplate:      methodchain.MethodChainBasicSort(),
+		dataTypes:         []string{"int", "int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "string", "float32", "float64"},
+		generatedFileName: "methodchainsort.go",
+
+		testTemplate: methodchain.MethodChainSortTest(),
+		//testTemplateBool:      methodchain.MethodChainMapBoolTest(),
+		generatedTestFileName: "methodchainsort_test.go",
+	},
+
 	fpCode{
 		function:          "DropLast",
 		codeTemplate:      basic.DropLast(),
@@ -270,7 +293,7 @@ var fpCodeList = []fpCode{
 	fpCode{
 		function:          "Sort",
 		codeTemplate:      basic.Sort(),
-		dataTypes:         []string{"int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32"},
+		dataTypes:         []string{"int64", "int32", "int16", "int8", "uint", "uint64", "uint32", "uint16", "uint8", "float32", "float64"},
 		generatedFileName: "sort.go",
 
 		testTemplate: basic.SortTest(),
@@ -1176,6 +1199,10 @@ func generateFpCode(fpCodeList []fpCode) {
 				}
 
 				r := strings.NewReplacer("<TYPE>", t, "<FTYPE>", ftype)
+
+				// for methodchain
+				r2 := strings.NewReplacer("<TYPE>", t, "<FTYPE>", ftype, "<NEWTYPE>", t)
+				codeTemplate = r2.Replace(codeTemplate)
 				codeTemplate = r.Replace(codeTemplate)
 
 				testTemplate = r.Replace(testTemplate)
@@ -1600,6 +1627,8 @@ func isEvenDivisibleByFloat64Ptr(num, divisibleBy *float64) bool {
 	code = basic.ReplaceActivityPMapPtr2ErrTest(code)
 
 	code = basic.ReplaceActivityPMap2ErrTest(code)
+
+	code = methodchain.ReplaceActivityMethodChainMap(code)
 
 	return code
 }

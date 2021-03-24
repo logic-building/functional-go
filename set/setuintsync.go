@@ -4,7 +4,7 @@ import "sync"
 
 // UintSync - struct
 type UintSync struct {
-	nodeMap map[uint]bool
+	nodeMap map[uint]struct{}
 	sync.RWMutex
 }
 
@@ -22,11 +22,11 @@ func (s *UintSync) Add(num uint) *UintSync {
 	s.Lock()
 	defer s.Unlock()
 	if s.nodeMap == nil {
-		s.nodeMap = make(map[uint]bool)
+		s.nodeMap = make(map[uint]struct{})
 	}
 	_, ok := s.nodeMap[num]
 	if !ok {
-		s.nodeMap[num] = true
+		s.nodeMap[num] = struct{}{}
 	}
 	return s
 }
@@ -35,7 +35,7 @@ func (s *UintSync) Add(num uint) *UintSync {
 func (s *UintSync) Clear() {
 	s.Lock()
 	defer s.Unlock()
-	s.nodeMap = make(map[uint]bool)
+	s.nodeMap = make(map[uint]struct{})
 }
 
 // Remove an item
@@ -78,17 +78,17 @@ func (s *UintSync) Size() int {
 // Union returns all the items that are in S or in S2
 func (s *UintSync) Union(s2 *UintSync) *UintSync {
 	s3 := UintSync{}
-	s3.nodeMap = make(map[uint]bool)
+	s3.nodeMap = make(map[uint]struct{})
 	s.RLock()
 	for i := range s.nodeMap {
-		s3.nodeMap[i] = true
+		s3.nodeMap[i] = struct{}{}
 	}
 	s.RUnlock()
 	s2.RLock()
 	for i := range s2.nodeMap {
 		_, ok := s3.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	s2.RUnlock()
@@ -98,7 +98,7 @@ func (s *UintSync) Union(s2 *UintSync) *UintSync {
 // Intersection returns common items in S and S2
 func (s *UintSync) Intersection(s2 *UintSync) *UintSync {
 	s3 := UintSync{}
-	s3.nodeMap = make(map[uint]bool)
+	s3.nodeMap = make(map[uint]struct{})
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -106,7 +106,7 @@ func (s *UintSync) Intersection(s2 *UintSync) *UintSync {
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -115,7 +115,7 @@ func (s *UintSync) Intersection(s2 *UintSync) *UintSync {
 // Minus - s.Minus(s2) : all of S but not in S2
 func (s *UintSync) Minus(s2 *UintSync) *UintSync {
 	s3 := UintSync{}
-	s3.nodeMap = make(map[uint]bool)
+	s3.nodeMap = make(map[uint]struct{})
 	s.RLock()
 	s2.RLock()
 	defer s.RUnlock()
@@ -123,7 +123,7 @@ func (s *UintSync) Minus(s2 *UintSync) *UintSync {
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3

@@ -6,10 +6,10 @@ func Union() string {
 // Union<FTYPE> return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func Union<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	for _, arr := range arrList {
 		for _, v := range arr {
-			resultMap[v] = true
+			resultMap[v] = struct{}{}
 		}
 	}
 
@@ -30,13 +30,13 @@ func UnionPtr() string {
 // Union<FTYPE>Ptr return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func Union<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	var resultArr []*<TYPE>
 	for _, arr := range arrList {
 		for _, v := range arr {
 			_, ok := resultMap[*v]
 			if !ok {
-				resultMap[*v] = true
+				resultMap[*v] = struct{}{}
 				resultArr = append(resultArr, v)
 			}
 		}

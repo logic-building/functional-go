@@ -17,6 +17,7 @@ type Teacher struct {
 	Name         string
 	Salary       float64
 	CreationDate *time.Time
+	UpdatedDate  time.Time
 	Address      *string
 	Students     []string
 }

@@ -2,7 +2,7 @@ package set
 
 // Uint8 - struct
 type Uint8 struct {
-	nodeMap map[uint8]bool
+	nodeMap map[uint8]struct{}
 }
 
 // NewUint8 creates set
@@ -17,18 +17,18 @@ func NewUint8(nums []uint8) *Uint8 {
 // Add an item
 func (s *Uint8) Add(num uint8) *Uint8 {
 	if s.nodeMap == nil {
-		s.nodeMap = make(map[uint8]bool)
+		s.nodeMap = make(map[uint8]struct{})
 	}
 	_, ok := s.nodeMap[num]
 	if !ok {
-		s.nodeMap[num] = true
+		s.nodeMap[num] = struct{}{}
 	}
 	return s
 }
 
 // Clear set
 func (s *Uint8) Clear() {
-	s.nodeMap = make(map[uint8]bool)
+	s.nodeMap = make(map[uint8]struct{})
 }
 
 // Remove an item
@@ -63,14 +63,14 @@ func (s *Uint8) Size() int {
 // Union returns all the items that are in S or in S2
 func (s *Uint8) Union(s2 *Uint8) *Uint8 {
 	s3 := Uint8{}
-	s3.nodeMap = make(map[uint8]bool)
+	s3.nodeMap = make(map[uint8]struct{})
 	for i := range s.nodeMap {
-		s3.nodeMap[i] = true
+		s3.nodeMap[i] = struct{}{}
 	}
 	for i := range s2.nodeMap {
 		_, ok := s3.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -79,11 +79,11 @@ func (s *Uint8) Union(s2 *Uint8) *Uint8 {
 // Intersection returns common items in S and S2
 func (s *Uint8) Intersection(s2 *Uint8) *Uint8 {
 	s3 := Uint8{}
-	s3.nodeMap = make(map[uint8]bool)
+	s3.nodeMap = make(map[uint8]struct{})
 	for i := range s2.nodeMap {
 		_, ok := s.nodeMap[i]
 		if ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3
@@ -92,11 +92,11 @@ func (s *Uint8) Intersection(s2 *Uint8) *Uint8 {
 // Minus - s.Minus(s2) : all of S but not in S2
 func (s *Uint8) Minus(s2 *Uint8) *Uint8 {
 	s3 := Uint8{}
-	s3.nodeMap = make(map[uint8]bool)
+	s3.nodeMap = make(map[uint8]struct{})
 	for i := range s.nodeMap {
 		_, ok := s2.nodeMap[i]
 		if !ok {
-			s3.nodeMap[i] = true
+			s3.nodeMap[i] = struct{}{}
 		}
 	}
 	return &s3

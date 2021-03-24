@@ -476,6 +476,21 @@ func TakeWhileTeacher(f func(Teacher) bool, list []Teacher) []Teacher {
 	return newList
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice teacherSlice) TakeWhile(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 func TakeWhileTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 	if f == nil {
 		return []*Teacher{}
@@ -488,6 +503,21 @@ func TakeWhileTeacherPtr(f func(*Teacher) bool, list []*Teacher) []*Teacher {
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice teacherSlicePtr) TakeWhilePtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhileTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 // TakeWhileTeacherPtrErr returns new list based on condition in the supplied function. It returns new list once condition fails.
@@ -1421,6 +1451,156 @@ func TakeTeacherPtr(n int, list []*Teacher) []*Teacher {
 	return newList
 }
 
+type teacherSlice []Teacher
+type teacherFunctorForMap func(Teacher) Teacher
+type teacherFunctorForFilter func(Teacher) bool
+
+type teacherSlicePtr []*Teacher
+type teacherFunctorForMapPtr func(*Teacher) *Teacher
+type teacherFunctorForFilterPtr func(*Teacher) bool
+
+// MakeTeacherSlice - creates slice for the functional method such as map, filter
+func MakeTeacherSlice(values ...Teacher) teacherSlice {
+	newSlice := teacherSlice(values)
+	return newSlice
+}
+
+// Map - applies the function(1st argument) on each item of the list and returns new list
+func (slice teacherSlice) Map(functors ...teacherFunctorForMap) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = MapTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// MakeTeacherSlicePtr - creates slice for the functional method such as map, filter
+func MakeTeacherSlicePtr(values ...*Teacher) teacherSlicePtr {
+	newSlice := teacherSlicePtr(values)
+	return newSlice
+}
+
+// MapPtr - applies the function(1st argument) on each item of the list and returns new list
+func (slice teacherSlicePtr) MapPtr(functors ...teacherFunctorForMapPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = MapTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Filter - 
+func (slice teacherSlice) Filter(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = FilterTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// FilterPtr - 
+func (slice teacherSlicePtr) FilterPtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = FilterTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice teacherSlice) Remove(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice teacherSlicePtr) RemovePtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemoveTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice teacherSlice) DropWhile(functors ...teacherFunctorForFilter) teacherSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileTeacher(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice teacherSlicePtr) DropWhilePtr(functors ...teacherFunctorForFilterPtr) teacherSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhileTeacherPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice teacherSlice) Reverse() teacherSlice {
+	return ReverseTeachers(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice teacherSlicePtr) ReversePtr() teacherSlicePtr {
+	return ReverseTeachersPtr(slice)
+}
+
 // DistinctTeacherP returns true if no two of the arguments are =
 func DistinctTeacherP(list []Teacher) bool {
 	if len(list) == 0 {
@@ -1476,6 +1656,11 @@ func DistinctTeacher(list []Teacher) []Teacher {
 	return newList
 }
 
+// Distinct - removes duplicates
+func (slice teacherSlice) Distinct() teacherSlice {
+	return DistinctTeacher(slice)
+}
+
 func DistinctTeacherPtr(list []*Teacher) []*Teacher {
 	if len(list) == 0 {
 		return []*Teacher{}
@@ -1496,6 +1681,11 @@ func DistinctTeacherPtr(list []*Teacher) []*Teacher {
 		}
 	}
 	return newList
+}
+
+// DistinctPtr - removes duplicates
+func (slice teacherSlicePtr) DistinctPtr() teacherSlicePtr {
+	return DistinctTeacherPtr(slice)
 }
 
 // UnionTeacher return a set that is the union of the input sets
@@ -1973,6 +2163,26 @@ func SortTeacherByIdDescPtr(list []*Teacher) []*Teacher {
 	}
 	return newListPtr
 }
+// SortById - sort the list
+func (slice teacherSlice) SortById() teacherSlice {
+	return SortTeacherById(slice)
+}
+
+// SortByIdDesc - sort the list
+func (slice teacherSlice) SortByIdDesc() teacherSlice {
+	return SortTeacherByIdDesc(slice)
+}
+
+// SortById - sort the list
+func (slice teacherSlicePtr) SortByIdPtr() teacherSlicePtr {
+	return SortTeacherByIdPtr(slice)
+}
+
+// SortByIdDescPtr - sort the list
+func (slice teacherSlicePtr) SortByIdDescPtr() teacherSlicePtr {
+	return SortTeacherByIdDescPtr(slice)
+}
+
 type byNameTeacher []Teacher
 
 func (a byNameTeacher) Len() int           { return len(a) }
@@ -2048,6 +2258,26 @@ func SortTeacherByNameDescPtr(list []*Teacher) []*Teacher {
 	}
 	return newListPtr
 }
+// SortByName - sort the list
+func (slice teacherSlice) SortByName() teacherSlice {
+	return SortTeacherByName(slice)
+}
+
+// SortByNameDesc - sort the list
+func (slice teacherSlice) SortByNameDesc() teacherSlice {
+	return SortTeacherByNameDesc(slice)
+}
+
+// SortByName - sort the list
+func (slice teacherSlicePtr) SortByNamePtr() teacherSlicePtr {
+	return SortTeacherByNamePtr(slice)
+}
+
+// SortByNameDescPtr - sort the list
+func (slice teacherSlicePtr) SortByNameDescPtr() teacherSlicePtr {
+	return SortTeacherByNameDescPtr(slice)
+}
+
 type bySalaryTeacher []Teacher
 
 func (a bySalaryTeacher) Len() int           { return len(a) }
@@ -2123,6 +2353,26 @@ func SortTeacherBySalaryDescPtr(list []*Teacher) []*Teacher {
 	}
 	return newListPtr
 }
+// SortBySalary - sort the list
+func (slice teacherSlice) SortBySalary() teacherSlice {
+	return SortTeacherBySalary(slice)
+}
+
+// SortBySalaryDesc - sort the list
+func (slice teacherSlice) SortBySalaryDesc() teacherSlice {
+	return SortTeacherBySalaryDesc(slice)
+}
+
+// SortBySalary - sort the list
+func (slice teacherSlicePtr) SortBySalaryPtr() teacherSlicePtr {
+	return SortTeacherBySalaryPtr(slice)
+}
+
+// SortBySalaryDescPtr - sort the list
+func (slice teacherSlicePtr) SortBySalaryDescPtr() teacherSlicePtr {
+	return SortTeacherBySalaryDescPtr(slice)
+}
+
 type byCreationDateTeacher []Teacher
 
 func (a byCreationDateTeacher) Len() int           { return len(a) }
@@ -2214,6 +2464,121 @@ func SortTeacherByCreationDateDescPtr(list []*Teacher) []*Teacher {
 	}
 	return newListPtr
 }
+// SortByCreationDate - sort the list
+func (slice teacherSlicePtr) SortByCreationDatePtr() teacherSlicePtr {
+	return SortTeacherByCreationDatePtr(slice)
+}
+
+// SortByCreationDateDescPtr - sort the list
+func (slice teacherSlicePtr) SortByCreationDateDescPtr() teacherSlicePtr {
+	return SortTeacherByCreationDateDescPtr(slice)
+}
+
+// SortByCreationDate - sort the list
+func (slice teacherSlice) SortByCreationDate() teacherSlice {
+	return SortTeacherByCreationDate(slice)
+}
+
+// SortByCreationDateDesc - sort the list
+func (slice teacherSlice) SortByCreationDateDesc() teacherSlice {
+	return SortTeacherByCreationDateDesc(slice)
+}
+
+type byUpdatedDateTeacher []Teacher
+
+func (a byUpdatedDateTeacher) Len() int           { return len(a) }
+func (a byUpdatedDateTeacher) Less(i, j int) bool { return a[i].UpdatedDate.Before(a[j].UpdatedDate) }
+func (a byUpdatedDateTeacher) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+// SortTeacherByUpdatedDate sort structs
+func SortTeacherByUpdatedDate(list []Teacher) []Teacher {
+	if len(list) == 0 {
+		return []Teacher{}
+	}
+	newList := make([]Teacher, len(list))
+	for i, item := range list {
+		newList[i] = item
+	}
+	sort.Sort(byUpdatedDateTeacher(newList))
+	return newList
+}
+
+// SortTeacherByUpdatedDatePtr sorts structs
+func SortTeacherByUpdatedDatePtr(list []*Teacher) []*Teacher {
+	if len(list) == 0 {
+		return []*Teacher{}
+	}
+	newList := make([]Teacher, len(list))
+	newListPtr := make([]*Teacher, len(list))
+
+	for i, item := range list {
+		newList[i] = *item
+	}
+	sort.Sort(byUpdatedDateTeacher(newList))
+
+	for i := 0; i < len(newList); i++ {
+		newListPtr[i] = &newList[i]
+	}
+	return newListPtr
+}
+
+type byUpdatedDateTeacherDesc []Teacher
+
+func (a byUpdatedDateTeacherDesc) Len() int           { return len(a) }
+func (a byUpdatedDateTeacherDesc) Less(i, j int) bool { return a[i].UpdatedDate.After(a[j].UpdatedDate) }
+func (a byUpdatedDateTeacherDesc) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+
+// SortTeacherByUpdatedDateDesc sorts structs
+func SortTeacherByUpdatedDateDesc(list []Teacher) []Teacher {
+	if len(list) == 0 {
+		return []Teacher{}
+	}
+	newList := make([]Teacher, len(list))
+	for i, item := range list {
+		newList[i] = item
+	}
+	sort.Sort(byUpdatedDateTeacherDesc(newList))
+	return newList
+}
+
+// SortTeacherByUpdatedDateDescPtr sorts structs
+func SortTeacherByUpdatedDateDescPtr(list []*Teacher) []*Teacher {
+	if len(list) == 0 {
+		return []*Teacher{}
+	}
+	newList := make([]Teacher, len(list))
+	newListPtr := make([]*Teacher, len(list))
+
+	for i, item := range list {
+		newList[i] = *item
+	}
+	sort.Sort(byUpdatedDateTeacherDesc(newList))
+
+	for i := 0; i < len(newList); i++ {
+		newListPtr[i] = &newList[i]
+	}
+	return newListPtr
+}
+// SortByUpdatedDate - sort the list
+func (slice teacherSlice) SortByUpdatedDate() teacherSlice {
+	return SortTeacherByUpdatedDate(slice)
+}
+
+// SortByUpdatedDateDesc - sort the list
+func (slice teacherSlice) SortByUpdatedDateDesc() teacherSlice {
+	return SortTeacherByUpdatedDateDesc(slice)
+}
+
+// SortByUpdatedDate - sort the list
+func (slice teacherSlicePtr) SortByUpdatedDatePtr() teacherSlicePtr {
+	return SortTeacherByUpdatedDatePtr(slice)
+}
+
+// SortByUpdatedDateDescPtr - sort the list
+func (slice teacherSlicePtr) SortByUpdatedDateDescPtr() teacherSlicePtr {
+	return SortTeacherByUpdatedDateDescPtr(slice)
+}
+
 type byAddressTeacher []Teacher
 
 func (a byAddressTeacher) Len() int           { return len(a) }
@@ -2298,6 +2663,26 @@ func SortTeacherByAddressDescPtr(list []*Teacher) []*Teacher {
 	}
 	return newListPtr
 }
+// SortByAddress - sort the list
+func (slice teacherSlicePtr) SortByAddressPtr() teacherSlicePtr {
+	return SortTeacherByAddressPtr(slice)
+}
+
+// SortByAddressDescPtr - sort the list
+func (slice teacherSlicePtr) SortByAddressDescPtr() teacherSlicePtr {
+	return SortTeacherByAddressDescPtr(slice)
+}
+
+// SortByAddress - sort the list
+func (slice teacherSlice) SortByAddress() teacherSlice {
+	return SortTeacherByAddress(slice)
+}
+
+// SortByAddressDesc - sort the list
+func (slice teacherSlice) SortByAddressDesc() teacherSlice {
+	return SortTeacherByAddressDesc(slice)
+}
+
 // UnionTeacherById return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func UnionTeacherById(arrList ...[]Teacher) []Teacher {
@@ -3761,6 +4146,373 @@ func SetTeacherByCreationDatePtr(list []*Teacher) []*Teacher {
 		_, ok := resultMap[list[i].CreationDate]
 		if !ok {
 			resultMap[list[i].CreationDate] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+// UnionTeacherByUpdatedDate return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func UnionTeacherByUpdatedDate(arrList ...[]Teacher) []Teacher {
+	resultMap := make(map[time.Time]bool)
+	var resultArr []Teacher
+	for _, arr := range arrList {
+		for _, v := range arr {
+			_, ok := resultMap[v.UpdatedDate]
+			if !ok {
+				resultMap[v.UpdatedDate] = true
+				resultArr = append(resultArr, v)
+			}
+		}
+	}
+	return resultArr
+}
+
+// Union<FTYPE>Ptr return a set that is the union of the input sets
+// repeated value within list parameter will be ignored
+func UnionTeacherByUpdatedDatePtr(arrList ...[]*Teacher) []*Teacher {
+	resultMap := make(map[time.Time]bool)
+	var resultArr []*Teacher
+	for _, arr := range arrList {
+		for _, v := range arr {
+			_, ok := resultMap[v.UpdatedDate]
+			if !ok {
+				resultMap[v.UpdatedDate] = true
+				resultArr = append(resultArr, v)
+			}
+		}
+	}
+	return resultArr
+}
+
+// IntersectionTeacherByUpdatedDate return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
+func IntersectionTeacherByUpdatedDate(arrList ...[]Teacher) []Teacher {
+	if arrList == nil {
+		return []Teacher{}
+	}
+
+	resultMap := make(map[time.Time]bool)
+	if len(arrList) == 1 {
+		var newList []Teacher
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].UpdatedDate] = true
+			}
+		}
+		return newList
+	}
+
+	var newList []Teacher
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].UpdatedDate == v.UpdatedDate {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == len(arrList)-1 {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].UpdatedDate] = true
+			}
+		}
+	}
+	return newList
+}
+
+// IntersectionTeacherByUpdatedDatePtr return a set that is the intersection of the input sets
+// repeated value within list parameter will be ignored
+func IntersectionTeacherByUpdatedDatePtr(arrList ...[]*Teacher) []*Teacher {
+	if arrList == nil {
+		return []*Teacher{}
+	}
+
+	resultMap := make(map[time.Time]bool)
+	if len(arrList) == 1 {
+		var newList []*Teacher
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				resultMap[arrList[0][i].UpdatedDate] = true
+				newList = append(newList, arrList[0][i])
+			}
+		}
+		return newList
+	}
+
+	var newList []*Teacher
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].UpdatedDate == v.UpdatedDate {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == len(arrList)-1 {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].UpdatedDate] = true
+			}
+		}
+	}
+	return newList
+}
+
+// DifferenceTeacherByUpdatedDate returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
+func DifferenceTeacherByUpdatedDate(arrList ...[]Teacher) []Teacher {
+	if arrList == nil {
+		return []Teacher{}
+	}
+
+	resultMap := make(map[time.Time]bool)
+	if len(arrList) == 1 {
+		var newList []Teacher
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].UpdatedDate] = true
+			}
+		}
+		return newList
+	}
+
+	var newList []Teacher
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].UpdatedDate == v.UpdatedDate {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == 0 {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].UpdatedDate] = true
+			}
+		}
+	}
+	return newList
+}
+
+// DifferenceTeacherByUpdatedDatePtr returns a set that is the first set without elements of the remaining sets
+// repeated value within list parameter will be ignored
+func DifferenceTeacherByUpdatedDatePtr(arrList ...[]*Teacher) []*Teacher {
+	if arrList == nil {
+		return []*Teacher{}
+	}
+
+	resultMap := make(map[time.Time]bool)
+	if len(arrList) == 1 {
+		var newList []*Teacher
+		for i := 0; i < len(arrList[0]); i++ {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				resultMap[arrList[0][i].UpdatedDate] = true
+				newList = append(newList, arrList[0][i])
+			}
+		}
+		return newList
+	}
+
+	var newList []*Teacher
+	// 1st loop iterates items in 1st array
+	// 2nd loop iterates all the rest of the arrays
+	// 3rd loop iterates items in the rest of the arrays
+	for i := 0; i < len(arrList[0]); i++ {
+
+		matchCount := 0
+		for j := 1; j < len(arrList); j++ {
+			for _, v := range arrList[j] {
+				// compare every items in 1st array to every items in the rest of the arrays
+				if arrList[0][i].UpdatedDate == v.UpdatedDate {
+					matchCount++
+					break
+				}
+			}
+		}
+		if matchCount == 0 {
+			_, ok := resultMap[arrList[0][i].UpdatedDate]
+			if !ok {
+				newList = append(newList, arrList[0][i])
+				resultMap[arrList[0][i].UpdatedDate] = true
+			}
+		}
+	}
+	return newList
+}
+
+// SubsetTeacherByUpdatedDate returns true or false by checking if set1 is a subset of set2
+// repeated value within list parameter will be ignored
+func SubsetTeacherByUpdatedDate(list1, list2 []Teacher) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[time.Time]bool)
+	for i := 0; i < len(list1); i++ {
+		_, ok := resultMap[list1[i].UpdatedDate]
+		if !ok {
+			found := false
+			resultMap[list1[i].UpdatedDate] = true
+			for j := 0; j < len(list2); j++ {
+				if list1[i].UpdatedDate == list2[j].UpdatedDate {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SubsetTeacherByUpdatedDatePtr returns true or false by checking if set1 is a subset of set2
+// repeated value within list parameter will be ignored
+func SubsetTeacherByUpdatedDatePtr(list1, list2 []*Teacher) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[time.Time]bool)
+	for i := 0; i < len(list1); i++ {
+		_, ok := resultMap[list1[i].UpdatedDate]
+		if !ok {
+			found := false
+			resultMap[list1[i].UpdatedDate] = true
+			for j := 0; j < len(list2); j++ {
+				if list1[i].UpdatedDate == list2[j].UpdatedDate {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SupersetTeacherByUpdatedDate returns true or false by checking if set1 is a superset of set2
+// repeated value within list parameter will be ignored
+func SupersetTeacherByUpdatedDate(list1, list2 []Teacher) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[time.Time]bool)
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i].UpdatedDate]
+		if !ok {
+			found := false
+			resultMap[list2[i].UpdatedDate] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i].UpdatedDate == list1[j].UpdatedDate {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SupersetTeacherByUpdatedDatePtr returns true or false by checking if set1 is a superset of set2
+// repeated value within list parameter will be ignored
+func SupersetTeacherByUpdatedDatePtr(list1, list2 []*Teacher) bool {
+	if list1 == nil || len(list1) == 0 || list2 == nil || len(list2) == 0 {
+		return false
+	}
+
+	resultMap := make(map[time.Time]bool)
+
+	for i := 0; i < len(list2); i++ {
+		_, ok := resultMap[list2[i].UpdatedDate]
+		if !ok {
+			found := false
+			resultMap[list2[i].UpdatedDate] = true
+			for j := 0; j < len(list1); j++ {
+				if list2[i].UpdatedDate == list1[j].UpdatedDate {
+					found = true
+					break
+				}
+			}
+			if !found {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+// SetTeacherByUpdatedDate returns a set of the distinct elements of coll.
+func SetTeacherByUpdatedDate(list []Teacher) []Teacher {
+	if list == nil || len(list) == 0 {
+		return []Teacher{}
+	}
+
+	resultMap := make(map[time.Time]bool)
+	newList := []Teacher{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].UpdatedDate]
+		if !ok {
+			resultMap[list[i].UpdatedDate] = true
+			newList = append(newList, list[i])
+		}
+	}
+	return newList
+}
+
+// SetTeacherByUpdatedDatePtr returns a set of the distinct elements of coll.
+func SetTeacherByUpdatedDatePtr(list []*Teacher) []*Teacher {
+	if list == nil || len(list) == 0 {
+		return []*Teacher{}
+	}
+
+	resultMap := make(map[time.Time]bool)
+	newList := []*Teacher{}
+	for i := 0; i < len(list); i++ {
+		_, ok := resultMap[list[i].UpdatedDate]
+		if !ok {
+			resultMap[list[i].UpdatedDate] = true
 			newList = append(newList, list[i])
 		}
 	}

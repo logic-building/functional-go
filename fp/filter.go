@@ -376,3 +376,22 @@ func FilterStr(f func(string) bool, list []string) []string {
 	}
 	return newList
 }
+
+// FilterBool takes two arguments
+//  1. Function: takes 1 argument of type bool and returns bool
+//  2. slice of type []bool
+//
+// Returns:
+//  new filtered list
+func FilterBool(f func(bool) bool, list []bool) []bool {
+	if f == nil {
+		return []bool{}
+	}
+	var newList []bool
+	for _, v := range list {
+		if f(v) {
+			newList = append(newList, v)
+		}
+	}
+	return newList
+}

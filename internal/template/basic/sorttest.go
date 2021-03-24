@@ -175,7 +175,7 @@ func TestSort<FTYPE>DescPtr(t *testing.T) {
 // SortFloats64Test is template
 func SortFloats64Test() string {
 	return `
-func TestSort<FTYPE>(t *testing.T) {
+func TestSort<FTYPE>2nd(t *testing.T) {
 	expectedList := []<TYPE>{1, 2, 3, 4, 5}
 	sortedList := SortFloats64([]<TYPE>{5, 1, 4, 2, 3})
 	matched := reflect.DeepEqual(sortedList, expectedList)
@@ -189,7 +189,7 @@ func TestSort<FTYPE>(t *testing.T) {
 	}
 }
 
-func TestSort<FTYPE>Ptr(t *testing.T) {
+func TestSort<FTYPE>2ndPtr(t *testing.T) {
 	var v1 <TYPE> = 1
 	var v2 <TYPE> = 2
 	var v3 <TYPE> = 3
@@ -218,7 +218,7 @@ func TestSort<FTYPE>Ptr(t *testing.T) {
 	}
 }
 
-func TestSort<FTYPE>Desc(t *testing.T) {
+func TestSort<FTYPE>2ndDesc(t *testing.T) {
 	expectedList := []<TYPE>{5, 4, 3, 2, 1}
 	sortedList := SortFloats64Desc([]<TYPE>{5, 1, 4, 2, 3})
 	matched := reflect.DeepEqual(sortedList, expectedList)
@@ -232,7 +232,7 @@ func TestSort<FTYPE>Desc(t *testing.T) {
 	}
 }
 
-func TestSort<FTYPE>DescPtr(t *testing.T) {
+func TestSort<FTYPE>2ndDescPtr(t *testing.T) {
 	var v1 <TYPE> = 1
 	var v2 <TYPE> = 2
 	var v3 <TYPE> = 3

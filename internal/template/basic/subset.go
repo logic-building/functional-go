@@ -10,12 +10,12 @@ func Subset<FTYPE>(list1, list2 []<TYPE>) bool {
 		return false
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -42,12 +42,12 @@ func Subset<FTYPE>Ptr(list1, list2 []*<TYPE>) bool {
 		return false
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true

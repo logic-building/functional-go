@@ -9,12 +9,12 @@ func Set<FTYPE>(list []<TYPE>) []<TYPE> {
 		return []<TYPE>{}
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	newList := []<TYPE>{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -32,12 +32,12 @@ func Set<FTYPE>Ptr(list []*<TYPE>) []*<TYPE> {
 		return []*<TYPE>{}
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	newList := []*<TYPE>{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}

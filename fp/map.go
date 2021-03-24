@@ -346,3 +346,23 @@ func MapStr(f func(string) string, list []string) []string {
 	}
 	return newList
 }
+
+// MapBool applies the function(1st argument) on each item of the list and returns new list
+//
+// Takes 2 inputs
+//	1. Function - takes 1 input
+//	2. List
+//
+// Returns
+//	New List.
+//	Empty list if all arguments are nil or either one is nil
+func MapBool(f func(bool) bool, list []bool) []bool {
+	if f == nil {
+		return []bool{}
+	}
+	newList := make([]bool, len(list))
+	for i, v := range list {
+		newList[i] = f(v)
+	}
+	return newList
+}

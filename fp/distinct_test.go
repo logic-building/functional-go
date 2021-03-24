@@ -407,3 +407,16 @@ func TestDistinctStrIgnoreCase(t *testing.T) {
 		t.Errorf("DistinctStr failed. Expected=%v, actual=%v", expected, distinct)
 	}
 }
+
+func TestDistinctBool(t *testing.T) {
+	var vt bool = true
+
+	newList := DistinctBool([]bool{vt, vt})
+	if newList[0] != vt {
+		t.Errorf("DistinctBool failed")
+	}
+
+	if len(DistinctBool(nil)) > 0 {
+		t.Errorf("DistinctBool failed.")
+	}
+}

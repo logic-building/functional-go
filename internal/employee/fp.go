@@ -476,6 +476,21 @@ func TakeWhile(f func(Employee) bool, list []Employee) []Employee {
 	return newList
 }
 
+//TakeWhile  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice employeeSlice) TakeWhile(functors ...employeeFunctorForFilter) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhile(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
 func TakeWhilePtr(f func(*Employee) bool, list []*Employee) []*Employee {
 	if f == nil {
 		return []*Employee{}
@@ -488,6 +503,21 @@ func TakeWhilePtr(f func(*Employee) bool, list []*Employee) []*Employee {
 		newList = append(newList, v)
 	}
 	return newList
+}
+
+//TakeWhilePtr  - Returns a new list based on predicate function. It returns new list once condition fails.
+func (slice employeeSlicePtr) TakeWhilePtr(functors ...employeeFunctorForFilterPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = TakeWhilePtr(f, tmpSlice)
+	}
+
+	return tmpSlice
 }
 
 // TakeWhilePtrErr returns new list based on condition in the supplied function. It returns new list once condition fails.
@@ -1421,6 +1451,156 @@ func TakePtr(n int, list []*Employee) []*Employee {
 	return newList
 }
 
+type employeeSlice []Employee
+type employeeFunctorForMap func(Employee) Employee
+type employeeFunctorForFilter func(Employee) bool
+
+type employeeSlicePtr []*Employee
+type employeeFunctorForMapPtr func(*Employee) *Employee
+type employeeFunctorForFilterPtr func(*Employee) bool
+
+// MakeEmployeeSlice - creates slice for the functional method such as map, filter
+func MakeEmployeeSlice(values ...Employee) employeeSlice {
+	newSlice := employeeSlice(values)
+	return newSlice
+}
+
+// Map - applies the function(1st argument) on each item of the list and returns new list
+func (slice employeeSlice) Map(functors ...employeeFunctorForMap) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Map(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// MakeEmployeeSlicePtr - creates slice for the functional method such as map, filter
+func MakeEmployeeSlicePtr(values ...*Employee) employeeSlicePtr {
+	newSlice := employeeSlicePtr(values)
+	return newSlice
+}
+
+// MapPtr - applies the function(1st argument) on each item of the list and returns new list
+func (slice employeeSlicePtr) MapPtr(functors ...employeeFunctorForMapPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = MapPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Filter - 
+func (slice employeeSlice) Filter(functors ...employeeFunctorForFilter) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Filter(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// FilterPtr - 
+func (slice employeeSlicePtr) FilterPtr(functors ...employeeFunctorForFilterPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = FilterPtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Remove - removes the items from the given list based on supplied function and returns new list
+func (slice employeeSlice) Remove(functors ...employeeFunctorForFilter) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = Remove(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// RemovePtr - removes the items from the given list based on supplied function and returns new list
+func (slice employeeSlicePtr) RemovePtr(functors ...employeeFunctorForFilterPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = RemovePtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhile - drops the items from the list as long as condition satisfies
+func (slice employeeSlice) DropWhile(functors ...employeeFunctorForFilter) employeeSlice {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhile(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// DropWhilePtr - drops the items from the list as long as condition satisfies
+func (slice employeeSlicePtr) DropWhilePtr(functors ...employeeFunctorForFilterPtr) employeeSlicePtr {
+
+	tmpSlice := slice
+	
+	for _, f := range functors {
+		if f == nil {
+			continue
+		}
+		tmpSlice = DropWhilePtr(f, tmpSlice)
+	}
+
+	return tmpSlice
+}
+
+// Reverse - reverse the list
+func (slice employeeSlice) Reverse() employeeSlice {
+	return Reverses(slice)
+}
+
+// ReversePtr - reverse the list
+func (slice employeeSlicePtr) ReversePtr() employeeSlicePtr {
+	return ReversesPtr(slice)
+}
+
 // DistinctP returns true if no two of the arguments are =
 func DistinctP(list []Employee) bool {
 	if len(list) == 0 {
@@ -1467,6 +1647,16 @@ func Distinct(list []Employee) []Employee {
 	return newList
 }
 
+// Distinct - removes duplicates
+func (slice employeeSlice) Distinct() employeeSlice {
+	return Distinct(slice)
+}
+
+// DistinctPtr - removes duplicates
+func (slice employeeSlicePtr) DistinctPtr() employeeSlicePtr {
+	return DistinctPtr(slice)
+}
+
 // DistinctPtr removes duplicates.
 func DistinctPtr(list []*Employee) []*Employee {
 	var newList []*Employee
@@ -1484,10 +1674,10 @@ func DistinctPtr(list []*Employee) []*Employee {
 // Union return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func Union(arrList ...[]Employee) []Employee {
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	for _, arr := range arrList {
 		for _, v := range arr {
-			resultMap[v] = true
+			resultMap[v] = struct{}{}
 		}
 	}
 
@@ -1503,13 +1693,13 @@ func Union(arrList ...[]Employee) []Employee {
 // UnionPtr return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func UnionPtr(arrList ...[]*Employee) []*Employee {
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	var resultArr []*Employee
 	for _, arr := range arrList {
 		for _, v := range arr {
 			_, ok := resultMap[*v]
 			if !ok {
-				resultMap[*v] = true
+				resultMap[*v] = struct{}{}
 				resultArr = append(resultArr, v)
 			}
 		}
@@ -1524,14 +1714,14 @@ func Intersection(arrList ...[]Employee) []Employee {
 		return []Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -1557,7 +1747,7 @@ func Intersection(arrList ...[]Employee) []Employee {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1571,13 +1761,13 @@ func IntersectionPtr(arrList ...[]*Employee) []*Employee {
 		return []*Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []*Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1604,7 +1794,7 @@ func IntersectionPtr(arrList ...[]*Employee) []*Employee {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1618,14 +1808,14 @@ func Difference(arrList ...[]Employee) []Employee {
 		return []Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -1651,7 +1841,7 @@ func Difference(arrList ...[]Employee) []Employee {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1665,13 +1855,13 @@ func DifferencePtr(arrList ...[]*Employee) []*Employee {
 		return []*Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	if len(arrList) == 1 {
 		var newList []*Employee
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -1698,7 +1888,7 @@ func DifferencePtr(arrList ...[]*Employee) []*Employee {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -1712,12 +1902,12 @@ func Subset(list1, list2 []Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[list1[i]]
 		if !ok {
 			found := false
-			resultMap[list1[i]] = true
+			resultMap[list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -1739,12 +1929,12 @@ func SubsetPtr(list1, list2 []*Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	for i := 0; i < len(list1); i++ {
 		_, ok := resultMap[*list1[i]]
 		if !ok {
 			found := false
-			resultMap[*list1[i]] = true
+			resultMap[*list1[i]] = struct{}{}
 			for j := 0; j < len(list2); j++ {
 				if list1[i] == list2[j] {
 					found = true
@@ -1766,13 +1956,13 @@ func Superset(list1, list2 []Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[list2[i]]
 		if !ok {
 			found := false
-			resultMap[list2[i]] = true
+			resultMap[list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -1794,13 +1984,13 @@ func SupersetPtr(list1, list2 []*Employee) bool {
 		return false
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 
 	for i := 0; i < len(list2); i++ {
 		_, ok := resultMap[*list2[i]]
 		if !ok {
 			found := false
-			resultMap[*list2[i]] = true
+			resultMap[*list2[i]] = struct{}{}
 			for j := 0; j < len(list1); j++ {
 				if list2[i] == list1[j] {
 					found = true
@@ -1821,12 +2011,12 @@ func Set(list []Employee) []Employee {
 		return []Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	newList := []Employee{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[list[i]]
 		if !ok {
-			resultMap[list[i]] = true
+			resultMap[list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -1839,12 +2029,12 @@ func SetPtr(list []*Employee) []*Employee {
 		return []*Employee{}
 	}
 
-	resultMap := make(map[Employee]bool)
+	resultMap := make(map[Employee]struct{})
 	newList := []*Employee{}
 	for i := 0; i < len(list); i++ {
 		_, ok := resultMap[*list[i]]
 		if !ok {
-			resultMap[*list[i]] = true
+			resultMap[*list[i]] = struct{}{}
 			newList = append(newList, list[i])
 		}
 	}
@@ -4656,6 +4846,26 @@ func SortEmployeeByNameDescPtr(list []*Employee) []*Employee {
 	}
 	return newListPtr
 }
+// SortByName - sort the list
+func (slice employeeSlice) SortByName() employeeSlice {
+	return SortEmployeeByName(slice)
+}
+
+// SortByNameDesc - sort the list
+func (slice employeeSlice) SortByNameDesc() employeeSlice {
+	return SortEmployeeByNameDesc(slice)
+}
+
+// SortByName - sort the list
+func (slice employeeSlicePtr) SortByNamePtr() employeeSlicePtr {
+	return SortEmployeeByNamePtr(slice)
+}
+
+// SortByNameDescPtr - sort the list
+func (slice employeeSlicePtr) SortByNameDescPtr() employeeSlicePtr {
+	return SortEmployeeByNameDescPtr(slice)
+}
+
 type bySalaryEmployee []Employee
 
 func (a bySalaryEmployee) Len() int           { return len(a) }
@@ -4731,6 +4941,26 @@ func SortEmployeeBySalaryDescPtr(list []*Employee) []*Employee {
 	}
 	return newListPtr
 }
+// SortBySalary - sort the list
+func (slice employeeSlice) SortBySalary() employeeSlice {
+	return SortEmployeeBySalary(slice)
+}
+
+// SortBySalaryDesc - sort the list
+func (slice employeeSlice) SortBySalaryDesc() employeeSlice {
+	return SortEmployeeBySalaryDesc(slice)
+}
+
+// SortBySalary - sort the list
+func (slice employeeSlicePtr) SortBySalaryPtr() employeeSlicePtr {
+	return SortEmployeeBySalaryPtr(slice)
+}
+
+// SortBySalaryDescPtr - sort the list
+func (slice employeeSlicePtr) SortBySalaryDescPtr() employeeSlicePtr {
+	return SortEmployeeBySalaryDescPtr(slice)
+}
+
 type byCreationDateEmployee []Employee
 
 func (a byCreationDateEmployee) Len() int           { return len(a) }
@@ -4806,6 +5036,26 @@ func SortEmployeeByCreationDateDescPtr(list []*Employee) []*Employee {
 	}
 	return newListPtr
 }
+// SortByCreationDate - sort the list
+func (slice employeeSlice) SortByCreationDate() employeeSlice {
+	return SortEmployeeByCreationDate(slice)
+}
+
+// SortByCreationDateDesc - sort the list
+func (slice employeeSlice) SortByCreationDateDesc() employeeSlice {
+	return SortEmployeeByCreationDateDesc(slice)
+}
+
+// SortByCreationDate - sort the list
+func (slice employeeSlicePtr) SortByCreationDatePtr() employeeSlicePtr {
+	return SortEmployeeByCreationDatePtr(slice)
+}
+
+// SortByCreationDateDescPtr - sort the list
+func (slice employeeSlicePtr) SortByCreationDateDescPtr() employeeSlicePtr {
+	return SortEmployeeByCreationDateDescPtr(slice)
+}
+
 // UnionEmployeeByName return a set that is the union of the input sets
 // repeated value within list parameter will be ignored
 func UnionEmployeeByName(arrList ...[]Employee) []Employee {

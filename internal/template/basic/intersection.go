@@ -10,14 +10,14 @@ func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 		return []<TYPE>{}
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	if len(arrList) == 1 {
 		var newList []<TYPE>
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 		return newList
@@ -43,7 +43,7 @@ func Intersection<FTYPE>(arrList ...[]<TYPE>) []<TYPE> {
 			_, ok := resultMap[arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[arrList[0][i]] = true
+				resultMap[arrList[0][i]] = struct{}{}
 			}
 		}
 	}
@@ -62,13 +62,13 @@ func Intersection<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 		return []*<TYPE>{}
 	}
 
-	resultMap := make(map[<TYPE>]bool)
+	resultMap := make(map[<TYPE>]struct{})
 	if len(arrList) == 1 {
 		var newList []*<TYPE>
 		for i := 0; i < len(arrList[0]); i++ {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 				newList = append(newList, arrList[0][i])
 			}
 		}
@@ -95,7 +95,7 @@ func Intersection<FTYPE>Ptr(arrList ...[]*<TYPE>) []*<TYPE> {
 			_, ok := resultMap[*arrList[0][i]]
 			if !ok {
 				newList = append(newList, arrList[0][i])
-				resultMap[*arrList[0][i]] = true
+				resultMap[*arrList[0][i]] = struct{}{}
 			}
 		}
 	}
