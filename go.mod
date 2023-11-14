@@ -1,5 +1,3 @@
-module github.com/functional-go
+module github.com/logic-building/functional-go
 
 go 1.20
-
-require github.com/logic-building/functional-go v8.14.0+incompatible
